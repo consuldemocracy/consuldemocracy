@@ -14,6 +14,7 @@ describe "Machine learning" do
     Setting["machine_learning.comments_summary"] = true
     Setting["machine_learning.related_content"] = true
     Setting["machine_learning.tags"] = true
+    allow(MachineLearning).to receive(:enabled?).and_return(true)
 
     proposal.update!(tag_list: [user_tag])
     proposal.update!(ml_tag_list: [ml_proposal_tag])

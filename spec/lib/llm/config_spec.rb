@@ -8,6 +8,7 @@ describe Llm::Config do
     before do
       stub_secrets(llm: { openai_api_key: "1234" })
       allow(config).to receive(:openai_api_key=)
+      allow(config).to receive(:ollama_api_base).and_return(nil)
       expect(RubyLLM).to receive(:context).and_yield(config).and_return(context_double)
     end
 
@@ -23,6 +24,7 @@ describe Llm::Config do
           llm: { openai_api_key: "1234" },
           google_application_credentials: "/tmp/dummy.json"
         )
+        allow(config).to receive(:ollama_api_base).and_return(nil)
       end
 
       let!(:original_google_application_credentials) { ENV["GOOGLE_APPLICATION_CREDENTIALS"] }

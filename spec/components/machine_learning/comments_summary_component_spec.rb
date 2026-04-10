@@ -1,15 +1,16 @@
 require "rails_helper"
 
 describe MachineLearning::CommentsSummaryComponent do
-  let(:commentable) { double(summary_comment: double(body: "There's a general agreement")) }
+  let(:summary_comment) { double(body: "There's a general agreement", sentiment_analysis: nil) }
+  let(:commentable) { double(summary_comment: summary_comment) }
   let(:component) { MachineLearning::CommentsSummaryComponent.new(commentable) }
 
   before do
-    Setting["feature.machine_learning"] = true
     Setting["machine_learning.comments_summary"] = true
   end
 
   it "is displayed when the setting is enabled" do
+    enable_machine_learning
     render_inline component
 
     expect(page).to have_content "Comments summary"

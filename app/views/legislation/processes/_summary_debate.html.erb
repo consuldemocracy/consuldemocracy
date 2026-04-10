@@ -15,6 +15,11 @@
               url: polymorphic_path(question, anchor: "comments")
             ) %>
           </div>
+          <% if question.summary_comment.present? %>
+            <div class="margin-bottom">
+              <%= render MachineLearning::CommentsSummaryComponent.new(question) %>
+            </div>
+          <% end %>
 
           <%= render "summary_comments", comments: question.best_comments %>
         </div>
