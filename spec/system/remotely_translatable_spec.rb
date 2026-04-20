@@ -39,7 +39,6 @@ describe "Remotely translatable" do
       Setting["llm.use_llm_for_translations"] = true
       stub_secrets(llm: { openai_api_key: "1234" })
     else
-      Setting["llm.provider"] = Setting["llm.model"] = Setting["llm.use_llm_for_translations"] = nil
       Setting["feature.remote_translations"] = true
       stub_secrets(microsoft_api_key: "123")
     end
