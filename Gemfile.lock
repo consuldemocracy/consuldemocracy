@@ -109,11 +109,14 @@ GEM
       version_gem (~> 1.1, >= 1.1.14)
     autoprefixer-rails (10.4.21.0)
       execjs (~> 2)
-    axe-core-api (4.13.0)
+    axe-core-api (4.11.3)
       dumb_delegator
-    axe-core-rspec (4.8.2)
-      axe-core-api
+      ostruct
+      virtus
+    axe-core-rspec (4.11.3)
+      axe-core-api (= 4.11.3)
       dumb_delegator
+      ostruct
       virtus
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -904,7 +907,7 @@ DEPENDENCIES
   ancestry (~> 5.1.0)
   audited (~> 5.8.0)
   autoprefixer-rails (~> 10.4.21)
-  axe-core-rspec (~> 4.8.2)
+  axe-core-rspec (~> 4.11.2)
   bing_translator (~> 6.2.0)
   cancancan (~> 3.6.1)
   capistrano (~> 3.20.0)
