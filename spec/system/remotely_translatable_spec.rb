@@ -12,7 +12,11 @@ describe "Remotely translatable" do
   let(:provider) { [RemoteTranslations::Llm, RemoteTranslations::Microsoft].sample }
   let(:client) { provider::Client }
   let(:available_locales) { provider::AvailableLocales }
-  let(:path) { [show_path, index_path].sample }
+  let(:path) do
+    paths = [show_path, index_path]
+    paths << root_path if factory != :budget_investment
+    paths.sample
+  end
   let(:path_in_spanish) { "#{path}?locale=es" }
   let(:show_path) { polymorphic_path(resource) }
   let(:index_path) do

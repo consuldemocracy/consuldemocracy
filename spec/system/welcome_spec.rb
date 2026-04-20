@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "Welcome screen" do
-  it_behaves_like "remotely_translatable", :proposal, "root_path", {}, provider: :microsoft
-  it_behaves_like "remotely_translatable", :proposal, "root_path", {}, provider: :llm
-  it_behaves_like "remotely_translatable", :debate, "root_path", {}, provider: :microsoft
-  it_behaves_like "remotely_translatable", :debate, "root_path", {}, provider: :llm
   it_behaves_like "remotely_translatable", :legislation_process, "root_path", {}, provider: :microsoft
   it_behaves_like "remotely_translatable", :legislation_process, "root_path", {}, provider: :llm
 
