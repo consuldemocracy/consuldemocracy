@@ -63,6 +63,38 @@ describe "Remotely translatable" do
       expect(page).not_to have_button "Traducir página"
     end
 
+    context "on show path" do
+      let(:path) { show_path }
+      let(:factory) { (factories - [:legislation_process]).sample }
+
+      describe "should evaluate missing translations on resource comments" do
+        scenario "display when exists resource translations but the comment does not have a translation" do
+          add_translations(resource, :es)
+          create(:comment, commentable: resource)
+          visit path
+
+          expect(page).not_to have_button "Translate page"
+
+          select "Español", from: "Language:"
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        scenario "not display when exists resource translations but his comment has translations" do
+          add_translations(resource, :es)
+          create_comment_with_translations(resource, :es)
+          visit path
+
+          expect(page).not_to have_button "Translate page"
+
+          select "Español", from: "Language:"
+
+          expect(page).to have_select "Idioma:"
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+    end
+
     context "on index path" do
       let(:path) { index_path }
       let(:factory) { (factories - [:legislation_process]).sample }
@@ -133,38 +165,6 @@ describe "Remotely translatable" do
         expect(page).to have_content "Por favor, espera 5 segundos y actualiza la página " \
                                      "para que se muestre el contenido traducido."
         expect(page).not_to have_button "Traducir página"
-      end
-    end
-
-    context "on show path" do
-      let(:path) { show_path }
-      let(:factory) { (factories - [:legislation_process]).sample }
-
-      describe "should evaluate missing translations on resource comments" do
-        scenario "display when exists resource translations but the comment does not have a translation" do
-          add_translations(resource, :es)
-          create(:comment, commentable: resource)
-          visit path
-
-          expect(page).not_to have_button "Translate page"
-
-          select "Español", from: "Language:"
-
-          expect(page).to have_button "Traducir página"
-        end
-
-        scenario "not display when exists resource translations but his comment has translations" do
-          add_translations(resource, :es)
-          create_comment_with_translations(resource, :es)
-          visit path
-
-          expect(page).not_to have_button "Translate page"
-
-          select "Español", from: "Language:"
-
-          expect(page).to have_select "Idioma:"
-          expect(page).not_to have_button "Traducir página"
-        end
       end
     end
   end
