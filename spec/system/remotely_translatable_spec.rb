@@ -122,29 +122,12 @@ describe "Remotely translatable" do
         end
       end
 
-      describe "should evaluate missing translations on featured_debates" do
-        let(:factory) { :debate }
+      describe "should evaluate missing translations on featured resources" do
+        let(:factory) { [:debate, :proposal].sample }
 
-        scenario "display when exists featured_debates without translations" do
+        scenario "display when exists featured resources without translations" do
           add_translations(resource, :es)
-          create_featured_debates
-
-          visit path
-
-          expect(page).not_to have_button "Translate page"
-
-          select "Español", from: "Language:"
-
-          expect(page).to have_button "Traducir página"
-        end
-      end
-
-      describe "should evaluate missing translations on featured_proposals" do
-        let(:factory) { :proposal }
-
-        scenario "display when exists featured_proposals without translations" do
-          add_translations(resource, :es)
-          create_featured_proposals
+          send("create_featured_#{factory.to_s.pluralize}")
 
           visit path
 
