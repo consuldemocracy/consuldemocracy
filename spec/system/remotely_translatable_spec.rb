@@ -14,7 +14,11 @@ describe "Remotely translatable" do
   let(:client) { provider::Client }
   let(:available_locales) { provider::AvailableLocales }
   let(:collection_symbol) { factory.to_s.pluralize.to_sym }
-  let(:path) { [:show_path, :index_path].sample }
+  let(:path) do
+    paths = [:show_path, :index_path]
+    paths << :home_path if factory != :budget_investment
+    paths.sample
+  end
 
   before do
     allow(available_locales).to receive(:locales).and_return(%w[de en es fr pt zh-Hans])
@@ -250,5 +254,9 @@ describe "Remotely translatable" do
     when :budget_investment then budget_investments_path(resource.budget, **opts)
     else polymorphic_path(collection_symbol, **opts)
     end
+  end
+
+  def home_path(**opts)
+    root_path(**opts)
   end
 end
