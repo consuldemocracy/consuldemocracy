@@ -5,6 +5,7 @@ describe "Remotely translatable" do
   factories = [
     :budget_investment,
     :debate,
+    :legislation_process,
     :proposal
   ]
 
@@ -15,7 +16,8 @@ describe "Remotely translatable" do
   let(:available_locales) { provider::AvailableLocales }
   let(:collection_symbol) { factory.to_s.pluralize.to_sym }
   let(:path) do
-    paths = [:show_path, :index_path]
+    paths = []
+    paths = [:show_path, :index_path] if factory != :legislation_process
     paths << :home_path if factory != :budget_investment
     paths.sample
   end
@@ -63,6 +65,7 @@ describe "Remotely translatable" do
 
     context "on index path" do
       let(:path) { :index_path }
+      let(:factory) { (factories - [:legislation_process]).sample }
 
       scenario "should not be present when there are no resources to translate" do
         resource.destroy!
@@ -135,6 +138,7 @@ describe "Remotely translatable" do
 
     context "on show path" do
       let(:path) { :show_path }
+      let(:factory) { (factories - [:legislation_process]).sample }
 
       describe "should evaluate missing translations on resource comments" do
         scenario "display when exists resource translations but the comment does not have a translation" do
