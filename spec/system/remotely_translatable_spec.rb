@@ -41,7 +41,7 @@ describe "Remotely translatable" do
     else
       Setting["llm.provider"] = Setting["llm.model"] = Setting["llm.use_llm_for_translations"] = nil
       Setting["feature.remote_translations"] = true
-      allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
+      stub_secrets(microsoft_api_key: "123")
     end
   end
 
