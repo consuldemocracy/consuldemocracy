@@ -2,7 +2,8 @@ require "rails_helper"
 
 describe "Remotely translatable" do
   factories = [
-    :debate
+    :debate,
+    :proposal
   ]
 
   let(:factory) { factories.sample }
@@ -81,9 +82,28 @@ describe "Remotely translatable" do
       end
 
       describe "should evaluate missing translations on featured_debates" do
+        let(:factory) { :debate }
+
         scenario "display when exists featured_debates without translations" do
           add_translations(resource, :es)
           create_featured_debates
+
+          visit polymorphic_path(path)
+
+          expect(page).not_to have_button "Translate page"
+
+          select "Español", from: "Language:"
+
+          expect(page).to have_button "Traducir página"
+        end
+      end
+
+      describe "should evaluate missing translations on featured_proposals" do
+        let(:factory) { :proposal }
+
+        scenario "display when exists featured_proposals without translations" do
+          add_translations(resource, :es)
+          create_featured_proposals
 
           visit polymorphic_path(path)
 
