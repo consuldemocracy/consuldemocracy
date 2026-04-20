@@ -150,7 +150,7 @@ describe "Remotely translatable" do
       end
     end
 
-    describe "with delayed job active", :delay_jobs do
+    context "with delayed job active", :delay_jobs do
       scenario "should not be present when an equal RemoteTranslation is enqueued" do
         create(:remote_translation, remote_translatable: resource, locale: :es)
         visit send(path, locale: :es)
@@ -163,7 +163,7 @@ describe "Remotely translatable" do
   end
 
   context "After click remote translations button" do
-    describe "with delayed jobs", :delay_jobs do
+    context "with delayed jobs", :delay_jobs do
       scenario "shows informative text when content is enqueued" do
         visit send(path, locale: :es)
 
@@ -183,7 +183,7 @@ describe "Remotely translatable" do
       end
     end
 
-    describe "without delayed jobs" do
+    context "without delayed jobs" do
       scenario "content is immediately translated" do
         response = generate_response(resource)
         expect_any_instance_of(client).to receive(:call).and_return(response)
