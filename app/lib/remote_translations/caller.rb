@@ -1,15 +1,6 @@
 class RemoteTranslations::Caller
   attr_reader :remote_translation
 
-  def self.configured?
-    llm?
-  end
-
-  def self.llm?
-    [Setting["llm.provider"], Setting["llm.model"],
-     Setting["llm.use_llm_for_translations"]].all?(&:present?)
-  end
-
   def initialize(remote_translation)
     @remote_translation = remote_translation
   end

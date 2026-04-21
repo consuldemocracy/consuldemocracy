@@ -21,8 +21,10 @@ describe "Remotely translatable" do
   end
 
   before do
-    allow(RemoteTranslation).to receive(:available_locales).and_return(%w[de en es fr pt zh-Hans])
-    allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
+    allow(RemoteTranslation).to receive_messages(
+      available_locales: %w[de en es fr pt zh-Hans],
+      configured?: true
+    )
     enable_llm_provider
   end
 

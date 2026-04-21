@@ -55,6 +55,24 @@ describe RemoteTranslation, :remote_translations do
     end
   end
 
+  describe ".configured?" do
+    it "is true when all LLM settings are present" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o-mini"
+      Setting["llm.use_llm_for_translations"] = true
+
+      expect(RemoteTranslation.configured?).to be true
+    end
+
+    it "is false when any LLM setting is missing" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = nil
+      Setting["llm.use_llm_for_translations"] = true
+
+      expect(RemoteTranslation.configured?).to be false
+    end
+  end
+
   describe "#enqueue_remote_translation" do
     it "after create enqueue Delayed Job", :delay_jobs do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)

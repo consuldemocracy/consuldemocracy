@@ -12,6 +12,11 @@ class RemoteTranslation < ApplicationRecord
     I18n.available_locales.map(&:to_s)
   end
 
+  def self.configured?
+    [Setting["llm.provider"], Setting["llm.model"],
+     Setting["llm.use_llm_for_translations"]].all?(&:present?)
+  end
+
   def enqueue_remote_translation
     remote_caller.delay.call
   end
