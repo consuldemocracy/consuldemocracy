@@ -79,7 +79,6 @@ class Setting < ApplicationRecord
         "feature.allow_attached_documents": true,
         "feature.allow_images": true,
         "feature.help_page": true,
-        "feature.remote_translations": nil,
         "feature.translation_interface": nil,
         "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,

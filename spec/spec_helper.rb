@@ -135,8 +135,12 @@ RSpec.configure do |config|
   end
 
   config.before(:each, :remote_translations) do
-    allow(RemoteTranslations::Microsoft::AvailableLocales)
+    allow(RemoteTranslations::Llm::AvailableLocales)
       .to receive(:locales).and_return(I18n.available_locales.map(&:to_s))
+
+    Setting["llm.provider"] ||= "OpenAI"
+    Setting["llm.model"] ||= "gpt-4o-mini"
+    allow(Llm::Config).to receive(:context).and_return(double(chat: double))
   end
 
   config.before(:each, :with_frozen_time) { freeze_time }

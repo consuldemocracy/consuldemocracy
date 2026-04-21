@@ -38,23 +38,13 @@ describe RemoteTranslation, :remote_translations do
   end
 
   it "checks available locales dynamically" do
-    allow(RemoteTranslations::Microsoft::AvailableLocales)
+    allow(RemoteTranslations::Llm::AvailableLocales)
       .to receive(:locales).and_return(["en"])
 
     expect(remote_translation).not_to be_valid
 
-    allow(RemoteTranslations::Microsoft::AvailableLocales)
+    allow(RemoteTranslations::Llm::AvailableLocales)
       .to receive(:locales).and_return(["es"])
-
-    expect(remote_translation).to be_valid
-  end
-
-  it "is valid with a locale that uses a different name in the remote service" do
-    allow(RemoteTranslations::Microsoft::AvailableLocales).to receive(:locales).and_call_original
-    allow(RemoteTranslations::Microsoft::AvailableLocales).to receive(:remote_available_locales)
-                                                          .and_return(["pt"])
-
-    remote_translation.locale = :"pt-BR"
 
     expect(remote_translation).to be_valid
   end
@@ -74,7 +64,7 @@ describe RemoteTranslation, :remote_translations do
     end
 
     it "uses the same remote translations caller and client every time" do
-      client_class = RemoteTranslations::Microsoft::Client
+      client_class = RemoteTranslations::Llm::Client
 
       expect_any_instance_of(client_class).to receive(:call).and_return([])
 

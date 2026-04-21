@@ -120,8 +120,6 @@ GEM
     bigdecimal (3.3.1)
     bindata (2.5.1)
     bindex (0.8.1)
-    bing_translator (6.2.0)
-      json
     builder (3.3.0)
     cancancan (3.6.1)
     capistrano (3.20.0)
@@ -857,7 +855,6 @@ DEPENDENCIES
   ancestry (~> 5.1.0)
   audited (~> 5.8.0)
   autoprefixer-rails (~> 10.4.21)
-  bing_translator (~> 6.2.0)
   cancancan (~> 3.6.1)
   capistrano (~> 3.20.0)
   capistrano-bundler (~> 2.2.0)

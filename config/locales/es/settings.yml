@@ -122,8 +122,6 @@ es:
       guides_description: "Muestra una guía de diferencias entre las propuestas y los proyectos de gasto si hay un presupuesto participativo activo"
       help_page: "Página de ayuda"
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
-      remote_translations: "Traducciones remotas"
-      remote_translations_description: "Muestra un botón que permite a los usuarios solicitar una traducción de una página no traducida en su idioma."
       translation_interface: "Interfaz de traducción"
       translation_interface_description: "Muestra la interfaz de traducción manual permitiendo a los usuarios introducir sus contenidos en todos los idiomas disponibles de la aplicación si así lo desean. Esta opción solo afecta a las vistas de usuarios de la aplicación, en el panel de administración está activa siempre."
       remote_census: "Configurar conexión al censo remoto (SOAP)"
@@ -245,7 +243,7 @@ es:
       provider: "Proveedor LLM"
       provider_description: "Los proveedores estarán deshabilitados hasta que se configuren las credenciales en secrets.yml."
       use_llm_for_translations: "Traducción de Contenido"
-      use_llm_for_translations_description: "Usar LLM para traducir contenido y darle prioridad sobre los servicios de traducción de Microsoft."
+      use_llm_for_translations_description: "Usar LLM para traducir contenido."
       model: "Modelo"
       model_description: "El modelo LLM a usar."
       use_ai_image_suggestions: "Sugerencias de Imágenes con IA"

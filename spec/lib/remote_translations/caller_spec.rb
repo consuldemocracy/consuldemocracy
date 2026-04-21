@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe RemoteTranslations::Caller, :remote_translations do
-  let(:client) { RemoteTranslations::Microsoft::Client }
+  let(:client) { RemoteTranslations::Llm::Client }
 
   describe "#call" do
     context "Debates" do
@@ -199,34 +199,14 @@ describe RemoteTranslations::Caller, :remote_translations do
   end
 
   describe ".configured?" do
-    it "is true if llm? is true regardless of microsoft key and remote translation setting" do
+    it "is true when llm? is true" do
       allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
-      Setting["feature.remote_translations"] = false
-      stub_secrets(microsoft_api_key: nil)
 
       expect(RemoteTranslations::Caller.configured?).to be true
     end
 
-    it "falls back to microsoft settings when llm? is false" do
+    it "is false when llm? is false" do
       allow(RemoteTranslations::Caller).to receive(:llm?).and_return(false)
-      Setting["feature.remote_translations"] = true
-      stub_secrets(microsoft_api_key: "key")
-
-      expect(RemoteTranslations::Caller.configured?).to be true
-    end
-
-    it "is false if llm? is false and the remote translations feature is false" do
-      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(false)
-      Setting["feature.remote_translations"] = false
-      stub_secrets(microsoft_api_key: "key")
-
-      expect(RemoteTranslations::Caller.configured?).to be false
-    end
-
-    it "is false if llm? is false and the microsoft API isn't configured" do
-      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(false)
-      Setting["feature.remote_translations"] = true
-      stub_secrets(microsoft_api_key: nil)
 
       expect(RemoteTranslations::Caller.configured?).to be false
     end
@@ -250,28 +230,8 @@ describe RemoteTranslations::Caller, :remote_translations do
     end
   end
 
-  describe ".translation_provider" do
-    it "returns Microsoft by default" do
-      expect(RemoteTranslations::Caller.translation_provider).to eq(RemoteTranslations::Microsoft)
-    end
-
-    it "returns Llm when llm? is true" do
-      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
-
-      expect(RemoteTranslations::Caller.translation_provider).to eq(RemoteTranslations::Llm)
-    end
-  end
-
   describe ".available_locales" do
-    it "returns Microsoft by default" do
-      expect(RemoteTranslations::Caller.available_locales).to eq(
-        RemoteTranslations::Microsoft::AvailableLocales.locales
-      )
-    end
-
-    it "returns Llm when llm? is true" do
-      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
-
+    it "returns LLM available locales" do
       expect(RemoteTranslations::Caller.available_locales).to eq(
         RemoteTranslations::Llm::AvailableLocales.locales
       )
