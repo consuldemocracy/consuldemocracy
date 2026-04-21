@@ -44,7 +44,7 @@ class RemoteTranslations::Caller
     end
 
     def translations
-      @translations ||= RemoteTranslations::Llm::Client.new.call(fields_values, locale)
+      @translations ||= RemoteTranslations::Client.new.call(fields_values, locale)
     end
 
     def fields_values

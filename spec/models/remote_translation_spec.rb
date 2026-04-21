@@ -70,7 +70,7 @@ describe RemoteTranslation, :remote_translations do
     end
 
     it "uses the same remote translations caller and client every time" do
-      client_class = RemoteTranslations::Llm::Client
+      client_class = RemoteTranslations::Client
 
       expect_any_instance_of(client_class).to receive(:call).and_return([])
 

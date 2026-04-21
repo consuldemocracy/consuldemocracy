@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe RemoteTranslations::Caller, :remote_translations do
-  let(:client) { RemoteTranslations::Llm::Client }
+  let(:client) { RemoteTranslations::Client }
 
   describe "#call" do
     context "Debates" do

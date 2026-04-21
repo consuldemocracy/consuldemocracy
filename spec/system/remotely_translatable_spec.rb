@@ -11,7 +11,7 @@ describe "Remotely translatable" do
 
   let(:factory) { factories.sample }
   let!(:resource) { create(factory) }
-  let(:client) { RemoteTranslations::Llm::Client }
+  let(:client) { RemoteTranslations::Client }
   let(:collection_symbol) { factory.to_s.pluralize.to_sym }
   let(:path) do
     paths = []
