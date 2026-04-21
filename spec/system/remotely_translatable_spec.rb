@@ -12,7 +12,6 @@ describe "Remotely translatable" do
   let(:factory) { factories.sample }
   let!(:resource) { create(factory) }
   let(:client) { RemoteTranslations::Llm::Client }
-  let(:available_locales) { RemoteTranslations::Llm::AvailableLocales }
   let(:collection_symbol) { factory.to_s.pluralize.to_sym }
   let(:path) do
     paths = []
@@ -22,7 +21,7 @@ describe "Remotely translatable" do
   end
 
   before do
-    allow(available_locales).to receive(:locales).and_return(%w[de en es fr pt zh-Hans])
+    allow(RemoteTranslation).to receive(:available_locales).and_return(%w[de en es fr pt zh-Hans])
     allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
     enable_llm_provider
   end

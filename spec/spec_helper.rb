@@ -134,11 +134,6 @@ RSpec.configure do |config|
     Capybara.current_window.resize_to(*@window_size)
   end
 
-  config.before(:each, :remote_translations) do
-    allow(RemoteTranslations::Llm::AvailableLocales)
-      .to receive(:locales).and_return(I18n.available_locales.map(&:to_s))
-  end
-
   config.before(:each, :with_frozen_time) { freeze_time }
 
   config.before(:each, :application_zone_west_of_system_zone) do

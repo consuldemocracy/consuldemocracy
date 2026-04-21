@@ -230,11 +230,4 @@ describe RemoteTranslations::Caller, :remote_translations do
     end
   end
 
-  describe ".available_locales" do
-    it "returns LLM available locales" do
-      expect(RemoteTranslations::Caller.available_locales).to eq(
-        RemoteTranslations::Llm::AvailableLocales.locales
-      )
-    end
-  end
 end

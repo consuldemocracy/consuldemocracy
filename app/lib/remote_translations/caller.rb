@@ -1,10 +1,6 @@
 class RemoteTranslations::Caller
   attr_reader :remote_translation
 
-  def self.available_locales
-    RemoteTranslations::Llm::AvailableLocales.locales
-  end
-
   def self.configured?
     llm?
   end

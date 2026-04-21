@@ -38,15 +38,21 @@ describe RemoteTranslation, :remote_translations do
   end
 
   it "checks available locales dynamically" do
-    allow(RemoteTranslations::Llm::AvailableLocales)
-      .to receive(:locales).and_return(["en"])
+    allow(RemoteTranslation).to receive(:available_locales).and_return(["en"])
 
     expect(remote_translation).not_to be_valid
 
-    allow(RemoteTranslations::Llm::AvailableLocales)
-      .to receive(:locales).and_return(["es"])
+    allow(RemoteTranslation).to receive(:available_locales).and_return(["es"])
 
     expect(remote_translation).to be_valid
+  end
+
+  describe ".available_locales" do
+    it "returns I18n.available_locales as strings" do
+      allow(I18n).to receive(:available_locales).and_return([:en, :es, :fr])
+
+      expect(RemoteTranslation.available_locales).to eq(%w[en es fr])
+    end
   end
 
   describe "#enqueue_remote_translation" do

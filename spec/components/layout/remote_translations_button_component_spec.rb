@@ -5,7 +5,7 @@ describe Layout::RemoteTranslationsButtonComponent do
   let(:component) { Layout::RemoteTranslationsButtonComponent.new(translations) }
 
   before do
-    allow(RemoteTranslations::Caller).to receive(:available_locales)
+    allow(RemoteTranslation).to receive(:available_locales)
       .and_return(%w[de en es fr zh-CN pt-BR])
   end
 
