@@ -6,6 +6,9 @@ de:
       delete_button: Bild entfernen
       note: "Sie können ein Bild des folgenden Formats hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB."
       add_new_image: Bild hinzufügen
+      or_separator: oder
+      suggest_image_with_ai: Schlage ein Bild vor mit KI
+      suggested_images_container: Vorgeschlagene Bilder
     actions:
       destroy:
         notice: Das Bild wurde erfolgreich gelöscht.
