@@ -19,12 +19,12 @@ class ConsulFormBuilder
 end
 ```
 
-Or, in order to customize the `app/lib/remote_translations/caller.rb` file, create a file `app/lib/custom/remote_translations/caller.rb` with the following content:
+Or, in order to customize the `app/lib/remote_translations/client.rb` file, create a file `app/lib/custom/remote_translations/client.rb` with the following content:
 
 ```ruby
-load Rails.root.join("app", "lib", "remote_translations", "caller.rb")
+load Rails.root.join("app", "lib", "remote_translations", "client.rb")
 
-class RemoteTranslations::Caller
+class RemoteTranslations::Client
   # Your custom logic here
 end
 ```

@@ -4,12 +4,26 @@ class RemoteTranslation < ApplicationRecord
   validates :remote_translatable_id, presence: true
   validates :remote_translatable_type, presence: true
   validates :locale, presence: true
-  validates :locale, inclusion: { in: ->(_) { RemoteTranslations::Caller.available_locales }}
+  validates :locale, inclusion: { in: ->(_) { available_locales }}
   validate :already_translated_resource
   after_commit :enqueue_remote_translation, on: :create
 
+  def self.available_locales
+    I18n.available_locales.map(&:to_s)
+  end
+
+  def self.configured?
+    [Setting["llm.provider"], Setting["llm.model"],
+     Setting["llm.use_llm_for_translations"]].all?(&:present?)
+  end
+
   def enqueue_remote_translation
-    remote_caller.delay.call
+    delay.translate_remotely!
+  end
+
+  def translate_remotely!
+    update_resource
+    destroy_remote_translation
   end
 
   def self.for(*)
@@ -50,7 +64,33 @@ class RemoteTranslation < ApplicationRecord
     remote_translatable&.translations&.where(locale: locale).present?
   end
 
-  def remote_caller
-    @remote_caller ||= RemoteTranslations::Caller.new(self)
-  end
+  private
+
+    def update_resource
+      Globalize.with_locale(locale) do
+        remote_translatable.translated_attribute_names.each_with_index do |field, index|
+          remote_translatable.send(:"#{field}=", translations[index])
+        end
+      end
+      remote_translatable.save
+    end
+
+    def destroy_remote_translation
+      if remote_translatable.valid?
+        destroy
+        remote_translatable.save!
+      else
+        update(error_message: remote_translatable.errors.messages)
+      end
+    end
+
+    def translations
+      @translations ||= RemoteTranslations::Client.new.call(fields_values, locale)
+    end
+
+    def fields_values
+      remote_translatable.translated_attribute_names.map do |field|
+        WYSIWYGSanitizer.new.sanitize(remote_translatable.send(field))
+      end
+    end
 end

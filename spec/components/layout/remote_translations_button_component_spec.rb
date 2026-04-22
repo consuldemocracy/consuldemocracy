@@ -5,7 +5,7 @@ describe Layout::RemoteTranslationsButtonComponent do
   let(:component) { Layout::RemoteTranslationsButtonComponent.new(translations) }
 
   before do
-    allow(RemoteTranslations::Caller).to receive(:available_locales)
+    allow(RemoteTranslation).to receive(:available_locales)
       .and_return(%w[de en es fr zh-CN pt-BR])
   end
 
@@ -55,7 +55,7 @@ describe Layout::RemoteTranslationsButtonComponent do
     end
   end
 
-  it "is not rendered when the locale isn't included in microsoft translate client" do
+  it "is not rendered when the locale isn't included in the translation provider" do
     I18n.with_locale(:nl) { render_inline component }
 
     expect(page).not_to be_rendered

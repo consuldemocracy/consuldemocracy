@@ -18,7 +18,6 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.allow_attached_documents
       feature.allow_images
       feature.help_page
-      feature.remote_translations
       feature.translation_interface
       feature.remote_census
       feature.valuation_comment_notification

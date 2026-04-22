@@ -3,7 +3,7 @@ include RemotelyTranslatable
 
 describe RemotelyTranslatable do
   before do
-    allow(RemoteTranslations::Caller).to receive(:configured?).and_return(true)
+    allow(RemoteTranslation).to receive(:configured?).and_return(true)
   end
 
   describe "#detect_remote_translations" do
@@ -49,7 +49,7 @@ describe RemotelyTranslatable do
     end
 
     it "When remote translations are not configured should not detect remote_translations" do
-      allow(RemoteTranslations::Caller).to receive(:configured?).and_return(false)
+      allow(RemoteTranslation).to receive(:configured?).and_return(false)
       proposal = create(:proposal)
       comment = create(:comment, commentable: proposal)
 

@@ -53,8 +53,7 @@ describe Admin::Settings::LlmConfigurationTabComponent do
 
       page.find(feature_button_selector) do
         expect(page).to have_content "Content Translation"
-        expect(page).to have_content "Use LLM for content translations and take precedence over " \
-                                     "Microsoft translation services."
+        expect(page).to have_content "Use LLM for content translations."
         expect(page).to have_button "No", disabled: true
       end
     end

@@ -8,6 +8,6 @@ module RemotelyTranslatable
     end
 
     def remote_translation_enabled?
-      RemoteTranslations::Caller.configured?
+      RemoteTranslation.configured?
     end
 end

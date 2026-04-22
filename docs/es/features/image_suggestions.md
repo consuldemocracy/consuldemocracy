@@ -49,7 +49,6 @@ Agrega tu clave API de Pexels al archivo `secrets.yml` en la sección `apis:`:
 
 ```yml
 apis: &apis
-  microsoft_api_key: ""
   census_api_end_point: ""
   # ... otras configuraciones de API ...
   pexels_access_key: "tu-clave-api-pexels"

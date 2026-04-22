@@ -11,9 +11,7 @@ describe "Remotely translatable" do
 
   let(:factory) { factories.sample }
   let!(:resource) { create(factory) }
-  let(:provider) { [RemoteTranslations::Llm, RemoteTranslations::Microsoft].sample }
-  let(:client) { provider::Client }
-  let(:available_locales) { provider::AvailableLocales }
+  let(:client) { RemoteTranslations::Client }
   let(:collection_symbol) { factory.to_s.pluralize.to_sym }
   let(:path) do
     paths = []
@@ -23,12 +21,11 @@ describe "Remotely translatable" do
   end
 
   before do
-    allow(available_locales).to receive(:locales).and_return(%w[de en es fr pt zh-Hans])
-    allow(RemoteTranslations::Caller).to receive_messages(
-      translation_provider: provider,
-      llm?: provider == RemoteTranslations::Llm
+    allow(RemoteTranslation).to receive_messages(
+      available_locales: %w[de en es fr pt zh-Hans],
+      configured?: true
     )
-    provider == RemoteTranslations::Llm ? enable_llm_provider : enable_microsoft_provider
+    enable_llm_provider
   end
 
   context "Button to request remote translation" do
@@ -245,10 +242,5 @@ describe "Remotely translatable" do
     Setting["llm.model"] = "gpt-4o"
     Setting["llm.use_llm_for_translations"] = true
     stub_secrets(llm: { openai_api_key: "1234" })
-  end
-
-  def enable_microsoft_provider
-    Setting["feature.remote_translations"] = true
-    stub_secrets(microsoft_api_key: "123")
   end
 end
