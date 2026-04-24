@@ -137,6 +137,7 @@ cs:
       sdg_description: Povolit sekce Cílů udržitelného rozvoje v nabídce správy a v globálních nastaveních.
       gdpr:
         require_consent_for_notifications: Výslovný souhlas s oznamováním
+        require_consent_for_notifications_description: Vyžadujte výslovný souhlas uživatelů s zasíláním zpravodajů a podobných informací, jak to vyžaduje obecné nařízení o ochraně osobních údajů (GDPR).
     remote_census:
       general:
         endpoint: "Koncový bod"
@@ -231,9 +232,14 @@ cs:
         legislation_description: Umožnit propojení legislativy založené na spolupráci s Cíli udržitelného rozvoje
     cookies_consent:
       more_info_link: Odkaz na zásady použití cookies
+      more_info_link_description: Odkaz na stránku se zásadami používání souborů cookie uvedený v informačním banneru.
+      version_name_description: Změňte název verze, aby všichni uživatelé museli znovu projít procesem souhlasu s používáním souborů cookie. Tato funkce se může hodit při zavádění zásadních změn v zásadách používání souborů cookie, které vyžadují nový souhlas uživatelů.
     llm:
       title: Nastavení LLM
       provider: "Poskytovatel LLM"
       use_llm_for_translations: "Překlad obsahu"
+      use_llm_for_translations_description: "K překladům obsahu používejte LLM a upřednostňujte jej před překladatelskými službami společnosti Microsoft."
       model: "Model"
+      model_description: "Který model LLM použít."
       use_ai_image_suggestions: "Návrhy AI obrázků"
+      use_ai_image_suggestions_description: "Umožněte uživatelům využívat umělou inteligenci k navrhování obrázků z Pexels, místo aby nahrávali své vlastní."
