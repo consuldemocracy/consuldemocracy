@@ -338,6 +338,7 @@ cs:
       tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
       map_location: "Lokalizace v mapě"
       map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
+      map_marker_coordinates: "Zem. šířka: %{latitude}. Zem. délka: %{longitude}"
       map_remove_marker: "Odebrat značku"
     index:
       featured_proposals: Označené
@@ -599,6 +600,9 @@ cs:
   polls:
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konečné přepočty/výsledky"
+    form:
+      vote: "Hlasovat"
+      maximum_exceeded: "vybrali jste %{given} odpovědí, ale maximálně můžete vybrat %{maximum}"
     index:
       filters:
         current: "Otevřené"
@@ -624,6 +628,7 @@ cs:
     show:
       already_voted_in_booth: "Už jste hlasovali v informačním stánku. Nemůžete znovu hlasovat."
       already_voted_in_web: "Již jste se tohoto průzkumu zúčastnili. Pokud budete znovu hlasovat, výsledky budou přepsány."
+      already_voted_blank_in_web: "Tohoto hlasování jste se již zúčastnili tím, že jste odevzdali prázdný hlas. Pokud budete hlasovat znovu, váš hlas bude přepsán."
       back: Zpět na průzkumy
       cant_answer_not_logged_in: "Chcete-li se zapojit, musíte se %{signin} nebo %{signup}."
       comments_tab: Komentáře
@@ -653,6 +658,9 @@ cs:
       results:
         title: "Otázky"
         most_voted_answer: "Odpověď s nejvíce hlasy: "
+        open_ended:
+          valid: Platný
+          blank: Prázdný
     poll_header:
       back_to_proposal: Zpět k návrhu
   poll_questions:
@@ -969,6 +977,7 @@ cs:
   cookies_consent:
     accept_all_cookies: "Přijmout vše"
     accept_essential_cookies: "Přijmout základní cookies"
+    message: "Soubory cookie nám pomáhají poskytovat naše služby. Používáním našich služeb vyjadřujete souhlas s používáním souborů cookie."
     more_info_link: "Více informací o cookies"
     management: "Spravovat cookies"
     title: "Zásady cookies"
