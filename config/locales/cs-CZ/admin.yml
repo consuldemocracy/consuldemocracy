@@ -1301,6 +1301,11 @@ cs:
         selected: Vybrané
         milestones: Milníky
         no_proposals: Neexistují žádné návrhy.
+        list:
+          id: ID
+          title: Návrh
+          author: Autor
+          summary: Souhrn
       show:
         create_question: Přidat tento návrh do průzkumu, o kterém se bude hlasovat
       form:
@@ -1335,6 +1340,7 @@ cs:
         participation_processes: "Participační procesy"
         images_and_documents: "Obrázky a dokumenty"
         feature_flags: Doporučené
+        blank_option: "Žádné"
         features:
           enabled: "Funkce povolena"
         map:
@@ -1355,6 +1361,8 @@ cs:
           how_to_enable: 'Chcete-li zobrazit možnosti konfigurace z Cílů udržitelného rozvoje, musíte povolit "SDG" na kartě "Funkce".'
         cookies_consent:
           title: Souhlas s používáním souborů cookie
+        llm:
+          title: Nastavení LLM
       remote_census_general_name: Obecné informace
       remote_census_request_name: Žádost o data
       remote_census_response_name: Údaje o reakci
@@ -1807,3 +1815,13 @@ cs:
       tags: "Štítky"
       tags_description: "Generuje automatické značky pro všechny položky, které lze označit."
       title: "AI / strojové učení"
+    cookies:
+      vendors:
+        empty: Nenalezen žádný poskytovatel
+        third_party_cookies: Soubory cookie třetích stran
+        create_button: Vytvořit poskytovatele cookie
+        form:
+          name:
+            help_text: Tato informace bude veřejně viditelná.
+          description:
+            help_text: Tato informace bude veřejně viditelná.
