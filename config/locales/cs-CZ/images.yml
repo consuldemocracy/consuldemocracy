@@ -18,6 +18,7 @@ cs:
         alert: Obrázek nelze odstranit
     errors:
       messages:
+        title_and_description_required: Chcete-li navrhnout obrázky, napište nejprve název a popis.
         llm_not_configured: LLM není správně nakonfigurován. Kontaktujte administrátora.
         rate_limit_exceeded: Počkejte několik minut před generováním nového návrhu.
         in_between: musí být mezi %{min} a %{max}
