@@ -91,6 +91,7 @@ cs:
       google_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Google"
       wordpress_login: "Přihlášení do Wordpressu"
       wordpress_login_description: "Umožnit uživatelům přihlásit se pomocí účtu Wordpress"
+      saml_login_description: "Povolit uživatelům přihlásit se přes SAML"
       featured_proposals: "Doporučené návrhy"
       featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
       signature_sheets: "Podpisové archy"
@@ -134,6 +135,8 @@ cs:
       remove_investments_supports_description: "Umožnit uživatelům odstranit podporu investic do participativních rozpočtů ve fázi výběru projektů."
       sdg: SDG
       sdg_description: Povolit sekce Cílů udržitelného rozvoje v nabídce správy a v globálních nastaveních.
+      gdpr:
+        require_consent_for_notifications: Výslovný souhlas s oznamováním
     remote_census:
       general:
         endpoint: "Koncový bod"
@@ -226,3 +229,11 @@ cs:
         budgets_description: Umožnit propojení participačních rozpočtů s Cíli udržitelného rozvoje
         legislation: Související Cíle udržitelného rozvoje ve spolupracujících právních předpisech
         legislation_description: Umožnit propojení legislativy založené na spolupráci s Cíli udržitelného rozvoje
+    cookies_consent:
+      more_info_link: Odkaz na zásady použití cookies
+    llm:
+      title: Nastavení LLM
+      provider: "Poskytovatel LLM"
+      use_llm_for_translations: "Překlad obsahu"
+      model: "Model"
+      use_ai_image_suggestions: "Návrhy AI obrázků"
