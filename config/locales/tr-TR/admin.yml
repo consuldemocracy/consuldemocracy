@@ -1293,6 +1293,11 @@ tr:
         selected: Seçilmiş
         milestones: Aşamalar
         no_proposals: Herhangi bir önerge yok.
+        list:
+          id: Kimlik
+          title: Önerge
+          author: Sahibi
+          summary: Özet
       show:
         create_question: Bu önergeyi bir oylamaya ekleyin
       form:
