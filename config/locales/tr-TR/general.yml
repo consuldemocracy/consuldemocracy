@@ -928,8 +928,8 @@ tr:
     poll:
       take_part: '%{from} ile %{to} arasında katılın'
   remote_translations:
-    text: Bu sayfanın içeriği sizin dilinizde hazırlanmamış
-    all_remote_translations_enqueued_text: Sayfayı yeniledikten kısa bir süre sonra tüm içeriği dilinizde görebileceksiniz.
+    text: Bu sayfanın içeriği sizin dilinizde hazırlanmamış. Çevirmek ister misiniz?
+    all_remote_translations_enqueued_text: Çevrilmiş içeriğin görüntülenmesi için lütfen 5 saniye bekleyin ve siteyi yenileyin.
     create:
       enqueue_remote_translation: Çeviriler doğru şekilde istendi.
     button: Sayfanın dilini çevir
