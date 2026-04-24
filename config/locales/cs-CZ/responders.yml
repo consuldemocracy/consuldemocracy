@@ -11,6 +11,7 @@ cs:
         poll_question_option_video: "Video úspěšně vytvořeno"
         poll_question_option_image: "Obrázek úspěšně nahrán"
         poll_voter: "Děkujeme za vaše hlasování!"
+        poll_voter_blank: "Děkujeme za hlasování! Váš hlas byl zaznamenán jako neplatný."
         proposal: "Návrh byl úspěšně vytvořen."
         proposal_notification: "Vaše zpráva byla odeslána správně."
         budget_investment: "Rozpočtová investice byla úspěšně vytvořena."
