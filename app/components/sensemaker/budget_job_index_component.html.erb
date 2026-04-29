@@ -1,0 +1,28 @@
+<div class="sensemaker">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <section class="hero-section">
+        <p class="lead intro-text"><%= contextual_info_resource_intro %></p>
+      </section>
+
+      <section class="reports-section">
+        <% if has_jobs? %>
+          <% grouped_jobs_for_budget.each do |group| %>
+            <h2><%= group[:target_path].present? ? link_to(group[:target_title], group[:target_path]) : group[:target_title] %></h2>
+            <div class="row small-up-1 medium-up-2 large-up-3 margin-top">
+              <% group[:jobs].each do |job| %>
+                <%= render Sensemaker::JobCardComponent.new(job) %>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="callout primary">
+            <p><%= empty_message %></p>
+          </div>
+        <% end %>
+      </section>
+    </div>
+
+    <%= render Sensemaker::AboutComponent.new %>
+  </div>
+</div>
