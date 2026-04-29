@@ -23,5 +23,12 @@ FactoryBot.define do
     trait :report do
       script { "sensemaking-report-ui" }
     end
+
+    trait :publishable do
+      script { "sensemaking-report-ui" }
+      finished_at { Time.current }
+      error { nil }
+      published { false }
+    end
   end
 end
