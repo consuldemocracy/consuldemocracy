@@ -13,6 +13,14 @@ describe Sensemaker::Job do
            additional_context: "Test context")
   end
 
+  shared_context "sensemaker paths stubbed" do
+    let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+
+    before do
+      allow(Sensemaker::Paths).to receive(:sensemaker_data_folder).and_return(data_folder)
+    end
+  end
+
   describe "validations" do
     it "is valid with valid attributes" do
       expect(job).to be_valid
@@ -42,6 +50,28 @@ describe Sensemaker::Job do
   end
 
   describe "instance methods" do
+    describe "#artefacts" do
+      it "returns a JobArtefacts instance for the job" do
+        expect(job.artefacts).to be_a(Sensemaker::JobArtefacts)
+        expect(job.artefacts.job).to eq(job)
+      end
+
+      it "memoizes the artefacts instance" do
+        expect(job.artefacts).to equal(job.artefacts)
+      end
+    end
+
+    describe "#conversation" do
+      it "returns a Sensemaker::Conversation for the job analysable" do
+        expect(job.conversation).to be_a(Sensemaker::Conversation)
+        expect(job.conversation.target).to eq(debate)
+      end
+
+      it "memoizes the conversation instance" do
+        expect(job.conversation).to equal(job.conversation)
+      end
+    end
+
     describe "#started?" do
       it "returns true when started_at is present" do
         expect(job.started?).to be true
@@ -88,6 +118,134 @@ describe Sensemaker::Job do
 
       it "returns false when error is nil" do
         expect(job.errored?).to be false
+      end
+    end
+  end
+
+  describe "callbacks" do
+    describe "before_save :set_persisted_output_if_successful" do
+      include_context "sensemaker paths stubbed"
+
+      before do
+        allow(File).to receive(:exist?).and_return(false)
+      end
+
+      shared_examples "sets persisted_output when all output files exist" do |script_name, paths_fn|
+        it "sets persisted_output to relative_output_path for #{script_name}" do
+          job.script = script_name
+          paths = paths_fn.call(job, data_folder)
+          paths.each { |p| allow(File).to receive(:exist?).with(p).and_return(true) }
+
+          job.finished_at = Time.current
+          job.error = nil
+          job.save!
+
+          expect(job.persisted_output).to eq(job.artefacts.relative_output_path)
+          expect(job.persisted_output).not_to start_with("/")
+        end
+      end
+
+      context "when job is successful (finished_at present, no error)" do
+        context "when persisted_output is not set" do
+          context "when all output files exist" do
+            it_behaves_like "sets persisted_output when all output files exist",
+                            "categorization_runner.ts",
+                            ->(j, df) { ["#{df}/categorization-output-#{j.id}.csv"] }
+
+            it_behaves_like "sets persisted_output when all output files exist",
+                            "advanced_runner.ts",
+                            ->(j, df) {
+                              ["#{df}/output-#{j.id}-summary.json", "#{df}/output-#{j.id}-topic-stats.json",
+                               "#{df}/output-#{j.id}-comments-with-scores.json"]
+                            }
+
+            it_behaves_like "sets persisted_output when all output files exist",
+                            "runner.ts",
+                            ->(j, df) {
+                              ["#{df}/output-#{j.id}-summary.json", "#{df}/output-#{j.id}-summary.html",
+                               "#{df}/output-#{j.id}-summary.md", "#{df}/output-#{j.id}-summaryAndSource.csv"]
+                            }
+          end
+
+          context "when not all output files exist" do
+            it "does not set persisted_output" do
+              job.script = "advanced_runner.ts"
+              base_path = "#{data_folder}/output-#{job.id}"
+              allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(false)
+
+              job.finished_at = Time.current
+              job.error = nil
+              job.save!
+
+              expect(job.persisted_output).to be(nil)
+            end
+          end
+        end
+
+        context "when persisted_output is already set" do
+          it "does not overwrite existing persisted_output" do
+            existing_path = "vendor/sensemaking-tools/data/output-#{job.id}"
+            job.persisted_output = existing_path
+
+            job.finished_at = Time.current
+            job.error = nil
+            job.save!
+
+            expect(job.persisted_output).to eq(existing_path)
+          end
+        end
+      end
+
+      context "when job is not finished" do
+        it "does not set persisted_output" do
+          job.finished_at = nil
+          job.error = nil
+          job.save!
+
+          expect(job.persisted_output).to be(nil)
+        end
+      end
+
+      context "when job has an error" do
+        it "does not set persisted_output" do
+          job.finished_at = Time.current
+          job.error = "Some error occurred"
+          job.save!
+
+          expect(job.persisted_output).to be(nil)
+        end
+      end
+    end
+
+    describe "after_destroy" do
+      include_context "sensemaker paths stubbed"
+
+      before do
+        allow(FileUtils).to receive(:rm_f).and_return(true)
+        allow(Rails.logger).to receive(:info)
+        allow(Rails.logger).to receive(:warn)
+      end
+
+      it "calls artefacts.cleanup when job is destroyed" do
+        expect(job.artefacts).to receive(:cleanup).and_return([])
+        job.destroy!
+      end
+
+      it "logs cleanup results" do
+        allow(job.artefacts).to receive(:cleanup).and_return(["/tmp/cleaned"])
+        expect(Rails.logger).to receive(:info).with(/Cleaned up files for job #{job.id}/)
+
+        job.destroy!
+      end
+
+      it "continues with destruction even if cleanup fails" do
+        allow(job.artefacts).to receive(:cleanup).and_return(nil)
+        expect(Rails.logger).to receive(:warn).with(/Failed to cleanup files for job #{job.id}/)
+
+        expect { job.destroy }.not_to raise_error
+        expect(Sensemaker::Job.find_by(id: job.id)).to be(nil)
       end
     end
   end
