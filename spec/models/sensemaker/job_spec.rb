@@ -41,6 +41,66 @@ describe Sensemaker::Job do
       job.analysable_id = nil
       expect(job).to be_valid
     end
+
+    describe "#publishing_is_allowed" do
+      let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+
+      before do
+        allow(Sensemaker::Paths).to receive(:sensemaker_data_folder).and_return(data_folder)
+        allow(File).to receive(:exist?).and_return(false)
+        job.published = false
+      end
+
+      context "when job is publishable" do
+        before do
+          job.script = "sensemaking-report-ui"
+          job.finished_at = Time.current
+          job.error = nil
+          output_path = "#{data_folder}/report-#{job.id}.html"
+          allow(File).to receive(:exist?).with(output_path).and_return(true)
+        end
+
+        it "allows publishing when changing from false to true" do
+          job.published = true
+          expect(job).to be_valid
+        end
+      end
+
+      context "when job is not publishable" do
+        it "adds validation error when published is changed to true" do
+          # Set up a job that is not publishable (any condition fails)
+          job.script = "categorization_runner.ts"
+          job.finished_at = Time.current
+          job.error = nil
+          job.published = true
+
+          expect(job).not_to be_valid
+          expect(job.errors[:published]).to be_present
+        end
+      end
+
+      context "when job is already published" do
+        before do
+          job.published = true
+          job.save!(validate: false) # Save without validation to set initial state
+        end
+
+        it "does not validate when already published" do
+          job.script = "categorization_runner.ts" # Make it unpublishable
+          job.finished_at = nil
+          expect(job).to be_valid
+        end
+      end
+
+      context "when job is not published" do
+        it "does not validate publishable status" do
+          job.script = "categorization_runner.ts"
+          job.finished_at = nil
+          job.published = false
+          expect(job).to be_valid
+        end
+      end
+    end
   end
 
   describe "associations" do
@@ -118,6 +178,46 @@ describe Sensemaker::Job do
 
       it "returns false when error is nil" do
         expect(job.errored?).to be false
+      end
+    end
+
+    describe "#publishable?" do
+      include_context "sensemaker paths stubbed"
+
+      before do
+        allow(File).to receive(:exist?).and_return(false)
+        job.script = "sensemaking-report-ui"
+        job.finished_at = Time.current
+        job.error = nil
+      end
+
+      it "returns true for a finished successful job with complete outputs" do
+        output_path = "#{data_folder}/report-#{job.id}.html"
+        allow(File).to receive(:exist?).with(output_path).and_return(true)
+
+        expect(job.publishable?).to be true
+      end
+
+      it "returns false when the script is not publishable" do
+        job.script = "categorization_runner.ts"
+
+        expect(job.publishable?).to be false
+      end
+
+      it "returns false when the job is not finished" do
+        job.finished_at = nil
+
+        expect(job.publishable?).to be false
+      end
+
+      it "returns false when the job has an error" do
+        job.error = "Something went wrong"
+
+        expect(job.publishable?).to be false
+      end
+
+      it "returns false when output artefacts are incomplete" do
+        expect(job.publishable?).to be false
       end
     end
   end
