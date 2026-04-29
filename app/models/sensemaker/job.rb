@@ -22,7 +22,7 @@ module Sensemaker
                         dependent: :destroy
 
     validates :analysable_type, presence: true
-    validates :analysable_id, presence: true
+    validates :analysable_id, presence: true, unless: -> { analysable_type == "Proposal" }
 
     belongs_to :analysable, polymorphic: true, optional: true
 
