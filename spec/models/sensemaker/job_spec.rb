@@ -27,6 +27,12 @@ describe Sensemaker::Job do
       job.analysable_id = nil
       expect(job).not_to be_valid
     end
+
+    it "allows nil analysable_id for Proposal type" do
+      job.analysable_type = "Proposal"
+      job.analysable_id = nil
+      expect(job).to be_valid
+    end
   end
 
   describe "associations" do
