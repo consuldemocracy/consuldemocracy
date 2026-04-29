@@ -26,11 +26,18 @@ module Sensemaker
 
     belongs_to :analysable, polymorphic: true, optional: true
 
+    before_save :set_persisted_output_if_successful
+    after_destroy :cleanup_associated_files
+
     scope :published, -> { where(published: true) }
     scope :unpublished, -> { where(published: false) }
 
     def artefacts
       @artefacts ||= Sensemaker::JobArtefacts.new(self)
+    end
+
+    def conversation
+      @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
     end
 
     def started?
@@ -107,5 +114,26 @@ module Sensemaker
         .or(published.where(analysable_type: "Legislation::QuestionOption",
                             analysable_id: question_options_subquery))
     end
+
+    private
+
+      def set_persisted_output_if_successful
+        return unless finished_at.present? && error.nil?
+        return if persisted_output.present?
+
+        if artefacts.complete?
+          self.persisted_output = artefacts.relative_output_path
+        end
+      end
+
+      def cleanup_associated_files
+        result = artefacts.cleanup
+        if result.nil?
+          Rails.logger.warn("Failed to cleanup files for job #{id}")
+        else
+          Rails.logger.info("Cleaned up files for job #{id}: #{result.inspect}")
+        end
+        result
+      end
   end
 end
