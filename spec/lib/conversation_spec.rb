@@ -12,7 +12,10 @@ describe Conversation do
   shared_examples "rejects non-open-ended Poll::Question" do |method_name|
     it "raises ArgumentError" do
       conversation = Conversation.new("Poll::Question", question.id)
-      expect { conversation.send(method_name) }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
+      expect { conversation.send(method_name) }.to raise_error(
+        ArgumentError,
+        /only supported for open-ended Poll::Question/
+      )
     end
   end
 
