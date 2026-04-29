@@ -232,9 +232,10 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
       end
     end
 
-    if @sensemaker_job.persisted_output.present? && File.exist?(@sensemaker_job.persisted_output)
-      return send_file @sensemaker_job.persisted_output,
-                       filename: File.basename(@sensemaker_job.persisted_output)
+    path = @sensemaker_job.persisted_output_path
+    if path.present? && File.exist?(path)
+      return send_file path,
+                       filename: File.basename(path)
     end
 
     redirect_to admin_sensemaker_jobs_path,
