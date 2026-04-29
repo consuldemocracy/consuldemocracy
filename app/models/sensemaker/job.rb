@@ -6,7 +6,7 @@ module Sensemaker
       "Debate",
       "Proposal",
       "Poll",
-      "Topic",
+      "Poll::Question",
       "Legislation::Question",
       "Legislation::Proposal",
       "Legislation::QuestionOption",
@@ -86,6 +86,10 @@ module Sensemaker
       update!(finished_at: Time.current, error: "Cancelled")
     end
 
+    def conversation
+      @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
+    end
+
     def output_file_name
       case script
       when "health_check_runner.ts"
@@ -120,7 +124,7 @@ module Sensemaker
       Rails.root.join(p)
     end
 
-    def output_artifact_paths
+    def output_artefact_paths
       if persisted_output.present?
         base_path = persisted_output_path.to_s
       else
@@ -146,8 +150,46 @@ module Sensemaker
       end
     end
 
+    def existing_output_artefact_paths
+      output_artefact_paths.select { |path| File.exist?(path) }
+    end
+
+    def input_file
+      current_input_file = read_attribute(:input_file)
+      if current_input_file.present?
+        current_input_file
+      elsif script == "advanced_runner.ts"
+        "#{Sensemaker::Paths.sensemaker_data_folder}/categorization-output-#{id}.csv"
+      elsif script == "sensemaking-report-ui"
+        "#{Sensemaker::Paths.sensemaker_data_folder}/advanced-output"
+      else
+        "#{Sensemaker::Paths.sensemaker_data_folder}/input-#{id}.csv"
+      end
+    end
+
+    def input_artefact_paths
+      base_path = input_file.to_s
+      return [] if base_path.blank?
+
+      case script
+      when "sensemaking-report-ui"
+        [
+          "#{base_path}-topic-stats.json",
+          "#{base_path}-summary.json",
+          "#{base_path}-comments-with-scores.json",
+          "#{base_path}-metadata.json"
+        ]
+      else
+        [base_path]
+      end
+    end
+
+    def existing_input_artefact_paths
+      input_artefact_paths.select { |path| File.exist?(path) }
+    end
+
     def has_outputs?
-      output_artifact_paths.all? { |path| File.exist?(path) }
+      existing_output_artefact_paths.size == output_artefact_paths.size
     end
 
     def self.for_budget(budget)
