@@ -49,6 +49,7 @@ data:
     - config/locales/%{locale}/sdg_management.yml
     - config/locales/%{locale}/seeds.yml
     - config/locales/%{locale}/stats.yml
+    - config/locales/%{locale}/conversation.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -179,6 +180,7 @@ ignore_unused:
   - "moderation.debates.index.orders.*"
   - "moderation.budget_investments.index.filter*"
   - "moderation.budget_investments.index.orders.*"
+  - "conversation.context.*"
   - "moderation.proposal_notifications.index.filter*"
   - "moderation.proposal_notifications.index.orders.*"
   - "valuation.budgets.index.filter*"
