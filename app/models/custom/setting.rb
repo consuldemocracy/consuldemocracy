@@ -27,5 +27,11 @@ class Setting
         })
       end
     end
+
+    alias_method :consul_default_mailer_from_address, :default_mailer_from_address
+
+    def default_mailer_from_address
+      consul_default_mailer_from_address.gsub("staging", "demo")
+    end
   end
 end
