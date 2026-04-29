@@ -22,6 +22,7 @@ class Budget
     belongs_to :budget
 
     has_many :headings, dependent: :destroy
+    has_many :investments, through: :headings
 
     validates_translation :name, presence: true
     validates :budget_id, presence: true
