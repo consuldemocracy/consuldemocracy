@@ -1,0 +1,124 @@
+class Sensemaker::JobsController < ApplicationController
+  skip_authorization_check
+
+  def show
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+    authorize! :read, @sensemaker_job
+
+    unless @sensemaker_job.has_outputs?
+      head :not_found
+      nil
+    end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
+  def index
+    if params[:resource_type].blank? || params[:resource_id].blank?
+      head :not_found
+      return
+    end
+
+    resource_type = map_resource_type_to_model(params[:resource_type])
+    @resource = resource_type.find(params[:resource_id])
+    @parent_resource = load_parent_resource_for(@resource)
+
+    @sensemaker_jobs = case @resource
+                       when Poll
+                         Sensemaker::Job.for_poll(@resource).order(finished_at: :desc)
+                       when Legislation::Question
+                         Sensemaker::Job.for_legislation_question(@resource).order(finished_at: :desc)
+                       when Legislation::Process
+                         Sensemaker::Job.published.for_process(@resource).order(finished_at: :desc)
+                       else
+                         Sensemaker::Job.published
+                                        .where(analysable_type: resource_type.name,
+                                               analysable_id: params[:resource_id])
+                                        .order(finished_at: :desc)
+                       end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
+  def all_proposals_index
+    @parent_resource = nil
+    @sensemaker_jobs = Sensemaker::Job.published
+                                      .where(analysable_type: "Proposal", analysable_id: nil)
+                                      .order(finished_at: :desc)
+    render :index
+  end
+
+  def serve_report
+    job = Sensemaker::Job.find(params[:id])
+    authorize! :read, job
+
+    if job.has_outputs?
+      report_file_path = job.output_artefact_paths.find do |p|
+        p.include?("html")
+      end || job.output_artefact_paths.first
+      send_file report_file_path,
+                filename: File.basename(report_file_path),
+                disposition: "inline",
+                type: determine_content_type(report_file_path)
+    else
+      head :not_found
+    end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
+  private
+
+    def map_resource_type_to_model(resource_type)
+      case resource_type
+      when "debates"
+        Debate
+      when "proposals"
+        Proposal
+      when "polls"
+        Poll
+      when "topics"
+        Topic
+      when "poll_questions"
+        Poll::Question
+      when "legislation_processes"
+        Legislation::Process
+      when "legislation_questions"
+        Legislation::Question
+      when "legislation_proposals"
+        Legislation::Proposal
+      when "legislation_question_options"
+        Legislation::QuestionOption
+      else
+        raise ArgumentError, "Unknown resource type: #{resource_type}"
+      end
+    end
+
+    def load_parent_resource_for(resource)
+      case resource
+      when Poll::Question
+        resource.poll
+      when Legislation::Question, Legislation::Proposal
+        resource.process
+      when Legislation::QuestionOption
+        resource.question.process
+      else
+        nil
+      end
+    end
+
+    def determine_content_type(file_path)
+      case File.extname(file_path).downcase
+      when ".html"
+        "text/html"
+      when ".csv"
+        "text/csv"
+      when ".json"
+        "application/json"
+      when ".txt"
+        "text/plain"
+      else
+        "application/octet-stream"
+      end
+    end
+end
