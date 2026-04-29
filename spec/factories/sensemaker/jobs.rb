@@ -18,5 +18,9 @@ FactoryBot.define do
     trait :published do
       published { true }
     end
+
+    trait :report do
+      script { "sensemaking-report-ui" }
+    end
   end
 end
