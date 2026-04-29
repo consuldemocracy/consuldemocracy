@@ -26,6 +26,10 @@ module Sensemaker
       execute_job_workflow
     end
 
+    def max_attempts
+      1
+    end
+
     def output_file_name
       job.output_file_name
     end
