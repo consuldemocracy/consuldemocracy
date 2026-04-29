@@ -23,6 +23,7 @@ module Sensemaker
 
     validates :analysable_type, presence: true
     validates :analysable_id, presence: true, unless: -> { analysable_type == "Proposal" }
+    validate :publishing_is_allowed
 
     belongs_to :analysable, polymorphic: true, optional: true
 
@@ -74,6 +75,10 @@ module Sensemaker
       end
     end
 
+    def publishable?
+      Sensemaker::ScriptRegistry.publishable.include?(script) && finished? && !errored? && artefacts.complete?
+    end
+
     def self.unstarted
       where(started_at: nil).where(finished_at: nil)
     end
@@ -121,6 +126,14 @@ module Sensemaker
     end
 
     private
+
+      def publishing_is_allowed
+        return unless published? && published_changed? && !published_was
+
+        unless publishable?
+          errors.add(:published, :not_publishable, message: "cannot be published")
+        end
+      end
 
       def set_persisted_output_if_successful
         return unless finished_at.present? && error.nil?
