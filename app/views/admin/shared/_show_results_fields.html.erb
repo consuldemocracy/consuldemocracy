@@ -8,4 +8,7 @@
   <%= form.check_box :results_enabled %>
   <%= form.check_box :stats_enabled %>
   <%= form.check_box :advanced_stats_enabled %>
+  <% if feature?(:sensemaker) %>
+    <%= form.check_box :sensemaking_enabled %>
+  <% end %>
 </fieldset>
