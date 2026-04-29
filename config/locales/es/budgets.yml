@@ -203,6 +203,10 @@ es:
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
+    sensemaking:
+      link: Interpretación
+      page_title: "%{budget} - Interpretación"
+      heading: "Descubre qué dijeron los ciudadanos sobre este presupuesto"
     executions:
       link: "Seguimiento"
       page_title: "%{budget} - Seguimiento de proyectos"
