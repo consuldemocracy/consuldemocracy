@@ -96,6 +96,12 @@ module Sensemaker
       @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
     end
 
+    def analysable
+      return Proposal if analysable_type == "Proposal" && analysable_id.nil?
+
+      super
+    end
+
     def output_file_name
       case script
       when "health_check_runner.ts"
@@ -221,6 +227,20 @@ module Sensemaker
         .or(published.where(analysable_type: "Legislation::Question", analysable_id: questions_subquery))
         .or(published.where(analysable_type: "Legislation::QuestionOption",
                             analysable_id: question_options_subquery))
+    end
+
+    def self.for_poll(poll)
+      questions_subquery = poll.questions.select(:id)
+      published.where(analysable_type: "Poll", analysable_id: poll.id).or(
+        published.where(analysable_type: "Poll::Question", analysable_id: questions_subquery)
+      )
+    end
+
+    def self.for_legislation_question(question)
+      options_subquery = question.question_options.select(:id)
+      published.where(analysable_type: "Legislation::Question", analysable_id: question.id).or(
+        published.where(analysable_type: "Legislation::QuestionOption", analysable_id: options_subquery)
+      )
     end
 
     private
