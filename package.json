@@ -2,7 +2,7 @@
   "name": "consuldemocracy",
   "dependencies": {
     "blueimp-file-upload": "^10.32.0",
-    "c3": "0.4.23",
+    "c3": "0.7.20",
     "d3": "3.5.17",
     "foundation-sites": "^6.8.1",
     "jquery": "^3.7.1",
