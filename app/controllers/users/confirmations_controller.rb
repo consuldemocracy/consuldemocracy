@@ -28,7 +28,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
         resource.save!
         set_official_position if resource.has_official_email?
         resource.confirm
-        set_flash_message(:notice, :confirmed) if is_flashing_format?
+        set_flash_message!(:notice, :confirmed)
         sign_in_and_redirect(resource_name, resource)
       else
         render :show
