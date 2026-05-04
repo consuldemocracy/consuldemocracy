@@ -17,6 +17,10 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   def update
     self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
 
+    if confirmation_period_expired?
+      return redirect_to user_confirmation_path(confirmation_token: params[:confirmation_token])
+    end
+
     if resource.encrypted_password.blank?
       resource.assign_attributes(resource_params)
 
@@ -39,7 +43,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   def show
     self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
 
-    if resource.encrypted_password.present?
+    if confirmation_period_expired? || resource.encrypted_password.present?
       super
     else
       yield resource if block_given?
@@ -62,5 +66,9 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
     def set_official_position
       resource.add_official_position!(Setting["official_level_1_name"], 1)
+    end
+
+    def confirmation_period_expired?
+      resource.send(:confirmation_period_expired?)
     end
 end
