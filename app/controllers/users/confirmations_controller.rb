@@ -37,32 +37,14 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
-    # In the default implementation, this already confirms the resource:
-    # self.resource = self.resource = resource_class.confirm_by_token(params[:confirmation_token])
     self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
 
-    yield resource if block_given?
-
-    # New condition added to if: when no password was given, display the "show" view
-    # (which uses "update" above)
-    if resource.encrypted_password.blank?
-      respond_with_navigational(resource) { render :show }
-    elsif resource.errors.empty?
-      set_official_position if resource.has_official_email?
-
-      if resource.confirm
-        set_flash_message(:notice, :confirmed) if is_flashing_format?
-
-        respond_with_navigational(resource) do
-          redirect_to after_confirmation_path_for(resource_name, resource)
-        end
-      else
-        respond_with_navigational(resource.errors, status: :unprocessable_entity) do
-          render :new, status: :unprocessable_entity
-        end
-      end
+    if resource.encrypted_password.present?
+      super
     else
-      respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new }
+      yield resource if block_given?
+
+      respond_with_navigational(resource) { render :show }
     end
   end
 

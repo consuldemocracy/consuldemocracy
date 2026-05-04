@@ -10,12 +10,17 @@ describe Users::ConfirmationsController do
       expect { get :show, params: { token: "non_existent" } }.to raise_error ActiveRecord::RecordNotFound
     end
 
-    it "returns a 422 code with a existent and used token" do
-      user = create(:user, confirmation_token: "token1")
+    context "existent and used token" do
+      render_views
 
-      get :show, params: { user: user, confirmation_token: "token1" }
+      it "renders the page with an error message" do
+        user = create(:user, confirmation_token: "token1")
 
-      expect(response).to have_http_status(:unprocessable_entity)
+        get :show, params: { user: user, confirmation_token: "token1" }
+
+        expect(response).to be_successful
+        expect(response.body).to include "You have already been verified"
+      end
     end
 
     it "redirect to sign_in page with a existent and not used token" do
