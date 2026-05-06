@@ -118,9 +118,6 @@ es:
       legislation/answer:
         one: "Respuesta"
         other: "Respuestas"
-      document:
-        one: "Documento"
-        other: "Documentos"
       image:
         one: "Imagen"
         other: "Imágenes"
