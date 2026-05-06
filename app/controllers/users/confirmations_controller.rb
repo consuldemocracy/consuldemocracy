@@ -15,7 +15,11 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # new action, PATCH does not exist in the default Devise::ConfirmationsController
   # PATCH /resource/confirmation
   def update
-    self.resource = resource_class.find_by(confirmation_token: params[:confirmation_token])
+    self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
+
+    if confirmation_period_expired?
+      return redirect_to user_confirmation_path(confirmation_token: params[:confirmation_token])
+    end
 
     if resource.encrypted_password.blank?
       resource.assign_attributes(resource_params)
@@ -24,7 +28,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
         resource.save!
         set_official_position if resource.has_official_email?
         resource.confirm
-        set_flash_message(:notice, :confirmed) if is_flashing_format?
+        set_flash_message!(:notice, :confirmed)
         sign_in_and_redirect(resource_name, resource)
       else
         render :show
@@ -37,32 +41,14 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
-    # In the default implementation, this already confirms the resource:
-    # self.resource = self.resource = resource_class.confirm_by_token(params[:confirmation_token])
     self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
 
-    yield resource if block_given?
-
-    # New condition added to if: when no password was given, display the "show" view
-    # (which uses "update" above)
-    if resource.encrypted_password.blank?
-      respond_with_navigational(resource) { render :show }
-    elsif resource.errors.empty?
-      set_official_position if resource.has_official_email?
-
-      if resource.confirm
-        set_flash_message(:notice, :confirmed) if is_flashing_format?
-
-        respond_with_navigational(resource) do
-          redirect_to after_confirmation_path_for(resource_name, resource)
-        end
-      else
-        respond_with_navigational(resource.errors, status: :unprocessable_entity) do
-          render :new, status: :unprocessable_entity
-        end
-      end
+    if confirmation_period_expired? || resource.encrypted_password.present?
+      super
     else
-      respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new }
+      yield resource if block_given?
+
+      respond_with_navigational(resource) { render :show }
     end
   end
 
@@ -80,5 +66,9 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
     def set_official_position
       resource.add_official_position!(Setting["official_level_1_name"], 1)
+    end
+
+    def confirmation_period_expired?
+      resource.send(:confirmation_period_expired?)
     end
 end
