@@ -39,7 +39,8 @@ describe ImageSuggestions::SuggestButtonComponent do
         it "renders data-resource-id with the object id" do
           render_inline component
 
-          expect(page).to have_css ".suggested-images-wrapper[data-resource-type='Budget::Investment'][data-resource-id='#{budget_investment.id}']"
+          expect(page).to have_css ".suggested-images-wrapper[data-resource-type='Budget::Investment']"
+          expect(page).to have_css ".suggested-images-wrapper[data-resource-id='#{budget_investment.id}']"
         end
       end
     end
