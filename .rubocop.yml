@@ -161,6 +161,7 @@ Layout/LineEndStringConcatenationIndentation:
 
 Layout/LineLength:
   Max: 110
+  AllowQualifiedName: false
   Exclude:
     - "Gemfile"
     - "config/environments/production.rb"
