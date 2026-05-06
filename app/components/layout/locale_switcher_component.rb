@@ -30,7 +30,7 @@ class Layout::LocaleSwitcherComponent < ApplicationComponent
           current_path_with_query_params(locale: locale),
           locale == I18n.locale,
           lang: locale,
-          data: { turbolinks: rtl?(I18n.locale) == rtl?(locale) }
+          data: { turbo: rtl?(I18n.locale) == rtl?(locale) }
         ]
       end
     end
