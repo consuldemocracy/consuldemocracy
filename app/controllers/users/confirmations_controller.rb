@@ -15,7 +15,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # new action, PATCH does not exist in the default Devise::ConfirmationsController
   # PATCH /resource/confirmation
   def update
-    self.resource = resource_class.find_by(confirmation_token: params[:confirmation_token])
+    self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
 
     if resource.encrypted_password.blank?
       resource.assign_attributes(resource_params)

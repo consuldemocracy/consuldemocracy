@@ -7,7 +7,9 @@ describe Users::ConfirmationsController do
 
   describe "GET show" do
     it "returns a 404 code with a wrong token" do
-      expect { get :show, params: { token: "non_existent" } }.to raise_error ActiveRecord::RecordNotFound
+      expect do
+        get :show, params: { confirmation_token: "non_existent" }
+      end.to raise_error ActiveRecord::RecordNotFound
     end
 
     context "existent and used token" do
@@ -29,6 +31,14 @@ describe Users::ConfirmationsController do
       get :show, params: { user: user, confirmation_token: "token1" }
 
       expect(response).to redirect_to(new_user_session_path)
+    end
+  end
+
+  describe "PATCH update" do
+    it "returns a 404 code with a wrong token" do
+      expect do
+        patch :update, params: { confirmation_token: "non_existent" }
+      end.to raise_error ActiveRecord::RecordNotFound
     end
   end
 end
