@@ -25,8 +25,7 @@
 //= require jquery-ui/ui/widgets/sortable
 //= require @deltablot/dropzone/dist/dropzone-min
 //= require foundation-sites
-//= require turbolinks
-//= require turbolinks_anchors
+//= require @hotwired/turbo
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
@@ -165,5 +164,6 @@ var destroy_non_idempotent_modules = function() {
   App.SocialShare.destroy();
 };
 
-$(document).on("turbolinks:load", initialize_modules);
-$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
+$(document).on("turbo:load", initialize_modules);
+$(document).on("turbo:before-cache", destroy_non_idempotent_modules);
+$(document).ready(initialize_modules);
