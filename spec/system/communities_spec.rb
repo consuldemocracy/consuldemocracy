@@ -16,7 +16,7 @@ describe "Communities" do
       expect(page).to have_link("Create topic", href: new_community_topic_path(community))
     end
 
-    scenario "Should display without_topics_text and participants when there are not topics" do
+    scenario "Should display without_topics_text and participants when there are no topics" do
       proposal = create(:proposal)
       community = proposal.community
 

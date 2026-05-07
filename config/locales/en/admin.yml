@@ -1442,7 +1442,7 @@ en:
       author: Author
       created_at: Creation date
       name: Name
-      no_signature_sheets: "There are not signature_sheets"
+      no_signature_sheets: "There are no signature sheets"
       index:
         title: Signature sheets
         new: New signature sheets

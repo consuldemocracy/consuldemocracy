@@ -91,7 +91,7 @@ describe "Legislation Proposals" do
   end
 
   context "Selected filter" do
-    scenario "apperars even if there are not any selected poposals" do
+    scenario "apperars even if there are no selected proposals" do
       create(:legislation_proposal, legislation_process_id: process.id)
 
       visit legislation_process_proposals_path(process)

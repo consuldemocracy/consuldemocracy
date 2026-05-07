@@ -98,7 +98,7 @@ describe "Home" do
         expect(page).to have_current_path(debate_path(debate))
       end
 
-      scenario "Do not display recommended section when there are not debates and proposals" do
+      scenario "Do not display recommended section when there are no debates and proposals" do
         visit root_path
         expect(page).not_to have_content "Recommendations that may interest you"
       end
