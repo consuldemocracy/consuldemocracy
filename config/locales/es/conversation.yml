@@ -17,6 +17,7 @@ es:
         budget/group: "Grupo de presupuesto participativo"
         proposal: "Propuesta ciudadana"
         debate: "Debate ciudadano"
+        legislation/process: "Proceso legislativo colaborativo"
         legislation/proposal: "Propuesta legislativa colaborativa"
         legislation/question: "Debate legislativo colaborativo"
         legislation/question_option: "Debate legislativo colaborativo segmentado por opción"
@@ -36,6 +37,12 @@ es:
         process: "Este debate forma parte del proceso legislativo \"%{process_title}\""
         responses_header: "### Respuestas del Debate"
         option: "- %{value} (%{answers_count} respuestas)"
+
+      legislation_process:
+        questions_header: "## Preguntas en este proceso"
+        question_line: "  Q%{number}: %{title}"
+        question_description: "    - %{description}"
+        prefix_note: "Nota: Los comentarios incluyen el prefijo (Qn) para indicar a qué pregunta se refieren."
 
       question_option:
         filter_note: "Nota: Los comentarios en este análisis están filtrados para incluir solo los comentarios de usuarios que seleccionaron la opción \"%{option_value}\" en su respuesta a este debate."

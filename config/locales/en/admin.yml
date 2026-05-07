@@ -1795,6 +1795,7 @@ en:
         segment_by_option: "Segment by option"
         no_free_text_to_analyse: "No free text to analyse for this question"
         or_analyse_all_proposals: "or analyse all proposals"
+        analyse_all_questions: "Analyse all questions"
         search_placeholder: "Search for %{model_label}..."
         clear_search: "Clear search"
         select_script_blank: "Select a script..."

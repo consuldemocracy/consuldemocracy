@@ -7,6 +7,7 @@ module Sensemaker
       "Proposal",
       "Poll",
       "Poll::Question",
+      "Legislation::Process",
       "Legislation::Question",
       "Legislation::Proposal",
       "Legislation::QuestionOption",
@@ -119,8 +120,11 @@ module Sensemaker
                                   .select(:id)
 
       published
-        .where(analysable_type: "Legislation::Proposal", analysable_id: proposals_subquery)
-        .or(published.where(analysable_type: "Legislation::Question", analysable_id: questions_subquery))
+        .where(analysable_type: "Legislation::Process", analysable_id: process.id)
+        .or(published.where(analysable_type: "Legislation::Proposal",
+                            analysable_id: proposals_subquery))
+        .or(published.where(analysable_type: "Legislation::Question",
+                            analysable_id: questions_subquery))
         .or(published.where(analysable_type: "Legislation::QuestionOption",
                             analysable_id: question_options_subquery))
     end

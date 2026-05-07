@@ -17,6 +17,7 @@ en:
         budget/group: "Participatory budget group"
         proposal: "Citizen proposal"
         debate: "Citizen debate"
+        legislation/process: "Collaborative legislation process"
         legislation/proposal: "Collaborative legislation proposal"
         legislation/question: "Collaborative legislation debate"
         legislation/question_option: "Collaborative legislation debate segmented by option"
@@ -36,6 +37,12 @@ en:
         process: "This debate is part of the legislation process, \"%{process_title}\""
         responses_header: "### Debate Responses"
         option: "- %{value} (%{answers_count} responses)"
+
+      legislation_process:
+        questions_header: "## Questions in this process"
+        question_line: "  Q%{number}: %{title}"
+        question_description: "    - %{description}"
+        prefix_note: "Note: Comments are prefixed with (Qn) to indicate which question they refer to."
 
       question_option:
         filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this debate."

@@ -29,6 +29,23 @@ class Conversation
       else
         Comment.none
       end
+    elsif @target.is_a?(Legislation::Process)
+      questions = @target.questions
+
+      questions.flat_map.with_index do |question, index|
+        question_number = index + 1
+
+        question.comments.includes(:user).where(hidden_at: nil).map do |comment|
+          CommentLikeItem.new(
+            id: comment.id,
+            body: "(Q#{question_number}) #{comment.body}",
+            cached_votes_up: comment.cached_votes_up,
+            cached_votes_down: comment.cached_votes_down,
+            cached_votes_total: comment.cached_votes_total,
+            user_id: comment.user_id
+          )
+        end
+      end
     elsif @target.is_a?(Budget) || @target.is_a?(Budget::Group)
       investments = @target.investments.includes(:author).where(hidden_at: nil)
       investments.map do |investment|
@@ -320,6 +337,24 @@ class Conversation
       if target.respond_to?(:budget) && target.budget.present?
         parts << I18n.t("#{i18n_scope}.budget_group.budget",
                         budget_name: target.budget.name)
+      end
+    when "Legislation::Process"
+      questions = target.questions
+      if questions.any?
+        parts << I18n.t("#{i18n_scope}.legislation_process.questions_header",
+                        default: "## Questions in this process")
+        questions.each_with_index do |question, index|
+          parts << I18n.t("#{i18n_scope}.legislation_process.question_line",
+                          number: index + 1,
+                          title: question.title)
+          if question.respond_to?(:description) && question.description.present?
+            parts << I18n.t("#{i18n_scope}.legislation_process.question_description",
+                            description: sanitize_html(question.description))
+          end
+        end
+        default_note = "Note: Comments are prefixed with (Qn) to indicate which question they refer to."
+        parts << I18n.t("#{i18n_scope}.legislation_process.prefix_note",
+                        default: default_note)
       end
     end
 

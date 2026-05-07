@@ -250,6 +250,26 @@ describe Conversation do
       )
       expect(context_result).to include("Q1 (Open ended): Open Question")
     end
+
+    it "can compile context for Legislation::Process with questions index and prefix note" do
+      process = create(:legislation_process, title: "Test Process")
+      question_1 = create(:legislation_question, process: process, title: "First question")
+      question_2 = create(:legislation_question, process: process, title: "Second question")
+
+      create(:comment, commentable: question_1, user: user, body: "Comment for Q1")
+      create(:comment, commentable: question_2, user: user, body: "Comment for Q2")
+
+      conversation = Conversation.new("Legislation::Process", process.id)
+      context_result = conversation.compile_context
+
+      expect(context_result).to be_present
+      expect(context_result).to include("Analysing Collaborative legislation process")
+      expect(context_result).to include("## Questions in this process")
+      expect(context_result).to include("Q1: First question")
+      expect(context_result).to include("Q2: Second question")
+      expect(context_result).to include("prefixed with (Qn)")
+      expect(context_result).to include("- Comments: #{conversation.comments.size}")
+    end
   end
 
   describe "#comments" do
@@ -351,6 +371,25 @@ describe Conversation do
         expect(comments.first.body).to include("Group Investment")
         expect(comments.first.body).to include("Group investment description.")
         expect_no_html_tags(comments.first.body, %w[<p> <strong>])
+      end
+    end
+
+    describe "handles Legislation::Process (aggregates question comments with prefixes)" do
+      it "prefixes comment-like items with the question number (Qn)" do
+        process = create(:legislation_process, title: "Test Process")
+        question_1 = create(:legislation_question, process: process, title: "First question")
+        question_2 = create(:legislation_question, process: process, title: "Second question")
+
+        comment_1 = create(:comment, commentable: question_1, user: user, body: "Hello from Q1")
+        comment_2 = create(:comment, commentable: question_2, user: user, body: "Hello from Q2")
+
+        conversation = Conversation.new("Legislation::Process", process.id)
+        items = conversation.comments
+
+        expect(items.size).to eq(2)
+        expect(items).to all(be_a(Conversation::CommentLikeItem))
+        expect(items.map(&:id)).to contain_exactly(comment_1.id, comment_2.id)
+        expect(items.map(&:body)).to contain_exactly("(Q1) Hello from Q1", "(Q2) Hello from Q2")
       end
     end
 

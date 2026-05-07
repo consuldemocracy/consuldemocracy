@@ -252,6 +252,12 @@ describe Sensemaker::JobsController do
     let(:question) { create(:legislation_question, process: legislation_process) }
     let(:first_proposal) { create(:legislation_proposal, process: legislation_process) }
     let(:option) { create(:legislation_question_option, question: question) }
+    let!(:process_job) do
+      create_publishable_job_with_output(
+        analysable_type: "Legislation::Process",
+        analysable_id: legislation_process.id
+      )
+    end
     let!(:question_job) do
       create_publishable_job_with_output(
         analysable_type: "Legislation::Question",
@@ -273,8 +279,8 @@ describe Sensemaker::JobsController do
     let!(:other_process_job) do
       other_process = create(:legislation_process)
       create_publishable_job_with_output(
-        analysable_type: "Legislation::Question",
-        analysable_id: create(:legislation_question, process: other_process).id
+        analysable_type: "Legislation::Process",
+        analysable_id: other_process.id
       )
     end
 
@@ -283,6 +289,7 @@ describe Sensemaker::JobsController do
 
       expect(response).to have_http_status(:ok)
       jobs = controller.instance_variable_get(:@sensemaker_jobs)
+      expect(jobs).to include(process_job)
       expect(jobs).to include(question_job)
       expect(jobs).to include(proposal_job)
       expect(jobs).to include(option_job)

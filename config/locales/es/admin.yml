@@ -1843,6 +1843,7 @@ es:
         segment_by_option: "Segmentar por opción"
         no_free_text_to_analyse: "No hay texto libre para analizar en esta pregunta"
         or_analyse_all_proposals: "o analizar todas las propuestas"
+        analyse_all_questions: "Analizar todas las preguntas"
         search_placeholder: "Buscar %{model_label}..."
         clear_search: "Limpiar búsqueda"
         select_script_blank: "Seleccionar un script..."
