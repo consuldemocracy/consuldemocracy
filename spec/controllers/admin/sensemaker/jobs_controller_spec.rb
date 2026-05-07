@@ -12,10 +12,60 @@ describe Admin::Sensemaker::JobsController do
   before { sign_in(admin) }
 
   describe "GET #index" do
-    it "returns successful response" do
+    it "returns successful response and sets no filter_target when no filter params" do
       get :index
 
       expect(response).to have_http_status(:ok)
+      expect(controller.instance_variable_get(:@filter_target)).to be(nil)
+    end
+
+    context "when filtering by resource_type and resource_id" do
+      let!(:debate_job) do
+        create(:sensemaker_job,
+               user: admin,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
+               parent_job_id: nil,
+               started_at: nil,
+               finished_at: 1.day.ago)
+      end
+      let!(:other_job) do
+        create(:sensemaker_job,
+               user: admin,
+               analysable_type: "Debate",
+               analysable_id: create(:debate).id,
+               parent_job_id: nil,
+               started_at: nil,
+               finished_at: 1.day.ago)
+      end
+
+      it "sets filter_target and scopes jobs to that resource" do
+        get :index, params: { resource_type: "debates", resource_id: debate.id }
+
+        expect(response).to have_http_status(:ok)
+        expect(controller.instance_variable_get(:@filter_target)).to eq(debate)
+        jobs = controller.instance_variable_get(:@sensemaker_jobs)
+        expect(jobs).to include(debate_job)
+        expect(jobs).not_to include(other_job)
+      end
+    end
+
+    context "when target is not found" do
+      it "redirects to index with alert" do
+        get :index, params: { resource_type: "debates", resource_id: 99999 }
+
+        expect(response).to redirect_to(admin_sensemaker_jobs_path)
+        expect(flash[:alert]).to be_present
+      end
+    end
+
+    context "when resource_type is unknown" do
+      it "redirects to index with alert" do
+        get :index, params: { resource_type: "unknown_type", resource_id: 1 }
+
+        expect(response).to redirect_to(admin_sensemaker_jobs_path)
+        expect(flash[:alert]).to be_present
+      end
     end
   end
 

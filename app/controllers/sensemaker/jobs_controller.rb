@@ -1,4 +1,6 @@
 class Sensemaker::JobsController < ApplicationController
+  include Sensemaker::ResourceTypeResolution
+
   skip_authorization_check
 
   def show
@@ -14,29 +16,26 @@ class Sensemaker::JobsController < ApplicationController
   end
 
   def index
-    if params[:resource_type].blank? || params[:resource_id].blank?
-      head :not_found
-      return
-    end
+    resource_type, resource_id = [params[:resource_type].presence, params[:resource_id].presence]
+    raise ArgumentError, "Unknown resource type: #{resource_type}" if resource_type.blank?
 
-    resource_type = map_resource_type_to_model(params[:resource_type])
-    @resource = resource_type.find(params[:resource_id])
+    @resource = sensemaker_find_resource(resource_type, resource_id)
+    raise ActiveRecord::RecordNotFound, "Resource not found" unless @resource
+
     @parent_resource = load_parent_resource_for(@resource)
-
     @sensemaker_jobs = case @resource
                        when Poll
                          Sensemaker::Job.for_poll(@resource).order(finished_at: :desc)
                        when Legislation::Question
                          Sensemaker::Job.for_legislation_question(@resource).order(finished_at: :desc)
                        when Legislation::Process
-                         Sensemaker::Job.published.for_process(@resource).order(finished_at: :desc)
+                         Sensemaker::Job.for_process(@resource).order(finished_at: :desc)
                        else
                          Sensemaker::Job.published
-                                        .where(analysable_type: resource_type.name,
-                                               analysable_id: params[:resource_id])
+                                        .where(analysable: @resource)
                                         .order(finished_at: :desc)
                        end
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound, ArgumentError
     head :not_found
   end
 
@@ -67,31 +66,6 @@ class Sensemaker::JobsController < ApplicationController
   end
 
   private
-
-    def map_resource_type_to_model(resource_type)
-      case resource_type
-      when "debates"
-        Debate
-      when "proposals"
-        Proposal
-      when "polls"
-        Poll
-      when "topics"
-        Topic
-      when "poll_questions"
-        Poll::Question
-      when "legislation_processes"
-        Legislation::Process
-      when "legislation_questions"
-        Legislation::Question
-      when "legislation_proposals"
-        Legislation::Proposal
-      when "legislation_question_options"
-        Legislation::QuestionOption
-      else
-        raise ArgumentError, "Unknown resource type: #{resource_type}"
-      end
-    end
 
     def load_parent_resource_for(resource)
       case resource

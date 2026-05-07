@@ -1,10 +1,34 @@
 class Admin::Sensemaker::JobsController < Admin::BaseController
+  include Sensemaker::ResourceTypeResolution
+
   def index
     @running_jobs = Sensemaker::Job.running.includes(:children).order(created_at: :desc)
-    @sensemaker_jobs = Sensemaker::Job.where(parent_job_id: nil)
-                                      .includes(:children)
-                                      .where.not(id: @running_jobs.pluck(:id))
-                                      .order(created_at: :desc)
+
+    @filter_resource_type, @filter_resource_id = normalized_filter_params
+    if @filter_resource_type.present? && @filter_resource_id.present?
+      @filter_target = sensemaker_find_resource(@filter_resource_type, @filter_resource_id)
+      unless @filter_target
+        redirect_to admin_sensemaker_jobs_path, alert: t("admin.sensemaker.index.target_not_found")
+        return
+      end
+      base_scope = Sensemaker::Job.for_analysable(@filter_target, published_only: false)
+    elsif @filter_resource_type.present?
+      resource_class = sensemaker_model_for_resource_type(@filter_resource_type)
+      unless resource_class
+        redirect_to admin_sensemaker_jobs_path, alert: t("admin.sensemaker.index.target_not_found")
+        return
+      end
+      base_scope = Sensemaker::Job.by_analysable_type(resource_class.to_s)
+    else
+      base_scope = Sensemaker::Job
+    end
+
+    @sensemaker_jobs = base_scope.where(parent_job_id: nil)
+                                 .includes(:children)
+                                 .where.not(id: @running_jobs.pluck(:id))
+                                 .order(created_at: :desc)
+
+    @sensemaker_resource_types = Sensemaker::ResourceTypeResolution::SENSEMAKER_RESOURCE_TYPES
   end
 
   def show
@@ -280,6 +304,10 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
   end
 
   private
+
+    def normalized_filter_params
+      [params[:resource_type].presence, params[:resource_id].presence]
+    end
 
     def sensemaker_job_params
       params.require(:sensemaker_job).permit(:analysable_type, :analysable_id, :script, :additional_context)

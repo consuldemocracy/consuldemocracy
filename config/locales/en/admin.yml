@@ -1779,6 +1779,24 @@ en:
         table_actions: "Actions"
         cancel_all: "Cancel all"
         new_run: "New Run"
+        target_not_found: "Target not found."
+        filtered_by_target: "Showing jobs for %{name}"
+        filter_by: "Filter by"
+        filter_all_types: "-"
+        filter_reset: "× Clear filters"
+        sensemaker_analyses_count:
+          one: "1 sensemaker analysis"
+          other: "%{count} sensemaker analyses"
+        resource_types:
+          budgets: "Budgets"
+          debates: "Debates"
+          proposals: "Proposals"
+          polls: "Polls"
+          poll_questions: "Poll questions"
+          legislation_processes: "Legislation processes"
+          legislation_questions: "Legislation questions"
+          legislation_proposals: "Legislation proposals"
+          legislation_question_options: "Legislation question options"
       new:
         title: New Sensemaker analysis
         select_target: "Select a target from the results"

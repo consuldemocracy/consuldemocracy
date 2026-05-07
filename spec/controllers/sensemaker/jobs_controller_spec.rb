@@ -201,6 +201,7 @@ describe Sensemaker::JobsController do
         it "returns 404" do
           get :index, params: { resource_type: "debates", resource_id: 99999 }
 
+          expect(Debate.find_by(id: 99999)).to be(nil)
           expect(response).to have_http_status(:not_found)
         end
       end

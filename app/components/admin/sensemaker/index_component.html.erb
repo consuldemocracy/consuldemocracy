@@ -48,8 +48,30 @@
 
         <h3 class="flex-between">
           <span><%= t("admin.sensemaker.index.past_runs") %></span>
-          <%= link_to t("admin.sensemaker.index.new_run"), new_admin_sensemaker_job_path, class: "button" %>
+          <%= link_to t("admin.sensemaker.index.new_run"), new_admin_sensemaker_job_path, class: "button success" %>
         </h3>
+
+        <div class="filter-controls">
+          <% if target_specified? %>
+            <p><%= t("admin.sensemaker.index.filtered_by_target", name: filter_description) %></p>
+          <% else %>
+            <%= form_tag admin_sensemaker_jobs_path, method: :get, enforce_utf8: false, class: "js-submit-on-change" do %>
+              <div class="flex-row">
+                <%= label_tag :resource_type, t("admin.sensemaker.index.filter_by"), class: "" %>
+                <%= select_tag :resource_type,
+                               options_for_select(
+                                 filter_resource_type_options.map { |type| [t("admin.sensemaker.index.resource_types.#{type}"), type] },
+                                 filter_resource_type
+                               ),
+                               { prompt: t("admin.sensemaker.index.filter_all_types"), class: "fit-content" } %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <% if filter_active? %>
+            <%= link_to t("admin.sensemaker.index.filter_reset"), admin_sensemaker_jobs_path, class: "" %>
+          <% end %>
+        </div>
 
         <table class="job-table">
           <thead>

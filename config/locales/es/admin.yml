@@ -1827,6 +1827,24 @@ es:
         table_actions: "Acciones"
         cancel_all: "Cancelar todo"
         new_run: "Nueva ejecución"
+        target_not_found: "Objetivo no encontrado."
+        filtered_by_target: "Mostrando trabajos de %{name}"
+        filter_by: "Filtrar por"
+        filter_all_types: "-"
+        filter_reset: "× Limpiar filtros"
+        sensemaker_analyses_count:
+          one: "1 análisis Sensemaker"
+          other: "%{count} análisis Sensemaker"
+        resource_types:
+          budgets: "Presupuestos"
+          debates: "Debates"
+          proposals: "Propuestas"
+          polls: "Encuestas"
+          poll_questions: "Preguntas de encuesta"
+          legislation_processes: "Procesos legislativos"
+          legislation_questions: "Preguntas legislativas"
+          legislation_proposals: "Propuestas legislativas"
+          legislation_question_options: "Opciones de pregunta legislativa"
       new:
         title: Nuevo análisis Sensemaker
         select_target: "Selecciona un objetivo de los resultados"
