@@ -33,3 +33,6 @@
 </div>
 
 <%= render "admin/milestones/milestones", milestoneable: @proposal %>
+
+<hr>
+<%= render Admin::Sensemaker::AnalysesLinkComponent.new(@proposal) %>

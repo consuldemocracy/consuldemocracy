@@ -19,3 +19,6 @@
 </div>
 
 <%= render "shared/tags", taggable: @debate %>
+
+<hr>
+<%= render Admin::Sensemaker::AnalysesLinkComponent.new(@debate) %>
