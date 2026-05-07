@@ -33,4 +33,8 @@
   .results-link {
     @include has-fa-icon(square-poll-vertical, solid);
   }
+
+  .sensemaker-analyses-link {
+    @include has-fa-icon(microscope, solid);
+  }
 }
