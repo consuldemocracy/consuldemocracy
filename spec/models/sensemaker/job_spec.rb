@@ -109,6 +109,117 @@ describe Sensemaker::Job do
     end
   end
 
+  describe ".for_analysable" do
+    context "when record is a Budget" do
+      let(:budget) { create(:budget) }
+      let!(:published_budget_job) do
+        j = create(:sensemaker_job, analysable_type: "Budget", analysable_id: budget.id, published: false)
+        j.update_column(:published, true)
+        j
+      end
+      let!(:unpublished_budget_job) do
+        create(:sensemaker_job, analysable_type: "Budget", analysable_id: budget.id, published: false)
+      end
+      let!(:other_budget_job) do
+        j = create(:sensemaker_job,
+                   analysable_type: "Budget",
+                   analysable_id: create(:budget).id,
+                   published: false)
+        j.update_column(:published, true)
+        j
+      end
+
+      it "with published_only: true returns only published jobs for that budget" do
+        scope = Sensemaker::Job.for_analysable(budget, published_only: true)
+        expect(scope).to include(published_budget_job)
+        expect(scope).not_to include(unpublished_budget_job)
+        expect(scope).not_to include(other_budget_job)
+      end
+
+      it "with published_only: false returns all jobs for that budget" do
+        scope = Sensemaker::Job.for_analysable(budget, published_only: false)
+        expect(scope).to include(published_budget_job)
+        expect(scope).to include(unpublished_budget_job)
+        expect(scope).not_to include(other_budget_job)
+      end
+    end
+
+    context "when record is a Debate (else branch)" do
+      let(:debate) { create(:debate) }
+      let!(:published_debate_job) do
+        j = create(:sensemaker_job, analysable_type: "Debate", analysable_id: debate.id, published: false)
+        j.update_column(:published, true)
+        j
+      end
+      let!(:unpublished_debate_job) do
+        create(:sensemaker_job, analysable_type: "Debate", analysable_id: debate.id, published: false)
+      end
+
+      it "with published_only: true returns only published jobs for that record" do
+        scope = Sensemaker::Job.for_analysable(debate, published_only: true)
+        expect(scope).to include(published_debate_job)
+        expect(scope).not_to include(unpublished_debate_job)
+      end
+
+      it "with published_only: false returns all jobs for that record" do
+        scope = Sensemaker::Job.for_analysable(debate, published_only: false)
+        expect(scope).to include(published_debate_job)
+        expect(scope).to include(unpublished_debate_job)
+      end
+    end
+
+    context "when record is Proposal (all proposals)" do
+      let!(:all_proposals_job) do
+        j = create(:sensemaker_job, analysable_type: "Proposal", analysable_id: nil, published: false)
+        j.update_column(:published, true)
+        j
+      end
+      let!(:specific_proposal_job) do
+        j = create(:sensemaker_job,
+                   analysable_type: "Proposal",
+                   analysable_id: create(:proposal).id,
+                   published: false)
+        j.update_column(:published, true)
+        j
+      end
+
+      it "with published_only: true returns only published jobs with nil analysable_id" do
+        scope = Sensemaker::Job.for_analysable(Proposal, published_only: true)
+        expect(scope).to include(all_proposals_job)
+        expect(scope).not_to include(specific_proposal_job)
+      end
+
+      it "with published_only: false returns all jobs with nil analysable_id" do
+        unpublished = create(:sensemaker_job,
+                             analysable_type: "Proposal",
+                             analysable_id: nil,
+                             published: false)
+        scope = Sensemaker::Job.for_analysable(Proposal, published_only: false)
+        expect(scope).to include(all_proposals_job)
+        expect(scope).to include(unpublished)
+        expect(scope).not_to include(specific_proposal_job)
+      end
+    end
+
+    context "when record is a Poll" do
+      let(:poll) { create(:poll) }
+      let!(:published_poll_job) do
+        j = create(:sensemaker_job, analysable_type: "Poll", analysable_id: poll.id, published: false)
+        j.update_column(:published, true)
+        j
+      end
+      let!(:unpublished_poll_job) do
+        create(:sensemaker_job, analysable_type: "Poll", analysable_id: poll.id, published: false)
+      end
+
+      it "with published_only: false returns all jobs for that poll" do
+        scope = Sensemaker::Job.for_analysable(poll, published_only: false)
+        expect(scope).to include(published_poll_job)
+        expect(scope).to include(unpublished_poll_job)
+      end
+    end
+  end
+
   describe "instance methods" do
     describe "#artefacts" do
       it "returns a JobArtefacts instance for the job" do
