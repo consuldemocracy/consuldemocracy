@@ -243,7 +243,7 @@ describe Dashboard::Action do
       let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 1) }
       let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 1) }
 
-      it "when there are not news actions actived for published proposals" do
+      it "when there are no news actions actived for published proposals" do
         proposal = create(:proposal)
         action.update!(published_proposal: true)
         resource.update!(published_proposal: true)
@@ -259,7 +259,7 @@ describe Dashboard::Action do
         expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
-      it "when there are not news actions actived for draft proposals" do
+      it "when there are no news actions actived for draft proposals" do
         proposal = create(:proposal, :draft)
         action.update!(published_proposal: false)
         resource.update!(published_proposal: false)

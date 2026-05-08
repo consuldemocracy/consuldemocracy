@@ -1007,7 +1007,7 @@ describe Proposal do
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
 
-    it "Not send notification after create when there are not new actived actions" do
+    it "Not send notification after create when there are no new actived actions" do
       create(:dashboard_action, :proposed_action, :active, day_offset: 1, published_proposal: false)
       create(:dashboard_action, :resource, :active, day_offset: 1, published_proposal: false)
 
@@ -1046,7 +1046,7 @@ describe Proposal do
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
 
-    it "Not send notification after published when there are not new actived actions" do
+    it "Not send notification after published when there are no new actived actions" do
       create(:dashboard_action, :proposed_action, :active, day_offset: 1, published_proposal: true)
       create(:dashboard_action, :resource, :active, day_offset: 1, published_proposal: true)
 

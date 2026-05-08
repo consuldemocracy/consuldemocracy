@@ -552,7 +552,7 @@ describe "Proposals" do
   end
 
   context "Geozones" do
-    scenario "When there are not gezones defined it does not show the geozone link" do
+    scenario "When there are no gezones defined it does not show the geozone link" do
       visit proposal_path(create(:proposal))
 
       expect(page).not_to have_css "#geozone"
@@ -882,7 +882,7 @@ describe "Proposals" do
 
         click_link "recommendations"
 
-        expect(page).to have_content "There are not proposals related to your interests"
+        expect(page).to have_content "There are no proposals related to your interests"
       end
 
       scenario "should display text when user has no related interests" do
