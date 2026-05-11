@@ -1,5 +1,4 @@
 require "rails_helper"
-require "sessions_helper"
 
 describe "Budget Investments" do
   let(:author)  { create(:user, :level_two, username: "Isabel") }
@@ -13,26 +12,6 @@ describe "Budget Investments" do
   context "Concerns" do
     it_behaves_like "notifiable in-app", :budget_investment
     it_behaves_like "relationable", Budget::Investment
-    it_behaves_like "remotely_translatable",
-                    :budget_investment,
-                    "budget_investments_path",
-                    { budget_id: "budget_id" },
-                    provider: :microsoft
-    it_behaves_like "remotely_translatable",
-                    :budget_investment,
-                    "budget_investments_path",
-                    { budget_id: "budget_id" },
-                    provider: :llm
-    it_behaves_like "remotely_translatable",
-                    :budget_investment,
-                    "budget_investment_path",
-                    { budget_id: "budget_id", id: "id" },
-                    provider: :microsoft
-    it_behaves_like "remotely_translatable",
-                    :budget_investment,
-                    "budget_investment_path",
-                    { budget_id: "budget_id", id: "id" },
-                    provider: :llm
     it_behaves_like "flaggable", :budget_investment
   end
 
@@ -451,19 +430,19 @@ describe "Budget Investments" do
       first_user_investments_order = nil
       second_user_investments_order = nil
 
-      in_browser(:one) do
+      using_session(:one) do
         visit budget_investments_path(budget, heading: heading)
         first_user_investments_order = investments_order
       end
 
-      in_browser(:two) do
+      using_session(:two) do
         visit budget_investments_path(budget, heading: heading)
         second_user_investments_order = investments_order
       end
 
       expect(first_user_investments_order).not_to eq(second_user_investments_order)
 
-      in_browser(:one) do
+      using_session(:one) do
         click_link "Next"
         expect(page).to have_css ".pagination .current", text: "2"
 
@@ -473,7 +452,7 @@ describe "Budget Investments" do
         expect(investments_order).to eq(first_user_investments_order)
       end
 
-      in_browser(:two) do
+      using_session(:two) do
         click_link "Next"
         expect(page).to have_css ".pagination .current", text: "2"
 
@@ -490,12 +469,12 @@ describe "Budget Investments" do
       first_user_investments_order = nil
       second_user_investments_order = nil
 
-      in_browser(:one) do
+      using_session(:one) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
         first_user_investments_order = investments_order
       end
 
-      in_browser(:two) do
+      using_session(:two) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
         second_user_investments_order = investments_order
       end

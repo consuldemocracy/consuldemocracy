@@ -1,5 +1,4 @@
 require "rails_helper"
-require "sessions_helper"
 
 describe "Poll Officing" do
   let(:user) { create(:user) }
@@ -114,21 +113,21 @@ describe "Poll Officing" do
     create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer1)
     create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer2)
 
-    in_browser(:one) do
+    using_session(:one) do
       login_as officer1.user
       visit officing_root_path
 
       expect(page).to have_content "Here you can validate user documents and store voting results"
     end
 
-    in_browser(:two) do
+    using_session(:two) do
       login_as officer2.user
       visit officing_root_path
 
       expect(page).to have_content "Here you can validate user documents and store voting results"
     end
 
-    in_browser(:one) do
+    using_session(:one) do
       visit new_officing_residence_path
       officing_verify_residence(document_number: "12345678Z")
 
@@ -136,7 +135,7 @@ describe "Poll Officing" do
       expect(page).to have_content "Vote introduced!"
     end
 
-    in_browser(:two) do
+    using_session(:two) do
       visit new_officing_residence_path
       officing_verify_residence(document_number: "12345678Y")
 
