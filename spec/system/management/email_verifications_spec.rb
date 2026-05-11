@@ -4,14 +4,14 @@ describe "EmailVerifications" do
   scenario "Verifying a level 1 user via email" do
     user = create(:user)
 
-    in_browser(:user) do
+    using_session(:user) do
       login_as user
       visit root_path
 
       expect(page).to have_content "Debates"
     end
 
-    in_browser(:manager) do
+    using_session(:manager) do
       login_as_manager
       visit management_document_verifications_path
       fill_in "document_verification_document_number", with: "12345678Z"
@@ -28,7 +28,7 @@ describe "EmailVerifications" do
 
     sent_token = /.*email_verification_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
 
-    in_browser(:user) do
+    using_session(:user) do
       visit email_path(email_verification_token: sent_token)
 
       expect(page).to have_content "You are a verified user"
@@ -36,7 +36,7 @@ describe "EmailVerifications" do
       expect(page).not_to have_link "Verify my account"
     end
 
-    in_browser(:manager) do
+    using_session(:manager) do
       visit management_document_verifications_path
       fill_in "document_verification_document_number", with: "12345678Z"
       click_button "Check document"

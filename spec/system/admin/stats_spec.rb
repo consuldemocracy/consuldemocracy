@@ -24,7 +24,7 @@ describe "Stats", :admin do
 
       allow_any_instance_of(ActionDispatch::Request).to receive(:user_agent).and_return("Different")
 
-      in_browser(:different) do
+      using_session(:different) do
         visit root_path
 
         click_link "Debates"
@@ -136,7 +136,7 @@ describe "Stats", :admin do
         expect(page).to have_content "VOTES\n1"
         expect(page).to have_content "PARTICIPANTS\n1"
 
-        in_browser(:supporter) do
+        using_session(:supporter) do
           login_as(supporter)
 
           visit budget_investment_path(budget, investment)
@@ -199,7 +199,7 @@ describe "Stats", :admin do
         expect(page).to have_content "VOTES\n1"
         expect(page).to have_content "PARTICIPANTS\n1"
 
-        in_browser(:balloter) do
+        using_session(:balloter) do
           login_as(balloter)
 
           visit budget_investment_path(budget, investment)

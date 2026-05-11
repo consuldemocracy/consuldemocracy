@@ -1,5 +1,4 @@
 require "rails_helper"
-require "sessions_helper"
 
 describe "Ballots" do
   let(:user)        { create(:user, :level_two) }
@@ -643,7 +642,7 @@ describe "Ballots" do
 
       expect(page).to have_button "Vote"
 
-      in_browser(:admin) do
+      using_session(:admin) do
         login_as admin_user
         visit edit_admin_budget_group_heading_path(budget, states, new_york)
         fill_in "Money amount", with: 10

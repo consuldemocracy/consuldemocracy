@@ -1,5 +1,3 @@
-require "sessions_helper"
-
 shared_examples "remotely_translatable" do |factory_name, path_name, path_arguments, provider: :microsoft|
   let(:translation_provider) do
     provider == :llm ? RemoteTranslations::Llm : RemoteTranslations::Microsoft
@@ -181,20 +179,20 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         response = generate_response(resource)
         expect_any_instance_of(translation_client_class).to receive(:call).and_return(response)
 
-        in_browser(:one) do
+        using_session(:one) do
           visit path_in_spanish
 
           expect(page).to have_button "Traducir página"
         end
 
-        in_browser(:two) do
+        using_session(:two) do
           visit path_in_spanish
           click_button "Traducir página"
 
           expect(page).to have_content "Se han solicitado correctamente las traducciones"
         end
 
-        in_browser(:one) do
+        using_session(:one) do
           click_button "Traducir página"
 
           expect(page).not_to have_button "Traducir página"
