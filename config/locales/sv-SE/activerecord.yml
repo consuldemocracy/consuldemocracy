@@ -106,24 +106,6 @@ sv:
       legislation/proposal:
         one: "Förslag"
         other: "Förslag"
-      legislation/draft_versions:
-        one: "Utkastversion"
-        other: "Versioner av utkast"
-      legislation/questions:
-        one: "Fråga"
-        other: "Frågor"
-      legislation/question_options:
-        one: "Frågealternativ"
-        other: "Svarsalternativ"
-      legislation/answers:
-        one: "Svar"
-        other: "Svar"
-      documents:
-        one: "Dokument"
-        other: "Dokument"
-      images:
-        one: "Bild"
-        other: "Bilder"
       tenant:
         one: "hyresgäst"
         other: "hyresgäster"
