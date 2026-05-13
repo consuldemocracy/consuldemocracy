@@ -63,7 +63,7 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
                                      collection: question_options } unless question_options.empty?
           end
 
-          collection << { title: I18n.t("activerecord.models.legislation/questions.other"),
+          collection << { title: I18n.t("activerecord.models.legislation/question.other"),
                           collection: question_collection } unless question_collection.empty?
         end
 
@@ -120,7 +120,7 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
           entry
         end
         unless question_entries.empty?
-          collection << { title: I18n.t("activerecord.models.legislation/questions.other"),
+          collection << { title: I18n.t("activerecord.models.legislation/question.other"),
                           collection: question_entries }
         end
       end
