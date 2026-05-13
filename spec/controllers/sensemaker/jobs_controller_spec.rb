@@ -119,7 +119,12 @@ describe Sensemaker::JobsController do
       context "for a Poll::Question" do
         let(:poll) { create(:poll) }
         let(:question) { create(:poll_question, poll: poll) }
-        let!(:job) { create_publishable_job_with_output(analysable_type: "Poll::Question", analysable_id: question.id) }
+        let!(:job) do
+          create_publishable_job_with_output(
+            analysable_type: "Poll::Question",
+            analysable_id: question.id
+          )
+        end
 
         it "returns published jobs and loads parent poll" do
           get :index, params: { resource_type: "poll_questions", resource_id: question.id }
@@ -134,7 +139,12 @@ describe Sensemaker::JobsController do
       context "for a Legislation::Question" do
         let(:other_process) { create(:legislation_process) }
         let(:other_question) { create(:legislation_question, process: other_process) }
-        let!(:other_job) { create_publishable_job_with_output(analysable_type: "Legislation::Question", analysable_id: other_question.id) }
+        let!(:other_job) do
+          create_publishable_job_with_output(
+            analysable_type: "Legislation::Question",
+            analysable_id: other_question.id
+          )
+        end
 
         it "returns published jobs and loads parent poll" do
           get :index, params: { resource_type: "legislation_questions", resource_id: other_question.id }
@@ -149,7 +159,12 @@ describe Sensemaker::JobsController do
       context "for a Legislation::Proposal" do
         let(:other_process) { create(:legislation_process) }
         let(:other_proposal) { create(:legislation_proposal, process: other_process) }
-        let!(:other_job) { create_publishable_job_with_output(analysable_type: "Legislation::Proposal", analysable_id: other_proposal.id) }
+        let!(:other_job) do
+          create_publishable_job_with_output(
+            analysable_type: "Legislation::Proposal",
+            analysable_id: other_proposal.id
+          )
+        end
 
         it "returns published jobs and loads parent process" do
           get :index, params: { resource_type: "legislation_proposals", resource_id: other_proposal.id }
@@ -165,7 +180,12 @@ describe Sensemaker::JobsController do
         let(:l_process) { create(:legislation_process) }
         let(:l_question) { create(:legislation_question, process: l_process) }
         let(:l_option) { create(:legislation_question_option, question: l_question) }
-        let!(:l_job) { create_publishable_job_with_output(analysable_type: "Legislation::QuestionOption", analysable_id: l_option.id) }
+        let!(:l_job) do
+          create_publishable_job_with_output(
+            analysable_type: "Legislation::QuestionOption",
+            analysable_id: l_option.id
+          )
+        end
 
         it "returns published jobs and loads parent process" do
           get :index, params: { resource_type: "legislation_question_options", resource_id: l_option.id }
@@ -232,15 +252,30 @@ describe Sensemaker::JobsController do
     let(:question) { create(:legislation_question, process: legislation_process) }
     let(:first_proposal) { create(:legislation_proposal, process: legislation_process) }
     let(:option) { create(:legislation_question_option, question: question) }
-    let!(:question_job) { create_publishable_job_with_output(analysable_type: "Legislation::Question", analysable_id: question.id) }
-    let!(:proposal_job) { create_publishable_job_with_output(analysable_type: "Legislation::Proposal", analysable_id: first_proposal.id) }
-    let!(:option_job) { create_publishable_job_with_output(analysable_type: "Legislation::QuestionOption", analysable_id: option.id) }
+    let!(:question_job) do
+      create_publishable_job_with_output(
+        analysable_type: "Legislation::Question",
+        analysable_id: question.id
+      )
+    end
+    let!(:proposal_job) do
+      create_publishable_job_with_output(
+        analysable_type: "Legislation::Proposal",
+        analysable_id: first_proposal.id
+      )
+    end
+    let!(:option_job) do
+      create_publishable_job_with_output(
+        analysable_type: "Legislation::QuestionOption",
+        analysable_id: option.id
+      )
+    end
     let!(:other_process_job) do
       other_process = create(:legislation_process)
-      create_publishable_job_with_output(analysable_type: "Legislation::Question",
-                                         analysable_id: create(
-:legislation_question, process: other_process
-).id)
+      create_publishable_job_with_output(
+        analysable_type: "Legislation::Question",
+        analysable_id: create(:legislation_question, process: other_process).id
+      )
     end
 
     it "returns published jobs for the process and its related resources" do

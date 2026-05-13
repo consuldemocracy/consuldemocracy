@@ -5,7 +5,13 @@ describe Sensemaker::JobIndexComponent do
 
   let(:debate) { create(:debate, title: "Test Debate") }
   let(:jobs) { [] }
-  let(:component) { Sensemaker::JobIndexComponent.new(jobs: jobs, parent_resource: parent_resource, resource: resource) }
+  let(:component) do
+    Sensemaker::JobIndexComponent.new(
+      jobs: jobs,
+      parent_resource: parent_resource,
+      resource: resource
+    )
+  end
   let(:parent_resource) { nil }
   let(:resource) { debate }
 
