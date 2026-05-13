@@ -149,36 +149,6 @@ ru:
         few: "Предложения"
         many: "Предложения"
         other: "Заявки"
-      legislation/draft_versions:
-        one: "Предварительный вариант"
-        few: "Черновые варианты"
-        many: "Черновые варианты"
-        other: "Предварительные варианты"
-      legislation/questions:
-        one: "Вопрос"
-        few: "Вопросы"
-        many: "Вопросы"
-        other: "Вопросы"
-      legislation/question_options:
-        one: "Вариант вопроса"
-        few: "Варианты вопроса"
-        many: "Варианты вопроса"
-        other: "Варианты вопроса"
-      legislation/answers:
-        one: "Ответ"
-        few: "Ответы"
-        many: "Ответы"
-        other: "Ответы"
-      documents:
-        one: "Документ"
-        few: "Документы"
-        many: "Документы"
-        other: "Документы"
-      images:
-        one: "Изображение"
-        few: "Изображения"
-        many: "Изображения"
-        other: "Изображения"
       topic:
         one: "Тема"
         few: "Темы"
