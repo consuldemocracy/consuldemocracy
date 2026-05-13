@@ -77,24 +77,6 @@ eu:
       legislation/proposal:
         one: "Proposamena"
         other: "Proposamenak"
-      legislation/draft_versions:
-        one: "Zirriborro bertsioa"
-        other: "Zirriborro bertsioak"
-      legislation/questions:
-        one: "Galdera"
-        other: "Galderak"
-      legislation/question_options:
-        one: "Erantzuk itxiko aukera"
-        other: "Erantzuk itxiko aukerak"
-      legislation/answers:
-        one: "Erantzuna"
-        other: "Erantzunak"
-      documents:
-        one: "Dokumentua"
-        other: "Dokumentuak"
-      images:
-        one: "Irudia"
-        other: "Irudiak"
       topic:
         one: "Gaia"
         other: "Gaiak"
