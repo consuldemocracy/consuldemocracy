@@ -53,21 +53,6 @@ sl:
         two: "Predlogi"
         few: "Predlogi"
         other: "Predlogi"
-      legislation/questions:
-        one: "Vprašanje"
-        two: "Vprašanja"
-        few: "Vprašanja"
-        other: "Vprašanja"
-      documents:
-        one: "Dokument"
-        two: "Dokumenti"
-        few: "Dokumenti"
-        other: "Dokumenti"
-      images:
-        one: "Slika"
-        two: "Slike"
-        few: "Slike"
-        other: "Slike"
       topic:
         one: "Tema"
         two: "Tematike"
