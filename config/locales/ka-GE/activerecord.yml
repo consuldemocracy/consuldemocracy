@@ -93,24 +93,6 @@ ka:
       legislation/proposal:
         one: "ინიციატივა"
         other: "ინიციატივები"
-      legislation/draft_versions:
-        one: "კანონპროექტი"
-        other: "კანონპროექტები"
-      legislation/questions:
-        one: "კითხვა"
-        other: "კითხვები"
-      legislation/question_options:
-        one: "კითხვის ვარიანტი"
-        other: "კითხვის ვარიანტები"
-      legislation/answers:
-        one: "პასუხი"
-        other: "პასუხები"
-      documents:
-        one: "დოკუმენტი"
-        other: "დოკუმენტები"
-      images:
-        one: "ფოტოსურათი"
-        other: "ფოტოსურათები"
       topic:
         one: "საკითხი"
         other: "საკითხები"
