@@ -9,9 +9,6 @@ describe OmniauthTenantSetup do
     end
 
     it "uses different secrets for different tenants" do
-      create(:tenant, schema: "mars")
-      create(:tenant, schema: "venus")
-
       stub_secrets(
         saml_sp_entity_id: "https://default.consul.dev/saml/metadata",
         saml_idp_metadata_url: "https://default-idp.example.com/metadata",
@@ -30,38 +27,36 @@ describe OmniauthTenantSetup do
         }
       )
 
-      Tenant.switch("mars") do
-        mars_env = {
-          "omniauth.strategy" => double(options: {}),
-          "HTTP_HOST" => "mars.consul.dev"
-        }
+      allow(Tenant).to receive(:current_schema).and_return("mars")
 
-        OmniauthTenantSetup.saml(mars_env)
-        mars_strategy_options = mars_env["omniauth.strategy"].options
+      mars_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "mars.consul.dev"
+      }
 
-        expect(mars_strategy_options[:sp_entity_id]).to eq "https://mars.consul.dev/saml/metadata"
-        expect(mars_strategy_options[:idp_sso_service_url]).to eq "https://mars-idp.example.com/sso"
-        expect(mars_strategy_options[:idp_entity_id]).to eq "https://mars-idp.example.com/entityid"
-      end
+      OmniauthTenantSetup.saml(mars_env)
+      mars_strategy_options = mars_env["omniauth.strategy"].options
 
-      Tenant.switch("venus") do
-        venus_env = {
-          "omniauth.strategy" => double(options: {}),
-          "HTTP_HOST" => "venus.consul.dev"
-        }
+      expect(mars_strategy_options[:sp_entity_id]).to eq "https://mars.consul.dev/saml/metadata"
+      expect(mars_strategy_options[:idp_sso_service_url]).to eq "https://mars-idp.example.com/sso"
+      expect(mars_strategy_options[:idp_entity_id]).to eq "https://mars-idp.example.com/entityid"
 
-        OmniauthTenantSetup.saml(venus_env)
-        venus_strategy_options = venus_env["omniauth.strategy"].options
+      allow(Tenant).to receive(:current_schema).and_return("venus")
 
-        expect(venus_strategy_options[:sp_entity_id]).to eq "https://venus.consul.dev/saml/metadata"
-        expect(venus_strategy_options[:idp_sso_service_url]).to eq "https://venus-idp.example.com/sso"
-        expect(venus_strategy_options[:idp_entity_id]).to eq "https://venus-idp.example.com/entityid"
-      end
+      venus_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "venus.consul.dev"
+      }
+
+      OmniauthTenantSetup.saml(venus_env)
+      venus_strategy_options = venus_env["omniauth.strategy"].options
+
+      expect(venus_strategy_options[:sp_entity_id]).to eq "https://venus.consul.dev/saml/metadata"
+      expect(venus_strategy_options[:idp_sso_service_url]).to eq "https://venus-idp.example.com/sso"
+      expect(venus_strategy_options[:idp_entity_id]).to eq "https://venus-idp.example.com/entityid"
     end
 
     it "uses default secrets for non-overridden tenant" do
-      create(:tenant, schema: "earth")
-
       stub_secrets(
         saml_sp_entity_id: "https://default.consul.dev/saml/metadata",
         saml_idp_metadata_url: "https://default-idp.example.com/metadata",
@@ -75,19 +70,19 @@ describe OmniauthTenantSetup do
         }
       )
 
-      Tenant.switch("earth") do
-        earth_env = {
-          "omniauth.strategy" => double(options: {}),
-          "HTTP_HOST" => "earth.consul.dev"
-        }
+      allow(Tenant).to receive(:current_schema).and_return("earth")
 
-        OmniauthTenantSetup.saml(earth_env)
-        earth_strategy_options = earth_env["omniauth.strategy"].options
+      earth_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "earth.consul.dev"
+      }
 
-        expect(earth_strategy_options[:sp_entity_id]).to eq "https://default.consul.dev/saml/metadata"
-        expect(earth_strategy_options[:idp_sso_service_url]).to eq "https://default-idp.example.com/sso"
-        expect(earth_strategy_options[:idp_entity_id]).to eq "https://default-idp.example.com/entityid"
-      end
+      OmniauthTenantSetup.saml(earth_env)
+      earth_strategy_options = earth_env["omniauth.strategy"].options
+
+      expect(earth_strategy_options[:sp_entity_id]).to eq "https://default.consul.dev/saml/metadata"
+      expect(earth_strategy_options[:idp_sso_service_url]).to eq "https://default-idp.example.com/sso"
+      expect(earth_strategy_options[:idp_entity_id]).to eq "https://default-idp.example.com/entityid"
     end
   end
 
@@ -97,9 +92,6 @@ describe OmniauthTenantSetup do
     end
 
     it "uses different secrets for different tenants" do
-      create(:tenant, schema: "mars")
-      create(:tenant, schema: "venus")
-
       stub_secrets(
         oidc_client_id: "default-client-id",
         oidc_client_secret: "default-client-secret",
@@ -118,42 +110,40 @@ describe OmniauthTenantSetup do
         }
       )
 
-      Tenant.switch("mars") do
-        mars_env = {
-          "omniauth.strategy" => double(options: {}),
-          "HTTP_HOST" => "mars.consul.dev"
-        }
+      allow(Tenant).to receive(:current_schema).and_return("mars")
 
-        OmniauthTenantSetup.oidc(mars_env)
-        mars_strategy_options = mars_env["omniauth.strategy"].options
-        mars_client_options = mars_strategy_options[:client_options]
+      mars_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "mars.consul.dev"
+      }
 
-        expect(mars_strategy_options[:issuer]).to eq "https://mars-oidc.example.com"
-        expect(mars_client_options[:secret]).to eq "mars-client-secret"
-        expect(mars_client_options[:identifier]).to eq "mars-client-id"
-        expect(mars_client_options[:redirect_uri]).to eq "http://mars.consul.dev/users/auth/oidc/callback"
-      end
+      OmniauthTenantSetup.oidc(mars_env)
+      mars_strategy_options = mars_env["omniauth.strategy"].options
+      mars_client_options = mars_strategy_options[:client_options]
 
-      Tenant.switch("venus") do
-        venus_env = {
-          "omniauth.strategy" => double(options: {}),
-          "HTTP_HOST" => "venus.consul.dev"
-        }
+      expect(mars_strategy_options[:issuer]).to eq "https://mars-oidc.example.com"
+      expect(mars_client_options[:secret]).to eq "mars-client-secret"
+      expect(mars_client_options[:identifier]).to eq "mars-client-id"
+      expect(mars_client_options[:redirect_uri]).to eq "http://mars.consul.dev/users/auth/oidc/callback"
 
-        OmniauthTenantSetup.oidc(venus_env)
-        venus_strategy_options = venus_env["omniauth.strategy"].options
-        venus_client_options = venus_strategy_options[:client_options]
+      allow(Tenant).to receive(:current_schema).and_return("venus")
 
-        expect(venus_strategy_options[:issuer]).to eq "https://venus-oidc.example.com"
-        expect(venus_client_options[:identifier]).to eq "venus-client-id"
-        expect(venus_client_options[:secret]).to eq "venus-client-secret"
-        expect(venus_client_options[:redirect_uri]).to eq "http://venus.consul.dev/users/auth/oidc/callback"
-      end
+      venus_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "venus.consul.dev"
+      }
+
+      OmniauthTenantSetup.oidc(venus_env)
+      venus_strategy_options = venus_env["omniauth.strategy"].options
+      venus_client_options = venus_strategy_options[:client_options]
+
+      expect(venus_strategy_options[:issuer]).to eq "https://venus-oidc.example.com"
+      expect(venus_client_options[:identifier]).to eq "venus-client-id"
+      expect(venus_client_options[:secret]).to eq "venus-client-secret"
+      expect(venus_client_options[:redirect_uri]).to eq "http://venus.consul.dev/users/auth/oidc/callback"
     end
 
     it "uses default secrets for non-overridden tenant" do
-      create(:tenant, schema: "earth")
-
       stub_secrets(
         oidc_client_id: "default-client-id",
         oidc_client_secret: "default-client-secret",
@@ -167,21 +157,21 @@ describe OmniauthTenantSetup do
         }
       )
 
-      Tenant.switch("earth") do
-        earth_env = {
-          "omniauth.strategy" => double(options: {}),
-          "HTTP_HOST" => "earth.consul.dev"
-        }
+      allow(Tenant).to receive(:current_schema).and_return("earth")
 
-        OmniauthTenantSetup.oidc(earth_env)
-        earth_strategy_options = earth_env["omniauth.strategy"].options
-        earth_client_options = earth_strategy_options[:client_options]
+      earth_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "earth.consul.dev"
+      }
 
-        expect(earth_strategy_options[:issuer]).to eq "https://default-oidc.example.com"
-        expect(earth_client_options[:identifier]).to eq "default-client-id"
-        expect(earth_client_options[:secret]).to eq "default-client-secret"
-        expect(earth_client_options[:redirect_uri]).to eq "http://earth.consul.dev/users/auth/oidc/callback"
-      end
+      OmniauthTenantSetup.oidc(earth_env)
+      earth_strategy_options = earth_env["omniauth.strategy"].options
+      earth_client_options = earth_strategy_options[:client_options]
+
+      expect(earth_strategy_options[:issuer]).to eq "https://default-oidc.example.com"
+      expect(earth_client_options[:identifier]).to eq "default-client-id"
+      expect(earth_client_options[:secret]).to eq "default-client-secret"
+      expect(earth_client_options[:redirect_uri]).to eq "http://earth.consul.dev/users/auth/oidc/callback"
     end
   end
 end
