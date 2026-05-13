@@ -17,8 +17,7 @@ module OmniauthTenantSetup
     end
 
     def saml(env)
-      saml_auth(env, secrets.saml_sp_entity_id,
-                secrets.saml_idp_metadata_url, secrets.saml_idp_sso_service_url)
+      env["omniauth.strategy"].options.merge!(saml_settings)
     end
 
     def oidc(env)
@@ -41,29 +40,8 @@ module OmniauthTenantSetup
         end
       end
 
-      def saml_auth(env, sp_entity_id, idp_metadata_url, idp_sso_service_url)
-        env["omniauth.strategy"].options.merge!(
-          saml_settings(sp_entity_id, idp_metadata_url, idp_sso_service_url)
-        )
-      end
-
-      def saml_settings(sp_entity_id, idp_metadata_url, idp_sso_service_url)
-        remote_saml_settings(idp_metadata_url).dup.tap do |settings|
-          settings[:sp_entity_id] = sp_entity_id if sp_entity_id.present?
-          settings[:idp_sso_service_url] = idp_sso_service_url if idp_sso_service_url.present?
-          settings[:allowed_clock_drift] = 1.minute
-        end
-      end
-
-      def remote_saml_settings(idp_metadata_url)
-        return {} if idp_metadata_url.blank?
-
-        @remote_saml_settings ||= {}
-        @remote_saml_settings[idp_metadata_url] ||= parsed_saml_metadata(idp_metadata_url)
-      end
-
-      def parsed_saml_metadata(idp_metadata_url)
-        OneLogin::RubySaml::IdpMetadataParser.new.parse_remote_to_hash(idp_metadata_url)
+      def saml_settings
+        SamlAuthSettings.new(secrets).settings
       end
 
       def oidc_auth(env, client_id, client_secret, issuer)

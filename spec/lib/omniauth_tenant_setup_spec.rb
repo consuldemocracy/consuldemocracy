@@ -3,7 +3,7 @@ require "rails_helper"
 describe OmniauthTenantSetup do
   describe "#saml" do
     before do
-      allow(OmniauthTenantSetup).to receive(:parsed_saml_metadata) do |idp_metadata_url|
+      allow(SamlAuthSettings).to receive(:parsed_metadata) do |idp_metadata_url|
         { idp_entity_id: idp_metadata_url.gsub("metadata", "entityid") }
       end
     end
