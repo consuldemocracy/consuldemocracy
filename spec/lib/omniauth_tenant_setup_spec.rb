@@ -84,6 +84,49 @@ describe OmniauthTenantSetup do
       expect(earth_strategy_options[:idp_sso_service_url]).to eq "https://default-idp.example.com/sso"
       expect(earth_strategy_options[:idp_entity_id]).to eq "https://default-idp.example.com/entityid"
     end
+
+    it "does not leak IdP SSO URL between tenants sharing the same metadata URL" do
+      shared_metadata = "https://shared-idp.example.com/metadata"
+      stub_secrets(
+        saml_sp_entity_id: "https://default.consul.dev/saml/metadata",
+        saml_idp_metadata_url: shared_metadata,
+        saml_idp_sso_service_url: "https://default-idp.example.com/sso",
+        tenants: {
+          mars: {
+            saml_sp_entity_id: "https://mars.consul.dev/saml/metadata",
+            saml_idp_metadata_url: shared_metadata,
+            saml_idp_sso_service_url: "https://mars-idp.example.com/sso"
+          },
+          venus: {
+            saml_sp_entity_id: "https://venus.consul.dev/saml/metadata",
+            saml_idp_metadata_url: shared_metadata,
+            saml_idp_sso_service_url: ""
+          }
+        }
+      )
+
+      allow(Tenant).to receive(:current_schema).and_return("mars")
+
+      mars_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "mars.consul.dev"
+      }
+      OmniauthTenantSetup.saml(mars_env)
+      mars_options = mars_env["omniauth.strategy"].options
+      expect(mars_options[:sp_entity_id]).to eq "https://mars.consul.dev/saml/metadata"
+      expect(mars_options[:idp_sso_service_url]).to eq "https://mars-idp.example.com/sso"
+
+      allow(Tenant).to receive(:current_schema).and_return("venus")
+
+      venus_env = {
+        "omniauth.strategy" => double(options: {}),
+        "HTTP_HOST" => "venus.consul.dev"
+      }
+      OmniauthTenantSetup.saml(venus_env)
+      venus_options = venus_env["omniauth.strategy"].options
+      expect(venus_options[:sp_entity_id]).to eq "https://venus.consul.dev/saml/metadata"
+      expect(venus_options[:idp_sso_service_url]).not_to eq "https://mars-idp.example.com/sso"
+    end
   end
 
   describe "#oidc" do

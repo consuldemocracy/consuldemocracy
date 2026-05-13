@@ -48,7 +48,7 @@ module OmniauthTenantSetup
       end
 
       def saml_settings(sp_entity_id, idp_metadata_url, idp_sso_service_url)
-        remote_saml_settings(idp_metadata_url).tap do |settings|
+        remote_saml_settings(idp_metadata_url).dup.tap do |settings|
           settings[:sp_entity_id] = sp_entity_id if sp_entity_id.present?
           settings[:idp_sso_service_url] = idp_sso_service_url if idp_sso_service_url.present?
           settings[:allowed_clock_drift] = 1.minute
