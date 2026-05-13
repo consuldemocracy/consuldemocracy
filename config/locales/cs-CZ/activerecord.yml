@@ -170,36 +170,6 @@ cs:
         few: "Návrhy"
         many: "Návrhy"
         other: "Návrhy"
-      legislation/draft_versions:
-        one: "Pracovní verze"
-        few: "Pracovní verze"
-        many: "Pracovní verze"
-        other: "Pracovní verze"
-      legislation/questions:
-        one: "Question"
-        few: "Otázky"
-        many: "Otázky"
-        other: "Otázky"
-      legislation/question_options:
-        one: "Možnosti otázky"
-        few: "Možnosti otázky"
-        many: "Možnosti otázky"
-        other: "Možnosti otázky"
-      legislation/answers:
-        one: "Odpověď"
-        few: "Odpovědi"
-        many: "Odpovědí"
-        other: "Odpovědí"
-      documents:
-        one: "Dokument"
-        few: "Dokumenty"
-        many: "Dokumenty"
-        other: "Dokumenty"
-      images:
-        one: "Obrázek"
-        few: "Obrázky"
-        many: "Obrázků"
-        other: "Obrázky"
       topic:
         one: "Téma"
         few: "Obsah"
