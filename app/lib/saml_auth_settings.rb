@@ -12,6 +12,10 @@ class SamlAuthSettings
       settings[:allowed_clock_drift] = 1.minute
 
       settings.merge!(additional_settings)
+
+      if settings[:certificate].present? && settings[:private_key].present?
+        settings[:security] = security_settings.merge(settings[:security] || {})
+      end
     end
   end
 
@@ -42,5 +46,14 @@ class SamlAuthSettings
 
     def additional_settings
       secrets.saml_additional_settings.presence || {}
+    end
+
+    def security_settings
+      {
+        authn_requests_signed: true,
+        want_assertions_encrypted: true,
+        digest_method: XMLSecurity::Document::SHA256,
+        signature_method: XMLSecurity::Document::RSA_SHA256
+      }
     end
 end

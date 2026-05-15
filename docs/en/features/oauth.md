@@ -69,8 +69,45 @@ saml_additional_settings:
 * **authn_context**: Requests a specific authentication method from the IdP.
 * **organization**: Example of a custom setting (useful if your IdP requires tenant/organization information).
 
-If you don’t need extra settings, you can safely leave it empty:
+If you don't need extra settings, you can safely leave it empty:
 
 ```yml
 saml_additional_settings: {}
 ```
+
+### About `certificate` and `private_key`
+
+These two additional settings let Consul Democracy sign SAML AuthnRequests and decrypt encrypted assertions returned by the IdP. They are optional: if you leave them empty, the SAML strategy is configured without a service-provider keypair.
+
+#### Step 1: Generate a private key
+
+```bash
+openssl genrsa -out sp-private.key 2048
+```
+
+#### Step 2: Generate a self-signed certificate using that private key
+
+```bash
+openssl req -new -x509 -key sp-private.key -out sp-public.crt -days 3650 -subj "/CN=your-app-name"
+```
+
+#### Step 3: Copy the PEM contents into `secrets.yml`
+
+Paste each PEM file (including the `BEGIN`/`END` lines) as a YAML block scalar with the `|` indicator so newlines are preserved. You can also add extra security settings.
+
+```yml
+saml_additional_settings:
+  certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIID...
+    -----END CERTIFICATE-----
+  private_key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIE...
+    -----END PRIVATE KEY-----
+  security:
+    logout_requests_signed: true
+```
+
+* `sp-private.key`: contents go into `private_key`.
+* `sp-public.crt`: contents go into `certificate`.

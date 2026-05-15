@@ -69,8 +69,45 @@ saml_additional_settings:
 * **authn_context**: Solicita un método de autenticación concreto al IdP.
 * **organization**: Ejemplo de configuración personalizada (útil si el IdP necesita información de la entidad u organización).
 
-Si no necesitas configuraciones adicionales, puedes dejarlo vacío con seguridad:
+Si no necesitas configuraciones adicionales, puedes dejarlo vacío:
 
 ```yml
 saml_additional_settings: {}
 ```
+
+### Acerca de `certificate` y `private_key`
+
+Estas dos configuraciones permiten que Consul Democracy firme las `AuthnRequests` SAML y descifre las respuestas cifradas del IdP. Son opcionales: si los dejas vacíos, la estrategia SAML se configura sin par de claves del proveedor de servicio.
+
+#### Paso 1: Generar una clave privada
+
+```bash
+openssl genrsa -out sp-private.key 2048
+```
+
+#### Paso 2: Generar un certificado autofirmado con esa clave
+
+```bash
+openssl req -new -x509 -key sp-private.key -out sp-public.crt -days 3650 -subj "/CN=nombre-de-tu-aplicación"
+```
+
+#### Paso 3: Copiar el contenido PEM en `secrets.yml`
+
+Pega el contenido de cada fichero PEM (incluidas las líneas `BEGIN`/`END`) como un bloque YAML con el indicador `|` para conservar los saltos de línea. También puedes añadir opciones de seguridad adicionales.
+
+```yml
+saml_additional_settings:
+  certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIID...
+    -----END CERTIFICATE-----
+  private_key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIE...
+    -----END PRIVATE KEY-----
+  security:
+    logout_requests_signed: true
+```
+
+* `sp-private.key`: el contenido va en `private_key`.
+* `sp-public.crt`: el contenido va en `certificate`.
