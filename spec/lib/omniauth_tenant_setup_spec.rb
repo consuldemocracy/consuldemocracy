@@ -161,6 +161,77 @@ describe OmniauthTenantSetup do
 
       expect { OmniauthTenantSetup.saml(env) }.not_to raise_error
     end
+
+    it "applies certificate, private_key and security when both keypair values are present" do
+      stub_secrets(
+        saml_sp_entity_id: "https://sp.example.com/metadata",
+        saml_idp_metadata_url: "https://idp.example.com/metadata",
+        saml_idp_sso_service_url: "https://idp.example.com/sso",
+        saml_additional_settings: {
+          certificate: "CERT-CONTENT",
+          private_key: "KEY-CONTENT"
+        }
+      )
+
+      env = { "omniauth.strategy" => double(options: {}), "HTTP_HOST" => "consul.dev" }
+      OmniauthTenantSetup.saml(env)
+      options = env["omniauth.strategy"].options
+
+      expect(options[:certificate]).to eq "CERT-CONTENT"
+      expect(options[:private_key]).to eq "KEY-CONTENT"
+      expect(options[:security]).to match(
+        authn_requests_signed: true,
+        want_assertions_encrypted: true,
+        digest_method: XMLSecurity::Document::SHA256,
+        signature_method: XMLSecurity::Document::RSA_SHA256
+      )
+    end
+
+    it "skips the security block when only one of certificate or private_key is set" do
+      stub_secrets(
+        saml_sp_entity_id: "https://sp.example.com/metadata",
+        saml_idp_metadata_url: "https://idp-partial-key.example.com/metadata",
+        saml_idp_sso_service_url: "https://idp-partial-key.example.com/sso",
+        saml_additional_settings: {
+          saml_certificate: "CERT-CONTENT",
+          saml_private_key: ""
+        }
+      )
+
+      env = { "omniauth.strategy" => double(options: {}), "HTTP_HOST" => "consul.dev" }
+      OmniauthTenantSetup.saml(env)
+      options = env["omniauth.strategy"].options
+
+      expect(options).not_to have_key :security
+    end
+
+    it "allows nested security settings in saml_additional_settings" do
+      stub_secrets(
+        saml_sp_entity_id: "https://sp.example.com/metadata",
+        saml_idp_metadata_url: "https://idp.example.com/metadata",
+        saml_idp_sso_service_url: "https://idp.example.com/sso",
+        saml_additional_settings: {
+          certificate: "CERT-CONTENT",
+          private_key: "KEY-CONTENT",
+          security: {
+            logout_requests_signed: true,
+            want_assertions_encrypted: false
+          }
+        }
+      )
+
+      env = { "omniauth.strategy" => double(options: {}), "HTTP_HOST" => "consul.dev" }
+      OmniauthTenantSetup.saml(env)
+      options = env["omniauth.strategy"].options
+
+      expect(options[:security]).to match({
+        authn_requests_signed: true,
+        want_assertions_encrypted: false,
+        digest_method: XMLSecurity::Document::SHA256,
+        signature_method: XMLSecurity::Document::RSA_SHA256,
+        logout_requests_signed: true
+      })
+    end
   end
 
   describe "#oidc" do
