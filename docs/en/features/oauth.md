@@ -44,7 +44,70 @@ When you complete the application registration you'll get a *key* and *secret* v
   saml_sp_entity_id: "https://yoursp.org/entityid"
   saml_idp_metadata_url: "https://youridp.org/api/saml/metadata"
   saml_idp_sso_service_url: "https://youridp.org/api/saml/sso"
+  saml_additional_settings: {}
   oidc_client_id: "your-oidc-client-id"
   oidc_client_secret: "your-oidc-client-secret"
   oidc_issuer: "https://your-oidc-provider.com"
 ```
+
+### About `saml_additional_settings`
+
+The `saml_additional_settings` field is optional. It allows you to send extra query settings to the Identity Provider (IdP) when initiating a SAML authentication request.
+
+Most configurations will work without it, but some IdPs require additional fields such as tenant identifiers, RelayState, or authentication context.
+
+**Example:**
+
+```yml
+saml_additional_settings:
+  RelayState: "https://yoursp.org/dashboard"
+  authn_context: "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+  organization: "example-org"
+```
+
+* **RelayState**: Redirects the user to a specific page after successful login.
+* **authn_context**: Requests a specific authentication method from the IdP.
+* **organization**: Example of a custom setting (useful if your IdP requires tenant/organization information).
+
+If you don't need extra settings, you can safely leave it empty:
+
+```yml
+saml_additional_settings: {}
+```
+
+### About `certificate` and `private_key`
+
+These two additional settings let Consul Democracy sign SAML AuthnRequests and decrypt encrypted assertions returned by the IdP. They are optional: if you leave them empty, the SAML strategy is configured without a service-provider keypair.
+
+#### Step 1: Generate a private key
+
+```bash
+openssl genrsa -out sp-private.key 2048
+```
+
+#### Step 2: Generate a self-signed certificate using that private key
+
+```bash
+openssl req -new -x509 -key sp-private.key -out sp-public.crt -days 3650 -subj "/CN=your-app-name"
+```
+
+#### Step 3: Copy the PEM contents into `secrets.yml`
+
+Paste each PEM file (including the `BEGIN`/`END` lines) as a YAML block scalar with the `|` indicator so newlines are preserved. Optionally, you can also add extra security settings.
+
+```yml
+saml_additional_settings:
+  certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIID...
+    -----END CERTIFICATE-----
+  private_key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIE...
+    -----END PRIVATE KEY-----
+  security: # Optional
+    logout_requests_signed: true # Optional
+```
+
+* `sp-private.key`: contents go into `private_key`.
+* `sp-public.crt`: contents go into `certificate`.

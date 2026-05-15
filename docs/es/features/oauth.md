@@ -44,7 +44,70 @@ Cuando completes el registro de la aplicación en su plataforma te darán un *ke
   saml_sp_entity_id: "https://tusp.org/entityid"
   saml_idp_metadata_url: "https://tuidp.org/api/saml/metadata"
   saml_idp_sso_service_url: "https://tuidp.org/api/saml/sso"
+  saml_additional_settings: {}
   oidc_client_id: "tu-id-de-cliente-oidc"
   oidc_client_secret: "tu-secreto-de-cliente-oidc"
   oidc_issuer: "https://tu-proveedor-oidc.com"
 ```
+
+### Acerca de `saml_additional_settings`
+
+El campo `saml_additional_settings` es opcional. Permite enviar parámetros adicionales en la petición SAML al proveedor de identidad (IdP) al iniciar la autenticación.
+
+La mayoría de configuraciones funcionan sin él, pero algunos IdP exigen campos como identificadores de la entidad, RelayState o contexto de autenticación.
+
+**Ejemplo:**
+
+```yml
+saml_additional_settings:
+  RelayState: "https://tusp.org/panel"
+  authn_context: "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+  organization: "ejemplo-org"
+```
+
+* **RelayState**: Redirige al usuario a una página concreta tras iniciar sesión correctamente.
+* **authn_context**: Solicita un método de autenticación concreto al IdP.
+* **organization**: Ejemplo de configuración personalizada (útil si el IdP necesita información de la entidad u organización).
+
+Si no necesitas configuraciones adicionales, puedes dejarlo vacío:
+
+```yml
+saml_additional_settings: {}
+```
+
+### Acerca de `certificate` y `private_key`
+
+Estas dos configuraciones permiten que Consul Democracy firme las `AuthnRequests` SAML y descifre las respuestas cifradas del IdP. Son opcionales: si los dejas vacíos, la estrategia SAML se configura sin par de claves del proveedor de servicio.
+
+#### Paso 1: Generar una clave privada
+
+```bash
+openssl genrsa -out sp-private.key 2048
+```
+
+#### Paso 2: Generar un certificado autofirmado con esa clave
+
+```bash
+openssl req -new -x509 -key sp-private.key -out sp-public.crt -days 3650 -subj "/CN=nombre-de-tu-aplicación"
+```
+
+#### Paso 3: Copiar el contenido PEM en `secrets.yml`
+
+Pega el contenido de cada fichero PEM (incluidas las líneas `BEGIN`/`END`) como un bloque YAML con el indicador `|` para conservar los saltos de línea. De manera opcional, también puedes añadir opciones de seguridad adicionales.
+
+```yml
+saml_additional_settings:
+  certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIID...
+    -----END CERTIFICATE-----
+  private_key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIE...
+    -----END PRIVATE KEY-----
+  security: # Opcional
+    logout_requests_signed: true # Opcional
+```
+
+* `sp-private.key`: el contenido va en `private_key`.
+* `sp-public.crt`: el contenido va en `certificate`.
