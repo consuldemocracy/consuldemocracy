@@ -127,6 +127,40 @@ describe OmniauthTenantSetup do
       expect(venus_options[:sp_entity_id]).to eq "https://venus.consul.dev/saml/metadata"
       expect(venus_options[:idp_sso_service_url]).not_to eq "https://mars-idp.example.com/sso"
     end
+
+    it "applies settings defined in saml_additional_settings" do
+      stub_secrets(
+        saml_sp_entity_id: "https://sp.example.com/metadata",
+        saml_idp_metadata_url: "https://idp.example.com/metadata",
+        saml_idp_sso_service_url: "https://idp.example.com/sso",
+        saml_additional_settings: {
+          RelayState: "https://sp.example.com/dashboard",
+          authn_context: "",
+          organization: "example-org"
+        }
+      )
+
+      env = { "omniauth.strategy" => double(options: {}), "HTTP_HOST" => "consul.dev" }
+      OmniauthTenantSetup.saml(env)
+      options = env["omniauth.strategy"].options
+
+      expect(options[:RelayState]).to eq "https://sp.example.com/dashboard"
+      expect(options[:organization]).to eq "example-org"
+      expect(options[:authn_context]).to eq ""
+    end
+
+    it "ignores saml_additional_settings when it is not a Hash" do
+      stub_secrets(
+        saml_sp_entity_id: "https://sp.example.com/metadata",
+        saml_idp_metadata_url: "https://idp.example.com/metadata",
+        saml_idp_sso_service_url: "https://idp.example.com/sso",
+        saml_additional_settings: nil
+      )
+
+      env = { "omniauth.strategy" => double(options: {}), "HTTP_HOST" => "consul.dev" }
+
+      expect { OmniauthTenantSetup.saml(env) }.not_to raise_error
+    end
   end
 
   describe "#oidc" do

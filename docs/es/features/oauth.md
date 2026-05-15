@@ -44,7 +44,33 @@ Cuando completes el registro de la aplicación en su plataforma te darán un *ke
   saml_sp_entity_id: "https://tusp.org/entityid"
   saml_idp_metadata_url: "https://tuidp.org/api/saml/metadata"
   saml_idp_sso_service_url: "https://tuidp.org/api/saml/sso"
+  saml_additional_settings: {}
   oidc_client_id: "tu-id-de-cliente-oidc"
   oidc_client_secret: "tu-secreto-de-cliente-oidc"
   oidc_issuer: "https://tu-proveedor-oidc.com"
+```
+
+### Acerca de `saml_additional_settings`
+
+El campo `saml_additional_settings` es opcional. Permite enviar parámetros adicionales en la petición SAML al proveedor de identidad (IdP) al iniciar la autenticación.
+
+La mayoría de configuraciones funcionan sin él, pero algunos IdP exigen campos como identificadores de la entidad, RelayState o contexto de autenticación.
+
+**Ejemplo:**
+
+```yml
+saml_additional_settings:
+  RelayState: "https://tusp.org/panel"
+  authn_context: "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+  organization: "ejemplo-org"
+```
+
+* **RelayState**: Redirige al usuario a una página concreta tras iniciar sesión correctamente.
+* **authn_context**: Solicita un método de autenticación concreto al IdP.
+* **organization**: Ejemplo de configuración personalizada (útil si el IdP necesita información de la entidad u organización).
+
+Si no necesitas configuraciones adicionales, puedes dejarlo vacío con seguridad:
+
+```yml
+saml_additional_settings: {}
 ```

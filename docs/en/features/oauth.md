@@ -44,7 +44,33 @@ When you complete the application registration you'll get a *key* and *secret* v
   saml_sp_entity_id: "https://yoursp.org/entityid"
   saml_idp_metadata_url: "https://youridp.org/api/saml/metadata"
   saml_idp_sso_service_url: "https://youridp.org/api/saml/sso"
+  saml_additional_settings: {}
   oidc_client_id: "your-oidc-client-id"
   oidc_client_secret: "your-oidc-client-secret"
   oidc_issuer: "https://your-oidc-provider.com"
+```
+
+### About `saml_additional_settings`
+
+The `saml_additional_settings` field is optional. It allows you to send extra query settings to the Identity Provider (IdP) when initiating a SAML authentication request.
+
+Most configurations will work without it, but some IdPs require additional fields such as tenant identifiers, RelayState, or authentication context.
+
+**Example:**
+
+```yml
+saml_additional_settings:
+  RelayState: "https://yoursp.org/dashboard"
+  authn_context: "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+  organization: "example-org"
+```
+
+* **RelayState**: Redirects the user to a specific page after successful login.
+* **authn_context**: Requests a specific authentication method from the IdP.
+* **organization**: Example of a custom setting (useful if your IdP requires tenant/organization information).
+
+If you don’t need extra settings, you can safely leave it empty:
+
+```yml
+saml_additional_settings: {}
 ```
