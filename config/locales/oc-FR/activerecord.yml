@@ -93,24 +93,6 @@ oc:
       legislation/proposal:
         one: "la proposicion"
         other: "de Proposicions ciutadanas"
-      legislation/draft_versions:
-        one: "version borrolhon"
-        other: "de Versions del borrolhon"
-      legislation/questions:
-        one: "question"
-        other: "Demandas de ciutadanas"
-      legislation/question_options:
-        one: "Opcion de responsa barrada"
-        other: "d'Opcions de responsa"
-      legislation/answers:
-        one: "Responsa"
-        other: "de responsas"
-      documents:
-        one: "Document"
-        other: "de Documents"
-      images:
-        one: "Image"
-        other: "d'Images"
       topic:
         one: "Tèma"
         other: "de Tèmas"

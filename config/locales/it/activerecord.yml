@@ -106,24 +106,6 @@ it:
       legislation/proposal:
         one: "Proposta"
         other: "Proposte"
-      legislation/draft_versions:
-        one: "Versione in bozza"
-        other: "Versioni in bozza"
-      legislation/questions:
-        one: "Quesito"
-        other: "Quesiti"
-      legislation/question_options:
-        one: "Opzione della domanda"
-        other: "Opzioni per la domanda"
-      legislation/answers:
-        one: "Risposta"
-        other: "Risposte"
-      documents:
-        one: "Documento"
-        other: "Documenti"
-      images:
-        one: "Immagine"
-        other: "Immagini"
       tenant:
         one: "locatario"
         other: "locatari"

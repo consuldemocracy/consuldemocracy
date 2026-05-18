@@ -60,18 +60,6 @@ zh-CN:
         other: "进程"
       legislation/proposal:
         other: "提议"
-      legislation/draft_versions:
-        other: "草稿版本"
-      legislation/questions:
-        other: "问题"
-      legislation/question_options:
-        other: "问题选项"
-      legislation/answers:
-        other: "回答"
-      documents:
-        other: "文档"
-      images:
-        other: "图像"
       topic:
         other: "主题"
       poll:

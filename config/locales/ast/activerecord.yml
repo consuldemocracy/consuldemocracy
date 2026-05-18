@@ -69,21 +69,6 @@ ast:
       legislation/proposal:
         one: "la propuesta"
         other: "Propuestes"
-      legislation/draft_versions:
-        one: "Versión borrador"
-        other: "Versiones del borrador"
-      legislation/questions:
-        one: "Entruga"
-        other: "Entruges"
-      legislation/question_options:
-        one: "Opción de respuesta zarrada"
-        other: "Opciones de respuesta zarrada"
-      legislation/answers:
-        one: "Respuesta"
-        other: "Respuestes"
-      images:
-        one: "Imaxe"
-        other: "Imaxes"
       poll:
         one: "Votación"
         other: "Votaciones"

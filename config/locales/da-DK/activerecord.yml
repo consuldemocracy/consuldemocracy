@@ -106,24 +106,6 @@ da:
       legislation/proposal:
         one: "Forslag"
         other: "Forslag"
-      legislation/draft_versions:
-        one: "Kladde"
-        other: "Versioner af udkast"
-      legislation/questions:
-        one: "Spørgsmål"
-        other: "Spørgsmål"
-      legislation/question_options:
-        one: "Spørgsmålsindstillinger"
-        other: "Spørgsmålsindstillinger"
-      legislation/answers:
-        one: "Svar"
-        other: "Svar"
-      documents:
-        one: "Dokumenter"
-        other: "Dokumenter"
-      images:
-        one: "Billede"
-        other: "Billeder"
       topic:
         one: "Emner"
         other: "Emner"

@@ -60,18 +60,6 @@ zh-TW:
         other: "過程"
       legislation/proposal:
         other: "建議"
-      legislation/draft_versions:
-        other: "草稿版本"
-      legislation/questions:
-        other: "問題"
-      legislation/question_options:
-        other: "問題選項"
-      legislation/answers:
-        other: "答案"
-      documents:
-        other: "文檔"
-      images:
-        other: "圖像"
       topic:
         other: "主題"
       poll:

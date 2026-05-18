@@ -93,24 +93,6 @@ ca:
       legislation/proposal:
         one: "la proposta"
         other: "Propostes ciutadanes"
-      legislation/draft_versions:
-        one: "versió esborrany"
-        other: "Versions de l'esborrany"
-      legislation/questions:
-        one: "pregunta"
-        other: "Preguntes ciutadanes"
-      legislation/question_options:
-        one: "Opció de resposta tancada"
-        other: "Opcions de resposta"
-      legislation/answers:
-        one: "Resposta"
-        other: "respostes"
-      documents:
-        one: "Document"
-        other: "Documents"
-      images:
-        one: "Imatge"
-        other: "Imatges"
       topic:
         one: "Tema"
         other: "Temes"

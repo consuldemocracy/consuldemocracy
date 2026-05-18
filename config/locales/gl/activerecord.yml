@@ -106,24 +106,6 @@ gl:
       legislation/proposal:
         one: "a proposta"
         other: "Propostas cidadás"
-      legislation/draft_versions:
-        one: "Versión borrador"
-        other: "Versións do borrador"
-      legislation/questions:
-        one: "Pregunta"
-        other: "Preguntas"
-      legislation/question_options:
-        one: "Opción de resposta pechada"
-        other: "Opcións da resposta"
-      legislation/answers:
-        one: "Resposta"
-        other: "Respostas"
-      documents:
-        one: "o documento"
-        other: "Documentos"
-      images:
-        one: "Imaxe"
-        other: "Imaxes"
       tenant:
         one: "entidade"
         other: "entidades"

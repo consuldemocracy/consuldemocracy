@@ -106,24 +106,6 @@ de:
       legislation/proposal:
         one: "Vorschlag"
         other: "Vorschläge"
-      legislation/draft_versions:
-        one: "Entwurfsfassung"
-        other: "Entwurfsversionen"
-      legislation/questions:
-        one: "Frage"
-        other: "Fragen"
-      legislation/question_options:
-        one: "Antwortmöglichkeit"
-        other: "Antwortmöglichkeiten"
-      legislation/answers:
-        one: "Antwort"
-        other: "Antworten"
-      documents:
-        one: "Dokument"
-        other: "Dokumente"
-      images:
-        one: "Bild"
-        other: "Bilder"
       topic:
         one: "Thema"
         other: "Inhalte"

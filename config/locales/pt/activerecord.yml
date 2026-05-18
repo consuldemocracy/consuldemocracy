@@ -106,24 +106,6 @@ pt:
       legislation/proposal:
         one: "Proposta"
         other: "Propostas"
-      legislation/draft_versions:
-        one: "Versão preliminar"
-        other: "Versões preliminares"
-      legislation/questions:
-        one: "Pergunta"
-        other: "Perguntas"
-      legislation/question_options:
-        one: "Opção de pergunta"
-        other: "Opções de pergunta"
-      legislation/answers:
-        one: "Resposta"
-        other: "Respostas"
-      documents:
-        one: "Documento"
-        other: "Documentos"
-      images:
-        one: "Imagem"
-        other: "Imagens"
       tenant:
         one: "inquilino"
         other: "inquilinos"

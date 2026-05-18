@@ -149,36 +149,6 @@ uk-UA:
         few: "Пропозиції"
         many: "Пропозиції"
         other: "Пропозиції"
-      legislation/draft_versions:
-        one: "Чорнова версія"
-        few: "Чорнові версії"
-        many: "Чорнові версії"
-        other: "Чорнові версії"
-      legislation/questions:
-        one: "Запитання"
-        few: "Запитання"
-        many: "Запитання"
-        other: "Запитання"
-      legislation/question_options:
-        one: "Варіант запитання"
-        few: "Варіанти запитань"
-        many: "Варіанти запитань"
-        other: "Варіанти запитань"
-      legislation/answers:
-        one: "Відповідь"
-        few: "Відповіді"
-        many: "Відповіді"
-        other: "Відповіді"
-      documents:
-        one: "Документ"
-        few: "Документи"
-        many: "Документи"
-        other: "Документи"
-      images:
-        one: "Зображення"
-        few: "Зображення"
-        many: "Зображення"
-        other: "Зображення"
       topic:
         one: "Тема"
         few: "Теми"

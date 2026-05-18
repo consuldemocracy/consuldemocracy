@@ -47,18 +47,6 @@ fi:
       legislation/proposal:
         one: "Ehdotus"
         other: "Ehdotukset"
-      legislation/questions:
-        one: "Kysymys"
-        other: "Kysymykset"
-      legislation/answers:
-        one: "Vastaus"
-        other: "Vastaukset"
-      documents:
-        one: "Asiakirja"
-        other: "Asiakirjat"
-      images:
-        one: "Kuva"
-        other: "Kuvat"
       topic:
         one: "Aihe"
         other: "Aiheet"

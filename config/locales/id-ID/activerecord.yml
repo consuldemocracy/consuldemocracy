@@ -65,18 +65,6 @@ id:
         other: "Proses"
       legislation/proposal:
         other: "Proposal"
-      legislation/draft_versions:
-        other: "Versi rancangan"
-      legislation/questions:
-        other: "Pertanyaan"
-      legislation/question_options:
-        other: "Pilihan pertanyaan"
-      legislation/answers:
-        other: "Jawaban"
-      documents:
-        other: "Dokumen"
-      images:
-        other: "Gambar"
       topic:
         other: "Topik"
       poll:

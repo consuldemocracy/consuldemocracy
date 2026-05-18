@@ -83,24 +83,6 @@ fa:
       legislation/proposal:
         one: "طرح های پیشنهادی"
         other: "طرح های پیشنهادی"
-      legislation/draft_versions:
-        one: "نسخه پیش نویس"
-        other: "نسخه های پیش نویس"
-      legislation/questions:
-        one: "سوال"
-        other: "سوالات"
-      legislation/question_options:
-        one: "گزینه سوال"
-        other: "گزینه های سوال"
-      legislation/answers:
-        one: "پاسخ"
-        other: "پاسخ ها"
-      documents:
-        one: "سند"
-        other: "اسناد"
-      images:
-        one: "تصویر"
-        other: "تصاویر"
       topic:
         one: "موضوع"
         other: "موضوع ها"

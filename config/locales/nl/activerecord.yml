@@ -106,24 +106,6 @@ nl:
       legislation/proposal:
         one: "Voorstel"
         other: "Voorstellen"
-      legislation/draft_versions:
-        one: "Conceptversie"
-        other: "Conceptversies"
-      legislation/questions:
-        one: "Vraag"
-        other: "Vragen"
-      legislation/question_options:
-        one: "Vraag optie"
-        other: "Vraag opties"
-      legislation/answers:
-        one: "Antwoord"
-        other: "Antwoorden"
-      documents:
-        one: "Document"
-        other: "Documenten"
-      images:
-        one: "Afbeelding"
-        other: "Afbeeldingen"
       tenant:
         one: "gebruiker"
         other: "gebruikers"

@@ -6,11 +6,20 @@ cs:
       delete_button: Odebrat obrázek
       note: "Můžete nahrát jeden obrázek následujících typů obsahu: %{accepted_content_types}, až do velikosti %{max_file_size} MB."
       add_new_image: Přidat obrázek
+      or_separator: nebo
+      suggest_image_with_ai: Navrhovaný obrázek s AI
+      suggested_images_container: Navrhované obrázky
+      attach_suggested_image: Připojit navrhovaný obrázek
+      pick_an_image: "Vyberte obrázek z návrhů níže:"
+      no_images_found: Nebyly nalezeny žádné návrhy.
     actions:
       destroy:
         notice: Obrázek byl úspěšně smazán.
         alert: Obrázek nelze odstranit
     errors:
       messages:
+        title_and_description_required: Chcete-li navrhnout obrázky, napište nejprve název a popis.
+        llm_not_configured: LLM není správně nakonfigurován. Kontaktujte administrátora.
+        rate_limit_exceeded: Počkejte několik minut před generováním nového návrhu.
         in_between: musí být mezi %{min} a %{max}
         wrong_content_type: typ dokumentu  %{content_type} neodpovídá povoleným typům %{accepted_content_types}

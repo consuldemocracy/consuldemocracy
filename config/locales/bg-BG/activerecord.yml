@@ -106,24 +106,6 @@ bg:
       legislation/proposal:
         one: "Предложение"
         other: "Предложения"
-      legislation/draft_versions:
-        one: "Чернова"
-        other: "Чернови"
-      legislation/questions:
-        one: "Въпрос"
-        other: "Въпроси"
-      legislation/question_options:
-        one: "Вариант на въпроса"
-        other: "Варианти на въпроса"
-      legislation/answers:
-        one: "Въпрос"
-        other: "Въпроси"
-      documents:
-        one: "Документ"
-        other: "Документи"
-      images:
-        one: "Изображение"
-        other: "Изображения"
       topic:
         one: "Тема"
         other: "Теми"

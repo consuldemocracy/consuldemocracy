@@ -106,24 +106,6 @@ ne:
       legislation/proposal:
         one: "प्रस्ताव"
         other: "प्रस्तावहरू"
-      legislation/draft_versions:
-        one: "मस्यौदा संस्करण"
-        other: "मस्यौदा संस्करणहरू"
-      legislation/questions:
-        one: "प्रश्न"
-        other: "प्रश्नहरू"
-      legislation/question_options:
-        one: "प्रश्नको विकल्प"
-        other: "प्रश्नको विकल्पहरू"
-      legislation/answers:
-        one: "जवाफ"
-        other: "जवाफहरू"
-      documents:
-        one: "कागजात"
-        other: "कागजातहरू"
-      images:
-        one: "छवि"
-        other: "छविहरू"
       tenant:
         one: "भाडामा लिने व्यक्ति"
         other: "भाडामा लिने व्यक्तिहरू"

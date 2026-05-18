@@ -121,30 +121,6 @@ sr:
         one: "Предлог"
         few: "Предлози"
         other: "Предлози"
-      legislation/draft_versions:
-        one: "Нацрт верзије"
-        few: "Нацрт верзија"
-        other: "Нацрт верзија"
-      legislation/questions:
-        one: "Питање"
-        few: "Питања"
-        other: "Питања"
-      legislation/question_options:
-        one: "Опција питања"
-        few: "Опције питања"
-        other: "Опције питања"
-      legislation/answers:
-        one: "Одговор"
-        few: "Одговори"
-        other: "Одговори"
-      documents:
-        one: "Документ"
-        few: "Документи"
-        other: "Документи"
-      images:
-        one: "Слика"
-        few: "Слике"
-        other: "Слике"
       topic:
         one: "Тема"
         few: "Теме"
