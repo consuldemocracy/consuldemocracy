@@ -74,21 +74,6 @@ so:
       legislation/proposal:
         one: "Sojeedin"
         other: "Sojeedino"
-      legislation/draft_versions:
-        one: "Qaybta Qabyo Qoraalka ah"
-        other: "Weerinta qabya qoralka"
-      legislation/questions:
-        one: "Sual"
-        other: "Sualo"
-      legislation/question_options:
-        one: "Sual Dorsho"
-        other: "Doorashooyinka su'aasha"
-      documents:
-        one: "Dukumenti"
-        other: "Dukumentiyo"
-      images:
-        one: "Sawiir"
-        other: "Sawiiro"
       topic:
         one: "Mawduuc"
         other: "Mawduucyada"

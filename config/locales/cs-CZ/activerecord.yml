@@ -170,36 +170,6 @@ cs:
         few: "Návrhy"
         many: "Návrhy"
         other: "Návrhy"
-      legislation/draft_versions:
-        one: "Pracovní verze"
-        few: "Pracovní verze"
-        many: "Pracovní verze"
-        other: "Pracovní verze"
-      legislation/questions:
-        one: "Question"
-        few: "Otázky"
-        many: "Otázky"
-        other: "Otázky"
-      legislation/question_options:
-        one: "Možnosti otázky"
-        few: "Možnosti otázky"
-        many: "Možnosti otázky"
-        other: "Možnosti otázky"
-      legislation/answers:
-        one: "Odpověď"
-        few: "Odpovědi"
-        many: "Odpovědí"
-        other: "Odpovědí"
-      documents:
-        one: "Dokument"
-        few: "Dokumenty"
-        many: "Dokumenty"
-        other: "Dokumenty"
-      images:
-        one: "Obrázek"
-        few: "Obrázky"
-        many: "Obrázků"
-        other: "Obrázky"
       topic:
         one: "Téma"
         few: "Obsah"
@@ -642,6 +612,7 @@ cs:
           attributes:
             geojson:
               invalid: "Poskytnutý soubor GeoJSON nemá správný formát. Musí dodržovat formát typu \"Polygon\" nebo \"MultiPolygon\"."
+              invalid_coordinates: "Poskytnutý soubor GeoJSON obsahuje neplatné souřadnice; souřadnice musí být v požadovaném formátu „délka, šířka“ a musí odpovídat standardnímu formátu RFC 7946"
         image:
           attributes:
             attachment:
@@ -711,6 +682,10 @@ cs:
           attributes:
             code:
               invalid: "musí začínat stejným kódem jako jeho záměr, za kterým následuje tečka a končí číslem"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "nelze změnit na typ s otevřenou odpovědí, protože jste pro tuto otázku již definovali možné správné odpovědi"
       messages:
         translations_too_short: Je povinné poskytnout alespoň jeden překlad
         record_invalid: "Validation failed: %{errors}"

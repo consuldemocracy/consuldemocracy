@@ -93,24 +93,6 @@ mk:
       legislation/proposal:
         one: "Предлог"
         other: "Предлог"
-      legislation/draft_versions:
-        one: "Нацрт верзија"
-        other: "Нацрт верзија"
-      legislation/questions:
-        one: "Прашање"
-        other: "Прашање"
-      legislation/question_options:
-        one: "Опции за прашање"
-        other: "Опции за прашање"
-      legislation/answers:
-        one: "Одговор"
-        other: "Одговори"
-      documents:
-        one: "Документ"
-        other: "Документи"
-      images:
-        one: "Слика"
-        other: "Слики"
       topic:
         one: "Тема"
         other: "Теми"

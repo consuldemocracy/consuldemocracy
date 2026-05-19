@@ -248,3 +248,5 @@ tr:
       use_llm_for_translations_description: "İçerik çevirileri için LLM kullanın ve Microsoft çeviri hizmetlerine göre öncelik kazanın."
       model: "Model"
       model_description: "Kullanılacak LLM modeli."
+      use_ai_image_suggestions: "Yapay zeka görsel önerileri"
+      use_ai_image_suggestions_description: "Kullanıcıların kendi görsellerini yüklemesi yerine Pexels önerileri için yapay zeka kullanmalarını sağlayın."

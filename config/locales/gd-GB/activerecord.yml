@@ -170,36 +170,6 @@ gd:
         two: "Mholadh"
         few: "Molaidhean"
         other: "Molaidhean"
-      legislation/draft_versions:
-        one: "Dreachd"
-        two: "Dhreachd"
-        few: "Dreachdan"
-        other: "Dreachdan"
-      legislation/questions:
-        one: "Ceist"
-        two: "Cheist"
-        few: "Ceistean"
-        other: "Ceistean"
-      legislation/question_options:
-        one: "Roghainn airson ceist"
-        two: "Roghainn airson ceist"
-        few: "Roghainnean airson ceist"
-        other: "Roghainnean airson ceist"
-      legislation/answers:
-        one: "Freagairt"
-        two: "Fhreagairt"
-        few: "Freagairtean"
-        other: "Freagairtean"
-      documents:
-        one: "Sgrìobhainn"
-        two: "Sgrìobhainn"
-        few: "Sgrìobhainnean"
-        other: "Sgrìobhainnean"
-      images:
-        one: "Dealbh"
-        two: "Dhealbh"
-        few: "Dealbhan"
-        other: "Dealbhan"
       topic:
         one: "Cuspair"
         two: "Chuspair"

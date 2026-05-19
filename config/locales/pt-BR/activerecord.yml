@@ -106,24 +106,6 @@ pt-BR:
       legislation/proposal:
         one: "Proposta"
         other: "Propostas"
-      legislation/draft_versions:
-        one: "Versão preliminar"
-        other: "Versões preliminares"
-      legislation/questions:
-        one: "Questão"
-        other: "Perguntas"
-      legislation/question_options:
-        one: "Opção de pergunta"
-        other: "Opções de pergunta"
-      legislation/answers:
-        one: "Responda"
-        other: "Respostas"
-      documents:
-        one: "Documento"
-        other: "Documentos"
-      images:
-        one: "Imagem"
-        other: "Imagens"
       topic:
         one: "Tema"
         other: "Tópicos"

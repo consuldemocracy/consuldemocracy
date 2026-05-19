@@ -138,30 +138,6 @@ ro:
         one: "Propunere"
         few: "Propuneri"
         other: "Propuneri"
-      legislation/draft_versions:
-        one: "Versiune schiță"
-        few: "Versiuni schiță"
-        other: "Versiuni schiță"
-      legislation/questions:
-        one: "Întrebare"
-        few: "Întrebări"
-        other: "Întrebări"
-      legislation/question_options:
-        one: "Opțiune de întrebare"
-        few: "Opțiuni de întrebări"
-        other: "Opțiuni de întrebări"
-      legislation/answers:
-        one: "Răspuns"
-        few: "Răspunsuri"
-        other: "Răspunsuri"
-      documents:
-        one: "Document"
-        few: "Documente"
-        other: "Documente"
-      images:
-        one: "Imagine"
-        few: "Imagini"
-        other: "Imagini"
       topic:
         one: "Subiect"
         few: "Subiecte"

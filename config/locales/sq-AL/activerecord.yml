@@ -86,24 +86,6 @@ sq:
       legislation/proposal:
         one: "Propozime"
         other: "Propozime"
-      legislation/draft_versions:
-        one: "Version drafti"
-        other: "Version drafti"
-      legislation/questions:
-        one: "Pyetje"
-        other: "Pyetjet"
-      legislation/question_options:
-        one: "Opsioni i pyetjeve"
-        other: "Opsioni i pyetjeve"
-      legislation/answers:
-        one: "Përgjigjet"
-        other: "Përgjigjet"
-      documents:
-        one: "Dokument"
-        other: "Dokumentet"
-      images:
-        one: "Imazh"
-        other: "Imazhet"
       topic:
         one: "Temë"
         other: "Temë"

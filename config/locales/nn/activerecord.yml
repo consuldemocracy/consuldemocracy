@@ -25,10 +25,6 @@ nn:
         zero: "Forslag"
         one: "Forslag"
         other: "Forslag"
-      documents:
-        zero: "Dokumenter"
-        one: "Dokument"
-        other: "Dokumenter"
       topic:
         zero: "Emner"
         one: "Emne"

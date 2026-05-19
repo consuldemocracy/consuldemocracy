@@ -91,24 +91,6 @@ val:
       legislation/proposal:
         one: "Proposta"
         other: "Propostes"
-      legislation/draft_versions:
-        one: "Versió esborrany"
-        other: "Versions de l'esborrany"
-      legislation/questions:
-        one: "Pregunta"
-        other: "Preguntes"
-      legislation/question_options:
-        one: "Opció de resposta tancada"
-        other: "Opcions de resposta"
-      legislation/answers:
-        one: "Resposta"
-        other: "Respostes"
-      documents:
-        one: "Document"
-        other: "Documents"
-      images:
-        one: "Imatge"
-        other: "Imatges"
       topic:
         one: "Tema"
         other: "Temes"

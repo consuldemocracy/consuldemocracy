@@ -6,11 +6,22 @@ tr:
       delete_button: Görseli kaldır
       note: "Şu içerik türlerindeki bir görseli yükleyebilirsiniz: %{accepted_content_types}, en fazla %{max_file_size} MB boyutuna kadar."
       add_new_image: Görsel ekle
+      or_separator: ya da
+      suggest_image_with_ai: Yapay zeka ile bir görsel öner
+      suggested_images_container: Önerilen görseller
+      attach_suggested_image: Önerilen görseli ekle
+      attach_suggested_image_aria_label: "Önerilen görseli ekle %{index} / %{count}"
+      pick_an_image: "Aşağıdaki önerilerden bir görsel seçin:"
+      no_images_found: Herhangi bir öneri bulunamadı.
+      suggested_image_filename: Görseli sağlayan %{author_name}.jpg
     actions:
       destroy:
         notice: Görsel silindi.
         alert: Görsel silinemedi.
     errors:
       messages:
+        title_and_description_required: Görsel önerilmesi için lütfen önce bir başlık ve açıklama yazın.
+        llm_not_configured: LLM düzgün yapılandırılmamış. Lütfen bir yönetici ile görüşün.
+        rate_limit_exceeded: Lütfen yeni öneriler oluşturmadan önce birkaç dakika bekleyin.
         in_between: '%{min} ile %{max} arasında olmalıdır'
         wrong_content_type: '%{content_type} içerik türü, kabul edilen içerik türlerinden değil %{accepted_content_types}'

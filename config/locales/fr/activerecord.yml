@@ -106,24 +106,6 @@ fr:
       legislation/proposal:
         one: "Proposition"
         other: "Propositions"
-      legislation/draft_versions:
-        one: "Ébauche"
-        other: "Version brouillon"
-      legislation/questions:
-        one: "Question"
-        other: "Questions"
-      legislation/question_options:
-        one: "Paramètres de la question"
-        other: "Paramètres de la question"
-      legislation/answers:
-        one: "Réponse"
-        other: "Réponses"
-      documents:
-        one: "Document"
-        other: "Documents"
-      images:
-        one: "Image"
-        other: "Images"
       tenant:
         one: "locataire"
         other: "locataires"

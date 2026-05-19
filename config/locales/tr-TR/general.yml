@@ -340,7 +340,7 @@ tr:
         archival_date: arşivlenmiş
         recommendations: öneriler
       recommendations:
-        without_results: İlgi alanlarınıza yönelik bir önerge yok
+        without_results: İlgi alanlarınız ile ilgili bir öneri yok
         without_interests: Önergeleri takip edin. Böylece size öneriler sunabiliriz
         disable: "Önerge sunumlarını yok saydığınızda bunlar artık görüntülenmez. Bunları 'Hesabım' bölümünden yeniden açabilirsiniz"
         actions:
@@ -928,8 +928,8 @@ tr:
     poll:
       take_part: '%{from} ile %{to} arasında katılın'
   remote_translations:
-    text: Bu sayfanın içeriği sizin dilinizde hazırlanmamış
-    all_remote_translations_enqueued_text: Sayfayı yeniledikten kısa bir süre sonra tüm içeriği dilinizde görebileceksiniz.
+    text: Bu sayfanın içeriği sizin dilinizde hazırlanmamış. Çevirmek ister misiniz?
+    all_remote_translations_enqueued_text: Çevrilmiş içeriğin görüntülenmesi için lütfen 5 saniye bekleyin ve siteyi yenileyin.
     create:
       enqueue_remote_translation: Çeviriler doğru şekilde istendi.
     button: Sayfanın dilini çevir

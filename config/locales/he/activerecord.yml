@@ -149,36 +149,6 @@ he:
         two: "הצעות"
         many: "הצעות"
         other: "הצעות"
-      legislation/draft_versions:
-        one: "גרסת טיוטה"
-        two: "גרסאות טיוטה"
-        many: "גרסאות טיוטה"
-        other: "גרסאות טיוטה"
-      legislation/questions:
-        one: "שאלה"
-        two: "שאלות"
-        many: "שאלות"
-        other: "שאלות"
-      legislation/question_options:
-        one: "אפשרויות שאלה"
-        two: "אפשרויות שאלות"
-        many: "אפשרויות שאלות"
-        other: "אפשרויות שאלות"
-      legislation/answers:
-        one: "תשובה"
-        two: "תשובות"
-        many: "תשובות"
-        other: "תשובות"
-      documents:
-        one: "מסמך"
-        two: "מסמכים"
-        many: "מסמכים"
-        other: "מסמכים"
-      images:
-        one: "תמונה"
-        two: "תמונות"
-        many: "תמונות"
-        other: "תמונות"
       topic:
         one: "נושא"
         two: "נושאים"
