@@ -340,7 +340,7 @@ tr:
         archival_date: arşivlenmiş
         recommendations: öneriler
       recommendations:
-        without_results: İlgi alanlarınız ile ilgili bir öneri yok
+        without_results: İlgi alanlarınıza yönelik bir önerge yok
         without_interests: Önergeleri takip edin. Böylece size öneriler sunabiliriz
         disable: "Önerge sunumlarını yok saydığınızda bunlar artık görüntülenmez. Bunları 'Hesabım' bölümünden yeniden açabilirsiniz"
         actions:
