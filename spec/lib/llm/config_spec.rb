@@ -3,7 +3,7 @@ require "rails_helper"
 describe Llm::Config do
   describe ".context" do
     let(:config) { double }
-    let(:context_double) { double("RubyLLM::Context", config: config) }
+    let(:context_double) { double(config: config) }
 
     before do
       stub_secrets(llm: { openai_api_key: "1234" })
@@ -47,7 +47,7 @@ describe Llm::Config do
     end
 
     it "maps provider enabled status using RubyLLM providers" do
-      context = double("RubyLLM::Context", config: double)
+      context = double(config: double)
       allow(Llm::Config).to receive(:context).and_return(context)
       allow(RubyLLM::Providers).to receive(:constants).and_return([:OpenAI])
 

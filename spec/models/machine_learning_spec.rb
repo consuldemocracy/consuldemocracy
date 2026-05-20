@@ -407,7 +407,7 @@ describe MachineLearning do
         Process.waitpid Process.fork { abort "error message" }
       end
 
-      mailer = double("mailer")
+      mailer = double
       expect(mailer).to receive(:deliver_later)
       expect(Mailer).to receive(:machine_learning_error).and_return mailer
 

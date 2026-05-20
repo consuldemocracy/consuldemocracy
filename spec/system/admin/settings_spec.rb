@@ -349,7 +349,7 @@ describe "Admin settings", :admin do
       before do
         allow(Llm::Config)
           .to receive(:providers).and_return({ OpenAI: { enabled: true }})
-        ruby_llm_models = [double("Model", name: "GPT-4.1 mini", id: "gpt-4o-mini")]
+        ruby_llm_models = [double(name: "GPT-4.1 mini", id: "gpt-4o-mini")]
         allow(RubyLLM.models).to receive(:by_provider).with(:openai).and_return(ruby_llm_models)
         stub_secrets(pexels_access_key: "test_key")
       end

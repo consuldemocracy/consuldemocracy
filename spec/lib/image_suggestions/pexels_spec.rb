@@ -54,7 +54,7 @@ describe ImageSuggestions::Pexels do
 
     let(:image_url) { "https://example.com/image.jpg?auto=compress&cs=tinysrgb&h=900" }
     let(:downloaded_io) { StringIO.new("fake image bytes") }
-    let(:uri_double) { double("URI") }
+    let(:uri_double) { double }
 
     before do
       allow(::Pexels::Client).to receive(:new).and_return(pexels_client)
