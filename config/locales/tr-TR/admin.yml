@@ -1442,7 +1442,7 @@ tr:
       author: Sahibi
       created_at: Oluşturulma tarihi
       name: Ad
-      no_signature_sheets: "İmza_sayfaları yok"
+      no_signature_sheets: "Herhangi bir imza sayfası yok"
       index:
         title: İmza sayfaları
         new: Yeni imza sayfaları
