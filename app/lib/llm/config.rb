@@ -5,7 +5,7 @@ module Llm
         RubyLLM.context do |config|
           ENV["GOOGLE_APPLICATION_CREDENTIALS"] ||= Rails.application.secrets.google_application_credentials
 
-          llm_secrets.each do |key, value|
+          llm_secrets.compact_blank.each do |key, value|
             config.send("#{key}=", value)
           end
         end

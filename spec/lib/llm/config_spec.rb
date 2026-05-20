@@ -46,6 +46,12 @@ describe Llm::Config do
       expect(providers[:DeepSeek]).to eq({ enabled: false })
     end
 
+    it "discards providers with a blank configuration" do
+      stub_secrets(llm: { openai_api_key: "" })
+
+      expect(Llm::Config.providers[:OpenAI]).to eq({ enabled: false })
+    end
+
     it "does not enable any providers when the LLM configuration is nil" do
       stub_secrets({})
 
