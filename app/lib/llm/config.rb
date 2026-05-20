@@ -5,7 +5,7 @@ module Llm
         RubyLLM.context do |config|
           ENV["GOOGLE_APPLICATION_CREDENTIALS"] ||= Rails.application.secrets.google_application_credentials
 
-          Tenant.current_secrets.llm&.each do |key, value|
+          llm_secrets.each do |key, value|
             config.send("#{key}=", value)
           end
         end
@@ -37,6 +37,10 @@ module Llm
 
         def llm_model
           Setting["llm.model"]
+        end
+
+        def llm_secrets
+          Tenant.current_secrets.llm || {}
         end
     end
   end

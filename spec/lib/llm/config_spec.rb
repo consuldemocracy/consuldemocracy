@@ -45,6 +45,12 @@ describe Llm::Config do
       expect(providers[:OpenAI]).to eq({ enabled: true })
       expect(providers[:DeepSeek]).to eq({ enabled: false })
     end
+
+    it "does not enable any providers when the LLM configuration is nil" do
+      stub_secrets({})
+
+      expect(Llm::Config.providers.values).to all eq({ enabled: false })
+    end
   end
 
   describe "evaluates provider configuration across different tenants" do
