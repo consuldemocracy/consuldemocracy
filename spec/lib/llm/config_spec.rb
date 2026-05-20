@@ -37,23 +37,13 @@ describe Llm::Config do
   end
 
   describe ".providers" do
-    before do
-      dummy_provider = Class.new do
-        def self.configured?(_config)
-          true
-        end
-      end
-      stub_const("RubyLLM::Providers::OpenAI", dummy_provider)
-    end
-
-    it "maps provider enabled status using RubyLLM providers" do
-      context = double(config: double)
-      allow(Llm::Config).to receive(:context).and_return(context)
-      allow(RubyLLM::Providers).to receive(:constants).and_return([:OpenAI])
+    it "maps provider enabled status using configured providers" do
+      stub_secrets(llm: { openai_api_key: "1234" })
 
       providers = Llm::Config.providers
 
-      expect(providers).to eq({ OpenAI: { enabled: true }})
+      expect(providers[:OpenAI]).to eq({ enabled: true })
+      expect(providers[:DeepSeek]).to eq({ enabled: false })
     end
   end
 
