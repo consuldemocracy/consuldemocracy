@@ -844,7 +844,7 @@ describe "Budget Investments" do
                 "Pexels::Photo",
                 id: "suggested-photo-1",
                 src: { "small" => "https://example.com/suggested.jpg" },
-                user: double("Pexels::User", name: "Test Photographer")
+                user: double(name: "Test Photographer")
               )
             ]
           ),
