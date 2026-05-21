@@ -1,5 +1,6 @@
 es:
   attributes:
+    created_at: Fecha de creación
     geozone_id: "Ámbito de actuación"
     results_enabled: "Mostrar resultados"
     stats_enabled: "Mostrar estadísticas"
@@ -358,7 +359,6 @@ es:
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
-        created_at: Creada
         subtitle: Subtítulo
         slug: Slug
         status: Estado

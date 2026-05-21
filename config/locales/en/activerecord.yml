@@ -1,5 +1,6 @@
 en:
   attributes:
+    created_at: Created at
     geozone_id: "Scope of operation"
     results_enabled: "Show results"
     stats_enabled: "Show stats"
@@ -358,7 +359,6 @@ en:
         title: "Title"
       site_customization/page:
         content: Content
-        created_at: Created at
         subtitle: Subtitle
         slug: Slug
         status: Status

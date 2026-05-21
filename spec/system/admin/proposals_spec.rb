@@ -109,10 +109,15 @@ describe "Admin proposals", :admin do
 
   context "Selecting csv", :no_js do
     scenario "Downloading CSV file" do
-      first_proposal = create(:proposal, title: "Make Pluto a planet again", summary: "summary 1")
+      first_proposal = create(:proposal, title: "Make Pluto a planet again",
+                                         summary: "summary 1",
+                                         created_at: Time.zone.local(2026, 6, 1, 14, 56, 10))
       second_proposal = create(:proposal, title: "Build a monument to honour CONSUL developers",
-                                          summary: "summary 2")
-      third_proposal = create(:proposal, title: "Build another monument just because", summary: "summary 3")
+                                          summary: "summary 2",
+                                          created_at: Time.zone.local(2026, 6, 1, 14, 58, 20))
+      third_proposal = create(:proposal, title: "Build another monument just because",
+                                         summary: "summary 3",
+                                         created_at: Time.zone.local(2026, 6, 1, 15, 00, 30))
 
       visit admin_proposals_path
 
@@ -123,13 +128,13 @@ describe "Admin proposals", :admin do
       expect(header).to match(/filename="proposals.csv"/)
 
       csv_contents = <<~CSV
-        ID,Proposal,Author,Summary
+        ID,Proposal,Author,Summary,Created at
         #{third_proposal.id},#{third_proposal.title},\
-        #{third_proposal.author.email},#{third_proposal.summary}
+        #{third_proposal.author.email},#{third_proposal.summary},2026-06-01 15:00:30
         #{second_proposal.id},#{second_proposal.title},\
-        #{second_proposal.author.email},#{second_proposal.summary}
+        #{second_proposal.author.email},#{second_proposal.summary},2026-06-01 14:58:20
         #{first_proposal.id},#{first_proposal.title},\
-        #{first_proposal.author.email},#{first_proposal.summary}
+        #{first_proposal.author.email},#{first_proposal.summary},2026-06-01 14:56:10
       CSV
 
       expect(page.body).to eq(csv_contents)
@@ -148,7 +153,7 @@ describe "Admin proposals", :admin do
 
       click_link "Download current selection"
 
-      expect(page.body).to have_content "ID,Proposal,Author,Summary"
+      expect(page.body).to have_content "ID,Proposal,Author,Summary,Created at"
       expect(page.body).to have_content "Make Pluto a planet again"
       expect(page.body).not_to have_content "Build a monument"
     end

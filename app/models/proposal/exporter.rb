@@ -28,7 +28,8 @@ class Proposal::Exporter
         I18n.t("admin.proposals.index.list.id"),
         I18n.t("admin.proposals.index.list.title"),
         I18n.t("admin.proposals.index.list.author"),
-        I18n.t("admin.proposals.index.list.summary")
+        I18n.t("admin.proposals.index.list.summary"),
+        Proposal.human_attribute_name(:created_at)
       ]
     end
 
@@ -37,7 +38,8 @@ class Proposal::Exporter
         proposal.id.to_s,
         proposal.title,
         proposal.author.email,
-        proposal.summary
+        proposal.summary,
+        I18n.l(proposal.created_at, format: :datetime)
       ]
     end
 end
