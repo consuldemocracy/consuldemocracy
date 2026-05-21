@@ -48,13 +48,14 @@ describe "Admin debates", :admin do
       expect(header).to match(/filename="debates.csv"/)
 
       csv_contents = <<~CSV
-        ID,Title,Author,Created at
+        ID,Title,Author,Created at,Comment ID,\
+        Comment Author,Comment Content,Comment Parent,Comment Created at
         #{third_debate.id},#{third_debate.title},\
-        #{third_debate.author.email},2026-06-01 15:00:30
+        #{third_debate.author.email},2026-06-01 15:00:30,"","","","",""
         #{second_debate.id},#{second_debate.title},\
-        #{second_debate.author.email},2026-06-01 14:58:20
+        #{second_debate.author.email},2026-06-01 14:58:20,"","","","",""
         #{first_debate.id},#{first_debate.title},\
-        #{first_debate.author.email},2026-06-01 14:56:10
+        #{first_debate.author.email},2026-06-01 14:56:10,"","","","",""
       CSV
 
       expect(page.body).to eq(csv_contents)
@@ -73,7 +74,8 @@ describe "Admin debates", :admin do
 
       click_link "Download current selection"
 
-      expect(page.body).to have_content "ID,Title,Author,Created at"
+      expect(page.body).to have_content "ID,Title,Author,Created at,Comment ID," \
+                                        "Comment Author,Comment Content,Comment Parent,Comment Created at"
       expect(page.body).to have_content "Should Pluto be a planet?"
       expect(page.body).not_to have_content "Best approach for public transport"
     end

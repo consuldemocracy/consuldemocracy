@@ -1662,25 +1662,25 @@ describe "Admin budget investments", :admin do
       first_budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
       second_budget_heading = create(:budget_heading, group: budget_group, name: "Other Heading")
       first_investment = create(:budget_investment, :feasible,
-                                                    :selected,
-                                                    title: "Le Investment",
-                                                    budget: budget, group: budget_group,
-                                                    heading: first_budget_heading,
-                                                    cached_votes_up: 88, price: 99,
-                                                    valuators: [],
-                                                    valuator_groups: [valuator_group],
-                                                    administrator: admin,
-                                                    visible_to_valuators: true,
-                                                    created_at: Time.zone.local(2026, 6, 1, 14, 56, 10))
+                                :selected,
+                                title: "Le Investment",
+                                budget: budget, group: budget_group,
+                                heading: first_budget_heading,
+                                cached_votes_up: 88, price: 99,
+                                valuators: [],
+                                valuator_groups: [valuator_group],
+                                administrator: admin,
+                                visible_to_valuators: true,
+                                created_at: Time.zone.local(2026, 6, 1, 14, 56, 10))
       second_investment = create(:budget_investment, :unfeasible,
-                                                     title: "Alt Investment",
-                                                     budget: budget, group: budget_group,
-                                                     heading: second_budget_heading,
-                                                     cached_votes_up: 66, price: 88,
-                                                     valuators: [valuator],
-                                                     valuator_groups: [],
-                                                     visible_to_valuators: false,
-                                                     created_at: Time.zone.local(2026, 6, 1, 14, 58, 20))
+                                 title: "Alt Investment",
+                                 budget: budget, group: budget_group,
+                                 heading: second_budget_heading,
+                                 cached_votes_up: 66, price: 88,
+                                 valuators: [valuator],
+                                 valuator_groups: [],
+                                 visible_to_valuators: false,
+                                 created_at: Time.zone.local(2026, 6, 1, 14, 58, 20))
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1691,13 +1691,16 @@ describe "Admin budget investments", :admin do
       expect(header).to match(/filename="budget_investments.csv"/)
 
       csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation," \
-                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username,Created at\n" \
+                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username,Created at," \
+                     "Comment ID,Comment Author,Comment Content,Comment Parent,Comment Created at\n" \
                      "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group," \
                      "Budget Heading,Feasible (€99),Yes,Yes,Yes," \
-                     "#{first_investment.author.username},2026-06-01 14:56:10\n" \
+                     "#{first_investment.author.username},2026-06-01 14:56:10," \
+                     "\"\",\"\",\"\",\"\",\"\"\n" \
                      "#{second_investment.id},Alt Investment,66,No admin assigned,Valuator,-," \
                      "Other Heading,Unfeasible,No,No,No," \
-                     "#{second_investment.author.username},2026-06-01 14:58:20\n"
+                     "#{second_investment.author.username},2026-06-01 14:58:20," \
+                     "\"\",\"\",\"\",\"\",\"\"\n"
 
       expect(page.body).to eq(csv_contents)
     end

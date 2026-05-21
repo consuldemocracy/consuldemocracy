@@ -14,7 +14,7 @@ class Budget::Investment::Exporter
 
   private
 
-    def headers
+    def model_headers
       [
         I18n.t("admin.budget_investments.index.list.id"),
         I18n.t("admin.budget_investments.index.list.title"),
@@ -32,7 +32,7 @@ class Budget::Investment::Exporter
       ]
     end
 
-    def csv_values(investment)
+    def record_csv_values(investment)
       [
         investment.id.to_s,
         investment.title,

@@ -249,6 +249,7 @@ es:
         main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
+        parent_id: "Padre"
         user: "Usuario"
       debate:
         author: "Autor"

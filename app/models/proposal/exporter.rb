@@ -23,7 +23,7 @@ class Proposal::Exporter
       }
     end
 
-    def headers
+    def model_headers
       [
         I18n.t("admin.proposals.index.list.id"),
         I18n.t("admin.proposals.index.list.title"),
@@ -33,7 +33,7 @@ class Proposal::Exporter
       ]
     end
 
-    def csv_values(proposal)
+    def record_csv_values(proposal)
       [
         proposal.id.to_s,
         proposal.title,

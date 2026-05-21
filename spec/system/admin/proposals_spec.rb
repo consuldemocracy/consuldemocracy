@@ -128,13 +128,14 @@ describe "Admin proposals", :admin do
       expect(header).to match(/filename="proposals.csv"/)
 
       csv_contents = <<~CSV
-        ID,Proposal,Author,Summary,Created at
+        ID,Proposal,Author,Summary,Created at,\
+        Comment ID,Comment Author,Comment Content,Comment Parent,Comment Created at
         #{third_proposal.id},#{third_proposal.title},\
-        #{third_proposal.author.email},#{third_proposal.summary},2026-06-01 15:00:30
+        #{third_proposal.author.email},#{third_proposal.summary},2026-06-01 15:00:30,"","","","",""
         #{second_proposal.id},#{second_proposal.title},\
-        #{second_proposal.author.email},#{second_proposal.summary},2026-06-01 14:58:20
+        #{second_proposal.author.email},#{second_proposal.summary},2026-06-01 14:58:20,"","","","",""
         #{first_proposal.id},#{first_proposal.title},\
-        #{first_proposal.author.email},#{first_proposal.summary},2026-06-01 14:56:10
+        #{first_proposal.author.email},#{first_proposal.summary},2026-06-01 14:56:10,"","","","",""
       CSV
 
       expect(page.body).to eq(csv_contents)
@@ -153,7 +154,8 @@ describe "Admin proposals", :admin do
 
       click_link "Download current selection"
 
-      expect(page.body).to have_content "ID,Proposal,Author,Summary,Created at"
+      expect(page.body).to have_content "ID,Proposal,Author,Summary,Created at,Comment ID," \
+                                        "Comment Author,Comment Content,Comment Parent,Comment Created at"
       expect(page.body).to have_content "Make Pluto a planet again"
       expect(page.body).not_to have_content "Build a monument"
     end

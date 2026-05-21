@@ -9,7 +9,7 @@ class Debate::Exporter
 
   private
 
-    def headers
+    def model_headers
       [
         I18n.t("admin.debates.index.id"),
         Debate.human_attribute_name(:title),
@@ -18,7 +18,7 @@ class Debate::Exporter
       ]
     end
 
-    def csv_values(debate)
+    def record_csv_values(debate)
       [
         debate.id.to_s,
         debate.title,
