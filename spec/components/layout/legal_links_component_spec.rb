@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe Layout::LegalLinksComponent do
+  it "shows a link to the source code" do
+    render_inline Layout::LegalLinksComponent.new
+
+    expect(page).to have_link "Source code"
+  end
+
   describe "link to manage cookies" do
     it "shows a link to the cookies management modal when the cookies consent is enabled" do
       Setting["feature.cookies_consent"] = true
