@@ -17,7 +17,9 @@ section "Creating DEMO Settings" do
     "sdg.process.polls": true,
     "sdg.process.budgets": true,
     "sdg.process.legislation": true,
-    votes_for_proposal_success: 5
+    votes_for_proposal_success: 5,
+    "llm.provider": "OpenRouter",
+    "llm.model": "mistralai/mistral-small-3.2-24b-instruct"
   }.each do |name, value|
     Setting[name] = value
   end
