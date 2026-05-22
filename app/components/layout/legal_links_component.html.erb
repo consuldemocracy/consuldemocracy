@@ -1,0 +1,14 @@
+<ul class="legal">
+  <li><%= privacy_link %></li>
+  <li><%= conditions_link %></li>
+  <li><%= accessibility_link %></li>
+  <li><%= repo_link %></li>
+  <% if feature?(:cookies_consent) %>
+    <li class="cookies-consent-management-footer-content">
+      <a href="#cookies_consent_management" data-open="cookies_consent_management">
+        <%= t("layouts.footer.cookies_consent_management") %>
+      </a>
+    </li>
+  <% end %>
+  <%= raw footer_legal_content_block %>
+</ul>
