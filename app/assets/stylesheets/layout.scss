@@ -681,49 +681,6 @@ body > header,
 // 03. Footer
 // ----------
 
-footer {
-  .logo {
-    color: inherit;
-  }
-
-  .logo a {
-    font-family: "Lato" !important;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  p {
-    font-size: $small-font-size;
-
-    &.info a {
-      text-decoration: underline;
-    }
-  }
-
-  a,
-  a:active,
-  a:focus {
-    color: inherit;
-    text-decoration: underline;
-
-    &:hover {
-      color: $text-medium;
-    }
-  }
-
-  .footer-sections {
-    padding-left: 0;
-  }
-
-  .title {
-    font-weight: bold;
-    text-decoration: none;
-  }
-}
-
 .footer {
   @include background-with-text-contrast($footer, footer);
   clear: both;
@@ -733,34 +690,6 @@ footer {
 
   .public & {
     @include full-width-background;
-  }
-}
-
-.subfooter {
-  border-top: 1px solid $text-light;
-  font-size: $small-font-size;
-  padding-top: calc($line-height / 2);
-
-  .legal {
-    display: inline-block;
-    margin-#{$global-left}: 0;
-
-    &::before {
-      content: "|";
-    }
-
-    li {
-      display: inline-block;
-
-      &::after {
-        content: "|";
-        margin-left: 4px;
-      }
-
-      &:last-child::after {
-        content: none;
-      }
-    }
   }
 }
 
