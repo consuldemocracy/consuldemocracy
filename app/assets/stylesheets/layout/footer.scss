@@ -29,6 +29,15 @@ footer {
     &:hover {
       color: $text-medium;
     }
+
+    &[rel~=external] {
+      @include has-fa-icon(external-link-alt, solid, after);
+
+      &::after {
+        font-size: 0.8em;
+        margin-#{$global-left}: 0.2em;
+      }
+    }
   }
 
   .footer-sections {
