@@ -63,6 +63,36 @@ describe "Admin feature flags", :admin do
     end
   end
 
+  scenario "Keeps collapsed menu sections after updating a feature" do
+    visit admin_settings_path
+    click_link "Features"
+
+    within "#side_menu" do
+      expect(page).to have_css "button[aria-expanded='true']", exact_text: "Settings"
+      expect(page).to have_css "button[aria-expanded='false']", exact_text: "Messages to users"
+      expect(page).not_to have_link "Newsletters"
+
+      click_button "Messages to users"
+
+      expect(page).to have_link "Newsletters"
+    end
+
+    within "tr", text: "Twitter login" do
+      click_button "Yes"
+      expect(page).to have_button "No"
+    end
+
+    within "#side_menu" do
+      expect(page).to have_css "button[aria-expanded='true']", exact_text: "Settings"
+      expect(page).to have_css "button[aria-expanded='false']", exact_text: "Messages to users"
+      expect(page).not_to have_link "Newsletters"
+
+      click_button "Messages to users"
+
+      expect(page).to have_link "Newsletters"
+    end
+  end
+
   scenario "Disable a feature" do
     visit admin_settings_path
     click_link "Features"
