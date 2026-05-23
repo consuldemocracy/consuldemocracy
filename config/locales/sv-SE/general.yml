@@ -203,6 +203,7 @@ sv:
       participation_text: Skapa den stad du vill ha.
       participation_title: Deltagande
       privacy: Integritetspolicy
+      source_code: Källkod
     header:
       administration_menu: Meny
       administration: Administration
