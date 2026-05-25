@@ -654,6 +654,7 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
+    warning_for_external_links: "Genom att bekräfta går du med på att lämna webbplatsen."
     actions:
       label: "%{action} %{name}"
     edit: "Redigera"
