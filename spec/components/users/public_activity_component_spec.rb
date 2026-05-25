@@ -9,7 +9,7 @@ describe Users::PublicActivityComponent, controller: UsersController do
 
   describe "follows tab" do
     context "public interests is checked" do
-      let(:user) { create(:user, public_interests: true) }
+      let(:user) { create(:user, public_interests: true, public_activity: true) }
       let(:component) { Users::PublicActivityComponent.new(user) }
 
       it "is displayed for everyone" do
@@ -40,7 +40,7 @@ describe Users::PublicActivityComponent, controller: UsersController do
     end
 
     context "public interests is not checked" do
-      let(:user) { create(:user, public_interests: false) }
+      let(:user) { create(:user, public_interests: false, public_activity: true) }
       let(:component) { Users::PublicActivityComponent.new(user) }
 
       it "is displayed for its owner" do

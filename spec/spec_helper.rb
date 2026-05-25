@@ -34,6 +34,7 @@ RSpec.configure do |config|
   config.before do |example|
     Globalize.set_fallbacks_to_all_available_locales
     Setting["feature.user.skip_verification"] = nil
+    Setting["feature.gdpr.require_consent_for_notifications"] = nil
   end
 
   config.around do |example|
