@@ -655,6 +655,7 @@ es:
     show:
       back: "Volver a mi contenido"
   shared:
+    warning_for_external_links: "Al confirmar, aceptas salir del sitio web."
     actions:
       label: "%{action} %{name}"
     edit: "Editar"

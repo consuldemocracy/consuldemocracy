@@ -1,0 +1,57 @@
+footer {
+  .logo {
+    color: inherit;
+  }
+
+  .logo a {
+    font-family: "Lato" !important;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: $small-font-size;
+
+    &.info a {
+      text-decoration: underline;
+    }
+  }
+
+  a,
+  a:active,
+  a:focus {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      color: $text-medium;
+    }
+
+    &[rel~=external] {
+      @include has-fa-icon(external-link-alt, solid, after);
+
+      &::after {
+        font-size: 0.8em;
+        margin-#{$global-left}: 0.2em;
+      }
+    }
+  }
+
+  .footer-sections {
+    padding-left: 0;
+  }
+
+  .title {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .subfooter {
+    border-top: 1px solid $text-light;
+    font-size: $small-font-size;
+    padding-top: calc($line-height / 2);
+  }
+}

@@ -160,7 +160,7 @@ describe "Notifications" do
 
       first("#notification_#{notification.id} a").click
 
-      expect(page).to have_current_path "https://www.external.link.dev/", url: true
+      expect(page).to have_current_path "https://www.external.link.dev/"
     end
 
     scenario "With internal link" do

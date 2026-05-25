@@ -27,6 +27,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.machine_learning
       feature.remove_investments_supports
       feature.gdpr.require_consent_for_notifications
+      feature.gdpr.warning_for_external_links
       feature.dashboard.notification_emails
     ]
   end
