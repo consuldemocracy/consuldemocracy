@@ -7,5 +7,6 @@ var form = $("<%= j render Admin::Settings::FeaturedSettingsFormComponent.new(
 $("#" + form.attr("id")).html(form.html()).find("[type='submit']").focus();
 
 <% if @setting.prefix == "feature" || @setting.prefix == "process" %>
-  $("#side_menu").html("<%= j render Admin::MenuComponent.new %>").foundation();
+  $("#side_menu").html("<%= j render Admin::MenuComponent.new %>");
+  App.AdminMenu.initialize();
 <% end %>
