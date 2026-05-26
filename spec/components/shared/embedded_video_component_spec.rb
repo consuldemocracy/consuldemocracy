@@ -55,4 +55,30 @@ describe Shared::EmbeddedVideoComponent do
       expect(page).to have_css "[data-video-code*='src=\"#{embed_url}\"']"
     end
   end
+
+  describe "watch video button" do
+    before do
+      allow(record).to receive(:video_url).and_return "http://www.youtube.com/watch?v=a7UFm6ErMPU"
+    end
+
+    it "is rendered when consent for iframes is enabled" do
+      Setting["feature.gdpr.require_consent_for_embedded_videos"] = true
+
+      render_inline component
+
+      expect(page).to have_button "Watch video"
+      expect(page).to have_content "This page contains a video from a third-party provider. " \
+                                   "By accessing its content, you agree that your data may " \
+                                   "be transferred to third-party providers."
+    end
+
+    it "is not rendered when consent for iframes is disabled" do
+      Setting["feature.gdpr.require_consent_for_embedded_videos"] = false
+
+      render_inline component
+
+      expect(page).not_to have_button "Watch video"
+      expect(page).not_to have_content "you agree"
+    end
+  end
 end

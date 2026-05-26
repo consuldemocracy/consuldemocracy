@@ -13,6 +13,10 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
     "<iframe #{iframe_attributes}></iframe>"
   end
 
+  def consent_required?
+    feature?("gdpr.require_consent_for_embedded_videos")
+  end
+
   private
 
     def title

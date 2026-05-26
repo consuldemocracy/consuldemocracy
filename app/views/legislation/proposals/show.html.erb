@@ -25,6 +25,7 @@
           @proposal,
           @proposal.author,
           Flag.flagged?(current_user, @proposal),
+          feature?("gdpr.require_consent_for_embedded_videos"),
           current_user&.voted_as_when_voted_for(@proposal)] do %>
   <div class="proposal-show legislation-proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">

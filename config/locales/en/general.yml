@@ -655,6 +655,9 @@ en:
     show:
       back: "Go back to my content"
   shared:
+    embedded_video:
+      accept: "Watch video"
+      warning: "This page contains a video from a third-party provider. By accessing its content, you agree that your data may be transferred to third-party providers."
     warning_for_external_links: "By confirming, you agree to leave the website."
     actions:
       label: "%{action} %{name}"

@@ -1,3 +1,10 @@
 <div class="embedded-video">
-  <div data-video-code="<%= embedded_video_code %>"></div>
+  <div data-video-code="<%= embedded_video_code %>">
+    <% if consent_required? %>
+      <div class="video-placeholder">
+        <p><%= t("shared.embedded_video.warning") %></p>
+        <button type="button"><%= t("shared.embedded_video.accept") %></button>
+      </div>
+    <% end %>
+  </div>
 </div>
