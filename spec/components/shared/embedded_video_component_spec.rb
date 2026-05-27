@@ -1,28 +1,42 @@
 require "rails_helper"
 
 describe Shared::EmbeddedVideoComponent do
-  describe "src attribute" do
-    before do
-      dummy_class = Class.new do
-        include ActiveModel::Model
+  before do
+    dummy_class = Class.new do
+      include ActiveModel::Model
 
-        attr_accessor :title, :video_url
+      attr_accessor :title, :video_url
 
-        include Videoable
+      include Videoable
+
+      def has_attribute?(*)
+        true
       end
-
-      stub_const("DummyClass", dummy_class)
     end
 
-    let(:record) { DummyClass.new(title: "Dummy Video", video_url: "") }
-    let(:component) { Shared::EmbeddedVideoComponent.new(record) }
+    stub_const("DummyClass", dummy_class)
+  end
 
-    it "does not render anything for empty URls" do
-      render_inline component
+  let(:record) { DummyClass.new(title: "Dummy Video") }
+  let(:component) { Shared::EmbeddedVideoComponent.new(record) }
 
-      expect(page).not_to be_rendered
-    end
+  it "does not render anything for empty URls" do
+    allow(record).to receive(:video_url).and_return("")
 
+    render_inline component
+
+    expect(page).not_to be_rendered
+  end
+
+  it "does not render when the video_url is invalid" do
+    allow(record).to receive(:video_url).and_return "http://www.fake.com/watch?v=a7UFm6ErMPU"
+
+    render_inline component
+
+    expect(page).not_to be_rendered
+  end
+
+  describe "src attribute" do
     it "embeds a youtube video for youtube URLs" do
       allow(record).to receive(:video_url).and_return "http://www.youtube.com/watch?v=a7UFm6ErMPU"
       embed_url = "https://www.youtube-nocookie.com/embed/a7UFm6ErMPU"

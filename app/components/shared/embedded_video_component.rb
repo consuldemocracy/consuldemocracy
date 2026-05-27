@@ -6,13 +6,11 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
   end
 
   def render?
-    record.video_url.present?
+    record.video_url.present? && record.valid_video_url?
   end
 
   def embedded_video_code
-    if match && match[2]
-      "<iframe #{iframe_attributes}></iframe>"
-    end
+    "<iframe #{iframe_attributes}></iframe>"
   end
 
   private

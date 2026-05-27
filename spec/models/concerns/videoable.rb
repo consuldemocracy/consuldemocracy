@@ -15,5 +15,13 @@ shared_examples_for "videoable" do |factory_name|
 
       expect(record).to be_valid
     end
+
+    it "does not add errors when checking valid_video_url?" do
+      record.video_url = "https://twitter.com"
+
+      record.valid_video_url?
+
+      expect(record.errors).to be_empty
+    end
   end
 end
