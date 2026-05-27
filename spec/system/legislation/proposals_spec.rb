@@ -310,7 +310,7 @@ describe "Legislation Proposals" do
 
       visit legislation_process_proposal_path(proposal.process, proposal)
 
-      within "#js-embedded-video" do
+      within ".embedded-video" do
         expect(page).to have_css "iframe[src='https://www.youtube-nocookie.com/embed/a7UFm6ErMPU']"
       end
     end
@@ -320,17 +320,17 @@ describe "Legislation Proposals" do
 
       visit legislation_process_proposal_path(proposal.process, proposal)
 
-      within "#js-embedded-video" do
+      within ".embedded-video" do
         expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"
       end
     end
 
-    scenario "Dont show video" do
+    scenario "Don't show video" do
       proposal = create(:legislation_proposal, video_url: nil)
 
       visit legislation_process_proposal_path(proposal.process, proposal)
 
-      expect(page).not_to have_css "#js-embedded-video"
+      expect(page).not_to have_css ".embedded-video"
     end
   end
 end
