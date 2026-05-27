@@ -1,0 +1,12 @@
+.embedded-video {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(medium) {
+    width: calc(100% * 7 / 12);
+  }
+
+  [data-video-code] {
+    @include responsive-embed;
+  }
+}
