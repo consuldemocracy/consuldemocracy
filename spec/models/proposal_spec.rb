@@ -10,6 +10,7 @@ describe Proposal do
     it_behaves_like "globalizable", :proposal
     it_behaves_like "taggable"
     it_behaves_like "acts as paranoid", :proposal
+    it_behaves_like "videoable", :proposal
   end
 
   it "is valid" do
@@ -47,18 +48,6 @@ describe Proposal do
     it "is not valid when very long" do
       proposal.description = "a" * 6001
       expect(proposal).not_to be_valid
-    end
-  end
-
-  describe "#video_url" do
-    it "is not valid when URL is not from Youtube or Vimeo" do
-      proposal.video_url = "https://twitter.com"
-      expect(proposal).not_to be_valid
-    end
-
-    it "is valid when URL is from Youtube or Vimeo" do
-      proposal.video_url = "https://vimeo.com/112681885"
-      expect(proposal).to be_valid
     end
   end
 
