@@ -161,6 +161,7 @@ Layout/LineEndStringConcatenationIndentation:
 
 Layout/LineLength:
   Max: 110
+  AllowHeredoc: false
   AllowQualifiedName: false
   Exclude:
     - "Gemfile"
