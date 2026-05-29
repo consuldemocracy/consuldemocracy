@@ -654,6 +654,9 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
+    embedded_video:
+      accept: "Se videon"
+      warning: "Den här sidan innehåller en video från tredje part. Genom att gå till dess innehåll samtycker du till att dina uppgifter kan överföras till tredjepartsleverantörer."
     warning_for_external_links: "Genom att bekräfta går du med på att lämna webbplatsen."
     actions:
       label: "%{action} %{name}"
