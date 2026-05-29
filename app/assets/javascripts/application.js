@@ -74,7 +74,7 @@
 //= require suggest
 //= require forms
 //= require valuation_budget_investment_form
-//= require embed_video
+//= require embedded_video
 //= require fixed_bar
 //= require banners
 //= require social_share
@@ -137,7 +137,7 @@ var initialize_modules = function() {
   App.Suggest.initialize();
   App.Forms.initialize();
   App.ValuationBudgetInvestmentForm.initialize();
-  App.EmbedVideo.initialize();
+  App.EmbeddedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
   App.SocialShare.initialize();

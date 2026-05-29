@@ -1,5 +1,10 @@
-<div class="small-12 medium-7 small-centered">
-  <div class="flex-video">
-    <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+<div class="embedded-video">
+  <div data-video-code="<%= embedded_video_code %>">
+    <% if consent_required? %>
+      <div class="video-placeholder">
+        <p><%= t("shared.embedded_video.warning") %></p>
+        <button type="button"><%= t("shared.embedded_video.accept") %></button>
+      </div>
+    <% end %>
   </div>
 </div>

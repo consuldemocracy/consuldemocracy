@@ -3,6 +3,10 @@ require "rails_helper"
 describe Legislation::Proposal do
   let(:proposal) { build(:legislation_proposal) }
 
+  describe "Concerns" do
+    it_behaves_like "videoable", :legislation_proposal
+  end
+
   it "is valid" do
     expect(proposal).to be_valid
   end
@@ -25,18 +29,6 @@ describe Legislation::Proposal do
   it "is not valid without a summary" do
     proposal.summary = nil
     expect(proposal).not_to be_valid
-  end
-
-  describe "#video_url" do
-    it "is not valid when URL is not from Youtube or Vimeo" do
-      proposal.video_url = "https://twitter.com"
-      expect(proposal).not_to be_valid
-    end
-
-    it "is valid when URL is from Youtube or Vimeo" do
-      proposal.video_url = "https://vimeo.com/112681885"
-      expect(proposal).to be_valid
-    end
   end
 
   describe "#hot_score" do

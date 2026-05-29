@@ -655,6 +655,9 @@ es:
     show:
       back: "Volver a mi contenido"
   shared:
+    embedded_video:
+      accept: "Ver vídeo"
+      warning: "Esta página contiene un vídeo de un proveedor externo. Al acceder al contenido, aceptas que tus datos puedan ser transferidos a proveedores externos."
     warning_for_external_links: "Al confirmar, aceptas salir del sitio web."
     actions:
       label: "%{action} %{name}"

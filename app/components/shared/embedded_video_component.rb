@@ -6,54 +6,28 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
   end
 
   def render?
-    record.video_url.present?
+    embed_url.present?
   end
 
   def embedded_video_code
-    if match && match[2]
-      "<iframe #{iframe_attributes}></iframe>"
-    end
+    "<iframe #{iframe_attributes}></iframe>"
+  end
+
+  def consent_required?
+    feature?("gdpr.require_consent_for_embedded_videos")
   end
 
   private
-
-    def link
-      record.video_url
-    end
 
     def title
       t("proposals.show.embed_video_title", proposal: record.title)
     end
 
-    def server
-      if link =~ /vimeo.*/
-        "Vimeo"
-      elsif link =~ /youtu*.*/
-        "YouTube"
-      end
-    end
-
-    def regex
-      if server == "Vimeo"
-        record.class::VIMEO_REGEX
-      elsif server == "YouTube"
-        record.class::YOUTUBE_REGEX
-      end
-    end
-
-    def src
-      if server == "Vimeo"
-        "https://player.vimeo.com/video/#{match[2]}?dnt=1"
-      elsif server == "YouTube"
-        "https://www.youtube-nocookie.com/embed/#{match[2]}"
-      end
-    end
-
-    def match
-      @match ||= link.match(regex) if regex
+    def embed_url
+      record.embed_video_url
     end
 
     def iframe_attributes
-      tag.attributes(src: src, style: "border:0;", allowfullscreen: true, title: title)
+      tag.attributes(src: embed_url, style: "border:0;", allowfullscreen: true, title: title)
     end
 end

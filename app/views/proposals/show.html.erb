@@ -17,6 +17,7 @@
           @proposal,
           @proposal.author,
           Flag.flagged?(current_user, @proposal),
+          feature?("gdpr.require_consent_for_embedded_videos"),
           @proposal.followed_by?(current_user),
           current_user&.voted_for?(@proposal)] do %>
   <div class="proposal-show">

@@ -189,6 +189,12 @@ RSpec.configure do |config|
     savon.unmock!
   end
 
+  config.around(:each, :with_cache) do |example|
+    ActionController::Base.with(perform_caching: true) do
+      example.run
+    end
+  end
+
   config.before(:each, :with_cache) do
     allow(Rails).to receive(:cache).and_return(ActiveSupport::Cache.lookup_store(:memory_store))
     Rails.cache.clear
