@@ -1,0 +1,9 @@
+.download-csv-link {
+  @include hollow-button;
+  @include has-fa-icon(download, solid);
+  float: $global-right;
+
+  &::before {
+    margin-#{$global-right}: 0.2em;
+  }
+}
