@@ -124,9 +124,12 @@ describe "Admin proposals", :admin do
 
       csv_contents = <<~CSV
         ID,Proposal,Author,Summary
-        #{third_proposal.id},#{third_proposal.title},#{third_proposal.author.email},#{third_proposal.summary}
-        #{second_proposal.id},#{second_proposal.title},#{second_proposal.author.email},#{second_proposal.summary}
-        #{first_proposal.id},#{first_proposal.title},#{first_proposal.author.email},#{first_proposal.summary}
+        #{third_proposal.id},#{third_proposal.title},\
+        #{third_proposal.author.email},#{third_proposal.summary}
+        #{second_proposal.id},#{second_proposal.title},\
+        #{second_proposal.author.email},#{second_proposal.summary}
+        #{first_proposal.id},#{first_proposal.title},\
+        #{first_proposal.author.email},#{first_proposal.summary}
       CSV
 
       expect(page.body).to eq(csv_contents)
