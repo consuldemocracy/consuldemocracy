@@ -3,7 +3,7 @@ module CsvExporter
     CSV.generate(headers: true) do |csv|
       csv << headers
       records.each do |record|
-        comments = record.comments.sort_by(&:created_at)
+        comments = comments_in_reading_order(record)
 
         if comments.any?
           comments.each { |comment| csv << csv_values(record, comment) }
@@ -60,5 +60,11 @@ module CsvExporter
 
     def comment_header(name)
       "#{Comment.model_name.human} #{name}"
+    end
+
+    def comments_in_reading_order(record)
+      Comment.sort_by_ancestry(record.comments) do |comment, sibling|
+        comment.created_at <=> sibling.created_at
+      end
     end
 end
