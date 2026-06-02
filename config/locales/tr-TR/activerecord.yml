@@ -106,6 +106,21 @@ tr:
       legislation/proposal:
         one: "Önerge"
         other: "Önergeler"
+      legislation/draft_version:
+        one: "Taslak sürüm"
+        other: "Taslak sürümler"
+      legislation/question:
+        one: "Soru"
+        other: "Sorular"
+      legislation/question_option:
+        one: "Soru seçeneği"
+        other: "Soru seçenekleri"
+      legislation/answer:
+        one: "Yanıt"
+        other: "Yanıtlar"
+      image:
+        one: "Görsel"
+        other: "Görseller"
       tenant:
         one: "kiracı"
         other: "kiracı"
