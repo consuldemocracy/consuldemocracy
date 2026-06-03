@@ -340,7 +340,6 @@ pt:
         title: "Título"
       site_customization/page:
         content: Conteúdo
-        created_at: Criado em
         subtitle: Subtítulo
         slug: Slug (do URL)
         status: Estado
