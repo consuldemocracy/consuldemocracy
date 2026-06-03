@@ -358,7 +358,6 @@ tr:
         title: "Başlık"
       site_customization/page:
         content: İçerik
-        created_at: Oluşturulma
         subtitle: Alt yazı
         slug: Kısaltma
         status: Durum
