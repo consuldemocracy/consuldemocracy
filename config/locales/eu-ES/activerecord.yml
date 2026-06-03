@@ -221,7 +221,6 @@ eu:
         title: "Izenburua"
       site_customization/page:
         content: Edukia
-        created_at: Sortuta
         subtitle: Azpititulua
         slug: Slug
         status: Egoera
