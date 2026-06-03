@@ -358,7 +358,6 @@ sv:
         title: "Titel"
       site_customization/page:
         content: Innehåll
-        created_at: Skapad kl.
         subtitle: Underrubrik
         slug: URL
         status: Status
