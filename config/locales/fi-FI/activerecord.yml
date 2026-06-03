@@ -162,7 +162,6 @@ fi:
         description: "Kuvaus"
       site_customization/page:
         content: Sisältö
-        created_at: Luotu
         status: Tila
         locale: Kieli
       site_customization/page/translation:
