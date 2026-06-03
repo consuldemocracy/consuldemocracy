@@ -340,7 +340,6 @@ pt-BR:
         title: "Título"
       site_customization/page:
         content: Conteúdo
-        created_at: Criado em
         subtitle: Legenda
         slug: área de informações
         status: Status
