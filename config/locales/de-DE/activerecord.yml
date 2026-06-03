@@ -332,7 +332,6 @@ de:
         title: "Titel"
       site_customization/page:
         content: Inhalt
-        created_at: Erstellt am
         subtitle: Untertitel
         slug: URL
         status: Status
