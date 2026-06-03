@@ -32,9 +32,12 @@ describe "Admin debates", :admin do
 
   context "Selecting csv", :no_js do
     scenario "Downloading CSV file" do
-      first_debate = create(:debate, title: "Should Pluto be a planet?")
-      second_debate = create(:debate, title: "Best approach for public transport")
-      third_debate = create(:debate, title: "Green spaces in the city")
+      first_debate = create(:debate, title: "Should Pluto be a planet?",
+                                     created_at: Time.zone.local(2026, 6, 1, 14, 56, 10))
+      second_debate = create(:debate, title: "Best approach for public transport",
+                                      created_at: Time.zone.local(2026, 6, 1, 14, 58, 20))
+      third_debate = create(:debate, title: "Green spaces in the city",
+                                     created_at: Time.zone.local(2026, 6, 1, 15, 00, 30))
 
       visit admin_debates_path
 
@@ -45,10 +48,14 @@ describe "Admin debates", :admin do
       expect(header).to match(/filename="debates.csv"/)
 
       csv_contents = <<~CSV
-        ID,Title,Author
-        #{third_debate.id},#{third_debate.title},#{third_debate.author.email}
-        #{second_debate.id},#{second_debate.title},#{second_debate.author.email}
-        #{first_debate.id},#{first_debate.title},#{first_debate.author.email}
+        ID,Title,Author,Created at,Comment ID,\
+        Comment Author,Comment Content,Comment Parent,Comment Created at
+        #{third_debate.id},#{third_debate.title},\
+        #{third_debate.author.email},2026-06-01 15:00:30,"","","","",""
+        #{second_debate.id},#{second_debate.title},\
+        #{second_debate.author.email},2026-06-01 14:58:20,"","","","",""
+        #{first_debate.id},#{first_debate.title},\
+        #{first_debate.author.email},2026-06-01 14:56:10,"","","","",""
       CSV
 
       expect(page.body).to eq(csv_contents)
@@ -67,7 +74,8 @@ describe "Admin debates", :admin do
 
       click_link "Download current selection"
 
-      expect(page.body).to have_content "ID,Title,Author"
+      expect(page.body).to have_content "ID,Title,Author,Created at,Comment ID," \
+                                        "Comment Author,Comment Content,Comment Parent,Comment Created at"
       expect(page.body).to have_content "Should Pluto be a planet?"
       expect(page.body).not_to have_content "Best approach for public transport"
     end

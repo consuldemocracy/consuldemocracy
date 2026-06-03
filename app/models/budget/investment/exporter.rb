@@ -14,7 +14,7 @@ class Budget::Investment::Exporter
 
   private
 
-    def headers
+    def model_headers
       [
         I18n.t("admin.budget_investments.index.list.id"),
         I18n.t("admin.budget_investments.index.list.title"),
@@ -27,11 +27,12 @@ class Budget::Investment::Exporter
         I18n.t("admin.budget_investments.index.list.valuation_finished"),
         I18n.t("admin.budget_investments.index.list.selected"),
         I18n.t("admin.budget_investments.index.list.visible_to_valuators"),
-        I18n.t("admin.budget_investments.index.list.author_username")
+        I18n.t("admin.budget_investments.index.list.author_username"),
+        Budget::Investment.human_attribute_name(:created_at)
       ]
     end
 
-    def csv_values(investment)
+    def record_csv_values(investment)
       [
         investment.id.to_s,
         investment.title,
@@ -44,7 +45,8 @@ class Budget::Investment::Exporter
         investment.valuation_finished? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.selected? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.visible_to_valuators? ? I18n.t("shared.yes") : I18n.t("shared.no"),
-        investment.author.username
+        investment.author.username,
+        I18n.l(investment.created_at, format: :datetime)
       ]
     end
 

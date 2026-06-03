@@ -1,5 +1,6 @@
 en:
   attributes:
+    created_at: Created at
     geozone_id: "Scope of operation"
     results_enabled: "Show results"
     stats_enabled: "Show stats"
@@ -248,6 +249,7 @@ en:
         main_link_url: "The link takes you to (add a link)"
       comment:
         body: "Comment"
+        parent_id: "Parent"
         user: "User"
       debate:
         author: "Author"
@@ -358,7 +360,6 @@ en:
         title: "Title"
       site_customization/page:
         content: Content
-        created_at: Created at
         subtitle: Subtitle
         slug: Slug
         status: Status

@@ -9,19 +9,21 @@ class Debate::Exporter
 
   private
 
-    def headers
+    def model_headers
       [
         I18n.t("admin.debates.index.id"),
         Debate.human_attribute_name(:title),
-        I18n.t("admin.debates.index.author")
+        I18n.t("admin.debates.index.author"),
+        Debate.human_attribute_name(:created_at)
       ]
     end
 
-    def csv_values(debate)
+    def record_csv_values(debate)
       [
         debate.id.to_s,
         debate.title,
-        debate.author.email
+        debate.author.email,
+        I18n.l(debate.created_at, format: :datetime)
       ]
     end
 end

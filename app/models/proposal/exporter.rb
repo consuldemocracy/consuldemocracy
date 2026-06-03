@@ -23,21 +23,23 @@ class Proposal::Exporter
       }
     end
 
-    def headers
+    def model_headers
       [
         I18n.t("admin.proposals.index.list.id"),
         I18n.t("admin.proposals.index.list.title"),
         I18n.t("admin.proposals.index.list.author"),
-        I18n.t("admin.proposals.index.list.summary")
+        I18n.t("admin.proposals.index.list.summary"),
+        Proposal.human_attribute_name(:created_at)
       ]
     end
 
-    def csv_values(proposal)
+    def record_csv_values(proposal)
       [
         proposal.id.to_s,
         proposal.title,
         proposal.author.email,
-        proposal.summary
+        proposal.summary,
+        I18n.l(proposal.created_at, format: :datetime)
       ]
     end
 end

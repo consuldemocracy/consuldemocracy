@@ -1,5 +1,6 @@
 es:
   attributes:
+    created_at: Fecha de creación
     geozone_id: "Ámbito de actuación"
     results_enabled: "Mostrar resultados"
     stats_enabled: "Mostrar estadísticas"
@@ -248,6 +249,7 @@ es:
         main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
+        parent_id: "Padre"
         user: "Usuario"
       debate:
         author: "Autor"
@@ -358,7 +360,6 @@ es:
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
-        created_at: Creada
         subtitle: Subtítulo
         slug: Slug
         status: Estado
