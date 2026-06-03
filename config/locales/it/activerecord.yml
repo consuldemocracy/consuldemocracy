@@ -340,7 +340,6 @@ it:
         title: "Titolo"
       site_customization/page:
         content: Contenuto
-        created_at: Creato
         subtitle: Sottotitolo
         slug: Slug
         status: Status
