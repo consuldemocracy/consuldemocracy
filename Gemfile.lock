@@ -168,7 +168,7 @@ GEM
       actionpack (>= 3.1)
       caxlsx (>= 3.0)
     cgi (0.5.1)
-    chef-utils (19.1.164)
+    chef-utils (19.3.15)
       concurrent-ruby
     childprocess (5.1.0)
       logger (~> 1.5)
@@ -391,8 +391,8 @@ GEM
       net-smtp
     marcel (1.1.0)
     matrix (0.4.2)
-    mdl (0.15.0)
-      kramdown (~> 2.3)
+    mdl (0.16.0)
+      kramdown (~> 2.5)
       kramdown-parser-gfm (~> 1.1)
       mixlib-cli
       mixlib-config
@@ -901,7 +901,7 @@ DEPENDENCIES
   knapsack_pro (~> 8.4.0)
   launchy (~> 3.1.1)
   letter_opener_web (~> 3.0.0)
-  mdl (~> 0.15.0)
+  mdl (~> 0.16.0)
   mini_magick (~> 5.3.1)
   omniauth (~> 2.1.4)
   omniauth-facebook (~> 10.0.0)
