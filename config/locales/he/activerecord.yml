@@ -363,7 +363,6 @@ he:
         title: "שם"
       site_customization/page:
         content: תוכן
-        created_at: נוצר ב
         subtitle: תת כותרת
         slug: אסימון
         status: סטטוס
