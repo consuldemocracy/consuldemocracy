@@ -306,7 +306,6 @@ ca:
         title: "Títol"
       site_customization/page:
         content: contingut
-        created_at: creat
         subtitle: Subtítol
         slug: URL
         status: Estat
