@@ -348,7 +348,6 @@ pl:
         title: "Tytuł"
       site_customization/page:
         content: Zawartość
-        created_at: Utworzony w
         subtitle: Napis
         slug: Ścieżka
         status: Status

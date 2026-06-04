@@ -376,7 +376,6 @@ uk-UA:
         title: "Заголовок"
       site_customization/page:
         content: Вміст
-        created_at: Створено о
         subtitle: Підзаголовок
         slug: Блок
         status: Статус

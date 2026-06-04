@@ -266,7 +266,6 @@ sq:
         title: "Titull"
       site_customization/page:
         content: Përmbajtje
-        created_at: Krijuar në
         subtitle: Nëntitull
         slug: Slug
         status: Statusi

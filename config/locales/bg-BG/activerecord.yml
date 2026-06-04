@@ -331,7 +331,6 @@ bg:
         title: "Заглавие"
       site_customization/page:
         content: Съдържание
-        created_at: Създадено в
         subtitle: Подзаглавие
         slug: Линотипен ред
         status: Състояние

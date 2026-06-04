@@ -225,7 +225,6 @@ sl:
         title: "Naslov"
       site_customization/page:
         content: Vsebina
-        created_at: Ustvarjeno v
         subtitle: Podnaslov
         status_draft: "Osnutek"
         status_published: "Objavljena"

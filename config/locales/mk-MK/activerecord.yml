@@ -302,7 +302,6 @@ mk:
         title: "Наслов"
       site_customization/page:
         content: Содржина
-        created_at: Креирано на
         subtitle: Превод
         slug: Опис на дел од УРЛ
         status: Статус

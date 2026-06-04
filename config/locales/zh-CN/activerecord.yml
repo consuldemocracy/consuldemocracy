@@ -238,7 +238,6 @@ zh-CN:
         title: "标题"
       site_customization/page:
         content: 内容
-        created_at: 创建于
         subtitle: 副标题
         slug: Slug
         status: 状态

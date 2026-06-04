@@ -246,7 +246,6 @@ fa:
         title: "عنوان"
       site_customization/page:
         content: محتوا
-        created_at: "ایجاد شده در\n"
         subtitle: "عنوان فرعی\n"
         slug: slug
         status: وضعیت ها

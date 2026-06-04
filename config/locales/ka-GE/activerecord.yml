@@ -306,7 +306,6 @@ ka:
         title: "სათაური"
       site_customization/page:
         content: შინაარსი
-        created_at: შექმნილია
         subtitle: ქვესათაური
         slug: მოკლე დასახელება
         status: სტატუსი

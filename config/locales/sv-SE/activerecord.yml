@@ -1,5 +1,6 @@
 sv:
   attributes:
+    created_at: Skapad kl.
     geozone_id: "Område"
     results_enabled: "Visa resultat"
     stats_enabled: "Visa statistik"
@@ -248,6 +249,7 @@ sv:
         main_link_url: "Länken leder till (lägg till en länk)"
       comment:
         body: "Kommentar"
+        parent_id: "Överordnad"
         user: "Användare"
       debate:
         author: "Skribent"
@@ -358,7 +360,6 @@ sv:
         title: "Titel"
       site_customization/page:
         content: Innehåll
-        created_at: Skapad kl.
         subtitle: Underrubrik
         slug: URL
         status: Status

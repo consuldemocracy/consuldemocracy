@@ -417,7 +417,6 @@ cs:
         title: "Nadpis"
       site_customization/page:
         content: Obsah
-        created_at: Vytvořeno dne
         subtitle: Titulek
         slug: Slug
         status: Status

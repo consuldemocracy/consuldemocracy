@@ -354,7 +354,6 @@ hr:
         title: "Naziv"
       site_customization/page:
         content: Sadržaj
-        created_at: Stvoreno kod
         subtitle: Podnaslov
         slug: Žeton
         status: Status

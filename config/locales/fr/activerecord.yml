@@ -340,7 +340,6 @@ fr:
         title: "Titre"
       site_customization/page:
         content: Contenu
-        created_at: Créé le
         subtitle: Sous-titres
         slug: Slug
         status: Statut

@@ -431,7 +431,6 @@ ar:
         title: "عنوان"
       site_customization/page:
         content: المحتوى
-        created_at: أنشئت في
         subtitle: عنوان فرعي
         slug: سبيكة
         status: حالة

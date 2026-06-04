@@ -302,7 +302,6 @@ oc:
         title: "Títol"
       site_customization/page:
         content: contengut
-        created_at: creat
         subtitle: Sostítol
         slug: URL
         status: Estat
