@@ -256,7 +256,6 @@ id:
         title: "Judul"
       site_customization/page:
         content: Konten
-        created_at: Dibuat di
         subtitle: Subtitle
         slug: Siput
         status: Status

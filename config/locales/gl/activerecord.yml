@@ -340,7 +340,6 @@ gl:
         title: "Título"
       site_customization/page:
         content: Contido
-        created_at: Creada
         subtitle: Subtítulo
         slug: URL
         status: Estado

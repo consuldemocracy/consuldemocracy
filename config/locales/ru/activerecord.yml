@@ -362,7 +362,6 @@ ru:
         title: "Название"
       site_customization/page:
         content: Содержание
-        created_at: Создано в
         subtitle: Субтитр
         slug: URL-наименование
         status: Статус

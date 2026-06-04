@@ -237,7 +237,6 @@ zh-TW:
         title: "標題"
       site_customization/page:
         content: 內容
-        created_at: 創建於
         subtitle: 副標題
         slug: Slug
         status: 狀態

@@ -330,7 +330,6 @@ da:
         title: "Titel"
       site_customization/page:
         content: Indhold
-        created_at: Oprettet den
         subtitle: Undertitel
         slug: Signaturlinje
         status: Status

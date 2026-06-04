@@ -370,7 +370,6 @@ ro:
         title: "Titlu"
       site_customization/page:
         content: Conținut
-        created_at: Creat la
         subtitle: Subtitrare
         slug: Slug
         status: Status

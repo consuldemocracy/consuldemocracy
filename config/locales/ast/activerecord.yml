@@ -227,7 +227,6 @@ ast:
         title: "Títulu"
       site_customization/page:
         content: Conteníu
-        created_at: Creáu
         subtitle: Subtítulu
         slug: Slug
         status: Estáu

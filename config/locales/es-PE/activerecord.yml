@@ -245,7 +245,6 @@ es-PE:
         title: "Título"
       site_customization/page:
         content: Contenido
-        created_at: Creado
         subtitle: Subtítulo
         status: Estado
         status_draft: "Borrador"

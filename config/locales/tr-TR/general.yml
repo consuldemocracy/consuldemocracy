@@ -203,6 +203,7 @@ tr:
       participation_text: Yaşamak istediğiniz şehri nasıl şekillendireceğinize karar verin.
       participation_title: Katılım
       privacy: Gizlilik ilkesi
+      source_code: Kaynak kodu
     header:
       administration_menu: Menü
       administration: Yönetim
@@ -653,6 +654,10 @@ tr:
     show:
       back: "İçeriğime dön"
   shared:
+    embedded_video:
+      accept: "Videoyu seyredin"
+      warning: "Bu sayfada üçüncü taraf bir hizmet sağlayıcıdan alınan bir video bulunuyor İçeriğe erişerek, verilerinizin üçüncü taraf hizmet sağlayıcılara aktarılabileceğini kabul etmiş olursunuz."
+    warning_for_external_links: "Onaylayarak, siteden ayrılmayı kabul etmiş olursunuz."
     actions:
       label: "%{action} %{name}"
     edit: "Düzenle"

@@ -328,7 +328,6 @@ bs:
         title: "Naziv"
       site_customization/page:
         content: Sadržaj
-        created_at: Napravljena na
         subtitle: Podnaslov
         slug: Slug
         status: Status

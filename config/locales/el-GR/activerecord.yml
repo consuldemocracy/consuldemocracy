@@ -327,7 +327,6 @@ el:
         title: "Τίτλος"
       site_customization/page:
         content: Περιεχόμενο
-        created_at: Δημιουργήθηκε στις
         subtitle: Υπότιτλος
         slug: Slug
         status: Κατάσταση

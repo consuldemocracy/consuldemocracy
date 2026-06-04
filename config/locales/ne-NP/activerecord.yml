@@ -338,7 +338,6 @@ ne:
         title: "टाइटल"
       site_customization/page:
         content: सामग्री
-        created_at: मा सिर्जना गरियो
         subtitle: उपशीर्षकहरू
         slug: स्लग
         status: अवस्था

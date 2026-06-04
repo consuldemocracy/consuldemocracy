@@ -283,7 +283,6 @@ val:
         title: "Títol"
       site_customization/page:
         content: Contingut
-        created_at: Creada
         subtitle: Subtítol
         slug: Slug
         status: Estat

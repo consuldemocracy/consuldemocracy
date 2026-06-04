@@ -341,7 +341,6 @@ sr:
         title: "Наслов"
       site_customization/page:
         content: Садржај
-        created_at: Креирано у
         subtitle: Поднаслов
         slug: Метак
         status: Статус
