@@ -117,7 +117,7 @@ describe ImageSuggestionsController do
       it "returns error response" do
         post :attach, params: { id: photo_id, resource_type: resource_type }
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response.parsed_body["errors"]).to eq "Download failed"
       end
     end
@@ -131,7 +131,7 @@ describe ImageSuggestionsController do
       it "returns error response with message" do
         post :attach, params: { id: photo_id, resource_type: resource_type }
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response.parsed_body["errors"]).to eq "Download failed"
       end
     end
@@ -145,7 +145,7 @@ describe ImageSuggestionsController do
       it "returns 422 with validation errors in JSON" do
         post :attach, params: { id: photo_id, resource_type: resource_type }
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response.parsed_body["errors"]).to be_present
       end
     end
