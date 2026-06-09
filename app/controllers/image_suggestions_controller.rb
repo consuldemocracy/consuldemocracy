@@ -26,7 +26,7 @@ class ImageSuggestionsController < ApplicationController
     begin
       attachment = ImageSuggestions::Pexels.download(params[:id])
     rescue ImageSuggestions::Pexels::PexelsError, Pexels::APIError => e
-      return render json: { errors: e.message }, status: :unprocessable_entity
+      return render json: { errors: e.message }, status: :unprocessable_content
     end
 
     @direct_upload = DirectUpload.new(
@@ -47,7 +47,7 @@ class ImageSuggestionsController < ApplicationController
                      attachment_url: polymorphic_path(@direct_upload.relation.attachment) }
     else
       render json: { errors: @direct_upload.errors[:attachment].join(", ") },
-             status: :unprocessable_entity
+             status: :unprocessable_content
     end
   end
 
