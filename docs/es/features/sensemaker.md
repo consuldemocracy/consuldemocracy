@@ -123,18 +123,18 @@ Si la verificación de salud falla, revisa el mensaje de error del trabajo en la
    ![Lista de trabajos Sensemaker en el área de administración](../../img/sensemaker/admin-jobs-index-es.png)
 
 2. Haz clic en **Nueva ejecución** y busca un recurso objetivo (debate, propuesta, votación, elemento legislativo, presupuesto, etc.).
+
+   ![Nuevo análisis Sensemaker con un recurso objetivo seleccionado](../../img/sensemaker/admin-new-run-es.png)
+
 3. Revisa el campo de **contexto adicional** (el título y la descripción del objetivo se rellenan previamente cuando están disponibles) y añade orientación opcional para el análisis.
-4. Elige cómo ejecutar el análisis:
-   - **Generar resumen**: ejecuta el script de resumen
-   - **Generar informe**: ejecuta el pipeline completo de informes y produce un informe HTML. Esto ejecuta automáticamente los trabajos previos de categorización y análisis avanzado cuando son necesarios.
-   - **Opciones avanzadas**: elige manualmente cualquier script disponible (verificación de salud, categorizar, resumir, analizar o informe).
+
+4. Elige cómo ejecutar el análisis: usa **Generar resumen** para ejecutar el script de resumen, **Generar informe** para ejecutar el pipeline completo de informes y producir un informe HTML (esto ejecuta automáticamente los trabajos previos de categorización y análisis avanzado cuando son necesarios), o **Opciones avanzadas** para elegir manualmente cualquier script (verificación de salud, categorizar, resumir, analizar o informe).
 
    ![Nuevo análisis Sensemaker con acciones de generar resumen e informe](../../img/sensemaker/admin-new-run-actions-es.png)
 
 5. Cuando un trabajo finaliza correctamente, usa **Publicar** para hacer visibles los resúmenes e informes a los ciudadanos. Solo los trabajos completados con archivos de salida pueden publicarse. Usa **Despublicar** para ocultarlos de nuevo.
 
 Solo los trabajos de **Resumir** e **Informe** pueden publicarse. Los de verificación de salud, categorizar y analizar sirven para configuración, diagnóstico y pasos intermedios del pipeline; solo son visibles en el área de administración.
-
 
 Scripts disponibles:
 

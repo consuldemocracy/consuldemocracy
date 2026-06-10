@@ -123,18 +123,18 @@ If the health check fails, inspect the job's error message on the job detail pag
    ![Sensemaker jobs list in the admin area](../../img/sensemaker/admin-jobs-index-en.png)
 
 2. Click **New Run** and search for a target resource (debate, proposal, poll, legislation item, budget, etc.).
+
+   ![New Sensemaker analysis with a target resource selected](../../img/sensemaker/admin-new-run-en.png)
+
 3. Review the **additional context** field (the target's title and description are pre-filled where available) and add optional guidance for the analysis.
-4. Choose how to run the analysis:
-   - **Generate summary**: runs the summarisation script
-   - **Generate report**: runs the full report pipeline and produces an HTML report. This automatically runs prerequisite categorisation and advanced analysis jobs when needed.
-   - **Advanced options**: choose any available script manually (health check, categorise, summarise, analyse, or report).
+
+4. Choose how to run the analysis: use **Generate summary** to run the summarisation script, **Generate report** to run the full report pipeline and produce an HTML report (this automatically runs prerequisite categorisation and advanced analysis jobs when needed), or **Advanced options** to choose any script manually (health check, categorise, summarise, analyse, or report).
 
    ![New Sensemaker analysis with generate summary and report actions](../../img/sensemaker/admin-new-run-actions-en.png)
 
 5. When a job completes successfully, use **Publish** to make summaries and reports visible to citizens. Only completed jobs with output files can be published. Use **Unpublish** to hide them again.
 
 Only **Summarise** and **Report** jobs can be published. Health check, categorise, and analyse jobs are for setup, diagnostics, and intermediate pipeline steps—they remain visible in the admin area only.
-
 
 Available scripts:
 
