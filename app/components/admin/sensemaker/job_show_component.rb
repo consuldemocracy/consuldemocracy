@@ -18,7 +18,7 @@ class Admin::Sensemaker::JobShowComponent < ApplicationComponent
   end
 
   def enabled?
-    feature?(:sensemaker)
+    Sensemaker.enabled?
   end
 
   def has_children?

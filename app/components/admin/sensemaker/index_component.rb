@@ -13,6 +13,6 @@ class Admin::Sensemaker::IndexComponent < ApplicationComponent
   end
 
   def enabled?
-    feature?(:sensemaker)
+    Sensemaker.enabled?
   end
 end
