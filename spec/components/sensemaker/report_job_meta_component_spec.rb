@@ -14,7 +14,9 @@ describe Sensemaker::ReportJobMetaComponent do
   let(:component) { Sensemaker::ReportJobMetaComponent.new(job) }
 
   before do
-    Setting["feature.sensemaker"] = true
+    Setting["llm.provider"] = "OpenAI"
+    Setting["llm.model"] = "gpt-4o"
+    Setting["llm.use_sensemaker"] = true
   end
 
   describe "#run_timestamp" do

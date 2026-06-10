@@ -7,7 +7,9 @@ describe Sensemaker::ReportViewComponent do
   let(:component) { Sensemaker::ReportViewComponent.new(sensemaker_job) }
 
   before do
-    Setting["feature.sensemaker"] = true
+    Setting["llm.provider"] = "OpenAI"
+    Setting["llm.model"] = "gpt-4o"
+    Setting["llm.use_sensemaker"] = true
   end
 
   def create_publishable_job_with_output(attributes = {})

@@ -8,7 +8,9 @@ describe Sensemaker::ReportComponentHelpers do
   let(:host) { Sensemaker::JobIndexComponent.new(jobs: jobs, parent_resource: nil, resource: nil) }
 
   before do
-    Setting["feature.sensemaker"] = true
+    Setting["llm.provider"] = "OpenAI"
+    Setting["llm.model"] = "gpt-4o"
+    Setting["llm.use_sensemaker"] = true
   end
 
   describe "#display_title_for" do
