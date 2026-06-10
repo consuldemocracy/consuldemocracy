@@ -8,7 +8,7 @@ class Sensemaker::ReportLinkComponent < ApplicationComponent
   end
 
   def render?
-    feature?(:sensemaker) && report_available?
+    Sensemaker.enabled? && report_available?
   end
 
   def report_available?
