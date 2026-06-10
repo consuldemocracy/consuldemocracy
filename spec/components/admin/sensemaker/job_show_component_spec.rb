@@ -10,19 +10,21 @@ describe Admin::Sensemaker::JobShowComponent do
   let(:component) { Admin::Sensemaker::JobShowComponent.new(sensemaker_job, child_jobs) }
 
   before do
-    Setting["feature.sensemaker"] = true
+    Setting["llm.provider"] = "OpenAI"
+    Setting["llm.model"] = "gpt-4o"
+    Setting["llm.use_sensemaker"] = true
   end
 
   describe "#enabled?" do
-    context "when sensemaker feature is enabled" do
+    context "when sensemaker is enabled" do
       it "returns true" do
         expect(component.enabled?).to be_truthy
       end
     end
 
-    context "when sensemaker feature is disabled" do
+    context "when sensemaker is disabled" do
       before do
-        Setting["feature.sensemaker"] = nil
+        Setting["llm.use_sensemaker"] = false
       end
 
       it "returns false" do
