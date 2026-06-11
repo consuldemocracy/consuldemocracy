@@ -536,7 +536,7 @@ describe "Admin edit translatable records", :admin do
 
       expect_to_have_language_selected "Français"
       expect(page).to have_select "Add language", selected: ""
-      expect(page).to have_field "contents_content_#{content.key}values_value_fr"
+      expect(page).to have_field "contents[content_#{content.key}][values][value_fr]"
     end
 
     context "Languages in use" do
