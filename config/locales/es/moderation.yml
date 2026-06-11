@@ -1,5 +1,13 @@
 es:
   moderation:
+    ai_integration:
+      logs:
+        flagged_or_hidden: "[Moderación IA] Comentario #%{id} MARCADO/OCULTADO por %{model}. Desencadenantes: %{triggers}. Motivo: %{reason}"
+        clean: "[Moderación IA] Comentario #%{id} marcado como LIMPIO por %{model}."
+      errors:
+        ruby_llm_crash: "Error de RubyLLM para el Comentario #%{id}: %{message}"
+        json_parser_crash: "Error de procesamiento JSON para el Comentario #%{id}. Contenido: %{content}"
+        unexpected_exception: "Excepción inesperada capturada para el Comentario #%{id}: %{message}"
     actions:
       confirm_action: "¿Estás seguro? %{action}"
     comments:
