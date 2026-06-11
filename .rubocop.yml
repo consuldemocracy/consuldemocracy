@@ -292,6 +292,9 @@ Lint/ConstantDefinitionInBlock:
 Lint/ConstantReassignment:
   Enabled: true
 
+Lint/CircularArgumentReference:
+  Enabled: true
+
 Lint/DeprecatedClassMethods:
   Enabled: true
 
