@@ -19,7 +19,12 @@ require "custom_spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
+require "billy/capybara/rspec"
 require "view_component/test_helpers"
+
+Billy.configure do |config|
+  config.non_whitelisted_requests_disabled = true
+end
 
 module ViewComponent
   module TestHelpers
@@ -75,7 +80,9 @@ Capybara.register_driver :headless_chrome do |app|
     opts.add_argument "--headless"
     opts.add_argument "--no-sandbox"
     opts.add_argument "--window-size=1200,800"
-    opts.add_argument "--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}"
+    opts.add_argument "--ignore-certificate-errors"
+    opts.add_argument "--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}"
+    opts.add_argument "--proxy-bypass-list=lvh.me;*.lvh.me"
   end
 
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
