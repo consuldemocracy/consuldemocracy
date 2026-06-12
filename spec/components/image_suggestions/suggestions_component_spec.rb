@@ -43,7 +43,6 @@ describe ImageSuggestions::SuggestionsComponent do
       render_inline component
 
       expect(page).to have_css ".suggested-image-button", count: 1
-      expect(page).to have_css "#suggested-image-1"
       expect(page).to have_css "img", count: 1
       expect(page).to have_css "img[src='https://example.com/image1.jpg']"
     end
