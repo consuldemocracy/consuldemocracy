@@ -187,7 +187,7 @@
       App.Imageable.setInputErrors(data);
     },
     initializeAttachSuggestedImage: function() {
-      $("body").on("click", ".js-attach-suggested-image", function() {
+      $("body").on("click", ".suggested-image-button", function() {
         var imageId, resourceType, resourceId, dataString, wrapper;
         imageId = $(this).data("image-id");
         wrapper = $(this).closest(".suggested-images-wrapper");

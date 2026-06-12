@@ -165,7 +165,7 @@ Currently, this is only implemented on with Budget Investments feature!
 The suggested images grid uses CSS classes that can be customized:
 
 - `.suggested-images-container`: Container for all suggested images
-- `.js-attach-suggested-image`: Individual image button
+- `.suggested-image-button`: Individual image button
 - `.suggested-image`: The image element itself
 
 Styles are defined in `app/assets/stylesheets/mixins/uploads.scss`.

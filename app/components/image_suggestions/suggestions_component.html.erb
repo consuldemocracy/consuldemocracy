@@ -11,7 +11,7 @@
       <% images.each_with_index do |image, index| %>
         <div class="small-6 medium-3 column suggested-image-cell">
           <button type="button"
-                  class="js-attach-suggested-image suggested-image-button"
+                  class="suggested-image-button"
                   data-image-id="<%= image.id %>"
                   id="suggested-image-<%= image.id %>">
             <%= image_tag(image.src["small"], alt: image.user.name, class: "suggested-image") %>

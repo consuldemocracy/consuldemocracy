@@ -42,9 +42,8 @@ describe ImageSuggestions::SuggestionsComponent do
     it "renders the grid with attach buttons" do
       render_inline component
 
-      expect(page).to have_css ".js-attach-suggested-image", count: 1
+      expect(page).to have_css ".suggested-image-button", count: 1
       expect(page).to have_css "#suggested-image-1"
-      expect(page).to have_css ".suggested-image-button"
       expect(page).to have_css "img", count: 1
       expect(page).to have_css "img[src='https://example.com/image1.jpg']"
     end
@@ -53,8 +52,8 @@ describe ImageSuggestions::SuggestionsComponent do
       render_inline component
 
       expect(page).to have_button "Attach suggested image 1 of 1"
-      expect(page).to have_css "img.suggested-image[alt='Photographer 1']"
       expect(page).to have_css ".suggested-images-container[role='region'][aria-label='Suggested images']"
+      expect(page).to have_css "img.suggested-image[alt='Photographer 1']"
     end
   end
 end
