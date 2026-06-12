@@ -13,12 +13,10 @@
           <button type="button"
                   class="js-attach-suggested-image suggested-image-button"
                   data-image-id="<%= image.id %>"
-                  id="suggested-image-<%= image.id %>"
-                  aria-label="<%= t("images.form.attach_suggested_image_aria_label", index: index + 1, count: images.count) %>"
-                  aria-describedby="suggested-image-desc-<%= image.id %>">
+                  id="suggested-image-<%= image.id %>">
             <%= image_tag(image.src["small"], alt: image.user.name, class: "suggested-image") %>
-            <span id="suggested-image-desc-<%= image.id %>" class="show-for-sr">
-              <%= t("images.form.attach_suggested_image") %>
+            <span class="show-for-sr">
+              <%= t("images.form.attach_suggested_image_aria_label", index: index + 1, count: images.count) %>
             </span>
           </button>
         </div>
