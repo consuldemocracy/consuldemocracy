@@ -157,18 +157,6 @@ La funcionalidad de sugerencias de imágenes funciona con cualquier recurso que:
 
 ¡Actualmente, esto solo está implementado con la funcionalidad de proyectos de gasto!
 
-## Personalización
-
-### Estilos
-
-La cuadrícula de imágenes sugeridas usa clases CSS que se pueden personalizar:
-
-- `.suggested-images-container`: Contenedor para todas las imágenes sugeridas
-- `.suggested-image-button`: Botón de imagen individual
-- `.suggested-image`: El elemento de imagen en sí
-
-Los estilos están definidos en `app/assets/stylesheets/mixins/uploads.scss`.
-
 ## Consideraciones de Precios
 
 ### Costos de LLM
