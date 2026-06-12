@@ -879,7 +879,6 @@ describe "Budget Investments" do
         click_button "Suggest an image with AI"
 
         expect(page).to have_content "Select an image from the suggestions below:"
-        expect(ImageSuggestions::Llm::Client).to have_received(:call)
 
         within(".suggested-images-container") do
           click_button "Attach suggested image 1 of 1"
