@@ -865,7 +865,7 @@ describe "Budget Investments" do
           .and_return(fixture_file_upload("clippy.jpg"))
       end
 
-      scenario "User can suggest images, attach one and create the investment", :js do
+      scenario "User can suggest images, attach one and create the investment" do
         login_as(author)
         visit new_budget_investment_path(budget)
 
