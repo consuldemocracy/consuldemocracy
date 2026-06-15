@@ -1,7 +1,7 @@
 $(".suggested-images-container").replaceWith("<%= j render(ImageSuggestions::SuggestionsComponent.new(@suggestions)) %>");
 
 var imageFields = $(".suggested-images-wrapper").closest(".image-fields.direct-upload");
-if (imageFields.find(".js-attach-suggested-image").length > 0) {
+if (imageFields.find(".suggested-image-button").length > 0) {
   imageFields.find("label.button").addClass("hide");
 } else {
   imageFields.find("label.button").removeClass("hide");

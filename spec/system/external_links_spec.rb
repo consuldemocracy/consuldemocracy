@@ -1,6 +1,10 @@
 require "rails_helper"
 
 describe "Warning for external links" do
+  before do
+    proxy.stub("http://www.gnu.org/licenses/agpl-3.0.html").and_return(body: "<html></html>", code: 200)
+  end
+
   context "when the feature is enabled" do
     before { Setting["feature.gdpr.warning_for_external_links"] = true }
 

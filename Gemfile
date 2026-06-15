@@ -82,9 +82,9 @@ end
 
 group :test do
   gem "capybara", "~> 3.40.0"
-  gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.3.1"
   gem "pdf-reader", "~> 2.15.1"
+  gem "puffing-billy", "~> 4.0"
   gem "rspec-rails", "~> 8.0.4"
   gem "selenium-webdriver", "~> 4.43.0"
   gem "simplecov", "~> 0.22.0", require: false

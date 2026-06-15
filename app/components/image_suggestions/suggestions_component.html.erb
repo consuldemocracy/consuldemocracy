@@ -7,23 +7,18 @@
   <% end %>
   <% if images.any? %>
     <p class="help-text mb-2"><%= t("images.form.pick_an_image") %></p>
-    <div class="small-12 column suggested-images-grid">
+    <ul class="suggested-images">
       <% images.each_with_index do |image, index| %>
-        <div class="small-6 medium-3 column suggested-image-cell">
-          <button type="button"
-                  class="js-attach-suggested-image suggested-image-button"
-                  data-image-id="<%= image.id %>"
-                  id="suggested-image-<%= image.id %>"
-                  aria-label="<%= t("images.form.attach_suggested_image_aria_label", index: index + 1, count: images.count) %>"
-                  aria-describedby="suggested-image-desc-<%= image.id %>">
-            <%= image_tag(image.src["small"], alt: image.user.name, class: "suggested-image") %>
-            <span id="suggested-image-desc-<%= image.id %>" class="show-for-sr">
-              <%= t("images.form.attach_suggested_image") %>
+        <li>
+          <button type="button" class="suggested-image-button" data-image-id="<%= image.id %>">
+            <%= image_tag(image.src["small"], alt: image.user.name) %>
+            <span class="show-for-sr">
+              <%= t("images.form.attach_suggested_image_aria_label", index: index + 1, count: images.count) %>
             </span>
           </button>
-        </div>
+        </li>
       <% end %>
-    </div>
+    </ul>
   <% else %>
     <div>
       <small class="error"><%= t("images.form.no_images_found") %></small>
