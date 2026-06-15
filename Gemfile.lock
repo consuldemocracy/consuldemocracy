@@ -124,7 +124,7 @@ GEM
       json
     builder (3.3.0)
     cancancan (3.6.1)
-    capistrano (3.20.0)
+    capistrano (3.20.1)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -438,7 +438,7 @@ GEM
       net-ssh (>= 5.0.0, < 8.0.0)
     net-smtp (0.5.1)
       net-protocol
-    net-ssh (7.3.0)
+    net-ssh (7.3.2)
     nio4r (2.7.5)
     nkf (0.2.0)
     nokogiri (1.19.3)
@@ -874,7 +874,7 @@ DEPENDENCIES
   autoprefixer-rails (~> 10.4.21)
   bing_translator (~> 6.2.0)
   cancancan (~> 3.6.1)
-  capistrano (~> 3.20.0)
+  capistrano (~> 3.20.1)
   capistrano-bundler (~> 2.2.0)
   capistrano-npm (~> 1.0.3)
   capistrano-rails (~> 1.7.0)
