@@ -23,7 +23,7 @@ class DirectUploadsController < ApplicationController
                      attachment_url: polymorphic_path(@direct_upload.relation.attachment) }
     else
       render json: { errors: @direct_upload.errors[:attachment].join(", ") },
-             status: :unprocessable_entity
+             status: :unprocessable_content
     end
   end
 

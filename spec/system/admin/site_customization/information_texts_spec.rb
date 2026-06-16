@@ -68,7 +68,7 @@ describe "Admin custom information texts", :admin do
       visit admin_site_customization_information_texts_path
 
       select "Français", from: "Add language"
-      fill_in "contents[content_#{key}]values[value_fr]", with: "Aide personalise sur les débats"
+      fill_in "contents[content_#{key}][values][value_fr]", with: "Aide personalise sur les débats"
 
       click_button "Save"
 
@@ -91,7 +91,7 @@ describe "Admin custom information texts", :admin do
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
       select "Français", from: "Current language"
-      fill_in "contents_content_#{key}values_value_fr", with: "Partager personalise"
+      fill_in "contents[content_#{key}][values][value_fr]", with: "Partager personalise"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
