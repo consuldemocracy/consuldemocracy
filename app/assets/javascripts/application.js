@@ -53,8 +53,7 @@
 //= require blueimp-file-upload/js/jquery.iframe-transport
 //= require blueimp-file-upload/js/jquery.fileupload
 //= require foundation-sites
-//= require turbolinks
-//= require turbolinks_anchors
+//= require @hotwired/turbo
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
@@ -194,5 +193,11 @@ var destroy_non_idempotent_modules = function() {
   App.SocialShare.destroy();
 };
 
-$(document).on("turbolinks:load", initialize_modules);
-$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
+// Opt-in mode: Turbo only intercepts forms with data-turbo="true".
+// Existing forms rendered directly by controllers (200 OK instead of redirect)
+// are left to the browser/jquery-ujs. Remove this once all controllers follow
+// the Post/Redirect/Get pattern and forms are progressively opted in.
+Turbo.config.forms.mode = "optin";
+
+$(document).on("turbo:load", initialize_modules);
+$(document).on("turbo:before-cache", destroy_non_idempotent_modules);

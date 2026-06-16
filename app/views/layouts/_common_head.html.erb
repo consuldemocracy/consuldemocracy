@@ -11,7 +11,7 @@
   <%= stylesheet_link_tag "application" %>
   <%= stylesheet_link_tag "administration" %>
 <% end %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag "application", "data-turbo-track": "reload" %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag image_path_for("favicon.ico") %>
 <noscript>
@@ -19,5 +19,5 @@
 </noscript>
 
 <% if Rails.env.test? %>
-  <meta name="turbolinks-cache-control" content="no-preview">
+  <meta name="turbo-cache-control" content="no-preview">
 <% end %>

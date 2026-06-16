@@ -101,7 +101,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Turbolinks sanity check from budget's show" do
+  scenario "Turbo sanity check from budget's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 
@@ -125,7 +125,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Turbolinks sanity check from budget heading's show" do
+  scenario "Turbo sanity check from budget heading's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 

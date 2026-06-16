@@ -66,7 +66,7 @@
     }
   };
 
-  document.addEventListener("turbolinks:before-render", function(event) {
-    $.datepicker.dpDiv.appendTo(event.data.newBody);
+  document.addEventListener("turbo:before-render", function(event) {
+    $.datepicker.dpDiv.appendTo(event.detail.newBody);
   });
 }).call(this);
