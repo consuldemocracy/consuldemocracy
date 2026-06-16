@@ -1910,5 +1910,5678 @@ describe "Notifications" do
 
       expect(page).to have_current_path "https://www.external.link.dev/"
     end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
+
+    scenario "With external link" do
+      proxy.stub("https://www.external.link.dev:443/").and_return(body: "<html></html>", code: 200)
+
+      visit notifications_path
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
+
+      first("#notification_#{notification.id} a").click
+
+      expect(page).to have_current_path "https://www.external.link.dev/"
+    end
   end
 end
