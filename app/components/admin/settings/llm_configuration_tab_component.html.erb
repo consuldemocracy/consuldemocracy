@@ -5,4 +5,5 @@
   <%= render Admin::Settings::RowComponent.new("llm.model", type: :dropdown, tab: tab, options: model_options, disabled: model_disabled?) %>
   <%= render Admin::Settings::RowComponent.new("llm.use_llm_for_translations", type: :feature, tab: tab, disabled: feature_disabled?) %>
   <%= render Admin::Settings::RowComponent.new("llm.use_ai_image_suggestions", type: :feature, tab: tab, disabled: image_suggestions_disabled?) %>
+  <%= render Admin::Settings::RowComponent.new("llm.use_sensemaker", type: :feature, tab: tab, disabled: sensemaker_disabled?) %>
 <% end %>
