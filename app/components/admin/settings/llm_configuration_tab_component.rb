@@ -42,4 +42,8 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
   def image_suggestions_disabled?
     !::Llm::Config.configured? || Tenant.current_secrets.pexels_access_key.blank?
   end
+
+  def sensemaker_disabled?
+    !::Llm::Config.configured? || Tenant.current_secrets.sensemaker_data_folder.blank?
+  end
 end
