@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
+ActiveRecord::Schema[7.2].define(version: 2026_05_26_105756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -437,6 +437,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.integer "confidence_score", default: 0, null: false
     t.boolean "valuation", default: false
     t.tsvector "tsv"
+    t.jsonb "ai_moderation_meta", default: {}
     t.index ["ancestry"], name: "index_comments_on_ancestry"
     t.index ["cached_votes_down"], name: "index_comments_on_cached_votes_down"
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
