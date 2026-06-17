@@ -179,3 +179,15 @@ task :setup_puma do
   after "setup_puma", "puma:install"
   after "setup_puma", "puma:enable"
 end
+
+task :setup_delayed_job_environment do
+  on roles(fetch(:delayed_job_roles)) do
+    fnm_setup = fetch(:fnm_setup_command)
+    SSHKit.config.command_map.prefix[:bundle].unshift(-> { "#{fnm_setup} && EXECJS_RUNTIME='' " })
+  end
+end
+
+before "delayed_job:start", "setup_delayed_job_environment"
+before "delayed_job:restart", "setup_delayed_job_environment"
+before "delayed_job:stop", "setup_delayed_job_environment"
+before "delayed_job:status", "setup_delayed_job_environment"
