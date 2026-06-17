@@ -187,7 +187,7 @@ GEM
     dalli (4.3.3)
       logger
     date (3.5.1)
-    debug (1.9.2)
+    debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
     delayed_job (4.1.13)
@@ -846,7 +846,6 @@ GEM
       activesupport
       faraday (~> 2.0)
       faraday-follow_redirects
-    webrick (1.9.2)
     websocket (1.2.11)
     websocket-driver (0.8.0)
       base64
@@ -890,7 +889,7 @@ DEPENDENCIES
   csv (~> 3.3.5)
   daemons (~> 1.4.1)
   dalli (~> 4.3.3)
-  debug (~> 1.9.2)
+  debug (~> 1.11.0)
   delayed_job_active_record (~> 4.1.11)
   devise (~> 5.0.4)
   devise-security (~> 0.18.0)
@@ -972,7 +971,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.3.11p205
+   ruby 3.4.9p82
 
 BUNDLED WITH
-   2.5.22
+   2.6.9
