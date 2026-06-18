@@ -85,6 +85,9 @@ module Consul
     # TODO: remove after upgrading to Rails 8.1
     Rails.application.config.yjit = !Rails.env.local?
 
+    # Avoid the `public` prefix in `db/schema.rb` tables for compatibility with Apartment
+    config.active_record.dump_schemas = "public"
+
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
     config.action_dispatch.rescue_responses["Apartment::TenantNotFound"] = :not_found

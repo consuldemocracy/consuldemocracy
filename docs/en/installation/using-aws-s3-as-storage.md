@@ -47,13 +47,13 @@ First, add the following line inside the `class Application < Rails::Application
 
 ```ruby
 # Store uploaded files on the local file system (see config/storage.yml for options).
-config.active_storage.service = :s3
+config.active_storage.service = :amazon
 ```
 
-Then, uncomment the s3 block that you will find in the *storage.yml* file:
+Then, uncomment the amazon block that you will find in the *storage.yml* file:
 
 ```yaml
-s3:
+amazon:
   service: S3
   access_key_id: <%= Rails.application.secrets.dig(:s3, :access_key_id) %>
   secret_access_key: <%= Rails.application.secrets.dig(:s3, :secret_access_key) %>
