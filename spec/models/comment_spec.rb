@@ -264,8 +264,7 @@ describe Comment do
 
       before do
         allow(Llm::Config).to receive_message_chain(:context, :chat).and_return(mock_chat)
-        allow(mock_chat).to receive(:with_instructions).and_return(mock_chat)
-        allow(mock_chat).to receive(:ask).and_return(mock_response)
+        allow(mock_chat).to receive_messages(with_instructions: mock_chat, ask: mock_response)
       end
 
       it "calculates accurate weight configurations and soft-hides comments passing toxicity thresholds" do

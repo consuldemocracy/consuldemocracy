@@ -1,6 +1,6 @@
 en:
   moderation:
-    ai_integration:
+    ai:
       logs:
         flagged_or_hidden: "[AI Moderation] Comment #%{id} FLAGGED/HIDDEN by %{model}. Triggers: %{triggers}. Reason: %{reason}"
         clean: "[AI Moderation] Comment #%{id} marked CLEAN by %{model}."

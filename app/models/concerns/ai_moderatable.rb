@@ -129,27 +129,27 @@ module AiModeratable
 
       if is_flagged || is_hidden
         log_msg = I18n.t(
-          "moderation.ai_integration.logs.flagged_or_hidden",
+          "moderation.ai.logs.flagged_or_hidden",
           id: id,
           model: model_name,
           triggers: triggered_categories.join(", "),
           reason: data["reasoning"]
         )
       else
-        log_msg = I18n.t("moderation.ai_integration.logs.clean", id: id, model: model_name)
+        log_msg = I18n.t("moderation.ai.logs.clean", id: id, model: model_name)
       end
 
       Rails.logger.info log_msg
 
     rescue RubyLLM::Error => e
-      err_msg = I18n.t("moderation.ai_integration.errors.ruby_llm_crash", id: id, message: e.message)
+      err_msg = I18n.t("moderation.ai.errors.ruby_llm_crash", id: id, message: e.message)
       Rails.logger.error err_msg
       raise e
     rescue JSON::ParserError
-      log_warn = I18n.t("moderation.ai_integration.errors.json_parser_crash", id: id, content: raw_content.inspect)
+      log_warn = I18n.t("moderation.ai.errors.json_parser_crash", id: id, content: raw_content.inspect)
       Rails.logger.warn log_warn
     rescue => e
-      err_msg = I18n.t("moderation.ai_integration.errors.unexpected_exception", id: id, message: e.message)
+      err_msg = I18n.t("moderation.ai.errors.unexpected_exception", id: id, message: e.message)
       Rails.logger.error err_msg
     end
   end
