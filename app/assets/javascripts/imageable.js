@@ -160,7 +160,14 @@
           url: "/image_suggestions",
           type: "POST",
           data: dataString,
-          dataType: "script"
+          dataType: "text",
+          success: function(script) {
+            $.globalEval(script);
+          },
+          error: function() {
+            button.prop("disabled", false);
+            button.removeClass("is-loading");
+          }
         });
       });
     },
