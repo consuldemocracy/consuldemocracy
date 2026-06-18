@@ -51,7 +51,7 @@
 //= require jquery-ui/ui/widgets/autocomplete
 //= require jquery-ui/ui/widgets/sortable
 //= require blueimp-file-upload/js/jquery.iframe-transport
-//= require blueimp-file-upload/js/jquery.fileupload
+//= require jquery.fileupload
 //= require foundation-sites
 //= require turbolinks
 //= require turbolinks_anchors
