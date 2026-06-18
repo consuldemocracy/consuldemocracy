@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   include FlagActions
 
-  before_action :authenticate_user!, only: [:create, :hide]
+  before_action :authenticate_user!, only: [:create, :hide, :vote]
   before_action :load_commentable, only: :create
   before_action :verify_resident_for_commentable!, only: :create
-  before_action :verify_comments_open!, only: [:create]
+  before_action :verify_comments_open!, only: [:create, :vote]
   before_action :build_comment, only: :create
 
   load_and_authorize_resource
@@ -15,6 +17,8 @@ class CommentsController < ApplicationController
       CommentNotifier.new(comment: @comment).process
       add_notification @comment
       EvaluationCommentNotifier.new(comment: @comment).process if send_evaluation_notification?
+
+      respond_with(@comment)
     else
       render :new
     end
@@ -29,6 +33,11 @@ class CommentsController < ApplicationController
 
   def hide
     @comment.hide
+  end
+
+  def vote
+    @comment.vote_by(voter: current_user, vote: params[:value])
+    respond_with @comment
   end
 
   private
@@ -49,9 +58,13 @@ class CommentsController < ApplicationController
     end
 
     def build_comment
-      @comment = Comment.build(@commentable, current_user, comment_params[:body],
-                               comment_params[:parent_id].presence,
-                               comment_params[:valuation])
+      @comment = Comment.build(
+        @commentable,
+        current_user,
+        comment_params[:body],
+        comment_params[:parent_id].presence,
+        comment_params[:valuation]
+      )
       check_for_special_comments
     end
 
@@ -64,8 +77,10 @@ class CommentsController < ApplicationController
     end
 
     def load_commentable
-      @commentable = Comment.find_commentable(comment_params[:commentable_type],
-                                              comment_params[:commentable_id])
+      @commentable = Comment.find_commentable(
+        comment_params[:commentable_type],
+        comment_params[:commentable_id]
+      )
     end
 
     def administrator_comment?

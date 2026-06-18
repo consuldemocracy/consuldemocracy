@@ -655,6 +655,10 @@ en:
     show:
       back: "Go back to my content"
   shared:
+    ai_moderation_info:
+      audit_trail: "🤖 AI Moderation Audit Trail"
+      evaluated_by: "(Evaluated by: %{model})"
+      reasoning: "Reasoning:"
     embedded_video:
       accept: "Watch video"
       warning: "This page contains a video from a third-party provider. By accessing its content, you agree that your data may be transferred to third-party providers."

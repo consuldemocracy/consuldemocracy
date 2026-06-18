@@ -1,0 +1,24 @@
+<% if comment.ai_moderation_meta.present? %>
+  <div class="admin-budget-investment-info margin-top">
+    <strong><%= t("shared.ai_moderation_info.audit_trail") %></strong>
+    <%= t("shared.ai_moderation_info.evaluated_by", model: comment.ai_moderation_meta["model_used"]) %>
+    <p>
+      <strong><%= t("shared.ai_moderation_info.reasoning") %></strong>
+      <em><%= comment.ai_moderation_meta["reasoning"] %></em>
+    </p>
+    <div class="menu simple" style="margin-top: 0.5rem;">
+      <% comment.ai_moderation_meta["scores"]&.each do |category, score| %>
+        <% flag_t = Setting["llm.moderation_flag_threshold"].to_f
+           hide_t = Setting["llm.moderation_hidden_threshold"].to_f
+           score_f = score.to_f
+
+           color_class = "text-medium"
+           color_class = "rejected" if score_f >= flag_t
+           color_class = "rejected font-weight-bold" if score_f >= hide_t %>
+        <span class="<%= color_class %>" style="margin-right: 1.5rem; display: inline-block;">
+          <%= category.humanize %>: <%= (score_f * 100).round %>%
+        </span>
+      <% end %>
+    </div>
+  </div>
+<% end %>
