@@ -25,7 +25,7 @@
 #
 # Applications that want to keep the escaping behavior can set the config to `true`.
 #++
-# Rails.configuration.action_controller.escape_json_responses = false
+Rails.configuration.action_controller.escape_json_responses = false
 
 ###
 # Skips escaping LINE SEPARATOR (U+2028) and PARAGRAPH SEPARATOR (U+2029) in JSON.
