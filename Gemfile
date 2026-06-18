@@ -20,7 +20,7 @@ gem "cocoon", "~> 1.2.15"
 gem "csv", "~> 3.3.5"
 gem "daemons", "~> 1.4.1"
 gem "dalli", "~> 4.3.3"
-gem "delayed_job_active_record", "~> 4.1.11"
+gem "delayed_job_active_record", "~> 4.1.11" # TODO: update delayed_job
 gem "devise", "~> 5.0.4"
 gem "devise-security", "~> 0.18.0"
 gem "exiftool_vendored", "~> 13.52.0"
