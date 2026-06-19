@@ -137,10 +137,10 @@ GEM
     capistrano3-delayed-job (1.7.6)
       capistrano (~> 3.0, >= 3.0.0)
       daemons (~> 1.3)
-    capistrano3-puma (6.2.0)
+    capistrano3-puma (7.1.0)
       capistrano (~> 3.7)
       capistrano-bundler
-      puma (>= 5.1, < 7.0)
+      puma (>= 6.1, < 8.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -554,7 +554,7 @@ GEM
       eventmachine_httpserver
       http_parser.rb (~> 0.8.0)
       multi_json
-    puma (6.6.1)
+    puma (7.2.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.6)
@@ -874,7 +874,7 @@ DEPENDENCIES
   capistrano-npm (~> 1.0.3)
   capistrano-rails (~> 1.7.0)
   capistrano3-delayed-job (~> 1.7.6)
-  capistrano3-puma (~> 6.2.0)
+  capistrano3-puma (~> 7.1.0)
   capybara (~> 3.40.0)
   caxlsx (~> 4.4.1)
   caxlsx_rails (~> 0.6.4)
@@ -927,7 +927,7 @@ DEPENDENCIES
   pronto-rubocop (~> 0.11.6)
   pronto-stylelint (~> 0.11.1)
   puffing-billy (~> 4.0)
-  puma (~> 6.6.1)
+  puma (~> 7.2.1)
   rails (~> 8.0.5)
   recipient_interceptor (~> 0.3.3)
   redcarpet (~> 3.6.1)
