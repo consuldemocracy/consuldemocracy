@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
-gem "rails", "~> 7.2.3.1"
+gem "rails", "~> 8.0.5"
 
 gem "acts-as-taggable-on", "~> 13.0.0"
 gem "acts_as_votable", "~> 0.14.0"
@@ -17,7 +17,6 @@ gem "caxlsx", "~> 4.4.1"
 gem "caxlsx_rails", "~> 0.6.4"
 gem "ckeditor", "~> 4.3.0"
 gem "cocoon", "~> 1.2.15"
-gem "connection_pool", "~> 2.5" # TODO: remove after upgrading to Rails 8.0
 gem "csv", "~> 3.3.5"
 gem "daemons", "~> 1.4.1"
 gem "dalli", "~> 4.3.3"

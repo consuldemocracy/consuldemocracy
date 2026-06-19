@@ -1,3 +1,3 @@
-resource :account, controller: "account", only: [:show, :update, :delete]
+resource :account, controller: "account", only: [:show, :update]
 
 resource :subscriptions, only: [:edit, :update]

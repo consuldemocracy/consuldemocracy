@@ -42,6 +42,9 @@ RSpec.configure do |config|
   config.include ViewComponent::TestHelpers, type: :component
 end
 
+# TODO: remove when upgrading to Rails 8.1
+Object.send(:remove_const, :STATS_DIRECTORIES) if defined?(STATS_DIRECTORIES)
+
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
 include Warden::Test::Helpers
