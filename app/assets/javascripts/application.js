@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ujs
+//= require rails-ujs
 //= require jquery-ui/ui/version
 //= require jquery-ui/ui/data
 //= require jquery-ui/ui/ie
