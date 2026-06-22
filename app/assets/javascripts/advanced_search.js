@@ -4,10 +4,10 @@
     toggle_date_options: function() {
       if ($("#js-advanced-search-date-min").val() === "custom") {
         $("#js-custom-date").show();
-        $(".js-calendar").datepicker("option", "disabled", false);
+        $(".js-calendar").prop("disabled", false);
       } else {
         $("#js-custom-date").hide();
-        $(".js-calendar").datepicker("option", "disabled", true);
+        $(".js-calendar").prop("disabled", true);
       }
     },
     initialize: function() {
