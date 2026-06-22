@@ -20,8 +20,8 @@ describe "Polls" do
     end_date = 2.weeks.from_now
 
     fill_in "poll_name", with: "Proposal poll"
-    fill_in "poll_starts_at", with: start_date.strftime("%d/%m/%Y")
-    fill_in "poll_ends_at", with: end_date.strftime("%d/%m/%Y")
+    find_field("poll_starts_at").set(start_date.to_date)
+    find_field("poll_ends_at").set(end_date.to_date)
     fill_in "poll_description", with: "Proposal's poll description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
@@ -39,44 +39,6 @@ describe "Polls" do
     expect(page).to have_content "Poll created successfully"
     expect(page).to have_content "Proposal poll"
     expect(page).to have_content I18n.l(start_date.to_date)
-  end
-
-  describe "Datepicker" do
-    scenario "displays the expected format when changing the date field" do
-      visit new_proposal_dashboard_poll_path(proposal)
-
-      fill_in "Start Date", with: "20/02/2002"
-      find_field("Start Date").click
-      within(".ui-datepicker") { click_link "22" }
-
-      expect(page).to have_field "Start Date", with: "22/02/2002"
-    end
-
-    scenario "is closed after using the browser back button" do
-      visit proposal_dashboard_polls_path(proposal)
-
-      click_link "Create poll"
-      find_field("Start Date").click
-
-      expect(page).to have_css "#ui-datepicker-div"
-
-      go_back
-
-      expect(page).to have_link "Create poll"
-      expect(page).not_to have_css "#ui-datepicker-div"
-    end
-
-    scenario "works after using the browser back button" do
-      visit new_proposal_dashboard_poll_path(proposal)
-      click_link "Polls"
-
-      expect(page).to have_link "Create poll"
-
-      go_back
-      find_field("Start Date").click
-
-      expect(page).to have_css "#ui-datepicker-div"
-    end
   end
 
   scenario "Create a poll redirects back to form when invalid data" do
