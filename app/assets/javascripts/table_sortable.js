@@ -1,5 +1,10 @@
 (function() {
   "use strict";
+
+  function isNumeric(value) {
+    return !isNaN(parseFloat(value)) && isFinite(value);
+  }
+
   App.TableSortable = {
     getCellValue: function(row, index) {
       return $(row).children("td").eq(index).text();
@@ -9,7 +14,7 @@
         var valA, valB;
         valA = App.TableSortable.getCellValue(a, index);
         valB = App.TableSortable.getCellValue(b, index);
-        if ($.isNumeric(valA) && $.isNumeric(valB)) {
+        if (isNumeric(valA) && isNumeric(valB)) {
           return valA - valB;
         } else {
           return valA.localeCompare(valB);

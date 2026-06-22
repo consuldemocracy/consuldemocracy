@@ -14,6 +14,15 @@ var AmsifySuggestags;
 }
 (function($, window, document, undefined) {
 
+	function trimString(value) {
+		return value == null ? "" : String(value).trim();
+	}
+
+	function isNumeric(value) {
+		var type = typeof value;
+		return (type === "number" || type === "string") && !isNaN(value - parseFloat(value));
+	}
+
 	AmsifySuggestags = function(selector) {
 		this.selector = selector;
 		this.settings = {
@@ -197,10 +206,10 @@ var AmsifySuggestags;
 				}
 				var isDelimiter = ($.inArray(key, _self.settings.delimiters) !== -1)? true: false;
 				if(key == 'Enter' || key == ',' || isDelimiter) {
-					var value = $.trim($(this).val().replace(/,/g , ''));
+					var value = trimString($(this).val().replace(/,/g , ''));
 					if(isDelimiter) {
 						$.each(_self.settings.delimiters, function(dkey, delimiter) {
-							value = $.trim(value.replace(delimiter, ''));
+							value = trimString(value.replace(delimiter, ''));
 						});
 					}
 					$(this).val('');
@@ -401,7 +410,7 @@ var AmsifySuggestags;
 			var $list = $(this.selectors.listArea).find(this.classes.list);
 			$list.find(this.classes.listItem).each(function(){
 				var dataVal = $(this).data('val');
-				if($.isNumeric(dataVal)) {
+				if(isNumeric(dataVal)) {
 					dataVal = (value.toString().indexOf('.') == -1)? parseInt(dataVal): parseFloat(dataVal);
 				}
 
@@ -429,14 +438,15 @@ var AmsifySuggestags;
 				 */
 				$dataShow = $list.find(this.classes.listItem+'[data-show]');
 				if(lower) {
-					$dataShow.sort(function(a, b) {
+					$dataShow = $($dataShow.get().sort(function(a, b) {
 						return value.localeCompare($(a).text().toString());
-					}).appendTo($list);
+					}));
 				} else {
-					$dataShow.sort(function(a, b) {
+					$dataShow = $($dataShow.get().sort(function(a, b) {
 						return $(a).text().toString().localeCompare($(b).text().toString());
-					}).appendTo($list);
+					}));
 				}
+				$dataShow.appendTo($list);
 				$dataShow.each(function(){
 					$(this).show();
 				});
@@ -471,7 +481,7 @@ var AmsifySuggestags;
 			var items = $(this.selector).val().split(',');
 			if(items.length) {
 				$.each(items, function(index, item){
-					_self.addTag($.trim(item));
+					_self.addTag(trimString(item));
 				});
 			}
 		},
@@ -516,7 +526,7 @@ var AmsifySuggestags;
 			}
 			// Trim value
 			if (typeof value === "string" && this.settings.trimValue) {
-				value = $.trim(value);
+				value = trimString(value);
 			}
 
 			// lowercase and dash
@@ -558,7 +568,7 @@ var AmsifySuggestags;
 			} else {
 				this.customStylings($item, itemKey);
 				var dataVal = value;
-				if($.isNumeric(dataVal)) {
+				if(isNumeric(dataVal)) {
 					dataVal = (value.toString().indexOf('.') == -1)? parseInt(dataVal): parseFloat(dataVal);
 				}
 				this.tagNames.push(dataVal);
@@ -676,7 +686,7 @@ var AmsifySuggestags;
 			$tagItem = '';
 			value 	 = value.toString().toLowerCase();
 			$(this.selectors.sTagsArea).find(this.classes.tagItem).each(function(){
-				var tagName = $.trim($(this).attr('data-val'));
+				var tagName = trimString($(this).attr('data-val'));
 				if(value == tagName.toString().toLowerCase()) {
 					$tagItem = $(this);
 					return false;
