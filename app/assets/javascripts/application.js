@@ -91,6 +91,7 @@
 //= require legislation_annotatable
 //= require legislation_draft_versions
 //= require followable
+//= require attachable_dropzone
 //= require documentable
 //= require imageable
 //= require tree_navigator

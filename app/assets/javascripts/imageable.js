@@ -22,89 +22,21 @@
       App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
-      var $input, uploadData, dropzone, $zone;
-
-      $input = $(input);
-
-      if ($input.data("imageableDropzone")) {
-        return;
-      }
-
-      $zone = $input.closest(".image-attachment").find(".js-image-dropzone");
-      if ($zone.length === 0) {
-        $zone = $('<div class="js-image-dropzone" style="position:absolute;width:0;height:0;overflow:hidden"></div>');
-        $input.closest(".image-attachment").append($zone);
-      }
-
-      uploadData = {};
-
-      dropzone = new Dropzone($zone[0], {
-        url: $input.data("url"),
-        paramName: "attachment",
-        maxFiles: 1,
-        clickable: false,
-        autoProcessQueue: true,
-        headers: { "X-CSRF-Token": $("meta[name=csrf-token]").attr("content") },
-        previewTemplate: "<div></div>"
-      });
-
-      $input.on("change.imageable", function() {
-        if (this.files.length === 0) {
-          return;
+      App.AttachableDropzone.setupInput({
+        input: input,
+        attachable: App.Imageable,
+        attachmentContainer: ".image-attachment",
+        dropzoneClass: "js-image-dropzone",
+        changeNamespace: "imageable",
+        dropzoneDataKey: "imageableDropzone",
+        onSuccess: function(uploadData, response) {
+          uploadData.result = response;
+          App.Imageable.setPreview(uploadData);
+        },
+        onError: function(uploadData) {
+          App.Imageable.clearPreview(uploadData);
         }
-
-        uploadData = App.Imageable.buildData([], input);
-        App.Imageable.setFilename(uploadData, this.files[0].name);
-        dropzone.removeAllFiles(true);
-        dropzone.addFile(this.files[0]);
       });
-
-      dropzone.on("addedfile", function() {
-        uploadData = App.Imageable.buildData([], input);
-        App.Imageable.clearProgressBar(uploadData);
-        App.Imageable.setProgressBar(uploadData, "uploading");
-      });
-
-      dropzone.on("uploadprogress", function(_file, progress) {
-        $(uploadData.progressBar).find(".loading-bar").css("width", progress + "%");
-      });
-
-      dropzone.on("success", function(_file, response) {
-        var destroyAttachmentLink;
-
-        uploadData.result = response;
-        $(uploadData.cachedAttachmentField).val(response.cached_attachment);
-        App.Imageable.setTitleFromFile(uploadData, response.filename);
-        App.Imageable.setProgressBar(uploadData, "complete");
-        App.Imageable.setFilename(uploadData, response.filename);
-        App.Imageable.clearInputErrors(uploadData);
-        App.Imageable.setPreview(uploadData);
-        destroyAttachmentLink = $(response.destroy_link);
-        $(uploadData.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-      });
-
-      dropzone.on("error", function(file, message, xhr) {
-        var errors;
-
-        if (xhr && xhr.responseJSON && xhr.responseJSON.errors) {
-          errors = xhr.responseJSON.errors;
-        } else {
-          errors = message;
-        }
-
-        uploadData.jqXHR = xhr || { responseJSON: { errors: errors } };
-        $(uploadData.cachedAttachmentField).val("");
-        App.Imageable.clearFilename(uploadData);
-        App.Imageable.setProgressBar(uploadData, "errors");
-        App.Imageable.clearInputErrors(uploadData);
-        App.Imageable.setInputErrors(uploadData);
-        App.Imageable.clearPreview(uploadData);
-        $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-        $(uploadData.addAttachmentLabel).addClass("error");
-        dropzone.removeFile(file);
-      });
-
-      $input.data("imageableDropzone", dropzone);
     },
     buildData: function(data, input) {
       var wrapper;
