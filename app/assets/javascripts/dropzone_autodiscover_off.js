@@ -1,0 +1,1 @@
+Dropzone.autoDiscover = false;

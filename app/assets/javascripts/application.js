@@ -52,6 +52,8 @@
 //= require jquery-ui/ui/widgets/sortable
 //= require blueimp-file-upload/js/jquery.iframe-transport
 //= require blueimp-file-upload/js/jquery.fileupload
+//= require @deltablot/dropzone/dist/dropzone-min
+//= require dropzone_autodiscover_off
 //= require foundation-sites
 //= require turbolinks
 //= require turbolinks_anchors
