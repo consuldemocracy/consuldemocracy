@@ -1,4 +1,4 @@
-//= require d3/d3
+//= require d3/dist/d3
 //= require c3/c3
 //= require c3ext
 //= require stats

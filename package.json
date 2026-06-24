@@ -3,8 +3,8 @@
   "dependencies": {
     "@rails/ujs": "^7.1.3-4",
     "blueimp-file-upload": "^10.32.0",
-    "c3": "0.4.23",
-    "d3": "3.5.17",
+    "c3": "0.7.0",
+    "d3": "^5.0.0",
     "foundation-sites": "^6.8.1",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.3",
