@@ -23,7 +23,7 @@ gem "dalli", "~> 4.3.3"
 gem "delayed_job_active_record", "~> 4.1.11"
 gem "devise", "~> 5.0.4"
 gem "devise-security", "~> 0.18.0"
-gem "exiftool_vendored", "~> 13.52.0"
+gem "exiftool_vendored", "~> 13.59.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 6.4.0" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "globalize", "~> 7.1.1"
