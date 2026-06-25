@@ -22,50 +22,155 @@
       App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
-      var inputData;
-      inputData = this.buildData([], input);
-      $(input).fileupload({
-        paramName: "attachment",
-        formData: null,
-        add: function(e, data) {
-          var upload_data;
-          upload_data = App.Imageable.buildData(data, e.target);
-          App.Imageable.clearProgressBar(upload_data);
-          App.Imageable.setProgressBar(upload_data, "uploading");
-          upload_data.submit();
-        },
-        change: function(e, data) {
-          data.files.forEach(function(file) {
-            App.Imageable.setFilename(inputData, file.name);
-          });
-        },
-        fail: function(e, data) {
-          $(data.cachedAttachmentField).val("");
-          App.Imageable.clearFilename(data);
-          App.Imageable.setProgressBar(data, "errors");
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.setInputErrors(data);
-          App.Imageable.clearPreview(data);
-          $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-          $(data.addAttachmentLabel).addClass("error");
-        },
-        done: function(e, data) {
-          var destroyAttachmentLink;
-          $(data.cachedAttachmentField).val(data.result.cached_attachment);
-          App.Imageable.setTitleFromFile(data, data.result.filename);
-          App.Imageable.setProgressBar(data, "complete");
-          App.Imageable.setFilename(data, data.result.filename);
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.setPreview(data);
-          destroyAttachmentLink = $(data.result.destroy_link);
-          $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-        },
-        progress: function(e, data) {
-          var progress;
-          progress = parseInt(data.loaded / data.total * 100, 10);
-          $(data.progressBar).find(".loading-bar").css("width", progress + "%");
+      var uploadData, element, processUpload, hiddenInput, handleUploadSuccess, handleUploadFailure;
+
+      element = input instanceof HTMLElement ? input : input[0];
+
+      if ($(element).data("filepondEngine")) {
+        return;
+      }
+
+      uploadData = this.buildData([], element);
+
+      handleUploadSuccess = function(result) {
+        var destroyAttachmentLink;
+
+        $(uploadData.cachedAttachmentField).val(result.cached_attachment);
+        uploadData.result = result;
+        App.Imageable.setTitleFromFile(uploadData, result.filename);
+        App.Imageable.setProgressBar(uploadData, "complete");
+        App.Imageable.setFilename(uploadData, result.filename);
+        App.Imageable.clearInputErrors(uploadData);
+        App.Imageable.setPreview(uploadData);
+        destroyAttachmentLink = $(result.destroy_link);
+        $(uploadData.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
+      };
+
+      handleUploadFailure = function(response, message) {
+        var errors;
+
+        errors = (response && response.errors) || message || "Upload failed";
+        $(uploadData.cachedAttachmentField).val("");
+        App.Imageable.clearFilename(uploadData);
+        App.Imageable.setProgressBar(uploadData, "errors");
+        App.Imageable.clearInputErrors(uploadData);
+        App.Imageable.clearPreview(uploadData);
+        uploadData.jqXHR = { responseJSON: { errors: errors } };
+        App.Imageable.setInputErrors(uploadData);
+        $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
+        $(uploadData.addAttachmentLabel).addClass("error");
+      };
+
+      processUpload = function(fieldName, file, metadata, load, error, progress, abort) {
+        var request, csrfToken, parseResponse;
+
+        parseResponse = function() {
+          try {
+            return JSON.parse(request.responseText);
+          } catch (e) {
+            return null;
+          }
+        };
+
+        App.Imageable.clearProgressBar(uploadData);
+        App.Imageable.setProgressBar(uploadData, "uploading");
+
+        csrfToken = $("meta[name='csrf-token']").attr("content");
+        request = new XMLHttpRequest();
+        request.open("POST", $(element).data("url"));
+        if (csrfToken) {
+          request.setRequestHeader("X-CSRF-Token", csrfToken);
+        }
+        request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+        request.upload.onprogress = function(e) {
+          if (e.lengthComputable) {
+            progress(e.lengthComputable, e.loaded, e.total);
+          }
+        };
+
+        request.onload = function() {
+          var result, response;
+
+          if (request.status >= 200 && request.status < 300) {
+            result = parseResponse();
+            if (!result) {
+              handleUploadFailure(null, "Upload failed");
+              error("Upload failed");
+              return;
+            }
+            handleUploadSuccess(result);
+            load(result.cached_attachment);
+          } else {
+            response = parseResponse();
+            handleUploadFailure(response, null);
+            error((response && response.errors) || "Upload failed");
+          }
+        };
+
+        request.onerror = function() {
+          handleUploadFailure(null, "Upload failed");
+          error("Upload failed");
+        };
+
+        request.send(App.Imageable.buildFormData(file));
+
+        return {
+          abort: function() {
+            request.abort();
+            abort();
+          }
+        };
+      };
+
+      hiddenInput = document.createElement("input");
+      hiddenInput.type = "file";
+      hiddenInput.style.cssText = "position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;";
+      hiddenInput.setAttribute("aria-hidden", "true");
+      $(element).closest(".direct-upload").append(hiddenInput);
+
+      FilePond.create(hiddenInput, {
+        credits: false,
+        allowMultiple: false,
+        allowRevert: false,
+        allowRemove: false,
+        allowBrowse: false,
+        allowDrop: false,
+        allowPaste: false,
+        instantUpload: true,
+        labelIdle: "",
+        name: "attachment",
+        server: {
+          process: processUpload
         }
       });
+
+      $(element).on("change", function() {
+        var file;
+
+        file = element.files[0];
+        if (!file) {
+          return;
+        }
+
+        App.Imageable.setFilename(uploadData, file.name);
+        processUpload("attachment", file, {}, function() {}, function() {}, function(computable, loaded, total) {
+          var percent;
+
+          if (computable) {
+            percent = parseInt(loaded / total * 100, 10);
+            $(uploadData.progressBar).find(".loading-bar").css("width", percent + "%");
+          }
+        }, function() {});
+      });
+
+      $(element).data("filepondEngine", true);
+    },
+    buildFormData: function(file) {
+      var formData;
+      formData = new FormData();
+      formData.append("attachment", file);
+      return formData;
     },
     buildData: function(data, input) {
       var wrapper;
