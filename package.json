@@ -2,6 +2,7 @@
   "name": "consuldemocracy",
   "dependencies": {
     "@deltablot/dropzone": "^7.4.3",
+    "@fortawesome/fontawesome-free": "=6.4.2",
     "@rails/ujs": "^7.1.3-4",
     "c3": "0.4.23",
     "d3": "3.5.17",

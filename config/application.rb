@@ -171,6 +171,7 @@ module Consul
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
     config.assets.paths << Rails.root.join("node_modules", "jquery-ui", "themes", "base")
     config.assets.paths << Rails.root.join("node_modules", "leaflet", "dist")
+    config.assets.paths << Rails.root.join("node_modules", "@fortawesome")
     config.assets.paths << Rails.root.join("node_modules")
 
     config.active_job.queue_adapter = :delayed_job

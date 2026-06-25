@@ -43,7 +43,7 @@
 
   &::#{$position} {
     @extend %svg-icon;
-    #{"--fa-icon-#{$style}-#{$icon}"}: asset-data-url("fontawesome/#{$style}/#{$icon}.svg");
+    #{"--fa-icon-#{$style}-#{$icon}"}: asset-data-url("fontawesome-free/svgs/#{$style}/#{$icon}.svg");
     mask-image: var(--fa-icon-#{$style}-#{$icon});
   }
 }

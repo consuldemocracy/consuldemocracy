@@ -11,6 +11,35 @@
     font-url("icons.svg#icons") format("svg");
 }
 
+$fa-font-path: "fontawesome-free/webfonts";
+
+@font-face {
+  font-display: $fa-font-display;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  src: font-url("#{$fa-font-path}/fa-solid-900.woff2") format("woff2"),
+    font-url("#{$fa-font-path}/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: $fa-font-display;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  src: font-url("#{$fa-font-path}/fa-regular-400.woff2") format("woff2"),
+    font-url("#{$fa-font-path}/fa-regular-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: $fa-font-display;
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  src: font-url("#{$fa-font-path}/fa-brands-400.woff2") format("woff2"),
+    font-url("#{$fa-font-path}/fa-brands-400.ttf") format("truetype");
+}
+
 [data-icon]::before,
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
