@@ -34,7 +34,30 @@
       uploadData = this.buildData([], element);
 
       processUpload = function(fieldName, file, metadata, load, error, progress, abort) {
-        var request, csrfToken;
+        var request, csrfToken, handleUploadFailure, parseResponse;
+
+        handleUploadFailure = function(response, message) {
+          var errors;
+
+          errors = (response && response.errors) || message || "Upload failed";
+          $(uploadData.cachedAttachmentField).val("");
+          App.Documentable.clearFilename(uploadData);
+          App.Documentable.setProgressBar(uploadData, "errors");
+          App.Documentable.clearInputErrors(uploadData);
+          uploadData.jqXHR = { responseJSON: { errors: errors } };
+          App.Documentable.setInputErrors(uploadData);
+          $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
+          $(uploadData.addAttachmentLabel).addClass("error");
+          error(errors);
+        };
+
+        parseResponse = function() {
+          try {
+            return JSON.parse(request.responseText);
+          } catch (e) {
+            return null;
+          }
+        };
 
         App.Documentable.clearProgressBar(uploadData);
         App.Documentable.setProgressBar(uploadData, "uploading");
@@ -42,7 +65,9 @@
         csrfToken = $("meta[name='csrf-token']").attr("content");
         request = new XMLHttpRequest();
         request.open("POST", $(element).data("url"));
-        request.setRequestHeader("X-CSRF-Token", csrfToken);
+        if (csrfToken) {
+          request.setRequestHeader("X-CSRF-Token", csrfToken);
+        }
         request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
         request.upload.onprogress = function(e) {
@@ -55,7 +80,11 @@
           var result, destroyAttachmentLink, response;
 
           if (request.status >= 200 && request.status < 300) {
-            result = JSON.parse(request.responseText);
+            result = parseResponse();
+            if (!result) {
+              handleUploadFailure(null, "Upload failed");
+              return;
+            }
             $(uploadData.cachedAttachmentField).val(result.cached_attachment);
             App.Documentable.setTitleFromFile(uploadData, result.filename);
             App.Documentable.setProgressBar(uploadData, "complete");
@@ -68,21 +97,13 @@
             }
             load(result.cached_attachment);
           } else {
-            response = JSON.parse(request.responseText);
-            $(uploadData.cachedAttachmentField).val("");
-            App.Documentable.clearFilename(uploadData);
-            App.Documentable.setProgressBar(uploadData, "errors");
-            App.Documentable.clearInputErrors(uploadData);
-            uploadData.jqXHR = { responseJSON: response };
-            App.Documentable.setInputErrors(uploadData);
-            $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-            $(uploadData.addAttachmentLabel).addClass("error");
-            error(response.errors);
+            response = parseResponse();
+            handleUploadFailure(response, null);
           }
         };
 
         request.onerror = function() {
-          error("Upload failed");
+          handleUploadFailure(null, "Upload failed");
         };
 
         request.send(App.Documentable.buildFormData(file));
