@@ -26,7 +26,7 @@ gem "devise-security", "~> 0.18.0"
 gem "exiftool_vendored", "~> 13.52.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 6.4.0" # Remember to update vendor/assets/images/fontawesome when updating this gem
-gem "globalize", "~> 7.1.1"
+gem "globalize", "~> 7.1.3"
 gem "globalize-accessors", "~> 0.3.0"
 gem "googleauth", "~> 1.16.2"
 gem "graphiql-rails", "~> 1.8.0"
