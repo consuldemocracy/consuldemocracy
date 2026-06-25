@@ -38,7 +38,7 @@
 }
 
 .ssb-telegram {
-  @include has-fa-icon(telegram-plane, brands);
+  @include has-fa-icon(telegram, brands);
   background: #08c;
 
   &:hover,

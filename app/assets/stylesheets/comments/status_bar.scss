@@ -1,11 +1,11 @@
 .comment-body .status-bar {
   .responses-count {
     .show-children {
-      @include has-fa-icon(plus-square, regular);
+      @include has-fa-icon(square-plus, regular);
     }
 
     .collapse-children {
-      @include has-fa-icon(minus-square, regular);
+      @include has-fa-icon(square-minus, regular);
     }
 
     .show-children::before,
