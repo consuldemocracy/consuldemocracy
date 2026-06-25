@@ -5,6 +5,7 @@
     "blueimp-file-upload": "^10.32.0",
     "c3": "0.4.23",
     "d3": "3.5.17",
+    "filepond": "^4.32.12",
     "foundation-sites": "^6.8.1",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.3",
