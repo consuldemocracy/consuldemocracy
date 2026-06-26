@@ -22,50 +22,89 @@
       App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
-      var inputData;
-      inputData = this.buildData([], input);
-      $(input).fileupload({
+      var $input, uploadData, dropzone, $zone;
+
+      $input = $(input);
+
+      if ($input.data("imageableDropzone")) {
+        return;
+      }
+
+      $zone = $input.closest(".image-attachment").find(".js-image-dropzone");
+      if ($zone.length === 0) {
+        $zone = $("<div>", { class: "js-image-dropzone hidden-dropzone-upload" });
+        $input.closest(".image-attachment").append($zone);
+      }
+
+      uploadData = {};
+
+      dropzone = new Dropzone($zone[0], {
+        url: $input.data("url"),
         paramName: "attachment",
-        formData: null,
-        add: function(e, data) {
-          var upload_data;
-          upload_data = App.Imageable.buildData(data, e.target);
-          App.Imageable.clearProgressBar(upload_data);
-          App.Imageable.setProgressBar(upload_data, "uploading");
-          upload_data.submit();
-        },
-        change: function(e, data) {
-          data.files.forEach(function(file) {
-            App.Imageable.setFilename(inputData, file.name);
-          });
-        },
-        fail: function(e, data) {
-          $(data.cachedAttachmentField).val("");
-          App.Imageable.clearFilename(data);
-          App.Imageable.setProgressBar(data, "errors");
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.setInputErrors(data);
-          App.Imageable.clearPreview(data);
-          $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-          $(data.addAttachmentLabel).addClass("error");
-        },
-        done: function(e, data) {
-          var destroyAttachmentLink;
-          $(data.cachedAttachmentField).val(data.result.cached_attachment);
-          App.Imageable.setTitleFromFile(data, data.result.filename);
-          App.Imageable.setProgressBar(data, "complete");
-          App.Imageable.setFilename(data, data.result.filename);
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.setPreview(data);
-          destroyAttachmentLink = $(data.result.destroy_link);
-          $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-        },
-        progress: function(e, data) {
-          var progress;
-          progress = parseInt(data.loaded / data.total * 100, 10);
-          $(data.progressBar).find(".loading-bar").css("width", progress + "%");
-        }
+        maxFiles: 1,
+        clickable: false,
+        autoProcessQueue: true,
+        headers: { "X-CSRF-Token": $("meta[name=csrf-token]").attr("content") },
+        previewTemplate: "<div></div>"
       });
+
+      $input.on("change.imageable", function() {
+        if (this.files.length === 0) {
+          return;
+        }
+
+        uploadData = App.Imageable.buildData([], input);
+        App.Imageable.setFilename(uploadData, this.files[0].name);
+        dropzone.removeAllFiles(true);
+        dropzone.addFile(this.files[0]);
+      });
+
+      dropzone.on("addedfile", function() {
+        uploadData = App.Imageable.buildData([], input);
+        App.Imageable.clearProgressBar(uploadData);
+        App.Imageable.setProgressBar(uploadData, "uploading");
+      });
+
+      dropzone.on("uploadprogress", function(_file, progress) {
+        $(uploadData.progressBar).find(".loading-bar").css("width", progress + "%");
+      });
+
+      dropzone.on("success", function(_file, response) {
+        var destroyAttachmentLink;
+
+        uploadData.result = response;
+        $(uploadData.cachedAttachmentField).val(response.cached_attachment);
+        App.Imageable.setTitleFromFile(uploadData, response.filename);
+        App.Imageable.setProgressBar(uploadData, "complete");
+        App.Imageable.setFilename(uploadData, response.filename);
+        App.Imageable.clearInputErrors(uploadData);
+        App.Imageable.setPreview(uploadData);
+        destroyAttachmentLink = $(response.destroy_link);
+        $(uploadData.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
+      });
+
+      dropzone.on("error", function(file, message, xhr) {
+        var errors;
+
+        if (xhr && xhr.responseJSON && xhr.responseJSON.errors) {
+          errors = xhr.responseJSON.errors;
+        } else {
+          errors = message;
+        }
+
+        uploadData.jqXHR = xhr || { responseJSON: { errors: errors } };
+        $(uploadData.cachedAttachmentField).val("");
+        App.Imageable.clearFilename(uploadData);
+        App.Imageable.setProgressBar(uploadData, "errors");
+        App.Imageable.clearInputErrors(uploadData);
+        App.Imageable.setInputErrors(uploadData);
+        App.Imageable.clearPreview(uploadData);
+        $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
+        $(uploadData.addAttachmentLabel).addClass("error");
+        dropzone.removeFile(file);
+      });
+
+      $input.data("imageableDropzone", dropzone);
     },
     buildData: function(data, input) {
       var wrapper;
