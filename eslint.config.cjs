@@ -32,6 +32,7 @@ module.exports = defineConfig([globalIgnores([
       annotator: "readonly",
       c3: "readonly",
       CKEDITOR: "readonly",
+      Dropzone: "readonly",
       L: "readonly",
       Turbolinks: "readonly",
     },
