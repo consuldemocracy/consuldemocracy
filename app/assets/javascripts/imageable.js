@@ -22,142 +22,33 @@
       App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
-      var $input, uploadData, dropzone, $zone;
-
-      $input = $(input);
-
-      if ($input.data("imageableDropzone")) {
-        return;
-      }
-
-      $zone = $input.closest(".image-attachment").find(".js-image-dropzone");
-      if ($zone.length === 0) {
-        $zone = $("<div>", { class: "js-image-dropzone hidden-dropzone-upload" });
-        $input.closest(".image-attachment").append($zone);
-      }
-
-      uploadData = {};
-
-      dropzone = new Dropzone($zone[0], {
-        url: $input.data("url"),
-        paramName: "attachment",
-        maxFiles: 1,
-        clickable: false,
-        autoProcessQueue: true,
-        headers: { "X-CSRF-Token": $("meta[name=csrf-token]").attr("content") },
-        previewTemplate: "<div></div>"
-      });
-
-      $input.on("change.imageable", function() {
-        if (this.files.length === 0) {
-          return;
+      App.Attachable.setupInput({
+        input: input,
+        attachmentContainer: ".image-attachment",
+        onSuccess: function(uploadData, response) {
+          uploadData.result = response;
+          App.Imageable.setPreview(uploadData);
+        },
+        onError: function(uploadData) {
+          App.Imageable.clearPreview(uploadData);
         }
-
-        uploadData = App.Imageable.buildData([], input);
-        App.Imageable.setFilename(uploadData, this.files[0].name);
-        dropzone.removeAllFiles(true);
-        dropzone.addFile(this.files[0]);
       });
-
-      dropzone.on("addedfile", function() {
-        uploadData = App.Imageable.buildData([], input);
-        App.Imageable.clearProgressBar(uploadData);
-        App.Imageable.setProgressBar(uploadData, "uploading");
-      });
-
-      dropzone.on("uploadprogress", function(_file, progress) {
-        $(uploadData.progressBar).find(".loading-bar").css("width", progress + "%");
-      });
-
-      dropzone.on("success", function(_file, response) {
-        var destroyAttachmentLink;
-
-        uploadData.result = response;
-        $(uploadData.cachedAttachmentField).val(response.cached_attachment);
-        App.Imageable.setTitleFromFile(uploadData, response.filename);
-        App.Imageable.setProgressBar(uploadData, "complete");
-        App.Imageable.setFilename(uploadData, response.filename);
-        App.Imageable.clearInputErrors(uploadData);
-        App.Imageable.setPreview(uploadData);
-        destroyAttachmentLink = $(response.destroy_link);
-        $(uploadData.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-      });
-
-      dropzone.on("error", function(file, message, xhr) {
-        var errors;
-
-        if (xhr && xhr.responseJSON && xhr.responseJSON.errors) {
-          errors = xhr.responseJSON.errors;
-        } else {
-          errors = message;
-        }
-
-        uploadData.jqXHR = xhr || { responseJSON: { errors: errors } };
-        $(uploadData.cachedAttachmentField).val("");
-        App.Imageable.clearFilename(uploadData);
-        App.Imageable.setProgressBar(uploadData, "errors");
-        App.Imageable.clearInputErrors(uploadData);
-        App.Imageable.setInputErrors(uploadData);
-        App.Imageable.clearPreview(uploadData);
-        $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-        $(uploadData.addAttachmentLabel).addClass("error");
-        dropzone.removeFile(file);
-      });
-
-      $input.data("imageableDropzone", dropzone);
-    },
-    buildData: function(data, input) {
-      var wrapper;
-      wrapper = $(input).closest(".direct-upload");
-      data.wrapper = wrapper;
-      data.progressBar = $(wrapper).find(".progress-bar-placeholder");
-      data.preview = $(wrapper).find(".image-preview");
-      data.errorContainer = $(wrapper).find(".attachment-errors");
-      data.fileNameContainer = $(wrapper).find("p.file-name");
-      data.destroyAttachmentLinkContainer = $(wrapper).find(".action-remove");
-      data.addAttachmentLabel = $(wrapper).find(".action-add label");
-      data.cachedAttachmentField = $(wrapper).find("input[name$='[cached_attachment]']");
-      data.titleField = $(wrapper).find("input[name$='[title]']");
-      $(wrapper).find(".progress-bar-placeholder").css("display", "block");
-      return data;
-    },
-    clearFilename: function(data) {
-      $(data.fileNameContainer).text("");
-    },
-    clearInputErrors: function(data) {
-      $(data.errorContainer).find("small.error").remove();
-    },
-    clearProgressBar: function(data) {
-      $(data.progressBar).find(".loading-bar").removeClass("complete errors uploading").css("width", "0px");
     },
     clearPreview: function(data) {
       $(data.wrapper).find(".image-preview").remove();
     },
-    setFilename: function(data, file_name) {
-      $(data.fileNameContainer).text(file_name);
-    },
-    setProgressBar: function(data, klass) {
-      $(data.progressBar).find(".loading-bar").addClass(klass);
-    },
-    setTitleFromFile: function(data, title) {
-      if ($(data.titleField).val() === "") {
-        $(data.titleField).val(title);
-      }
-    },
-    setInputErrors: function(data) {
-      var errors;
-      errors = "<small class='error'>" + data.jqXHR.responseJSON.errors + "</small>";
-      $(data.errorContainer).append(errors);
-    },
+
     setPreview: function(data) {
-      var image_preview;
+      var preview, image_preview;
+
       image_preview = "<div class='small-12 column text-center image-preview'>" +
         "<figure><img src='" + data.result.attachment_url + "' class='cached-image'></figure></div>";
-      if ($(data.preview).length > 0) {
-        $(data.preview).replaceWith(image_preview);
+      preview = data.wrapper.find(".image-preview");
+
+      if ($(preview).length > 0) {
+        $(preview).replaceWith(image_preview);
       } else {
         $(image_preview).insertBefore($(data.wrapper).find(".attachment-actions"));
-        data.preview = $(data.wrapper).find(".image-preview");
       }
     },
     initializeRemoveCachedImageLinks: function() {
@@ -193,8 +84,8 @@
         }
 
         dataString = App.Imageable.imageSuggestionsParams(form, resourceType);
-        var uploadData = App.Imageable.buildData([], button.closest(".image-fields.direct-upload"));
-        App.Imageable.clearInputErrors(uploadData);
+        var uploadData = App.Attachable.buildData(button.closest(".image-fields.direct-upload"));
+        App.Attachable.clearInputErrors(uploadData);
         $.ajax({
           url: "/image_suggestions",
           type: "POST",
@@ -204,7 +95,7 @@
       });
     },
     attachSuggestedImageSuccess: function(responseData) {
-      var data = App.Imageable.buildData([], this);
+      var data = App.Attachable.buildData(this);
       data.result = {
         cached_attachment: responseData.cached_attachment,
         filename: responseData.filename,
@@ -212,18 +103,17 @@
         destroy_link: responseData.destroy_link
       };
       $(data.cachedAttachmentField).val(data.result.cached_attachment);
-      App.Imageable.setTitleFromFile(data, data.result.filename);
-      App.Imageable.setFilename(data, data.result.filename);
+      App.Attachable.setTitleFromFile(data, data.result.filename);
+      App.Attachable.setFilename(data, data.result.filename);
       App.Imageable.setPreview(data);
       $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link);
       $("#new_image_link").addClass("hide");
-      App.Imageable.clearInputErrors(data);
+      App.Attachable.clearInputErrors(data);
     },
     attachSuggestedImageError: function(xhr) {
-      var data = App.Imageable.buildData([], this);
-      data.jqXHR = xhr;
-      App.Imageable.clearInputErrors(data);
-      App.Imageable.setInputErrors(data);
+      var data = App.Attachable.buildData(this);
+      App.Attachable.clearInputErrors(data);
+      App.Attachable.setInputErrors(data, xhr.responseJSON && xhr.responseJSON.errors);
     },
     initializeAttachSuggestedImage: function() {
       $("body").on("click", ".suggested-image-button", function() {
