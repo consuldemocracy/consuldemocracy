@@ -258,7 +258,7 @@ GEM
       net-http (~> 0.5)
     faraday-retry (2.4.0)
       faraday (~> 2.0)
-    ffi (1.17.2)
+    ffi (1.17.4)
     fiber-storage (1.0.1)
     file_validators (3.0.0)
       activemodel (>= 3.2)
@@ -333,9 +333,7 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
-    image_processing (1.14.0)
-      mini_magick (>= 4.9.5, < 6)
-      ruby-vips (>= 2.0.17, < 3)
+    image_processing (2.0.2)
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.8.2)
@@ -699,9 +697,6 @@ GEM
     ruby-saml (1.18.1)
       nokogiri (>= 1.13.10)
       rexml
-    ruby-vips (2.2.3)
-      ffi (~> 1.12)
-      logger
     ruby_llm (1.9.2)
       base64
       event_stream_parser (~> 1)
@@ -905,7 +900,7 @@ DEPENDENCIES
   groupdate (~> 6.7.0)
   htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
-  image_processing (~> 1.14.0)
+  image_processing (~> 2.0.2)
   invisible_captcha (~> 2.3.0)
   kaminari (~> 1.2.2)
   knapsack_pro (~> 8.4.0)
