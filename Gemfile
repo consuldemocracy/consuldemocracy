@@ -28,7 +28,7 @@ gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 6.4.0" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "globalize", "~> 7.1.1"
 gem "globalize-accessors", "~> 0.3.0"
-gem "googleauth", "~> 1.16.2"
+gem "googleauth", "~> 1.17.1"
 gem "graphiql-rails", "~> 1.8.0"
 gem "graphql", "~> 2.6.1"
 gem "groupdate", "~> 6.7.0"
