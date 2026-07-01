@@ -4,7 +4,7 @@
     "@deltablot/dropzone": "^7.4.3",
     "@rails/ujs": "^7.1.3-4",
     "c3": "0.4.23",
-    "d3": "3.5.17",
+    "d3": "7.9.0",
     "foundation-sites": "^6.8.1",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.3",
