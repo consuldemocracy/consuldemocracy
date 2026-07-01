@@ -50,8 +50,7 @@
 //= require jquery-ui/ui/i18n/datepicker-en-GB
 //= require jquery-ui/ui/widgets/autocomplete
 //= require jquery-ui/ui/widgets/sortable
-//= require blueimp-file-upload/js/jquery.iframe-transport
-//= require blueimp-file-upload/js/jquery.fileupload
+//= require @deltablot/dropzone/dist/dropzone-min
 //= require foundation-sites
 //= require turbolinks
 //= require turbolinks_anchors
@@ -91,6 +90,7 @@
 //= require legislation_annotatable
 //= require legislation_draft_versions
 //= require followable
+//= require attachable
 //= require documentable
 //= require imageable
 //= require tree_navigator

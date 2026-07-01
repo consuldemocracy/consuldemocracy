@@ -1,8 +1,8 @@
 {
   "name": "consuldemocracy",
   "dependencies": {
+    "@deltablot/dropzone": "^7.4.3",
     "@rails/ujs": "^7.1.3-4",
-    "blueimp-file-upload": "^10.32.0",
     "c3": "0.4.23",
     "d3": "3.5.17",
     "foundation-sites": "^6.8.1",
