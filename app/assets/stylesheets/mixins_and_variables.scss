@@ -1,12 +1,41 @@
 $fa-font-path: "fontawesome-free/webfonts";
 @import "fontawesome-free/scss/functions";
 @import "fontawesome-free/scss/variables";
-@import "fontawesome-free/scss/solid";
-@import "fontawesome-free/scss/regular";
-@import "fontawesome-free/scss/brands";
 @import "fontawesome-free/scss/mixins";
 @import "fontawesome-free/scss/core";
 @import "fontawesome-free/scss/animated";
+
+// Font Awesome ships its @font-face rules with plain url() references, which
+// Sprockets doesn't fingerprint nor register for precompilation. We declare
+// them ourselves with font-url() so they resolve to digested, precompiled
+// assets in production, following the same pattern as fonts.scss.
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: $fa-font-display;
+  src: font-url("#{$fa-font-path}/fa-solid-900.woff2") format("woff2"),
+    font-url("#{$fa-font-path}/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: $fa-font-display;
+  src: font-url("#{$fa-font-path}/fa-regular-400.woff2") format("woff2"),
+    font-url("#{$fa-font-path}/fa-regular-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: $fa-font-display;
+  src: font-url("#{$fa-font-path}/fa-brands-400.woff2") format("woff2"),
+    font-url("#{$fa-font-path}/fa-brands-400.ttf") format("truetype");
+}
+
 @import "foundation_and_overrides";
 @import "functions/*";
 @import "mixins/*";
