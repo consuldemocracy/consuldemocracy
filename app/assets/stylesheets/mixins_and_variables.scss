@@ -1,7 +1,4 @@
-@import "fontawesome-free/scss/functions";
-@import "fontawesome-free/scss/variables";
-@import "fontawesome-free/scss/mixins";
-@import "fontawesome-free/scss/core";
+$fa-css-prefix: fa;
 @import "fontawesome-free/scss/animated";
 @import "foundation_and_overrides";
 @import "functions/*";
