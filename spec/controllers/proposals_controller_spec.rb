@@ -7,6 +7,12 @@ describe ProposalsController do
 
       expect { get :index }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
+
+    it "does not fail with invalid advanced search date filters" do
+      get :index, params: { advanced_search: { date_min: "13/13/2199", date_max: "nope" }}
+
+      expect(response).to have_http_status(:ok)
+    end
   end
 
   describe "PATCH update" do
