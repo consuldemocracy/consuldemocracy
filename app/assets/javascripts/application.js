@@ -31,6 +31,7 @@
 //= require_directory ./ckeditor
 //= require social-share-button
 //= require app
+//= require utils
 //= require check_all_none
 //= require comments
 //= require foundation_extras

@@ -6,7 +6,7 @@
     "c3": "0.4.23",
     "d3": "3.5.17",
     "foundation-sites": "^6.8.1",
-    "jquery": "^3.7.1",
+    "jquery": "^4.0.0",
     "jquery-ui": "^1.14.2",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",

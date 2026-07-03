@@ -1348,7 +1348,7 @@ module.exports = function (css, options) {
       flat = [];
       for (_i = 0, _len = ary.length; _i < _len; _i++) {
         el = ary[_i];
-        flat = flat.concat(el && $.isArray(el) ? flatten(el) : el);
+        flat = flat.concat(el && Array.isArray(el) ? flatten(el) : el);
       }
       return flat;
     };
@@ -3674,7 +3674,8 @@ Filter.prototype.updateFilter = function (filter) {
 
     this.updateHighlights();
     this.resetHighlights();
-    var input = $.trim(filter.element.find('input').val());
+    var value = filter.element.find('input').val();
+    var input = value == null ? "" : value.trim();
 
     if (!input) {
         return;
@@ -4607,7 +4608,7 @@ function stringifyTags(array) {
 // Take a string from the tags input as an argument, and return an array of
 // tags.
 function parseTags(string) {
-    string = $.trim(string);
+    string = string == null ? "" : string.trim();
     var tags = [];
 
     if (string) {
@@ -4634,7 +4635,7 @@ exports.viewerExtension = function viewerExtension(v) {
     function updateViewer(field, annotation) {
         field = $(field);
         if (annotation.tags &&
-            $.isArray(annotation.tags) &&
+            Array.isArray(annotation.tags) &&
             annotation.tags.length) {
             field.addClass('annotator-tags').html(function () {
                 return $.map(annotation.tags, function (tag) {

@@ -267,13 +267,10 @@
       return "<a href='" + data.link + "'>" + data.title + "</a>";
     },
     validZoom: function(zoom) {
-      return App.Map.isNumeric(zoom);
+      return App.Utils.isNumeric(zoom);
     },
     validCoordinates: function(coordinates) {
-      return App.Map.isNumeric(coordinates.lat) && App.Map.isNumeric(coordinates.long);
-    },
-    isNumeric: function(n) {
-      return !isNaN(parseFloat(n)) && isFinite(n);
+      return App.Utils.isNumeric(coordinates.lat) && App.Utils.isNumeric(coordinates.long);
     }
   };
 }).call(this);
