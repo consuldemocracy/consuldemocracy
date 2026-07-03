@@ -1,20 +1,13 @@
 @use "sass:color";
 
-%font-icon {
-  @extend %fa-icon;
-  font-family: "Font Awesome 6 Free";
-  vertical-align: middle;
-}
-
 %svg-icon {
-  @supports (mask-image: url("")) and (--custom-property-name: custom-property-value) {
-    background: currentcolor;
-    content: "" !important;
-    height: 1em;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    width: 1em;
-  }
+  background: currentcolor;
+  content: "" !important;
+  display: inline-block;
+  height: 1em;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  width: 1em;
 }
 
 %admin-menu-icon {
@@ -23,28 +16,9 @@
 }
 
 @mixin has-fa-icon($icon, $style, $position: "before") {
-
-  &::#{$position} {
-    @extend %font-icon;
-
-    @if $style == "brands" {
-      content: fa-content(map-get($fa-brand-icons, $icon));
-      font-family: "Font Awesome 6 Brands";
-    } @else {
-      content: fa-content(map-get($fa-icons, $icon));
-    }
-
-    @if $style == "solid" {
-      font-weight: bold;
-    } @else {
-      font-weight: normal;
-    }
-  }
-
   &::#{$position} {
     @extend %svg-icon;
-    #{"--fa-icon-#{$style}-#{$icon}"}: asset-data-url("fontawesome/#{$style}/#{$icon}.svg");
-    mask-image: var(--fa-icon-#{$style}-#{$icon});
+    mask-image: asset-data-url("fontawesome-free/svgs/#{$style}/#{$icon}.svg");
   }
 }
 
