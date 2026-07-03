@@ -74,8 +74,7 @@ Rails.application.configure do
   # Replace the default in-process memory cache store with a durable alternative.
   config.cache_store = :mem_cache_store, {
     namespace: proc { Tenant.current_schema },
-    protocol: :meta,
-    silence_marshal_warning: true
+    protocol: :meta
   }
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
