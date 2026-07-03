@@ -72,10 +72,7 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :mem_cache_store, {
-    namespace: proc { Tenant.current_schema },
-    protocol: :meta
-  }
+  config.cache_store = :mem_cache_store, { namespace: proc { Tenant.current_schema }}
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
   # config.active_job.queue_adapter = :resque
