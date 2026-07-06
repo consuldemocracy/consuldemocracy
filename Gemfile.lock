@@ -182,7 +182,7 @@ GEM
     crass (1.0.6)
     csv (3.3.5)
     daemons (1.4.1)
-    dalli (4.3.3)
+    dalli (5.0.5)
       logger
     date (3.5.1)
     debug (1.11.1)
@@ -882,7 +882,7 @@ DEPENDENCIES
   cocoon (~> 1.2.15)
   csv (~> 3.3.5)
   daemons (~> 1.4.1)
-  dalli (~> 4.3.3)
+  dalli (~> 5.0.5)
   debug (~> 1.11.0)
   delayed_job_active_record (~> 4.1.11)
   devise (~> 5.0.4)
