@@ -30,7 +30,7 @@ module.exports = defineConfig([globalIgnores([
       App: "readonly",
       AmsifySuggestags: "readonly",
       annotator: "readonly",
-      c3: "readonly",
+      bb: "readonly",
       CKEDITOR: "readonly",
       Dropzone: "readonly",
       L: "readonly",

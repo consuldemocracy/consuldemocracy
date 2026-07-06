@@ -1,5 +1,4 @@
-//= require d3/d3
-//= require c3/c3
+//= require billboard.js/dist/billboard.pkgd
 //= require stats
 
 var initialize_stats_modules = function() {

@@ -1,7 +1,5 @@
 (function() {
   "use strict";
-  // Helper for generate C3.js graphs
-  //----------------------------------------------------------------------
   var buildGraph;
 
   buildGraph = function(el) {
@@ -21,7 +19,7 @@
         }
       }
     };
-    c3.generate(conf);
+    bb.generate(conf);
   };
 
   App.Stats = {
