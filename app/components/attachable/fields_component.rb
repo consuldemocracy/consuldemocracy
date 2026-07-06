@@ -49,7 +49,6 @@ class Attachable::FieldsComponent < ApplicationComponent
       f.file_field :attachment,
                    label_options: { class: "button hollow #{klass}" },
                    accept: accepted_content_types_extensions,
-                   class: "js-#{singular_name}-attachment",
                    data: { url: direct_upload_path }
     end
 

@@ -2,7 +2,7 @@
   "use strict";
   App.Documentable = {
     initialize: function() {
-      $(".js-document-attachment").each(function() {
+      $("#nested-documents [type=file]").each(function() {
         App.Documentable.initializeDirectUploadInput(this);
       });
       $("#nested-documents").on("cocoon:after-remove", function() {
@@ -10,7 +10,7 @@
       });
       $("#nested-documents").on("cocoon:after-insert", function(e, nested_document) {
         var input, document_fields;
-        input = $(nested_document).find(".js-document-attachment");
+        input = $(nested_document).find("[type=file]");
         document_fields = $(nested_document).closest("#nested-documents").find(".document-fields:visible");
 
         input.lockUpload = document_fields.length >= $("#nested-documents").data("max-documents-allowed");
