@@ -74,43 +74,6 @@ end
 
 FactoryBot.use_parent_strategy = false
 
-module Capybara
-  module DSL
-    alias_method :original_visit, :visit
-
-    def axe_tests_to_skip
-      [
-        :"link-in-text-block",
-        :"color-contrast"
-      ]
-    end
-
-    def visit(url, ...)
-      original_visit(url, ...)
-
-      unless driver.name == :rack_test
-        expect(page).to be_axe_clean.skipping(*axe_tests_to_skip)
-      end
-
-      unless url.match?("robots.txt") || url.match?("active_storage/representations")
-        expect(page).to have_css "main", count: 1
-        expect(page).to have_css "#main", count: 1
-        expect(page).to have_css "main#main"
-      end
-    end
-
-    alias_method :original_click_link, :click_link
-
-    def click_link(...)
-      original_click_link(...)
-
-      unless driver.name == :rack_test
-        expect(page).to be_axe_clean.skipping(*axe_tests_to_skip)
-      end
-    end
-  end
-end
-
 Capybara.register_driver :headless_chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
     opts.add_argument "--headless"

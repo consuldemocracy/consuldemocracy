@@ -1,4 +1,3 @@
-require "axe-rspec"
 require "factory_bot_rails"
 require "email_spec"
 require "devise"
@@ -56,6 +55,12 @@ RSpec.configure do |config|
   config.before(:each, type: :system) do |example|
     driven_by :headless_chrome
     Capybara.default_set_options = { clear: :backspace }
+  end
+
+  config.around(:each, type: :system) do |example|
+    with_accessibility_audit_options skipping: [:"link-in-text-block", :"color-contrast"] do
+      example.run
+    end
   end
 
   config.before(:each, :no_js, type: :system) do
