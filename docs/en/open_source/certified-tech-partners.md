@@ -2,6 +2,8 @@
 
 On this page we record the contributions of CONSUL DEMOCRACY's official Certified Tech Partners.&#x20;
 
+Certfied Tech Partners are required to 1) contribute a 500€ annual fee and 2) make (small) code contribution(s) every year.
+
 ### 2025/2026
 
 | Partner          | Financial Contribution                                                       | Code Contribution                                                                                                                                                                                                                                                                                                                                   | Status                |
