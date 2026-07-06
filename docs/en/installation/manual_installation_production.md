@@ -1,6 +1,13 @@
-# Manual installation for production
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/servers/manual_installation_production
+---
 
-**WARNING:** This method is *not recommended* and not officially supported, since you should use the [installer](https://github.com/consuldemocracy/installer) instead. Use this method only if the installer isn't an option and you have experience configuring PostgreSQL, Puma or Passenger, NGINX, and SSL (with letsencrypt, for instance).
+# Manual installation (not recommended)
+
+**WARNING:** This method is _not recommended_ and not officially supported, since you should use the [installer](https://github.com/consuldemocracy/installer) instead. Use this method only if the installer isn't an option and you have experience configuring PostgreSQL, Puma or Passenger, NGINX, and SSL (with letsencrypt, for instance).
 
 This guide assumes you've already [installed all the necessary packages](prerequisites.md) on your system. Make sure to install RVM to be able to install the Ruby version required by the project, which is defined in the .ruby-version file. Also, ensure you have installed FNM to install the Node.js version defined in the .node-version file.
 

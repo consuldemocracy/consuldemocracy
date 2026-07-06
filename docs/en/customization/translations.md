@@ -1,4 +1,10 @@
-# Customizing translations and texts
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/translations
+---
+
+# Translations and texts
 
 ## Translations
 
@@ -6,7 +12,7 @@ Currently, Consul Democracy is totally or partially translated to multiple langu
 
 Please [join the translators](https://crwd.in/consul) to help us complete existing languages, or contact us through [Consul Democracy's discussions](https://github.com/consuldemocracy/consuldemocracy/discussions) to become a proofreader and validate translators' contributions.
 
-If your language isn't already present in the Crowdin project, please [open an issue](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New%20language&body=Hello%20I%20would%20like%20to%20have%20my%20language%20INSERT%20YOUR%20LANGUAGE%20NAME%20added%20to%20Consul%20Democracy) and we'll set it up in a breeze.
+If your language isn't already present in the Crowdin project, please [open an issue](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New%20language\&body=Hello%20I%20would%20like%20to%20have%20my%20language%20INSERT%20YOUR%20LANGUAGE%20NAME%20added%20to%20Consul%20Democracy) and we'll set it up in a breeze.
 
 The existing translations of the user-facing texts are organized in YAML files under the `config/locales/` folder. Take a look at the official Ruby on Rails [internationalization guide](http://guides.rubyonrails.org/i18n.html) to better understand the translations system.
 

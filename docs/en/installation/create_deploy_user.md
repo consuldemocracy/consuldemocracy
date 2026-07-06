@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/servers/create_deploy_user
+---
+
 # Create a deploy user
 
 [The installer](https://github.com/consuldemocracy/installer) by default connects as the `root` user only to create a `deploy` user. This `deploy` user is the one who installs all libraries. If you do not have `root` access, please ask your system administrator to follow these instructions to create a user manually.
@@ -29,7 +36,7 @@ sudo visudo -f /etc/sudoers
 
 And we add this line at the end:
 
-```text
+```
 %wheel ALL=(ALL) NOPASSWD: ALL
 ```
 

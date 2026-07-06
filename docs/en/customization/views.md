@@ -1,4 +1,10 @@
-# Customizing views and HTML
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/views
+---
+
+# Views and HTML
 
 Just like most Ruby on Rails application, Consul Democracy uses ERB templates to render HTML. These templates are traditionally placed in the `app/views/` folder.
 

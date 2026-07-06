@@ -1,4 +1,10 @@
-# Customizing components
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/components
+---
+
+# Components
 
 For components, customization can be used to change both the logic (included in a `.rb` file) and the view (included in a `.erb` file). If you only want to customize the logic for, let's say, the `Admin::TableActionsComponent`, create a file named `app/components/custom/admin/table_actions_component.rb` with the following content:
 

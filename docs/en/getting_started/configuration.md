@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/getting_started/configuration
+---
+
 # Configure your fork
 
 ## Continuous Integration with GitHub Actions
@@ -8,10 +15,9 @@
 
 1. **Enable GitHub Actions in your fork**:
    1. Once you have created the fork, go to the "**Actions**" tab in your GitHub repository.
-   1. You will see a message that says: "Workflows aren’t being run on this forked repository." This is normal because GitHub disables workflows by default in newly forked repositories for security reasons.
-   1. Click the "**I understand my workflows, go ahead and enable them**" button to enable workflows in your fork.
-
+   2. You will see a message that says: "Workflows aren’t being run on this forked repository." This is normal because GitHub disables workflows by default in newly forked repositories for security reasons.
+   3. Click the "**I understand my workflows, go ahead and enable them**" button to enable workflows in your fork.
 2. **Verify the configuration**:
    1. Make a change to any project file (for example, edit a `.md` file) in a branch other than master and push it to your fork.
-   1. Open a pull request from the new branch to master in your fork.
-   1. Go to the "**Actions**" tab and verify that the tests are running correctly based on the workflows defined in the project's `.github/workflows/` directory.
+   2. Open a pull request from the new branch to master in your fork.
+   3. Go to the "**Actions**" tab and verify that the tests are running correctly based on the workflows defined in the project's `.github/workflows/` directory.

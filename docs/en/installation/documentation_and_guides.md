@@ -1,6 +1,13 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/documentation_and_guides
+---
+
 # User documentation and guides
 
-There are several guides where you can read detailed information about Consul Democracy and its possibilities. You can find them at: <https://docs.consuldemocracy.org>.
+There are several guides where you can read detailed information about Consul Democracy and its possibilities. You can find them at: [https://docs.consuldemocracy.org](https://docs.consuldemocracy.org).
 
 * **Consul Democracy Use Guide**. In this guide, you can see different ways to use Consul Democracy and examples of participation processes.
 * **Consul Democracy Administration Guide**. This guide contains detailed information about the administration and management of Consul Democracy.

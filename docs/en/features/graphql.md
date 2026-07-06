@@ -1,24 +1,30 @@
-# API Documentation
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/features/graphql
+---
 
-* [Characteristics](#characteristics)
-* [GraphQL](#graphql)
-* [Making API requests](#making-api-requests)
-  * [Supported clients](#supported-clients)
-    * [GraphiQL](#graphiql)
-    * [Postman](#postman)
-    * [HTTP libraries](#http-libraries)
-* [Available information](#available-information)
-* [Examples of queries](#examples-of-queries)
-  * [Request a single record from a collection](#request-a-single-record-from-a-collection)
-  * [Request a complete collection](#request-a-complete-collection)
-    * [Pagination](#pagination)
-  * [Accessing several resources in a single request](#accessing-several-resources-in-a-single-request)
-* [Security limitations](#security-limitations)
-  * [Example of a query which is too deep](#example-of-a-query-which-is-too-deep)
-  * [Example of a query which is too complex](#example-of-a-query-which-is-too-complex)
-* [Code examples](#code-examples)
-  * [Simple example](#simple-example)
-  * [Example with pagination](#example-with-pagination)
+# GraphQL
+
+* [Characteristics](graphql.md#characteristics)
+* [GraphQL](graphql.md#graphql)
+* [Making API requests](graphql.md#making-api-requests)
+  * [Supported clients](graphql.md#supported-clients)
+    * [GraphiQL](graphql.md#graphiql)
+    * [Postman](graphql.md#postman)
+    * [HTTP libraries](graphql.md#http-libraries)
+* [Available information](graphql.md#available-information)
+* [Examples of queries](graphql.md#examples-of-queries)
+  * [Request a single record from a collection](graphql.md#request-a-single-record-from-a-collection)
+  * [Request a complete collection](graphql.md#request-a-complete-collection)
+    * [Pagination](graphql.md#pagination)
+  * [Accessing several resources in a single request](graphql.md#accessing-several-resources-in-a-single-request)
+* [Security limitations](graphql.md#security-limitations)
+  * [Example of a query which is too deep](graphql.md#example-of-a-query-which-is-too-deep)
+  * [Example of a query which is too complex](graphql.md#example-of-a-query-which-is-too-complex)
+* [Code examples](graphql.md#code-examples)
+  * [Simple example](graphql.md#simple-example)
+  * [Example with pagination](graphql.md#example-with-pagination)
 
 ## Characteristics
 
@@ -28,13 +34,13 @@
   * Maximum page size (and the default) is 25 records
   * Maximum query depth is set at 8 levels
   * A maximum of two collections can be requested within the same query
-  * Support for GET requests (query must be inside the *query string*) and POST requests (query must be within the *body*, encoded as `application/json` or `application/graphql`)
+  * Support for GET requests (query must be inside the _query string_) and POST requests (query must be within the _body_, encoded as `application/json` or `application/graphql`)
 
 ## GraphQL
 
 The Consul Democracy API uses [GraphQL](http://graphql.org), specifically the [Ruby implementation](http://graphql-ruby.org/). If you're not familiar with this kind of APIs, we recommended you to check the [GraphQL official documentation](https://graphql.org/learn/).
 
-One of the characteristics that differentiates a REST API from a GraphQL one is that with the latter one it's possible for the client to build its own *custom queries*, so the server will only return information in which we're interested.
+One of the characteristics that differentiates a REST API from a GraphQL one is that with the latter one it's possible for the client to build its own _custom queries_, so the server will only return information in which we're interested.
 
 GraphQL queries are written following a format which resembles JSON. For example:
 
@@ -72,10 +78,10 @@ Responses are formatted in JSON:
 
 Following [the official recommendations](http://graphql.org/learn/serving-over-http/), the Consul Democracy API supports the following kind of requests:
 
-* GET requests, with the query inside the *query string*.
+* GET requests, with the query inside the _query string_.
 * POST requests
-  * With the query inside the *body*, with `Content-Type: application/json`
-  * With the query inside the *body*, with `Content-Type: application/graphql`
+  * With the query inside the _body_, with `Content-Type: application/json`
+  * With the query inside the _body_, with `Content-Type: application/graphql`
 
 ### Supported clients
 
@@ -91,7 +97,7 @@ This section presents a few examples about how to make requests using:
 
 [GraphiQL](https://github.com/graphql/graphiql) is a browser interface for making queries against a GraphQL API. It's also an additional source of documentation. Consul Democracy uses the [graphiql-rails](https://github.com/rmosolgo/graphiql-rails) to access this interface at `/graphiql`; it's the best way to get familiar with GraphQL-based APIs.
 
-![The interface of GraphiQL](../../img/graphql/graphiql.png)
+![The interface of GraphiQL](../.gitbook/assets/graphiql.png)
 
 It's got three main panels:
 
@@ -101,23 +107,23 @@ It's got three main panels:
 
 #### Postman
 
-Here's an example of a `GET` request, with the query as part of the *query string*:
+Here's an example of a `GET` request, with the query as part of the _query string_:
 
-![GET request with Postman, showing the query on the browser's URL](../../img/graphql/graphql-postman-get.png)
+![GET request with Postman, showing the query on the browser's URL](../.gitbook/assets/graphql-postman-get.png)
 
-And here's an example of a `POST` request, with the query as part of the *body* and encoded as `application/json`:
+And here's an example of a `POST` request, with the query as part of the _body_ and encoded as `application/json`:
 
-!["Headers" tabe in Postman, with "Content-Type" set to "application/json"](../../img/graphql/graphql-postman-post-headers.png)
+!["Headers" tabe in Postman, with "Content-Type" set to "application/json"](../.gitbook/assets/graphql-postman-post-headers.png)
 
 The query must be located inside a valid JSON document, as the value of the `"query"` key:
 
-!["Body" tab in Postman, with the query inside inside the "query" key](../../img/graphql/graphql-postman-post-body.png)
+!["Body" tab in Postman, with the query inside inside the "query" key](../.gitbook/assets/graphql-postman-post-body.png)
 
 #### HTTP libraries
 
 You can use any of the HTTP libraries available for most programming languages.
 
-**IMPORTANT**: Some servers might use security protocols that will make it necessary to include a *User Agent* header from a web browser so the request is not rejected. For example:
+**IMPORTANT**: Some servers might use security protocols that will make it necessary to include a _User Agent_ header from a web browser so the request is not rejected. For example:
 
 `User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0`
 
@@ -127,19 +133,19 @@ The `app/graphql/types/` folder contains a complete list of all the models (and 
 
 The models are the following:
 
-| Model                   | Description                   |
-| ----------------------- | ----------------------------- |
-| `User`                  | Users                         |
-| `Debate`                | Debates                       |
-| `Proposal`              | Proposals                     |
-| `Budget`                | Participatory budgets         |
-| `Budget::Investment`    | Budget investments            |
-| `Comment`               | Comments on debates, proposals and other comments |
-| `Milestone`             | Proposals, investments and processes milestones |
-| `Geozone`               | Geozones (districts)          |
-| `ProposalNotification`  | Notifications related to proposals |
-| `Tag`                   | Tags on debates and proposals |
-| `Vote`                  | Information related to votes  |
+| Model                  | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `User`                 | Users                                             |
+| `Debate`               | Debates                                           |
+| `Proposal`             | Proposals                                         |
+| `Budget`               | Participatory budgets                             |
+| `Budget::Investment`   | Budget investments                                |
+| `Comment`              | Comments on debates, proposals and other comments |
+| `Milestone`            | Proposals, investments and processes milestones   |
+| `Geozone`              | Geozones (districts)                              |
+| `ProposalNotification` | Notifications related to proposals                |
+| `Tag`                  | Tags on debates and proposals                     |
+| `Vote`                 | Information related to votes                      |
 
 ## Examples of queries
 

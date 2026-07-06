@@ -1,4 +1,10 @@
-# Customizing styles with CSS
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/css
+---
+
+# Styles with CSS
 
 Consul Democracy uses stylesheets written using [Sass](http://sass-lang.com/guide) with the SCSS syntax and placed under the `app/assets/stylesheets/` folder.
 

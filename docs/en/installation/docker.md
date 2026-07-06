@@ -1,4 +1,11 @@
-# Using Docker for local development
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/local_installation/docker
+---
+
+# Docker
 
 ## Prerequisites
 
@@ -120,7 +127,7 @@ POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/system/
 
 ## Troubleshooting
 
-Run these commands **inside Consul Democracy's directory**, to erase all your previous Consul Democracy's Docker images and containers. Then start the Docker [installation process](#installation) once again.
+Run these commands **inside Consul Democracy's directory**, to erase all your previous Consul Democracy's Docker images and containers. Then start the Docker [installation process](docker.md#installation) once again.
 
 1. Remove all Consul Democracy images:
 

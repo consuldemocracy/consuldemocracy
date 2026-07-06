@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/servers/mail_server_configuration
+---
+
 # Mail server configuration
 
 This is an example of how to integrate a mailing service with Consul Democracy.
@@ -6,9 +13,9 @@ This is an example of how to integrate a mailing service with Consul Democracy.
 
 To configure email in Consul Democracy, you will need:
 
-* The _smtp_address_, which is the address of your email provider's SMTP server (e.g., smtp.yourdomain.com).
+* The _smtp\_address_, which is the address of your email provider's SMTP server (e.g., smtp.yourdomain.com).
 * The _domain_, which is the domain name of your application.
-* The _user_name_ and _password_, which are the credentials provided by your email provider to authenticate with the SMTP server.
+* The _user\_name_ and _password_, which are the credentials provided by your email provider to authenticate with the SMTP server.
 
 ## Email configuration in Consul Democracy
 

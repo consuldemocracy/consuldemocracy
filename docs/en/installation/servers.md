@@ -1,21 +1,27 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/servers
+---
+
 # Production and staging servers
 
 ## Recommended minimum system requirements
 
 ### 1. Production server
 
-- Supported distributions: Ubuntu 22.04, Ubuntu 24.04, Debian Bullseye, Debian Bookworm or Debian Trixie
-- RAM: 32GB
-- Processor: Quad core
-- Hard Drive: 20 GB
-- Database: Postgres
+* Supported distributions: Ubuntu 22.04, Ubuntu 24.04, Debian Bullseye, Debian Bookworm or Debian Trixie
+* RAM: 32GB
+* Processor: Quad core
+* Hard Drive: 20 GB
+* Database: Postgres
 
 ### 2. Staging server
 
-- Supported distributions: Ubuntu 22.04, Ubuntu 24.04, Debian Bullseye, Debian Bookworm or Debian Trixie
-- RAM: 16GB
-- Processor: Dual core
-- Hard Drive: 20 GB
-- Database: Postgres
+* Supported distributions: Ubuntu 22.04, Ubuntu 24.04, Debian Bullseye, Debian Bookworm or Debian Trixie
+* RAM: 16GB
+* Processor: Dual core
+* Hard Drive: 20 GB
+* Database: Postgres
 
 If your city has a population of over 1,000,000, consider balancing your load using 2-3 production servers and a separate server for the database.

@@ -1,4 +1,10 @@
-# Keeping your fork updated
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/getting_started/update
+---
+
+# Keep your fork updated
 
 ## Preliminary steps
 
@@ -18,8 +24,8 @@ git remote -v
 
 You should get something like:
 
-> origin  git@github.com:your_user_name/consuldemocracy.git (fetch)\
-> origin  git@github.com:your_user_name/consuldemocracy.git (push)
+> origin git@github.com:your\_user\_name/consuldemocracy.git (fetch)\
+> origin git@github.com:your\_user\_name/consuldemocracy.git (push)
 
 Now, add Consul Democracy's GitHub as upstream remote with:
 
@@ -35,10 +41,10 @@ git remote -v
 
 This time you should get something like:
 
-> origin  git@github.com:your_user_name/consuldemocracy.git (fetch)\
-> origin  git@github.com:your_user_name/consuldemocracy.git (push)\
-> upstream  git@github.com:consuldemocracy/consuldemocracy.git (fetch)\
-> upstream  git@github.com:consuldemocracy/consuldemocracy.git (push)
+> origin git@github.com:your\_user\_name/consuldemocracy.git (fetch)\
+> origin git@github.com:your\_user\_name/consuldemocracy.git (push)\
+> upstream git@github.com:consuldemocracy/consuldemocracy.git (fetch)\
+> upstream git@github.com:consuldemocracy/consuldemocracy.git (push)
 
 ## Pulling changes from Consul Democracy
 

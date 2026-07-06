@@ -2,8 +2,7 @@
 
 ## Overview
 
-The AI Image Suggestions feature allows users to get image recommendations
-assisted by AI when creating or editing content in Consul Democracy. Instead of manually searching for and uploading images, users can click a button to receive relevant stock image suggestions from Pexels based on the title and description of their content.
+The AI Image Suggestions feature allows users to get image recommendations assisted by AI when creating or editing content in Consul Democracy. Instead of manually searching for and uploading images, users can click a button to receive relevant stock image suggestions from Pexels based on the title and description of their content.
 
 The feature uses a Large Language Model (LLM) to analyze the title and description fields of a resource, extract meaningful concepts, and generate an optimized search query. This query is then used to search the Pexels API for relevant stock images. When a user selects a suggested image, it is downloaded and attached to their content just like a user-uploaded image.
 
@@ -88,11 +87,11 @@ Once you have configured both the LLM provider and the Pexels API key:
 1. Navigate to **Admin > Global Settings > LLM Settings**
 2. Enable the **AI Image Suggestions** feature toggle
 3. The feature will be enabled if:
-   - LLM provider is configured
-   - LLM model is selected
-   - Pexels API key is present in secrets
+   * LLM provider is configured
+   * LLM model is selected
+   * Pexels API key is present in secrets
 
-![LLM Configuration with Image Suggestions enabled](../../img/image_suggestions/llm-configuration-en.png)
+![LLM Configuration with Image Suggestions enabled](../.gitbook/assets/llm-configuration-en.png)
 
 ## How It Works
 
@@ -101,60 +100,54 @@ Once you have configured both the LLM provider and the Pexels API key:
 When creating or editing budget investments:
 
 1. **User fills in title and/or description**: The feature uses whichever of these fields is present to generate image suggestions.
-
 2. **User clicks "Add image"**: Under optional fields, this button expands both the image upload form and the AI suggestion button.
+3.  **User clicks "Suggest an image with AI"**: A button appears next to the image upload field (only when no image is currently attached).
 
-3. **User clicks "Suggest an image with AI"**: A button appears next to the image upload field (only when no image is currently attached).
-
-   ![Image upload form with AI suggestion button](../../img/image_suggestions/upload-form-with-button-en.png)
-
+    ![Image upload form with AI suggestion button](../.gitbook/assets/upload-form-with-button-en.png)
 4. **System generates suggestions**:
-   - The LLM analyzes the title and description
-   - Extracts key concepts and generates a search query
-   - Searches Pexels API with the generated query
-   - Returns up to 4 relevant image suggestions
+   * The LLM analyzes the title and description
+   * Extracts key concepts and generates a search query
+   * Searches Pexels API with the generated query
+   * Returns up to 4 relevant image suggestions
+5.  **User views suggestions**: A grid of suggested images appears below the upload button.
 
-5. **User views suggestions**: A grid of suggested images appears below the upload button.
+    ![Suggested images grid](../.gitbook/assets/suggested-images-grid-en.png)
+6.  **User selects an image**: Clicking on a suggested image:
 
-   ![Suggested images grid](../../img/image_suggestions/suggested-images-grid-en.png)
+    * Downloads the image from Pexels
+    * Attaches it to the form as if it were user-uploaded
+    * Replaces the upload interface with the selected image preview
 
-6. **User selects an image**: Clicking on a suggested image:
-   - Downloads the image from Pexels
-   - Attaches it to the form as if it were user-uploaded
-   - Replaces the upload interface with the selected image preview
-
-   ![Selected image preview](../../img/image_suggestions/selected-image-preview-en.png)
+    ![Selected image preview](../.gitbook/assets/selected-image-preview-en.png)
 
 ### Technical Flow
 
 1. **Frontend**: User clicks the suggestion button, which sends an AJAX request with the form data (title, description, resource type, etc.)
-
 2. **Backend Processing**:
-   - `ImageSuggestionsController#create` receives the request
-   - Extracts the relevant attributes from the request
-   - Calls `ImageSuggestions::Llm::Client` to generate a search query
-   - The LLM client:
-     - Validates LLM configuration
-     - Validates that title and/or description are present
-     - Sends the prompt to the LLM with title and description
-     - Receives a search query string
-     - Searches Pexels API with the query
-     - Returns up to 4 image results
-
+   * `ImageSuggestionsController#create` receives the request
+   * Extracts the relevant attributes from the request
+   * Calls `ImageSuggestions::Llm::Client` to generate a search query
+   * The LLM client:
+     * Validates LLM configuration
+     * Validates that title and/or description are present
+     * Sends the prompt to the LLM with title and description
+     * Receives a search query string
+     * Searches Pexels API with the query
+     * Returns up to 4 image results
 3. **Image Attachment**:
-   - When user clicks a suggested image, `ImageSuggestionsController#attach` is called
-   - Downloads the image from Pexels
-   - Creates an `ActionDispatch::Http::UploadedFile` from the downloaded image
-   - Uses the existing `DirectUpload` system to attach the image
-   - Returns JSON with attachment details for frontend processing
+   * When user clicks a suggested image, `ImageSuggestionsController#attach` is called
+   * Downloads the image from Pexels
+   * Creates an `ActionDispatch::Http::UploadedFile` from the downloaded image
+   * Uses the existing `DirectUpload` system to attach the image
+   * Returns JSON with attachment details for frontend processing
 
 ## Supported Resources
 
 The image suggestions feature works with any resource that:
 
-- Has `title` and `description` attributes (or responds to these methods)
-- Supports image attachments through the standard image attachment system
-- Uses the `Images::NestedComponent`
+* Has `title` and `description` attributes (or responds to these methods)
+* Supports image attachments through the standard image attachment system
+* Uses the `Images::NestedComponent`
 
 Currently, this is only implemented on with Budget Investments feature!
 
@@ -164,9 +157,9 @@ Currently, this is only implemented on with Budget Investments feature!
 
 The suggested images grid uses CSS classes that can be customized:
 
-- `.suggested-images-container`: Container for all suggested images
-- `.js-attach-suggested-image`: Individual image button
-- `.suggested-image`: The image element itself
+* `.suggested-images-container`: Container for all suggested images
+* `.js-attach-suggested-image`: Individual image button
+* `.suggested-image`: The image element itself
 
 Styles are defined in `app/assets/stylesheets/mixins/uploads.scss`.
 
@@ -176,15 +169,15 @@ Styles are defined in `app/assets/stylesheets/mixins/uploads.scss`.
 
 Image suggestion queries are relatively short (typically 10-50 tokens), so costs are minimal. Each suggestion request:
 
-- Input: ~50-100 tokens (title + description + prompt)
-- Output: ~5-15 tokens (search query)
+* Input: \~50-100 tokens (title + description + prompt)
+* Output: \~5-15 tokens (search query)
 
 ### Pexels Costs
 
 Pexels offers a free tier that should be sufficient for most installations:
 
-- 200 requests per hour
-- 20,000 requests per month
+* 200 requests per hour
+* 20,000 requests per month
 
 For higher usage, Pexels offers paid plans. See [Pexels API pricing](https://www.pexels.com/api/pricing/) for details.
 
@@ -192,14 +185,14 @@ For higher usage, Pexels offers paid plans. See [Pexels API pricing](https://www
 
 ### Feature button doesn't appear
 
-- Make sure you clicked **"Add image"** for the descriptive image first; the AI suggestion button only appears after that block is expanded.
-- Check that LLM provider and model are configured in **Admin > Global Settings > LLM Settings**
-- Verify that Image suggestions setting is enabled
-- Ensure Pexels API key is present in `secrets.yml`
-- Check browser console for JavaScript errors
+* Make sure you clicked **"Add image"** for the descriptive image first; the AI suggestion button only appears after that block is expanded.
+* Check that LLM provider and model are configured in **Admin > Global Settings > LLM Settings**
+* Verify that Image suggestions setting is enabled
+* Ensure Pexels API key is present in `secrets.yml`
+* Check browser console for JavaScript errors
 
 ### No images are suggested
 
-- Pexels might be missing stock photos for certain terms.
-- Check that LLM is responding correctly (check application logs)
-- Verify Pexels API key is valid and has remaining quota
+* Pexels might be missing stock photos for certain terms.
+* Check that LLM is responding correctly (check application logs)
+* Verify Pexels API key is valid and has remaining quota

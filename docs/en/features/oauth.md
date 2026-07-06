@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/features/oauth
+---
+
 # Authentication with external services (OAuth)
 
 You can configure authentication services with external OAuth providers. Right now, Twitter, Facebook, Google, Wordpress, SAML and OpenID Connect (OIDC) are supported.
@@ -29,7 +35,7 @@ So for example the URL for Facebook application would be `yourdomain.com/users/a
 
 ## 3. Set the key and secret values
 
-When you complete the application registration you'll get a *key* and *secret* values, those need to be stored at your `config/secrets.yml` file:
+When you complete the application registration you'll get a _key_ and _secret_ values, those need to be stored at your `config/secrets.yml` file:
 
 ```yml
   twitter_key: ""
@@ -66,7 +72,7 @@ saml_additional_settings:
 ```
 
 * **RelayState**: Redirects the user to a specific page after successful login.
-* **authn_context**: Requests a specific authentication method from the IdP.
+* **authn\_context**: Requests a specific authentication method from the IdP.
 * **organization**: Example of a custom setting (useful if your IdP requires tenant/organization information).
 
 If you don't need extra settings, you can safely leave it empty:

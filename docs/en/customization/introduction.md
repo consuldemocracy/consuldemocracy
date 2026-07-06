@@ -1,4 +1,10 @@
-# Customization
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/introduction
+---
+
+# Introduction
 
 You can modify your own Consul Democracy to adapt it to the visual style of your institution. To do so, first you'll have to [create your own fork](../getting_started/create.md).
 

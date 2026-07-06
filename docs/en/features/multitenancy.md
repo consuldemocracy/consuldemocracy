@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/features/multitenancy
+---
+
 # Multitenancy
 
 ## What's multitenancy and how does it work
@@ -60,7 +66,7 @@ After enabling this option, restart the application.
 
 Once multitenancy has been enabled and the application has been restarted, you'll see a new "Multitenancy" section inside the "Settings" menu in the Consul Democracy admin panel.
 
-![New section with the list of tenants, with their name and domain or subdomain](../../img/multitenancy/index-en.png)
+![New section with the list of tenants, with their name and domain or subdomain](../.gitbook/assets/index-en.png)
 
 This section will only be available from the "main" tenant (the one which is created by default). It will not be possible to add/edit tenants by accessing the admin section of any other tenant.
 
@@ -68,7 +74,7 @@ Since removing a tenant would delete **all** its associated data, making it impo
 
 The interface to manage tenants is very simple, needing just a name and a domain or subdomain.
 
-![Form to edit a tenant, with name and domain or subdomain fields; radio buttons are used to choose domain or subdomain](../../img/multitenancy/form-en.png)
+![Form to edit a tenant, with name and domain or subdomain fields; radio buttons are used to choose domain or subdomain](../.gitbook/assets/form-en.png)
 
 The name will be used to set the default site name for new tenants. Note that, once a tenant is created, changing this name will have no effect. To change the site name of an existing tenant, edit it in the "Global settings" section in the administration of that tenant.
 
@@ -87,11 +93,11 @@ There are two possible ways to enable multitenancy management mode:
 * Adding `config.multitenancy_management_mode = true` inside the `class Application < Rails::Application` class in the `config/application_custom.rb` file
 * Replacing the line `multitenancy_management_mode: false` with `multitenancy_management_mode: true` (or adding it if it isn't already there) in the `config/secrets.yml` file
 
-We recommend using the same method that has been used to enable the multitenancy functionality in the [Common step for all Consul Democracy installations](#common-step-for-all-consul-democracy-installations) section.
+We recommend using the same method that has been used to enable the multitenancy functionality in the [Common step for all Consul Democracy installations](multitenancy.md#common-step-for-all-consul-democracy-installations) section.
 
 After enabling this option, restart the application and you will see the administration panel as follows:
 
-![The administration panel only contains links to multitenancy and administrators](../../img/multitenancy/management-mode-en.png)
+![The administration panel only contains links to multitenancy and administrators](../.gitbook/assets/management-mode-en.png)
 
 ## Steps to take after adding a tenant
 
@@ -121,7 +127,7 @@ After doing so, update your web server configuration file (by default `/etc/ngin
 
 In order to reduce the chance your application sends emails which are erroneously identified as spam, you might want to edit the fields "Sender email name" and "Sender email address" in the administration panel of the new tenant. The default values for these fields are the name and subdomain introduced when creating the tenant.
 
-![Fields to edit sender email name and address](../../img/multitenancy/email-settings-en.png)
+![Fields to edit sender email name and address](../.gitbook/assets/email-settings-en.png)
 
 If you'd like to use a different mail configuration for the new tenant, like one for a hypothetical `jupiter` subdomain, edit the `config/secrets.yml` file this way:
 
@@ -193,7 +199,7 @@ To define the default and the enabled languages for a tenant, go the administrat
 
 On this page you'll find a form to choose the default and the enabled languages for this tenant (note: this form changes slightly when only a few languages are available):
 
-![Form with a select control for the default language and a list of checkboxes to choose which ones to enable](../../img/multitenancy/languages-en.png)
+![Form with a select control for the default language and a list of checkboxes to choose which ones to enable](../.gitbook/assets/languages-en.png)
 
 Choose the ones you'd like, save the changes, and the language selector at the top of the web will be updated immediately.
 
@@ -241,8 +247,8 @@ The same principle works for components too, but in this case, when using the `c
 For example, if you're writing a custom `admin/action_component` component view for the `milky-way` tenant but don't need to change this file for the default tenant:
 
 1. Create the `app/components/custom/admin/action_component.rb` file according to the [components customization documentation](../customization/components.md)
-1. Create the custom view for the `milky-way` tenant and save it under `app/components/custom/admin/action_component.html+milky-way.erb`
-1. Enter the `app/components/custom/admin/` folder and run `ln -s ../../admin/action_component.html.erb`
+2. Create the custom view for the `milky-way` tenant and save it under `app/components/custom/admin/action_component.html+milky-way.erb`
+3. Enter the `app/components/custom/admin/` folder and run `ln -s ../../admin/action_component.html.erb`
 
 ## Current limitations of multitenancy
 

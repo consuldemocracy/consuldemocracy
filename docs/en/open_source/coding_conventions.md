@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/open_source/coding_conventions
+---
+
 # Coding conventions
 
 ## Linters
@@ -161,4 +168,4 @@ end
 
 This time, the expectation isn't true before clicking the "Proposals" link, so the test waits until the request has finished.
 
-By the way, you might notice that here we're checking an HTML attribute, which seems to be the opposite of what we recommended in the [don't check the database after a system test](#dont-check-the-database-after-a-system-test) section. However, people using screen readers will be notified about the `aria-current` attribute, so we're actually testing the page from the user's point of view.
+By the way, you might notice that here we're checking an HTML attribute, which seems to be the opposite of what we recommended in the [don't check the database after a system test](coding_conventions.md#dont-check-the-database-after-a-system-test) section. However, people using screen readers will be notified about the `aria-current` attribute, so we're actually testing the page from the user's point of view.

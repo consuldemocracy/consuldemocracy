@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/basic_configuration
+---
+
 # Basic configuration
 
 Once you have Consul Democracy running on the server, there are some basic configuration options that you probably want to define in order to start using it.
@@ -29,7 +36,7 @@ In the admin area, on the side navigation menu, click on "Settings" to open a su
 * Sender email address. This email address will appear in the emails sent from the application.
 * Minimum age needed to participate. If you use a user verification system, this will be the minimum age that users will be required to be.
 * Number of supports necessary for approval of a Proposal. If you use the citizen proposals section, you can define a minimum number of supports that the proposals need in order to be considered. Any user will be able to create proposals but only those that reach that value will be taken into account.
-* Level x public official. Consul Democracy allows some user accounts to be marked as "official accounts", and their interventions on the platform will be highlighted. This is used, for example, in a city, if you want to define accounts for the Mayor, Councillors, etc. This public official option will allow you to define the official label that appears next to the usernames of these accounts from most important \(level 1\) to least important \(level 5\).
+* Level x public official. Consul Democracy allows some user accounts to be marked as "official accounts", and their interventions on the platform will be highlighted. This is used, for example, in a city, if you want to define accounts for the Mayor, Councillors, etc. This public official option will allow you to define the official label that appears next to the usernames of these accounts from most important (level 1) to least important (level 5).
 
 ## Categories of proposals
 
@@ -37,7 +44,7 @@ When users create proposals on the platform, a few general categories are sugges
 
 ## Definition of geozones
 
-Geozones are smaller territorial areas than the area in which you use Consul Democracy \(e.g. districts in a city in which Consul Democracy is used\). If the geozones are activated, it will allow for example that citizen proposals are assigned to a specific area, or that polls are restricted to people living in some area.
+Geozones are smaller territorial areas than the area in which you use Consul Democracy (e.g. districts in a city in which Consul Democracy is used). If the geozones are activated, it will allow for example that citizen proposals are assigned to a specific area, or that polls are restricted to people living in some area.
 
 On the side navigation menu, click on "Settings" and then click on "Geozones". The "Create geozone" button on the right will allow you to create new geozones. Only the name is necessary to define them, but you can add other data which might be useful in certain sections. Initially we recommend that you start by defining only the names of the zones.
 

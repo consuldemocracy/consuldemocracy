@@ -1,4 +1,10 @@
-# Customizing tests
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/tests
+---
+
+# Tests
 
 Tests check whether the application behaves as expected. For this reason, it is **extremely important** that you write tests for all the features you introduce or modify. Without tests, you'll have no reliable way to confirm that the application keeps working as expected whenever you change the code or upgrade to a new version of Consul Democracy. Consul Democracy contains more than 6000 tests checking the way the application behaves; without them, it'd be impossible to make sure that new code doesn't break any existing behavior.
 

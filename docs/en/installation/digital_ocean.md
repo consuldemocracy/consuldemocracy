@@ -1,4 +1,11 @@
-# Installing Consul Democracy on a Digital Ocean VPS
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/servers/digital_ocean
+---
+
+# Digital Ocean
 
 These instructions will help you register and buy a server in Digital Ocean to install Consul Democracy.
 
@@ -30,11 +37,11 @@ cat ~/.ssh/id_rsa.pub
 
 You should see a text like this:
 
-```text
+```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDy/BXU0OsK8KLLXpd7tVnqDU+d4ZS2RHQmH+hv0BFFdP6PmUbKdBDigRqG6W3QBexB2DpVcb/bmHlfhzDlIHJn/oki+SmUYLSWWTWuSeF/1N7kWf9Ebisk6hiBkh5+i0oIJYvAUsNm9wCayQ+i3U3NjuB25HbgtyjR3jDPIhmg1xv0KZ8yeVcU+WJth0pIvwq+t4vlZbwhm/t2ah8O7hWnbaGV/MZUcj0/wFuiad98yk2MLGciV6XIIq+MMIEWjrrt933wAgzEB8vgn9acrDloJNvqx25uNMpDbmoNXJ8+/P3UDkp465jmejVd/6bRaObXplu2zTv9wDO48ZpsaACP your_username@your_computer_name
 ```
 
-Select all the text, paste it into the pop-up window in the "SSH Key content" field, add a meaningful name such as **Consul_Democracy_key**, and click the Add SSH Key button.
+Select all the text, paste it into the pop-up window in the "SSH Key content" field, add a meaningful name such as **Consul\_Democracy\_key**, and click the Add SSH Key button.
 
 By using an SSH key instead of a user/password combination to access your server, it will be much more secure, as only someone with the private SSH key can access the server.
 

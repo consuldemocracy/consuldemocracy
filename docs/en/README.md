@@ -1,17 +1,24 @@
-![CONSUL DEMOCRACY logo](../img/consul_logo.png)
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/
+---
 
-# CONSUL DEMOCRACY
+# Introduction
+
+![CONSUL DEMOCRACY logo](.gitbook/assets/consul_logo.png)
+
+## CONSUL DEMOCRACY
 
 Citizen Participation and Open Government Application
 
-## CONSUL DEMOCRACY Foundation and project website
+### CONSUL DEMOCRACY Foundation and project website
 
 You can access the main website of the project at [http://consuldemocracy.org](http://consuldemocracy.org) where you can find information about the use of the platform, the CONSUL DEMOCRACY Foundation, the global community of users and local partners, news, and ways to get more support or get in touch.
 
-## Configuration for development and test environments
+### Configuration for development and test environments
 
-**NOTE**:
-The installation process will vary depending on your operating system. Please make sure to follow the [local installation docs](installation/local_installation.md) appropriate for your OS.
+**NOTE**: The installation process will vary depending on your operating system. Please make sure to follow the [local installation docs](installation/local_installation.md) appropriate for your OS.
 
 Prerequisites: install git, Ruby 3.3.11, CMake, pkg-config, Node.js 20.20.2, ImageMagick and PostgreSQL (>=13).
 
@@ -40,22 +47,20 @@ Note: running the whole test suite on your machine might take more than an hour,
 
 You can use the default admin user from the seeds file:
 
- **user:** admin@consul.dev
- **pass:** 12345678
+**user:** admin@consul.dev **pass:** 12345678
 
 But for some actions like voting, you will need a verified user, the seeds file also includes one:
 
- **user:** verified@consul.dev
- **pass:** 12345678
+**user:** verified@consul.dev **pass:** 12345678
 
-## Configuration for production environments
+### Configuration for production environments
 
 See [installer](https://github.com/consuldemocracy/installer)
 
-## License
+### License
 
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](open_source/license.md))
 
-## Contributions
+### Contributions
 
 See [CONTRIBUTING.md](https://github.com/consuldemocracy/consuldemocracy/blob/master/CONTRIBUTING.md)
