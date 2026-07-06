@@ -59,3 +59,4 @@
   * [Coding conventions](open_source/coding_conventions.md)
   * [Open source forks and modifications](open_source/open-source-forks-and-modifications.md)
   * [License](open_source/license.md)
+  * [Certified Tech Partners](open_source/certified-tech-partners.md)
