@@ -11,7 +11,7 @@
     "jquery-ui": "^1.14.2",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
-    "markdown-it": "^14.1.1"
+    "markdown-it": "^14.3.0"
   },
   "devDependencies": {
     "@stylistic/stylelint-plugin": "^5.1.0",
