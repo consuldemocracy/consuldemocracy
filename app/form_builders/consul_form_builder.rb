@@ -45,6 +45,26 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
       }))
   end
 
+  def error_for(attribute, ...)
+    if error?(attribute)
+      content_tag(:span, super, id: field_id(attribute, :error))
+    end
+  end
+
+  def field(attribute, options, html_options = nil)
+    if error?(attribute)
+      aria_options = { "aria-invalid" => true, "aria-errormessage" => field_id(attribute, :error) }
+
+      if html_options
+        super(attribute, options, aria_options.merge(html_options))
+      else
+        super(attribute, aria_options.merge(options))
+      end
+    else
+      super
+    end
+  end
+
   private
 
     def custom_label(attribute, text, options)
