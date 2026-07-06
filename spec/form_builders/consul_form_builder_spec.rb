@@ -37,7 +37,7 @@ describe ConsulFormBuilder do
       render builder.text_field(:title, hint: "Make it quick")
 
       expect(page).to have_css ".help-text", text: "Make it quick"
-      expect(page).to have_css "input[aria-describedby='dummy_title-help-text']"
+      expect(page).to have_css "input[aria-describedby='dummy_title_help_text']"
     end
 
     it "does not generate empty hints" do
@@ -61,7 +61,7 @@ describe ConsulFormBuilder do
         render builder.text_field(:title, label: "Title whatever", hint: "Make it quick")
 
         expect(page).to have_css ".help-text", text: "Make it quick"
-        expect(page).to have_css "input[aria-describedby='dummy_title-help-text']"
+        expect(page).to have_css "input[aria-describedby='dummy_title_help_text']"
       end
     end
   end
@@ -83,7 +83,7 @@ describe ConsulFormBuilder do
       render builder.select(:quality, DummyModel::OPTIONS, hint: "Ugly is neither good nor bad")
 
       expect(page).to have_css ".help-text", text: "Ugly is neither good nor bad"
-      expect(page).to have_css "select[aria-describedby='dummy_quality-help-text']"
+      expect(page).to have_css "select[aria-describedby='dummy_quality_help_text']"
     end
   end
 

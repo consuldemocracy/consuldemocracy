@@ -94,7 +94,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
     def help_text_id(attribute, options)
       if options[:hint].present?
-        "#{custom_label(attribute, "Example", nil).match(/for="([^"]+)"/)[1]}-help-text"
+        field_id(attribute, :help_text)
       end
     end
 end
