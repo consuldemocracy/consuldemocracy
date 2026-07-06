@@ -17,7 +17,7 @@
     "@stylistic/stylelint-plugin": "^5.1.0",
     "eslint": "^9.39.4",
     "postcss-scss": "^4.0.9",
-    "stylelint": "^17.8.0",
+    "stylelint": "^17.14.0",
     "stylelint-order": "^8.1.1",
     "stylelint-scss": "^7.0.0"
   }
