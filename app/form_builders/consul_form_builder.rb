@@ -20,12 +20,14 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   end
 
   def check_box(attribute, options = {})
+    options_with_aria_error = aria_error_options(attribute).merge(options)
+
     if options[:label] == false
-      super
+      super(attribute, options_with_aria_error)
     else
       label = tag.span sanitized_label_text(attribute, options[:label]), class: "checkbox"
 
-      super(attribute, options.merge(
+      super(attribute, options_with_aria_error.merge(
         label: label,
         label_options: { class: "checkbox-label" }.merge(label_options_for(options))
       ))
@@ -52,16 +54,10 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   end
 
   def field(attribute, options, html_options = nil)
-    if error?(attribute)
-      aria_options = { "aria-invalid" => true, "aria-errormessage" => field_id(attribute, :error) }
-
-      if html_options
-        super(attribute, options, aria_options.merge(html_options))
-      else
-        super(attribute, aria_options.merge(options))
-      end
+    if html_options
+      super(attribute, options, aria_error_options(attribute).merge(html_options))
     else
-      super
+      super(attribute, aria_error_options(attribute).merge(options))
     end
   end
 
@@ -115,6 +111,14 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     def help_text_id(attribute, options)
       if options[:hint].present?
         field_id(attribute, :help_text)
+      end
+    end
+
+    def aria_error_options(attribute)
+      if error?(attribute)
+        { "aria-invalid" => true, "aria-errormessage" => field_id(attribute, :error) }
+      else
+        {}
       end
     end
 end

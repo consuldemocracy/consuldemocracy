@@ -8,13 +8,14 @@ describe ConsulFormBuilder do
       attr_accessor :title, :quality, :published
 
       validates :title, presence: true
+      validates :terms_of_service, acceptance: { allow_nil: false }
     end
 
     stub_const("DummyModel", dummy_model)
     stub_const("DummyModel::OPTIONS", %w[Good Bad Ugly].freeze)
   end
 
-  let(:model) { DummyModel.new(title: "Dummy title") }
+  let(:model) { DummyModel.new(title: "Dummy title", terms_of_service: "1") }
   let(:builder) { ConsulFormBuilder.new(:dummy, model, ApplicationController.new.view_context, {}) }
 
   describe "label" do
@@ -120,6 +121,30 @@ describe ConsulFormBuilder do
 
       expect(page).to have_css "label", count: 1
       expect(page).to have_css ".checkbox-label"
+    end
+
+    describe "errors" do
+      it "adds ARIA attributes when there are errors" do
+        model.terms_of_service = nil
+        model.valid?
+
+        render builder.check_box(:terms_of_service)
+
+        expect(page).to have_css "input[aria-invalid][aria-errormessage='dummy_terms_of_service_error']"
+        expect(page).to have_css "#dummy_terms_of_service_error", exact_text: "must be accepted"
+      end
+
+      it "does not add an error field when there aren't any errors" do
+        model.terms_of_service = "1"
+        model.valid?
+
+        render builder.check_box(:terms_of_service)
+
+        expect(page).not_to have_css "[aria-invalid]"
+        expect(page).not_to have_css "[aria-errormessage]"
+        expect(page).not_to have_css "#dummy_terms_of_service_error"
+        expect(page).not_to have_content "must be accepted"
+      end
     end
   end
 
