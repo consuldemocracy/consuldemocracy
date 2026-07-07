@@ -382,7 +382,7 @@ describe "Admin edit translatable records", :admin do
 
       click_button "Update milestone"
 
-      expect(page).to have_content "Is mandatory to provide one translation at least"
+      expect(page).to have_content "It's mandatory to provide at least one translation"
     end
 
     scenario "Is successful when there isn't a mandatory translatable field" do
