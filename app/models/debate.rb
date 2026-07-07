@@ -101,7 +101,7 @@ class Debate < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      transaction do
+      user.with_lock do
         if user.unverified? && !user.voted_for?(self)
           Debate.increment_counter(:cached_anonymous_votes_total, id)
         end

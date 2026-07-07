@@ -183,7 +183,7 @@ class Proposal < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user) && !archived?
-      vote_by(voter: user, vote: vote_value)
+      user.with_lock { vote_by(voter: user, vote: vote_value) }
     end
   end
 

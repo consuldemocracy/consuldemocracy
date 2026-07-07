@@ -215,6 +215,18 @@ describe Debate do
         expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
       end
     end
+
+    it "does not create two votes when calling the method twice at the same time", :race_condition do
+      debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)
+      user = create(:user)
+
+      2.times.map do
+        Thread.new { debate.register_vote(user, "yes") }
+      end.each(&:join)
+
+      expect(Vote.where(voter: user, votable: debate).count).to eq 1
+      expect(debate.reload.cached_anonymous_votes_total).to eq 43
+    end
   end
 
   describe "#anonymous_votes_ratio" do
