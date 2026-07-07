@@ -32,6 +32,6 @@ class Dashboard::ActiveResourceComponent < ApplicationComponent
                supports: number_with_delimiter(resource.required_supports,
                                                delimiter: ".")) if resource.required_supports > 0
 
-    safe_join label, h(" #{t("dashboard.resource.and")})") + tag(:br)
+    safe_join label, h(" #{t("dashboard.resource.and")} ") + tag(:br)
   end
 end
