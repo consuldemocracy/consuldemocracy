@@ -1103,6 +1103,21 @@ describe Budget::Investment do
     end
   end
 
+  describe "#register_selection" do
+    let(:budget) { create(:budget, :selecting) }
+    let(:investment) { create(:budget_investment, budget: budget) }
+
+    it "does not create two votes when calling the method twice at the same time", :race_condition do
+      user = create(:user, :level_two)
+
+      2.times.map do
+        Thread.new { investment.register_selection(user) }
+      end.each(&:join)
+
+      expect(Vote.where(voter: user, votable: investment).count).to eq 1
+    end
+  end
+
   describe "#voted_in?" do
     let(:user) { create(:user) }
     let(:investment) { create(:budget_investment) }
