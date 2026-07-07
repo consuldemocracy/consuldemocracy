@@ -45,13 +45,29 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
     end
 
     def select_language_error
+      if select_language_error?
+        tag.div class: "small error", id: "select_language_error" do
+          resource.translation_for(selected_locale).errors[:base].join(", ")
+        end
+      end
+    end
+
+    def select_language_error?
       return if resource.blank?
 
       current_translation = resource.translation_for(selected_locale)
-      if current_translation.errors.added? :base, :translations_too_short
-        tag.div class: "small error" do
-          current_translation.errors[:base].join(", ")
-        end
+      current_translation.errors.added? :base, :translations_too_short
+    end
+
+    def select_language_html_options
+      { class: "js-select-language" }.merge(select_language_error_html_options)
+    end
+
+    def select_language_error_html_options
+      if select_language_error?
+        { "aria-invalid" => true, "aria-errormessage" => "select_language_error" }
+      else
+        {}
       end
     end
 
