@@ -19,7 +19,13 @@
       $(comment_id + "_reply .responses-count").html(responses_count_html);
     },
     display_error: function(field_with_errors, error_html) {
-      $(error_html).insertAfter($("" + field_with_errors));
+      var error_id = $(error_html).attr("id");
+
+      if ($("#" + error_id, $("body")).length) {
+        $("#" + error_id).replaceWith(error_html);
+      } else {
+        $(error_html).insertAfter($(field_with_errors));
+      }
     },
     reset_form: function(parent_selector) {
       var form_container;
