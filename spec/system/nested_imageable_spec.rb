@@ -68,13 +68,17 @@ describe "Nested imageable" do
       expect(cached_attachment_field.value).to be_empty
     end
 
-    scenario "Should show image errors after invalid form submit" do
+    scenario "Shows image errors after invalid submit and restores add link on cancel" do
       click_link "Add image"
       click_button submit_button_text
 
       within "#nested-image .image-fields" do
         expect(page).to have_content("can't be blank", count: 2)
+        click_link "Cancel"
       end
+
+      expect(page).not_to have_content "Choose image"
+      expect(page).to have_link "Add image"
     end
 
     scenario "Render image preview after sending the form with validation errors" do

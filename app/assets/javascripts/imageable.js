@@ -2,19 +2,19 @@
   "use strict";
   App.Imageable = {
     initialize: function() {
-      $(".js-image-attachment").each(function() {
+      $("#nested-image [type=file]").each(function() {
         App.Imageable.initializeDirectUploadInput(this);
       });
       $("#nested-image").on("cocoon:after-remove", function() {
         $("#new_image_link").removeClass("hide");
       });
       $("#nested-image").on("cocoon:before-insert", function() {
-        $(".js-image-attachment").closest(".image-fields").remove();
+        $("#nested-image [type=file]").closest(".image-fields").remove();
       });
       $("#nested-image").on("cocoon:after-insert", function(e, nested_image) {
         var input;
         $("#new_image_link").addClass("hide");
-        input = $(nested_image).find(".js-image-attachment");
+        input = $(nested_image).find("[type=file]");
         App.Imageable.initializeDirectUploadInput(input);
       });
       App.Imageable.initializeRemoveCachedImageLinks();
