@@ -148,7 +148,8 @@ button,
   }
 }
 
-.button.hollow.error {
+.button.hollow.error,
+.button.hollow.is-invalid-label {
   border-color: $alert-border;
   color: $color-alert;
 }

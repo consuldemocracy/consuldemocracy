@@ -29,7 +29,8 @@
           if (input.lockUpload) {
             App.Documentable.showNotice();
           }
-        }
+        },
+        onError: App.Documentable.initializeDirectUploadInput
       });
     },
     lockUploads: function() {

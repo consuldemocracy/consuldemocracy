@@ -114,6 +114,12 @@ describe "Nested documentable" do
 
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
       expect(cached_attachment_field.value).to be_empty
+
+      click_button submit_button_text
+
+      within "#nested-documents .document-attachment" do
+        expect(page).to have_content "can't be blank"
+      end
     end
 
     scenario "Should show document errors after documentable submit with empty document fields" do

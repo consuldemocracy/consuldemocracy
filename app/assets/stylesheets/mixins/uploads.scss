@@ -12,6 +12,9 @@
 }
 
 @mixin direct-uploads {
+  .image-preview figure:has(.cached-image) {
+    height: rem-calc(150);
+  }
 
   .cached-image {
     max-height: rem-calc(150);

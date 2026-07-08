@@ -2,11 +2,11 @@
   <figure>
     <%= image_tag image.variant(version),
                   class: image_class,
-                  alt: image.title.unicode_normalize,
-                  title: image.title.unicode_normalize %>
+                  alt: image.title&.unicode_normalize,
+                  title: image.title&.unicode_normalize %>
     <% if show_caption %>
       <figcaption class="text-right">
-        <em><%= image.title.unicode_normalize %></em>
+        <em><%= image.title&.unicode_normalize %></em>
       </figcaption>
     <% end %>
   </figure>

@@ -65,6 +65,12 @@ describe "Nested imageable" do
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
 
       expect(cached_attachment_field.value).to be_empty
+
+      click_button submit_button_text
+
+      within "#nested-image .image-attachment" do
+        expect(page).to have_content "can't be blank"
+      end
     end
 
     scenario "Shows image errors after invalid submit and restores add link on cancel" do
