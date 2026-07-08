@@ -38,6 +38,20 @@ describe Poll::Answer do
       expect(answer.answer).to be nil
     end
 
+    it "is not valid without an option when question accepts options" do
+      question = create(:poll_question, :yes_no)
+      answer = build(:poll_answer, question: question, option: nil, answer: "Yes")
+
+      expect(answer).not_to be_valid
+    end
+
+    it "is valid without an option when question is open-ended" do
+      question = create(:poll_question_open)
+      answer = build(:poll_answer, question: question, option: nil, answer: "Free text")
+
+      expect(answer).to be_valid
+    end
+
     it "is not valid when there are two identical answers" do
       author = create(:user)
       question = create(:poll_question_multiple, :abc)
