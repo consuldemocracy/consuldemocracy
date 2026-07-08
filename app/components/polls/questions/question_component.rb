@@ -15,7 +15,13 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
         id: dom_id(question),
         disabled: ("disabled" if disabled?),
         class: fieldset_class,
-        data: { max_votes: question.max_votes }
+        data: { max_votes: question.max_votes },
+        aria: {
+          labelledby: [
+            dom_id(question, :legend),
+            (dom_id(question, :help_text) if multiple_choice?)
+          ]
+        }
       )
     end
 
@@ -44,7 +50,8 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
     def multiple_choice_help_text
       tag.span(
         t("poll_questions.description.multiple", maximum: question.max_votes),
-        class: "help-text"
+        class: "help-text",
+        id: dom_id(question, :help_text)
       )
     end
 

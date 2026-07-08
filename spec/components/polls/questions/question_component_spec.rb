@@ -49,6 +49,14 @@ describe Polls::Questions::QuestionComponent do
       expect(page).to have_field type: :radio, checked: false, count: 2
     end
 
+    it "does not render a help text for single-choice questions" do
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+      expect(page).not_to have_content "maximum"
+      expect(page).not_to have_css ".help-text"
+      expect(page.find("fieldset")["aria-labelledby"]).to eq page.find("legend")[:id]
+    end
+
     it "renders checkboxes for multiple-choice questions" do
       question = create(:poll_question_multiple, :abc, poll: poll)
 
@@ -59,6 +67,16 @@ describe Polls::Questions::QuestionComponent do
       expect(page).to have_field "Answer C", type: :checkbox
       expect(page).to have_field type: :checkbox, checked: false, count: 3
       expect(page).not_to have_field type: :checkbox, checked: true
+    end
+
+    it "renders a help text for multiple-choice questions" do
+      question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+      legend_id = page.find("legend")[:id]
+      help_id = page.find(".help-text")[:id]
+      expect(page.find("fieldset")["aria-labelledby"]).to eq "#{legend_id} #{help_id}"
     end
 
     it "selects the option when users have already voted" do
