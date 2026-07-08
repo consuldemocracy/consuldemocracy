@@ -24,11 +24,13 @@ class Attachable::FieldsComponent < ApplicationComponent
     end
 
     def valid_image?
-      attachable.attachment.attached? && attachable.attachment.image?
+      attachable.attachment.attached? &&
+        attachable.attachment.image? &&
+        attachable.errors[:attachment].empty?
     end
 
     def file_name
-      attachable.attachment_file_name
+      attachable.attachment_file_name if attachable.errors.empty?
     end
 
     def destroy_link
@@ -72,6 +74,16 @@ class Attachable::FieldsComponent < ApplicationComponent
     end
 
     def progress_bar
-      tag.progress max: "100", "aria-label": t("documents.form.progress")
+      tag.progress max: "100",
+                   class: progress_bar_status_class,
+                   "aria-label": t("documents.form.progress")
+    end
+
+    def progress_bar_status_class
+      if attachable.errors.any?
+        "errors"
+      else
+        "complete"
+      end
     end
 end

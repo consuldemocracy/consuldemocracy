@@ -12,6 +12,9 @@
 }
 
 @mixin direct-uploads {
+  .image-preview figure:has(.cached-image) {
+    height: rem-calc(150);
+  }
 
   .cached-image {
     max-height: rem-calc(150);
@@ -111,10 +114,6 @@
       display: none;
     }
 
-    &.uploading {
-      @include progress-bar-color($dark-gray);
-    }
-
     &.complete {
       @include progress-bar-color($success-color);
     }
@@ -122,6 +121,10 @@
     &.errors {
       @include progress-bar-color($alert-color);
       margin-top: calc($line-height / 2);
+    }
+
+    &.uploading {
+      @include progress-bar-color($dark-gray);
     }
   }
 }
