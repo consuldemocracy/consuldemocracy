@@ -19,7 +19,8 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
         aria: {
           labelledby: [
             dom_id(question, :legend),
-            (dom_id(question, :help_text) if multiple_choice?)
+            (dom_id(question, :help_text) if multiple_choice?),
+            (form.field_id(:"question_#{question.id}", :error) if error.present?)
           ]
         }
       )
@@ -81,5 +82,9 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
 
     def checked?(option)
       form.object.answers[question.id].find { |answer| answer.option_id == option.id }
+    end
+
+    def error
+      form.error_for(:"question_#{question.id}")
     end
 end

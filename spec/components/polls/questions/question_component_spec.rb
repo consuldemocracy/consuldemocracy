@@ -88,6 +88,23 @@ describe Polls::Questions::QuestionComponent do
       expect(page).to have_field "No", type: :radio, checked: false
     end
 
+    context "question with errors" do
+      it "shows the errors and makes them accessible" do
+        question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+        web_vote.update(question.id.to_s => { option_id: question.question_options.map(&:id) })
+
+        render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+        legend_id = page.find("legend")[:id]
+        help_id = page.find(".help-text")[:id]
+        error_id = page.find("[id*=error]")[:id]
+        expect(page.find("fieldset")["aria-labelledby"]).to eq "#{legend_id} #{help_id} #{error_id}"
+        expect(page).to have_css "##{error_id}",
+                                 exact_text: "you've selected 3 answers, but the " \
+                                             "maximum you can select is 2"
+      end
+    end
+
     context "Open-ended question" do
       let(:question) { create(:poll_question_open, poll: poll, title: "What do you want?") }
       before { create(:poll_answer, author: user, question: question, answer: "I don't know") }
