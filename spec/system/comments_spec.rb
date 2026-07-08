@@ -708,5 +708,10 @@ describe "Comments" do
     click_button button_text
 
     expect(page).to have_content "Can't be blank"
+
+    fill_in fill_text, with: "This comment isn't blank"
+    click_button button_text
+
+    expect(page).not_to have_content "Can't be blank"
   end
 end

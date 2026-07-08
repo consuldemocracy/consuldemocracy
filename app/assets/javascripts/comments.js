@@ -32,6 +32,7 @@
 
       form_container = $(parent_selector + " .comment-form:first");
       form_container.find("textarea").val("");
+      form_container.find("[data-alert]").remove();
 
       if (parent_selector !== "") {
         form_container.hide();
