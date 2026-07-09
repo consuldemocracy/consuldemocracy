@@ -632,7 +632,7 @@ en:
             vote_type:
               cannot_change_to_open_ended: "can't change to open-ended type because you've already defined possible valid answers for this question"
       messages:
-        translations_too_short: Is mandatory to provide one translation at least
+        translations_too_short: It's mandatory to provide at least one translation
         record_invalid: "Validation failed: %{errors}"
         another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:

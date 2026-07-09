@@ -34,7 +34,7 @@ describe ImageSuggestions::SuggestionsComponent do
       render_inline component
 
       expect(page).to have_content "Test error"
-      expect(page).to have_css "small.error"
+      expect(page).to have_css "[role=alert] .error"
     end
   end
 

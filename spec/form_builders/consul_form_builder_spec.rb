@@ -6,13 +6,17 @@ describe ConsulFormBuilder do
       include ActiveModel::Model
 
       attr_accessor :title, :quality, :published
+
+      validates :title, presence: true
+      validates :terms_of_service, acceptance: { allow_nil: false }
     end
 
     stub_const("DummyModel", dummy_model)
     stub_const("DummyModel::OPTIONS", %w[Good Bad Ugly].freeze)
   end
 
-  let(:builder) { ConsulFormBuilder.new(:dummy, DummyModel.new, ApplicationController.new.view_context, {}) }
+  let(:model) { DummyModel.new(title: "Dummy title", terms_of_service: "1") }
+  let(:builder) { ConsulFormBuilder.new(:dummy, model, ApplicationController.new.view_context, {}) }
 
   describe "label" do
     it "accepts links that open in a new window in its content" do
@@ -37,7 +41,7 @@ describe ConsulFormBuilder do
       render builder.text_field(:title, hint: "Make it quick")
 
       expect(page).to have_css ".help-text", text: "Make it quick"
-      expect(page).to have_css "input[aria-describedby='dummy_title-help-text']"
+      expect(page).to have_css "input[aria-describedby='dummy_title_help_text']"
     end
 
     it "does not generate empty hints" do
@@ -61,8 +65,32 @@ describe ConsulFormBuilder do
         render builder.text_field(:title, label: "Title whatever", hint: "Make it quick")
 
         expect(page).to have_css ".help-text", text: "Make it quick"
-        expect(page).to have_css "input[aria-describedby='dummy_title-help-text']"
+        expect(page).to have_css "input[aria-describedby='dummy_title_help_text']"
       end
+    end
+  end
+
+  describe "errors" do
+    it "adds ARIA attributes when there are errors" do
+      model.title = ""
+      model.valid?
+
+      render builder.text_field(:title)
+
+      expect(page).to have_css "input[aria-invalid][aria-errormessage='dummy_title_error']"
+      expect(page).to have_css "#dummy_title_error", exact_text: "can't be blank"
+    end
+
+    it "does not add an error field when there aren't any errors" do
+      model.title = "Valid title"
+      model.valid?
+
+      render builder.text_field(:title)
+
+      expect(page).not_to have_css "[aria-invalid]"
+      expect(page).not_to have_css "[aria-errormessage]"
+      expect(page).not_to have_css "#dummy_title_error"
+      expect(page).not_to have_content "can't be blank"
     end
   end
 
@@ -83,7 +111,7 @@ describe ConsulFormBuilder do
       render builder.select(:quality, DummyModel::OPTIONS, hint: "Ugly is neither good nor bad")
 
       expect(page).to have_css ".help-text", text: "Ugly is neither good nor bad"
-      expect(page).to have_css "select[aria-describedby='dummy_quality-help-text']"
+      expect(page).to have_css "select[aria-describedby='dummy_quality_help_text']"
     end
   end
 
@@ -93,6 +121,30 @@ describe ConsulFormBuilder do
 
       expect(page).to have_css "label", count: 1
       expect(page).to have_css ".checkbox-label"
+    end
+
+    describe "errors" do
+      it "adds ARIA attributes when there are errors" do
+        model.terms_of_service = nil
+        model.valid?
+
+        render builder.check_box(:terms_of_service)
+
+        expect(page).to have_css "input[aria-invalid][aria-errormessage='dummy_terms_of_service_error']"
+        expect(page).to have_css "#dummy_terms_of_service_error", exact_text: "must be accepted"
+      end
+
+      it "does not add an error field when there aren't any errors" do
+        model.terms_of_service = "1"
+        model.valid?
+
+        render builder.check_box(:terms_of_service)
+
+        expect(page).not_to have_css "[aria-invalid]"
+        expect(page).not_to have_css "[aria-errormessage]"
+        expect(page).not_to have_css "#dummy_terms_of_service_error"
+        expect(page).not_to have_content "must be accepted"
+      end
     end
   end
 
