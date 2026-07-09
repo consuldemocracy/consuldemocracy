@@ -1,13 +1,12 @@
 class Attachable::FieldsComponent < ApplicationComponent
-  attr_reader :f, :resource_type, :resource_id, :relation_name, :suggested_images_content
+  attr_reader :f, :resource_type, :resource_id, :relation_name
   delegate :render_image, to: :helpers
 
-  def initialize(f, resource_type:, resource_id:, relation_name:, suggested_images_content: nil)
+  def initialize(f, resource_type:, resource_id:, relation_name:)
     @f = f
     @resource_type = resource_type
     @resource_id = resource_id
     @relation_name = relation_name
-    @suggested_images_content = suggested_images_content
   end
 
   private

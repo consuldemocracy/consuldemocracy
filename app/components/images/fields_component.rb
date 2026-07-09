@@ -1,9 +1,8 @@
 class Images::FieldsComponent < ApplicationComponent
-  attr_reader :f, :imageable, :suggested_images_content
+  attr_reader :f, :imageable
 
-  def initialize(f, imageable:, suggested_images_content: nil)
+  def initialize(f, imageable:)
     @f = f
     @imageable = imageable
-    @suggested_images_content = suggested_images_content
   end
 end
