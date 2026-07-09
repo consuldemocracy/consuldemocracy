@@ -26,15 +26,12 @@
       }
     }
 
-    .attachment-errors {
+    [type=file] {
+      @include element-invisible;
 
-      [type=file] {
-        @include element-invisible;
-
-        ~ .error {
-          display: inline-block;
-          margin-bottom: $line-height;
-        }
+      ~ .error {
+        display: inline-block;
+        margin-bottom: $line-height;
       }
     }
 

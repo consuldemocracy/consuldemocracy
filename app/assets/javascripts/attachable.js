@@ -79,7 +79,7 @@
 
       data.wrapper = wrapper;
       data.progressBar = $(wrapper).find(".progress-bar-placeholder");
-      data.errorContainer = $(wrapper).find(".attachment-errors");
+      data.errorContainer = $(wrapper).find(".action-add");
       data.fileNameContainer = $(wrapper).find("p.file-name");
       data.destroyAttachmentLinkContainer = $(wrapper).find(".action-remove");
       data.addAttachmentLabel = $(wrapper).find(".action-add label");
