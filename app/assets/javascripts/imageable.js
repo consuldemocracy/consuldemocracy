@@ -80,6 +80,7 @@
       App.Attachable.setNewContent($fieldsContainer, response);
       $("#new_image_link").addClass("hide");
       App.Imageable.initializeDirectUploadInput($fieldsContainer.find("[type=file]"));
+      $fieldsContainer.focus();
     },
     initializeAttachSuggestedImage: function() {
       $("body").on("click", ".suggested-image-button", function() {

@@ -48,15 +48,19 @@
         if (config.onSuccess) {
           config.onSuccess($fieldsContainer.find("[type=file]"));
         }
+
+        $fieldsContainer.focus();
       });
 
       dropzone.on("error", function(file, response) {
         App.Attachable.setNewContent($fieldsContainer, response);
+        var new_input = $fieldsContainer.find("[type=file]");
 
         if (config.onError) {
-          config.onError($fieldsContainer.find("[type=file]"));
+          config.onError(new_input);
         }
 
+        new_input.focus();
         dropzone.removeFile(file);
       });
     },
