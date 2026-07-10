@@ -1,4 +1,4 @@
-# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 12 - Bookworm)
+# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 13 - Trixie)
 
 ## Superusuario
 
@@ -55,10 +55,10 @@ source ~/.bashrc
 
 ## CMake y pkg-config
 
-Para compilar algunas de las dependencias del proyecto, necesitamos CMake y pkg-config:
+Para compilar algunas de las dependencias del proyecto, necesitamos CMake, pkg-config y libzstd-dev:
 
 ```bash
-sudo apt install cmake pkg-config
+sudo apt install cmake pkg-config libzstd-dev
 ```
 
 ## Gestor de versiones de Node.js
