@@ -28,7 +28,7 @@
 
     .attachment-errors {
 
-      > [type=file] {
+      [type=file] {
         @include element-invisible;
 
         ~ .error {
