@@ -25,6 +25,12 @@ Por favor visita la [documentación que está siendo completada](https://docs.co
 
 Puedes acceder a la página principal del proyecto en [http://consuldemocracy.org](http://consuldemocracy.org/es) donde puedes encontrar información sobre el uso de la plataforma, la Fundación CONSUL DEMOCRACY, la comunidad de usuarios y socios locales, noticias y formas de obtener más ayuda o ponerte en contacto con nosotros.
 
+## Apoya el Proyecto
+
+Si utilizas Consul Democracy, compartes nuestra misión y valores, o simplemente quieres ayudarnos a seguir desarrollando software libre, ¡considera apoyarnos!
+
+**[Apoya Consul Democracy](https://opencollective.com/consuldemocracy)**
+
 ## Configuración para desarrollo y tests
 
 **NOTA**:
