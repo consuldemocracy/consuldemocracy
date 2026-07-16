@@ -155,9 +155,9 @@ GEM
       marcel (~> 1.0)
       nokogiri (~> 1.10, >= 1.10.4)
       rubyzip (>= 2.4, < 4)
-    caxlsx_rails (0.6.4)
-      actionpack (>= 3.1)
-      caxlsx (>= 3.0)
+    caxlsx_rails (0.7.2)
+      actionpack (>= 6.1)
+      caxlsx (>= 4.0)
     cgi (0.5.1)
     chef-utils (19.1.164)
       concurrent-ruby
@@ -393,7 +393,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.1.0)
+    marcel (1.2.1)
     matrix (0.4.2)
     mdl (0.15.0)
       kramdown (~> 2.3)
@@ -713,7 +713,7 @@ GEM
       ruby_llm-schema (~> 0.2.1)
       zeitwerk (~> 2)
     ruby_llm-schema (0.2.5)
-    rubyzip (3.2.2)
+    rubyzip (3.4.1)
     rugged (1.9.0)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
@@ -879,7 +879,7 @@ DEPENDENCIES
   capistrano3-puma (~> 7.1.0)
   capybara (~> 3.40.0)
   caxlsx (~> 4.4.1)
-  caxlsx_rails (~> 0.6.4)
+  caxlsx_rails (~> 0.7.2)
   ckeditor (~> 4.3.0)
   cocoon (~> 1.2.15)
   csv (~> 3.3.5)
