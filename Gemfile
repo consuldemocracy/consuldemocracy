@@ -99,7 +99,7 @@ group :development do
   gem "erb_lint", "~> 0.9.0", require: false
   gem "faraday-retry", "~> 2.4.0", require: false
   gem "htmlbeautifier", "~> 1.4.3", require: false
-  gem "mdl", "~> 0.15.0", require: false
+  gem "mdl", "~> 0.17.0", require: false
   gem "pronto", "~> 0.11.5", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-rubocop", "~> 0.11.6", require: false
