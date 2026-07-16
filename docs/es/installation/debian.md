@@ -1,4 +1,4 @@
-# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 12 - Bookworm)
+# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 13 - Trixie)
 
 ## Superusuario
 
@@ -97,7 +97,7 @@ sudo apt install imagemagick
 Para poder ejecutar los tests de sistema, necesitaremos tener instalado Chrome o Chromium.
 
 ```bash
-sudo apt install chromium
+sudo apt install chromium chromium-driver
 ```
 
 ¡Ya estás listo para [instalar Consul Democracy](local_installation.md)!
