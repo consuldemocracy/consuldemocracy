@@ -195,6 +195,7 @@ fr:
       conditions: Conditions légales
       consul: Application CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
+      cookies_consent_management: Gérer les cookies
       copyright: CONSUL DEMOCRACY, %{year}
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
       open_source: logiciel libre
@@ -202,6 +203,7 @@ fr:
       participation_text: Modelez la ville de Madrid dans laquelle vous souhaitez vivre
       participation_title: Participation
       privacy: Vie privée
+      source_code: Code source
     header:
       administration_menu: Admin
       administration: Administration
@@ -272,6 +274,14 @@ fr:
       sign_in: S'enregistrer avec Twitter
       sign_up: S'enregistrer avec Twitter
       name: Twitter
+    saml:
+      sign_in: Se connecter avec SAML
+      sign_up: S'inscrire avec SAML
+      name: SAML
+    oidc:
+      sign_in: Se connecter avec OIDC
+      sign_up: S'inscrire avec OIDC
+      name: OIDC
     info:
       sign_in: "Se connecter avec :"
       sign_up: "S'inscrire avec :"
@@ -318,6 +328,7 @@ fr:
       tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
       map_location: "Emplacement sur la carte"
       map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
+      map_marker_coordinates: "Latitude: %{latitude}. Longitude: %{longitude}"
       map_remove_marker: "Supprimer le marqueur"
     index:
       featured_proposals: Mis en avant
@@ -398,6 +409,7 @@ fr:
         one: 1 vote
         other: "%{count} votes"
       supports_necessary: "%{number} soutiens nécessaires"
+      reason_for_supports_necessary: ""
       archived: "Cette proposition a été archivée et ne peut recueillir de soutiens."
       successful: "Cette proposition a atteint les soutiens requis."
       selected: "Proposition sélectionnée"
@@ -469,6 +481,8 @@ fr:
       see_proposed_actions: Consultez les actions recommandées
       hide_proposed_actions: Masquer les actions recommandées
       pending_title: En attente
+      execute: "Marquer %{name} comme fait"
+      unexecute: "Démarquer %{name} comme fait"
       show_description: Afficher la description
       without_pending_actions: Aucune action recommandée en attente
       done_title: Fini
@@ -565,6 +579,9 @@ fr:
   polls:
     dates: "De %{open_at} à %{closed_at}"
     final_date: "Dépouillements/résultats définitifs"
+    form:
+      vote: "Voter"
+      maximum_exceeded: "vous avez sélectionné %{given} réponses, mais le maximum que vous pouvez sélectionner est %{maximum}"
     index:
       filters:
         current: "Ouvert"
@@ -590,6 +607,7 @@ fr:
     show:
       already_voted_in_booth: "Vous avez déjà voté physiquement. Vous ne pouvez participer à nouveau."
       already_voted_in_web: "Vous avez déjà voté. Si vous votez de nouveau, vous allez écraser votre participation précédente."
+      already_voted_blank_in_web: "Vous avez déjà participé à ce vote en votant blanc. Si vous votez à nouveau, cela remplacera votre résultat précédent."
       back: Retour au vote
       cant_answer_not_logged_in: "Il est nécessaire de %{signin} ou de %{signup} pour participer."
       comments_tab: Commentaires
@@ -619,6 +637,9 @@ fr:
       results:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
+        open_ended:
+          valid: Valides
+          blank: En blanc
     poll_header:
       back_to_proposal: Retour à la proposition
   poll_questions:
@@ -634,6 +655,12 @@ fr:
     show:
       back: "Retour à mon activité"
   shared:
+    embedded_video:
+      accept: "Regarder la vidéo"
+      warning: "Cette page contient une vidéo d'un fournisseur tiers. En accédant à son contenu, vous acceptez que vos données puissent être transférées à des fournisseurs tiers."
+    warning_for_external_links: "En confirmant, vous acceptez de quitter le site."
+    actions:
+      label: "%{action} %{name}"
     edit: "Éditer"
     filter: "Filtrer"
     save: "Sauvegarder"
@@ -730,6 +757,7 @@ fr:
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
     translations:
+      current_language: Langue actuelle
       remove_language: Supprimer la langue
       add_language: Ajouter la langue
       languages_in_use:
@@ -748,6 +776,8 @@ fr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Accès refusé. Votre adresse IP n'est pas autorisée."
   unauthorized:
     default: Vous n'êtes pas autorisé(e) à accéder à cette page.
     manage:
@@ -918,3 +948,21 @@ fr:
   machine_learning:
     comments_summary: "Résumé des commentaires"
     info_text: "Contenu généré par l'IA/le machine learning"
+  cookies_consent:
+    accept_all_cookies: "Accepter tout"
+    accept_essential_cookies: "Accepter les cookies essentiels"
+    management: "Gérer les cookies"
+    message: "Les cookies nous aident à fournir nos services. En utilisant nos services, vous acceptez notre utilisation des cookies."
+    more_info_link: "Plus d'informations sur les cookies"
+    title: "Politique de cookies"
+  cookies_management:
+    title: Gestion des cookies
+    description: Ce site utilise les cookies propres et des tiers pour son bon fonctionnement. En cliquant sur le bouton Accepter tout, vous acceptez l'utilisation de ces technologies et le traitement de vos données à ces fins.
+    essentials:
+      title: Cookies essentiels
+      description: Ils sont utilisés à de nombreuses fins différentes, comme vous reconnaître en tant qu'utilisateur, choisir la langue ou personnaliser la façon dont le contenu s'affiche.
+      hint: Sans eux, les fonctions de navigation de base seront altérées, ils doivent donc toujours être actifs.
+    third_party:
+      title: Cookies tiers
+      description: Ce site utilise les cookies tiers. Ces cookies peuvent améliorer les fonctionnalités ou collecter des informations pour améliorer votre expérience utilisateur.
+    save_preferences: Enregistrer les préférences
