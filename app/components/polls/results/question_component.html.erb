@@ -1,42 +1,34 @@
 <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
 <table id="question_<%= question.id %>_results_table">
   <% if question.accepts_options? %>
-    <thead>
-      <tr>
-        <%- question.question_options.each do |option| %>
-          <th scope="col" class="<%= option_styles(option) %>">
+    <tbody>
+      <%- question.question_options.each do |option| %>
+        <tr>
+          <th scope="row" class="<%= option_styles(option) %>">
             <% if most_voted_option?(option) %>
               <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
             <% end %>
             <%= option.title %>
           </th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <%- question.question_options.each do |option| %>
           <td class="<%= option_styles(option) %>">
             <%= number_with_percentage(option.total_votes, option.total_votes_percentage) %>
           </td>
-        <% end %>
-      </tr>
+        </tr>
+      <% end %>
     </tbody>
   <% else %>
-    <thead>
-      <tr>
-        <th scope="col"><%= t("polls.show.results.open_ended.valid") %></th>
-        <th scope="col"><%= t("polls.show.results.open_ended.blank") %></th>
-      </tr>
-    </thead>
     <tbody>
       <tr>
+        <th scope="row"><%= t("polls.show.results.open_ended.valid") %></th>
         <td>
           <%= number_with_percentage(
             question.open_ended_valid_answers_count,
             question.open_ended_valid_percentage
           ) %>
         </td>
+      </tr>
+      <tr>
+        <th scope="row"><%= t("polls.show.results.open_ended.blank") %></th>
         <td>
           <%= number_with_percentage(
             question.open_ended_blank_answers_count,
