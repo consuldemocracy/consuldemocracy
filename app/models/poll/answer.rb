@@ -9,7 +9,12 @@ class Poll::Answer < ApplicationRecord
   validates :author, presence: true
   validates :answer, presence: true,
                      if: ->(poll_answer) { poll_answer.question&.open? }
+  validates :answer, length: { maximum: ->(*) { Poll::Answer.answer_max_length }}
   validates :option, uniqueness: { scope: :author_id }, allow_nil: true
 
   scope :by_question, ->(question_id) { where(question_id: question_id) }
+
+  def self.answer_max_length
+    1000
+  end
 end

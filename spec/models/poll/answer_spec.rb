@@ -82,5 +82,19 @@ describe Poll::Answer do
 
       expect(build(:poll_answer, option: option, answer: "legacy snapshot")).to be_valid
     end
+
+    it "is not valid when answer exceeds maximum length" do
+      question = create(:poll_question_open)
+      answer = build(:poll_answer, question: question, answer: "a" * (Poll::Answer.answer_max_length + 1))
+
+      expect(answer).not_to be_valid
+    end
+
+    it "is valid when answer is at maximum length" do
+      question = create(:poll_question_open)
+      answer = build(:poll_answer, question: question, answer: "a" * Poll::Answer.answer_max_length)
+
+      expect(answer).to be_valid
+    end
   end
 end
