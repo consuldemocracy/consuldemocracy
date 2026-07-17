@@ -78,9 +78,8 @@ class Poll::Question < ApplicationRecord
     answer = answers.find_or_initialize_by(find_by_attributes(user, option_id))
 
     if accepts_options?
-      option = question_options.find(option_id)
-      answer.option = option
-      answer.answer = nil
+      answer.option = question_options.find(option_id)
+      answer.answer = answer_text.presence if answer.option.allow_custom_text?
     else
       answer.option = nil
       answer.answer = answer_text

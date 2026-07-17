@@ -130,6 +130,15 @@ RSpec.describe Poll::Question do
           question.find_or_initialize_user_answer(user, answer_text: "ignored")
         end.to raise_error(ActiveRecord::RecordNotFound)
       end
+
+      it "ignores answer_text when option does not allow custom text" do
+        answer = question.find_or_initialize_user_answer(
+          user, option_id: answer_a.id, answer_text: "should not be stored"
+        )
+
+        expect(answer.option).to eq answer_a
+        expect(answer.answer).to be nil
+      end
     end
 
     context "multiple question" do
