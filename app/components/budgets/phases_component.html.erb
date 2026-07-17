@@ -25,7 +25,7 @@
             <span class="budget-prev-phase-disabled"></span>
           <% else %>
             <a href="#<%= prev_phase_dom_id(phase) %>" title="<%= t("budgets.index.prev_phase") %>"
-               data-turbolinks="false"
+               data-turbo="false"
                class="budget-prev-phase">
               <span><%= t("budgets.index.prev_phase") %></span>
             </a>
@@ -35,7 +35,7 @@
             <span class="budget-next-phase-disabled"></span>
           <% else %>
             <a href="#<%= next_phase_dom_id(phase) %>" title="<%= t("budgets.index.next_phase") %>"
-               data-turbolinks="false"
+               data-turbo="false"
                class="budget-next-phase">
               <span><%= t("budgets.index.next_phase") %></span>
             </a>
