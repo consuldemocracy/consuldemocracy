@@ -31,6 +31,12 @@
         white-space: pre;
       }
     }
+
+    .open-text {
+      display: block;
+      margin-#{$global-left}: 1.2rem;
+      width: calc(100% - 1.2rem);
+    }
   }
 
   .poll-question-open-ended {

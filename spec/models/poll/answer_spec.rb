@@ -66,7 +66,7 @@ describe Poll::Answer do
 
     it "is valid when there are two identical answers and the option is nil" do
       author = create(:user)
-      question = create(:poll_question_multiple, :abc)
+      question = create(:poll_question_open)
 
       create(:poll_answer, author: author, question: question, option: nil, answer: "Answer A")
 
