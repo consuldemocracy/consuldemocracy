@@ -159,8 +159,7 @@ section "Creating Poll Voters" do
         option = question.question_options.sample
         Poll::Answer.create!(question_id: question.id,
                              author: user,
-                             option: option,
-                             answer: option.title)
+                             option: option)
       else
         text = Faker::Lorem.sentence(word_count: (6..14).to_a.sample)
         Poll::Answer.create!(question_id: question.id, author: user, answer: text)

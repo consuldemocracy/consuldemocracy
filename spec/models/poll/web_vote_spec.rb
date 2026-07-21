@@ -22,6 +22,7 @@ describe Poll::WebVote do
       answer = question.answers.first
 
       expect(answer.author).to eq user
+      expect(answer.answer).to be nil
       expect(voter.document_number).to eq user.document_number
       expect(voter.poll_id).to eq answer.poll.id
       expect(voter.officer_id).to be nil

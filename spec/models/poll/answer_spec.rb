@@ -25,16 +25,17 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
-    it "is not valid without an answer" do
+    it "is not valid without an answer when question is open-ended" do
+      answer.question = create(:poll_question_open)
+      answer.option = nil
       answer.answer = nil
+
       expect(answer).not_to be_valid
     end
 
-    it "is not valid without an answer when question is open-ended" do
-      answer.question = create(:poll_question_open)
-      answer.answer = nil
-
-      expect(answer).not_to be_valid
+    it "is valid without answer text when an option is present" do
+      expect(answer).to be_valid
+      expect(answer.answer).to be nil
     end
 
     it "is not valid when there are two identical answers" do
@@ -75,18 +76,11 @@ describe Poll::Answer do
       expect { answer.save }.not_to raise_error
     end
 
-    it "is valid for answers included in the list of titles for the option" do
+    it "accepts legacy text in option answers" do
       question = create(:poll_question)
-      option = create(:poll_question_option, title_en: "One", title_es: "Uno", question: question)
+      option = create(:poll_question_option, title: "One", question: question)
 
-      create(:poll_question_option, title: "Two", question: question)
-      create(:poll_question_option, title: "Three", question: create(:poll_question, poll: create(:poll)))
-
-      expect(build(:poll_answer, option: option, answer: "One")).to be_valid
-      expect(build(:poll_answer, option: option, answer: "Uno")).to be_valid
-      expect(build(:poll_answer, option: option, answer: "Two")).not_to be_valid
-      expect(build(:poll_answer, option: option, answer: "Three")).not_to be_valid
-      expect(build(:poll_answer, option: option, answer: "Any")).not_to be_valid
+      expect(build(:poll_answer, option: option, answer: "legacy snapshot")).to be_valid
     end
   end
 end
