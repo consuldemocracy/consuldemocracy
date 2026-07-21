@@ -37,14 +37,13 @@ describe "Nested imageable" do
 
     scenario "Should not update image file title after choosing a file when a title is already defined" do
       click_link "Add image"
-      input_title = find(".image-fields input[name$='[title]']")
-      fill_in input_title[:id], with: "Title"
-      attach_file "Choose image", file_fixture("clippy.jpg")
 
-      if factory == :future_poll_question_option
-        expect(find("input[id$='_title']").value).to eq "Title"
-      else
-        expect(find("##{factory}_image_attributes_title").value).to eq "Title"
+      within ".image-fields" do
+        fill_in "Title", with: "Title"
+        attach_file "Choose image", file_fixture("clippy.jpg")
+
+        expect(page).to have_css ".loading-bar.complete"
+        expect(page).to have_field "Title", with: "Title"
       end
     end
 
