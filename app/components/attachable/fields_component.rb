@@ -70,4 +70,8 @@ class Attachable::FieldsComponent < ApplicationComponent
         end
       end.join(",")
     end
+
+    def progress_bar
+      tag.progress max: "100", "aria-label": t("documents.form.progress")
+    end
 end
