@@ -79,11 +79,6 @@
     }
   }
 
-  .progress-bar {
-    background-color: $light-gray;
-    width: 100%;
-  }
-
   .file-name {
     margin-top: 0;
     padding-left: 0;
@@ -115,9 +110,5 @@
       background-color: $alert-color;
       margin-top: calc($line-height / 2);
     }
-  }
-
-  .loading-bar.no-transition {
-    transition: none;
   }
 }
