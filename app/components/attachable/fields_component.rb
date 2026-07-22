@@ -23,6 +23,10 @@ class Attachable::FieldsComponent < ApplicationComponent
       attachable.model_name.plural
     end
 
+    def valid_image?
+      attachable.attachment.attached? && attachable.attachment.image?
+    end
+
     def file_name
       attachable.attachment_file_name
     end

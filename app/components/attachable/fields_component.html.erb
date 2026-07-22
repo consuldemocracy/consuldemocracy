@@ -7,7 +7,7 @@
     <%= f.text_field :title %>
   </div>
 
-  <% if attachable.attachment.attached? && attachable.attachment.image? %>
+  <% if valid_image? %>
     <%= render_image(attachable, :thumb, false) %>
   <% end %>
 
