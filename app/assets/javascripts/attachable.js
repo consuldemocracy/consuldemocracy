@@ -31,7 +31,6 @@
 
       dropzone.on("addedfile", function() {
         uploadData = App.Attachable.buildData(config.input);
-        App.Attachable.clearProgressBar(uploadData);
         App.Attachable.setProgressBar(uploadData, "uploading");
       });
 
@@ -95,9 +94,6 @@
     },
     clearInputErrors: function(data) {
       $(data.errorContainer).find("small.error").remove();
-    },
-    clearProgressBar: function(data) {
-      $(data.progressBar).find(".loading-bar").removeClass("complete errors uploading").css("width", "0px");
     },
     setFilename: function(data, file_name) {
       $(data.fileNameContainer).text(file_name);
