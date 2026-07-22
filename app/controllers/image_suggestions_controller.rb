@@ -37,10 +37,7 @@ class ImageSuggestionsController < ApplicationController
       user: current_user
     )
 
-    if @direct_upload.valid?
-      @direct_upload.save_attachment
-      @direct_upload.relation.set_cached_attachment_from_attachment
-
+    if @direct_upload.save
       render json: { cached_attachment: @direct_upload.relation.cached_attachment,
                      filename: @direct_upload.relation.attachment_file_name,
                      destroy_link: render_destroy_upload_link(@direct_upload),

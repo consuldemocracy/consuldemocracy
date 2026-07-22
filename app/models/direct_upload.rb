@@ -41,6 +41,14 @@ class DirectUpload
     @relation.attachment_changes["attachment"].upload
   end
 
+  def save
+    if valid?
+      save_attachment
+      relation.set_cached_attachment_from_attachment
+      true
+    end
+  end
+
   def persisted?
     false
   end
