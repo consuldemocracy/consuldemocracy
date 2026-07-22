@@ -1,13 +1,21 @@
+@mixin progress-bar-color($color) {
+  appearance: none;
+  color: $color;
+
+  &::-webkit-progress-value {
+    background: $color;
+  }
+
+  &::-moz-progress-bar {
+    background: $color;
+  }
+}
+
 @mixin direct-uploads {
 
   .cached-image {
     max-height: rem-calc(150);
     max-width: rem-calc(150);
-  }
-
-  .progress-bar-placeholder {
-    display: none;
-    margin-bottom: $line-height;
   }
 
   .document-fields,
@@ -93,21 +101,23 @@
     }
   }
 
-  .loading-bar {
+  progress {
+    @include progress-bar-color($dark-gray);
     height: 5px;
+    margin-bottom: $line-height;
     transition: width 500ms ease-out;
-    width: 0;
+    width: 100%;
 
-    &.uploading {
-      background-color: $dark-gray;
+    &:indeterminate {
+      display: none;
     }
 
     &.complete {
-      background-color: $success-color;
+      @include progress-bar-color($success-color);
     }
 
     &.errors {
-      background-color: $alert-color;
+      @include progress-bar-color($alert-color);
       margin-top: calc($line-height / 2);
     }
   }

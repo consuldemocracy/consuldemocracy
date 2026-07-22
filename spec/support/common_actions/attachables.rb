@@ -14,9 +14,9 @@ module Attachables
       attach_file input_label, path
       within ".#{field_class}-fields" do
         if success
-          expect(page).to have_css ".loading-bar.complete"
+          expect(page).to have_css "progress.complete"
         else
-          expect(page).to have_css ".loading-bar.errors"
+          expect(page).to have_css "progress.errors"
         end
       end
     end

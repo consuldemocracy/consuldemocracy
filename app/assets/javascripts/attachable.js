@@ -32,11 +32,10 @@
       dropzone.on("addedfile", function() {
         uploadData = App.Attachable.buildData(config.input);
         App.Attachable.clearProgressBar(uploadData);
-        App.Attachable.setProgressBar(uploadData, "uploading");
       });
 
       dropzone.on("uploadprogress", function(_file, progress) {
-        $(uploadData.progressBar).find(".loading-bar").css("width", progress + "%");
+        uploadData.progressBar.val(progress);
       });
 
       dropzone.on("success", function(_file, response) {
@@ -78,15 +77,13 @@
       wrapper = $(input).closest(".direct-upload");
 
       data.wrapper = wrapper;
-      data.progressBar = $(wrapper).find(".progress-bar-placeholder");
+      data.progressBar = $(wrapper).find("progress");
       data.errorContainer = $(wrapper).find(".action-add");
       data.fileNameContainer = $(wrapper).find("p.file-name");
       data.destroyAttachmentLinkContainer = $(wrapper).find(".action-remove");
       data.addAttachmentLabel = $(wrapper).find(".action-add label");
       data.cachedAttachmentField = $(wrapper).find("input[name$='[cached_attachment]']");
       data.titleField = $(wrapper).find("input[name$='[title]']");
-
-      $(wrapper).find(".progress-bar-placeholder").css("display", "block");
 
       return data;
     },
@@ -97,13 +94,13 @@
       $(data.errorContainer).find("small.error").remove();
     },
     clearProgressBar: function(data) {
-      $(data.progressBar).find(".loading-bar").removeClass("complete errors uploading").css("width", "0px");
+      $(data.progressBar).removeClass("complete errors").val("");
     },
     setFilename: function(data, file_name) {
       $(data.fileNameContainer).text(file_name);
     },
     setProgressBar: function(data, klass) {
-      $(data.progressBar).find(".loading-bar").addClass(klass);
+      data.progressBar.addClass(klass);
     },
     setTitleFromFile: function(data, title) {
       if ($(data.titleField).val() === "") {

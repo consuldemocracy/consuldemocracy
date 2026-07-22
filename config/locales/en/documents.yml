@@ -9,6 +9,7 @@ en:
       cancel_button: Cancel
       note: "You can upload up to a maximum of %{max_documents_allowed} documents of following content types: %{accepted_content_types}, up to %{max_file_size} MB per file."
       add_new_document: Add new document
+      progress: Upload progress
     actions:
       destroy:
         notice: Document was deleted successfully.
