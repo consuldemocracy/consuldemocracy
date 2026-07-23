@@ -66,10 +66,28 @@ FactoryBot.define do
       end
     end
 
+    trait :yes_no_custom_text do
+      after(:create) do |question|
+        create(:poll_question_option, question: question, title: "Yes", allows_custom_text: true)
+        create(:poll_question_option, question: question, title: "No", allows_custom_text: true)
+      end
+    end
+
     trait :abc do
       after(:create) do |question|
         %w[A B C].each do |letter|
           create(:poll_question_option, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
+    trait :abc_custom_text do
+      after(:create) do |question|
+        %w[A B C].each do |letter|
+          create(:poll_question_option,
+                 question: question,
+                 title: "Answer #{letter}",
+                 allows_custom_text: true)
         end
       end
     end
@@ -219,14 +237,7 @@ FactoryBot.define do
   factory :poll_answer, class: "Poll::Answer" do
     question factory: [:poll_question, :yes_no]
     author factory: [:user, :level_two]
-    option do
-      if answer
-        question.question_options.find_by(title: answer)
-      else
-        question.question_options.sample
-      end
-    end
-    after(:build) { |poll_answer| poll_answer.answer ||= poll_answer.option&.title }
+    option { question.question_options.sample }
   end
 
   factory :poll_partial_result, class: "Poll::PartialResult" do

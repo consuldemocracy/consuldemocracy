@@ -462,6 +462,7 @@ en:
       poll/question/option:
         title: Answer
         description: Description
+        allows_custom_text: "Allow custom text"
       poll/question/option/translation:
         title: Answer
         description: "Description (optional)"

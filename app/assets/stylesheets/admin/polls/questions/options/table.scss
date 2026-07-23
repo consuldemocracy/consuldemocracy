@@ -17,6 +17,12 @@
         width: calc(100% * 7 / 12);
       }
     }
+
+    &.open-text {
+      @include breakpoint(medium) {
+        width: calc(100% * 2 / 12);
+      }
+    }
   }
 
   td,

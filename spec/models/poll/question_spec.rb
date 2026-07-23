@@ -105,7 +105,7 @@ RSpec.describe Poll::Question do
         expect(answer).to eq existing_answer
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_b
-        expect(answer.answer).to eq "Answer B"
+        expect(answer.answer).to be nil
       end
 
       it "initializes a new answer when only another user has answered" do
@@ -116,7 +116,7 @@ RSpec.describe Poll::Question do
         expect(answer).to be_new_record
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_a
-        expect(answer.answer).to eq "Answer A"
+        expect(answer.answer).to be nil
       end
 
       it "raises when option_id is invalid" do
@@ -146,7 +146,7 @@ RSpec.describe Poll::Question do
         expect(answer).to eq existing_answer
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_a
-        expect(answer.answer).to eq "Answer A"
+        expect(answer.answer).to be nil
       end
 
       it "initializes a new answer when selecting a different option" do
@@ -158,7 +158,7 @@ RSpec.describe Poll::Question do
         expect(answer).to be_new_record
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_b
-        expect(answer.answer).to eq "Answer B"
+        expect(answer.answer).to be nil
       end
     end
 

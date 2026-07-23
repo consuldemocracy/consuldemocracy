@@ -200,7 +200,8 @@ describe "Polls" do
       question = create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
 
       poll.update!(geozone_restricted_to: [geozone])
-      create(:poll_answer, author: user, question: question, answer: "Yes")
+      option_yes = question.question_options.find_by(title: "Yes")
+      create(:poll_answer, author: user, question: question, option: option_yes)
       create(:poll_voter, poll: poll, user: user)
 
       login_as user
@@ -231,7 +232,8 @@ describe "Polls" do
       user = create(:user, :level_two, geozone: geozone)
       question = create(:poll_question_multiple, :abc, poll: poll, title: "Which ones are better?")
 
-      create(:poll_answer, author: user, question: question, answer: "Answer A")
+      option_a = question.question_options.find_by(title: "Answer A")
+      create(:poll_answer, author: user, question: question, option: option_a)
       create(:poll_voter, poll: poll, user: user)
 
       login_as user
