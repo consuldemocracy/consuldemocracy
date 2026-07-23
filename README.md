@@ -25,6 +25,12 @@ Check the [ongoing documentation](https://docs.consuldemocracy.org/index) to lea
 
 You can access the main website of the project at [http://consuldemocracy.org](http://consuldemocracy.org) where you can find information about the use of the platform, the CONSUL DEMOCRACY Foundation, the global community of users and local partners, news, and ways to get more support or get in touch.
 
+## Support the Project
+
+If you use Consul Democracy, share our mission and values, or just want to help us continue doing free open-source work, please consider supporting us!
+
+**[Support Consul Democracy](https://opencollective.com/consuldemocracy)**
+
 ## Configuration for development and test environments
 
 **NOTE**:
