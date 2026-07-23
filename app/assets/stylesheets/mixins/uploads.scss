@@ -37,6 +37,22 @@
       }
     }
 
+    .attachment-options {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc($line-height / 4);
+
+      > div:has([type=file]) {
+        display: none;
+      }
+
+      > span[id$="_error"] {
+        flex-basis: 100%;
+        order: 1;
+      }
+    }
+
     [type=file] {
       @include element-invisible;
 
