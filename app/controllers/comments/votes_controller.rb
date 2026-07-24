@@ -7,7 +7,7 @@ module Comments
 
     def create
       authorize! :create, Vote.new(voter: current_user, votable: @comment)
-      @comment.vote_by(voter: current_user, vote: params[:value])
+      current_user.with_lock { @comment.vote_by(voter: current_user, vote: params[:value]) }
 
       respond_to do |format|
         format.html { redirect_to request.referer, notice: I18n.t("flash.actions.create.vote") }

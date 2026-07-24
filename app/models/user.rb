@@ -312,7 +312,17 @@ class User < ApplicationRecord
     end
 
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
-    Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
+    with_lock do
+      Vote.where(voter_id: other_user.id, voter_type: "User").find_each do |vote|
+        votable = vote.votable
+        if Vote.where(voter_id: id, voter_type: "User", votable: votable).any?
+          vote.delete
+          votable&.update_cached_votes
+        else
+          vote.update_column(:voter_id, id)
+        end
+      end
+    end
     data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
     update!(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
