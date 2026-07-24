@@ -76,8 +76,8 @@
         });
       });
     },
-    attachSuggestedImage: function($fieldsContainer, response) {
-      App.Attachable.setNewContent($fieldsContainer, response);
+    attachSuggestedImage: function($fieldsContainer, response, suggestions) {
+      App.Attachable.setNewContent($fieldsContainer, response, suggestions);
       $("#new_image_link").addClass("hide");
       App.Imageable.initializeDirectUploadInput($fieldsContainer.find("[type=file]"));
       $fieldsContainer.focus();
@@ -111,7 +111,9 @@
             var response = xhr.responseJSON;
 
             if (response && response.content) {
-              App.Imageable.attachSuggestedImage($fieldsContainer, response);
+              var $suggestions = $fieldsContainer.find(".suggested-images-wrapper").detach();
+
+              App.Imageable.attachSuggestedImage($fieldsContainer, response, $suggestions);
             }
           }
         });

@@ -53,7 +53,9 @@
       });
 
       dropzone.on("error", function(file, response) {
-        App.Attachable.setNewContent($fieldsContainer, response);
+        var $suggestions = $fieldsContainer.find(".suggested-images-wrapper").detach();
+
+        App.Attachable.setNewContent($fieldsContainer, response, $suggestions);
         var new_input = $fieldsContainer.find("[type=file]");
 
         if (config.onError) {
@@ -64,8 +66,12 @@
         dropzone.removeFile(file);
       });
     },
-    setNewContent: function(fields_container, response) {
+    setNewContent: function(fields_container, response, suggestions) {
       fields_container.html($(response.content).html()).find("progress").val(100);
+
+      if (suggestions && suggestions.length) {
+        fields_container.find(".image-attachment").append(suggestions);
+      }
     }
   };
 }).call(this);

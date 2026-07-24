@@ -145,6 +145,31 @@ describe "Nested imageable" do
       expect(page).to have_css "figure img"
     end
 
+    context "when image suggestions are enabled" do
+      let(:factory) { :budget_investment }
+      let(:path) { new_budget_investment_path(budget_id: imageable.budget_id) }
+
+      before do
+        Setting["llm.provider"] = "OpenAI"
+        Setting["llm.model"] = "gpt-4o"
+        Setting["llm.use_ai_image_suggestions"] = true
+
+        visit path
+        click_link "Add image"
+      end
+
+      scenario "keeps image suggestions after a failed upload" do
+        expect(page).to have_button "Suggest an image with AI"
+
+        attach_file "Choose image", file_fixture("logo_header.png")
+
+        within "#nested-image .image-fields" do
+          expect(page).to have_css "progress.errors"
+          expect(page).to have_button "Suggest an image with AI"
+        end
+      end
+    end
+
     scenario "Different URLs for different images" do
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
