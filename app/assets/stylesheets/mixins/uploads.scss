@@ -1,13 +1,24 @@
+@mixin progress-bar-color($color) {
+  appearance: none;
+  color: $color;
+
+  &::-webkit-progress-value {
+    background: $color;
+  }
+
+  &::-moz-progress-bar {
+    background: $color;
+  }
+}
+
 @mixin direct-uploads {
+  .image-preview figure:has(.cached-image) {
+    height: rem-calc(150);
+  }
 
   .cached-image {
     max-height: rem-calc(150);
     max-width: rem-calc(150);
-  }
-
-  .progress-bar-placeholder {
-    display: none;
-    margin-bottom: $line-height;
   }
 
   .document-fields,
@@ -26,15 +37,12 @@
       }
     }
 
-    .attachment-errors {
+    [type=file] {
+      @include element-invisible;
 
-      > [type=file] {
-        @include element-invisible;
-
-        ~ .error {
-          display: inline-block;
-          margin-bottom: $line-height;
-        }
+      ~ .error {
+        display: inline-block;
+        margin-bottom: $line-height;
       }
     }
 
@@ -82,11 +90,6 @@
     }
   }
 
-  .progress-bar {
-    background-color: $light-gray;
-    width: 100%;
-  }
-
   .file-name {
     margin-top: 0;
     padding-left: 0;
@@ -101,26 +104,26 @@
     }
   }
 
-  .loading-bar {
+  progress {
+    @include progress-bar-color($dark-gray);
     height: 5px;
+    margin-bottom: $line-height;
     transition: width 500ms ease-out;
-    width: 0;
+    width: 100%;
 
-    &.uploading {
-      background-color: $dark-gray;
+    &:indeterminate {
+      display: none;
     }
 
-    &.complete {
-      background-color: $success-color;
-    }
+    &[value="100"] {
+      &.complete {
+        @include progress-bar-color($success-color);
+      }
 
-    &.errors {
-      background-color: $alert-color;
-      margin-top: calc($line-height / 2);
+      &.errors {
+        @include progress-bar-color($alert-color);
+        margin-top: calc($line-height / 2);
+      }
     }
-  }
-
-  .loading-bar.no-transition {
-    transition: none;
   }
 }

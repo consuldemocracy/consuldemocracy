@@ -25,31 +25,8 @@
       App.Attachable.setupInput({
         input: input,
         attachmentContainer: ".image-attachment",
-        onSuccess: function(uploadData, response) {
-          uploadData.result = response;
-          App.Imageable.setPreview(uploadData);
-        },
-        onError: function(uploadData) {
-          App.Imageable.clearPreview(uploadData);
-        }
+        onError: App.Imageable.initializeDirectUploadInput
       });
-    },
-    clearPreview: function(data) {
-      $(data.wrapper).find(".image-preview").remove();
-    },
-
-    setPreview: function(data) {
-      var preview, image_preview;
-
-      image_preview = "<div class='small-12 column text-center image-preview'>" +
-        "<figure><img src='" + data.result.attachment_url + "' class='cached-image'></figure></div>";
-      preview = data.wrapper.find(".image-preview");
-
-      if ($(preview).length > 0) {
-        $(preview).replaceWith(image_preview);
-      } else {
-        $(image_preview).insertBefore($(data.wrapper).find(".attachment-actions"));
-      }
     },
     initializeRemoveCachedImageLinks: function() {
       $("#nested-image").on("click", "a.remove-cached-attachment", function(event) {
@@ -84,8 +61,6 @@
         }
 
         dataString = App.Imageable.imageSuggestionsParams(form, resourceType);
-        var uploadData = App.Attachable.buildData(button.closest(".image-fields.direct-upload"));
-        App.Attachable.clearInputErrors(uploadData);
         $.ajax({
           url: "/image_suggestions",
           type: "POST",
@@ -101,36 +76,26 @@
         });
       });
     },
-    attachSuggestedImageSuccess: function(responseData) {
-      var data = App.Attachable.buildData(this);
-      data.result = {
-        cached_attachment: responseData.cached_attachment,
-        filename: responseData.filename,
-        attachment_url: responseData.attachment_url,
-        destroy_link: responseData.destroy_link
-      };
-      $(data.cachedAttachmentField).val(data.result.cached_attachment);
-      App.Attachable.setTitleFromFile(data, data.result.filename);
-      App.Attachable.setFilename(data, data.result.filename);
-      App.Imageable.setPreview(data);
-      $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link);
+    attachSuggestedImage: function($fieldsContainer, response) {
+      App.Attachable.setNewContent($fieldsContainer, response);
       $("#new_image_link").addClass("hide");
-      App.Attachable.clearInputErrors(data);
-    },
-    attachSuggestedImageError: function(xhr) {
-      var data = App.Attachable.buildData(this);
-      App.Attachable.clearInputErrors(data);
-      App.Attachable.setInputErrors(data, xhr.responseJSON && xhr.responseJSON.errors);
+      App.Imageable.initializeDirectUploadInput($fieldsContainer.find("[type=file]"));
+      $fieldsContainer.focus();
     },
     initializeAttachSuggestedImage: function() {
       $("body").on("click", ".suggested-image-button", function() {
-        var imageId, resourceType, resourceId, dataString, wrapper;
+        var imageId, resourceType, resourceId, dataString, $fieldsContainer, wrapper;
         imageId = $(this).data("image-id");
         wrapper = $(this).closest(".suggested-images-wrapper");
         resourceType = wrapper.data("resource-type");
         resourceId = wrapper.data("resource-id");
+        $fieldsContainer = $(this).closest(".nested-fields");
 
-        dataString = { resource_type: resourceType };
+        dataString = {
+          resource_type: resourceType,
+          title: $fieldsContainer.find("input[name$='[title]']").val()
+        };
+
         if (resourceId) {
           dataString.resource_id = resourceId;
         }
@@ -139,9 +104,16 @@
           type: "POST",
           data: dataString,
           dataType: "json",
-          context: $(this).closest(".image-fields.direct-upload"),
-          success: App.Imageable.attachSuggestedImageSuccess,
-          error: App.Imageable.attachSuggestedImageError
+          success: function(response) {
+            App.Imageable.attachSuggestedImage($fieldsContainer, response);
+          },
+          error: function(xhr) {
+            var response = xhr.responseJSON;
+
+            if (response && response.content) {
+              App.Imageable.attachSuggestedImage($fieldsContainer, response);
+            }
+          }
         });
       });
     },

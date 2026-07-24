@@ -1,12 +1,12 @@
 <div id="image" class="small-12 column text-center image-preview">
   <figure>
     <%= image_tag image.variant(version),
-                  class: image_class(image),
-                  alt: image.title.unicode_normalize,
-                  title: image.title.unicode_normalize %>
+                  class: image_class,
+                  alt: image.title&.unicode_normalize,
+                  title: image.title&.unicode_normalize %>
     <% if show_caption %>
       <figcaption class="text-right">
-        <em><%= image.title.unicode_normalize %></em>
+        <em><%= image.title&.unicode_normalize %></em>
       </figcaption>
     <% end %>
   </figure>
@@ -14,5 +14,4 @@
   <% if show_caption %>
     <hr>
   <% end %>
-
 </div>

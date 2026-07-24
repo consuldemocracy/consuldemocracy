@@ -74,7 +74,7 @@ describe "Nested documentable" do
         fill_in "Title", with: "My Title"
         attach_file "Choose document", file_fixture("empty.pdf")
 
-        expect(page).to have_css ".loading-bar.complete"
+        expect(page).to have_css "progress[value='100'].complete"
         expect(page).to have_field "Title", with: "My Title"
 
         click_link "Remove document"
@@ -102,7 +102,7 @@ describe "Nested documentable" do
 
       attach_file "Choose document", file_fixture("empty.pdf")
 
-      expect(page).to have_css(".loading-bar.complete")
+      expect(page).to have_css "progress[value='100'].complete"
       expect(cached_attachment_field.value).not_to be_empty
     end
 
@@ -114,6 +114,12 @@ describe "Nested documentable" do
 
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
       expect(cached_attachment_field.value).to be_empty
+
+      click_button submit_button_text
+
+      within "#nested-documents .document-attachment" do
+        expect(page).to have_content "can't be blank"
+      end
     end
 
     scenario "Should show document errors after documentable submit with empty document fields" do
@@ -151,7 +157,7 @@ describe "Nested documentable" do
         attach_file "Choose document", file_fixture("#{filename}.pdf")
 
         within all(".document-fields").last do
-          expect(page).to have_css ".loading-bar.complete"
+          expect(page).to have_css "progress[value='100'].complete"
         end
       end
 

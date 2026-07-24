@@ -5,7 +5,7 @@ class DirectUpload
 
   attr_accessor :resource, :resource_type, :resource_id,
                 :relation, :resource_relation,
-                :attachment, :cached_attachment, :user
+                :attachment, :cached_attachment, :user, :title
 
   validates :attachment, :resource_type, :resource_relation, :user, presence: true
   validate :parent_resource_attachment_validations,
@@ -41,6 +41,16 @@ class DirectUpload
     @relation.attachment_changes["attachment"].upload
   end
 
+  def save
+    @relation.title = @relation.title.presence || @relation.attachment_file_name
+
+    if valid?
+      save_attachment
+      relation.set_cached_attachment_from_attachment
+      true
+    end
+  end
+
   def persisted?
     false
   end
@@ -59,7 +69,8 @@ class DirectUpload
       {
         attachment: @attachment,
         cached_attachment: @cached_attachment,
-        user: @user
+        user: @user,
+        title: @title
       }
     end
 end

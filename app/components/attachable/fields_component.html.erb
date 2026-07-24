@@ -1,4 +1,4 @@
-<div class="<%= singular_name %>-fields direct-upload nested-fields">
+<div class="<%= singular_name %>-fields direct-upload nested-fields" tabindex="-1">
   <%= f.hidden_field :id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :cached_attachment %>
@@ -7,16 +7,16 @@
     <%= f.text_field :title %>
   </div>
 
-  <% if attachable.attachment.attached? && attachable.attachment.image? %>
+  <% if valid_image? %>
     <%= render_image(attachable, :thumb, false) %>
   <% end %>
 
   <div class="small-12 column attachment-actions">
     <p class="file-name small-9 column"><%= file_name %></p>
 
-    <div class="small-9 column action-add attachment-errors <%= singular_name %>-attachment">
+    <div class="small-9 column action-add <%= singular_name %>-attachment">
       <%= file_field %>
-      <%= suggested_images_content %>
+      <%= content %>
     </div>
 
     <div class="small-3 column action-remove text-right">
@@ -25,9 +25,7 @@
   </div>
 
   <div class="small-12 column">
-    <div class="progress-bar-placeholder">
-      <div class="loading-bar"></div>
-    </div>
+    <%= progress_bar %>
   </div>
 
   <hr>

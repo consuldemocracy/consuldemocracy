@@ -1,13 +1,12 @@
 class Attachable::FieldsComponent < ApplicationComponent
-  attr_reader :f, :resource_type, :resource_id, :relation_name, :suggested_images_content
+  attr_reader :f, :resource_type, :resource_id, :relation_name
   delegate :render_image, to: :helpers
 
-  def initialize(f, resource_type:, resource_id:, relation_name:, suggested_images_content: nil)
+  def initialize(f, resource_type:, resource_id:, relation_name:)
     @f = f
     @resource_type = resource_type
     @resource_id = resource_id
     @relation_name = relation_name
-    @suggested_images_content = suggested_images_content
   end
 
   private
@@ -24,8 +23,14 @@ class Attachable::FieldsComponent < ApplicationComponent
       attachable.model_name.plural
     end
 
+    def valid_image?
+      attachable.attachment.attached? &&
+        attachable.attachment.image? &&
+        attachable.errors[:attachment].empty?
+    end
+
     def file_name
-      attachable.attachment_file_name
+      attachable.attachment_file_name if attachable.errors.empty?
     end
 
     def destroy_link
@@ -66,5 +71,19 @@ class Attachable::FieldsComponent < ApplicationComponent
           ".#{content_type}"
         end
       end.join(",")
+    end
+
+    def progress_bar
+      tag.progress max: "100",
+                   class: progress_bar_status_class,
+                   "aria-label": t("documents.form.progress")
+    end
+
+    def progress_bar_status_class
+      if attachable.errors[:attachment].any?
+        "errors"
+      elsif attachable.cached_attachment.present?
+        "complete"
+      end
     end
 end

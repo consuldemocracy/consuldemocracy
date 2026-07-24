@@ -90,6 +90,8 @@ describe ImageSuggestionsController do
   end
 
   describe "POST attach" do
+    render_views
+
     let(:resource_type) { "Budget::Investment" }
     let(:photo_id) { "12345" }
     let(:uploaded_file) { fixture_file_upload("clippy.jpg") }
@@ -99,12 +101,13 @@ describe ImageSuggestionsController do
     end
 
     context "when download succeeds and DirectUpload is valid" do
-      it "returns success and JSON with attachment data" do
-        post :attach, params: { id: photo_id, resource_type: resource_type }
+      it "returns success and JSON with rendered fields" do
+        post :attach, params: { id: photo_id, resource_type: resource_type }, format: :json
 
         expect(response).to have_http_status(:ok)
         json = response.parsed_body
-        expect(json).to include("cached_attachment", "filename", "destroy_link", "attachment_url")
+        expect(json["content"]).to be_present
+        expect(json["content"]).to include("cached_attachment")
       end
     end
 
@@ -142,11 +145,11 @@ describe ImageSuggestionsController do
                                                              .and_return(fixture_file_upload("empty.pdf"))
       end
 
-      it "returns 422 with validation errors in JSON" do
-        post :attach, params: { id: photo_id, resource_type: resource_type }
+      it "returns 422 with rendered fields" do
+        post :attach, params: { id: photo_id, resource_type: resource_type }, format: :json
 
         expect(response).to have_http_status(:unprocessable_content)
-        expect(response.parsed_body["errors"]).to be_present
+        expect(response.parsed_body["content"]).to be_present
       end
     end
   end
