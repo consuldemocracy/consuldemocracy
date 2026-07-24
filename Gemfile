@@ -6,7 +6,7 @@ gem "rails", "~> 8.0.5"
 
 gem "acts-as-taggable-on", "~> 13.0.0"
 gem "acts_as_votable", "~> 0.14.0"
-gem "ahoy_matey", "~> 5.4.1"
+gem "ahoy_matey", "~> 5.5.0"
 gem "airbrake", "~> 13.0.5"
 gem "ancestry", "~> 5.1.0"
 gem "audited", "~> 5.8.0"
