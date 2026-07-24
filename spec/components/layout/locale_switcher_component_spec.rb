@@ -85,13 +85,13 @@ describe Layout::LocaleSwitcherComponent do
       I18n.reload!
     end
 
-    it "disables Turbolinks for language links" do
+    it "disables Turbo for language links" do
       render_inline component
 
       expect(page).to have_link "عربى", href: "/?locale=ar"
-      expect(page).to have_css "[href='/?locale=ar'][data-turbolinks=false]"
+      expect(page).to have_css "[href='/?locale=ar'][data-turbo=false]"
       expect(page).to have_link "English", href: "/?locale=en"
-      expect(page).to have_css "[href='/?locale=en'][data-turbolinks=true]"
+      expect(page).to have_css "[href='/?locale=en'][data-turbo=true]"
     end
   end
 

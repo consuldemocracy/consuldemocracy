@@ -19,5 +19,5 @@ var destroy_non_idempotent_modules = function() {
   // in `initialize_modules` is not idempotent.
 };
 
-$(document).on("turbolinks:load", initialize_modules);
-$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
+$(document).on("turbo:load", initialize_modules);
+$(document).on("turbo:before-cache", destroy_non_idempotent_modules);

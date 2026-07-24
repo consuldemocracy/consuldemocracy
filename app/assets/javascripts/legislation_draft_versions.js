@@ -18,5 +18,5 @@
     },
   };
 
-  $(document).on("turbolinks:before-visit", App.LegislationDraftVersions.checkChanges);
+  $(document).on("turbo:before-visit", App.LegislationDraftVersions.checkChanges);
 }).call(this);

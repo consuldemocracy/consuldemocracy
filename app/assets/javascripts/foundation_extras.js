@@ -11,5 +11,5 @@
     }
   };
 
-  $(document).on("turbolinks:before-visit", App.FoundationExtras.destroy);
+  $(document).on("turbo:before-visit", App.FoundationExtras.destroy);
 }).call(this);

@@ -5,7 +5,7 @@
   <li><%= repo_link %></li>
   <% if feature?(:cookies_consent) %>
     <li class="cookies-consent-management-footer-content">
-      <a href="#cookies_consent_management" data-open="cookies_consent_management">
+      <a href="#cookies_consent_management" data-open="cookies_consent_management" data-turbo="false">
         <%= t("layouts.footer.cookies_consent_management") %>
       </a>
     </li>
