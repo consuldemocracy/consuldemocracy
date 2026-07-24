@@ -112,13 +112,15 @@
       display: none;
     }
 
-    &.complete {
-      @include progress-bar-color($success-color);
-    }
+    &[value="100"] {
+      &.complete {
+        @include progress-bar-color($success-color);
+      }
 
-    &.errors {
-      @include progress-bar-color($alert-color);
-      margin-top: calc($line-height / 2);
+      &.errors {
+        @include progress-bar-color($alert-color);
+        margin-top: calc($line-height / 2);
+      }
     }
   }
 }

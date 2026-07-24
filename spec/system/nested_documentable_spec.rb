@@ -74,7 +74,7 @@ describe "Nested documentable" do
         fill_in "Title", with: "My Title"
         attach_file "Choose document", file_fixture("empty.pdf")
 
-        expect(page).to have_css "progress.complete"
+        expect(page).to have_css "progress[value='100'].complete"
         expect(page).to have_field "Title", with: "My Title"
 
         click_link "Remove document"
@@ -102,7 +102,7 @@ describe "Nested documentable" do
 
       attach_file "Choose document", file_fixture("empty.pdf")
 
-      expect(page).to have_css "progress.complete"
+      expect(page).to have_css "progress[value='100'].complete"
       expect(cached_attachment_field.value).not_to be_empty
     end
 
@@ -151,7 +151,7 @@ describe "Nested documentable" do
         attach_file "Choose document", file_fixture("#{filename}.pdf")
 
         within all(".document-fields").last do
-          expect(page).to have_css "progress.complete"
+          expect(page).to have_css "progress[value='100'].complete"
         end
       end
 

@@ -42,7 +42,7 @@ describe "Nested imageable" do
         fill_in "Title", with: "Title"
         attach_file "Choose image", file_fixture("clippy.jpg")
 
-        expect(page).to have_css "progress.complete"
+        expect(page).to have_css "progress[value='100'].complete"
         expect(page).to have_field "Title", with: "Title"
       end
     end
@@ -55,7 +55,7 @@ describe "Nested imageable" do
 
       attach_file "Choose image", file_fixture("clippy.jpg")
 
-      expect(page).to have_css "progress.complete"
+      expect(page).to have_css "progress[value='100'].complete"
       expect(cached_attachment_field.value).not_to be_empty
     end
 

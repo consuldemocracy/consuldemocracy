@@ -13,6 +13,8 @@ module Attachables
     within "##{wrapper_id}" do
       attach_file input_label, path
       within ".#{field_class}-fields" do
+        expect(page).to have_css "progress[value='100']"
+
         if success
           expect(page).to have_css "progress.complete"
         else
