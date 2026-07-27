@@ -120,6 +120,10 @@ describe "Nested documentable" do
       within "#nested-documents .document-attachment" do
         expect(page).to have_content "can't be blank"
       end
+
+      within "#nested-documents .document-fields" do
+        expect(page).to have_css "progress", visible: :hidden
+      end
     end
 
     scenario "Should show document errors after documentable submit with empty document fields" do

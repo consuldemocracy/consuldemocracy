@@ -63,7 +63,7 @@
       });
     },
     setNewContent: function(fields_container, response) {
-      fields_container.html($(response.content).html());
+      fields_container.html($(response.content).html()).find("progress").val(100);
     }
   };
 }).call(this);
