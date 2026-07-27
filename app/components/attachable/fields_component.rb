@@ -76,8 +76,7 @@ class Attachable::FieldsComponent < ApplicationComponent
     def progress_bar
       tag.progress max: "100",
                    class: progress_bar_status_class,
-                   "aria-label": t("documents.form.progress"),
-                   value: ("100" if progress_bar_status_class)
+                   "aria-label": t("documents.form.progress")
     end
 
     def progress_bar_status_class

@@ -71,6 +71,10 @@ describe "Nested imageable" do
       within "#nested-image .image-attachment" do
         expect(page).to have_content "can't be blank"
       end
+
+      within "#nested-image .image-fields" do
+        expect(page).to have_css "progress", visible: :hidden
+      end
     end
 
     scenario "Shows image errors after invalid submit and restores add link on cancel" do

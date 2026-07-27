@@ -6,7 +6,7 @@
     </button>
   <% end %>
   <% if images.any? %>
-    <p class="help-text mb-2"><%= t("images.form.pick_an_image") %></p>
+    <p class="help-text"><%= t("images.form.pick_an_image") %></p>
     <ul class="suggested-images">
       <% images.each_with_index do |image, index| %>
         <li>

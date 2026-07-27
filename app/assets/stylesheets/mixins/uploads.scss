@@ -26,6 +26,9 @@
 
     .document-attachment,
     .image-attachment {
+      column-gap: 0.7ch;
+      display: flex;
+      flex-wrap: wrap;
       padding-left: 0;
 
       p {
@@ -35,6 +38,10 @@
       &:focus-within label {
         @include focus-outline;
       }
+
+      .suggested-images-wrapper {
+        flex-grow: 1;
+      }
     }
 
     [type=file] {
@@ -43,15 +50,6 @@
       ~ .error {
         display: inline-block;
         margin-bottom: $line-height;
-      }
-    }
-
-    .suggested-images-container,
-    .suggested-images-wrapper {
-      display: inline;
-
-      .help-text {
-        margin-bottom: 1rem;
       }
     }
 
@@ -70,6 +68,7 @@
     .suggested-images {
       @include dynamic-grid($min-column-width: clamp(3rem, 40%, 10rem));
       list-style: none;
+      margin-top: 1rem;
 
       button {
         min-width: 1rem;
@@ -79,10 +78,6 @@
         min-height: rem-calc(120);
         object-fit: cover;
       }
-    }
-
-    .image-attachment:has(label.button.error) .suggested-images-wrapper {
-      display: none;
     }
 
     .image-attachment:has(label.button:not(.error)) .js-suggest-image.error {
