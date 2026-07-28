@@ -2,6 +2,7 @@ namespace :votes do
   desc "Removes duplicate votes"
   task remove_duplicate_votes: :environment do
     logger = ApplicationLogger.new
+    duplicate_records_logger = DuplicateRecordsLogger.new
     logger.info "Removing duplicate votes"
 
     Tenant.run_on_each do
@@ -24,11 +25,13 @@ namespace :votes do
           votable&.update_cached_votes
 
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
-          logger.info "Deleted duplicate record with ID #{vote.id} " \
-                      "from the #{Vote.table_name} table " \
-                      "with voter_id #{voter_id}, voter_type #{voter_type}, " \
-                      "votable_id #{votable_id} and votable_type #{votable_type}" \
-                      + tenant_info.to_s
+          log_message = "Deleted duplicate record with ID #{vote.id} " \
+                        "from the #{Vote.table_name} table " \
+                        "with voter_id #{voter_id}, voter_type #{voter_type}, " \
+                        "votable_id #{votable_id} and votable_type #{votable_type}" \
+                        + tenant_info.to_s
+          logger.info(log_message)
+          duplicate_records_logger.info(log_message)
         end
       end
     end
