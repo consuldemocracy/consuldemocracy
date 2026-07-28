@@ -145,6 +145,7 @@ var initialize_modules = function() {
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
+  App.AdminSensemakerScripts.initialize();
   App.BudgetEditAssociations.initialize();
   App.BudgetHideMoney.initialize();
   App.PollsForm.initialize();

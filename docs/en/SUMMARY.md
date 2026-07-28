@@ -52,6 +52,7 @@
   * [Multitenancy](features/multitenancy.md)
   * [User content translations](features/user_content_translations.md)
   * [AI Image Suggestions](features/image_suggestions.md)
+  * [Sensemaker](features/sensemaker.md)
 
 * [Open Source project](open_source/open_source.md)
   * [Code of conduct](open_source/code_of_conduct.md)
