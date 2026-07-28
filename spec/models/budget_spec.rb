@@ -535,7 +535,7 @@ describe Budget do
       expect(budget.single_heading?).to be false
     end
 
-    it "returns false for budgets with one group and multiple headings" do
+    it "returns false for budgets with multiple groups and multiple headings" do
       2.times { create(:budget_group, budget: budget) }
       2.times { create(:budget_heading, group: budget.groups.sample) }
 
