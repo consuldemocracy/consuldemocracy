@@ -314,7 +314,7 @@ class Budget
     end
 
     def register_selection(user)
-      vote_by(voter: user, vote: "yes") if selectable_by?(user)
+      user.with_lock { vote_by(voter: user, vote: "yes") } if selectable_by?(user)
     end
 
     def calculate_confidence_score

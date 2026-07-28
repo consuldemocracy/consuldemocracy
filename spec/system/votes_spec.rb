@@ -301,7 +301,8 @@ describe "Votes" do
     debate = create(:debate)
 
     Setting["max_ratio_anon_votes_on_debates"] = 50
-    debate.update!(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
+    debate.update!(cached_votes_total: 1000)
+    allow_any_instance_of(Debate).to receive(:total_anonymous_votes).and_return(520)
 
     login_as(user)
 

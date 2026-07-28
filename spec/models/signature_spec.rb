@@ -168,6 +168,18 @@ describe Signature do
 
         expect(Vote.last.signature).to eq(signature)
       end
+
+      it "does not create two votes when calling the method twice at the same time", :race_condition do
+        signature = create(:signature, document_number: user.document_number)
+
+        2.times.map do
+          Thread.new { signature.assign_vote_to_user }
+        end.each(&:join)
+
+        votes = Vote.where(voter: user, votable: signature.signable)
+        expect(votes.count).to eq 1
+        expect(votes.first.signature).to eq(signature)
+      end
     end
 
     context "inexistent user" do

@@ -88,7 +88,9 @@ class Debate < ApplicationRecord
   end
 
   def total_anonymous_votes
-    cached_anonymous_votes_total
+    return 0 if Setting["feature.user.skip_verification"].present?
+
+    Vote.where(votable: self, voter: User.unverified).count
   end
 
   def editable?
@@ -101,13 +103,7 @@ class Debate < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      transaction do
-        if user.unverified? && !user.voted_for?(self)
-          Debate.increment_counter(:cached_anonymous_votes_total, id)
-        end
-
-        vote_by(voter: user, vote: vote_value)
-      end
+      user.with_lock { vote_by(voter: user, vote: vote_value) }
     end
   end
 
@@ -124,7 +120,7 @@ class Debate < ApplicationRecord
   def anonymous_votes_ratio
     return 0 if cached_votes_total == 0
 
-    (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
+    (total_anonymous_votes.to_f / cached_votes_total) * 100
   end
 
   def after_commented

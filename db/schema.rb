@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_09_085528) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_28_143353) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -526,7 +526,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_09_085528) do
     t.integer "cached_votes_down", default: 0
     t.integer "comments_count", default: 0
     t.datetime "confirmed_hide_at", precision: nil
-    t.integer "cached_anonymous_votes_total", default: 0
     t.integer "cached_votes_score", default: 0
     t.bigint "hot_score", default: 0
     t.integer "confidence_score", default: 0

@@ -807,7 +807,7 @@ describe User do
       expect(Poll::Voter.where(user: user)).to match_array [v1, v2]
     end
 
-    it "does not reassign votes if the user has already voted" do
+    it "does not reassign poll voters if the user has already voted" do
       poll = create(:poll)
       user = create(:user, :level_three)
       other_user = create(:user, :level_three)
@@ -823,6 +823,42 @@ describe User do
 
       expect(Poll::Voter.where(user: user)).to match_array [voter, other_poll_voter]
       expect(Poll::Voter.where(user: other_user)).to eq []
+    end
+
+    it "does not reassign votes if the user has already voted" do
+      proposal = create(:proposal)
+      debate = create(:debate)
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+
+      vote = create(:vote, voter: user, votable: proposal)
+      other_vote = create(:vote, voter: other_user, votable: proposal)
+      other_debate_vote = create(:vote, voter: other_user, votable: debate)
+
+      expect(Vote.where(voter: user)).to eq [vote]
+      expect(Vote.where(voter: other_user)).to match_array [other_vote, other_debate_vote]
+
+      user.take_votes_from(other_user)
+
+      expect(Vote.where(voter: user)).to match_array [vote, other_debate_vote]
+      expect(Vote.where(voter: other_user)).to eq []
+      expect(Vote.find_by(id: other_vote.id)).to be nil
+    end
+
+    it "updates cached vote counters when deleting duplicate votes" do
+      proposal = create(:proposal, cached_votes_up: 0)
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+
+      create(:vote, voter: user, votable: proposal)
+      create(:vote, voter: other_user, votable: proposal)
+
+      expect(proposal.reload.cached_votes_up).to eq 2
+
+      user.take_votes_from(other_user)
+
+      expect(proposal.reload.cached_votes_up).to eq 1
+      expect(Vote.where(voter: user, votable: proposal).count).to eq 1
     end
   end
 
