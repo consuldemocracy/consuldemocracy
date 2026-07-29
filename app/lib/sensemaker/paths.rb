@@ -28,6 +28,14 @@ module Sensemaker
       Rails.root.join(sensemaker_relative_data_folder)
     end
 
+    def self.job_directory(job)
+      File.join(sensemaker_data_folder, "job-#{job.id}")
+    end
+
+    def self.relative_job_directory(job)
+      File.join(sensemaker_relative_data_folder, "job-#{job.id}")
+    end
+
     def self.report_ui_folder
       if Rails.env.test?
         Rails.root.join("tmp/sensemaker_test_folder/report-ui")
