@@ -29,6 +29,10 @@ module Sensemaker
     scope :published, -> { where(published: true) }
     scope :unpublished, -> { where(published: false) }
 
+    def artefacts
+      @artefacts ||= Sensemaker::JobArtefacts.new(self)
+    end
+
     def started?
       started_at.present?
     end
