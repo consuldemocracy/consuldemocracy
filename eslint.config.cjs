@@ -6,23 +6,13 @@ const {
 const globals = require("globals");
 const js = require("@eslint/js");
 
-const {
-  FlatCompat,
-} = require("@eslint/eslintrc");
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
-});
-
 module.exports = defineConfig([globalIgnores([
   "app/assets/javascripts/ckeditor/config.js",
   "eslint.config.cjs",
   "**/node_modules/",
   "**/vendor/",
 ]), {
-  extends: compat.extends("eslint:recommended"),
+  extends: ["js/recommended"],
   languageOptions: {
     globals: {
       ...globals.browser,
@@ -39,6 +29,7 @@ module.exports = defineConfig([globalIgnores([
     ecmaVersion: 5,
     sourceType: "script",
   },
+  plugins: { js },
   rules: {
     "array-bracket-spacing": "error",
     "array-callback-return": "error",
