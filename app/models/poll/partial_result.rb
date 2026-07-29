@@ -9,9 +9,6 @@ class Poll::PartialResult < ApplicationRecord
 
   validates :question, presence: true
   validates :author, presence: true
-  validates :answer, presence: true
-  validates :answer, inclusion: { in: ->(partial_result) { partial_result.option.possible_answers }},
-                     if: ->(partial_result) { partial_result.option.present? }
   validates :origin, inclusion: { in: ->(*) { VALID_ORIGINS }}
   validates :option, uniqueness: { scope: [:booth_assignment_id, :date] }, allow_nil: true
 

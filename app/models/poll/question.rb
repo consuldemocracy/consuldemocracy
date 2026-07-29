@@ -80,8 +80,9 @@ class Poll::Question < ApplicationRecord
     if accepts_options?
       option = question_options.find(option_id)
       answer.option = option
-      answer.answer = option.title
+      answer.answer = nil
     else
+      answer.option = nil
       answer.answer = answer_text
     end
 

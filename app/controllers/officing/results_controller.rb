@@ -51,7 +51,6 @@ class Officing::ResultsController < Officing::BaseController
             option_id: option.id
           )
           partial_result.officer_assignment_id = @officer_assignment.id
-          partial_result.answer = option.title
           partial_result.amount = count.to_i
           partial_result.author = current_user
           partial_result.origin = "booth"

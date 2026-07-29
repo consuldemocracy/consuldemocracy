@@ -2,18 +2,24 @@ require "rails_helper"
 
 describe Poll::PartialResult do
   describe "validations" do
-    it "validates that the answers are included in the list of titles for the option" do
+    let(:partial_result) { build(:poll_partial_result) }
+
+    it "is valid" do
+      expect(partial_result).to be_valid
+    end
+
+    it "is valid without answer text when an option is present" do
+      partial_result.option = partial_result.question.question_options.sample
+      partial_result.answer = nil
+
+      expect(partial_result).to be_valid
+    end
+
+    it "accepts legacy text in option partial results" do
       question = create(:poll_question)
-      option = create(:poll_question_option, title_en: "One", title_es: "Uno", question: question)
+      option = create(:poll_question_option, title: "One", question: question)
 
-      create(:poll_question_option, title: "Two", question: question)
-      create(:poll_question_option, title: "Three", question: create(:poll_question, poll: create(:poll)))
-
-      expect(build(:poll_partial_result, option: option, answer: "One")).to be_valid
-      expect(build(:poll_partial_result, option: option, answer: "Uno")).to be_valid
-      expect(build(:poll_partial_result, option: option, answer: "Two")).not_to be_valid
-      expect(build(:poll_partial_result, option: option, answer: "Three")).not_to be_valid
-      expect(build(:poll_partial_result, option: option, answer: "Any")).not_to be_valid
+      expect(build(:poll_partial_result, option: option, answer: "legacy snapshot")).to be_valid
     end
 
     it "dynamically validates the valid origins" do
@@ -34,21 +40,19 @@ describe Poll::PartialResult do
                question: question,
                booth_assignment: booth_assignment,
                date: Date.current,
-               option: option,
-               answer: "Answer A")
+               option: option)
 
         partial_result = build(:poll_partial_result,
                                question: question,
                                booth_assignment: booth_assignment,
                                date: Date.current,
-                               option: option,
-                               answer: "Answer A")
+                               option: option)
 
         expect(partial_result).not_to be_valid
         expect { partial_result.save(validate: false) }.to raise_error ActiveRecord::RecordNotUnique
       end
 
-      it "is not valid when there are two results with the same option and different answer" do
+      it "is not valid when there are two results with the same option" do
         question = create(:poll_question_multiple, :abc)
         option = question.question_options.first
 
@@ -57,38 +61,16 @@ describe Poll::PartialResult do
                booth_assignment: booth_assignment,
                date: Date.current,
                option: option,
-               answer: "Answer A")
+               answer: "legacy snapshot")
 
         partial_result = build(:poll_partial_result,
                                question: question,
                                booth_assignment: booth_assignment,
                                date: Date.current,
-                               option: option,
-                               answer: "Answer B")
+                               option: option)
 
         expect(partial_result).not_to be_valid
         expect { partial_result.save(validate: false) }.to raise_error ActiveRecord::RecordNotUnique
-      end
-
-      it "is valid when there are two identical results and the option is nil" do
-        question = create(:poll_question_multiple, :abc)
-
-        create(:poll_partial_result,
-               question: question,
-               booth_assignment: booth_assignment,
-               date: Date.current,
-               option: nil,
-               answer: "Answer A")
-
-        partial_result = build(:poll_partial_result,
-                               question: question,
-                               booth_assignment: booth_assignment,
-                               date: Date.current,
-                               option: nil,
-                               answer: "Answer A")
-
-        expect(partial_result).to be_valid
-        expect { partial_result.save }.not_to raise_error
       end
     end
   end

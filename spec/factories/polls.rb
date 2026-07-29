@@ -219,28 +219,14 @@ FactoryBot.define do
   factory :poll_answer, class: "Poll::Answer" do
     question factory: [:poll_question, :yes_no]
     author factory: [:user, :level_two]
-    option do
-      if answer
-        question.question_options.find_by(title: answer)
-      else
-        question.question_options.sample
-      end
-    end
-    after(:build) { |poll_answer| poll_answer.answer ||= poll_answer.option&.title }
+    option { question.question_options.sample }
   end
 
   factory :poll_partial_result, class: "Poll::PartialResult" do
     question factory: [:poll_question, :yes_no]
     author factory: :user
     origin { "web" }
-    option do
-      if answer
-        question.question_options.find_by(title: answer)
-      else
-        question.question_options.sample
-      end
-    end
-    after(:build) { |poll_partial_result| poll_partial_result.answer ||= poll_partial_result.option&.title }
+    option { question.question_options.sample }
   end
 
   factory :poll_recount, class: "Poll::Recount" do

@@ -56,10 +56,10 @@ describe Admin::Poll::Results::QuestionComponent do
 
   it "ignores partial results from other questions" do
     other_question = create(:poll_question, poll: poll)
-    create(:poll_question_option, question: other_question, title: "Yes")
-    create(:poll_question_option, question: other_question, title: "Irrelevant")
-    create(:poll_partial_result, question: other_question, answer: "Yes", amount: 9)
-    create(:poll_partial_result, question: other_question, answer: "Irrelevant", amount: 9)
+    other_option_yes = create(:poll_question_option, question: other_question, title: "Yes")
+    other_option_irrelevant = create(:poll_question_option, question: other_question, title: "Irrelevant")
+    create(:poll_partial_result, question: other_question, option: other_option_yes, amount: 9)
+    create(:poll_partial_result, question: other_question, option: other_option_irrelevant, amount: 9)
 
     render_inline Admin::Poll::Results::QuestionComponent.new(question, poll.partial_results)
 

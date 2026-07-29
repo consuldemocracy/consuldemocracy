@@ -73,6 +73,13 @@ describe Poll::Question::Option do
 
         expect(option_yes.total_votes).to eq 2
       end
+
+      it "counts legacy answers with text and new answers without text" do
+        create(:poll_answer, question: question, option: option_yes, answer: "Yes")
+        create(:poll_answer, question: question, option: option_yes, answer: nil)
+
+        expect(option_yes.total_votes).to eq 2
+      end
     end
 
     context "with options whose titles collide across locales" do
@@ -100,7 +107,6 @@ describe Poll::Question::Option do
                booth_assignment: booth_assignment,
                question: question,
                option: option,
-               answer: "Yes",
                amount: 2)
 
         create(:poll_partial_result,
@@ -125,7 +131,6 @@ describe Poll::Question::Option do
                booth_assignment: create(:poll_booth_assignment, poll: question.poll),
                question: question,
                option: option,
-               answer: "Yes",
                amount: 2)
 
         create(:poll_partial_result,
