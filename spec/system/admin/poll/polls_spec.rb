@@ -395,13 +395,13 @@ describe "Admin polls", :admin do
           create(:poll_partial_result,
                  booth_assignment: ba,
                  question: question_1,
-                 option: question_1.question_options.find_by(title: "Yes"),
+                 option: question_1.option_for("Yes"),
                  amount: 11)
 
           create(:poll_partial_result,
                  booth_assignment: ba,
                  question: question_2,
-                 option: question_2.question_options.find_by(title: "Tomorrow"),
+                 option: question_2.option_for("Tomorrow"),
                  amount: 5)
         end
 

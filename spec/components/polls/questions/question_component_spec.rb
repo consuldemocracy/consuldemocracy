@@ -3,8 +3,8 @@ require "rails_helper"
 describe Polls::Questions::QuestionComponent do
   let(:poll) { create(:poll) }
   let(:question) { create(:poll_question, :yes_no, poll: poll) }
-  let(:option_yes) { question.question_options.find_by(title: "Yes") }
-  let(:option_no) { question.question_options.find_by(title: "No") }
+  let(:option_yes) { question.option_for("Yes") }
+  let(:option_no) { question.option_for("No") }
   let(:user) { User.new }
   let(:web_vote) { Poll::WebVote.new(poll, user) }
   let(:form) { ConsulFormBuilder.new(:web_vote, web_vote, ApplicationController.new.view_context, {}) }

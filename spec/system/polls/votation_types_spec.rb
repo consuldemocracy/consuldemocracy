@@ -121,8 +121,7 @@ describe "Poll Votation Type" do
 
   scenario "Maximum votes has been reached" do
     question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
-    option_a = question.question_options.find_by(title: "Answer A")
-    create(:poll_answer, author: author, question: question, option: option_a)
+    create(:poll_answer, author: author, question: question, option: question.option_for("Answer A"))
 
     visit poll_path(poll)
 

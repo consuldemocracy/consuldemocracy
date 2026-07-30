@@ -66,6 +66,10 @@ class Poll::Question < ApplicationRecord
     votation_type.nil? || votation_type.accepts_options?
   end
 
+  def option_for(title)
+    question_options.find_by(title: title)
+  end
+
   def max_votes
     if multiple?
       votation_type.max_votes

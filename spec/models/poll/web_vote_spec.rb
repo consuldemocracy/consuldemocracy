@@ -5,8 +5,8 @@ describe Poll::WebVote do
     let(:user) { create(:user, :level_two) }
     let(:poll) { create(:poll) }
     let!(:question) { create(:poll_question, :yes_no, poll: poll) }
-    let(:option_yes) { question.question_options.find_by(title: "Yes") }
-    let(:option_no) { question.question_options.find_by(title: "No") }
+    let(:option_yes) { question.option_for("Yes") }
+    let(:option_no) { question.option_for("No") }
     let(:web_vote) { Poll::WebVote.new(poll, user) }
 
     it "creates a poll_voter with user and poll data" do
@@ -47,9 +47,9 @@ describe Poll::WebVote do
 
     it "updates existing multiple options instead of adding new ones" do
       question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
-      option_a = question.question_options.find_by(title: "Answer A")
-      option_b = question.question_options.find_by(title: "Answer B")
-      option_c = question.question_options.find_by(title: "Answer C")
+      option_a = question.option_for("Answer A")
+      option_b = question.option_for("Answer B")
+      option_c = question.option_for("Answer C")
 
       create(:poll_answer, author: user, question: question, option: option_a)
       create(:poll_answer, author: user, question: question, option: option_b)
@@ -143,9 +143,9 @@ describe Poll::WebVote do
 
       it "validates max votes on multiple-answer questions" do
         question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
-        option_a = question.question_options.find_by(title: "Answer A")
-        option_b = question.question_options.find_by(title: "Answer B")
-        option_c = question.question_options.find_by(title: "Answer C")
+        option_a = question.option_for("Answer A")
+        option_b = question.option_for("Answer B")
+        option_c = question.option_for("Answer C")
         create(:poll_answer, question: question, author: user, option: option_a)
 
         [option_b, option_c].map do |option|

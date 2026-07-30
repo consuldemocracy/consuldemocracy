@@ -3,8 +3,8 @@ require "rails_helper"
 describe Polls::Results::QuestionComponent do
   context "question that accepts options" do
     let(:question) { create(:poll_question, :yes_no) }
-    let(:option_yes) { question.question_options.find_by(title: "Yes") }
-    let(:option_no) { question.question_options.find_by(title: "No") }
+    let(:option_yes) { question.option_for("Yes") }
+    let(:option_no) { question.option_for("No") }
     let(:option_other) do
       create(:poll_question_option, question: question, title: "Other", allow_custom_text: true)
     end
