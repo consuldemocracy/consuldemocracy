@@ -400,7 +400,12 @@
     }
   }
 
-  .flex-between { @include flex-between; }
+  .flex-between {
+    @include flex-between;
+
+    button,
+    .button { margin-bottom: 0; }
+  }
   .flex-row { @include flex-row; }
   .fit-content { width: fit-content; }
 
