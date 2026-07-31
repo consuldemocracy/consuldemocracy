@@ -1115,6 +1115,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_28_143353) do
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted", default: false
+    t.boolean "allow_custom_text", default: false
     t.index ["question_id"], name: "index_poll_question_answers_on_question_id"
   end
 
