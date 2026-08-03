@@ -1,0 +1,15 @@
+en:
+  speech_to_text:
+    button:
+      idle: "Dictate"
+      recording: "Stop dictation"
+      loading: "Transcribing..."
+      microphone_blocked: "Microphone access is required."
+      unsupported_browser: "Your browser does not support audio recording."
+    errors:
+      audio_required: "No audio submitted."
+      invalid_audio_type: "Invalid audio file type."
+      audio_too_large: "Audio file is too large."
+      rate_limit_exceeded: "Please wait a few minutes before dictating again."
+      llm_not_configured: "Speech to text is not configured. Please contact an administrator."
+      transcription_failed: "Transcription failed. Please try again."

@@ -9,7 +9,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     select attribute, choices, options, html_options
   end
 
-  %i[text_field text_area date_field number_field password_field email_field].each do |field|
+  %i[text_field date_field number_field password_field email_field].each do |field|
     define_method field do |attribute, options = {}|
       label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
         super(attribute, options.merge(
@@ -17,6 +17,16 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
           aria: { describedby: help_text_id(attribute, options) }
         ))
     end
+  end
+
+  def text_area(attribute, options = {})
+    options = speech_to_text_options(options)
+
+    label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
+      super(attribute, options.merge(
+        label: false, hint: nil,
+        aria: { describedby: help_text_id(attribute, options) }
+      ))
   end
 
   def check_box(attribute, options = {})
@@ -120,5 +130,36 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
       else
         {}
       end
+    end
+
+    def speech_to_text_options(options)
+      return options unless public_html_area?(options) && ::Llm::Config.speech_to_text_configured?
+
+      options = options.dup
+      options[:data] = speech_to_text_data.merge(options[:data] || {})
+      options
+    end
+
+    def public_html_area?(options)
+      classes = Array(options[:class]).flat_map { |value| value.to_s.split }
+      classes.include?("html-area") && !classes.include?("admin")
+    end
+
+    def speech_to_text_data
+      {
+        speech_to_text_enabled: true,
+        speech_to_text_endpoint: Rails.application.routes.url_helpers.speech_to_text_path,
+        speech_to_text_locale: speech_to_text_locale,
+        speech_to_text_label_idle: I18n.t("speech_to_text.button.idle"),
+        speech_to_text_label_recording: I18n.t("speech_to_text.button.recording"),
+        speech_to_text_label_loading: I18n.t("speech_to_text.button.loading"),
+        speech_to_text_error_microphone_blocked: I18n.t("speech_to_text.button.microphone_blocked"),
+        speech_to_text_error_unsupported_browser: I18n.t("speech_to_text.button.unsupported_browser"),
+        speech_to_text_error_transcription_failed: I18n.t("speech_to_text.errors.transcription_failed")
+      }
+    end
+
+    def speech_to_text_locale
+      respond_to?(:locale) ? locale : I18n.locale
     end
 end

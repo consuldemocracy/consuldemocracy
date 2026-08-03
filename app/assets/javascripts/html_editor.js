@@ -3,11 +3,18 @@
   App.HTMLEditor = {
     initialize: function() {
       $("textarea.html-area").each(function() {
-        if ($(this).hasClass("admin")) {
-          CKEDITOR.replace(this.name, { language: $("html").attr("lang"), toolbar: "admin", height: 500 });
-        } else {
-          CKEDITOR.replace(this.name, { language: $("html").attr("lang") });
+        var $el = $(this);
+        var opts = { language: $("html").attr("lang") };
+
+        if ($el.hasClass("admin")) {
+          opts.toolbar = "admin";
+          opts.height = 500;
+        } else if ($el.data("speechToTextEnabled") === true) {
+          opts.toolbar = "mini_speech";
+          opts.extraPlugins = "speechtotext";
         }
+
+        CKEDITOR.replace(this.name, opts);
       });
     },
     destroy: function() {

@@ -28,6 +28,7 @@
 //= require turbolinks
 //= require turbolinks_anchors
 //= require ckeditor/loader
+//= require ckeditor/plugins/speechtotext/plugin
 //= require_directory ./ckeditor
 //= require social-share-button
 //= require app
@@ -67,6 +68,7 @@
 //= require attachable
 //= require documentable
 //= require imageable
+//= require speech_to_text
 //= require tree_navigator
 //= require tag_autocomplete
 //= require leaflet/dist/leaflet

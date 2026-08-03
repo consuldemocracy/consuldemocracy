@@ -23,6 +23,16 @@ describe Admin::Settings::TableComponent do
 
       expect(page).to have_content("Response Data")
     end
+
+    it "returns correct table headers for LLM setting groups" do
+      render_inline Admin::Settings::TableComponent.new setting_name: "llm_content_features_name"
+
+      expect(page).to have_content("Content features")
+
+      render_inline Admin::Settings::TableComponent.new setting_name: "llm_speech_to_text_features_name"
+
+      expect(page).to have_content("Speech to text features")
+    end
   end
 
   describe "#value_header" do

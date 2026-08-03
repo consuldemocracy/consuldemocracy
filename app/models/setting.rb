@@ -193,7 +193,10 @@ class Setting < ApplicationRecord
         "llm.provider": nil,
         "llm.model": nil,
         "llm.use_llm_for_translations": false,
-        "llm.use_ai_image_suggestions": false
+        "llm.use_ai_image_suggestions": false,
+        "llm.use_llm_speech_to_text": false,
+        "llm.speech_to_text_provider": nil,
+        "llm.speech_to_text_model": nil
       }
     end
 

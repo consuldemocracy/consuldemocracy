@@ -55,7 +55,101 @@ describe Llm::Config do
     it "does not enable any providers when the LLM configuration is nil" do
       stub_secrets({})
 
-      expect(Llm::Config.providers.values).to all eq({ enabled: false })
+      expect(Llm::Config.providers.values.map { |provider| provider[:enabled] }).to all be_falsy
+    end
+  end
+
+  describe ".speech_to_text_configured?" do
+    before do
+      Setting["llm.use_llm_speech_to_text"] = true
+      Setting["llm.speech_to_text_provider"] = "OpenAI"
+      Setting["llm.speech_to_text_model"] = "whisper-1"
+      stub_secrets(llm: { openai_api_key: "1234" })
+    end
+
+    it "returns true when the feature is enabled and the model is available" do
+      expect(Llm::Config.speech_to_text_configured?).to be true
+    end
+
+    it "does not require the content LLM provider or model" do
+      Setting["llm.provider"] = nil
+      Setting["llm.model"] = nil
+
+      expect(Llm::Config.speech_to_text_configured?).to be true
+    end
+
+    it "returns false when the feature is disabled" do
+      Setting["llm.use_llm_speech_to_text"] = nil
+
+      expect(Llm::Config.speech_to_text_configured?).to be false
+    end
+  end
+
+  describe ".speech_to_text_models_for" do
+    it "returns models for the given provider" do
+      expect(Llm::Config.speech_to_text_models_for("OpenAI")).to eq(
+        %w[whisper-1 gpt-4o-transcribe gpt-4o-mini-transcribe gpt-4o-transcribe-diarize]
+      )
+      expect(Llm::Config.speech_to_text_models_for(:gemini)).to eq(%w[gemini-2.5-flash gemini-2.5-pro])
+    end
+
+    it "returns an empty array for unknown providers" do
+      expect(Llm::Config.speech_to_text_models_for("Anthropic")).to eq([])
+    end
+  end
+
+  describe ".speech_to_text_model_available?" do
+    before { Setting["llm.speech_to_text_provider"] = "OpenAI" }
+
+    it "returns true when the model provider is configured" do
+      stub_secrets(llm: { openai_api_key: "1234" })
+
+      expect(Llm::Config.speech_to_text_model_available?("whisper-1")).to be true
+    end
+
+    it "returns false when the model provider is not configured" do
+      stub_secrets(llm: { gemini_api_key: "1234" })
+
+      expect(Llm::Config.speech_to_text_model_available?("whisper-1")).to be false
+    end
+
+    it "returns false when the speech-to-text provider setting is missing" do
+      Setting["llm.speech_to_text_provider"] = nil
+      stub_secrets(llm: { openai_api_key: "1234" })
+
+      expect(Llm::Config.speech_to_text_model_available?("whisper-1")).to be false
+    end
+
+    it "returns false for models not in the speech-to-text list" do
+      stub_secrets(llm: { openai_api_key: "1234" })
+
+      expect(Llm::Config.speech_to_text_model_available?("gpt-4o")).to be false
+    end
+  end
+
+  describe ".transcribe" do
+    let(:context) { double("RubyLLM::Context") }
+
+    before do
+      allow(Llm::Config).to receive_messages(
+        context: context,
+        speech_to_text_configured?: true
+      )
+      Setting["llm.speech_to_text_provider"] = "OpenAI"
+    end
+
+    it "delegates transcription to RubyLLM with context and provider" do
+      audio = StringIO.new("audio.wav")
+
+      expect(RubyLLM).to receive(:transcribe).with(
+        audio,
+        model: "whisper-1",
+        language: "en",
+        provider: :openai,
+        context: context
+      )
+
+      Llm::Config.transcribe(audio, model: "whisper-1", language: "en")
     end
   end
 
