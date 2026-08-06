@@ -39,10 +39,10 @@ class Officing::ResultsController < Officing::BaseController
       params[:questions].each_pair do |question_id, results|
         question = @poll.questions.find(question_id)
 
-        results.each_pair do |option_index, count|
+        results.each_pair do |option_id, count|
           next if count.blank?
 
-          option = question.question_options.find_by(given_order: option_index.to_i + 1)
+          option = question.question_options.find_by(id: option_id)
 
           partial_result = ::Poll::PartialResult.find_or_initialize_by(
             booth_assignment_id: @officer_assignment.booth_assignment_id,
@@ -51,7 +51,6 @@ class Officing::ResultsController < Officing::BaseController
             option_id: option.id
           )
           partial_result.officer_assignment_id = @officer_assignment.id
-          partial_result.answer = option.title
           partial_result.amount = count.to_i
           partial_result.author = current_user
           partial_result.origin = "booth"

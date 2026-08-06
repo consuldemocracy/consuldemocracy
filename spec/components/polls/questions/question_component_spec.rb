@@ -3,8 +3,8 @@ require "rails_helper"
 describe Polls::Questions::QuestionComponent do
   let(:poll) { create(:poll) }
   let(:question) { create(:poll_question, :yes_no, poll: poll) }
-  let(:option_yes) { question.question_options.find_by(title: "Yes") }
-  let(:option_no) { question.question_options.find_by(title: "No") }
+  let(:option_yes) { question.option_for("Yes") }
+  let(:option_no) { question.option_for("No") }
   let(:user) { User.new }
   let(:web_vote) { Poll::WebVote.new(poll, user) }
   let(:form) { ConsulFormBuilder.new(:web_vote, web_vote, ApplicationController.new.view_context, {}) }
@@ -42,10 +42,14 @@ describe Polls::Questions::QuestionComponent do
     before { sign_in(user) }
 
     it "renders radio buttons for single-choice questions" do
+      option_yes.update!(allow_custom_text: true)
+
       render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Yes", type: :radio
+      expect(page).to have_field "Answer for Yes", type: :textarea
       expect(page).to have_field "No", type: :radio
+      expect(page).not_to have_field "Answer for No", type: :textarea
       expect(page).to have_field type: :radio, checked: false, count: 2
     end
 
@@ -80,11 +84,13 @@ describe Polls::Questions::QuestionComponent do
     end
 
     it "selects the option when users have already voted" do
-      create(:poll_answer, author: user, question: question, option: option_yes)
+      option_yes.update!(allow_custom_text: true)
+      create(:poll_answer, author: user, question: question, option: option_yes, answer: "because")
 
       render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Yes", type: :radio, checked: true
+      expect(page).to have_field "Answer for Yes", type: :textarea, with: "because"
       expect(page).to have_field "No", type: :radio, checked: false
     end
 

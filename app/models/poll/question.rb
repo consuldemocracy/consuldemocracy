@@ -66,6 +66,10 @@ class Poll::Question < ApplicationRecord
     votation_type.nil? || votation_type.accepts_options?
   end
 
+  def option_for(title)
+    question_options.find_by(title: title)
+  end
+
   def max_votes
     if multiple?
       votation_type.max_votes
@@ -78,10 +82,10 @@ class Poll::Question < ApplicationRecord
     answer = answers.find_or_initialize_by(find_by_attributes(user, option_id))
 
     if accepts_options?
-      option = question_options.find(option_id)
-      answer.option = option
-      answer.answer = option.title
+      answer.option = question_options.find(option_id)
+      answer.answer = answer_text.presence if answer.option.allow_custom_text?
     else
+      answer.option = nil
       answer.answer = answer_text
     end
 

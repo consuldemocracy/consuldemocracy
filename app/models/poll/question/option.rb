@@ -50,8 +50,4 @@ class Poll::Question::Option < ApplicationRecord
   def with_read_more?
     description.present? || images.any? || documents.any? || videos.any?
   end
-
-  def possible_answers
-    translations.pluck(:title)
-  end
 end

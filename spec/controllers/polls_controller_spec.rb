@@ -19,7 +19,7 @@ describe PollsController do
           post :answer, params: {
             id: question.poll.id,
             web_vote: {
-              question.id.to_s => { option_id: question.question_options.find_by(title: "Answer A").id }
+              question.id.to_s => { option_id: question.option_for("Answer A").id }
             }
           }
         rescue AbstractController::DoubleRenderError

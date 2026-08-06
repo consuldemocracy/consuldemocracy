@@ -242,31 +242,31 @@ describe "Admin booths assignments", :admin do
       create(:poll_partial_result,
              booth_assignment: booth_assignment,
              question: question_1,
-             answer: "Yes",
+             option: question_1.option_for("Yes"),
              amount: 11)
 
       create(:poll_partial_result,
              booth_assignment: booth_assignment,
              question: question_1,
-             answer: "No",
+             option: question_1.option_for("No"),
              amount: 4)
 
       create(:poll_partial_result,
              booth_assignment: booth_assignment,
              question: question_2,
-             answer: "Today",
+             option: question_2.option_for("Today"),
              amount: 5)
 
       create(:poll_partial_result,
              booth_assignment: booth_assignment,
              question: question_2,
-             answer: "Tomorrow",
+             option: question_2.option_for("Tomorrow"),
              amount: 6)
 
       create(:poll_partial_result,
              booth_assignment: other_booth_assignment,
              question: question_1,
-             answer: "Yes",
+             option: question_1.option_for("Yes"),
              amount: 9999)
 
       create(:poll_recount,

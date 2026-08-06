@@ -5,8 +5,8 @@ describe Poll::WebVote do
     let(:user) { create(:user, :level_two) }
     let(:poll) { create(:poll) }
     let!(:question) { create(:poll_question, :yes_no, poll: poll) }
-    let(:option_yes) { question.question_options.find_by(title: "Yes") }
-    let(:option_no) { question.question_options.find_by(title: "No") }
+    let(:option_yes) { question.option_for("Yes") }
+    let(:option_no) { question.option_for("No") }
     let(:web_vote) { Poll::WebVote.new(poll, user) }
 
     it "creates a poll_voter with user and poll data" do
@@ -22,6 +22,7 @@ describe Poll::WebVote do
       answer = question.answers.first
 
       expect(answer.author).to eq user
+      expect(answer.answer).to be nil
       expect(voter.document_number).to eq user.document_number
       expect(voter.poll_id).to eq answer.poll.id
       expect(voter.officer_id).to be nil
@@ -46,9 +47,9 @@ describe Poll::WebVote do
 
     it "updates existing multiple options instead of adding new ones" do
       question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
-      option_a = question.question_options.find_by(title: "Answer A")
-      option_b = question.question_options.find_by(title: "Answer B")
-      option_c = question.question_options.find_by(title: "Answer C")
+      option_a = question.option_for("Answer A")
+      option_b = question.option_for("Answer B")
+      option_c = question.option_for("Answer C")
 
       create(:poll_answer, author: user, question: question, option: option_a)
       create(:poll_answer, author: user, question: question, option: option_b)
@@ -142,9 +143,9 @@ describe Poll::WebVote do
 
       it "validates max votes on multiple-answer questions" do
         question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
-        option_a = question.question_options.find_by(title: "Answer A")
-        option_b = question.question_options.find_by(title: "Answer B")
-        option_c = question.question_options.find_by(title: "Answer C")
+        option_a = question.option_for("Answer A")
+        option_b = question.option_for("Answer B")
+        option_c = question.option_for("Answer C")
         create(:poll_answer, question: question, author: user, option: option_a)
 
         [option_b, option_c].map do |option|
@@ -196,6 +197,49 @@ describe Poll::WebVote do
         expect(updated.answer).to eq "New text"
         expect(updated.option_id).to be nil
         expect(poll.reload.voters.size).to eq 1
+      end
+    end
+
+    context "options that allow custom text" do
+      before { option_yes.update!(allow_custom_text: true) }
+
+      it "stores text for the selected option when provided" do
+        web_vote.update(
+          question.id.to_s => {
+            option_id: option_yes.id.to_s,
+            answer: { option_yes.id.to_s => "  hello  " }
+          }
+        )
+        answer = question.reload.answers.find_by(author: user, option: option_yes)
+        expect(answer).to be_present
+        expect(answer.answer).to eq "hello"
+      end
+
+      it "ignores custom text for options that do not allow custom text" do
+        web_vote.update(
+          question.id.to_s => {
+            option_id: option_no.id.to_s,
+            answer: { option_yes.id.to_s => "should be ignored" }
+          }
+        )
+        answer = question.reload.answers.find_by(author: user, option: option_no)
+        expect(answer.answer).to be nil
+      end
+
+      it "stores the selected option even when custom text is blank" do
+        web_vote.update(
+          question.id.to_s => {
+            option_id: option_yes.id.to_s,
+            answer: { option_yes.id.to_s => "   " }
+          }
+        )
+
+        expect(poll.reload.voters.size).to eq 1
+
+        answer = question.reload.answers.find_by(author: user, option: option_yes)
+
+        expect(answer).to be_present
+        expect(answer.answer).to be nil
       end
     end
   end

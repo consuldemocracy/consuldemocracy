@@ -87,14 +87,27 @@ RSpec.describe Poll::Question do
     end
   end
 
+  describe "#option_for" do
+    let(:question) { create(:poll_question, :yes_no) }
+
+    it "returns the option with the given title" do
+      expect(question.option_for("Yes").title).to eq "Yes"
+      expect(question.option_for("No").title).to eq "No"
+    end
+
+    it "returns nil when no option matches the title" do
+      expect(question.option_for("Maybe")).to be nil
+    end
+  end
+
   describe "#find_or_initialize_user_answer" do
     let(:user) { create(:user) }
     let(:other_user) { create(:user) }
 
     context "unique question" do
       let(:question) { create(:poll_question_unique, :abc) }
-      let(:answer_a) { question.question_options.find_by(title: "Answer A") }
-      let(:answer_b) { question.question_options.find_by(title: "Answer B") }
+      let(:answer_a) { question.option_for("Answer A") }
+      let(:answer_b) { question.option_for("Answer B") }
 
       it "finds the existing answer for the same user" do
         existing_answer = create(:poll_answer, question: question, author: user, option: answer_a)
@@ -105,7 +118,7 @@ RSpec.describe Poll::Question do
         expect(answer).to eq existing_answer
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_b
-        expect(answer.answer).to eq "Answer B"
+        expect(answer.answer).to be nil
       end
 
       it "initializes a new answer when only another user has answered" do
@@ -116,7 +129,7 @@ RSpec.describe Poll::Question do
         expect(answer).to be_new_record
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_a
-        expect(answer.answer).to eq "Answer A"
+        expect(answer.answer).to be nil
       end
 
       it "raises when option_id is invalid" do
@@ -130,12 +143,21 @@ RSpec.describe Poll::Question do
           question.find_or_initialize_user_answer(user, answer_text: "ignored")
         end.to raise_error(ActiveRecord::RecordNotFound)
       end
+
+      it "ignores answer_text when option does not allow custom text" do
+        answer = question.find_or_initialize_user_answer(
+          user, option_id: answer_a.id, answer_text: "should not be stored"
+        )
+
+        expect(answer.option).to eq answer_a
+        expect(answer.answer).to be nil
+      end
     end
 
     context "multiple question" do
       let(:question) { create(:poll_question_multiple, :abc, max_votes: 3) }
-      let(:answer_a) { question.question_options.find_by(title: "Answer A") }
-      let(:answer_b) { question.question_options.find_by(title: "Answer B") }
+      let(:answer_a) { question.option_for("Answer A") }
+      let(:answer_b) { question.option_for("Answer B") }
 
       it "finds the existing answer for the same user and option" do
         existing_answer = create(:poll_answer, question: question, author: user, option: answer_a)
@@ -146,7 +168,7 @@ RSpec.describe Poll::Question do
         expect(answer).to eq existing_answer
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_a
-        expect(answer.answer).to eq "Answer A"
+        expect(answer.answer).to be nil
       end
 
       it "initializes a new answer when selecting a different option" do
@@ -158,7 +180,7 @@ RSpec.describe Poll::Question do
         expect(answer).to be_new_record
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_b
-        expect(answer.answer).to eq "Answer B"
+        expect(answer.answer).to be nil
       end
     end
 
@@ -230,8 +252,8 @@ RSpec.describe Poll::Question do
 
     describe "#open_ended_blank_answers_count" do
       let(:another_question) { create(:poll_question, :yes_no, poll: poll) }
-      let(:option_yes) { another_question.question_options.find_by(title: "Yes") }
-      let(:option_no) { another_question.question_options.find_by(title: "No") }
+      let(:option_yes) { another_question.option_for("Yes") }
+      let(:option_no) { another_question.option_for("No") }
 
       it "counts valid participants of the poll who did not answer the open-ended question" do
         voters = create_list(:poll_voter, 3, poll: poll)
@@ -250,8 +272,8 @@ RSpec.describe Poll::Question do
 
       it "counts every user one time even if they answered many questions" do
         multiple_question = create(:poll_question_multiple, :abc, poll: poll)
-        option_a = multiple_question.question_options.find_by(title: "Answer A")
-        option_b = multiple_question.question_options.find_by(title: "Answer B")
+        option_a = multiple_question.option_for("Answer A")
+        option_b = multiple_question.option_for("Answer B")
         another_question_open = create(:poll_question_open, poll: poll)
 
         voter = create(:poll_voter, poll: poll)
@@ -273,7 +295,7 @@ RSpec.describe Poll::Question do
 
       it "calculates valid and blank percentages based on counts" do
         another_question = create(:poll_question, :yes_no, poll: poll)
-        option_yes = another_question.question_options.find_by(title: "Yes")
+        option_yes = another_question.option_for("Yes")
 
         voters = create_list(:poll_voter, 4, poll: poll)
         voters.each do |voter|

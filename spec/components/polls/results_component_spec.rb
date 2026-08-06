@@ -4,13 +4,13 @@ describe Polls::ResultsComponent do
   let(:poll) { create(:poll) }
 
   let(:question_1) { create(:poll_question, :yes_no, poll: poll, title: "Do you like Consul Democracy?") }
-  let(:option_yes) { question_1.question_options.find_by(title: "Yes") }
-  let(:option_no) { question_1.question_options.find_by(title: "No") }
+  let(:option_yes) { question_1.option_for("Yes") }
+  let(:option_no) { question_1.option_for("No") }
 
   let(:question_2) { create(:poll_question, :abc, poll: poll, title: "Which option do you prefer?") }
-  let(:option_a) { question_2.question_options.find_by(title: "Answer A") }
-  let(:option_b) { question_2.question_options.find_by(title: "Answer B") }
-  let(:option_c) { question_2.question_options.find_by(title: "Answer C") }
+  let(:option_a) { question_2.option_for("Answer A") }
+  let(:option_b) { question_2.option_for("Answer B") }
+  let(:option_c) { question_2.option_for("Answer C") }
 
   it "renders results content" do
     create_list(:poll_answer, 2, question: question_1, option: option_yes)

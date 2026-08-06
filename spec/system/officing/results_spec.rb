@@ -94,7 +94,8 @@ describe "Officing Results", :with_frozen_time do
       booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
       date: Date.current,
       question: question_1,
-      answer: question_1.question_options.first.title,
+      option: question_1.question_options.first,
+      answer: "legacy snapshot",
       author: poll_officer.user,
       amount: 7777
     )
@@ -131,16 +132,15 @@ describe "Officing Results", :with_frozen_time do
     expect(page).to have_content(I18n.l(Date.current.to_date, format: :long))
     expect(page).to have_content(booth_name)
 
-    within("#question_#{question_1.id}_0_result") do
-      expect(page).to have_content("5555")
-      expect(page).not_to have_content("7777")
-    end
+    expect(page).to have_table with_rows: [
+      { "Answer" => "Yes", "Votes" => "5555" },
+      { "Answer" => "No", "Votes" => "200" }
+    ]
+    expect(page).not_to have_content("7777")
 
     within("#white_results") { expect(page).to have_content("6") }
     within("#null_results")  { expect(page).to have_content("7") }
     within("#total_results") { expect(page).to have_content("8") }
-    within("#question_#{question_1.id}_0_result") { expect(page).to have_content("5555") }
-    within("#question_#{question_1.id}_1_result") { expect(page).to have_content("200") }
     expect(page).not_to have_content "What do you want?"
   end
 end

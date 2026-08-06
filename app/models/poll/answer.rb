@@ -7,10 +7,15 @@ class Poll::Answer < ApplicationRecord
 
   validates :question, presence: true
   validates :author, presence: true
-  validates :answer, presence: true
+  validates :answer, presence: true,
+                     if: ->(poll_answer) { poll_answer.question&.open? }
+  validates :answer, length: { maximum: ->(*) { Poll::Answer.answer_max_length }}
   validates :option, uniqueness: { scope: :author_id }, allow_nil: true
-  validates :answer, inclusion: { in: ->(poll_answer) { poll_answer.option.possible_answers }},
-                     if: ->(poll_answer) { poll_answer.option.present? }
+  validates :option, presence: true, if: ->(poll_answer) { poll_answer.question&.accepts_options? }
 
   scope :by_question, ->(question_id) { where(question_id: question_id) }
+
+  def self.answer_max_length
+    1000
+  end
 end

@@ -11,10 +11,10 @@
   <% poll.questions.for_physical_votes.each do |question| %>
     <fieldset class="row">
       <legend class="column"><%= question.title %></legend>
-      <% question.question_options.each_with_index do |option, i| %>
+      <% question.question_options.each do |option| %>
         <div class="small-12 medium-6 large-3 column end">
-          <%= label_tag "questions_#{question.id}_#{i}", option.title %>
-          <%= number_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), min: 0 %>
+          <%= label_tag "questions_#{question.id}_#{option.id}", option.title %>
+          <%= number_field_tag "questions[#{question.id}][#{option.id}]", answer_result_value(question.id, option.id), min: 0 %>
         </div>
       <% end %>
     </fieldset>
