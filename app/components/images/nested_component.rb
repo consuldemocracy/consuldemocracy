@@ -8,10 +8,6 @@ class Images::NestedComponent < ApplicationComponent
 
   private
 
-    def suggested_images_content
-      content
-    end
-
     def imageable
       f.object
     end

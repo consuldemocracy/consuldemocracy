@@ -35,7 +35,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
       end
     else
       resource.errors.add(:email, :password_already_set)
-      respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new }
+      respond_with_navigational(resource.errors, status: :unprocessable_content) { render :new }
     end
   end
 

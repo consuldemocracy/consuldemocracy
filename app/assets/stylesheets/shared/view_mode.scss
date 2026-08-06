@@ -26,7 +26,7 @@
   }
 
   button {
-    @include has-fa-icon(th-list, solid);
+    @include has-fa-icon(table-list, solid);
 
     background: #eee;
     cursor: pointer;
@@ -50,7 +50,7 @@
   }
 
   .view-card {
-    @include has-fa-icon(th-list, solid);
+    @include has-fa-icon(table-list, solid);
   }
 
   [aria-current] {

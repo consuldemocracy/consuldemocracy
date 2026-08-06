@@ -32,7 +32,7 @@ class Admin::SiteCustomization::InformationTexts::FormFieldComponent < Applicati
     end
 
     def html_name
-      "contents[content_#{i18n_key}]values[value_#{locale}]"
+      "contents[content_#{i18n_key}][values][value_#{locale}]"
     end
 
     def display_style

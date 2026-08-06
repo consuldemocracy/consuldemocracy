@@ -1,13 +1,24 @@
+@mixin progress-bar-color($color) {
+  appearance: none;
+  color: $color;
+
+  &::-webkit-progress-value {
+    background: $color;
+  }
+
+  &::-moz-progress-bar {
+    background: $color;
+  }
+}
+
 @mixin direct-uploads {
+  .image-preview figure:has(.cached-image) {
+    height: rem-calc(150);
+  }
 
   .cached-image {
     max-height: rem-calc(150);
     max-width: rem-calc(150);
-  }
-
-  .progress-bar-placeholder {
-    display: none;
-    margin-bottom: $line-height;
   }
 
   .document-fields,
@@ -15,6 +26,9 @@
 
     .document-attachment,
     .image-attachment {
+      column-gap: 0.7ch;
+      display: flex;
+      flex-wrap: wrap;
       padding-left: 0;
 
       p {
@@ -24,26 +38,18 @@
       &:focus-within label {
         @include focus-outline;
       }
-    }
 
-    .attachment-errors {
-
-      > [type=file] {
-        @include element-invisible;
-
-        ~ .error {
-          display: inline-block;
-          margin-bottom: $line-height;
-        }
+      .suggested-images-wrapper {
+        flex-grow: 1;
       }
     }
 
-    .suggested-images-container,
-    .suggested-images-wrapper {
-      display: inline;
+    [type=file] {
+      @include element-invisible;
 
-      .help-text {
-        margin-bottom: 1rem;
+      ~ .error {
+        display: inline-block;
+        margin-bottom: $line-height;
       }
     }
 
@@ -59,29 +65,24 @@
       }
     }
 
-    .suggested-images-grid .suggested-image-cell {
-      margin-bottom: 1rem;
+    .suggested-images {
+      @include dynamic-grid($min-column-width: clamp(3rem, 40%, 10rem));
+      list-style: none;
+      margin-top: 1rem;
 
-      .suggested-image {
-        height: auto;
+      button {
+        min-width: 1rem;
+      }
+
+      img {
         min-height: rem-calc(120);
         object-fit: cover;
-        width: 100%;
       }
-    }
-
-    .image-attachment:has(label.button.error) .suggested-images-wrapper {
-      display: none;
     }
 
     .image-attachment:has(label.button:not(.error)) .js-suggest-image.error {
       margin: 0 0 1rem;
     }
-  }
-
-  .progress-bar {
-    background-color: $light-gray;
-    width: 100%;
   }
 
   .file-name {
@@ -98,26 +99,26 @@
     }
   }
 
-  .loading-bar {
+  progress {
+    @include progress-bar-color($dark-gray);
     height: 5px;
+    margin-bottom: $line-height;
     transition: width 500ms ease-out;
-    width: 0;
+    width: 100%;
 
-    &.uploading {
-      background-color: $dark-gray;
+    &:indeterminate {
+      display: none;
     }
 
-    &.complete {
-      background-color: $success-color;
-    }
+    &[value="100"] {
+      &.complete {
+        @include progress-bar-color($success-color);
+      }
 
-    &.errors {
-      background-color: $alert-color;
-      margin-top: calc($line-height / 2);
+      &.errors {
+        @include progress-bar-color($alert-color);
+        margin-top: calc($line-height / 2);
+      }
     }
-  }
-
-  .loading-bar.no-transition {
-    transition: none;
   }
 }

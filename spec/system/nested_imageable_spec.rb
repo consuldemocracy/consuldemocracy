@@ -37,14 +37,13 @@ describe "Nested imageable" do
 
     scenario "Should not update image file title after choosing a file when a title is already defined" do
       click_link "Add image"
-      input_title = find(".image-fields input[name$='[title]']")
-      fill_in input_title[:id], with: "Title"
-      attach_file "Choose image", file_fixture("clippy.jpg")
 
-      if factory == :future_poll_question_option
-        expect(find("input[id$='_title']").value).to eq "Title"
-      else
-        expect(find("##{factory}_image_attributes_title").value).to eq "Title"
+      within ".image-fields" do
+        fill_in "Title", with: "Title"
+        attach_file "Choose image", file_fixture("clippy.jpg")
+
+        expect(page).to have_css "progress[value='100'].complete"
+        expect(page).to have_field "Title", with: "Title"
       end
     end
 
@@ -56,7 +55,7 @@ describe "Nested imageable" do
 
       attach_file "Choose image", file_fixture("clippy.jpg")
 
-      expect(page).to have_css(".loading-bar.complete")
+      expect(page).to have_css "progress[value='100'].complete"
       expect(cached_attachment_field.value).not_to be_empty
     end
 
@@ -66,15 +65,29 @@ describe "Nested imageable" do
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
 
       expect(cached_attachment_field.value).to be_empty
+
+      click_button submit_button_text
+
+      within "#nested-image .image-attachment" do
+        expect(page).to have_content "can't be blank"
+      end
+
+      within "#nested-image .image-fields" do
+        expect(page).to have_css "progress", visible: :hidden
+      end
     end
 
-    scenario "Should show image errors after invalid form submit" do
+    scenario "Shows image errors after invalid submit and restores add link on cancel" do
       click_link "Add image"
       click_button submit_button_text
 
       within "#nested-image .image-fields" do
         expect(page).to have_content("can't be blank", count: 2)
+        click_link "Cancel"
       end
+
+      expect(page).not_to have_content "Choose image"
+      expect(page).to have_link "Add image"
     end
 
     scenario "Render image preview after sending the form with validation errors" do

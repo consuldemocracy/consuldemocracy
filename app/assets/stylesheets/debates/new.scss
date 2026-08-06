@@ -2,7 +2,7 @@
   @extend %public-form-header;
 
   h1 {
-    @include has-fa-icon(comment-alt, regular, after);
+    @include has-fa-icon(message, regular, after);
   }
 
   aside {

@@ -112,15 +112,17 @@
         if ($("[data-legislation-open-phase]").data("legislation-open-phase") !== false) {
           App.LegislationAnnotatable.highlight("#7fff9a");
           $("#comments-box textarea").trigger("focus");
-          $("#new_legislation_annotation").on("ajax:complete", function(e, data) {
-            if (data.status === 200) {
+          $("#new_legislation_annotation").on("ajax:complete", function(e) {
+            var xhr = e.originalEvent.detail[0];
+            var responseJSON = JSON.parse(xhr.responseText);
+            if (xhr.status === 200) {
               App.LegislationAnnotatable.remove_highlight();
-              App.LegislationAnnotatable.app.annotations.runHook("annotationCreated", [data.responseJSON]);
+              App.LegislationAnnotatable.app.annotations.runHook("annotationCreated", [responseJSON]);
               $("#comments-box").html("").hide();
-              App.LegislationAnnotatable.loadAnnotationComments(annotation_url, data.responseJSON.id);
+              App.LegislationAnnotatable.loadAnnotationComments(annotation_url, responseJSON.id);
             } else {
               $(e.target).find("label").addClass("error");
-              $("<small class='error'>" + data.responseJSON[0] + "</small>").insertAfter($(e.target).find("textarea"));
+              $("<small class='error'>" + responseJSON[0] + "</small>").insertAfter($(e.target).find("textarea"));
             }
           });
         }

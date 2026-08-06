@@ -1,1 +1,3 @@
-<%= render Images::FieldsComponent.new(f, imageable: imageable, suggested_images_content: suggested_images_content) %>
+<%= render Images::FieldsComponent.new(f, imageable: imageable) do %>
+  <%= content %>
+<% end %>

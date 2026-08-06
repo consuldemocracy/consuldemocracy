@@ -15,7 +15,14 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
         id: dom_id(question),
         disabled: ("disabled" if disabled?),
         class: fieldset_class,
-        data: { max_votes: question.max_votes }
+        data: { max_votes: question.max_votes },
+        aria: {
+          labelledby: [
+            dom_id(question, :legend),
+            (dom_id(question, :help_text) if multiple_choice?),
+            (form.field_id(:"question_#{question.id}", :error) if error.present?)
+          ]
+        }
       )
     end
 
@@ -44,7 +51,8 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
     def multiple_choice_help_text
       tag.span(
         t("poll_questions.description.multiple", maximum: question.max_votes),
-        class: "help-text"
+        class: "help-text",
+        id: dom_id(question, :help_text)
       )
     end
 
@@ -74,5 +82,9 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
 
     def checked?(option)
       form.object.answers[question.id].find { |answer| answer.option_id == option.id }
+    end
+
+    def error
+      form.error_for(:"question_#{question.id}")
     end
 end

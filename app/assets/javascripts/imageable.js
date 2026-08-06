@@ -2,19 +2,19 @@
   "use strict";
   App.Imageable = {
     initialize: function() {
-      $(".js-image-attachment").each(function() {
+      $("#nested-image [type=file]").each(function() {
         App.Imageable.initializeDirectUploadInput(this);
       });
       $("#nested-image").on("cocoon:after-remove", function() {
         $("#new_image_link").removeClass("hide");
       });
       $("#nested-image").on("cocoon:before-insert", function() {
-        $(".js-image-attachment").closest(".image-fields").remove();
+        $("#nested-image [type=file]").closest(".image-fields").remove();
       });
       $("#nested-image").on("cocoon:after-insert", function(e, nested_image) {
         var input;
         $("#new_image_link").addClass("hide");
-        input = $(nested_image).find(".js-image-attachment");
+        input = $(nested_image).find("[type=file]");
         App.Imageable.initializeDirectUploadInput(input);
       });
       App.Imageable.initializeRemoveCachedImageLinks();
@@ -22,104 +22,11 @@
       App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
-      var inputData;
-      inputData = this.buildData([], input);
-      $(input).fileupload({
-        paramName: "attachment",
-        formData: null,
-        add: function(e, data) {
-          var upload_data;
-          upload_data = App.Imageable.buildData(data, e.target);
-          App.Imageable.clearProgressBar(upload_data);
-          App.Imageable.setProgressBar(upload_data, "uploading");
-          upload_data.submit();
-        },
-        change: function(e, data) {
-          data.files.forEach(function(file) {
-            App.Imageable.setFilename(inputData, file.name);
-          });
-        },
-        fail: function(e, data) {
-          $(data.cachedAttachmentField).val("");
-          App.Imageable.clearFilename(data);
-          App.Imageable.setProgressBar(data, "errors");
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.setInputErrors(data);
-          App.Imageable.clearPreview(data);
-          $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-          $(data.addAttachmentLabel).addClass("error");
-        },
-        done: function(e, data) {
-          var destroyAttachmentLink;
-          $(data.cachedAttachmentField).val(data.result.cached_attachment);
-          App.Imageable.setTitleFromFile(data, data.result.filename);
-          App.Imageable.setProgressBar(data, "complete");
-          App.Imageable.setFilename(data, data.result.filename);
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.setPreview(data);
-          destroyAttachmentLink = $(data.result.destroy_link);
-          $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-        },
-        progress: function(e, data) {
-          var progress;
-          progress = parseInt(data.loaded / data.total * 100, 10);
-          $(data.progressBar).find(".loading-bar").css("width", progress + "%");
-        }
+      App.Attachable.setupInput({
+        input: input,
+        attachmentContainer: ".image-attachment",
+        onError: App.Imageable.initializeDirectUploadInput
       });
-    },
-    buildData: function(data, input) {
-      var wrapper;
-      wrapper = $(input).closest(".direct-upload");
-      data.wrapper = wrapper;
-      data.progressBar = $(wrapper).find(".progress-bar-placeholder");
-      data.preview = $(wrapper).find(".image-preview");
-      data.errorContainer = $(wrapper).find(".attachment-errors");
-      data.fileNameContainer = $(wrapper).find("p.file-name");
-      data.destroyAttachmentLinkContainer = $(wrapper).find(".action-remove");
-      data.addAttachmentLabel = $(wrapper).find(".action-add label");
-      data.cachedAttachmentField = $(wrapper).find("input[name$='[cached_attachment]']");
-      data.titleField = $(wrapper).find("input[name$='[title]']");
-      $(wrapper).find(".progress-bar-placeholder").css("display", "block");
-      return data;
-    },
-    clearFilename: function(data) {
-      $(data.fileNameContainer).text("");
-    },
-    clearInputErrors: function(data) {
-      $(data.errorContainer).find("small.error").remove();
-    },
-    clearProgressBar: function(data) {
-      $(data.progressBar).find(".loading-bar").removeClass("complete errors uploading").css("width", "0px");
-    },
-    clearPreview: function(data) {
-      $(data.wrapper).find(".image-preview").remove();
-    },
-    setFilename: function(data, file_name) {
-      $(data.fileNameContainer).text(file_name);
-    },
-    setProgressBar: function(data, klass) {
-      $(data.progressBar).find(".loading-bar").addClass(klass);
-    },
-    setTitleFromFile: function(data, title) {
-      if ($(data.titleField).val() === "") {
-        $(data.titleField).val(title);
-      }
-    },
-    setInputErrors: function(data) {
-      var errors;
-      errors = "<small class='error'>" + data.jqXHR.responseJSON.errors + "</small>";
-      $(data.errorContainer).append(errors);
-    },
-    setPreview: function(data) {
-      var image_preview;
-      image_preview = "<div class='small-12 column text-center image-preview'>" +
-        "<figure><img src='" + data.result.attachment_url + "' class='cached-image'></figure></div>";
-      if ($(data.preview).length > 0) {
-        $(data.preview).replaceWith(image_preview);
-      } else {
-        $(image_preview).insertBefore($(data.wrapper).find(".attachment-actions"));
-        data.preview = $(data.wrapper).find(".image-preview");
-      }
     },
     initializeRemoveCachedImageLinks: function() {
       $("#nested-image").on("click", "a.remove-cached-attachment", function(event) {
@@ -154,47 +61,41 @@
         }
 
         dataString = App.Imageable.imageSuggestionsParams(form, resourceType);
-        var uploadData = App.Imageable.buildData([], button.closest(".image-fields.direct-upload"));
-        App.Imageable.clearInputErrors(uploadData);
         $.ajax({
           url: "/image_suggestions",
           type: "POST",
           data: dataString,
-          dataType: "script"
+          dataType: "text",
+          success: function(script) {
+            $.globalEval(script);
+          },
+          error: function() {
+            button.prop("disabled", false);
+            button.removeClass("is-loading");
+          }
         });
       });
     },
-    attachSuggestedImageSuccess: function(responseData) {
-      var data = App.Imageable.buildData([], this);
-      data.result = {
-        cached_attachment: responseData.cached_attachment,
-        filename: responseData.filename,
-        attachment_url: responseData.attachment_url,
-        destroy_link: responseData.destroy_link
-      };
-      $(data.cachedAttachmentField).val(data.result.cached_attachment);
-      App.Imageable.setTitleFromFile(data, data.result.filename);
-      App.Imageable.setFilename(data, data.result.filename);
-      App.Imageable.setPreview(data);
-      $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link);
+    attachSuggestedImage: function($fieldsContainer, response) {
+      App.Attachable.setNewContent($fieldsContainer, response);
       $("#new_image_link").addClass("hide");
-      App.Imageable.clearInputErrors(data);
-    },
-    attachSuggestedImageError: function(xhr) {
-      var data = App.Imageable.buildData([], this);
-      data.jqXHR = xhr;
-      App.Imageable.clearInputErrors(data);
-      App.Imageable.setInputErrors(data);
+      App.Imageable.initializeDirectUploadInput($fieldsContainer.find("[type=file]"));
+      $fieldsContainer.focus();
     },
     initializeAttachSuggestedImage: function() {
-      $("body").on("click", ".js-attach-suggested-image", function() {
-        var imageId, resourceType, resourceId, dataString, wrapper;
+      $("body").on("click", ".suggested-image-button", function() {
+        var imageId, resourceType, resourceId, dataString, $fieldsContainer, wrapper;
         imageId = $(this).data("image-id");
         wrapper = $(this).closest(".suggested-images-wrapper");
         resourceType = wrapper.data("resource-type");
         resourceId = wrapper.data("resource-id");
+        $fieldsContainer = $(this).closest(".nested-fields");
 
-        dataString = { resource_type: resourceType };
+        dataString = {
+          resource_type: resourceType,
+          title: $fieldsContainer.find("input[name$='[title]']").val()
+        };
+
         if (resourceId) {
           dataString.resource_id = resourceId;
         }
@@ -203,9 +104,16 @@
           type: "POST",
           data: dataString,
           dataType: "json",
-          context: $(this).closest(".image-fields.direct-upload"),
-          success: App.Imageable.attachSuggestedImageSuccess,
-          error: App.Imageable.attachSuggestedImageError
+          success: function(response) {
+            App.Imageable.attachSuggestedImage($fieldsContainer, response);
+          },
+          error: function(xhr) {
+            var response = xhr.responseJSON;
+
+            if (response && response.content) {
+              App.Imageable.attachSuggestedImage($fieldsContainer, response);
+            }
+          }
         });
       });
     },

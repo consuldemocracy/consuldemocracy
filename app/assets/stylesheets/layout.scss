@@ -148,7 +148,8 @@ button,
   }
 }
 
-.button.hollow.error {
+.button.hollow.error,
+.button.hollow.is-invalid-label {
   border-color: $alert-border;
   color: $color-alert;
 }
@@ -1876,7 +1877,7 @@ table {
     }
 
     &.score-negative {
-      @include has-fa-icon(times, solid);
+      @include has-fa-icon(xmark, solid);
       color: $color-alert;
     }
 

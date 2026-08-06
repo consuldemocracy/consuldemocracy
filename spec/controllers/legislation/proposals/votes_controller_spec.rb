@@ -29,6 +29,20 @@ describe Legislation::Proposals::VotesController do
       end.to change { proposal.reload.votes_for.size }.by(1)
     end
 
+    it "does not create two records with two simultaneous requests", :race_condition do
+      user = create(:user, :level_two)
+      sign_in user
+
+      2.times.map do
+        Thread.new do
+          post :create, xhr: true, params: vote_params
+        rescue AbstractController::DoubleRenderError
+        end
+      end.each(&:join)
+
+      expect(Vote.where(voter: user, votable: proposal).count).to eq 1
+    end
+
     it "does not allow voting if user is not level_two_or_three_verified" do
       sign_in create(:user)
 

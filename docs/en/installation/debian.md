@@ -1,4 +1,4 @@
-# Configuration for development and test environments (Debian GNU/Linux 12 - Bookworm)
+# Configuration for development and test environments (Debian GNU/Linux 13 - Trixie)
 
 ## Superuser
 
@@ -55,10 +55,10 @@ source ~/.bashrc
 
 ## CMake and pkg-config
 
-In order to compile some of the project dependencies, we need CMake and pkg-config:
+In order to compile some of the project dependencies, we need CMake, pkg-config and libzstd-dev:
 
 ```bash
-sudo apt install cmake pkg-config
+sudo apt install cmake pkg-config libzstd-dev
 ```
 
 ## Node.js version manager

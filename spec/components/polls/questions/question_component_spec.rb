@@ -49,6 +49,14 @@ describe Polls::Questions::QuestionComponent do
       expect(page).to have_field type: :radio, checked: false, count: 2
     end
 
+    it "does not render a help text for single-choice questions" do
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+      expect(page).not_to have_content "maximum"
+      expect(page).not_to have_css ".help-text"
+      expect(page.find("fieldset")["aria-labelledby"]).to eq page.find("legend")[:id]
+    end
+
     it "renders checkboxes for multiple-choice questions" do
       question = create(:poll_question_multiple, :abc, poll: poll)
 
@@ -61,6 +69,16 @@ describe Polls::Questions::QuestionComponent do
       expect(page).not_to have_field type: :checkbox, checked: true
     end
 
+    it "renders a help text for multiple-choice questions" do
+      question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+      legend_id = page.find("legend")[:id]
+      help_id = page.find(".help-text")[:id]
+      expect(page.find("fieldset")["aria-labelledby"]).to eq "#{legend_id} #{help_id}"
+    end
+
     it "selects the option when users have already voted" do
       create(:poll_answer, author: user, question: question, option: option_yes)
 
@@ -68,6 +86,23 @@ describe Polls::Questions::QuestionComponent do
 
       expect(page).to have_field "Yes", type: :radio, checked: true
       expect(page).to have_field "No", type: :radio, checked: false
+    end
+
+    context "question with errors" do
+      it "shows the errors and makes them accessible" do
+        question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+        web_vote.update(question.id.to_s => { option_id: question.question_options.map(&:id) })
+
+        render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+        legend_id = page.find("legend")[:id]
+        help_id = page.find(".help-text")[:id]
+        error_id = page.find("[id*=error]")[:id]
+        expect(page.find("fieldset")["aria-labelledby"]).to eq "#{legend_id} #{help_id} #{error_id}"
+        expect(page).to have_css "##{error_id}",
+                                 exact_text: "you've selected 3 answers, but the " \
+                                             "maximum you can select is 2"
+      end
     end
 
     context "Open-ended question" do

@@ -22,8 +22,8 @@ describe Admin::SiteCustomization::InformationTexts::FormComponent do
       render_inline Admin::SiteCustomization::InformationTexts::FormComponent.new([[content]])
 
       expect(page).to have_css "textarea[name^='contents[content_system.failure]']", count: 2, visible: :all
-      expect(page).to have_field "contents[content_system.failure]values[value_en]"
-      expect(page).to have_field "contents[content_system.failure]values[value_es]"
+      expect(page).to have_field "contents[content_system.failure][values][value_en]"
+      expect(page).to have_field "contents[content_system.failure][values][value_es]"
     end
   end
 end

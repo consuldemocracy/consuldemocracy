@@ -44,7 +44,7 @@ class Legislation::AnnotationsController < Legislation::BaseController
       if comment.save
         render json: @annotation.to_json
       else
-        render json: comment.errors.full_messages, status: :unprocessable_entity
+        render json: comment.errors.full_messages, status: :unprocessable_content
       end
     else
       @annotation = @draft_version.annotations.new(annotation_params)
@@ -52,7 +52,7 @@ class Legislation::AnnotationsController < Legislation::BaseController
       if @annotation.save
         render json: @annotation.to_json
       else
-        render json: @annotation.errors.full_messages, status: :unprocessable_entity
+        render json: @annotation.errors.full_messages, status: :unprocessable_content
       end
     end
   end

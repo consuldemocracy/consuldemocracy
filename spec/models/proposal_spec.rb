@@ -249,6 +249,16 @@ describe Proposal do
 
       expect { archived_proposal.register_vote(user, "yes") }.not_to change { proposal.reload.votes_for.size }
     end
+
+    it "does not create two votes when calling the method twice at the same time", :race_condition do
+      user = create(:user, :level_two)
+
+      2.times.map do
+        Thread.new { proposal.register_vote(user, "yes") }
+      end.each(&:join)
+
+      expect(Vote.where(voter: user, votable: proposal).count).to eq 1
+    end
   end
 
   describe "#cached_votes_up" do

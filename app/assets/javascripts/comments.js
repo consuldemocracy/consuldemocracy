@@ -19,13 +19,26 @@
       $(comment_id + "_reply .responses-count").html(responses_count_html);
     },
     display_error: function(field_with_errors, error_html) {
-      $(error_html).insertAfter($("" + field_with_errors));
+      var error_id = $(error_html).attr("id");
+
+      if ($("#" + error_id, $("body")).length) {
+        $("#" + error_id).replaceWith(error_html);
+      } else {
+        $(error_html).insertAfter($(field_with_errors));
+      }
+      $(field_with_errors).attr("aria-invalid", true);
+      $(field_with_errors).attr("aria-errormessage", error_id);
+      $(field_with_errors).focus();
     },
     reset_form: function(parent_selector) {
       var form_container;
 
       form_container = $(parent_selector + " .comment-form:first");
-      form_container.find("textarea").val("");
+      form_container.find("textarea")
+        .val("")
+        .removeAttr("aria-invalid")
+        .removeAttr("aria-errormessage");
+      form_container.find("[data-alert]").remove();
 
       if (parent_selector !== "") {
         form_container.hide();

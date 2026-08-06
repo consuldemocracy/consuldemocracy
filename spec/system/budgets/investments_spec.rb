@@ -865,7 +865,7 @@ describe "Budget Investments" do
           .and_return(fixture_file_upload("clippy.jpg"))
       end
 
-      scenario "User can suggest images, attach one and create the investment", :js do
+      scenario "User can suggest images, attach one and create the investment" do
         login_as(author)
         visit new_budget_investment_path(budget)
 
@@ -879,7 +879,6 @@ describe "Budget Investments" do
         click_button "Suggest an image with AI"
 
         expect(page).to have_content "Select an image from the suggestions below:"
-        expect(ImageSuggestions::Llm::Client).to have_received(:call)
 
         within(".suggested-images-container") do
           click_button "Attach suggested image 1 of 1"

@@ -31,7 +31,7 @@ footer {
     }
 
     &[rel~=external] {
-      @include has-fa-icon(external-link-alt, solid, after);
+      @include has-fa-icon(up-right-from-square, solid, after);
 
       &::after {
         font-size: 0.8em;

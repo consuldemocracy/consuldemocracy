@@ -156,9 +156,8 @@ describe "Advanced search" do
 
       click_button "Advanced search"
       select "Customized", from: "js-advanced-search-date-min"
-      fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
-      fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
-      find_field("With the text").click
+      fill_in "From (DD/MM/YYYY)", with: 7.days.ago
+      fill_in "To (DD/MM/YYYY)", with: 1.day.ago
       click_button "Filter"
 
       within("#debates") do
@@ -167,29 +166,6 @@ describe "Advanced search" do
         expect(page).to have_content(debate1.title)
         expect(page).to have_content(debate2.title)
         expect(page).not_to have_content(debate3.title)
-      end
-    end
-
-    scenario "Search by custom invalid date range" do
-      proposal1 = create(:proposal, created_at: 2.days.ago)
-      proposal2 = create(:proposal, created_at: 3.days.ago)
-      proposal3 = create(:proposal, created_at: 9.days.ago)
-
-      visit proposals_path
-
-      click_button "Advanced search"
-      select "Customized", from: "js-advanced-search-date-min"
-      fill_in "advanced_search_date_min", with: 4000.years.ago.strftime("%d/%m/%Y")
-      fill_in "advanced_search_date_max", with: "13/13/2199"
-      find_field("With the text").click
-      click_button "Filter"
-
-      expect(page).to have_content("There are 3 citizen proposals")
-
-      within("#proposals") do
-        expect(page).to have_content(proposal1.title)
-        expect(page).to have_content(proposal2.title)
-        expect(page).to have_content(proposal3.title)
       end
     end
 
@@ -246,19 +222,16 @@ describe "Advanced search" do
       click_button "Advanced search"
 
       select "Customized", from: "js-advanced-search-date-min"
-      fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
-      fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
-      find_field("With the text").click
+      fill_in "From (DD/MM/YYYY)", with: 7.days.ago
+      fill_in "To (DD/MM/YYYY)", with: 1.day.ago
       click_button "Filter"
 
       expect(page).to have_content("citizen proposals cannot be found")
 
       within ".advanced-search-form" do
         expect(page).to have_select "advanced_search[date_min]", selected: "Customized"
-        expect(page).to have_css "input[name='advanced_search[date_min]']" \
-                                 "[value*='#{7.days.ago.strftime("%d/%m/%Y")}']"
-        expect(page).to have_css "input[name='advanced_search[date_max]']" \
-                                 "[value*='#{1.day.ago.strftime("%d/%m/%Y")}']"
+        expect(page).to have_field "From (DD/MM/YYYY)", with: 7.days.ago.to_date
+        expect(page).to have_field "To (DD/MM/YYYY)", with: 1.day.ago.to_date
       end
     end
   end

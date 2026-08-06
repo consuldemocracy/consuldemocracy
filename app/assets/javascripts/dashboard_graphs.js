@@ -1,6 +1,4 @@
-//= require d3/d3
-//= require c3/c3
-//= require c3ext
+//= require billboard.js/dist/billboard.pkgd
 
 (function() {
   "use strict";
@@ -151,7 +149,7 @@
     colors[this.progressColumnValues[0]] = "#004a83";
     colors[this.successfulColumnValues[0]] = "#ff7f0e";
 
-    c3.generate({
+    bb.generate({
       bindto: "#" + this.targetId,
       data: {
         x: "x",

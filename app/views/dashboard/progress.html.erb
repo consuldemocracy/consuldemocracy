@@ -26,7 +26,7 @@
          data-proposal-graph-success-label="<%= t("dashboard.progress.success") %>"
          data-proposal-success="<%= Setting["votes_for_proposal_success"] %>"
          data-proposal-resources-url="<%= proposal_dashboard_resources_path(proposal, format: :json) %>"
-         class="c3 proposal-graph"></div>
+         class="proposal-graph"></div>
   </div>
 
   <%= javascript_include_tag "dashboard_graphs", "data-turbolinks-track" => "reload" %>

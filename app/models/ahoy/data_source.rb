@@ -1,7 +1,3 @@
-# This class combines multiple collections with shared keys into a
-# hash of collections compatible with C3.js charts
-#----------------------------------------------------------------------
-
 module Ahoy
   class DataSource
     def self.build(&block)

@@ -6,7 +6,7 @@ describe "Custom information texts", :admin do
     proposal_key = "proposals.index.section_footer.title"
 
     visit admin_site_customization_information_texts_path(tab: "debates")
-    fill_in "contents[content_#{debate_key}]values[value_en]", with: "Custom help with debates"
+    fill_in "contents[content_#{debate_key}][values][value_en]", with: "Custom help with debates"
     click_button "Save"
 
     expect(page).to have_content "Translation updated successfully"
@@ -15,7 +15,7 @@ describe "Custom information texts", :admin do
 
     expect(page).not_to have_content "Translation updated successfully"
 
-    fill_in "contents[content_#{proposal_key}]values[value_en]", with: "Custom help with proposals"
+    fill_in "contents[content_#{proposal_key}][values][value_en]", with: "Custom help with proposals"
     click_button "Save"
 
     expect(page).to have_content "Translation updated successfully"
@@ -46,7 +46,7 @@ describe "Custom information texts", :admin do
 
     expect(page).to have_content "Hi %{author}"
 
-    fill_in "contents[content_#{intro_key}]values[value_en]", with: "Custom hi to %{author}"
+    fill_in "contents[content_#{intro_key}][values][value_en]", with: "Custom hi to %{author}"
     click_button "Save"
 
     expect(page).to have_content "Translation updated successfully"

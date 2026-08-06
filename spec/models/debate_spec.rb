@@ -139,19 +139,25 @@ describe Debate do
     end
 
     it "is true for anonymous users if allowed anonymous votes" do
-      debate.update!(cached_anonymous_votes_total: 420, cached_votes_total: 1000)
+      debate.update!(cached_votes_total: 1000)
+      allow(debate).to receive(:total_anonymous_votes).and_return(420)
+
       user = create(:user)
       expect(debate.votable_by?(user)).to be true
     end
 
     it "is true for anonymous users if less than 100 votes" do
-      debate.update!(cached_anonymous_votes_total: 90, cached_votes_total: 92)
+      debate.update!(cached_votes_total: 92)
+      allow(debate).to receive(:total_anonymous_votes).and_return(90)
+
       user = create(:user)
       expect(debate.votable_by?(user)).to be true
     end
 
     it "is false for anonymous users if too many anonymous votes" do
-      debate.update!(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
+      debate.update!(cached_votes_total: 1000)
+      allow(debate).to receive(:total_anonymous_votes).and_return(520)
+
       user = create(:user)
       expect(debate.votable_by?(user)).to be false
     end
@@ -169,11 +175,6 @@ describe Debate do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
-
-      it "does not increase anonymous votes counter" do
-        user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
-        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
-      end
     end
 
     describe "from level three verified users" do
@@ -181,46 +182,71 @@ describe Debate do
         user = create(:user, verified_at: Time.current)
         expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
-
-      it "does not increase anonymous votes counter" do
-        user = create(:user, verified_at: Time.current)
-        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
-      end
     end
 
     describe "from anonymous users when anonymous votes are allowed" do
-      before { debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100) }
+      before do
+        debate.update!(cached_votes_total: 100)
+        allow(debate).to receive(:total_anonymous_votes).and_return(42)
+      end
 
       it "registers vote" do
         user = create(:user)
         expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
-
-      it "increases anonymous votes counter" do
-        user = create(:user)
-        expect { debate.register_vote(user, "yes") }.to change { debate.reload.total_anonymous_votes }.by(1)
-      end
     end
 
     describe "from anonymous users when there are too many anonymous votes" do
-      before { debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000) }
+      before do
+        debate.update!(cached_votes_total: 1000)
+        allow(debate).to receive(:total_anonymous_votes).and_return(520)
+      end
 
       it "does not register vote" do
         user = create(:user)
         expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.votes_for.size }
       end
+    end
 
-      it "does not increase anonymous votes counter" do
-        user = create(:user)
-        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
-      end
+    it "does not create two votes when calling the method twice at the same time", :race_condition do
+      debate.update!(cached_votes_total: 100)
+      user = create(:user)
+
+      2.times.map do
+        Thread.new { debate.register_vote(user, "yes") }
+      end.each(&:join)
+
+      expect(Vote.where(voter: user, votable: debate).count).to eq 1
+      expect(debate.reload.cached_votes_total).to eq 1
     end
   end
 
   describe "#anonymous_votes_ratio" do
     it "returns the percentage of anonymous votes of the total votes" do
-      debate = create(:debate, cached_anonymous_votes_total: 25, cached_votes_total: 100)
-      expect(debate.anonymous_votes_ratio).to eq(25.0)
+      debate = create(:debate)
+      2.times { create(:vote, votable: debate, voter: create(:user)) }
+      3.times { create(:vote, votable: debate, voter: create(:user, :level_two)) }
+
+      expect(debate.anonymous_votes_ratio).to eq 40.0
+    end
+
+    it "ignores votes in other debates" do
+      debate = create(:debate)
+
+      create(:vote, votable: debate, voter: create(:user, :level_two))
+      create(:vote, votable: create(:debate), voter: create(:user))
+
+      expect(debate.anonymous_votes_ratio).to eq 0.0
+    end
+
+    it "returns 0 when skipping verification" do
+      Setting["feature.user.skip_verification"] = true
+      debate = create(:debate)
+
+      create(:vote, votable: debate, voter: create(:user, :level_two))
+      create(:vote, votable: debate, voter: create(:user))
+
+      expect(debate.anonymous_votes_ratio).to eq 0.0
     end
   end
 

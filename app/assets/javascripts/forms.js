@@ -10,7 +10,8 @@
     },
     submitOnChange: function(selector) {
       $("body").on("change", selector, function() {
-        $(this).closest("form").submit();
+        var form = $(this).closest("form")[0];
+        form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
         return false;
       });
     },

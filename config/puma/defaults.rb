@@ -20,7 +20,7 @@ preload_app!
 
 plugin :tmp_restart
 
-on_restart do
+before_restart do
   puts "Refreshing Gemfile"
   ENV["BUNDLE_GEMFILE"] = ""
 end

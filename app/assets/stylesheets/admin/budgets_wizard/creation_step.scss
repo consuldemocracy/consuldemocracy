@@ -1,7 +1,7 @@
 .budget-creation-step {
 
   .add {
-    @include has-fa-icon(plus-square, solid);
+    @include has-fa-icon(square-plus, solid);
     @include regular-button;
 
     font-weight: bold;

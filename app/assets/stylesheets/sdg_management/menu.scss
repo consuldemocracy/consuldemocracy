@@ -1,7 +1,6 @@
 .sdg-content-menu {
 
   .goals-link::before {
-    @extend %font-icon;
     @extend %svg-icon;
     @extend %admin-menu-icon;
 
@@ -9,7 +8,7 @@
   }
 
   .homepage-link {
-    @include has-fa-icon(home, solid);
+    @include has-fa-icon(house, solid);
 
     &::before {
       @extend %admin-menu-icon;

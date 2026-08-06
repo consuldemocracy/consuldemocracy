@@ -11,7 +11,7 @@
   }
 
   .delete-comment {
-    @include has-fa-icon(trash-alt, regular);
+    @include has-fa-icon(trash-can, regular);
     cursor: pointer;
 
     &:not(:hover):not(:active) {

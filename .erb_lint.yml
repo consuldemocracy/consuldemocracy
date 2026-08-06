@@ -32,6 +32,7 @@ linters:
     exclude:
       - app/views/mailer/proposal_notification_digest.html.erb
       - app/views/**/*.js.erb
+      - app/views/**/*.json.erb
   NoJavascriptTagHelper:
     enabled: true
   ParserErrors:

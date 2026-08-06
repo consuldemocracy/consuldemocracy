@@ -26,7 +26,7 @@ resources :proposals do
     end
   end
 
-  resources :polls, only: [:show, :results], controller: "polls" do
+  resources :polls, only: [:show], controller: "polls" do
     member do
       get :results
     end

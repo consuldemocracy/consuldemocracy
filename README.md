@@ -25,12 +25,18 @@ Check the [ongoing documentation](https://docs.consuldemocracy.org/index) to lea
 
 You can access the main website of the project at [http://consuldemocracy.org](http://consuldemocracy.org) where you can find information about the use of the platform, the CONSUL DEMOCRACY Foundation, the global community of users and local partners, news, and ways to get more support or get in touch.
 
+## Support the Project
+
+If you use Consul Democracy, share our mission and values, or just want to help us continue doing free open-source work, please consider supporting us!
+
+**[Support Consul Democracy](https://opencollective.com/consuldemocracy)**
+
 ## Configuration for development and test environments
 
 **NOTE**:
 The installation process will vary depending on your operating system. Please make sure to follow the [Local Installation Guide](docs/en/installation/local_installation.md) appropriate for your OS.
 
-Prerequisites: install git, Ruby 3.3.11, CMake, pkg-config, Node.js 20.20.2, ImageMagick and PostgreSQL (>=13).
+Prerequisites: install git, Ruby 3.4.9, CMake, pkg-config, Node.js 22.22.3, ImageMagick and PostgreSQL (>=13).
 
 **Note**: The `bin/setup` command below might fail if you've configured a username and password for PostgreSQL. If that's the case, edit the lines containing `username:` and `password:` (adding your credentials) in the `config/database.yml` file and run `bin/setup` again.
 

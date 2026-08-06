@@ -9,7 +9,7 @@
     <%= label_tag :select_language, t("shared.translations.current_language") %>
     <%= select_tag :select_language,
                    options_for_select_language,
-                   class: "js-select-language" %>
+                   select_language_html_options %>
     <%= select_language_error %>
     <div class="margin-bottom">
       <% if manage_languages %>
