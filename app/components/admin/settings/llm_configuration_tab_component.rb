@@ -43,7 +43,33 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
     !::Llm::Config.configured? || Tenant.current_secrets.pexels_access_key.blank?
   end
 
-  def sensemaker_disabled?
-    !::Llm::Config.configured? || Tenant.current_secrets.sensemaker_data_folder.blank?
+  def sensemaker_provider_options
+    current = Setting["llm.sensemaker_provider"]
+    available = sensemaker_providers
+    options_values = available.keys.map { |key| [key.to_s, key.to_s] }
+    disabled_values = available.reject { |_key, value| value[:enabled] }.keys
+
+    options_for_select(options_values, selected: current, disabled: disabled_values)
   end
+
+  def sensemaker_model_options
+    provider = Setting["llm.sensemaker_provider"]
+    current = Setting["llm.sensemaker_model"]
+
+    options_for_select(Llm::Config.sensemaker_models_for(provider), selected: current)
+  end
+
+  def sensemaker_model_disabled?
+    Setting["llm.sensemaker_provider"].blank?
+  end
+
+  def sensemaker_disabled?
+    !::Llm::Config.sensemaker_model_available? || Tenant.current_secrets.sensemaker_data_folder.blank?
+  end
+
+  private
+
+    def sensemaker_providers
+      Llm::Config.sensemaker_supported_providers
+    end
 end

@@ -1360,6 +1360,8 @@ es:
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
+      llm_content_features_name: Funcionalidades de contenido
+      llm_sensemaker_features_name: Funcionalidades de Sensemaker
       setting: Funcionalidad
       setting_name: Configuración
       setting_value: Valor

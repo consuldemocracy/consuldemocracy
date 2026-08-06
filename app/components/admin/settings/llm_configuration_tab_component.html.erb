@@ -1,9 +1,14 @@
 <h2><%= t("admin.settings.index.llm.title") %></h2>
 
-<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+<%= render Admin::Settings::TableComponent.new(setting_name: "llm_content_features_name") do %>
   <%= render Admin::Settings::RowComponent.new("llm.provider", type: :dropdown, tab: tab, options: provider_options) %>
   <%= render Admin::Settings::RowComponent.new("llm.model", type: :dropdown, tab: tab, options: model_options, disabled: model_disabled?) %>
   <%= render Admin::Settings::RowComponent.new("llm.use_llm_for_translations", type: :feature, tab: tab, disabled: feature_disabled?) %>
   <%= render Admin::Settings::RowComponent.new("llm.use_ai_image_suggestions", type: :feature, tab: tab, disabled: image_suggestions_disabled?) %>
+<% end %>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "llm_sensemaker_features_name") do %>
+  <%= render Admin::Settings::RowComponent.new("llm.sensemaker_provider", type: :dropdown, tab: tab, options: sensemaker_provider_options) %>
+  <%= render Admin::Settings::RowComponent.new("llm.sensemaker_model", type: :dropdown, tab: tab, options: sensemaker_model_options, disabled: sensemaker_model_disabled?) %>
   <%= render Admin::Settings::RowComponent.new("llm.use_sensemaker", type: :feature, tab: tab, disabled: sensemaker_disabled?) %>
 <% end %>
