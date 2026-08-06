@@ -750,7 +750,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    savon (2.17.2)
+    savon (2.17.4)
       akami (~> 1.2)
       builder (>= 2.1.2)
       gyoku (~> 1.2)
@@ -966,7 +966,7 @@ DEPENDENCIES
   rvm1-capistrano3 (~> 1.4.0)
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)
-  savon (~> 2.17.2)
+  savon (~> 2.17.4)
   selenium-webdriver (~> 4.43.0)
   simplecov (~> 0.22.0)
   simplecov-lcov (~> 0.9.0)
