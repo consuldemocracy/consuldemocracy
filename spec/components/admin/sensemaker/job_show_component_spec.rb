@@ -10,8 +10,9 @@ describe Admin::Sensemaker::JobShowComponent do
   let(:component) { Admin::Sensemaker::JobShowComponent.new(sensemaker_job, child_jobs) }
 
   before do
-    Setting["llm.provider"] = "OpenAI"
-    Setting["llm.model"] = "gpt-4o"
+    stub_secrets(llm: { openai_api_key: "1234" })
+    Setting["llm.sensemaker_provider"] = "OpenAI"
+    Setting["llm.sensemaker_model"] = "gpt-4o"
     Setting["llm.use_sensemaker"] = true
   end
 

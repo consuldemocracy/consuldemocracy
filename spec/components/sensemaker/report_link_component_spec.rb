@@ -7,8 +7,9 @@ describe Sensemaker::ReportLinkComponent do
   let(:component) { Sensemaker::ReportLinkComponent.new(debate) }
 
   before do
-    Setting["llm.provider"] = "OpenAI"
-    Setting["llm.model"] = "gpt-4o"
+    stub_secrets(llm: { openai_api_key: "1234" })
+    Setting["llm.sensemaker_provider"] = "OpenAI"
+    Setting["llm.sensemaker_model"] = "gpt-4o"
     Setting["llm.use_sensemaker"] = true
   end
 
