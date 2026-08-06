@@ -16,7 +16,12 @@ describe ConsulFormBuilder do
   end
 
   let(:model) { DummyModel.new(title: "Dummy title", terms_of_service: "1") }
-  let(:builder) { ConsulFormBuilder.new(:dummy, model, ApplicationController.new.view_context, {}) }
+  let(:controller) do
+    ApplicationController.new.tap do |controller|
+      controller.request = ActionDispatch::TestRequest.create
+    end
+  end
+  let(:builder) { ConsulFormBuilder.new(:dummy, model, controller.view_context, {}) }
 
   describe "label" do
     it "accepts links that open in a new window in its content" do
@@ -145,6 +150,46 @@ describe ConsulFormBuilder do
         expect(page).not_to have_css "#dummy_terms_of_service_error"
         expect(page).not_to have_content "must be accepted"
       end
+    end
+  end
+
+  describe "#text_area" do
+    before do
+      Setting["llm.use_llm_speech_to_text"] = true
+      Setting["llm.speech_to_text_provider"] = "OpenAI"
+      Setting["llm.speech_to_text_model"] = "whisper-1"
+      stub_secrets(llm: { openai_api_key: "1234" })
+    end
+
+    it "adds speech-to-text data attributes to html-area textareas when enabled" do
+      render builder.text_area(:title, class: "html-area")
+
+      expect(page).to have_css "textarea.html-area[data-speech-to-text-enabled='true']"
+      expect(page).to have_css "textarea[data-speech-to-text-label-idle='Dictate']"
+      expect(page).to have_css "textarea[data-speech-to-text-endpoint]"
+    end
+
+    it "does not add speech-to-text data attributes to admin html-area textareas" do
+      render builder.text_area(:title, class: "html-area admin")
+
+      expect(page).to have_css "textarea.html-area.admin"
+      expect(page).not_to have_css "textarea[data-speech-to-text-enabled]"
+    end
+
+    it "does not add speech-to-text data attributes to regular textareas" do
+      render builder.text_area(:title)
+
+      expect(page).to have_css "textarea"
+      expect(page).not_to have_css "textarea[data-speech-to-text-enabled]"
+    end
+
+    it "does not add speech-to-text data attributes when speech-to-text is disabled" do
+      Setting["llm.use_llm_speech_to_text"] = nil
+
+      render builder.text_area(:title, class: "html-area")
+
+      expect(page).to have_css "textarea.html-area"
+      expect(page).not_to have_css "textarea[data-speech-to-text-enabled]"
     end
   end
 

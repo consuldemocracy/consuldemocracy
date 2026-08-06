@@ -898,6 +898,65 @@ describe "Budget Investments" do
         expect(page).to have_css "img[alt*='Test Photographer']"
       end
     end
+
+    context "Speech to text", :js do
+      before do
+        Setting["llm.use_llm_speech_to_text"] = true
+        Setting["llm.speech_to_text_provider"] = "OpenAI"
+        Setting["llm.speech_to_text_model"] = "whisper-1"
+        stub_secrets(llm: { openai_api_key: "1234" })
+        allow(SpeechToText::Llm::Client).to receive(:call).and_return(
+          SpeechToText::Llm::Client::Response.new("Dictated text from audio")
+        )
+      end
+
+      scenario "Dictates text and inserts it in the description editor" do
+        login_as(author)
+        visit new_budget_investment_path(budget)
+
+        execute_script(<<~JS)
+          Object.defineProperty(window, "MediaRecorder", {
+            configurable: true,
+            writable: true,
+            value: function(stream, options) {
+              this.stream = stream;
+              this.options = options;
+              this.state = "inactive";
+            }
+          });
+          MediaRecorder.isTypeSupported = function() { return true; };
+          MediaRecorder.prototype.start = function() { this.state = "recording"; };
+          MediaRecorder.prototype.stop = function() {
+            this.state = "inactive";
+            if (this.ondataavailable) {
+              this.ondataavailable({ data: new Blob(["fake-audio"], { type: "audio/webm" }) });
+            }
+            if (this.onstop) { this.onstop(); }
+          };
+          Object.defineProperty(navigator, "mediaDevices", {
+            configurable: true,
+            value: {
+              getUserMedia: function() {
+                return Promise.resolve({ getTracks: function() { return [{ stop: function() {} }]; } });
+              }
+            }
+          });
+        JS
+
+        expect(page).to have_css(".cke_button__speechtotext")
+
+        find(".cke_button__speechtotext").click
+        expect(page).to have_css(".cke_chrome.speech-to-text-recording")
+
+        find(".cke_button__speechtotext").click
+        expect(page).to have_field(
+          type: "textarea",
+          with: /Dictated text from audio/,
+          visible: :hidden
+        )
+        expect(page).not_to have_field(type: "textarea", with: /cke_bm_/, visible: :hidden)
+      end
+    end
   end
 
   scenario "Show" do

@@ -46,6 +46,7 @@ Rails.application.routes.draw do
         post :attach
       end
     end
+    resource :speech_to_text, only: [:create], controller: "speech_to_text"
     resources :documents, only: [:destroy]
     resources :follows, only: [:create, :destroy]
     resources :remote_translations, only: [:create]

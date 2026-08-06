@@ -1,0 +1,15 @@
+es:
+  speech_to_text:
+    button:
+      idle: "Dictar"
+      recording: "Detener dictado"
+      loading: "Transcribiendo..."
+      microphone_blocked: "Se requiere acceso al micrófono."
+      unsupported_browser: "Tu navegador no admite grabación de audio."
+    errors:
+      audio_required: "No se ha enviado audio."
+      invalid_audio_type: "Tipo de archivo de audio no válido."
+      audio_too_large: "El archivo de audio es demasiado grande."
+      rate_limit_exceeded: "Espera unos minutos antes de volver a dictar."
+      llm_not_configured: "El dictado por voz no está configurado. Contacta con un administrador."
+      transcription_failed: "La transcripción ha fallado. Inténtalo de nuevo."

@@ -101,5 +101,9 @@ CKEDITOR.editorConfig = function( config )
     { name: "insert", items: [ "Image", "Table" ] }
   ]);
 
+  config.toolbar_mini_speech = config.toolbar_mini.concat([
+    { name: "speech", items: [ "SpeechToText" ] }
+  ]);
+
   config.toolbar = "mini";
 };
