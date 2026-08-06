@@ -437,6 +437,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_28_143353) do
     t.integer "confidence_score", default: 0, null: false
     t.boolean "valuation", default: false
     t.tsvector "tsv"
+    t.jsonb "ai_moderation_meta", default: {}
     t.index ["ancestry"], name: "index_comments_on_ancestry"
     t.index ["cached_votes_down"], name: "index_comments_on_cached_votes_down"
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
