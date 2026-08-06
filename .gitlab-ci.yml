@@ -1,5 +1,6 @@
 stages:
   - test
+  - assets
   - lint
 
 tests:
@@ -32,6 +33,21 @@ tests:
     when: on_failure
     paths:
       - tmp/screenshots/
+
+production_assets:
+  image: "ruby:3.4.9"
+  stage: assets
+  needs: []
+  cache:
+    key: consul
+    paths:
+      - vendor/
+  script:
+    - apt-get update && apt-get install -y nodejs npm
+    - for i in config/*.example; do cp "$i" "${i/.example}"; done
+    - bundle --without development test
+    - npm clean-install
+    - RAILS_ENV=production SECRET_KEY_BASE=precompile_dummy_key_for_ci_only bundle exec rake assets:precompile > /dev/null 2>&1
 
 # To make this job work, create a Personal Access Token with permissions
 # to comment on your repository and add a variable named
