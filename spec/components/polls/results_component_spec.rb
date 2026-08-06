@@ -24,12 +24,12 @@ describe Polls::ResultsComponent do
 
     expect(page).to have_content "Do you like Consul Democracy?"
     expect(page).to have_table "question_#{question_1.id}_results_table",
-                               with_rows: [{ "Most voted answer: Yes" => "2 (66.67%)",
+                               with_cols: [{ "Most voted answer: Yes" => "2 (66.67%)",
                                              "No" => "1 (33.33%)" }]
 
     expect(page).to have_content "Which option do you prefer?"
     expect(page).to have_table "question_#{question_2.id}_results_table",
-                               with_rows: [{ "Most voted answer: Answer A" => "1 (33.33%)",
+                               with_cols: [{ "Most voted answer: Answer A" => "1 (33.33%)",
                                              "Answer B" => "1 (33.33%)",
                                              "Answer C" => "1 (33.33%)" }]
   end

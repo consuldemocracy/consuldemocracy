@@ -12,7 +12,7 @@ describe Polls::Results::QuestionComponent do
 
       render_inline Polls::Results::QuestionComponent.new(question)
 
-      expect(page).to have_table with_rows: [{ "Most voted answer: Yes" => "1 (50%)",
+      expect(page).to have_table with_cols: [{ "Most voted answer: Yes" => "1 (50%)",
                                                "No" => "1 (50%)" }]
 
       page.find("table") do |table|
@@ -28,7 +28,7 @@ describe Polls::Results::QuestionComponent do
     it "renders open_ended headers and empty counts when there are no participants" do
       render_inline Polls::Results::QuestionComponent.new(open_ended_question)
 
-      expect(page).to have_table with_rows: [{ "Valid" => "0 (0%)",
+      expect(page).to have_table with_cols: [{ "Valid" => "0 (0%)",
                                                "Blank" => "0 (0%)" }]
     end
 
@@ -40,7 +40,7 @@ describe Polls::Results::QuestionComponent do
 
       render_inline Polls::Results::QuestionComponent.new(open_ended_question)
 
-      expect(page).to have_table with_rows: [{ "Valid" => "3 (75%)",
+      expect(page).to have_table with_cols: [{ "Valid" => "3 (75%)",
                                                "Blank" => "1 (25%)" }]
     end
   end
