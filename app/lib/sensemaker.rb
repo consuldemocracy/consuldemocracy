@@ -1,5 +1,5 @@
 module Sensemaker
   def self.enabled?
-    ::Llm::Config.configured? && Setting["llm.use_sensemaker"].present?
+    Setting["llm.use_sensemaker"].present? && ::Llm::Config.sensemaker_model_available?
   end
 end

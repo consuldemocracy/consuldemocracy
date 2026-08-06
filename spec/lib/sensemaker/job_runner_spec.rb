@@ -90,8 +90,8 @@ describe Sensemaker::JobRunner do
       allow(File).to receive(:exist?).and_return(true)
       allow(Llm::Config).to receive(:context).and_return(llm_context)
       allow(Setting).to receive(:[]).and_call_original
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("VertexAI")
-      allow(Setting).to receive(:[]).with("llm.model").and_return("gemini-2.5-flash-lite")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("VertexAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_model").and_return("gemini-2.5-flash-lite")
     end
 
     it "returns true when all dependencies are available" do
@@ -109,11 +109,11 @@ describe Sensemaker::JobRunner do
         "Vertex AI is not configured"
       ],
       "LLM provider is unsupported" => [
-        -> { allow(Setting).to receive(:[]).with("llm.provider").and_return("Unsupported") },
+        -> { allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("Unsupported") },
         "Sensemaker LLM provider is not supported"
       ],
       "LLM model is not selected" => [
-        -> { allow(Setting).to receive(:[]).with("llm.model").and_return(nil) },
+        -> { allow(Setting).to receive(:[]).with("llm.sensemaker_model").and_return(nil) },
         "Sensemaker requires an LLM model to be selected"
       ],
       "Node.js is not available" => [
@@ -173,7 +173,7 @@ describe Sensemaker::JobRunner do
     end
 
     it "returns true for OpenAI-compatible provider with API key" do
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
       allow(llm_config).to receive(:openai_api_key).and_return("tenant-openai-key")
 
       result = service.send(:check_dependencies?)
@@ -181,7 +181,7 @@ describe Sensemaker::JobRunner do
     end
 
     it "returns false for OpenAI-compatible provider without API key" do
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
       allow(llm_config).to receive(:openai_api_key).and_return(nil)
 
       result = service.send(:check_dependencies?)
@@ -197,8 +197,8 @@ describe Sensemaker::JobRunner do
     before do
       allow(File).to receive(:exist?).and_return(true)
       allow(Setting).to receive(:[]).and_call_original
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("VertexAI")
-      allow(Setting).to receive(:[]).with("llm.model").and_return("gemini-2.5-flash-lite")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("VertexAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_model").and_return("gemini-2.5-flash-lite")
     end
 
     it "returns value when the script executes successfully" do
@@ -269,8 +269,8 @@ describe Sensemaker::JobRunner do
     before do
       allow(Llm::Config).to receive(:context).and_return(llm_context)
       allow(Setting).to receive(:[]).and_call_original
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("VertexAI")
-      allow(Setting).to receive(:[]).with("llm.model").and_return("gemini-2.5-flash-lite")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("VertexAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_model").and_return("gemini-2.5-flash-lite")
     end
 
     shared_examples "runner command with common flags" do |script_name, use_output_file_flag: true|
@@ -299,7 +299,7 @@ describe Sensemaker::JobRunner do
     it_behaves_like "runner command with common flags", "runner.ts", use_output_file_flag: false
 
     it "returns the correct command for OpenAI-compatible providers" do
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
 
       command = service.build_command
       expect(command).to include("--adapter openai-compatible")
@@ -311,7 +311,7 @@ describe Sensemaker::JobRunner do
     end
 
     it "omits baseUrl for OpenAI-compatible providers when not configured" do
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
       allow(llm_config).to receive(:openai_api_base).and_return(nil)
 
       command = service.build_command
@@ -319,7 +319,7 @@ describe Sensemaker::JobRunner do
     end
 
     it "returns the correct command for ollama provider" do
-      allow(Setting).to receive(:[]).with("llm.provider").and_return("ollama")
+      allow(Setting).to receive(:[]).with("llm.sensemaker_provider").and_return("ollama")
 
       command = service.build_command
       expect(command).to include("--adapter ollama")

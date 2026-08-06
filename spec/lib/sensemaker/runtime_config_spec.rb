@@ -25,8 +25,8 @@ describe Sensemaker::RuntimeConfig do
 
   describe "#provider and #model" do
     it "normalizes provider and returns selected model" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return(" OpenAI ")
-      allow(setting).to receive(:[]).with("llm.model").and_return("gpt-4.1-mini")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return(" OpenAI ")
+      allow(setting).to receive(:[]).with("llm.sensemaker_model").and_return("gpt-4.1-mini")
 
       expect(runtime_config.provider).to eq("openai")
       expect(runtime_config.model).to eq("gpt-4.1-mini")
@@ -35,22 +35,22 @@ describe Sensemaker::RuntimeConfig do
 
   describe "#adapter" do
     it "maps vertex provider to vertex adapter" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("VertexAI")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("VertexAI")
       expect(runtime_config.adapter).to eq("vertex")
     end
 
     it "maps openai provider to openai-compatible adapter" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
       expect(runtime_config.adapter).to eq("openai-compatible")
     end
 
     it "maps ollama provider to ollama adapter" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("ollama")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("ollama")
       expect(runtime_config.adapter).to eq("ollama")
     end
 
     it "returns nil for unsupported provider" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("unsupported")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("unsupported")
       expect(runtime_config.adapter).to be(nil)
       expect(runtime_config.supported?).to be(false)
     end
@@ -58,7 +58,7 @@ describe Sensemaker::RuntimeConfig do
 
   describe "#compat_provider, #api_key and #base_url" do
     it "resolves openai-compatible provider settings" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
 
       expect(runtime_config.compat_provider).to eq("openai")
       expect(runtime_config.api_key).to eq("openai-secret")
@@ -66,7 +66,7 @@ describe Sensemaker::RuntimeConfig do
     end
 
     it "resolves openrouter provider settings" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("OpenRouter")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenRouter")
 
       expect(runtime_config.adapter).to eq("openai-compatible")
       expect(runtime_config.compat_provider).to eq("openrouter")
@@ -75,7 +75,7 @@ describe Sensemaker::RuntimeConfig do
     end
 
     it "resolves ollama base url" do
-      allow(setting).to receive(:[]).with("llm.provider").and_return("ollama")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("ollama")
 
       expect(runtime_config.compat_provider).to be(nil)
       expect(runtime_config.api_key).to be(nil)
@@ -86,7 +86,7 @@ describe Sensemaker::RuntimeConfig do
       limited_config = double("LLM config", vertexai_project_id: "proj", vertexai_location: nil)
       limited_context = double("LLM context", config: limited_config)
       cfg = Sensemaker::RuntimeConfig.new(setting: setting, llm_context: limited_context)
-      allow(setting).to receive(:[]).with("llm.provider").and_return("OpenAI")
+      allow(setting).to receive(:[]).with("llm.sensemaker_provider").and_return("OpenAI")
 
       expect(cfg.api_key).to be(nil)
       expect(cfg.base_url).to be(nil)

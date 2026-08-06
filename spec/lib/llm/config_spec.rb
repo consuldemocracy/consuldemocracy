@@ -59,6 +59,76 @@ describe Llm::Config do
     end
   end
 
+  describe ".sensemaker_adapter_for" do
+    it "maps supported providers" do
+      expect(Llm::Config.sensemaker_adapter_for("VertexAI")).to eq("vertex")
+      expect(Llm::Config.sensemaker_adapter_for("OpenAI")).to eq("openai-compatible")
+      expect(Llm::Config.sensemaker_adapter_for("OpenRouter")).to eq("openai-compatible")
+      expect(Llm::Config.sensemaker_adapter_for("Mistral")).to eq("openai-compatible")
+      expect(Llm::Config.sensemaker_adapter_for("Ollama")).to eq("ollama")
+    end
+
+    it "returns nil for unsupported providers" do
+      expect(Llm::Config.sensemaker_adapter_for("Anthropic")).to be_nil
+      expect(Llm::Config.sensemaker_adapter_for("Gemini")).to be_nil
+    end
+  end
+
+  describe ".sensemaker_supported_providers" do
+    it "includes only providers with a Sensemaker adapter" do
+      stub_secrets(llm: { openai_api_key: "1234" })
+
+      supported = Llm::Config.sensemaker_supported_providers
+
+      expect(supported.keys).to include(:OpenAI)
+      expect(supported.keys).not_to include(:Anthropic)
+    end
+  end
+
+  describe ".sensemaker_model_available?" do
+    before do
+      Setting["llm.sensemaker_provider"] = "OpenAI"
+      Setting["llm.sensemaker_model"] = "gpt-4o"
+      stub_secrets(llm: { openai_api_key: "1234" })
+    end
+
+    it "returns true when the Sensemaker provider is credentialed and model is set" do
+      expect(Llm::Config.sensemaker_model_available?).to be true
+    end
+
+    it "does not require the content LLM provider or model" do
+      Setting["llm.provider"] = nil
+      Setting["llm.model"] = nil
+
+      expect(Llm::Config.sensemaker_model_available?).to be true
+    end
+
+    it "returns false when the model is missing" do
+      Setting["llm.sensemaker_model"] = nil
+
+      expect(Llm::Config.sensemaker_model_available?).to be false
+    end
+
+    it "returns false when the provider setting is missing" do
+      Setting["llm.sensemaker_provider"] = nil
+
+      expect(Llm::Config.sensemaker_model_available?).to be false
+    end
+
+    it "returns false when the provider credentials are not configured" do
+      stub_secrets(llm: { gemini_api_key: "1234" })
+
+      expect(Llm::Config.sensemaker_model_available?).to be false
+    end
+
+    it "returns false for unsupported providers" do
+      Setting["llm.sensemaker_provider"] = "Anthropic"
+      stub_secrets(llm: { anthropic_api_key: "1234" })
+
+      expect(Llm::Config.sensemaker_model_available?).to be false
+    end
+  end
+
   describe "evaluates provider configuration across different tenants" do
     before do
       stub_secrets(

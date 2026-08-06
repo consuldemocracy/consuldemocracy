@@ -261,7 +261,8 @@ module Sensemaker
         end
 
         if runtime_config.model.blank?
-          message = "Sensemaker requires an LLM model to be selected. Set it in Admin → Settings → LLM."
+          message = "Sensemaker requires an LLM model to be selected. " \
+                    "Set Sensemaker provider and model in Admin → Settings → LLM."
           job.update!(finished_at: Time.current, error: message)
           Rails.logger.error(message)
           return false

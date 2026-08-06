@@ -8,22 +8,15 @@ module Sensemaker
     end
 
     def provider
-      setting["llm.provider"].to_s.downcase.strip
+      setting["llm.sensemaker_provider"].to_s.downcase.strip
     end
 
     def model
-      setting["llm.model"].to_s.presence
+      setting["llm.sensemaker_model"].to_s.presence
     end
 
     def adapter
-      case provider
-      when /vertex/
-        "vertex"
-      when /ollama/
-        "ollama"
-      when /openai/, /openrouter/, /mistral/
-        "openai-compatible"
-      end
+      Llm::Config.sensemaker_adapter_for(provider)
     end
 
     def compat_provider
