@@ -2,6 +2,15 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.6.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.6.0) (2026-xx-xx)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.5.1...2.6.0)
+
+### Added
+### Changed
+### Fixed
+### Removed
+
 ## [2.5.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.5.1) (2026-06-04)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.5.0...2.5.1)
