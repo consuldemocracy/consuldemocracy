@@ -1365,6 +1365,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_24_162530) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.boolean "advanced_stats"
+    t.boolean "sensemaking", default: false
     t.index ["process_type", "process_id"], name: "index_reports_on_process_type_and_process_id"
   end
 
