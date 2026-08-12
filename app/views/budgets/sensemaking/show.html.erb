@@ -1,0 +1,34 @@
+<% provide :title, t("budgets.sensemaking.page_title", budget: @budget.name) %>
+<% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+             social_url: budget_sensemaking_url(@budget),
+             social_title: @budget.name,
+             social_description: @budget.description_for_phase("finished") %>
+<% end %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_sensemaking_url(@budget) %>
+<% end %>
+
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to budget_path(@budget) %>
+        <h2 class="margin-top">
+          <%= t("budgets.sensemaking.heading") %><br>
+          <span><%= @budget.name %></span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "budgets/subnav", budget: @budget %>
+
+<div class="row">
+  <div class="small-12 column">
+    <%= render Sensemaker::BudgetJobIndexComponent.new(jobs: @sensemaker_jobs, budget: @budget) %>
+  </div>
+</div>
