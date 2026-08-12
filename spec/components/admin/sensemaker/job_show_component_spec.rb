@@ -39,6 +39,12 @@ describe Admin::Sensemaker::JobShowComponent do
       expect(page).to have_content("Sensemaker Job ##{sensemaker_job.id}")
     end
 
+    it "does not render the public reports link when the job is not publishable" do
+      render_inline(component)
+
+      expect(page).not_to have_link(I18n.t("admin.sensemaker.job_show.public_reports_link"))
+    end
+
     context "when job can be downloaded" do
       let(:input_path) do
         File.join(Sensemaker::Paths.job_directory(sensemaker_job), "input.csv")
@@ -73,6 +79,23 @@ describe Admin::Sensemaker::JobShowComponent do
           .to include(
             "artefact=#{CGI.escape("job-#{sensemaker_job.id}/#{File.basename(artefact_path)}")}"
           )
+      end
+    end
+
+    context "when job is publishable but unpublished" do
+      let(:sensemaker_job) do
+        create(:sensemaker_job, :publishable, user: user, analysable_type: "Debate",
+                                              analysable_id: debate.id, published: false)
+      end
+
+      before do
+        allow_any_instance_of(Sensemaker::JobArtefacts).to receive(:complete?).and_return(true)
+      end
+
+      it "renders the public reports link" do
+        render_inline(component)
+
+        expect(page).to have_link(I18n.t("admin.sensemaker.job_show.public_reports_link"))
       end
     end
 
@@ -116,6 +139,7 @@ describe Admin::Sensemaker::JobShowComponent do
       expect(component).to respond_to(:status_text)
       expect(component).to respond_to(:parent_job?)
       expect(component).to respond_to(:parent_job)
+      expect(component).to respond_to(:show_public_reports_link?)
     end
   end
 end
