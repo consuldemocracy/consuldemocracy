@@ -7,6 +7,7 @@ module Sensemaker
       "Proposal",
       "Poll",
       "Poll::Question",
+      "Legislation::Process",
       "Legislation::Question",
       "Legislation::Proposal",
       "Legislation::QuestionOption",
@@ -32,6 +33,11 @@ module Sensemaker
 
     scope :published, -> { where(published: true) }
     scope :unpublished, -> { where(published: false) }
+    scope :publishable_candidates, lambda {
+      where(script: Sensemaker::ScriptRegistry.publishable)
+        .where.not(finished_at: nil)
+        .where(error: nil)
+    }
 
     def artefacts
       @artefacts ||= Sensemaker::JobArtefacts.new(self)
@@ -104,25 +110,119 @@ module Sensemaker
       Rails.logger.error(message)
     end
 
-    def self.for_budget(budget)
-      group_subquery = budget.groups.select(:id)
-      published.where(analysable_type: "Budget", analysable_id: budget.id).or(
-        published.where(analysable_type: "Budget::Group", analysable_id: group_subquery)
+    def self.budget_related
+      where(analysable_type: "Budget").or(
+        where(analysable_type: "Budget::Group")
       )
     end
 
-    def self.for_process(process)
+    def self.for_budget_any_status(budget)
+      group_subquery = budget.groups.select(:id)
+      where(analysable_type: "Budget", analysable_id: budget.id).or(
+        where(analysable_type: "Budget::Group", analysable_id: group_subquery)
+      )
+    end
+
+    def self.for_budget(budget)
+      published.merge(for_budget_any_status(budget))
+    end
+
+    def self.process_related
+      where(analysable_type: "Legislation::Process").or(
+        where(analysable_type: "Legislation::Proposal").or(
+          where(analysable_type: "Legislation::Question").or(
+            where(analysable_type: "Legislation::QuestionOption")
+          )
+        )
+      )
+    end
+
+    def self.for_process_any_status(process)
       proposals_subquery = process.proposals.select(:id)
       questions_subquery = process.questions.select(:id)
       question_options_subquery = Legislation::QuestionOption
                                   .where(legislation_question_id: questions_subquery)
                                   .select(:id)
 
-      published
-        .where(analysable_type: "Legislation::Proposal", analysable_id: proposals_subquery)
-        .or(published.where(analysable_type: "Legislation::Question", analysable_id: questions_subquery))
-        .or(published.where(analysable_type: "Legislation::QuestionOption",
-                            analysable_id: question_options_subquery))
+      where(analysable_type: "Legislation::Process", analysable_id: process.id)
+        .or(where(analysable_type: "Legislation::Proposal", analysable_id: proposals_subquery))
+        .or(where(analysable_type: "Legislation::Question", analysable_id: questions_subquery))
+        .or(where(analysable_type: "Legislation::QuestionOption",
+                  analysable_id: question_options_subquery))
+    end
+
+    def self.for_process(process)
+      published.merge(for_process_any_status(process))
+    end
+
+    def self.poll_related
+      where(analysable_type: "Poll").or(
+        where(analysable_type: "Poll::Question")
+      )
+    end
+
+    def self.for_poll_any_status(poll)
+      questions_subquery = poll.questions.select(:id)
+      where(analysable_type: "Poll", analysable_id: poll.id).or(
+        where(analysable_type: "Poll::Question", analysable_id: questions_subquery)
+      )
+    end
+
+    def self.for_poll(poll)
+      published.merge(for_poll_any_status(poll))
+    end
+
+    def self.legislation_question_related
+      where(analysable_type: "Legislation::Question").or(
+        where(analysable_type: "Legislation::QuestionOption")
+      )
+    end
+
+    def self.for_legislation_question_any_status(question)
+      options_subquery = question.question_options.select(:id)
+      where(analysable_type: "Legislation::Question", analysable_id: question.id).or(
+        where(analysable_type: "Legislation::QuestionOption", analysable_id: options_subquery)
+      )
+    end
+
+    def self.for_legislation_question(question)
+      published.merge(for_legislation_question_any_status(question))
+    end
+
+    def self.for_analysable(record, published_only: true)
+      if record == Proposal
+        base = where(analysable_type: "Proposal", analysable_id: nil)
+        return published_only ? base.merge(published) : base
+      end
+
+      case record
+      when Budget
+        published_only ? for_budget(record) : for_budget_any_status(record)
+      when Legislation::Process
+        published_only ? for_process(record) : for_process_any_status(record)
+      when Poll
+        published_only ? for_poll(record) : for_poll_any_status(record)
+      when Legislation::Question
+        published_only ? for_legislation_question(record) : for_legislation_question_any_status(record)
+      else
+        base = where(analysable: record)
+        published_only ? base.merge(published) : base
+      end
+    end
+
+    def self.by_analysable_type(type)
+      case type
+      when "Budget"
+        budget_related
+      when "Legislation::Process"
+        process_related
+      when "Poll"
+        poll_related
+      when "Legislation::Question"
+        legislation_question_related
+      else
+        where(analysable_type: type)
+      end
     end
 
     private
