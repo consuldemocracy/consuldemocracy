@@ -27,3 +27,4 @@
 <%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
 <%= render "budgets/investments/categories" %>
 <%= render Budgets::Investments::FiltersComponent.new %>
+<%= render Sensemaker::ReportLinkComponent.new(@budget) %>
