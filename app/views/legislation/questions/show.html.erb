@@ -30,6 +30,8 @@
     </div>
 
     <aside class="small-12 medium-3 column">
+      <%= render Sensemaker::ReportLinkComponent.new(@question) %>
+
       <div id="social-share" class="sidebar-divider"></div>
       <h2><%= t("legislation.questions.show.share") %></h2>
       <%= render "/shared/social_share", title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
