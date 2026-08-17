@@ -1,3 +1,19 @@
+GIT
+  remote: https://github.com/crmne/ruby_llm.git
+  revision: 866b78d8006c428f46cdb26f66960d799fc61f9f
+  ref: 866b78d8006c428f46cdb26f66960d799fc61f9f
+  specs:
+    ruby_llm (1.16.0)
+      base64
+      event_stream_parser (~> 1)
+      faraday (>= 1.10.0)
+      faraday-multipart (>= 1)
+      faraday-net_http (>= 1)
+      faraday-retry (>= 1)
+      marcel (~> 1)
+      ruby_llm-schema (~> 0)
+      zeitwerk (~> 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -705,16 +721,6 @@ GEM
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
-    ruby_llm (1.16.0)
-      base64
-      event_stream_parser (~> 1)
-      faraday (>= 1.10.0)
-      faraday-multipart (>= 1)
-      faraday-net_http (>= 1)
-      faraday-retry (>= 1)
-      marcel (~> 1)
-      ruby_llm-schema (~> 0)
-      zeitwerk (~> 2)
     ruby_llm-schema (0.4.0)
     rubyzip (3.2.2)
     rugged (1.9.0)
@@ -947,7 +953,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.34.3)
   rubocop-rspec (~> 3.9.0)
   rubocop-rspec_rails (~> 2.32.0)
-  ruby_llm (~> 1.16.0)
+  ruby_llm!
   rvm1-capistrano3 (~> 1.4.0)
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)

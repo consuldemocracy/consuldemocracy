@@ -2,7 +2,6 @@ class SpeechToTextController < ApplicationController
   ACCEPTED_AUDIO_CONTENT_TYPES = /\Aaudio\//
 
   before_action :authenticate_user!
-  before_action :ensure_speech_to_text_configured!, only: :create
   skip_authorization_check
 
   rate_limit to: 120,
@@ -29,13 +28,6 @@ class SpeechToTextController < ApplicationController
   end
 
   private
-
-    def ensure_speech_to_text_configured!
-      return if Llm::Config.speech_to_text_configured?
-
-      render json: { errors: I18n.t("speech_to_text.errors.llm_not_configured") },
-             status: :unprocessable_content
-    end
 
     def accepted_audio_type?
       params[:audio_file].content_type&.match?(ACCEPTED_AUDIO_CONTENT_TYPES)

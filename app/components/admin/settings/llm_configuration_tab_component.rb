@@ -52,11 +52,20 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
     options_for_select(options_values, selected: current, disabled: disabled_values)
   end
 
-  def speech_to_text_model_options
+  def speech_to_text_models
     provider = Setting["llm.speech_to_text_provider"]
-    current = Setting["llm.speech_to_text_model"]
+    return {} if provider.blank?
 
-    options_for_select(Llm::Config.speech_to_text_models_for(provider), selected: current)
+    RubyLLM.models.by_provider(provider.downcase.to_sym)
+      .select { |model| model.supports?(:transcription) }
+      .to_h { |model| [model.name, { id: model.id }] }
+  end
+
+  def speech_to_text_model_options
+    current = Setting["llm.speech_to_text_model"]
+    options_values = speech_to_text_models.map { |name, value| [name, value[:id]] }
+
+    options_for_select(options_values, selected: current)
   end
 
   def speech_to_text_model_disabled?
@@ -71,7 +80,7 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
 
     def speech_to_text_providers
       providers.select do |key, _value|
-        Llm::Config.speech_to_text_models_for(key).any?
+        RubyLLM.models.by_provider(key.downcase.to_sym).any? { |model| model.supports?(:transcription) }
       end
     end
 end

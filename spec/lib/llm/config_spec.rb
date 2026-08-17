@@ -60,11 +60,14 @@ describe Llm::Config do
   end
 
   describe ".speech_to_text_configured?" do
+    let(:whisper_model) { double(supports?: true) }
+
     before do
       Setting["llm.use_llm_speech_to_text"] = true
       Setting["llm.speech_to_text_provider"] = "OpenAI"
       Setting["llm.speech_to_text_model"] = "whisper-1"
       stub_secrets(llm: { openai_api_key: "1234" })
+      allow(RubyLLM.models).to receive(:find).with("whisper-1", :openai).and_return(whisper_model)
     end
 
     it "returns true when the feature is enabled and the model is available" do
@@ -85,24 +88,13 @@ describe Llm::Config do
     end
   end
 
-  describe ".speech_to_text_models_for" do
-    it "returns models for the given provider" do
-      expect(Llm::Config.speech_to_text_models_for("OpenAI")).to eq(
-        %w[whisper-1 gpt-4o-transcribe gpt-4o-mini-transcribe gpt-4o-transcribe-diarize]
-      )
-      expect(Llm::Config.speech_to_text_models_for(:gemini)).to eq(%w[gemini-2.5-flash gemini-2.5-pro])
-    end
-
-    it "returns an empty array for unknown providers" do
-      expect(Llm::Config.speech_to_text_models_for("Anthropic")).to eq([])
-    end
-  end
-
   describe ".speech_to_text_model_available?" do
     before { Setting["llm.speech_to_text_provider"] = "OpenAI" }
 
-    it "returns true when the model provider is configured" do
+    it "returns true when the model supports transcription and the provider is configured" do
       stub_secrets(llm: { openai_api_key: "1234" })
+      model = double(supports?: true)
+      allow(RubyLLM.models).to receive(:find).with("whisper-1", :openai).and_return(model)
 
       expect(Llm::Config.speech_to_text_model_available?("whisper-1")).to be true
     end
@@ -120,36 +112,21 @@ describe Llm::Config do
       expect(Llm::Config.speech_to_text_model_available?("whisper-1")).to be false
     end
 
-    it "returns false for models not in the speech-to-text list" do
+    it "returns false for models without transcription support" do
       stub_secrets(llm: { openai_api_key: "1234" })
+      model = double(supports?: false)
+      allow(RubyLLM.models).to receive(:find).with("gpt-4o", :openai).and_return(model)
 
       expect(Llm::Config.speech_to_text_model_available?("gpt-4o")).to be false
     end
-  end
 
-  describe ".transcribe" do
-    let(:context) { double("RubyLLM::Context") }
+    it "returns false when the model is not found" do
+      stub_secrets(llm: { openai_api_key: "1234" })
+      allow(RubyLLM.models).to receive(:find)
+        .with("unknown-model", :openai)
+        .and_raise(RubyLLM::ModelNotFoundError, "missing model")
 
-    before do
-      allow(Llm::Config).to receive_messages(
-        context: context,
-        speech_to_text_configured?: true
-      )
-      Setting["llm.speech_to_text_provider"] = "OpenAI"
-    end
-
-    it "delegates transcription to RubyLLM with context and provider" do
-      audio = StringIO.new("audio.wav")
-
-      expect(RubyLLM).to receive(:transcribe).with(
-        audio,
-        model: "whisper-1",
-        language: "en",
-        provider: :openai,
-        context: context
-      )
-
-      Llm::Config.transcribe(audio, model: "whisper-1", language: "en")
+      expect(Llm::Config.speech_to_text_model_available?("unknown-model")).to be false
     end
   end
 

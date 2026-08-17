@@ -7,7 +7,6 @@ describe SpeechToTextController do
 
   before do
     sign_in user
-    allow(Llm::Config).to receive(:speech_to_text_configured?).and_return(true)
     allow(SpeechToText::Llm::Client).to receive(:call).and_return(response_double)
   end
 
@@ -25,18 +24,6 @@ describe SpeechToTextController do
       post :create, params: { audio_file: audio_file }, format: :json
 
       expect(response).to have_http_status(:unauthorized)
-    end
-
-    it "returns error when speech-to-text is not configured" do
-      allow(Llm::Config).to receive(:speech_to_text_configured?).and_return(false)
-
-      post :create, params: { audio_file: audio_file }, format: :json
-
-      expect(response).to have_http_status(:unprocessable_content)
-      expect(response.parsed_body["errors"]).to eq(
-        "Speech to text is not configured. Please contact an administrator."
-      )
-      expect(SpeechToText::Llm::Client).not_to have_received(:call)
     end
 
     it "passes locale to the speech-to-text client" do

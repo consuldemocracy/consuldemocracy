@@ -11,22 +11,25 @@ module SpeechToText
       end
 
       def call
+        unless ::Llm::Config.speech_to_text_configured?
+          return Response.new(nil, [I18n.t("speech_to_text.errors.llm_not_configured")])
+        end
+
         with_named_audio do |audio|
-          transcription = ::Llm::Config.transcribe(
+          transcription = RubyLLM.transcribe(
             audio,
             model: Setting["llm.speech_to_text_model"],
-            language: locale_language
+            language: locale_language,
+            provider: Setting["llm.speech_to_text_provider"].downcase.to_sym,
+            context: ::Llm::Config.context
           )
 
           Response.new(transcription.text.to_s.strip)
         end
       rescue RubyLLM::ConfigurationError
         Response.new(nil, [I18n.t("speech_to_text.errors.llm_not_configured")])
-      rescue RubyLLM::Error,
-             RubyLLM::ModelNotFoundError,
-             RubyLLM::UnsupportedAttachmentError,
-             Faraday::Error => e
-        Rails.logger.error(e.message)
+      rescue StandardError => e
+        Rails.logger.error("#{e.class}: #{e.message}")
         Response.new(nil, [I18n.t("speech_to_text.errors.transcription_failed")])
       end
 
