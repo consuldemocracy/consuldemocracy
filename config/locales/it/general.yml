@@ -1,6 +1,7 @@
 it:
   account:
     show:
+      last_sign_in: "Ultimo accesso: %{last_sign_in_at} dall'IP %{last_sign_in_ip}"
       change_credentials_link: Modifica le mie credenziali
       erase_account_link: Cancella il mio account
       finish_verification: Completa la verifica
@@ -159,6 +160,7 @@ it:
     legislation/process: processo
     legislation/question: questione
     poll/shift: Turno
+    poll/question/option: Risposta
     user: Account
     verification/sms: telefono
     signature_sheet: Foglio firme
@@ -194,12 +196,14 @@ it:
       consul: app CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Gestisci i cookie
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decidi come modellare la città in cui vuoi vivere.
       participation_title: Partecipazione
       privacy: Informativa sulla privacy
+      source_code: Codice sorgente
     header:
       administration_menu: Admin
       administration: Amministrazione
@@ -224,6 +228,7 @@ it:
           other: Hai %{count} nuove notifiche
         notifications: Notifiche
       sdg: "SDG"
+    skip_to_main_content: "Salta ai contenuti principali"
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
@@ -272,6 +277,14 @@ it:
     info:
       sign_in: "Accedi con:"
       sign_up: "Registrati con:"
+    saml:
+      sign_in: Accedi con SAML
+      sign_up: Registrati con SAML
+      name: SAML
+    oidc:
+      sign_in: Accedi con OIDC
+      sign_up: Registrati con OIDC
+      name: OIDC
     or_fill: "Oppure compila il seguente modulo:"
   proposals:
     create:
@@ -315,6 +328,7 @@ it:
       tags_placeholder: "Inserisci i tag che desideri utilizzare, separati da virgole (',')"
       map_location: "Posizione sulla mappa"
       map_location_instructions: "Scorrete la mappa sino a individuare il luogo giusto e posizionare il segnaposto."
+      map_marker_coordinates: "Latitudine: %{latitude}. Longitudine: %{longitude}"
       map_remove_marker: "Rimuovere segnaposto"
     index:
       featured_proposals: In primo piano
@@ -466,6 +480,8 @@ it:
       see_proposed_actions: Da' un'occhiata alle azioni consigliate
       hide_proposed_actions: Nascondi le azioni consigliate
       pending_title: In sospeso
+      execute: "Contrassegna %{name} come fatto"
+      unexecute: "Contrassegna %{name} come non fatto"
       show_description: Mostra la descrizione
       without_pending_actions: Nessun'azione consigliata in sospeso
       done_title: Fatto
@@ -562,6 +578,9 @@ it:
   polls:
     dates: "Dal %{open_at} al %{closed_at}"
     final_date: "Scrutinio finale/Risultati"
+    form:
+      vote: "Vota"
+      maximum_exceeded: "hai selezionato %{given} risposte, ma il massimo selezionabile è di %{maximum}"
     index:
       filters:
         current: "Aperti"
@@ -587,6 +606,7 @@ it:
     show:
       already_voted_in_booth: "Hai già partecipato a una votazione. Non puoi partecipare di nuovo."
       already_voted_in_web: "Hai già partecipato a questo sondaggio. Se si vota di nuovo, verrà sovrascritto."
+      already_voted_blank_in_web: "Hai già partecipato a questo sondaggio inviando un voto vuoto. Se voterai nuovamente, sarà sovrascritto."
       back: Ritorno al voto
       cant_answer_not_logged_in: "È necessario %{signin} o %{signup} per partecipare."
       comments_tab: Commenti
@@ -616,6 +636,9 @@ it:
       results:
         title: "Quesiti"
         most_voted_answer: "Risposta più votata: "
+        open_ended:
+          valid: Valido
+          blank: Vuoto
     poll_header:
       back_to_proposal: Torna alla proposta
   poll_questions:
@@ -631,6 +654,12 @@ it:
     show:
       back: "Torna alle mie attività"
   shared:
+    embedded_video:
+      accept: "Guarda video"
+      warning: "Questa pagina contiene un video da un fornitore di terze parti. Accedendo ai suoi contenuti, acconsenti al trasferimento dei tuoi dati ai fornitori di terze parti."
+    warning_for_external_links: "Confermando, acconsenti ad abbandonare il sito web."
+    actions:
+      label: "%{action} %{name}"
     edit: "Modificare"
     filter: "Filtro"
     save: "Salvare"
@@ -727,6 +756,7 @@ it:
       see_more: Visualizza ulteriori raccomandazioni
       hide: Nascondi raccomandazioni
     translations:
+      current_language: Lingua attuale
       remove_language: Rimuovi lingua
       add_language: Aggiungi lingua
       languages_in_use:
@@ -745,6 +775,8 @@ it:
     youtube: "YouTube di %{org}"
     telegram: "Telegram di %{org}"
     instagram: "Instagram di %{org}"
+  ip_denied_handler:
+    unauthorized: "Accesso negato. Il tuo indirizzo IP non è consentito."
   unauthorized:
     default: Non hai l’autorizzazione per accedere a questa pagina.
     manage:
@@ -915,3 +947,21 @@ it:
   machine_learning:
     comments_summary: "Riepilogo dei commenti"
     info_text: "Contenuto generato dall'IA / Apprendimento Automatico"
+  cookies_consent:
+    accept_all_cookies: "Accetta tutti"
+    accept_essential_cookies: "Accetta cookie essenziali"
+    message: "I cookie ci aiutano a fornire i nostri servizi. Utilizzando i nostri servizi, acconsenti al nostro utilizzo dei cookie."
+    more_info_link: "Ulteriori informazioni sui cookie"
+    management: "Gestisci i cookie"
+    title: "Informativa sui cookie"
+  cookies_management:
+    title: Gestione dei cookie
+    description: Questo sito web utilizza cookie proprietari e di terze parti per il suo corretto funzionamento. Cliccando sul pulsante Accetta tutti, acconsenti all'utilizzo di queste tecnologie e all'elaborazione dei tuoi dati per tali scopi.
+    essentials:
+      title: Cookie essenziali
+      description: Sono utilizzati per molti scopi differenti, come riconoscerti come utente, scegliere la lingua, o personalizzare come visualizzi i contenuti.
+      hint: Senza di essi, le funzioni di navigazione essenziali sono compromesse, quindi dovrebbero sempre essere attivi.
+    third_party:
+      title: Cookie di terze parti
+      description: Questo sito web utilizza cookie di terze parti. Questi cookie possono migliorare la funzionalità, o raccogliere informazioni per migliorare la tua esperienza utente.
+    save_preferences: Salva le preferenze
