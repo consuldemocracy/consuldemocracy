@@ -6,11 +6,21 @@ el:
       delete_button: Κατάργηση εικόνας
       note: "Μπορείτε να ανεβάσετε μια εικόνα της ακόλουθης μορφής: %{accepted_content_types}, μέχρι %{max_file_size} MB."
       add_new_image: Προσθήκη εικόνας
+      or_separator: ή
+      suggest_image_with_ai: Προτείνετε μια εικόνα με AI
+      suggested_images_container: Προτεινόμενες εικόνες
+      attach_suggested_image_aria_label: "Επισύναψη προτεινόμενης εικόνας %{index} από %{count}"
+      pick_an_image: "Επιλέξτε μια εικόνα από τις παρακάτω προτάσεις:"
+      no_images_found: Δεν βρέθηκαν προτάσεις.
+      suggested_image_filename: Εικόνα από %{author_name}.jpg
     actions:
       destroy:
         notice: Η εικόνα έχει διαγραφεί επιτυχώς.
         alert: Δεν είναι δυνατή η διαγραφή της εικόνας.
     errors:
       messages:
+        title_and_description_required: Για να προτείνετε εικόνες, παρακαλούμε γράψτε πρώτα έναν τίτλο και μια περιγραφή.
+        llm_not_configured: Το LLM δεν έχει ρυθμιστεί σωστά. Επικοινωνήστε με έναν διαχειριστή.
+        rate_limit_exceeded: Παρακαλούμε περιμένετε λίγα λεπτά πριν δημιουργήσετε νέες προτάσεις.
         in_between: πρέπει να είναι μεταξύ %{min} και %{max}
         wrong_content_type: "Ο τύπος περιεχομένου %{content_type} δεν ταιριάζει με κανένα από τους αποδεκτούς τύπους περιεχομένου\n%{accepted_content_types}"
