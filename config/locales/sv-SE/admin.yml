@@ -1171,6 +1171,8 @@ sv:
           documents_list: Lista med dokument
           document_title: Titel
           document_actions: Åtgärder
+          allow_custom_text:
+            help: "Tillåter att användare skriver sina egna svar när de väljer detta alternativ. Praktiskt för alternativ som \"Annat (ange)\"."
       no_edit: "När omröstningen har inletts går det inte längre att skapa, redigera eller radera frågor, svar eller annat innehåll som kopplats till omröstningen."
     answers:
       new:

@@ -1,5 +1,6 @@
 tr:
   attributes:
+    created_at: Oluşturulma
     geozone_id: "İşlem kapsamı"
     results_enabled: "Sonuçları göster"
     stats_enabled: "İstatistikleri göster"
@@ -248,6 +249,7 @@ tr:
         main_link_url: "Bağlantı sizi şuraya götürür (bağlantı ekle)"
       comment:
         body: "Yorum"
+        parent_id: "Üst öge"
         user: "Kullanıcı"
       debate:
         author: "Sahibi"
@@ -460,6 +462,7 @@ tr:
       poll/question/option:
         title: Yanıt
         description: Açıklama
+        allow_custom_text: "Özel yazı kullanılabilsin"
       poll/question/option/translation:
         title: Yanıt
         description: "Açıklama (isteğe bağlı)"

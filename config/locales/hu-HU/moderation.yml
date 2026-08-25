@@ -1,1 +1,98 @@
 hu:
+  moderation:
+    actions:
+      confirm_action: "Biztos vagy benne? %{action}"
+    comments:
+      index:
+        block_authors: Szerzők blokkolása
+        filter: Szűrés
+        filters:
+          all: Összes
+          pending_flag_review: Függőben
+          with_ignored_flag: Megtekintettként jelölve
+        hide: Hozzászólások elrejtése
+        ignore_flags: Megtekintettként jelölés
+        orders:
+          flags: Legtöbbször jelölt
+          newest: Legújabb
+        title: Hozzászólások
+    dashboard:
+      index:
+        title: Moderálás
+    debates:
+      index:
+        block_authors: Szerzők blokkolása
+        filter: Szűrés
+        filters:
+          all: Összes
+          pending_flag_review: Függőben
+          with_ignored_flag: Megtekintettként jelölve
+        hide: Viták elrejtése
+        ignore_flags: Megtekintettként jelölés
+        orders:
+          created_at: Legújabb
+          flags: Legtöbbször jelölt
+        title: Viták
+    header:
+      title: Moderálás
+    menu:
+      flagged_comments: Hozzászólások
+      flagged_debates: Viták
+      flagged_investments: Költségvetési beruházások
+      proposals: Javaslatok
+      proposal_notifications: Javaslatértesítések
+      users: Felhasználók blokkolása
+    proposals:
+      index:
+        block_authors: Szerzők blokkolása
+        filter: Szűrés
+        filters:
+          all: Összes
+          pending_flag_review: Függőben
+          with_ignored_flag: Megtekintettként jelölve
+        headers:
+          moderate: Moderálás
+        hide: Javaslatok elrejtése
+        ignore_flags: Megtekintettként jelölés
+        orders:
+          created_at: Legutóbbi
+          flags: Legtöbbször jelölt
+        title: Javaslatok
+    budget_investments:
+      index:
+        block_authors: Szerzők blokkolása
+        filter: Szűrés
+        filters:
+          all: Összes
+          pending_flag_review: Függőben
+          with_ignored_flag: Megtekintettként jelölve
+        hide: Költségvetési beruházások elrejtése
+        ignore_flags: Megtekintettként jelölés
+        orders:
+          created_at: Legutóbbi
+          flags: Legtöbbször jelölt
+        title: Költségvetési beruházások
+    proposal_notifications:
+      index:
+        block_authors: Szerzők blokkolása
+        filter: Szűrés
+        filters:
+          all: Összes
+          pending_review: Függőben
+          ignored: Megtekintettként jelölve
+        hide: Javaslatok elrejtése
+        ignore_flags: Megtekintettként jelölés
+        orders:
+          created_at: Legutóbbi
+          moderated: Moderálva
+        title: Javaslatértesítések
+    users:
+      index:
+        block: Blokkolás
+        confirm_block: "Biztos vagy benne? Ezzel elrejted a(z) \"%{name}\" felhasználót és az összes tartalmát."
+        confirm_hide: "Biztos vagy benne? Ezzel elrejted a(z) \"%{name}\" felhasználót anélkül, hogy a tartalmait elrejtenéd."
+        hide: Elrejtés
+        search_placeholder: a felhasználó e-mailje vagy neve
+        title: Felhasználók blokkolása
+      notice_block: A felhasználót blokkoltuk. Az általa létrehozott összes tartalmat elrejtettük.
+      notice_hide: A felhasználót elrejtettük. Az általa létrehozott tartalmak továbbra is elérhetők.

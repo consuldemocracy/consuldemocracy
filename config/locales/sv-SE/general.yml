@@ -645,6 +645,7 @@ sv:
     description:
       multiple: "Du kan välja maximalt %{maximum} svar."
     read_more_about: "Läs mer om:"
+    custom_answer_aria_label: "Svar på %{option}"
   proposal_notifications:
     new:
       title: "Skicka meddelande"

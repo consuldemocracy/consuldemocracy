@@ -9,7 +9,6 @@ sv:
       or_separator: eller
       suggest_image_with_ai: Föreslå en bild med AI
       suggested_images_container: Föreslagna bilder
-      attach_suggested_image: Bifoga föreslagen bild
       attach_suggested_image_aria_label: "Bifoga föreslagen bild %{index} av %{count}"
       pick_an_image: "Välj en bild från förslagen nedan:"
       no_images_found: Det hittades inga förslag.

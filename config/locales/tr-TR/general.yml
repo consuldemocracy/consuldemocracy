@@ -645,6 +645,7 @@ tr:
     description:
       multiple: "En fazla %{maximum} yanıt seçebilirsiniz."
     read_more_about: "Ayrıntılı bilgi alın:"
+    custom_answer_aria_label: "%{option} için yanıt"
   proposal_notifications:
     new:
       title: "Bildirim gönderilsin"

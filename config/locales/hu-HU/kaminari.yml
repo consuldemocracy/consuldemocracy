@@ -1,1 +1,22 @@
 hu:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Tételek
+        one: Tétel
+        other: Tételek
+      more_pages:
+        display_entries: <strong>%{first}&nbsp;-&nbsp;%{last}</strong> / <strong>%{total} %{entry_name}</strong> megjelenítése
+      one_page:
+        display_entries:
+          zero: "%{entry_name} nem található"
+          one: Van <strong>1 %{entry_name}</strong>
+          other: Van <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Ezen az oldalon vagy
+      first: Első
+      last: Utolsó
+      next: Következő
+      previous: Előző
+      truncate: "&hellip;"

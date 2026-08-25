@@ -1,1 +1,223 @@
 hu:
+  budgets:
+    ballots:
+      show:
+        title: Szavazólapod
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Még rendelkezésedre áll <span>%{count}</span>"
+          approval:
+            zero: "Még leadhatsz <span>%{count}</span> szavazatot."
+            one: "Még leadhatsz <span>%{count}</span> szavazatot."
+            other: "Még leadhatsz <span>%{count}</span> szavazatot."
+        amount_spent:
+          knapsack: "Elköltött összeg <span>%{count}</span>"
+          approval:
+            zero: "Leadott szavazatok: <span>%{count}</span>"
+            one: "Leadott szavazatok: <span>%{count}</span>"
+            other: "Leadott szavazatok: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Teljes költségkeret <span>%{count}</span>"
+          approval:
+            one: "Legfeljebb <span>1</span> projektre szavazhatsz"
+            other: "Legfeljebb <span>%{count}</span> projektre szavazhatsz"
+        no_balloted_group_yet: "Erre a csoportra még nem szavaztál, menj és szavazz!"
+        remove: Szavazat eltávolítása
+        remove_label: "%{investment} szavazatának eltávolítása"
+        voted:
+          one: "<span>Egy</span> beruházási projektre szavaztál."
+          other: "<span>%{count}</span> beruházási projektre szavaztál."
+        voted_info: "A szavazatodat rögzítettük!"
+        voted_info_2: "A szavazatodat azonban bármikor módosíthatod, amíg ez a szakasz le nem zárul."
+        zero: Egyetlen beruházási projektre sem szavaztál.
+      reasons_for_not_balloting:
+        not_verified: Csak hitelesített felhasználók szavazhatnak a beruházásokra; %{verify_account}.
+        not_selected: A nem kiválasztott beruházási projektek nem támogathatók
+        not_enough_money: "Már felhasználtad a rendelkezésre álló költségkeretet.<br><small>Ne feledd, hogy bármikor %{change_ballot}</small>"
+        no_ballots_allowed: A kiválasztási szakasz lezárult
+        different_heading_assigned: "Már egy másik címsorra szavaztál: %{heading_link}"
+        not_enough_available_votes: "Elérted a megengedett maximális szavazatszámot"
+        change_ballot: módosíthatod a szavazataidat
+        casted_offline: Már részt vettél offline
+    groups:
+      show:
+        title: Válassz címsort
+    phase:
+      drafting: Vázlat (a nyilvánosság számára nem látható)
+      informing: Tájékoztatás
+      accepting: Projektek fogadása
+      reviewing: Projektek felülvizsgálata
+      selecting: Projektek kiválasztása
+      valuating: Projektek értékelése
+      publishing_prices: Projektárak közzététele
+      balloting: Szavazás a projektekről
+      reviewing_ballots: Szavazatok felülvizsgálata
+      finished: Lezárt költségvetés
+    index:
+      title: Részvételi költségvetések
+      empty_budgets: Nincsenek költségvetések.
+      section_header:
+        icon_alt: Részvételi költségvetések ikon
+        title: Részvételi költségvetések
+        help: Segítség a részvételi költségvetésekhez
+      all_phases: A részvételi költségvetések szakaszai
+      next_phase: Következő szakasz
+      prev_phase: Előző szakasz
+      current_phase: Jelenlegi szakasz
+      map: A költségvetési beruházási javaslatok földrajzi elhelyezkedése
+      finished_budgets: Lezárt részvételi költségvetések
+      see_results: Eredmények megtekintése
+      section_footer:
+        title: Segítség a részvételi költségvetésekhez
+        description: A részvételi költségvetésben a polgárok döntenek arról, hogy a költségvetés egy részét mely projektek kapják meg.
+      milestones: Mérföldkövek
+    investments:
+      form:
+        title: "Beruházási projekt létrehozása"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Kategóriák"
+        tags_instructions: "Címkézd fel ezt a javaslatot. Választhatsz a javasolt kategóriák közül, vagy adhatsz hozzá sajátot."
+        tags_label: Címkék
+        tags_placeholder: "Add meg a használni kívánt címkéket vesszővel elválasztva (',')"
+      index:
+        title: Részvételi költségvetés
+        unfeasible: Nem megvalósítható beruházási projektek
+        unfeasible_text: "Egy beruházásnak több feltételnek is meg kell felelnie (jogszerűség, egyértelműség, a költségkeret be nem lépése), hogy megvalósíthatónak minősüljön és eljusson a végső szavazási szakaszba. Azok a beruházások, amelyek nem felelnek meg ezeknek a feltételeknek, nem megvalósíthatóként lesznek megjelölve és az alábbi listában jelennek meg a megvalósíthatatlansági indoklással együtt."
+        by_heading: "A következő hatókörű beruházási projektek: %{heading}"
+        search_form:
+          button: Keresés
+          placeholder: Keress beruházási projekteket...
+          title: Keresés
+        sidebar:
+          my_ballot: Szavazólapom
+          voted_info:
+            knapsack:
+              one: "<strong>Egy javaslatra szavaztál %{amount_spent} költséggel</strong>"
+              other: "<strong>%{count} javaslatra szavaztál %{amount_spent} költséggel</strong>"
+            approval:
+              one: "<strong>Egy javaslatra szavaztál</strong>"
+              other: "<strong>%{count} javaslatra szavaztál</strong>"
+          change_vote_info:
+            knapsack: "Bármikor %{link}, legkésőbb %{phase_end_date} dátumig. Nem kötelező elköltened a teljes rendelkezésre álló összeget."
+            approval: "Bármikor %{link}, legkésőbb %{phase_end_date} dátumig."
+          change_vote_link: "módosíthatod a szavazatodat"
+          different_heading_assigned: "Már van aktív szavazatod egy másik címsorban: %{heading_link}"
+          change_ballot: "Ha meggondolod magad, eltávolíthatod a szavazataidat itt: %{check_ballot}, és újrakezdheted."
+          check_ballot_link: "szavazataim megtekintése"
+          zero: Ebben a csoportban még nem szavaztál egyetlen beruházási projektre sem.
+          verified_only: "Új beruházási projekt létrehozásához %{verify}."
+          create: "Beruházási projekt létrehozása"
+          not_logged_in: "Új beruházási projekt létrehozásához %{sign_in} vagy %{sign_up}."
+        filter: "Projektek szűrése ez alapján:"
+        filters:
+          not_unfeasible: "Aktív"
+          selected: "Aktív"
+          unfeasible: "Nem megvalósítható"
+          unselected: "Nincs kiválasztva a végső szavazásra"
+          winners: "Nyertesek"
+        orders:
+          random: véletlenszerű
+          confidence_score: legmagasabb értékelés
+          price: ár szerint
+      share:
+        message: "Létrehoztam a(z) %{title} beruházási projektet itt: %{handle}. Készíts te is egy beruházási projektet!"
+      show:
+        price_explanation: Ár magyarázata
+        unfeasibility_explanation: A megvalósíthatatlanság magyarázata
+        code: "Beruházási projekt kódja: <strong>%{code}</strong>"
+        location: "Helyszín: <strong>%{location}</strong>"
+        organization_name: "A következő szervezet nevében javasolták: <strong>%{name}</strong>"
+        share: Megosztás
+        title: Beruházási projekt
+        supports: Támogatások
+        votes: Szavazatok
+        price: Ár
+        comments_tab: Hozzászólások
+        milestones_tab: Mérföldkövek
+        author: Szerző
+        project_unfeasible: "Ez a beruházási projekt <strong>nem megvalósíthatónak lett jelölve</strong>, ezért nem kerül a szavazási szakaszba."
+        project_selected: "Ez a beruházási projekt <strong>ki lett választva</strong> a szavazási szakaszra."
+        project_winner: "Nyertes beruházási projekt"
+        project_not_selected: "Ez a beruházási projekt <strong>nem lett kiválasztva</strong> a szavazási szakaszra."
+        see_price_explanation: Ármagyarázat megtekintése
+      wrong_price_format: Csak egész számok adhatók meg
+      investment:
+        add: Szavazás
+        add_label: "Szavazás erre: %{investment}"
+        already_added: Ezt a beruházási projektet már hozzáadtad
+        support_title: Támogasd ezt a projektet
+        supports:
+          zero: Nincs támogatás
+          one: 1 támogatás
+          other: "%{count} támogatás"
+      header:
+        check_ballot: "Szavazataim megtekintése"
+        different_heading_assigned: "Már van aktív szavazatod egy másik címsorban: %{heading_link}"
+        change_ballot: "Ha meggondolod magad, eltávolíthatod a szavazataidat itt: %{check_ballot}, és újrakezdheted."
+        check_ballot_link: "szavazataim megtekintése"
+        price: "Teljes költségkeret"
+      votes:
+        already_supported: "Már támogattad ezt a beruházási projektet. Oszd meg!"
+        confirm_group:
+          one: "Csak %{count} körzetben támogathatsz beruházásokat. Ha folytatod, később nem módosíthatod a körzetválasztásodat. Biztos vagy benne?"
+          other: "Csak %{count} körzetben támogathatsz beruházásokat. Ha folytatod, később nem módosíthatod a körzetválasztásodat. Biztos vagy benne?"
+        remove_support: "Támogatás eltávolítása"
+        remove_support_label: "%{investment} támogatásának eltávolítása"
+        support: "Támogatás"
+        support_label: "%{investment} támogatása"
+    investments_list:
+      investment:
+        price: "Ár"
+        read_more: "További információ"
+        supports: "Támogatások"
+      see_all: "Összes beruházás megtekintése"
+      title: "Beruházások listája"
+    show:
+      see_results: Eredmények megtekintése
+    supports_info:
+      different: "Annyi különböző projektet támogathatsz, amennyit csak szeretnél."
+      next: "Támogasd azokat a projekteket, amelyeket a következő szakaszban is látni szeretnél."
+      scrolling: "Görgess tovább az összes ötlet megtekintéséhez"
+      share: "A támogatott projekteket megoszthatod a közösségi médiában is, hogy még nagyobb figyelmet és támogatást kapjanak!"
+      supported:
+        one: "Eddig <strong>1 projektet</strong> támogattál."
+        other: "Eddig <strong>%{count} projektet</strong> támogattál."
+      supported_not_logged_in: "Jelentkezz be a <strong>projektek támogatásához</strong>."
+      time: "Még van idő %{phase_end_date} dátumig a projektek támogatására."
+      title: "Itt az ideje <strong>támogatni</strong> a projekteket!"
+    results:
+      link: Eredmények
+      page_title: "%{budget} - Eredmények"
+      heading: "A részvételi költségvetés eredményei"
+      heading_selection_title: "Körzet szerint"
+      ballot_lines_count: Szavazatok
+      hide_discarded_link: Elvetettek elrejtése
+      show_all_link: Összes megjelenítése
+      price: Ár
+      amount_available: Elérhető költségkeret
+      accepted: "Elfogadott beruházás: "
+      discarded: "Elvetett beruházás: "
+      incompatibles: Összeférhetetlenek
+      investment_title: Projekt címe
+      investment_proyects: Az összes beruházási projekt listája
+      unfeasible_investment_proyects: Az összes nem megvalósítható beruházási projekt listája
+      not_selected_investment_proyects: A szavazásra ki nem választott beruházási projektek listája
+    executions:
+      link: "Mérföldkövek"
+      page_title: "%{budget} - Mérföldkövek"
+      heading: "A részvételi költségvetés mérföldkövei"
+      heading_selection_title: "Körzet szerint"
+      no_winner_investments: "Ebben az állapotban nincs nyertes beruházás"
+      filters:
+        status:
+          label: "A projekt aktuális állapota"
+          all: "Összes (%{count})"
+        milestone_tag:
+          label: "Mérföldkő címke"
+          all: "Összes (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "A kezdődátum nem lehet azonos vagy későbbi, mint a záródátum"
+        prev_phase_dates_invalid: "A kezdődátumnak későbbinek kell lennie, mint az előző engedélyezett szakasz kezdődátuma (%{phase_name})"
+        next_phase_dates_invalid: "A záródátumnak korábbinak kell lennie, mint a következő engedélyezett szakasz záródátuma (%{phase_name})"

@@ -1,1 +1,86 @@
 hu:
+  officing:
+    header:
+      title: Szavazóhelyi ügyintézés
+    dashboard:
+      index:
+        title: Szavazóhelyi ügyintézés
+        info: Itt tudod hitelesíteni a felhasználói dokumentumokat és rögzíteni a szavazási eredményeket
+        no_shifts: Ma nincs szavazóhelyi műszakod.
+    menu:
+      voters: Dokumentum hitelesítése
+      total_recounts: Összesített számlálások és eredmények
+    polls:
+      final:
+        title: Végső összesítésre kész szavazások
+        no_polls: Egyetlen aktív szavazás végső összesítésében sem ügyintézel
+        select_poll: Szavazás kiválasztása
+        add_results: Eredmények hozzáadása
+    poll_budgets:
+      see_ballot_sheets: Szavazólaplisták megtekintése
+      index:
+        title: "%{poll_budget} - Szavazólaplista"
+        ballot_sheet: "%{id}. szavazólap"
+        ballot_sheet_name: Név
+        ballot_sheet_author: Szerző
+        ballot_sheet_creation_date: Létrehozás dátuma
+        empty_results: Ehhez a szavazáshoz még nincsenek szavazólapok
+      new:
+        title: "%{poll_budget} - Új szavazólap"
+        booth: Szavazóhely
+        select_booth: Szavazóhely kiválasztása
+        csv_data: CSV adatok
+        submit: Mentés
+      show:
+        created_at: Létrehozás dátuma
+        author: Szerző
+        data: CSV adatok
+    booth:
+      new:
+        title: "Válaszd ki a szavazóhelyedet"
+    results:
+      flash:
+        create: "Eredmények mentve"
+        error_wrong_booth: "Rossz szavazóhely. Az eredmények NEM lettek mentve."
+      new:
+        title: "%{poll} - Eredmények hozzáadása"
+        not_allowed: "Ehhez a szavazáshoz nincs jogosultságod eredményeket rögzíteni"
+        booth: "Szavazóhely"
+        date: "Dátum"
+        select_booth: "Szavazóhely kiválasztása"
+        ballots_white: "Teljesen üres szavazólapok"
+        ballots_null: "Érvénytelen szavazólapok"
+        ballots_total: "Érvényes szavazólapok"
+        submit: "Mentés"
+        results_list: "Saját eredményeid"
+        see_results: "Eredmények megtekintése"
+      index:
+        no_results: "Nincsenek eredmények"
+        results: Eredmények
+        table_whites: "Teljesen üres szavazólapok"
+        table_nulls: "Érvénytelen szavazólapok"
+        table_total: "Érvényes szavazólapok"
+    residence:
+      flash:
+        create: "A dokumentum hitelesítve a névjegyzékkel"
+        not_allowed: "Ma nincs szavazóhelyi műszakod"
+      new:
+        title: Dokumentum hitelesítése
+        submit: Dokumentum hitelesítése
+        error_verifying_census: "A névjegyzék nem tudta hitelesíteni ezt a dokumentumot."
+        form_errors: megakadályozták ennek a dokumentumnak a hitelesítését
+    voters:
+      new:
+        title: Szavazások
+        table_poll: Szavazás
+        table_status: Szavazások állapota
+        table_actions: Műveletek
+        not_to_vote: Az érintett jelenleg úgy döntött, hogy nem szavaz
+      show:
+        can_vote: Szavazhat
+        cannot_vote: Az illető nem szavazhat, mert nincs bejelentve abba a kerületbe vagy azokba a kerületekbe, ahol a szavazás zajlik.
+        error_already_voted: Már részt vett ebben a szavazásban
+        submit: Szavazat megerősítése
+        success: "A szavazat rögzítve!"
+      can_vote:
+        submit_disable_with: "Kérlek, várj, a szavazat megerősítése folyamatban..."

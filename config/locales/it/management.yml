@@ -18,6 +18,7 @@ it:
           reseted: Password reimpostata con successo
           random: Genera password casuale
           save: Salva password
+          show: Mostra la password
           print: Stampa password
           print_help: Sarai in grado di stampare la password quando sarà salvata.
     account_info:
@@ -95,6 +96,8 @@ it:
         unfeasible: Il progetto non è realizzabile
       print:
         print_button: Stampa
+      search:
+        label: "Cerca investimenti"
       search_results:
         one: " contenenti il termine '%{search_term}'"
         other: " contenenti il termine '%{search_term}'"

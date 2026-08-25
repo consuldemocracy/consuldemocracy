@@ -1,5 +1,6 @@
 it:
   attributes:
+    created_at: Creato alle
     geozone_id: "Scopo dell'operazione"
     results_enabled: "Mostra risultati"
     stats_enabled: "Mostra statistiche"
@@ -106,6 +107,21 @@ it:
       legislation/proposal:
         one: "Proposta"
         other: "Proposte"
+      legislation/draft_version:
+        one: "Versione della bozza"
+        other: "Versioni della bozza"
+      legislation/question:
+        one: "Domanda"
+        other: "Domande"
+      legislation/question_option:
+        one: "Opzione della domanda"
+        other: "Opzioni della domanda"
+      legislation/answer:
+        one: "Risposta"
+        other: "Risposte"
+      image:
+        one: "Immagine"
+        other: "Immagini"
       tenant:
         one: "locatario"
         other: "locatari"
@@ -133,6 +149,9 @@ it:
       votation_type:
         one: Tipo di votazione
         other: Tipi di votazione
+      cookies/vendor:
+        one: fornitore di cookie
+        other: fornitori di cookie
     attributes:
       budget:
         name: "Nominativo"
@@ -230,6 +249,7 @@ it:
         main_link_url: "Il link ti porta a (aggiungi un link)"
       comment:
         body: "Commentare"
+        parent_id: "Parente"
         user: "Utente"
       debate:
         author: "Autore"
@@ -439,6 +459,15 @@ it:
       image:
         title: Titolo
         attachment: "Allegato"
+      poll/question/option:
+        title: Risposta
+        description: Descrizione
+      poll/question/option/translation:
+        title: Risposta
+        description: "Descrizione (facoltativa)"
+      poll/question/option/video:
+        title: Titolo
+        url: Video esterno
       newsletter:
         segment_recipient: Destinatari
         subject: Oggetto
@@ -459,6 +488,7 @@ it:
         link_text: Testo del link
         link_url: URL del link
         columns: Numero di colonne
+        order: Posizione
       widget/card/translation:
         label: Etichetta (facoltativa)
         title: Titolo
@@ -502,8 +532,13 @@ it:
         max_votes: Numero massimo di voti
         vote_type: Tipo di votazione
       votation_type/vote_type:
+        open: Non vincolato
         unique: Risposta unica
         multiple: Risposte multiple
+      cookies/vendor:
+        name: Nome del fornitore
+        cookie: Nome del cookie
+        script: Codice javascript
     errors:
       models:
         user:
@@ -522,6 +557,7 @@ it:
           attributes:
             geojson:
               invalid: "Il GeoJSON fornito non segue il formato corretto. Deve seguire il tipo di formato \"Polygon\" o \"MultiPolygon\"."
+              invalid_coordinates: "Il GeoJSON fornito contiene delle coordinate non valide; le coordinate devono essere nel formato \"Longitudine, Latitudine\" e seguire il formato dello standard RFC 7946"
         image:
           attributes:
             attachment:
@@ -591,6 +627,10 @@ it:
           attributes:
             code:
               invalid: "deve iniziare con lo stesso codice del suo obiettivo seguito da un punto e terminante con un numero"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "impossibile modificare il tipo non vincolato perché hai già definito delle possibili risposte valide per questa domanda"
       messages:
         translations_too_short: È obbligatorio fornire almeno una traduzione
         record_invalid: "Verifica non riuscita: %{errors}"

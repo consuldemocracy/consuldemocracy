@@ -7,6 +7,11 @@ it:
         direct_message: "Il messaggio è stato inviato correttamente."
         poll: "Sondaggio creato correttamente."
         poll_booth: "Seggio creato correttamente."
+        poll_question_option: "Risposta creata correttamente"
+        poll_question_option_video: "Video creato correttamente"
+        poll_question_option_image: "Immagine caricata correttamente"
+        poll_voter: "Grazie per aver votato!"
+        poll_voter_blank: "Grazie per aver votato! Il tuo voto è stato registrato come vuoto."
         proposal: "Proposta creata correttamente."
         proposal_notification: "Il tuo messaggio è stato inviato correttamente."
         budget_investment: "Proposta di investimento creata correttamente."
@@ -14,6 +19,7 @@ it:
         support: "Investimento supportato correttamente"
         topic: "Argomento creato con successo."
         valuator_group: "Gruppo di stimatori creato con successo"
+        vote: "Voto creato correttamente"
       save_changes:
         notice: Modifiche salvate
       update:
@@ -30,4 +36,7 @@ it:
       destroy:
         budget_investment: "Progetto d'investimento eliminato."
         topic: "Argomento eliminato con successo."
+        poll_question_option_image: "Immagine eliminata correttamente."
+        poll_question_option_video: "Video di risposta eliminato correttamente."
         valuator_group: "Gruppo di stimatori eliminato con successo"
+        vote: "Voto eliminato correttamente"

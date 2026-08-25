@@ -1,1 +1,50 @@
 hu:
+  sdg_management:
+    actions:
+      edit: "Célok és alcélok kezelése"
+    header:
+      title: "Fenntarthatósági célok tartalma"
+    homepage:
+      title: "Kezdőlap beállítása"
+      header:
+        create: "Fejléc létrehozása"
+        no_cards: "Még nincs fejléc"
+        title: "Fejléc"
+      create_card: "%{phase} kártya létrehozása"
+      no_cards: "Ehhez a fázishoz még nincsenek kártyák"
+    menu:
+      budget_investments: "Részvételi költségvetések"
+      debates: "Viták"
+      legislation_processes: "Jogalkotási folyamatok"
+      legislation_proposals: "Jogalkotási javaslatok"
+      polls: "Szavazások"
+      proposals: "Javaslatok"
+      sdg_content: "Célok és alcélok"
+      sdg_homepage: "Fenntarthatósági kezdőlap"
+    local_targets:
+      create:
+        notice: "A helyi alcél sikeresen létrejött"
+      destroy:
+        notice: "A helyi alcél sikeresen törölve lett"
+      edit:
+        title: "Helyi alcél szerkesztése"
+      form:
+        code: "A kódnak a kiválasztott alcél kódjával kell kezdődnie, utána ponttal"
+        description: "Ez a leírás súgóként fog megjelenni a felhasználóknak."
+      index:
+        new: "Helyi alcél létrehozása"
+      new:
+        title: "Új helyi alcél"
+      update:
+        notice: "A helyi alcél sikeresen frissült"
+    relations:
+      index:
+        filter: "Szűrés"
+        filters:
+          all: "Összes"
+          pending_sdg_review: "Függőben"
+          sdg_reviewed: "Átnézettként jelölve"
+      update:
+        notice: "%{relatable} sikeresen frissült"
+      update_and_review:
+        notice: "%{relatable} sikeresen frissült és átnézettként lett megjelölve"

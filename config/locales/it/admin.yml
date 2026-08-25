@@ -16,6 +16,8 @@ it:
       unmark_featured: Deselezionare 'in primo piano'
       edit: Modificare
       configure: Configurare
+      select: Seleziona
+      show_to_valuators: "Mostra %{name} ai valutatori"
     officing_booth:
       title: "State officiando lo stand posizionato a %{booth}. Se non è corretto, non continuare e chiama il numero telefonico d'aiuto. Grazie."
     banners:
@@ -60,6 +62,7 @@ it:
         filter: Mostra
         filters:
           all: Tutti
+          on_budget_investments: Progetti di investimento
           on_comments: Commenti
           on_debates: Dibattiti
           on_proposals: Proposte
@@ -232,6 +235,9 @@ it:
         title: "Fasi di %{budget}"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Valutatore o gruppo
+          title_or_id: Titolo o ID
         heading_filter_all: Tutte le intestazioni
         administrator_filter_all: Tutti gli amministratori
         valuator_filter_all: Tutti i valutatori
@@ -448,6 +454,16 @@ it:
         back: Torna a %{org}
         title: Amministrazione
         description: Benvenuto nel pannello di amministrazione di %{org}.
+        info: |-
+          <p>Questo è il luogo in cui, come amministratore, implementi e supervisioni il processo di partecipazione cittadina nella tua città o regione.</p>
+
+          <p>Ora fai parte delle centinaia di governi e municipalità in tutto il mondo che usufruiscono della piattaforma CONSUL DEMOCRACY per mettere in pratica la partecipazione cittadina. Congratulazioni!</p>
+
+          <p>La Fondazione di CONSUL DEMOCRACY è al cuore della community di utenti globali. Vorremmo chiederti di contattarci, così che possiamo carpire chi stia utilizzando il software e verificare come potremmo assistere con la sua simplementazione o utilizzo. Non vediamo l'ora di accoglierti nella community.</p>
+
+          <p>Felice amministrazione!</p>
+
+          <p>Saluti dal team della Fondazione di CONSUL DEMOCRACY.</p>
       actions:
         index:
           description: "Quando gli utenti creano proposte possono accedere ad un pannello di controllo della loro proposta, dove puoi proporre risorse e consigli per ottenere supporto per la loro idea."
@@ -697,6 +713,11 @@ it:
       milestones:
         index:
           title: Seguendo
+    locales:
+      default_help_text: "Questa è la lingua predefinita dell'applicazione, e modificarla <strong>influenzerà ogni utente</strong> che visiterà il sito web per la prima volta."
+      enabled_help_text: La lingua predefinita, selezionata sopra, sarà inclusa automaticamente.
+      update:
+        notice: Lingue aggiornate con successo
     managers:
       index:
         title: Gestori
@@ -719,6 +740,7 @@ it:
       proposals_topics: Argomenti delle proposte
       budgets: Bilanci partecipativi
       geozones: Gestisci distretti
+      locales: Lingue
       hidden_comments: Commenti nascosti
       hidden_debates: Dibattiti nascosti
       hidden_proposals: Proposte nascoste
@@ -1110,6 +1132,7 @@ it:
         title: "Tipo di votazione"
         unique_description: "È possibile rispondere solo una volta alla domanda."
         multiple_description: "Consente di scegliere risposte multiple. È possibile impostare il numero massimo di risposte."
+        open_description: "Domanda non vincolante che consente agli utenti di fornire una singola risposta, a parole proprie."
     questions:
       index:
         create: "Creare la domanda"
@@ -1270,6 +1293,11 @@ it:
         selected: Selezionato
         milestones: Traguardi
         no_proposals: Nessuna proposta.
+        list:
+          id: ID
+          title: Proposta
+          author: Autore
+          summary: Riepilogo
       show:
         create_question: Aggiungi questa proposta a un sondaggio per esser votata
       form:
@@ -1304,6 +1332,7 @@ it:
         participation_processes: "Processi di partecipazione"
         images_and_documents: "Immagini e documenti"
         feature_flags: Funzionalità
+        blank_option: "Nessuno"
         features:
           enabled: "Funzionalità attivata"
         map:
@@ -1322,6 +1351,12 @@ it:
         sdg:
           title: Configurazione SDG
           how_to_enable: 'Per mostrare le opzioni della configurazione dagli Obiettivi di Sviluppo Sostenibile, devi abilitare "SDG" sulla scheda "Funzionalità".'
+        cookies_consent:
+          title: Consenso sui cookie
+        cookies_consent_banner:
+          title: Banner di consenso sui cookie
+        llm:
+          title: Impostazioni LLM
       remote_census_general_name: Informazioni Generali
       remote_census_request_name: Richiedi Dati
       remote_census_response_name: Dati di Risposta
@@ -1376,6 +1411,8 @@ it:
       index:
         title: Geozona
         create: Creare geozona
+        geojson_map: Mappa GeoJSON
+        geojson_map_help: "Se le coordinate di GeoJSON sono disponibili, saranno mostrate sulla seguente mappa"
       geozone:
         name: Nominativo
         external_code: Codice esterno
@@ -1463,8 +1500,15 @@ it:
         polls: Votazioni
         sdg: SDG
       graph:
+        budget_investment_created: Investimenti di budget creati
+        budget_investment_supported: Investimenti di budget supportati
         debate_created: Dibattiti
+        legislation_annotation_created: Annotazioni sulla legislazione creati
+        legislation_answer_created: Risposte sulla legislazione create
+        level_3_user: Utenti di livello 3 verificati
         proposal_created: Proposte del cittadino
+        title: Grafici
+        visits: Visite
       budgets:
         no_data_before_balloting_phase: "Non ci sono dati da mostrare prima della fase di ballottaggio."
         title: "Budget Partecipatori - Statistiche di Partecipazione"
@@ -1578,6 +1622,7 @@ it:
             subnavigation_right: Navigazione Principale Destra
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Immagini personalizzate
           update: Aggiorna
           image: Immagine
@@ -1620,6 +1665,7 @@ it:
           create_card: Crea scheda
           no_cards: Non c’è alcuna scheda.
           columns_help: "Larghezza della carta in numero di colonne. Sugli schermi mobile è sempre una larghezza del 100%."
+          order_help: "Puoi inserire la posizione in cui sarà mostrata questa scheda."
           create:
             notice: "Carta creata correttamente!"
           update:
@@ -1763,3 +1809,27 @@ it:
       tags: "Etichette"
       tags_description: "Genera automaticamente i tag su tutti gli elementi etichettabili."
       title: "IA / Apprendimento Automatico"
+    cookies:
+      vendors:
+        empty: Nessun fornitore trovato
+        third_party_cookies: Cookie di terze parti
+        create_button: Crea fornitore di cookie
+        create:
+          notice: Fornitore di cookie creato correttamente
+        new:
+          title: Nuovo fornitore di cookie
+        edit:
+          title: Modifica fornitore di cookie
+        update:
+          notice: Fornitore di cookie aggiornato correttamente
+        destroy:
+          notice: Fornitore di cookie eliminato correttamente
+        form:
+          name:
+            help_text: Queste informazioni saranno visibili pubblicamente.
+          cookie:
+            help_text: Queste informazioni saranno utilizzate internamente. Il nome del cookie deve essere univoco, e può contenere esclusivamente lettere, cifre e trattini bassi.
+          description:
+            help_text: Queste informazioni saranno visibili pubblicamente.
+          script:
+            help_text: Questo è lo script da eseguire quando questo cookie viene accettato dall'utente. Puoi inserire qui del codice vanilla in JavaScript e introdurre riferimenti ad altri JavaScript dell'applicazione.

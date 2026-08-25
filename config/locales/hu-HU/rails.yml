@@ -5,18 +5,194 @@ hu:
       - Hét
       - Kedd
       - Szer
-      - Csüt
-      - Pén
-      - Szom
+      - Cs
+      - P
+      - Szo
+    abbr_month_names:
+      - 
+      - jan.
+      - febr.
+      - márc.
+      - ápr.
+      - máj.
+      - jún.
+      - júl.
+      - aug.
+      - szept.
+      - okt.
+      - nov.
+      - dec.
+    day_names:
+      - vasárnap
+      - hétfő
+      - kedd
+      - szerda
+      - csütörtök
+      - péntek
+      - szombat
+    formats:
+      default: "%Y-%m-%d"
+      long: "%Y. %B %-d."
+      short: "%b %-d."
+    month_names:
+      - 
+      - január
+      - február
+      - március
+      - április
+      - május
+      - június
+      - július
+      - augusztus
+      - szeptember
+      - október
+      - november
+      - december
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: körülbelül 1 óra
+        other: körülbelül %{count} óra
+      about_x_months:
+        one: körülbelül 1 hónap
+        other: körülbelül %{count} hónap
+      about_x_years:
+        one: körülbelül 1 év
+        other: körülbelül %{count} év
+      almost_x_years:
+        one: majdnem 1 év
+        other: majdnem %{count} év
+      half_a_minute: fél perc
+      less_than_x_minutes:
+        one: kevesebb mint 1 perc
+        other: kevesebb mint %{count} perc
+      less_than_x_seconds:
+        one: kevesebb mint 1 másodperc
+        other: kevesebb mint %{count} másodperc
+      over_x_years:
+        one: több mint 1 év
+        other: több mint %{count} év
+      x_days:
+        one: 1 nap
+        other: "%{count} nap"
+      x_minutes:
+        one: 1 perc
+        other: "%{count} perc"
+      x_months:
+        one: 1 hónap
+        other: "%{count} hónap"
+      x_years:
+        one: 1 év
+        other: "%{count} év"
+      x_seconds:
+        one: 1 másodperc
+        other: "%{count} másodperc"
+    prompts:
+      day: Nap
+      hour: Óra
+      minute: Perc
+      month: Hónap
+      second: Másodperc
+      year: Év
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: elfogadása kötelező
+      blank: nem maradhat üresen
+      present: üresnek kell lennie
+      confirmation: 'nem egyezik ezzel: %{attribute}'
+      empty: nem lehet üres
+      equal_to: 'egyenlőnek kell lennie ezzel: %{count}'
+      even: párosnak kell lennie
+      exclusion: foglalt
+      greater_than: 'nagyobbnak kell lennie ennél: %{count}'
+      greater_than_or_equal_to: 'nagyobbnak vagy egyenlőnek kell lennie ennél: %{count}'
+      inclusion: nincs benne a listában
+      invalid: érvénytelen
+      less_than: 'kisebbnek kell lennie ennél: %{count}'
+      less_than_or_equal_to: 'kisebbnek vagy egyenlőnek kell lennie ennél: %{count}'
+      model_invalid: "Érvényesítés sikertelen: %{errors}"
+      not_a_number: nem szám
+      not_an_integer: egész számnak kell lennie
+      odd: páratlannak kell lennie
+      required: kötelező megadni
+      taken: már foglalt
+      too_long:
+        one: túl hosszú (legfeljebb 1 karakter lehet)
+        other: túl hosszú (legfeljebb %{count} karakter lehet)
+      too_short:
+        one: túl rövid (legalább 1 karakternek kell lennie)
+        other: túl rövid (legalább %{count} karakternek kell lennie)
+      wrong_length:
+        one: nem megfelelő hosszúságú (1 karakternek kell lennie)
+        other: nem megfelelő hosszúságú (%{count} karakternek kell lennie)
+      other_than: 'eltérőnek kell lennie ettől: %{count}'
+    template:
+      body: "A következő mezőknél vannak problémák:"
+      header:
+        one: 1 hiba miatt a(z) %{model} nem menthető
+        other: "%{count} hiba miatt a(z) %{model} nem menthető"
+  helpers:
+    select:
+      prompt: Kérlek, válassz
+    submit:
+      create: '%{model} létrehozása'
+      submit: '%{model} mentése'
+      update: '%{model} frissítése'
   number:
     currency:
       format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
         significant: false
         strip_insignificant_zeros: false
+        unit: "Ft"
     format:
+      delimiter: " "
+      precision: 3
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliárd
+          million: millió
+          quadrillion: billiárd
+          thousand: ezer
+          trillion: billió
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: bájt
+            other: bájt
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: " és "
+      two_words_connector: " és "
+      words_connector: ", "
+  time:
+    am: de.
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%Y. %b. %-d., %H:%M:%S %z"
+      long: "%Y. %B %-d. %H:%M"
+      short: "%b %-d. %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: du.

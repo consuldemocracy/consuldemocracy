@@ -1,1 +1,23 @@
 hu:
+  documents:
+    title: Dokumentumok
+    max_documents_allowed_reached: Elérted a megengedett maximális dokumentumszámot! <strong>Törölnöd kell egyet, mielőtt újat tölthetnél fel.</strong>
+    additional: További dokumentáció
+    form:
+      title: Dokumentumok
+      delete_button: Dokumentum eltávolítása
+      cancel_button: Mégse
+      note: "Legfeljebb %{max_documents_allowed} dokumentumot tölthetsz fel a következő tartalomtípusokkal: %{accepted_content_types}, fájlonként legfeljebb %{max_file_size} MB méretben."
+      add_new_document: Új dokumentum hozzáadása
+    actions:
+      destroy:
+        notice: A dokumentum sikeresen törölve.
+        alert: A dokumentum nem törölhető.
+        confirm: Biztosan törölni szeretnéd a dokumentumot? Ez a művelet nem vonható vissza!
+    buttons:
+      download_document: Fájl letöltése
+      destroy_document: Dokumentum törlése
+    errors:
+      messages:
+        in_between: '%{min} és %{max} között kell lennie'
+        wrong_content_type: 'a(z) %{content_type} tartalomtípus nem egyezik egyik elfogadott tartalomtípussal sem: %{accepted_content_types}'

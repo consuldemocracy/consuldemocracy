@@ -1,1 +1,26 @@
 hu:
+  images:
+    remove_image: Kép eltávolítása
+    form:
+      title: Leíró kép
+      delete_button: Kép eltávolítása
+      note: "Egy képet tölthetsz fel a következő tartalomtípusok egyikével: %{accepted_content_types}, legfeljebb %{max_file_size} MB méretben."
+      add_new_image: Kép hozzáadása
+      or_separator: vagy
+      suggest_image_with_ai: Képajánlás MI-vel
+      suggested_images_container: Ajánlott képek
+      attach_suggested_image_aria_label: "%{index}. ajánlott kép csatolása a(z) %{count} közül"
+      pick_an_image: "Válassz egy képet az alábbi javaslatok közül:"
+      no_images_found: Nem található ajánlás.
+      suggested_image_filename: 'Kép tőle: %{author_name}.jpg'
+    actions:
+      destroy:
+        notice: A kép sikeresen törölve.
+        alert: A kép nem törölhető.
+    errors:
+      messages:
+        title_and_description_required: Képjavaslat készítéséhez először adj meg címet és leírást.
+        llm_not_configured: Az LLM nincs megfelelően beállítva. Kérlek, fordulj egy adminisztrátorhoz.
+        rate_limit_exceeded: Kérlek, várj néhány percet, mielőtt új javaslatot generálnál.
+        in_between: '%{min} és %{max} között kell lennie'
+        wrong_content_type: 'a(z) %{content_type} tartalomtípus nem egyezik egyik elfogadott tartalomtípussal sem: %{accepted_content_types}'

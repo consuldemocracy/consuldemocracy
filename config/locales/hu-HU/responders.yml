@@ -1,1 +1,42 @@
 hu:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} sikeresen létrejött."
+        debate: "A vita sikeresen létrejött."
+        direct_message: "Az üzeneted sikeresen elküldtük."
+        poll: "A szavazás sikeresen létrejött."
+        poll_booth: "A szavazóhely sikeresen létrejött."
+        poll_question_option: "A válasz sikeresen létrejött"
+        poll_question_option_video: "A videó sikeresen létrejött"
+        poll_question_option_image: "A képet sikeresen feltöltöttük"
+        poll_voter: "Köszönjük a szavazásodat!"
+        poll_voter_blank: "Köszönjük a szavazásodat! A szavazatodat üres szavazatként rögzítettük."
+        proposal: "A javaslat sikeresen létrejött."
+        proposal_notification: "Az üzenetedet sikeresen elküldtük."
+        budget_investment: "A költségvetési beruházás sikeresen létrejött."
+        signature_sheet: "Az aláírásgyűjtő ív sikeresen létrejött"
+        support: "A beruházást sikeresen támogattad"
+        topic: "A téma sikeresen létrejött."
+        valuator_group: "Az értékelői csoport sikeresen létrejött"
+        vote: "A szavazat sikeresen létrejött"
+      save_changes:
+        notice: Módosítások mentve
+      update:
+        notice: "%{resource_name} sikeresen frissült."
+        debate: "A vita sikeresen frissült."
+        poll: "A szavazás sikeresen frissült."
+        poll_booth: "A szavazóhely sikeresen frissült."
+        active_poll: "A szavazások leírása sikeresen frissült."
+        proposal: "A javaslat sikeresen frissült."
+        budget_investment: "A beruházási projekt sikeresen frissült."
+        topic: "A téma sikeresen frissült."
+        valuator_group: "Az értékelői csoport sikeresen frissült"
+        translation: "A fordítás sikeresen frissült"
+      destroy:
+        budget_investment: "A beruházási projekt sikeresen törölve."
+        topic: "A téma sikeresen törölve."
+        poll_question_option_image: "A kép sikeresen törölve."
+        poll_question_option_video: "A válaszvideó sikeresen törölve."
+        valuator_group: "Az értékelői csoport sikeresen törölve"
+        vote: "A szavazat sikeresen törölve"

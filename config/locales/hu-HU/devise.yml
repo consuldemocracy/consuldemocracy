@@ -1,1 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 hu:
+  devise:
+    password_expired:
+      expire_password: "A jelszó lejárt"
+      change_required: "A jelszavad lejárt"
+      change_password: "Jelszó módosítása"
+      new_password: "Új jelszó"
+      updated: "A jelszó sikeresen frissítve"
+    confirmations:
+      confirmed: "A fiókodat megerősítettük."
+      send_instructions: "Néhány percen belül kapsz egy e-mailt az e-mail-címed megerősítéséhez szükséges útmutatóval."
+      send_paranoid_instructions: "Ha az e-mail-címed szerepel az adatbázisunkban, néhány percen belül kapsz egy e-mailt az e-mail-címed megerősítéséhez szükséges útmutatóval."
+    failure:
+      already_authenticated: "Már be vagy jelentkezve."
+      inactive: "A fiókod még nincs aktiválva."
+      invalid: "Érvénytelen %{authentication_keys} vagy jelszó."
+      locked: "A fiókodat zároltuk."
+      last_attempt: "Még egy próbálkozásod maradt, mielőtt a fiókodat blokkoljuk."
+      not_found_in_database: "Érvénytelen %{authentication_keys} vagy jelszó."
+      timeout: "A munkameneted lejárt. Kérlek, jelentkezz be újra a folytatáshoz."
+      unauthenticated: "A folytatáshoz jelentkezz be vagy regisztrálj."
+      unconfirmed: "A folytatáshoz kattints arra a megerősítő linkre, amelyet e-mailben küldtünk neked"
+    mailer:
+      confirmation_instructions:
+        subject: "Megerősítési útmutató"
+      reset_password_instructions:
+        subject: "Útmutató a jelszó visszaállításához"
+      unlock_instructions:
+        subject: "Feloldási útmutató"
+    omniauth_callbacks:
+      failure: "Nem sikerült %{kind} szolgáltatóval hitelesíteni, mert \"%{reason}\"."
+      success: "Sikeresen azonosítva mint %{kind}."
+    passwords:
+      no_token: "Ezt az oldalt csak jelszó-visszaállító linken keresztül érheted el. Ha ilyen linken keresztül jutottál ide, kérlek, ellenőrizd, hogy az URL teljes-e."
+      send_instructions: "Néhány percen belül kapsz egy e-mailt a jelszavad visszaállításához szükséges útmutatóval."
+      send_paranoid_instructions: "Ha az e-mail-címed szerepel az adatbázisunkban, néhány percen belül kapsz egy linket, amellyel visszaállíthatod a jelszavadat."
+      updated: "A jelszavad sikeresen megváltozott. A hitelesítés sikeres."
+      updated_not_active: "A jelszavad sikeresen megváltozott."
+    registrations:
+      destroyed: "Viszlát! A fiókodat töröltük. Reméljük, hamarosan újra látunk."
+      signed_up: "Üdvözlünk! A hitelesítés sikeres volt."
+      signed_up_but_inactive: "A regisztrációd sikeres volt, de nem tudtunk bejelentkeztetni, mert a fiókod még nincs aktiválva."
+      signed_up_but_locked: "A regisztrációd sikeres volt, de nem tudtunk bejelentkeztetni, mert a fiókodat zároltuk."
+      signed_up_but_unconfirmed: "Küldtünk neked egy üzenetet egy hitelesítő linkkel. Kérlek, kattints rá a fiókod aktiválásához."
+      update_needs_confirmation: "A fiókodat sikeresen frissítettük, de ellenőriznünk kell az új e-mail-címedet. Kérlek, nézd meg a leveleidet, és kattints a linkre az új e-mail-cím megerősítésének befejezéséhez."
+      updated: "A fiókodat sikeresen frissítettük."
+    sessions:
+      signed_in: "Sikeresen bejelentkeztél."
+      signed_out: "Sikeresen kijelentkeztél."
+      already_signed_out: "Sikeresen kijelentkeztél."
+    unlocks:
+      send_instructions: "Néhány percen belül kapsz egy e-mailt a fiókod feloldásához szükséges útmutatóval."
+      send_paranoid_instructions: "Ha van fiókod, néhány percen belül kapsz egy e-mailt a fiókod feloldásához szükséges útmutatóval."
+      unlocked: "A fiókodat feloldottuk. Kérlek, jelentkezz be a folytatáshoz."
+  errors:
+    messages:
+      already_confirmed: "Már hitelesítve vagy; kérlek, próbálj meg bejelentkezni."
+      confirmation_period_expired: "A hitelesítést %{period} időn belül el kell végezni; kérlek, kérd újra."
+      expired: "lejárt; kérlek, kérd újra."
+      not_found: "nem található."
+      not_locked: "nem volt zárolva."
+      not_saved:
+        one: "1 hiba megakadályozta a(z) %{resource} mentését. Kérlek, ellenőrizd a jelölt mezőket, hogy lásd, mit kell javítanod:"
+        other: "%{count} hiba megakadályozta a(z) %{resource} mentését. Kérlek, ellenőrizd a jelölt mezőket, hogy lásd, mit kell javítanod:"
+      equal_to_current_password: "különböznie kell a jelenlegi jelszótól."

@@ -1,6 +1,7 @@
 el:
   account:
     show:
+      last_sign_in: "Τελευταία σύνδεση: %{last_sign_in_at} από την IP %{last_sign_in_ip}"
       change_credentials_link: Αλλαγή κωδικών πρόσβασης
       erase_account_link: Διαγράψτε το λογαριασμό μου
       finish_verification: Ολοκλήρωση επαλήθευσης
@@ -20,6 +21,9 @@ el:
     close: Κλείσιμο
     menu: Μενού
   comments:
+    actions:
+      confirm_delete: "Είστε σίγουροι; Αυτή η ενέργεια θα διαγράψει αυτό το σχόλιο. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      delete: "Διαγραφή σχολίου"
     comments_closed: Τα σχόλια είναι κλειστά
     verified_only: Για να συμμετάσχετε %{verify_account}
     comment:
@@ -129,8 +133,13 @@ el:
         submit_button: Αποθηκεύστε τις αλλαγές
   errors:
     messages:
+      allowed_file_content_types: "ο τύπος περιεχομένου πρέπει να είναι ένας από τους εξής: %{types}"
       user_not_found: Ο χρήστης δεν βρέθηκε
       invalid_date_range: "Μη έγκυρο εύρος ημερομηνίας"
+      past_date: "Δεν πρέπει να είναι παρελθοντική ημερομηνία"
+      cannot_change_date:
+        poll_started: "Δεν μπορεί να αλλαχθεί εάν η ψηφοφορία έχει ήδη ξεκινήσει"
+        poll_ended: "Δεν μπορεί να αλλαχθεί εάν η ψηφοφορία έχει ήδη ολοκληρωθεί"
   form:
     accept_terms: Συμφωνώ στην %{policy} και στις %{conditions}
     conditions: Όροι και προϋποθέσεις χρήσης
@@ -140,18 +149,28 @@ el:
     errors: σφάλματα
     not_saved: "ένα σφάλμα μας εμπόδισε να αποθηκεύσουμε αυτό το %{resource}. <br>Ελέγξτε τα επιλεγμένα πεδία για να δείτε πώς μπορούν να διορθωθούν:"
     policy: Πολιτική Απορρήτου
+    banner: μπάνερ
     proposal: Πρόταση
     proposal_notification: "Ειδοποιήσεις"
     budget/investment: Επένδυση
     budget/group: Ομάδα προϋπολογισμού
     budget/heading: Επικεφαλίδα προϋπολογισμού
+    geozone: γεωζώνη
+    legislation/draft_version: προσχέδιο
+    legislation/process: διαδικασία
+    legislation/question: ερώτηση
     poll/shift: Μετατόπιση
+    poll/question/option: Απάντηση
     user: Λογαριασμός
     verification/sms: τηλέφωνο
     signature_sheet: Φύλλα υπογραφών
     document: Έγγραφο
     topic: Θέμα
     image: Εικόνα
+    local_census_record: Τοπική εγγραφή δημοτολογίου
+    local_census_records/import: Εισαγωγή τοπικών εγγραφών δημοτολογίου
+    site_customization/content_block: μπλοκ περιεχομένου
+    site_customization/page: σελίδα
     sdg/local_target: τοπικός στόχος
   geozones:
     none: Σε όλη την πόλη
@@ -177,12 +196,14 @@ el:
       consul: Εφαρμογή CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Διαχείριση cookies
       description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
       open_source: λογισμικό ανοικτού κώδικα
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Αποφασίστε πώς να διαμορφώσετε την πόλη που θέλετε να ζήσετε.
       participation_title: Συμμετοχή
       privacy: Πολιτική Απορρήτου
+      source_code: Πηγαίος κώδικας
     header:
       administration_menu: Μενού
       administration: Διαχείριση
@@ -207,6 +228,7 @@ el:
           other: Έχετε %{count} νέες ειδοποιήσεις
         notifications: Ειδοποιήσεις
       sdg: "ΣΒΑ"
+    skip_to_main_content: "Μετάβαση στο κύριο περιεχόμενο"
   notifications:
     index:
       empty_notifications: Δεν έχετε νέες ειδοποιήσεις.
@@ -244,6 +266,10 @@ el:
       sign_in: Σύνδεση με Google
       sign_up: Εγγραφή με Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Σύνδεση με Wordpress
+      sign_up: Εγγραφή με Wordpress
+      name: Wordpress
     twitter:
       sign_in: Σύνδεση μέσω Twitter
       sign_up: Εγγραφή μέσω Twitter
@@ -251,6 +277,14 @@ el:
     info:
       sign_in: "Σύνδεση με:"
       sign_up: "Εγγραφή με:"
+    saml:
+      sign_in: Σύνδεση με SAML
+      sign_up: Εγγραφή με SAML
+      name: SAML
+    oidc:
+      sign_in: Σύνδεση με OIDC
+      sign_up: Εγγραφή με OIDC
+      name: OIDC
     or_fill: "Ή συμπληρώστε την παρακάτω φόρμα:"
   proposals:
     create:
@@ -294,6 +328,7 @@ el:
       tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
       map_location: "Χάρτης τοποθεσίας"
       map_location_instructions: "Περιηγηθείτε στο χάρτη προς την τοποθεσία και τοποθετήστε το δείκτη."
+      map_marker_coordinates: "Γεωγραφικό πλάτος: %{latitude}. Γεωγραφικό μήκος: %{longitude}"
       map_remove_marker: "Αφαιρέστε τον δείκτη του χάρτη"
     index:
       featured_proposals: Προτεινόμενα
@@ -363,6 +398,7 @@ el:
         view_proposal: Όχι τώρα, μετάβαση στην πρότασή μου
       already_supported: Έχετε ήδη υποστηρίξει αυτή την πρόταση. Μοιραστείτε το!
       support: Υποστήριξη
+      support_label: "Υποστήριξη %{proposal}"
       support_title: Υποστήριξτε αυτή την πρόταση
       supports:
         zero: Χωρίς υποστηρίξεις
@@ -444,6 +480,8 @@ el:
       see_proposed_actions: Ελέγξτε τις συνιστώμενες ενέργειες
       hide_proposed_actions: Απόκριψη συνιστώμενων ενεργειών
       pending_title: Σε εκκρεμότητα
+      execute: "Σημείωση του %{name} ως ολοκληρωμένο"
+      unexecute: "Αναίρεση σημείωσης του %{name} ως ολοκληρωμένο"
       show_description: Εμφάνιση περιγραφής
       without_pending_actions: Δεν υπάρχουν συνιστώμενες ενέργειες σε εκκρεμότητα
       done_title: Ολοκληρώθηκε
@@ -509,8 +547,10 @@ el:
         title: Προεπισκόπηση αφίσας
         poster_title: "Μη συνεχίσετε να ψάχνετε,"
         poster_subtitle: "υποστήριξε με! ;)"
+        intro_text: "<strong>Συμμετέχω στο %{org}</strong> με τη δική μου πρόταση πολιτών και μόνο με τη δική σας υποστήριξη μπορούμε να φτιάξουμε την πόλη που όλοι θέλουμε"
         proposal_code: "Κωδικός πρότασης: %{code}"
         support: Στηρίξτε την πρότασή μου
+        footer: "<strong>Επισκεφθείτε το %{link} και υποστηρίξτε αυτήν την πρόταση.</strong> Όσο περισσότεροι, τόσο το καλύτερο. Ας βάλουμε το λιθαράκι μας. Σας ευχαριστούμε!"
       new:
         title: Αφίσα της πρότασής σας
       options:
@@ -538,6 +578,9 @@ el:
   polls:
     dates: "Από %{open_at} έως %{closed_at}"
     final_date: "Τελικές επαναμετρήσεις ψήφων / αποτελέσματα"
+    form:
+      vote: "Ψηφίστε"
+      maximum_exceeded: "έχετε επιλέξει %{given} απαντήσεις, αλλά το μέγιστο που μπορείτε να επιλέξετε είναι %{maximum}"
     index:
       filters:
         current: "Ανοιχτό"
@@ -563,6 +606,7 @@ el:
     show:
       already_voted_in_booth: "Έχετε ήδη συμμετάσχει σε ένα φυσικό περίπτερο ψηφοφορίας. Δεν μπορείτε να συμμετάσχετε ξανά."
       already_voted_in_web: "Έχετε ήδη συμμετάσχει σε αυτή τη δημοσκόπηση. Εάν ψηφίσετε ξανά η ψήφος σας θα αντικατασταθεί."
+      already_voted_blank_in_web: "Έχετε ήδη συμμετάσχει σε αυτή τη δημοσκόπηση ρίχνοντας λευκή ψήφο. Εάν ψηφίσετε ξανά, η ψήφος σας θα αντικατασταθεί."
       back: Πίσω στην ψηφοφορία
       cant_answer_not_logged_in: "Θα πρέπει να %{signin} ή %{signup} για να συμμετάσχετε."
       comments_tab: Σχόλια
@@ -592,16 +636,30 @@ el:
       results:
         title: "Ερωτήσεις"
         most_voted_answer: "Απάντηση με τις περισσότερες ψήφους:"
+        open_ended:
+          valid: Έγκυρο
+          blank: Λευκό
     poll_header:
       back_to_proposal: Πίσω στην πρόταση
+  poll_questions:
+    description:
+      multiple: "Μπορείτε να επιλέξετε έως %{maximum} απαντήσεις."
+    read_more_about: "Διαβάστε περισσότερα για:"
   proposal_notifications:
     new:
       title: "Αποστολή μηνύματος"
       submit_button: "Αποστολή μηνύματος"
+      info_about_receivers: "Αυτή η ειδοποίηση θα σταλεί σε <strong>%{count} άτομα</strong> και θα είναι ορατή στη %{proposal_page}.<br> Οι ειδοποιήσεις δεν στέλνονται αμέσως, οι χρήστες θα λαμβάνουν περιοδικά ένα email με όλες τις ειδοποιήσεις προτάσεων."
       proposal_page: "Σελίδα πρότασης"
     show:
       back: "Πίσω στη δραστηριότητά μου"
   shared:
+    embedded_video:
+      accept: "Προβολή βίντεο"
+      warning: "Αυτή η σελίδα περιέχει βίντεο από τρίτο πάροχο. Με την πρόσβαση στο περιεχόμενό του, συμφωνείτε ότι τα δεδομένα σας ενδέχεται να μεταφερθούν σε τρίτους παρόχους."
+    warning_for_external_links: "Επιβεβαιώνοντας, συμφωνείτε να αποχωρήσετε από τον ιστότοπο."
+    actions:
+      label: "%{action} %{name}"
     edit: "Επεξεργασία"
     filter: "Φίλτρο"
     save: "Αποθήκευση"
@@ -620,7 +678,11 @@ el:
       date_5: "Προσαρμοσμένα"
       from: "Από"
       general: "Με το κείμενο"
+      goal: "Ανά ΣΒΑ"
+      goal_blank: "Επιλέξτε έναν στόχο"
       search: "Φίλτρο"
+      target: "Ανά επιμέρους στόχο"
+      target_blank: "Επιλέξτε έναν επιμέρους στόχο"
       title: "Προχωρημένη Αναζήτηση"
       to: "Σε"
     author_info:
@@ -634,6 +696,17 @@ el:
     follow: "Ακολούθησε"
     following: "Ακολουθείτε"
     follow_entity: "Ακολούθησε %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Ακολουθείτε τώρα αυτό το επενδυτικό έργο! <br> Θα σας ειδοποιούμε για αλλαγές καθώς συμβαίνουν, ώστε να είστε ενημερωμένοι."
+        destroy:
+          notice: "Έχετε σταματήσει να ακολουθείτε αυτό το επενδυτικό έργο! <br> Δεν θα λαμβάνετε πλέον ειδοποιήσεις σχετικά με αυτό το έργο."
+      proposal:
+        create:
+          notice: "Τώρα ακολουθείτε αυτήν την πρόταση πολιτών! <br> Θα σας ειδοποιούμε για αλλαγές καθώς συμβαίνουν, ώστε να είστε ενημερωμένοι."
+        destroy:
+          notice: "Έχετε σταματήσει να ακολουθείτε αυτήν την πρόταση πολιτών! <br> Δεν θα λαμβάνετε πλέον ειδοποιήσεις σχετικά με αυτήν την πρόταση."
     print:
       print_button: Εκτύπωση αυτών των πληροφοριών
     search: Αναζήτηση
@@ -683,14 +756,27 @@ el:
       see_more: Δείτε περισσότερες συστάσεις
       hide: Απόκρυψη των συστάσεων
     translations:
+      current_language: Τρέχουσα γλώσσα
       remove_language: Κατάργηση γλώσσας
       add_language: Προσθήκη γλώσσας
+      languages_in_use:
+        zero: "0 γλώσσες σε χρήση"
+        one: "1 γλώσσα σε χρήση"
+        other: "%{count} γλώσσες σε χρήση"
+    optional: "Προαιρετικά πεδία"
+    required: "Υποχρεωτικά πεδία"
+    comments:
+      zero: "Χωρίς σχόλια"
+      one: "1 σχόλιο"
+      other: "%{count} σχόλια"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Δεν επιτρέπεται η πρόσβαση. Η διεύθυνση IP σας δεν επιτρέπεται."
   unauthorized:
     default: Δεν έχετε δικαίωμα πρόσβασης σε αυτήν τη σελίδα.
     manage:
@@ -750,8 +836,10 @@ el:
       retired_help_text: Το ταμπλό δεν είναι διαθέσιμο για προτάσεις που έχουν αποσυρθεί
   votes:
     agree: Συμφωνώ
+    agree_label: "Συμφωνώ με το %{title}"
     anonymous: Υπάρχουν πολλές ανώνυμες ψήφοι γεγονός το οπόιο μας εμποδίζει από το να αποδεχτούμε τη ψήφο %{verify_account}.
     disagree: Διαφωνώ
+    disagree_label: "Δεν συμφωνώ με το %{title}"
     organizations: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
     supports: Υποστηρίξεις
     verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
@@ -772,6 +860,10 @@ el:
         debates: Προβολή όλων των συζητήσεων
         proposals: Προβολή όλων των προτάσεων
         processes: Προβολή όλων των διαδικασιών
+      no_items:
+        debates: Δεν υπάρχουν συζητήσεις αυτή τη στιγμή
+        proposals: Δεν υπάρχουν προτάσεις αυτή τη στιγμή
+        processes: Δεν υπάρχουν ανοικτές διαδικασίες αυτή τη στιγμή
       process_label: Διαδικασία
       see_process: Προβολή διαδικασίας
     cards:
@@ -806,6 +898,7 @@ el:
     help: "Μπορείτε να προσθέσετε συνδέσμους %{models} μέσα στο %{org}."
     submit: "Προσθήκη"
     error: "Ο σύνδεσμος δεν είναι έγκυρος. Θυμηθείτε να ξεκινήσετε με %{url}."
+    error_duplicate: "Το σχετικό περιεχόμενο που προσθέτετε υπάρχει ήδη."
     error_itself: "Ο σύνδεσμος δεν είναι έγκυρος. Δεν μπορείτε να συσχετίσετε ένα περιεχόμενο με τον εαυτό του."
     success: "Προσθέσατε ένα νέο σχετικό περιεχόμενο"
     is_related: "Είναι σχετικό περιεχόμενο;"
@@ -839,3 +932,36 @@ el:
       surveys: Δημοσκοπήσεις
     poll:
       take_part: Λάβετε μέρος από %{from} έως %{to}
+  remote_translations:
+    text: Το αρχικό περιεχόμενο αυτής της σελίδας δεν είναι διαθέσιμο στη γλώσσα σας. Θέλετε να το μεταφράσετε;
+    all_remote_translations_enqueued_text: Παρακαλούμε περιμένετε 5 δευτερόλεπτα και ανανεώστε τον ιστότοπο για να εμφανιστεί το μεταφρασμένο περιεχόμενο.
+    create:
+      enqueue_remote_translation: Τα αιτήματα μετάφρασης υποβλήθηκαν επιτυχώς.
+    button: Μετάφραση σελίδας
+  tags:
+    list:
+      filter:
+        more:
+          one: "Μία ακόμα ετικέτα"
+          other: "%{count} ακόμα ετικέτες"
+  machine_learning:
+    comments_summary: "Σύνοψη σχολίων"
+    info_text: "Περιεχόμενο παραγόμενο από Τεχνητή Νοημοσύνη / Μηχανική Μάθηση"
+  cookies_consent:
+    accept_all_cookies: "Αποδοχή όλων"
+    accept_essential_cookies: "Αποδοχή βασικών cookies"
+    message: "Τα cookies μας βοηθούν να παρέχουμε τις υπηρεσίες μας. Χρησιμοποιώντας τις υπηρεσίες μας, συμφωνείτε με τη χρήση των cookies."
+    more_info_link: "Περισσότερες πληροφορίες σχετικά με τα cookies"
+    management: "Διαχείριση cookies"
+    title: "Πολιτική cookies"
+  cookies_management:
+    title: Διαχείριση cookies
+    description: Αυτός ο ιστότοπος χρησιμοποιεί δικά του cookies και cookies τρίτων για τη σωστή λειτουργία του. Κάνοντας κλικ στο κουμπί Αποδοχή όλων, συμφωνείτε με τη χρήση αυτών των τεχνολογιών και την επεξεργασία των δεδομένων σας για αυτούς τους σκοπούς.
+    essentials:
+      title: Βασικά cookies
+      description: Χρησιμοποιούνται για πολλούς διαφορετικούς σκοπούς, όπως η αναγνώρισή σας ως χρήστη, η επιλογή της γλώσσας ή η προσαρμογή του τρόπου εμφανίζεται το περιεχόμενο.
+      hint: Χωρίς αυτά, οι βασικές λειτουργίες πλοήγησης θα επηρεαστούν, επομένως θα πρέπει να είναι πάντα ενεργά.
+    third_party:
+      title: Cookies τρίτων
+      description: Αυτός ο ιστότοπος χρησιμοποιεί cookies τρίτων. Αυτά τα cookies μπορούν να βελτιώσουν τη λειτουργικότητα ή να συλλέξουν πληροφορίες για να βελτιώσουν την εμπειρία χρήστη.
+    save_preferences: Αποθήκευση προτιμήσεων

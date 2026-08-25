@@ -1,1 +1,129 @@
 hu:
+  mailers:
+    title: "Nyílt kormányzás"
+    no_reply: "Ezt az üzenetet olyan e-mail-címről küldtük, amelyre nem lehet válaszolni."
+    already_confirmed:
+      info: "Kérést kaptunk arra, hogy küldjünk neked útmutatót a fiókod megerősítéséhez. A fiókodat azonban már megerősítettük, ezért erre nincs szükség újra."
+      new_password: "Ha elfelejtetted a jelszavadat, ezen a linken állíthatod vissza:"
+      subject: A fiókodat már megerősítettük
+    comment:
+      hi: Szia
+      new_comment_by: 'Új hozzászólás érkezett tőle: <strong>%{commenter}</strong>'
+      subject: 'Valaki hozzászólt ehhez: %{commentable}'
+      title: Új hozzászólás
+    config:
+      notifications_link: Értesítések
+      unsubscribe_text: 'Ha le szeretnél iratkozni ezekről az e-mailekről, nyisd meg a(z) %{notifications} oldalt, és vedd ki a pipát innen: "%{notification}".'
+    email_verification:
+      click_here_to_verify: erre a linkre
+      instructions_2: Ez az e-mail a <b>%{document_type} %{document_number}</b> adatokkal hitelesíti a fiókodat. Ha ezek nem hozzád tartoznak, ne kattints az előző linkre, és hagyd figyelmen kívül ezt az üzenetet.
+      instructions: A felhasználói fiókod hitelesítésének befejezéséhez kattints %{verification_link}.
+      subject: E-mail megerősítése
+      thanks: Köszönjük szépen.
+      title: "E-mail megerősítése"
+      text: "Erősítsd meg a fiókodat a következő linken."
+    reply:
+      hi: Szia
+      new_reply_by: 'Új válasz érkezett tőle: <strong>%{commenter}</strong> a hozzászólásodra itt:'
+      subject: Valaki válaszolt a hozzászólásodra
+      title: Új válasz a hozzászólásodra
+    proposal_notification_digest:
+      info: "Itt találod az új értesítéseket, amelyeket azoknak a javaslatoknak a szerzői tettek közzé, amelyeket támogattál itt: %{org_name}."
+      title: "Javaslatértesítések itt: %{org_name}"
+      share: Javaslat megosztása
+      comment: Hozzászólás a javaslathoz
+      unsubscribe_text: "Ha nem szeretnél javaslatértesítéseket kapni, nyisd meg a(z) %{notifications} oldalt, és vedd ki a pipát innen: 'Javaslatértesítések összefoglalójának fogadása'."
+      unfollow: "Nyisd meg ezt a javaslatot, és szüntesd meg a követését, ha nem szeretnél több értesítést kapni róla."
+    direct_message_for_receiver:
+      subject: "Új privát üzenetet kaptál"
+      reply: Válasz %{sender} üzenetére
+      unsubscribe_text: "Ha nem szeretnél privát üzeneteket kapni, nyisd meg a(z) %{notifications} oldalt, és vedd ki a pipát innen: 'E-mailek fogadása privát üzenetekről'."
+    direct_message_for_sender:
+      subject: "Új privát üzenetet küldtél"
+      title: "Új privát üzenetet küldtél"
+      text: "Új privát üzenetet küldtél neki: <strong>%{receiver}</strong>, a következő tartalommal:"
+    user_invite:
+      ignore: "Ha nem te kérted ezt a meghívót, semmi gond, nyugodtan figyelmen kívül hagyhatod ezt az e-mailt."
+      text: "Köszönjük, hogy jelentkeztél a(z) %{org} platformra! Néhány másodpercen belül elkezdhetsz részt venni, csak töltsd ki az alábbi űrlapot:"
+      thanks: "Köszönjük szépen."
+      title: "Üdvözlünk itt: %{org}"
+      button: Regisztráció befejezése
+      subject: "Meghívó ide: %{org_name}"
+    budget_investment_created:
+      subject: "Köszönjük, hogy létrehoztál egy beruházást!"
+      title: "Köszönjük, hogy létrehoztál egy beruházást!"
+      intro: "Szia <strong>%{author}</strong>!"
+      text: "Köszönjük, hogy létrehoztad ezt a beruházást: <strong>%{investment}</strong> a(z) <strong>%{budget}</strong> részvételi költségvetéshez."
+      follow: "Tájékoztatni fogunk a folyamat előrehaladásáról, amelyet itt is követhetsz: <strong>%{link}</strong>."
+      follow_link: "Részvételi költségvetések"
+      sincerely: "Üdvözlettel,"
+      share: "Oszd meg a projektedet"
+    budget_investment_unfeasible:
+      title: "A beruházási projektedet nem megvalósíthatónak jelöltük"
+      hi: "Kedves felhasználó!"
+      new: "Mindezek miatt arra kérünk, hogy dolgozz ki egy <strong>új beruházást</strong>, amely jobban illeszkedik a folyamat feltételeihez. Ezt ezen a linken teheted meg: %{url}."
+      new_href: "új beruházási projekt"
+      sincerely: "Üdvözlettel"
+      sorry: "Elnézést kérünk a kellemetlenségért, és még egyszer köszönjük az értékes részvételedet."
+      subject: "A(z) '%{code}' beruházási projektedet nem megvalósíthatónak jelöltük"
+    budget_investment_selected:
+      subject: "A(z) '%{code}' beruházási projektedet kiválasztottuk"
+      title: "A beruházási projektedet kiválasztottuk"
+      hi: "Kedves felhasználó!"
+      share: "Kezdd el gyűjteni a szavazatokat, oszd meg a beruházási projektedet a közösségi oldalakon. A megosztás kulcsfontosságú ahhoz, hogy megvalósulhasson."
+      share_button: "Beruházási projektem megosztása"
+      thanks: "Köszönjük még egyszer a részvételedet."
+      sincerely: "Üdvözlettel"
+    budget_investment_unselected:
+      subject: "A(z) '%{code}' beruházási projektedet nem választottuk ki"
+      title: "A beruházási projektedet nem választottuk ki"
+      hi: "Kedves felhasználó!"
+      thanks: "Köszönjük még egyszer a részvételedet."
+      sincerely: "Üdvözlettel"
+    evaluation_comment:
+      subject: "Új értékelő megjegyzés"
+      title: 'Új értékelő megjegyzés ehhez: %{investment}'
+      hi: Szia
+      new_comment_by: 'Új értékelő megjegyzés érkezett tőle: <strong>%{commenter}</strong> ehhez a költségvetési beruházáshoz: %{investment}'
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Gépi tanulás panel megnyitása"
+      subject: "Gépi tanulás - Hiba történt a szkript futtatása közben"
+      text: "Hiba történt a gépi tanulási szkript futtatása közben."
+      title: "Gépi tanulási szkript"
+    machine_learning_success:
+      link: "Gépi tanulás panel megnyitása"
+      subject: "Gépi tanulás - A tartalom sikeresen elkészült"
+      text: "A tartalom sikeresen elkészült."
+      title: "Gépi tanulási szkript"
+    new_actions_notification_on_create:
+      subject: "Az állampolgári javaslatod piszkozatként létrejött"
+      hi: "Szia %{name}!"
+      introduction: "A(z) %{title} javaslatod sikeresen létrejött."
+      text_1: "Használd ki, hogy a javaslatod még nem nyilvános, és készülj fel arra, hogy sok embert megszólíts."
+      text_2: "Ha készen állsz, ezen a <a href='%{link}'>linken</a> teheted közzé az állampolgári javaslatodat."
+      text_3: "Tudjuk, hogy egy figyelemfelkeltő javaslat elkészítése és a szükséges támogatás megszerzése bonyolultnak tűnhet. De ne aggódj, segítünk!"
+      text_4: "Van egy eszközöd, ami az új legjobb szövetségesed lesz: az Állampolgári javaslatok panel."
+      list_1: "Lépj be minden nap a javaslatod paneljére, és használd azokat a tippeket és erőforrásokat, amelyeket megosztunk veled."
+      list_2: "Ezek a tippek, lépések és erőforrások ötleteket és gyakorlati megoldásokat adnak, hogy több támogatást és nagyobb közösséget szerezz."
+      list_3: "Ahogy egyre több támogatást szerzel, új és jobb erőforrások nyílnak meg előtted. Jelenleg van egy e-mail-sablonod, amellyel tömegesen írhatsz a kapcsolataidnak, egy kinyomtatható posztered, és még sok más funkció és jutalom, amelyeket később fedezhetsz fel. Ne hagyd abba a támogatások gyűjtését, és mi sem hagyjuk abba a jutalmazásodat és támogatásodat!"
+      list_4: "A javaslat közzététele után %{max_month} hónapod van arra, hogy megszerezd a(z) %{max_votes} támogatást, és a javaslatodból valóság lehessen. De az első napok a legfontosabbak. Ez kihívás. Készülj fel!"
+      text_5: "És hogy teljes lelkesedéssel indulj,"
+      text_6: "itt találsz néhány erőforrást és egy egész listányi tippet, amelyek minden nap segítenek a terjesztés előkészítésében!"
+      dashboard_button: "Gyerünk, fedezd fel őket!"
+    new_actions_notification_on_published:
+      subject: "Az állampolgári javaslatod már nyilvános. Terjeszd tovább!"
+      hi: "Gratulálunk %{name}! A(z) %{title} javaslatod sikeresen közzé lett téve."
+      text_1: "Most pedig irány az első 100 támogatás!"
+      text_2: "Miért pont 100?"
+      text_3: "A tapasztalataink azt mutatják, hogy az első nap kulcsfontosságú. Egyrészt még megvan benned az új kezdeményezés lendülete, másrészt újonnan közzétett javaslatként kiemelt láthatóságot kapsz az új javaslatok között."
+      text_4: "Szerezz 100 támogatást az első napon, és máris lesz egy első közösség, amely melléd áll."
+      text_5: "Ezért kihívás elé állítunk, de nem segítség nélkül!"
+      text_6: "Ne feledd, a Javaslat panelen új erőforrások és ajánlott terjesztési lépések várnak rád."
+      list_1: "Nézz be minden nap, hogy lásd az előrehaladásodat, és használd a tippeket és erőforrásokat, amelyeket megosztunk veled. Ezek nemcsak ötletek, hanem gyakorlati megoldások is a szükséges támogatás megszerzéséhez."
+      list_2: "Ahogy egyre több támogatást szerzel, újabb és jobb erőforrások nyílnak meg előtted. Ne hagyd abba a támogatások gyűjtését, és mi sem hagyjuk abba a jutalmazásodat és támogatásodat!"
+      text_7: "És hogy teljes sebességgel kezdhess..."
+      text_8: "Itt egy nagyszerű erőforrás, ami már most a rendelkezésedre áll!"
+      text_9: "Ezt az új ajánlott terjesztési lépést is megtalálod..."
+      text_10: "Biztosan van még több erőforrásod, amit használhatsz!"
+      dashboard_button: "Gyerünk, fedezd fel őket!"
