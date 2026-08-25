@@ -1,1 +1,173 @@
 hu:
+  pages:
+    census_terms:
+      title: "A névjegyzékhez való hozzáférés feltételei"
+      description: "Tájékoztató oldal a névjegyzékhez való hozzáférés feltételeiről."
+    conditions:
+      title: Felhasználási feltételek
+      subtitle: JOGI TÁJÉKOZTATÓ A NYÍLT KORMÁNYZATI PORTÁL HASZNÁLATI FELTÉTELEIRŐL, ADATVÉDELMÉRŐL ÉS SZEMÉLYES ADATOK VÉDELMÉRŐL
+      description: Tájékoztató oldal a használati feltételekről, az adatvédelemről és a személyes adatok védelméről.
+    help:
+      title: "A(z) %{org} egy állampolgári részvételi platform"
+      guide: "Ez az útmutató elmagyarázza, mire szolgálnak a(z) %{org} különböző részei, és hogyan működnek."
+      menu:
+        debates: "Viták"
+        proposals: "Javaslatok"
+        budgets: "Részvételi költségvetések"
+        polls: "Szavazások"
+        other: "Egyéb hasznos információk"
+        processes: "Folyamatok"
+      debates:
+        title: "Viták"
+        description: "A(z) %{link} részben megfogalmazhatod és megoszthatod a véleményedet másokkal a várost érintő, számodra fontos ügyekről. Ez egyben olyan hely is, ahol ötletek születhetnek, amelyek a(z) %{org} más részein keresztül végül konkrét önkormányzati lépésekké válhatnak."
+        link: "állampolgári viták"
+        feature: "Indíthatsz vitákat, hozzászólhatsz hozzájuk, és értékelheted őket az <strong>Egyetértek</strong> vagy a <strong>Nem értek egyet</strong> gombokkal. Ehhez %{link} kell."
+        feature_link: "regisztrálnod a(z) %{org} oldalon"
+        image_alt: "A viták értékelésére szolgáló gombok"
+        figcaption: '"Egyetértek" és "Nem értek egyet" gombok a viták értékeléséhez.'
+      proposals:
+        title: "Javaslatok"
+        description: "A(z) %{link} részben javaslatokat tehetsz az önkormányzatnak. A javaslatok támogatásokat gyűjtenek, és ha elérik a szükséges számot, nyilvános szavazásra kerülnek. Az ezeken a szavazásokon elfogadott javaslatokat az önkormányzat jóváhagyja és megvalósítja."
+        link: "állampolgári javaslatok"
+        image_alt: "Egy javaslat támogatására szolgáló gomb"
+        figcaption: 'Gomb egy javaslat "Támogatásához".'
+      budgets:
+        title: "Részvételi költségvetés"
+        description: "A(z) %{link} rész lehetőséget ad arra, hogy közvetlenül dönts arról, a települési költségvetés melyik részét mire költsék."
+        link: "részvételi költségvetések"
+        image_alt: "Egy részvételi költségvetés különböző fázisai"
+        figcaption: 'A részvételi költségvetések "Támogatás" és "Szavazás" fázisai.'
+      polls:
+        title: "Szavazások"
+        description: "A(z) %{link} rész akkor aktiválódik, amikor egy javaslat eléri az 1%-os támogatottságot és szavazásra kerül, vagy amikor az önkormányzat olyan ügyet terjeszt elő, amelyről a lakosok dönthetnek."
+        link: "szavazások"
+        feature_1: "A szavazásban való részvételhez %{link} és hitelesítened kell a fiókodat."
+        feature_1_link: "regisztrálnod kell a(z) %{org_name} oldalon"
+      processes:
+        title: "Folyamatok"
+        description: "A(z) %{link} részben a polgárok részt vesznek a várost érintő szabályozások kidolgozásában és módosításában, és a megelőző vitákban véleményt mondhatnak az önkormányzati politikákról."
+        link: "folyamatok"
+        feature: "A folyamatokban való részvételhez %{link} és hitelesítened kell a fiókodat."
+        feature_link: "regisztrálnod kell a(z) %{org_name} oldalon"
+      faq:
+        title: "Gyakoran ismételt kérdések"
+        description: "Olvasd el a gyakran ismételt kérdéseket, és találd meg a válaszokat!"
+        button: "Gyakran ismételt kérdések megtekintése"
+        page:
+          title: "Gyakran ismételt kérdések"
+          description: "Használd ezt az oldalt a webhely felhasználóinál felmerülő gyakori kérdések megválaszolására."
+      other:
+        title: "Egyéb hasznos információk"
+        how_to_use: "Használd a(z) %{org_name} platformot a saját városodban"
+        sdg: "Segítség a fenntartható fejlődési célokhoz"
+      how_to_use:
+        text: |-
+          Használd a saját önkormányzatodnál, vagy segíts nekünk fejleszteni, mert ez szabad szoftver.
+
+          Ez a Nyílt Kormányzati Portál a [CONSUL DEMOCRACY alkalmazást](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') használja, amely szabad szoftver [AGPLv3 licenccel](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu'). Egyszerűen fogalmazva ez azt jelenti, hogy bárki szabadon használhatja a kódot, lemásolhatja, részletesen megvizsgálhatja, módosíthatja, és a saját módosításaival együtt újra közzéteheti (így mások is megtehetik ugyanezt). Szerintünk a kultúra akkor jobb és gazdagabb, ha szabadon hozzáférhető.
+
+          Ha fejlesztő vagy, megnézheted a kódot, és segíthetsz a fejlesztésében a [CONSUL DEMOCRACY alkalmazásnál](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+      titles:
+        how_to_use: Használd a saját önkormányzatodnál
+    privacy:
+      title: Adatvédelmi szabályzat
+      subtitle: "Tájékoztató oldal az adatvédelemről"
+    accessibility:
+      title: Akadálymentesség
+      description: |-
+        A webes akadálymentesség azt jelenti, hogy mindenki hozzáférhet a webhez és annak tartalmához, függetlenül az esetlegesen fennálló fogyatékosságoktól (fizikai, értelmi vagy technikai), illetve a használati környezetből fakadó korlátoktól (technológiai vagy környezeti).
+
+        Ha a weboldalakat akadálymentességi szempontokat figyelembe véve tervezzük, minden felhasználó azonos feltételek mellett férhet hozzá a tartalomhoz, például:
+      examples:
+        - Ha a képekhez alternatív szöveg tartozik, a vak vagy látássérült felhasználók speciális felolvasóprogramokkal is hozzáférhetnek az információhoz.
+        - Ha a videók feliratosak, a hallássérült felhasználók is teljesen megérthetik a tartalmukat.
+        - Ha a tartalmak egyszerű és jól szemléltetett nyelven íródnak, a tanulási nehézségekkel élő felhasználók könnyebben megértik őket.
+        - Ha a felhasználónak mozgásproblémája van, és nehéz egeret használnia, a billentyűzetes alternatívák segítik a navigációt.
+      keyboard_shortcuts:
+        title: Billentyűparancsok
+        navigation_table:
+          description: Ahhoz, hogy az oldalon akadálymentesen lehessen navigálni, gyorsbillentyűket programoztunk a fő, általános érdeklődésre számot tartó szekciókhoz.
+          caption: Billentyűparancsok a navigációs menühöz
+          key_header: Billentyű
+          page_header: Oldal
+          rows:
+            - 
+              key_column: 0
+              page_column: Főoldal
+            - 
+              key_column: 1
+              page_column: Viták
+            - 
+              key_column: 2
+              page_column: Javaslatok
+            - 
+              key_column: 3
+              page_column: Szavazások
+            - 
+              key_column: 4
+              page_column: Részvételi költségvetések
+            - 
+              key_column: 5
+              page_column: Jogalkotási folyamatok
+        browser_table:
+          description: "Az operációs rendszertől és a használt böngészőtől függően a billentyűkombináció a következő:"
+          caption: Billentyűkombináció operációs rendszer és böngésző szerint
+          browser_header: Böngésző
+          key_header: Billentyűkombináció
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + gyorsbillentyű, majd ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + SHIFT + gyorsbillentyű
+            - 
+              browser_column: Chrome
+              key_column: ALT + gyorsbillentyű (MAC-en CTRL + ALT + gyorsbillentyű)
+            - 
+              browser_column: Safari
+              key_column: ALT + gyorsbillentyű (MAC-en CMD + gyorsbillentyű)
+            - 
+              browser_column: Opera
+              key_column: SHIFT + ESC + gyorsbillentyű
+      textsize:
+        title: Szövegméret
+        browser_settings_table:
+          description: Az oldal akadálymentes kialakítása lehetővé teszi, hogy a neked megfelelő szövegméretet válaszd. Ezt a használt böngészőtől függően többféleképpen is megteheted.
+          browser_header: Böngésző
+          action_header: Szükséges művelet
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Nézet > Szövegméret
+            - 
+              browser_column: Firefox
+              action_column: Nézet > Méret
+            - 
+              browser_column: Chrome
+              action_column: Beállítások (ikon) > Beállítások > Speciális > Webes tartalom > Szövegméret
+            - 
+              browser_column: Safari
+              action_column: Nézet > Nagyítás / Kicsinyítés
+            - 
+              browser_column: Opera
+              action_column: Nézet > Méretezés
+        browser_shortcuts_table:
+          description: "A szövegméret módosításának másik módja a böngészőkben definiált billentyűparancsok használata, különösen a következő kombináció:"
+          rows:
+            - 
+              shortcut_column: CTRL és + (MAC-en CMD és +)
+              description_column: Növeli a szöveg méretét
+            - 
+              shortcut_column: CTRL és - (MAC-en CMD és -)
+              description_column: Csökkenti a szöveg méretét
+      compatibility:
+        title: Szabványokkal és vizuális megjelenéssel való kompatibilitás
+        description: 'Az oldal minden oldala megfelel a <strong>Hozzáférhetőségi irányelveknek</strong>, illetve a W3C-hez tartozó <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> munkacsoport által megfogalmazott általános akadálymentes tervezési elveknek.'
+    titles:
+      help: "Mi az a(z) %{org}? - Állampolgári részvétel"
+    verify:
+      info: "A fiókod hitelesítéséhez add meg a belépési adataidat:"
+      info_code: "Most add meg a levélben kapott kódot:"
+      submit: Fiókom hitelesítése
+      title: Fiókod hitelesítése
