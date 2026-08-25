@@ -9,7 +9,6 @@ tr:
       or_separator: ya da
       suggest_image_with_ai: Yapay zeka ile bir görsel öner
       suggested_images_container: Önerilen görseller
-      attach_suggested_image: Önerilen görseli ekle
       attach_suggested_image_aria_label: "Önerilen görseli ekle %{index} / %{count}"
       pick_an_image: "Aşağıdaki önerilerden bir görsel seçin:"
       no_images_found: Herhangi bir öneri bulunamadı.
