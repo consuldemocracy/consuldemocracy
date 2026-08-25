@@ -91,6 +91,10 @@ it:
       google_login_description: "Consenti agli utenti di registrarsi col proprio Profilo di Google"
       wordpress_login: "Accesso di Wordpress"
       wordpress_login_description: "Consenti agli utenti di registrarsi col proprio Profilo di Wordpress"
+      oidc_login: "Accesso con OpenID Connect"
+      oidc_login_description: "Consenti agli utenti di registrarsi con OpenID Connect (OIDC)"
+      saml_login: "Accesso con SAML"
+      saml_login_description: "Consenti agli utenti di registrarsi con SAML"
       featured_proposals: "Proposte in evidenza"
       featured_proposals_description: "Mostra le proposte in evidenza sulla pagina delle proposte dell'indice"
       signature_sheets: "Fogli firma"
@@ -134,6 +138,15 @@ it:
       remove_investments_supports_description: "Consenti agli utenti di rimuovere i supporti agli investimenti di budget partecipatori durante la fase selettiva dei progetti."
       sdg: SDG
       sdg_description: Abilita le sezioni degli Obiettivi di Sviluppo Sostenibile nel menu d'amministrazione e nelle Impostazioni Globali.
+      cookies_consent: Banner di consenso sui cookie
+      cookies_consent_description: Abilita il banner di consenso ai cookie per informare gli utenti sui cookie utilizzati dall'applicazione.
+      gdpr:
+        require_consent_for_notifications: Consenso esplicito per le notifiche
+        require_consent_for_notifications_description: Richiedi il consenso esplicito dell'utente per potergli inviare newsletter e informazioni simili, come richiesto dal Regolamento Generale sulla Protezione dei Dati (GDPR).
+        require_consent_for_embedded_videos: Consenso per i video incorporati
+        require_consent_for_embedded_videos_description: Mostra un avviso e richiede la conferma dell'utente prima di caricare i video incorporati da fornitori esterni.
+        warning_for_external_links: "Avviso per link esterni"
+        warning_for_external_links_description: "Abilita un popup che richiede la conferma dell'utente, prima di aprire un sito web esterno."
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -167,6 +180,9 @@ it:
         valid: "Condizione per rilevare una risposta valida"
         valid_description: "Che percorso di risposta dev'esser informato perché una risposta sia considerata valida e un utente verificato"
     map:
+      feature:
+        marker_clustering: "Raggruppa marcatori"
+        marker_clustering_description: "Abilita il raggruppamento dei marcatori della mappa. Utile quando ne sono presenti svariati da mostrare."
       latitude: "Latitudine"
       latitude_description: "Latitudine per mostrare la posizione della mappa"
       longitude: "Longitudine"
@@ -223,3 +239,18 @@ it:
         budgets_description: Consenti ai budget partecipativi di esser collegati agli Obiettivi di Sviluppo Sostenibile
         legislation: SDG correlati nella legislazione collaborativa
         legislation_description: Consenti alla legislazione collaborativa di esser collegata agli Obiettivi di Sviluppo Sostenibile
+    cookies_consent:
+      more_info_link: Collegamento all'informativa sui cookie
+      more_info_link_description: Collegamento mostrato nel banner di consenso, alla pagina dell'informativa sui cookie.
+      version_name: Nome della versione
+      version_name_description: Modifica il nome della versione per forzare tutti gli utenti a ripassare per il procedimento di consenso sui cookie. Questa funzionalità può tornare utile introducendo modifiche drastiche alla politica sui cookie, che richiedano l'informazione degli utenti.
+    llm:
+      title: Impostazioni LLM
+      provider: "Fornitore LLM"
+      provider_description: "I fornitori saranno disabilitati fino alla configurazione delle credenziali in secrets.yml."
+      use_llm_for_translations: "Traduzione dei contenuti"
+      use_llm_for_translations_description: "Utilizza LLM per le traduzioni dei contenuti e dai priorità ai servizi di traduzione di Microsoft."
+      model: "Modello"
+      model_description: "Il modello LLM da utilizzare."
+      use_ai_image_suggestions: "Suggerimenti di Immagini IA"
+      use_ai_image_suggestions_description: "Consente agli utenti di utilizzare l'IA per suggerire immagini da Pexels, invece di caricare le proprie."
