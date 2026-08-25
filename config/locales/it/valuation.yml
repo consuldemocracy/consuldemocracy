@@ -41,6 +41,8 @@ it:
         heading: Intestazione
         dossier: Dossier
         edit_dossier: Modificare il dossier
+        price_with_currency: Prezzo (%{currency})
+        price_first_year_with_currency: Costo durante il primo anno (%{currency})
         feasibility: Fattibilità
         feasible: Fattibile
         unfeasible: Irrealizzabile
