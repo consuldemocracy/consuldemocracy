@@ -1,1 +1,640 @@
 hu:
+  attributes:
+    created_at: Létrehozva
+    geozone_id: "Működési terület"
+    results_enabled: "Eredmények megjelenítése"
+    stats_enabled: "Statisztikák megjelenítése"
+    advanced_stats_enabled: "Részletes statisztikák megjelenítése"
+    name: Név
+    email: E-mail
+    description: Leírás
+    related_sdg_list: Célok és alcélok
+  activerecord:
+    models:
+      activity:
+        one: "tevékenység"
+        other: "tevékenységek"
+      budget:
+        one: "Költségvetés"
+        other: "Költségvetések"
+      budget/investment:
+        one: "Beruházás"
+        other: "Beruházások"
+      milestone:
+        one: "mérföldkő"
+        other: "mérföldkövek"
+      milestone/status:
+        one: "Mérföldkő állapota"
+        other: "Mérföldkő állapotok"
+      progress_bar:
+        one: "Folyamatjelző"
+        other: "Folyamatjelzők"
+      comment:
+        one: "Hozzászólás"
+        other: "Hozzászólások"
+      debate:
+        one: "Vita"
+        other: "Viták"
+      tag:
+        one: "Címke"
+        other: "Címkék"
+      user:
+        one: "Felhasználó"
+        other: "Felhasználók"
+      moderator:
+        one: "Moderátor"
+        other: "Moderátorok"
+      administrator:
+        one: "Adminisztrátor"
+        other: "Adminisztrátorok"
+      valuator:
+        one: "Értékelő"
+        other: "Értékelők"
+      valuator_group:
+        one: "Értékelői csoport"
+        other: "Értékelői csoportok"
+      manager:
+        one: "Kezelő"
+        other: "Kezelők"
+      newsletter:
+        one: "Hírlevél"
+        other: "Hírlevelek"
+      vote:
+        one: "Szavazat"
+        other: "Szavazatok"
+      organization:
+        one: "Szervezet"
+        other: "Szervezetek"
+      poll/booth:
+        one: "szavazóhely"
+        other: "szavazóhelyek"
+      poll/officer:
+        one: "tisztviselő"
+        other: "tisztviselők"
+      poll/ballot_sheet:
+        one: Szavazólap
+        other: Szavazólapok
+      proposal:
+        one: "Polgári javaslat"
+        other: "Polgári javaslatok"
+      sdg/goal:
+        one: "cél"
+        other: "célok"
+      sdg/local_target:
+        one: "helyi alcél"
+        other: "helyi alcélok"
+      sdg/manager:
+        one: "SDG-kezelő"
+        other: "SDG-kezelők"
+      sdg/target:
+        one: "alcél"
+        other: "alcélok"
+      site_customization/page:
+        one: Egyedi oldal
+        other: Egyedi oldalak
+      site_customization/image:
+        one: Egyedi kép
+        other: Egyedi képek
+      site_customization/content_block:
+        one: Egyedi tartalomblokk
+        other: Egyedi tartalomblokkok
+      document:
+        one: Dokumentum
+        other: Dokumentumok
+      legislation/process:
+        one: "Folyamat"
+        other: "Folyamatok"
+      legislation/proposal:
+        one: "Javaslat"
+        other: "Javaslatok"
+      legislation/draft_version:
+        one: "Vázlatverzió"
+        other: "Vázlatverziók"
+      legislation/question:
+        one: "Kérdés"
+        other: "Kérdések"
+      legislation/question_option:
+        one: "Kérdésopció"
+        other: "Kérdésopciók"
+      legislation/answer:
+        one: "Válasz"
+        other: "Válaszok"
+      image:
+        one: "Kép"
+        other: "Képek"
+      tenant:
+        one: "bérlő"
+        other: "bérlők"
+      topic:
+        one: "Téma"
+        other: "Témák"
+      poll:
+        one: "Szavazás"
+        other: "Szavazások"
+      proposal_notification:
+        one: "Javaslatértesítés"
+        other: "Javaslatértesítések"
+      dashboard/action:
+        one: Javaslat irányítópult művelet
+        other: Javaslat irányítópult műveletek
+      dashboard/administrator_task:
+        one: Feladat
+        other: Feladatok
+      link:
+        one: Hivatkozás
+        other: Hivatkozások
+      local_census_record:
+        one: Helyi népesség-nyilvántartási rekord
+        other: Helyi népesség-nyilvántartási rekordok
+      votation_type:
+        one: Szavazástípus
+        other: Szavazástípusok
+      cookies/vendor:
+        one: cookie-szolgáltató
+        other: cookie-szolgáltatók
+    attributes:
+      budget:
+        name: "Név"
+        description_accepting: "Leírás a fogadási szakaszban"
+        description_reviewing: "Leírás a felülvizsgálati szakaszban"
+        description_selecting: "Leírás a kiválasztási szakaszban"
+        description_valuating: "Leírás az értékelési szakaszban"
+        description_balloting: "Leírás a szavazási szakaszban"
+        description_reviewing_ballots: "Leírás a szavazat-felülvizsgálati szakaszban"
+        description_finished: "Leírás a költségvetés lezárásakor"
+        phase: "Aktív szakasz"
+        currency_symbol: "Pénznem"
+        voting_style: "Végső szavazási mód"
+        voting_style_knapsack: "Költségkeretes"
+        voting_style_approval: "Jóváhagyásos"
+        hide_money: "Pénzösszeg elrejtése ennél a költségvetésnél"
+      budget/translation:
+        main_link_text: "A hivatkozás szövege"
+        main_link_url: "Ide vezet a hivatkozás (adj meg egy linket)"
+        name: "Név"
+      budget/investment:
+        heading_id: "Címsor"
+        title: "Cím"
+        description: "Leírás"
+        external_url: "Hivatkozás további dokumentációhoz"
+        administrator_id: "Adminisztrátor"
+        location: "Helyszínnel kapcsolatos további információ"
+        organization_name: "Ha közösség vagy szervezet nevében, illetve több ember képviseletében nyújtod be, add meg a nevét"
+        image: "A javaslatot bemutató kép"
+        image_title: "Kép címe"
+        duration: "Időtáv"
+        feasibility_feasible: "Megvalósítható"
+        feasibility_undecided: "Nem meghatározott"
+        feasibility_unfeasible: "Nem megvalósítható"
+        incompatible: "Megjelölés összeférhetetlenként"
+        milestone_tag_list: "Mérföldkő címkék"
+        price_explanation: "Ármagyarázat"
+        selected: "Megjelölés kiválasztottként"
+        selected_true: "Kiválasztva"
+        selected_false: "Nincs kiválasztva"
+        unfeasibility_explanation: "A megvalósíthatóság magyarázata"
+        valuation_finished: "Értékelés befejezve"
+        valuator_ids: "Csoportok"
+        valuation_tag_list: "Címkék"
+      budget/investment/translation:
+        title: "Cím"
+        description: "Leírás"
+      geozone:
+        name: Név
+        external_code: "Külső kód (opcionális)"
+        color: "Szín (opcionális)"
+        census_code: "Népesség-nyilvántartási kód (opcionális)"
+        geojson: "GeoJSON adatok (opcionális)"
+        html_map_coordinates: "HTML `<map>` koordináták (opcionális)"
+      milestone:
+        status_id: "Jelenlegi állapot (opcionális)"
+        title: "Cím"
+        description: "Leírás (opcionális, ha van hozzárendelt állapot)"
+        publication_date: "Dátum"
+      milestone/translation:
+        description: "Leírás"
+      milestone/status:
+        name: "Név"
+        description: "Leírás (opcionális)"
+      progress_bar:
+        kind: "Típus"
+        title: "Cím"
+        percentage: "Jelenlegi előrehaladás"
+      progress_bar/kind:
+        primary: "Elsődleges"
+        secondary: "Másodlagos"
+      budget/group:
+        max_votable_headings: "A címsorok maximális száma, amelyekben a felhasználó projekteket választhat"
+      budget/group/translation:
+        name: "Csoport neve"
+      budget/heading:
+        allow_custom_content: "Tartalomblokk engedélyezése"
+        latitude: "Szélesség (opcionális)"
+        longitude: "Hosszúság (opcionális)"
+        name: "Címsor neve"
+        price: "Pénzösszeg"
+        population: "Lakosság (opcionális)"
+        max_ballot_lines: "Engedélyezett szavazatok"
+      budget/heading/translation:
+        name: "Címsor neve"
+      budget/phase:
+        enabled: "Szakasz engedélyezve"
+        ends_at: "Záródátum"
+        starts_at: "Kezdődátum"
+      budget/phase/translation:
+        name: "Név"
+        description: "Leírás"
+        summary: "Összefoglaló"
+        main_link_text: "A hivatkozás szövege"
+        main_link_url: "Ide vezet a hivatkozás (adj meg egy linket)"
+      comment:
+        body: "Hozzászólás"
+        parent_id: "Szülő"
+        user: "Felhasználó"
+      debate:
+        author: "Szerző"
+        description: "Vélemény"
+        tag_list: "Témák"
+        terms_of_service: "Szolgáltatási feltételek"
+        title: "Cím"
+      debate/translation:
+        title: "Vita címe"
+        description: "A vita nyitó szövege"
+      proposal:
+        author: "Szerző"
+        title: "Cím"
+        question: "Kérdés"
+        description: "Leírás"
+        responsible_name: "A javaslatot benyújtó személy teljes neve"
+        retired_reason: "A javaslat visszavonásának oka"
+        selected: "Megjelölés kiválasztottként"
+        terms_of_service: "Szolgáltatási feltételek"
+        video_url: "Külső videó URL-je"
+      proposal/translation:
+        title: "Javaslat címe"
+        description: "Javaslat szövege"
+        summary: "Javaslat összefoglalója"
+        retired_explanation: "Magyarázat"
+      user:
+        login: "E-mail vagy felhasználónév"
+        email: "E-mail"
+        username: "Felhasználónév"
+        password_confirmation: "Jelszó megerősítése"
+        password: "Jelszó"
+        current_password: "Jelenlegi jelszó"
+        email_digest: "Kapjak összefoglalót e-mailben a javaslatértesítésekről"
+        email_on_comment: "Kérek e-mail értesítést, ha valaki hozzászól a tartalmaimhoz"
+        email_on_comment_reply: "Kérek e-mail értesítést, ha valaki válaszol a hozzászólásaimra"
+        email_on_direct_message: "Kapjak e-mailt a privát üzenetekről"
+        newsletter: "Kapjak releváns információkat e-mailben"
+        official_position: "Hivatalos pozíció"
+        official_position_badge: "Hivatalos pozíció jelvényének megjelenítése"
+        official_level: "Hivatalos szint"
+        phone_number: "Telefonszám"
+        public_activity: "Maradjon nyilvános a tevékenységeim listája"
+        public_interests: "Maradjanak nyilvánosak az általam követett elemek"
+        recommended_debates: "Ajánlj vitákat"
+        recommended_proposals: "Ajánlj javaslatokat"
+      direct_message:
+        title: "Cím"
+        body: "Üzenet"
+      organization:
+        name: "A szervezet neve"
+        responsible_name: "A csoport felelős személye"
+      poll:
+        name: "Név"
+        title: "Név"
+        starts_at: "Kezdődátum"
+        ends_at: "Záródátum"
+        geozone_restricted: "Geozóna alapján korlátozott"
+        summary: "Összefoglaló"
+        description: "Leírás"
+      active_poll/translation:
+        description: "Leírás"
+      poll/booth:
+        name: "Név"
+        location: "Helyszín"
+      poll/translation:
+        name: "Név"
+        summary: "Összefoglaló"
+        description: "Leírás"
+      poll/question:
+        poll_id: "Szavazás"
+        title: "Kérdés"
+        summary: "Összefoglaló"
+        description: "Leírás"
+        external_url: "Hivatkozás további dokumentációhoz"
+      poll/question/translation:
+        title: "Kérdés"
+      poll/ballot_sheet:
+        data: CSV adatok
+        poll_id: Szavazás
+        officer_assignment_id: Tisztviselő hozzárendelés
+      poll/shift:
+        task: "Feladat"
+      proposal_notification:
+        body: "Üzenet"
+        title: "Cím"
+      signature_sheet:
+        title: "Cím"
+        signable_type: "Aláírható típus"
+        signable_id: "Aláírható azonosító"
+        document_numbers: "Okmányszámok"
+      sdg/goal:
+        code: "Kód"
+        title: "Cím"
+        description: "Leírás"
+      sdg/local_target:
+        code: "Kód"
+        target_id: "Alcél"
+        title: "Cím"
+      sdg/local_target/translation:
+        title: "Cím"
+        description: "Leírás"
+      sdg/phase/kind:
+        sensitization: "Érzékenyítés"
+        planning: "Tervezés"
+        monitoring: "Nyomon követés"
+      sdg/target:
+        code: "Kód"
+        title: "Cím"
+      site_customization/page:
+        content: Tartalom
+        subtitle: Alcím
+        slug: Slug
+        status: Állapot
+        status_draft: "Vázlat"
+        status_published: "Közzétéve"
+        title: Cím
+        updated_at: Frissítve
+        more_info_flag: Megjelenítés a súgóoldalon
+        print_content_flag: Tartalom nyomtatása gomb
+        locale: Nyelv
+      site_customization/page/translation:
+        title: Cím
+        subtitle: Alcím
+        content: Tartalom
+      site_customization/image:
+        name: Név
+        image: Kép
+      site_customization/content_block:
+        name: Név
+        locale: nyelv
+        body: Törzs
+      tag:
+        name: "Írd be a téma nevét"
+      tenant:
+        domain: "Domain"
+        schema: "Domain / aldomain"
+        subdomain: "Aldomain"
+        url: "URL"
+      topic:
+        title: "Cím"
+        description: "Kezdő szöveg"
+      banner:
+        background_color: Háttérszín
+        font_color: Betűszín
+        post_ended_at: "Bejegyzés vége"
+        post_started_at: "Bejegyzés kezdete"
+        target_url: "Hivatkozás"
+      banner/translation:
+        title: "Cím"
+        description: "Leírás"
+      legislation/process:
+        title: Folyamat címe
+        summary: Összefoglaló
+        description: Leírás
+        additional_info: További információ
+        start_date: Kezdés
+        end_date: Vége
+        debate_start_date: Kezdés
+        debate_end_date: Vége
+        draft_start_date: Kezdés
+        draft_end_date: Vége
+        draft_publication_date: Vázlat közzétételi dátuma
+        allegations_start_date: Kezdés
+        allegations_end_date: Vége
+        proposals_phase_start_date: Kezdés
+        proposals_phase_end_date: Vége
+        result_publication_date: A végső eredmény közzétételi dátuma
+        background_color: Háttérszín
+        font_color: Betűszín
+        homepage_enabled: "Kezdőoldalon engedélyezve"
+      legislation/process/translation:
+        title: Folyamat címe
+        summary: Összefoglaló
+        description: Leírás
+        additional_info: További információ
+        homepage: "Leírás"
+        milestones_summary: Összefoglaló
+      legislation/proposal:
+        description: "Javaslat szövege"
+        summary: "Javaslat összefoglalója"
+        title: "Javaslat címe"
+        video_url: "Hivatkozás külső videóra"
+      legislation/draft_version:
+        title: Verzió címe
+        body: Szöveg
+        changelog: Változások
+        status: Állapot
+        status_draft: "Vázlat"
+        status_published: "Közzétéve"
+        final_version: Végleges verzió
+      legislation/draft_version/translation:
+        title: Verzió címe
+        body: Szöveg
+        changelog: Változások
+      legislation/question:
+        title: Cím
+        question_options: Opciók
+      legislation/question/translation:
+        title: Kérdés
+      legislation/question_option:
+        value: Érték
+      legislation/annotation:
+        text: Hozzászólás
+      document:
+        title: Cím
+        attachment: "Dokumentum kiválasztása"
+      image:
+        title: Cím
+        attachment: "Kép kiválasztása"
+      poll/question/option:
+        title: Válasz
+        description: Leírás
+      poll/question/option/translation:
+        title: Válasz
+        description: "Leírás (opcionális)"
+      poll/question/option/video:
+        title: Cím
+        url: Külső videó
+      newsletter:
+        segment_recipient: Címzettek
+        subject: Tárgy
+        from: "A hírlevél küldőjeként megjelenő e-mail cím"
+        body: E-mail tartalma
+      admin_notification:
+        segment_recipient: Címzettek
+        title: Cím
+        link: Hivatkozás
+        body: Szöveg
+      admin_notification/translation:
+        title: Cím
+        body: Szöveg
+      widget/card:
+        label: Címke (opcionális)
+        title: Cím
+        description: Leírás
+        link_text: Hivatkozás szövege
+        link_url: Hivatkozás URL-je
+        columns: Oszlopok száma
+        order: Pozíció
+      widget/card/translation:
+        label: Címke (opcionális)
+        title: Cím
+        description: Leírás
+        link_text: Hivatkozás szövege
+      widget/feed:
+        limit: Elemek száma
+      dashboard/action:
+        title: Cím
+        short_description: Rövid leírás
+        description: Leírás
+        link: Külső hivatkozás
+        request_to_administrators: Jelenjen meg az erőforrásnál egy gomb, amellyel az adminisztrátoroktól kérhető az erőforrás
+        day_offset: Hány nappal a javaslat létrehozása után aktiválódjon?
+        required_supports: Hány támogatást kell kapnia a javaslatnak ahhoz, hogy aktiválódjon?
+        order: Megadhatod, hogy ez a művelet milyen pozícióban jelenjen meg a felhasználónak a műveletek listájában
+        active: Aktív
+        action_type: Típus
+        action_type_proposed_action: "Javasolt művelet"
+        action_type_resource: "Erőforrás"
+        published_proposal: "Közzétett javaslatokra?"
+      dashboard/administrator_task:
+        source: Forrás
+        user: Végrehajtotta
+      link:
+        label: Cím
+        url: URL
+      valuator:
+        description: Leírás
+        valuator_group_id: Értékelői csoport
+        can_comment: Hozzászólásokat írhat
+        can_edit_dossier: Dossziékat szerkeszthet
+      valuator_group:
+        name: "Csoport neve"
+      local_census_record:
+        document_type: Okmány típusa
+        document_number: Okmány száma
+        date_of_birth: Születési dátum
+        postal_code: Irányítószám
+      votation_type:
+        max_votes: Szavazatok maximális száma
+        vote_type: Szavazástípus
+      votation_type/vote_type:
+        open: Nyílt végű
+        unique: Egyedi válasz
+        multiple: Több válasz
+      cookies/vendor:
+        name: Szolgáltató neve
+        cookie: Cookie neve
+        script: Javascript kód
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Ennek a felhasználónak már van jelszava"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "a címkék száma legfeljebb %{count} lehet"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Elérted a napi maximális privát üzenetszámot"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "A megadott GeoJSON nem megfelelő formátumú. Az RFC 7946 szabvány szerinti formátumot kell követnie"
+              invalid_coordinates: "A megadott GeoJSON érvénytelen koordinátákat tartalmaz; a koordinátáknak a szükséges \"Hosszúság, Szélesség\" formátumban kell lenniük és követniük kell az RFC 7946 szabványt"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "A kép szélességének legalább %{required_min_width}px-nek kell lennie"
+              min_image_height: "A kép magasságának legalább %{required_min_height}px-nek kell lennie"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "A címzettek felhasználói szegmense érvénytelen"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "A címzettek felhasználói szegmense érvénytelen"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Az okmány nem szerepel a népesség-nyilvántartásban"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: a kezdődátummal megegyező vagy annál későbbi kell legyen
+            debate_end_date:
+              invalid_date_range: a vita kezdődátumával megegyező vagy annál későbbi kell legyen
+            draft_end_date:
+              invalid_date_range: a vázlat kezdődátumával megegyező vagy annál későbbi kell legyen
+            allegations_end_date:
+              invalid_date_range: a hozzászólások kezdődátumával megegyező vagy annál későbbi kell legyen
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: 'nincs benne a listában; a megengedett értékek: 1 a DNI-hez, 2 az útlevélhez és 3 a tartózkodási kártyához.'
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "a címkék száma legfeljebb %{count} lehet"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "a címkék száma legfeljebb %{count} lehet"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Az értesítések között legalább %{interval} napot kell várnod"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "A népesség-nyilvántartás nem hitelesítette"
+              already_voted: "Erre a javaslatra már szavaztál"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "csak betűket, számokat, _ és - jelet tartalmazhat"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "A szélességnek %{required_width}px-nek kell lennie"
+              image_height: "A magasságnak %{required_height}px-nek kell lennie"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Nem kommentálhatsz értékelést"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Az erőforrás már le van fordítva
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "ugyanazzal a kóddal kell kezdődnie, mint a hozzá tartozó alcél, majd ponttal és egy számmal kell folytatódnia"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "nem módosítható nyílt végű típusra, mert ehhez a kérdéshez már definiáltál lehetséges érvényes válaszokat"
+      messages:
+        translations_too_short: Kötelező legalább egy fordítást megadni
+        record_invalid: "Érvényesítés sikertelen: %{errors}"
+        another_poll_active: A megadott időszakra már van egy másik aktív szavazás
+        restrict_dependent_destroy:
+          has_one: "A rekord nem törölhető, mert van hozzá kapcsolódó %{record}"
+          has_many: "A rekord nem törölhető, mert kapcsolódó %{record} elemek léteznek"
