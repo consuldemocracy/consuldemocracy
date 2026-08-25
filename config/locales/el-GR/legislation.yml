@@ -111,6 +111,8 @@ el:
       title: "Περίληψη"
       votes:
         zero: "%{count} ψήφοι"
+        one: "%{count} ψήφος"
+        other: "%{count} ψήφοι"
       debate_phase: "Φάση συζήτησης"
       proposals_phase: "Φάση προτάσεων"
       allegations_phase: "Φάση σχολίων"
@@ -122,5 +124,11 @@ el:
         zero: "Δεν υπάρχουν προτάσεις"
         one: "%{count} πρόταση"
         other: "%{count} πρότάσεις"
+      download: "Λήψη περίληψης"
       top_comments:
         zero: "Δεν υπάρχουν σχόλια"
+        one: "%{count} σχόλιο"
+        other: "%{count} δημοφιλή σχόλια"
+      most_voted_comments: "Σχόλια με τις περισσότερες ψήφους"
+      no_allegation: "Δεν υπάρχουν σχόλια"
+      process_empty: "Αυτή η διαδικασία δεν είχε φάσεις συμμετοχής"
