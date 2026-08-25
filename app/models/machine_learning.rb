@@ -245,19 +245,29 @@ class MachineLearning
     end
 
     def run_machine_learning_scripts
-      command = if Tenant.default?
-                  "python #{job.script}"
-                else
-                  "CONSUL_TENANT=#{Tenant.current_schema} python #{job.script}"
-                end
-
-      output = `cd #{SCRIPTS_FOLDER} && #{command} 2>&1`
-      result = $?.success?
+      output = `cd #{SCRIPTS_FOLDER} && #{script_command} 2>&1`
+      result = command_success?
       if result == false
         job.update!(finished_at: Time.current, error: output)
         Mailer.machine_learning_error(user).deliver_later
       end
       result
+    end
+
+    def script_command
+      base_command = "python #{job.script}"
+
+      command = if Tenant.default?
+                  base_command
+                else
+                  "CONSUL_TENANT=#{Tenant.current_schema.to_s.shellescape} #{base_command}"
+                end
+
+      self.class.scripts_info.any? { |script| script[:name] == job.script } && command
+    end
+
+    def command_success?
+      $?.success?
     end
 
     def cleanup_proposals_tags!
