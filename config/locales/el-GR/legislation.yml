@@ -128,7 +128,7 @@ el:
       top_comments:
         zero: "Δεν υπάρχουν σχόλια"
         one: "%{count} σχόλιο"
-        other: "%{count} δημοφιλή σχόλια"
+        other: "Κορυφαία σχόλια"
       most_voted_comments: "Σχόλια με τις περισσότερες ψήφους"
       no_allegation: "Δεν υπάρχουν σχόλια"
       process_empty: "Αυτή η διαδικασία δεν είχε φάσεις συμμετοχής"
