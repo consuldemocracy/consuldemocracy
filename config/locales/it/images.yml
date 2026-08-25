@@ -6,11 +6,21 @@ it:
       delete_button: Rimuovere immagine
       note: "È possibile caricare una singola immagine delle seguenti tipologie: %{accepted_content_types}, fino a %{max_file_size} MB."
       add_new_image: Aggiungi immagine
+      or_separator: o
+      suggest_image_with_ai: Suggerisci un'immagine con l'IA
+      suggested_images_container: Immagini suggerite
+      attach_suggested_image_aria_label: "Allega l'immagine suggerita %{index} di %{count}"
+      pick_an_image: "Seleziona un'immagine dai seguenti suggerimenti:"
+      no_images_found: Impossibile trovare alcun suggerimento.
+      suggested_image_filename: Immagine di %{author_name}.jpg
     actions:
       destroy:
         notice: Immagine cancellata con successo.
         alert: Non è possibile distruggere l’immagine.
     errors:
       messages:
+        title_and_description_required: Per suggerire delle immagini, ti preghiamo di inserire prima un titolo e una descrizione.
+        llm_not_configured: LLM non configurato correttamente. Ti preghiamo di contattare un amministratore.
+        rate_limit_exceeded: Ti preghiamo di attendere qualche minuto prima di generare nuovi suggerimenti.
         in_between: deve essere tra %{min} e %{max}
         wrong_content_type: il contenuto %{content_type} non corrisponde ad alcuna delle tipologie accettate %{accepted_content_types}
