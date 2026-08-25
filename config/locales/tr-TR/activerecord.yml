@@ -462,6 +462,7 @@ tr:
       poll/question/option:
         title: Yanıt
         description: Açıklama
+        allow_custom_text: "Özel yazı kullanılabilsin"
       poll/question/option/translation:
         title: Yanıt
         description: "Açıklama (isteğe bağlı)"
