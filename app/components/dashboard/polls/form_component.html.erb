@@ -22,8 +22,8 @@
   </div>
 
   <div class="js-questions">
-    <%= f.fields_for :questions do |question| %>
-      <%= render "question_fields", f: question %>
+    <%= f.fields_for :questions do |question_form| %>
+      <%= render Dashboard::Polls::QuestionFieldsComponent.new(question_form) %>
     <% end %>
 
     <div class="links row expanded">
