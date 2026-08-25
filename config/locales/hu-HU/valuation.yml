@@ -1,1 +1,67 @@
 hu:
+  valuation:
+    header:
+      title: Értékelés
+    menu:
+      title: Értékelés
+      budgets: Részvételi költségvetések
+    budgets:
+      index:
+        title: Részvételi költségvetések
+        filters:
+          current: Nyitott
+          finished: Lezárt
+        table_name: Név
+        table_phase: Fázis
+        table_assigned_investments_valuation_open: Értékelésre nyitott, kiosztott beruházási projektek
+        table_actions: Műveletek
+        evaluate: Értékelés
+        no_budgets: "Nincsenek költségvetések"
+    budget_investments:
+      index:
+        headings_filter_all: Összes cím
+        filters:
+          valuation_open: Nyitott
+          valuating: Értékelés alatt
+          valuation_finished: Értékelés befejezve
+        assigned_to: "%{valuator} részére kiosztva"
+        title: Beruházási projektek
+        edit: Dosszié szerkesztése
+        table_id: Azonosító
+        table_title: Cím
+        table_heading_name: Cím neve
+        table_actions: Műveletek
+        no_investments: "Nincsenek beruházási projektek."
+      show:
+        back: Vissza
+        title: Beruházási projekt
+        info: Szerzői információk
+        by: Beküldte
+        sent: Beküldés ideje
+        heading: Cím
+        dossier: Dosszié
+        edit_dossier: Dosszié szerkesztése
+        price_with_currency: Ár (%{currency})
+        price_first_year_with_currency: Költség az első évben (%{currency})
+        feasibility: Megvalósíthatóság
+        feasible: Megvalósítható
+        unfeasible: Nem megvalósítható
+        undefined: Nincs meghatározva
+        valuation_finished: Értékelés befejezve
+        duration: Időtáv
+        responsibles: Felelősök
+        assigned_admin: Kiosztott adminisztrátor
+        assigned_valuators: Kiosztott értékelők
+        preview: Beruházás előnézete
+      edit:
+        dossier: Dosszié
+        price: "Ár (%{currency})"
+        price_first_year: "Költség az első évben (%{currency}) <small>(nem kötelező, az adat nem nyilvános)</small>"
+        feasibility: Megvalósíthatóság
+        valuation_finished_alert: "Biztosan befejezettként szeretnéd megjelölni ezt a jelentést? Ha igen, utána már nem módosítható."
+        not_feasible_alert: "A projekt szerzője azonnal e-mailt kap a nem megvalósíthatósági jelentésről."
+        save: Módosítások mentése
+      notice:
+        valuate: "A dosszié frissítve"
+      valuation_comments: Értékelési megjegyzések
+      not_in_valuating_phase: A beruházások csak akkor értékelhetők, ha a költségvetés értékelési fázisban van
