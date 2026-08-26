@@ -123,6 +123,7 @@ module Consul
       "gl",
       "he",
       "hr",
+      "hu",
       "id",
       "it",
       "ka",

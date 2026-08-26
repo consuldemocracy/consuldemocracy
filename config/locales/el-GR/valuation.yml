@@ -41,6 +41,8 @@ el:
         heading: Επικεφαλίδα
         dossier: Φάκελος
         edit_dossier: Επεξεργασία φακέλου
+        price_with_currency: Τιμή (%{currency})
+        price_first_year_with_currency: Κόστος κατά το πρώτο έτος (%{currency})
         feasibility: Κατά πόσο είναι εφικτό
         feasible: Εφικτό
         unfeasible: Δεν είναι εφικτό
@@ -50,6 +52,7 @@ el:
         responsibles: Υπεύθυνοι
         assigned_admin: Αναθετημένος λειτουργός
         assigned_valuators: Ανατεθημένοι αξιολογητές
+        preview: Προεπισκόπηση επενδυτικού έργου
       edit:
         dossier: Φάκελος
         price: "Τιμή (%{currency})"

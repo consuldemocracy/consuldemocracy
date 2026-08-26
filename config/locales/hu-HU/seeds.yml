@@ -1,1 +1,90 @@
 hu:
+  seeds:
+    admin_notifications:
+      budget:
+        title: "Lezárjuk a részvételi költségvetést!"
+        body: "Siess, és hozz létre egy javaslatot, mielőtt néhány napon belül véget ér!"
+      help:
+        title: "Segíts lefordítani a Consul Democracyt"
+        body: "Ha magabiztosan beszélsz egy nyelvet, segíts lefordítani a Consul Democracyt!"
+      map:
+        title: "Mostantól geolokalizálhatod a javaslatokat és beruházásokat"
+        body: "Amikor javaslatot vagy beruházást hozol létre, most már megadhatsz egy pontot a térképen."
+      proposal:
+        title: "Van egy javaslatod?"
+        body: "Ne feledd, létrehozhatsz javaslatot az ötleteiddel, és az emberek megvitathatják és támogathatják."
+    settings:
+      official_level_1_name: Hivatalos pozíció 1
+      official_level_2_name: Hivatalos pozíció 2
+      official_level_3_name: Hivatalos pozíció 3
+      official_level_4_name: Hivatalos pozíció 4
+      official_level_5_name: Hivatalos pozíció 5
+    geozones:
+      north_district: Északi kerület
+      west_district: Nyugati kerület
+      east_district: Keleti kerület
+      central_district: Központi kerület
+    organizations:
+      human_rights: Emberi jogok
+      neighborhood_association: Lakóközösségi egyesület
+    cards:
+      budget:
+        title: "Hogyan működik a részvételi költségvetés?"
+        description: "A részvételi költségvetés lehetővé teszi, hogy a polgárok közvetlenül tegyenek javaslatokat és döntsenek arról, hogyan költsék el a költségvetés egy részét, miközben az intézmény szigorúan nyomon követi és értékeli a javaslatokat. Maximális hatékonyság és kontroll, mindenki megelégedésére."
+        link_text: "További információ a részvételi költségvetésről"
+        label: "Részvételi költségvetés"
+      debate:
+        title: "Hogyan működnek a viták?"
+        description: "Bárki nyithat témákat bármilyen tárgyban, külön tereket hozva létre, ahol az emberek megvitathatják a felvetett témát. A vitákat mindenki értékeli, így a legfontosabb ügyek kiemelkednek."
+        link_text: "További információ a vitákról"
+        label: "Viták"
+      header:
+        title: "CONSUL DEMOCRACY"
+        description: "Szabad szoftver az állampolgári részvételhez."
+        link_text: "További információ"
+        label: "Üdvözlünk itt:"
+      proposal:
+        title: "Hogyan működnek az állampolgári javaslatok?"
+        description: "Egy tér, ahol bárki létrehozhat állampolgári javaslatot és támogatást gyűjthet hozzá. Azok a javaslatok, amelyek elegendő támogatást érnek el, szavazásra kerülnek, így együtt dönthetünk azokról az ügyekről, amelyek igazán fontosak számunkra."
+        link_text: "További információ a javaslatokról"
+        label: "Állampolgári javaslatok"
+    categories:
+      associations: Egyesületek
+      culture: Kultúra
+      sports: Sport
+      social_rights: Szociális jogok
+      economy: Gazdaság
+      employment: Foglalkoztatás
+      equity: Esélyegyenlőség
+      sustainability: Fenntarthatóság
+      participation: Részvétel
+      mobility: Mobilitás
+      media: Média
+      health: Egészség
+      transparency: Átláthatóság
+      security_emergencies: Biztonság és vészhelyzetek
+      environment: Környezet
+    budgets:
+      budget: Részvételi költségvetés
+      currency: '€'
+      groups:
+        all_city: Egész város
+        districts: Kerületek
+      phases:
+        description: "Leírás %{language} nyelven"
+        summary: "Összefoglaló %{language} nyelven"
+      statuses:
+        studying_project: Projekt vizsgálata
+        bidding: Pályáztatás
+        executing_project: Projekt megvalósítása
+        executed: Megvalósítva
+    legislation:
+      draft_versions:
+        title: "%{number}. verzió"
+        body: "Tervezet %{language} nyelven"
+    polls:
+      current_poll: "Jelenlegi szavazás"
+      current_poll_geozone_restricted: "Jelenlegi, körzethez kötött szavazás"
+      recounting_poll: "Összesítés alatt álló szavazás"
+      expired_poll_without_stats: "Lejárt szavazás statisztikák és eredmények nélkül"
+      expired_poll_with_stats: "Lejárt szavazás statisztikákkal és eredményekkel"

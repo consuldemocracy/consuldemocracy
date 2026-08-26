@@ -3,8 +3,27 @@ el:
     ballots:
       show:
         title: Το ψηφοδέλτιο σας
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Ακόμα διαθέσιμα σε εσάς <span>%{count}</span>"
+          approval:
+            zero: "Μπορείτε ακόμα να δώσετε <span>%{count}</span> ψήφους."
+            one: "Μπορείτε ακόμα να δώσετε <span>%{count}</span> ψήφο."
+            other: "Μπορείτε ακόμα να δώσετε <span>%{count}</span> ψήφους."
+        amount_spent:
+          knapsack: "Ποσό που δαπανήθηκε <span>%{count}</span>"
+          approval:
+            zero: "Ψήφοι που δόθηκαν: <span>%{count}</span>"
+            one: "Ψήφοι που δόθηκαν: <span>%{count}</span>"
+            other: "Ψήφοι που δόθηκαν: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Συνολικός προϋπολογισμός <span>%{count}</span>"
+          approval:
+            one: "Μπορείτε να ψηφίσετε <span>1</span> έργο"
+            other: "Μπορείτε να ψηφίσετε έως και <span>%{count}</span> έργα"
         no_balloted_group_yet: "Δεν έχετε ψηφίσει σε αυτήν την ομάδα ακόμα, ψηφίστε!"
         remove: Αφαίρεση ψήφου
+        remove_label: "Αφαιρέστε την ψήφο σας για το %{investment}"
         voted:
           one: "Έχετε ψηφίσει <span>μία</span> επένδυση."
           other: "Έχετε ψηφίσει <span>%{count}</span> επενδύσεις."
@@ -14,9 +33,10 @@ el:
       reasons_for_not_balloting:
         not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν στις επενδύσεις; %{verify_account}.
         not_selected: Τα μη επιλεγμένα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
-        not_enough_money: "Έχετε ήδη αναθέσει το διαθέσιμο προϋπολογισμό.<br><small>Σας υπενθυμίζουμε ότι μπορείτε να %{change_ballot} οποιαδήποτε στιγμή το επιυθμείτε</small>"
+        not_enough_money: "Έχετε ήδη αναθέσει το διαθέσιμο προϋπολογισμό.<br><small>Σας υπενθυμίζουμε ότι μπορείτε να %{change_ballot} οποιαδήποτε στιγμή το επιθυμείτε</small>"
         no_ballots_allowed: Η φάση επιλογής είναι κλειστή
         different_heading_assigned: "Έχετε ήδη ψηφίσει μια διαφορετική επικεφαλίδα: %{heading_link}"
+        not_enough_available_votes: "Έχετε συμπληρώσει τον μέγιστο επιτρεπόμενο αριθμό ψήφων"
         change_ballot: αλλάξτε τις ψήφους σας
         casted_offline: Έχετε ήδη συμμετάσχει όντας χωρίς σύνδεση (offline)
     groups:
@@ -41,6 +61,9 @@ el:
         title: Συμμετοχικοί προϋπολογισμοί
         help: Βοήθεια με συμμετοχικούς προϋπολογισμούς
       all_phases: Φάσεις του προϋπολογισμού επενδύσεων
+      next_phase: Επόμενη φάση
+      prev_phase: Προηγούμενη φάση
+      current_phase: Τρέχουσα φάση
       map: Προτάσεις του προϋπολογισμού επενδύσεων τοποθετημένες γεωγραφικά
       finished_budgets: Ολοκληρωμένοι συμμετοχικοί προϋπολογισμοί
       see_results: Προβολή αποτελεσμάτων
@@ -51,6 +74,8 @@ el:
     investments:
       form:
         title: "Δημιουργία ενός προϋπολογισμού επενδύσεων"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Κατηγορίες"
         tags_instructions: "Πρόσθεσε ετικέτα σε αυτήν την πρόταση. Μπορείτε να επιλέξετε από τις προτεινόμενες κατηγορίες ή να προσθέσετε δική σας"
         tags_label: Ετικέτες
@@ -70,6 +95,12 @@ el:
             knapsack:
               one: "<strong>Έχετε ψηφίσει μία πρόταση με κόστος %{amount_spent}</strong>"
               other: "<strong>Έχετε ψηφίσει %{count} πρότασεις με κόστος %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Έχετε ψηφίσει μία πρόταση</strong>"
+              other: "<strong>Έχετε ψηφίσει %{count} προτάσεις</strong>"
+          change_vote_info:
+            knapsack: "Μπορείτε να επιλέξετε %{link} ανά πάσα στιγμή μέχρι τις %{phase_end_date}. Δεν χρειάζεται να ξοδέψετε όλα τα διαθέσιμα χρήματα."
+            approval: "Μπορείτε να επιλέξετε %{link} ανά πάσα στιγμή μέχρι τις %{phase_end_date}."
           change_vote_link: "Αλλαγή της ψήφου σας"
           different_heading_assigned: "Έχετε ενεργές ψήφους σε άλλη επικεφαλίδα: %{heading_link}"
           change_ballot: "Εάν αλλάξετε γνώμη, μπορείτε να αφαιρέσετε τις ψήφους σας στο %{check_ballot} και να ξεκινήσετε πάλι."
@@ -78,9 +109,12 @@ el:
           verified_only: "Για να δημιουργήσετε νέο προϋπολογισμό επενδύσεων %{verify}."
           create: "Δημιουργία ενός προϋπολογισμού επενδύσεων"
           not_logged_in: "Για να δημιουργήσετε νέο προϋπολογισμό επένδυσεων πρέπει πρώτα να %{sign_in} ή %{sign_up}."
+        filter: "Φιλτράρισμα έργων κατά"
         filters:
+          not_unfeasible: "Ενεργά"
           selected: "Επιλεγμένο"
           unfeasible: "Ανέφικτο"
+          unselected: "Μη επιλεγμένα για την τελική ψηφοφορία"
           winners: "Νικητές"
         orders:
           random: τυχαία
@@ -110,6 +144,7 @@ el:
       wrong_price_format: Μόνο ακέραιοι αριθμοί
       investment:
         add: Ψηφίστε
+        add_label: "Ψηφίστε το %{investment}"
         already_added: Έχετε ήδη καταχωρήσει αυτό το επενδυτικό σχέδιο
         support_title: Υποστηρίξτε αυτό το έργο
         supports:
@@ -127,13 +162,30 @@ el:
         confirm_group:
           one: "Μπορείτε να υποστηρίξετε επενδύσεις για την περιοχή της %{count} μόνο. Εάν συνεχίσετε, δεν θα μπορείτε να αλλάξετε την εκλογή της περιοχής σας. Είστε σίγουρος/η;"
           other: "Μπορείτε να υποστηρίξετε επενδύσεις για την περιοχή της %{count} μόνο. Εάν συνεχίσετε, δεν θα μπορείτε να αλλάξετε την εκλογή της περιοχής σας. Είστε σίγουρος/η;"
+        remove_support: "Αφαιρέστε την υποστήριξή σας"
+        remove_support_label: "Αφαιρέστε την υποστήριξή σας για το %{investment}"
         support: "Υποστήριξη"
+        support_label: "Υποστηρίξτε το %{investment}"
     investments_list:
       investment:
         price: "Τιμή"
+        read_more: "Διαβάστε περισσότερα"
         supports: "Υποστηρίξεις"
+      see_all: "Δείτε όλες τις επενδύσεις"
+      title: "Κατάλογος επενδύσεων"
     show:
       see_results: Προβολή αποτελεσμάτων
+    supports_info:
+      different: "Μπορείτε να υποστηρίξετε όσα διαφορετικά έργα θέλετε."
+      next: "Υποστηρίξτε τα έργα που θα θέλατε να δείτε να προχωρούν στην επόμενη φάση."
+      scrolling: "Συνεχίστε να κάνετε κύλιση για να δείτε όλες τις ιδέες"
+      share: "Μπορείτε να μοιραστείτε τα έργα που έχετε υποστηρίξει μέσω των μέσων κοινωνικής δικτύωσης και να τραβήξετε περισσότερη προσοχή και υποστήριξη σε αυτά!"
+      supported:
+        one: "Μέχρι στιγμής έχετε υποστηρίξει <strong>1 έργο</strong>."
+        other: "Μέχρι στιγμής έχετε υποστηρίξει <strong>%{count} έργα</strong>."
+      supported_not_logged_in: "Συνδεθείτε για να ξεκινήσετε την <strong>υποστήριξη έργων</strong>."
+      time: "Υπάρχει ακόμη χρόνος μέχρι τις %{phase_end_date} για την υποστήριξη έργων."
+      title: "Ήρθε η ώρα να <strong>υποστηρίξετε</strong> έργα!"
     results:
       link: Αποτελέσματα
       page_title: "%{budget} - αποτελέσματα"

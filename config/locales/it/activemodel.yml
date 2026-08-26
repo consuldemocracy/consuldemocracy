@@ -38,6 +38,9 @@ it:
         year_of_birth: "Anno di nascita"
       local_census_records/import:
         file: File
+      setting/locales_settings:
+        default: Lingua predefinita
+        enabled: Lingue abilitate
     errors:
       models:
         local_census_records/import:

@@ -9,7 +9,6 @@ cs:
       or_separator: nebo
       suggest_image_with_ai: Navrhovaný obrázek s AI
       suggested_images_container: Navrhované obrázky
-      attach_suggested_image: Připojit navrhovaný obrázek
       pick_an_image: "Vyberte obrázek z návrhů níže:"
       no_images_found: Nebyly nalezeny žádné návrhy.
     actions:

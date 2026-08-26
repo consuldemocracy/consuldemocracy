@@ -9,6 +9,7 @@ tr:
       cancel_button: İptal
       note: "Şu içerik türlerinden en fazla %{max_documents_allowed} belge yükleyebilirsiniz: %{accepted_content_types}, her dosya en fazla %{max_file_size} MB boyutunda olabilir."
       add_new_document: Yeni belge ekle
+      progress: Yükleme ilerlemesi
     actions:
       destroy:
         notice: Belge silindi.

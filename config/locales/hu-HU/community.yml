@@ -1,1 +1,49 @@
 hu:
+  community:
+    sidebar:
+      title: Közösség
+      description:
+        proposal: Vegyél részt a javaslat felhasználói közösségében.
+        investment: Vegyél részt a beruházás felhasználói közösségében.
+      button_to_access: Közösség megnyitása
+    show:
+      title:
+        proposal: Javaslat közössége
+        investment: Költségvetési beruházás közössége
+      description:
+        proposal: Vegyél részt ennek a javaslatnak a közösségében. Egy aktív közösség segíthet javítani a javaslat tartalmát és növelni a terjedését, hogy több támogatást kapjon.
+        investment: Vegyél részt ennek a költségvetési beruházásnak a közösségében. Egy aktív közösség segíthet javítani a beruházás tartalmát és növelni a terjedését, hogy több támogatást kapjon.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nincs még elérhető téma, vegyél részt az első létrehozásával.
+        first_theme: Első közösségi téma létrehozása
+        sub_first_theme: "Téma létrehozásához %{sign_in} vagy %{sign_up} szükséges."
+      tab:
+        participants: Résztvevők
+      sidebar:
+        participate: Részvétel
+        new_topic: Téma létrehozása
+      topic:
+        edit: Téma szerkesztése
+        destroy: Téma törlése
+      author: Szerző
+      back: 'Vissza ide: %{community} %{proposal}'
+    topic:
+      create: Téma létrehozása
+      edit: Téma szerkesztése
+      form:
+        new:
+          submit_button: Téma létrehozása
+        edit:
+          submit_button: Téma szerkesztése
+        create:
+          submit_button: Téma létrehozása
+        update:
+          submit_button: Téma frissítése
+      show:
+        tab:
+          comments_tab: Hozzászólások
+      sidebar:
+        recommendations_title: Ajánlások téma létrehozásához
+        recommendation_one: Ne írd a téma címét vagy egész mondatokat csupa nagybetűvel. Az interneten ezt kiabálásnak tekintik, és senki sem szereti, ha rákiabálnak.
+        recommendation_two: Minden olyan téma vagy hozzászólás törlésre kerül, amely jogellenes cselekedetre utal, illetve amely a témák tereinek szabotálását célozza. Minden más megengedett.
+        recommendation_three: Élvezd ezt a teret és a hangokat, amelyek betöltik, ez a hely a tiéd is.

@@ -1171,6 +1171,8 @@ tr:
           documents_list: Belgeler listesi
           document_title: Başlık
           document_actions: İşlemler
+          allow_custom_text:
+            help: "Kullanıcılar bu seçeneği seçtiğinde kendi yanıtlarını yazabilir. \"Diğer (lütfen belirtin)\" gibi seçenekler için kullanışlıdır."
       no_edit: "Oylama başlatıldıktan sonra sorular, yanıtlar ya da oylama ile ilişkili diğer bilgiler eklenemez, düzenlenemez ya da silinemez."
     answers:
       new:

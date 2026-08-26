@@ -1,18 +1,50 @@
 el:
   sdg_management:
+    actions:
+      edit: "Διαχείριση σκοπών και στόχων"
+    header:
+      title: "Περιεχόμενο SDG"
     homepage:
+      title: "Ρύθμιση αρχικής σελίδας"
       header:
         create: "Δημιουργήστε την κεφαλίδα"
+        no_cards: "Δεν υπάρχει κεφαλίδα"
         title: "Κεφαλίδα"
+      create_card: "Δημιουργία κάρτας %{phase}"
+      no_cards: "Δεν υπάρχουν κάρτες για αυτή τη φάση"
     menu:
       budget_investments: "Συμμετοχικοί προϋπολογισμοί"
       debates: "Συζητήσεις"
+      legislation_processes: "Διαδικασίες νομοθεσίας"
+      legislation_proposals: "Νομοθετικές προτάσεις"
       polls: "Δημοσκοπήσεις"
       proposals: "Προτάσεις"
       sdg_content: "Σκοποί και Στόχοι"
+      sdg_homepage: "Αρχική σελίδα SDG"
+    local_targets:
+      create:
+        notice: "Ο τοπικός στόχος δημιουργήθηκε επιτυχώς"
+      destroy:
+        notice: "Ο τοπικός στόχος διαγράφηκε επιτυχώς"
+      edit:
+        title: "Επεξεργασία τοπικού στόχου"
+      form:
+        code: "Ο κωδικός πρέπει να ξεκινά με τον επιλεγμένο κωδικό στόχου ακολουθούμενο από μια τελεία"
+        description: "Αυτή η περιγραφή θα εμφανίζεται ως βοήθεια στους χρήστες."
+      index:
+        new: "Δημιουργία τοπικού στόχου"
+      new:
+        title: "Νέος τοπικός στόχος"
+      update:
+        notice: "Ο τοπικός στόχος ενημερώθηκε επιτυχώς"
     relations:
       index:
         filter: "Φίλτρο"
         filters:
           all: "Όλα"
           pending_sdg_review: "Σε εκκρεμότητα"
+          sdg_reviewed: "Επισημάνθηκε ως ελεγμένο"
+      update:
+        notice: "Το %{relatable} ενημερώθηκε επιτυχώς"
+      update_and_review:
+        notice: "Το %{relatable} ενημερώθηκε επιτυχώς και επισημάνθηκε ως ελεγμένο"

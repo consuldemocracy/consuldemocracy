@@ -1,5 +1,6 @@
 el:
   attributes:
+    created_at: Δημιουργήθηκε στις
     geozone_id: "Πεδίο Δράσεως"
     results_enabled: "Εμφάνιση αποτελεσμάτων"
     stats_enabled: "Εμφάνιση στατιστικών στοιχείων"
@@ -106,6 +107,24 @@ el:
       legislation/proposal:
         one: "Πρόταση"
         other: "Προτάσεις"
+      legislation/draft_version:
+        one: "Έκδοση προσχεδίου"
+        other: "Εκδόσεις προσχεδίου"
+      legislation/question:
+        one: "Ερώτηση"
+        other: "Ερωτήσεις"
+      legislation/question_option:
+        one: "Επιλογή ερώτησης"
+        other: "Επιλογές ερώτησης"
+      legislation/answer:
+        one: "Απάντηση"
+        other: "Απαντήσεις"
+      image:
+        one: "Εικόνα"
+        other: "Εικόνες"
+      tenant:
+        one: "μισθωτής"
+        other: "μισθωτές"
       topic:
         one: "Θέμα"
         other: "Θέματα"
@@ -127,6 +146,12 @@ el:
       local_census_record:
         one: Τοπικά αρχεία
         other: Τίτλος
+      votation_type:
+        one: Τύπος ψηφοφορίας
+        other: Τύποι ψηφοφορίας
+      cookies/vendor:
+        one: πάροχος cookie
+        other: πάροχοι cookie
     attributes:
       budget:
         name: "Όνομα"
@@ -142,7 +167,10 @@ el:
         voting_style: "Στυλ τελικής ψηφοφορίας"
         voting_style_knapsack: "Σακίδιο"
         voting_style_approval: "Έγκριση"
+        hide_money: "Απόκρυψη χρηματικού ποσού για αυτόν τον προϋπολογισμό"
       budget/translation:
+        main_link_text: "Κείμενο στον σύνδεσμο"
+        main_link_url: "Ο σύνδεσμος σας οδηγεί στο (προσθέστε έναν σύνδεσμο)"
         name: "Όνομα"
       budget/investment:
         heading_id: "Επικεφαλίδα"
@@ -161,7 +189,7 @@ el:
         incompatible: "Σημειώστε ως μη συμβατό"
         milestone_tag_list: "Ετικέτες οροσήμου"
         price_explanation: "Επεξήγηση τιμής"
-        selected: "Σημείωστε ως επιλεγμένο"
+        selected: "Επισήμανση ως επιλεγμένο"
         selected_true: "Επιλεγμένο"
         selected_false: "Δεν επιλέχθηκε"
         unfeasibility_explanation: "Εξήγηση της σκοπιμότητας"
@@ -174,7 +202,9 @@ el:
       geozone:
         name: Όνομα
         external_code: "Εξωτερικός κώδικας (προαιρετικό)"
+        color: "Χρώμα (προαιρετικό)"
         census_code: "Κωδικός απογραφής (προαιρετικό)"
+        geojson: "Δεδομένα GeoJSON (προαιρετικά)"
         html_map_coordinates: "Συντεταγμένες HTML <map> (προαιρετικό)"
       milestone:
         status_id: "Τρέχουσα κατάσταση (προαιρετικό)"
@@ -215,8 +245,11 @@ el:
         name: "Όνομα"
         description: "Περιγραφή"
         summary: "Περίληψη"
+        main_link_text: "Κείμενο στον σύνδεσμο"
+        main_link_url: "Ο σύνδεσμος σας οδηγεί στο (προσθέστε έναν σύνδεσμο)"
       comment:
         body: "Σχόλιο"
+        parent_id: "Γονέας"
         user: "Χρήστης"
       debate:
         author: "Δημιουργός"
@@ -253,7 +286,7 @@ el:
         email_on_comment: "Ειδοποιείστε με μέσω email όταν κάποιος σχολιάζει τις προτάσεις ή τις συζητήσεις μου"
         email_on_comment_reply: "Ειδοποιείστε με μέσω email όταν κάποιος απαντά σε σχόλιά μου"
         email_on_direct_message: "Λήψη E-mail για τα άμεσα μηνύματα"
-        newsletter: "Λήψη μέσω E-mail των σχετικών με το website πληροφοριών"
+        newsletter: "Λήψη σχετικών πληροφοριών μέσω email"
         official_position: "Επίσημη θέση"
         official_position_badge: "Εμφάνιση του συμβόλου της επίσημης θέσης"
         official_level: "Επίσημο επίπεδο"
@@ -350,6 +383,11 @@ el:
         body: Περιεχόμενο
       tag:
         name: "Πληκτρολογήστε το όνομα του θέματος"
+      tenant:
+        domain: "Τομέας"
+        schema: "Τομέας / Υποτομέας"
+        subdomain: "Υποτομέας"
+        url: "URL"
       topic:
         title: "Τίτλος"
         description: "Αρχικό κείμενο"
@@ -421,6 +459,15 @@ el:
       image:
         title: Τίτλος
         attachment: "Επισύναψη"
+      poll/question/option:
+        title: Απάντηση
+        description: Περιγραφή
+      poll/question/option/translation:
+        title: Απάντηση
+        description: "Περιγραφή (προαιρετικό)"
+      poll/question/option/video:
+        title: Τίτλος
+        url: Εξωτερικό βίντεο
       newsletter:
         segment_recipient: Παραλήπτες
         subject: Θέμα
@@ -441,6 +488,7 @@ el:
         link_text: Σύνδεσμος κειμένου
         link_url: Σύνδεσμος URL
         columns: Αριθμός στηλών
+        order: Θέση
       widget/card/translation:
         label: Ετικέτα (προαιρετικό)
         title: Τίτλος
@@ -480,6 +528,16 @@ el:
         document_number: Αριθμός εγγράφου
         date_of_birth: Ημερομηνία γέννησης
         postal_code: Ταχυδρομικός κώδικας
+      votation_type:
+        max_votes: Μέγιστος αριθμός ψήφων
+        vote_type: Τύπος ψηφοφορίας
+      votation_type/vote_type:
+        unique: Μοναδική απάντηση
+        multiple: Πολλαπλές απαντήσεις
+      cookies/vendor:
+        name: Όνομα προμηθευτή
+        cookie: Όνομα cookie
+        script: Javascript κώδικας
     errors:
       models:
         user:
@@ -494,6 +552,11 @@ el:
           attributes:
             max_per_day:
               invalid: "Έχετε φτάσει το μέγιστο ημερίσιο αριθμό προσωπικών μηνυμάτων "
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Το GeoJSON που παρέχεται δεν ακολουθεί τη σωστή μορφοποίηση. Πρέπει να ακολουθεί την τυπική μορφοποίηση RFC 7946"
+              invalid_coordinates: "Το GeoJSON που παρέχεται περιέχει μη έγκυρες συντεταγμένες. Οι συντεταγμένες πρέπει να είναι στην απαιτούμενη μορφοποίηση \"Longitude, Latitude\" και να ακολουθούν την τυπική μορφοποίηση RFC 7946"
         image:
           attributes:
             attachment:
@@ -563,8 +626,12 @@ el:
           attributes:
             code:
               invalid: "πρέπει να ξεκινάει με τον ίδιο κωδικό με τον στόχο του ακολουθούμενο από μία τελεία και να τελειώνει με έναν αριθμό"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "δεν μπορεί να αλλάξει σε ανοιχτό τύπο επειδή έχετε ήδη ορίσει πιθανές έγκυρες απαντήσεις για αυτήν την ερώτηση"
       messages:
-        translations_too_short: Υποχρεούται να παρέχετε τουλάχιστον μία μετάφραση
+        translations_too_short: Απαιτείται να παρέχετε τουλάχιστον μία μετάφραση
         record_invalid: "Η επικύρωση απέτυχε: %{errors}"
         another_poll_active: Υπάρχει άλλη ενεργή δημοσκόπηση για την δεδομένη περίοδο
         restrict_dependent_destroy:

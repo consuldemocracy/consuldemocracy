@@ -462,6 +462,7 @@ sv:
       poll/question/option:
         title: Svar
         description: Beskrivning
+        allow_custom_text: "Tillåt anpassad text"
       poll/question/option/translation:
         title: Svar
         description: "Beskrivning (valfritt)"
