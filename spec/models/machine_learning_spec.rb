@@ -7,6 +7,10 @@ describe MachineLearning do
 
   let(:job) { create(:machine_learning_job) }
 
+  before do
+    stub_const("MachineLearning::SCRIPTS_FOLDER", Rails.root.join("spec/fixtures/machine_learning"))
+  end
+
   describe "#cleanup_proposals_tags!" do
     it "does not delete other machine learning generated data" do
       create(:ml_summary_comment, commentable: create(:proposal))
@@ -378,17 +382,12 @@ describe MachineLearning do
   end
 
   describe "#run_machine_learning_scripts" do
-    let!(:original_fork_mode) { DEBUGGER__::CONFIG[:fork_mode] }
-    before { DEBUGGER__::CONFIG[:fork_mode] = "parent" }
-    after { DEBUGGER__::CONFIG[:fork_mode] = original_fork_mode }
-
     it "returns true if python script executed correctly" do
       machine_learning = MachineLearning.new(job)
-
       command = "cd #{MachineLearning::SCRIPTS_FOLDER} && python script.py 2>&1"
-      expect(machine_learning).to receive(:`).with(command) do
-        Process.waitpid Process.fork { exit 0 }
-      end
+
+      allow(machine_learning).to receive(:command_success?).and_return(true)
+      expect(machine_learning).to receive(:`).with(command)
 
       expect(Mailer).not_to receive(:machine_learning_error)
 
@@ -401,11 +400,10 @@ describe MachineLearning do
 
     it "returns false if python script errored" do
       machine_learning = MachineLearning.new(job)
-
       command = "cd #{MachineLearning::SCRIPTS_FOLDER} && python script.py 2>&1"
-      expect(machine_learning).to receive(:`).with(command) do
-        Process.waitpid Process.fork { abort "error message" }
-      end
+
+      allow(machine_learning).to receive(:command_success?).and_return(false)
+      expect(machine_learning).to receive(:`).with(command).and_return("error message")
 
       mailer = double
       expect(mailer).to receive(:deliver_later)
@@ -415,7 +413,7 @@ describe MachineLearning do
 
       job.reload
       expect(job.finished_at).to be_present
-      expect(job.error).not_to eq "error message"
+      expect(job.error).to eq "error message"
     end
   end
 
