@@ -7,11 +7,11 @@
 
   <div class="row expanded">
     <div class="small-12 medium-3 column">
-      <%= f.date_field :starts_at, autocomplete: "off" %>
+      <%= f.datetime_field :starts_at %>
     </div>
 
     <div class="small-12 medium-3 column end">
-      <%= f.date_field :ends_at, autocomplete: "off" %>
+      <%= f.datetime_field :ends_at %>
     </div>
   </div>
 
@@ -22,8 +22,8 @@
   </div>
 
   <div class="js-questions">
-    <%= f.fields_for :questions do |question| %>
-      <%= render "question_fields", f: question %>
+    <%= f.fields_for :questions do |question_form| %>
+      <%= render Dashboard::Polls::QuestionFieldsComponent.new(question_form) %>
     <% end %>
 
     <div class="links row expanded">

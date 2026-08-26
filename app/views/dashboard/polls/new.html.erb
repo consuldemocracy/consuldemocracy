@@ -1,4 +1,4 @@
 <% content_for :action_title, t("dashboard.polls.new.title") %>
 <%= back_link_to %>
 
-<%= render "form" %>
+<%= render Dashboard::Polls::FormComponent.new(@poll) %>
