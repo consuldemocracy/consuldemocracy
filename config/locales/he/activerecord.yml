@@ -12,172 +12,138 @@ he:
       activity:
         one: "פעילות"
         two: "פעילויות"
-        many: "פעילויות"
         other: "פעילויות"
       budget:
         one: "תקציב"
         two: "תקציבים"
-        many: "תקציבים"
         other: "תקציבים"
       budget/investment:
         one: "השקעה"
         two: "השקעות"
-        many: "השקעות"
         other: "השקעות"
       milestone:
         one: "אבן דרך"
         two: "אבני דרך"
-        many: "אבני דרך"
         other: "אבני דרך"
       milestone/status:
         one: "סטטוס אבן דרך"
         two: "סטטוס אבני הדרך"
-        many: "סטטוס אבני הדרך"
         other: "סטטוס אבני הדרך"
       progress_bar:
         one: "סרגל התקדמות"
         two: "סרגלי התקדמות"
-        many: "סרגלי התקדמות"
         other: "סרגלי התקדמות"
       comment:
         one: "הערה"
         two: "הערות"
-        many: "הערות"
         other: "הערות"
       debate:
         one: "דיון"
         two: "דיונים"
-        many: "דיונים"
         other: "דיונים"
       tag:
         one: "תגית"
         two: "תגיות"
-        many: "תגיות"
         other: "תגיות"
       user:
         one: "משתמש"
         two: "משתמשים"
-        many: "משתמשים"
         other: "משתמשים"
       moderator:
         one: "מנחה"
         two: "מנחים"
-        many: "מנחים"
         other: "מנחים"
       administrator:
         one: "מנהל מערכת"
         two: "מנהלי מערכת"
-        many: "מנהלי מערכת"
         other: "מנהלי מערכת"
       valuator:
         one: "מעריך"
         two: "מעריכים"
-        many: "מעריכים"
         other: "מעריכים"
       valuator_group:
         one: "קבוצת מעריך"
         two: "קבוצות מעריכים"
-        many: "קבוצות מעריכים"
         other: "קבוצות מעריכים"
       manager:
         one: "מנהל"
         two: "מנהלים"
-        many: "מנהלים"
         other: "מנהלים"
       newsletter:
         one: "ידיעון"
         two: "ידיעונים"
-        many: "ידיעונים"
         other: "ידיעונים"
       vote:
         one: "הצבעה"
         two: "הצבעות"
-        many: "הצבעות"
         other: "הצבעות"
       organization:
         one: "ארגון"
         two: "ארגונים"
-        many: "ארגונים"
         other: "ארגונים"
       poll/booth:
         one: "דוכן"
         two: "דוכנים"
-        many: "דוכנים"
         other: "דוכנים"
       poll/officer:
         one: "נושא משרה"
         two: "נושאי משרות"
-        many: "נושאי משרות"
         other: "נושאי משרות"
       poll/ballot_sheet:
         one: גליון הצבעה
         two: גיליון הצבעות
-        many: גיליון הצבעות
         other: גיליון הצבעות
       proposal:
         one: "הצעת תושב"
         two: "הצעת תושבים"
-        many: "הצעת תושבים"
         other: "הצעת תושבים"
       site_customization/page:
         one: דף מותאם אישית
         two: דפים מותאמים אישית
-        many: דפים מותאמים אישית
         other: דפים מותאמים אישית
       site_customization/image:
         one: תמונה מותאמת אישית
         two: תמונות מותאמות אישית
-        many: תמונות מותאמות אישית
         other: תמונות מותאמות אישית
       site_customization/content_block:
         one: תוכן בלוק מותאם אישית
         two: תוכני בלוקים מותאמים אישית
-        many: תוכני בלוקים מותאמים אישית
         other: תוכני בלוקים מותאמים אישית
       document:
         one: מסמך
         two: מסמכים
-        many: מסמכים
         other: מסמכים
       legislation/process:
         one: "תהליך"
         two: "תהליכים"
-        many: "תהליכים"
         other: "תהליכים"
       legislation/proposal:
         one: "הצעה"
         two: "הצעות"
-        many: "הצעות"
         other: "הצעות"
       topic:
         one: "נושא"
         two: "נושאים"
-        many: "נושאים"
         other: "נושאים"
       poll:
         one: "סקר"
         two: "סקרים"
-        many: "סקרים"
         other: "סקרים"
       proposal_notification:
         one: "התראת הצעה"
         two: "התראת הצעות"
-        many: "הצעת התראות"
         other: "הצעת התראות"
       dashboard/action:
         one: פעולת לוח המחוונים להצעה
         two: פעולת לוח המחוונים להצעות
-        many: פעולת לוח המחוונים להצעות
         other: פעולת לוח המחוונים להצעות
       dashboard/administrator_task:
         one: משימה
         two: משימות
-        many: משימות
         other: משימות
       link:
         one: קישור
         two: קישורים
-        many: קישורים
         other: קישורים
     attributes:
       budget:
