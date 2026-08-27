@@ -7,13 +7,58 @@ updates:
   open-pull-requests-limit: 50
   labels:
     - "dependencies"
+  groups:
+    capybara:
+      patterns:
+        - "capybara"
+        - "selenium-webdriver"
+    caxlsx:
+      patterns:
+        - "caxlsx"
+        - "caxlsx_rails"
+    rubocop:
+      patterns:
+        - "rubocop"
+        - "rubocop-*"
+    sass:
+      patterns:
+        - "sassc-embedded"
+        - "sassc-rails"
+    simplecov:
+      patterns:
+        - "simplecov"
+        - "simplecov-lcov"
+    sprockets:
+      patterns:
+        - "sprockets"
+        - "sprockets-rails"
 - package-ecosystem: npm
   directory: "/"
   schedule:
     interval: monthly
   open-pull-requests-limit: 50
+  groups:
+    leaflet:
+      patterns:
+        - "leaflet"
+        - "leaflet.*"
+    eslint:
+      patterns:
+        - "@eslint*"
+        - "eslint"
+        - "globals"
+    stylelint:
+      patterns:
+        - "postcss-scss"
+        - "stylelint"
+        - "stylelint-*"
+        - "@stylistic*"
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
     interval: monthly
   open-pull-requests-limit: 50
+  groups:
+    actions:
+      patterns:
+        - "*"
