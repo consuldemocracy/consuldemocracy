@@ -101,8 +101,8 @@ module Capybara
 
     alias_method :original_click_link, :click_link
 
-    def click_link(url, ...)
-      original_click_link(url, ...)
+    def click_link(...)
+      original_click_link(...)
 
       unless driver.name == :rack_test
         expect(page).to be_axe_clean.skipping(*axe_tests_to_skip)
