@@ -49,7 +49,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
   def error_for(attribute, ...)
     if error?(attribute)
-      content_tag(:span, super, id: field_id(attribute, :error))
+      content_tag(:span, super, id: field_id(attribute, :error), "aria-live": "polite")
     end
   end
 

@@ -46,7 +46,7 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
 
     def select_language_error
       if select_language_error?
-        tag.div class: "small error", id: "select_language_error" do
+        tag.div class: "small error", id: "select_language_error", "aria-live": "polite" do
           resource.translation_for(selected_locale).errors[:base].join(", ")
         end
       end
