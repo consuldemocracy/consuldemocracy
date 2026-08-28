@@ -1,5 +1,5 @@
-<section class="reveal heading-mode" id="heading_mode" data-reveal>
-  <h1><%= t("#{i18n_namespace}.title") %></h1>
+<section class="reveal heading-mode" id="heading_mode" aria-labelledby="heading_mode_header" data-reveal>
+  <h1 id="heading_mode_header"><%= t("#{i18n_namespace}.title") %></h1>
 
   <% modes.each do |mode| %>
     <section class="<%= mode %>-heading-option">
