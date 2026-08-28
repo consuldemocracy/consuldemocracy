@@ -2,12 +2,12 @@
 
 <h2><%= t("admin.valuator_groups.show.title", group: @group.name) %></h2>
 
-<ul id="valuators">
-  <% if @group.valuators.any? %>
+<% if @group.valuators.any? %>
+  <ul id="valuators">
     <%= render partial: "valuator", collection: @group.valuators %>
-  <% else %>
-    <div class="callout primary">
-      <%= t("admin.valuator_groups.show.no_valuators") %>
-    </div>
-  <% end %>
-</ul>
+  </ul>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.valuator_groups.show.no_valuators") %>
+  </div>
+<% end %>
