@@ -1,7 +1,7 @@
 <div class="site-customization-images-table-actions">
   <%= form_for([:admin, image], html: { id: "edit_#{dom_id(image)}" }) do |f| %>
     <div>
-      <%= image_tag image.image if image.persisted_attachment? %>
+      <%= image_tag image.image, alt: image.name if image.persisted_attachment? %>
       <%= f.file_field :image,
                        label: false,
                        "aria-label": image.name,
