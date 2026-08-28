@@ -195,9 +195,12 @@ describe "Votes" do
 
       scenario "Confirm message shows the right text" do
         visit budget_investments_path(budget, heading_id: new_york.id)
-        click_button "Support"
 
-        expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
+        accept_confirm(/You can only support investments in 2 districts./) do
+          click_button "Support"
+        end
+
+        expect(page).to have_content "Investment supported successfully"
       end
 
       scenario "Do not show confirm message if user can vote in all headings" do
