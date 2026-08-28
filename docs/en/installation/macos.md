@@ -1,11 +1,4 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/local_installation/macos
----
-
-# macOS
+# Configuration for development and test environments (macOS Sonoma 14.6)
 
 ## Homebrew
 
@@ -54,7 +47,7 @@ source ~/.zprofile
 brew install postgresql
 ```
 
-Now we're going to configure some things related to the _default user_. First we start postgres server with:
+Now we're going to configure some things related to the *default user*. First we start postgres server with:
 
 ```bash
 brew services start postgresql

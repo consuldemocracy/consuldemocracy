@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/application
----
-
-# Application configuration
+# Customizing application configuration
 
 ## Overwriting application.rb
 

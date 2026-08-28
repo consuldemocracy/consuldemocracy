@@ -1,11 +1,4 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/local_installation/ubuntu
----
-
-# Ubuntu Linux
+# Configuration for development and test environments (Ubuntu 24.04)
 
 ## System update
 

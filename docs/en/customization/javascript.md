@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/javascript
----
-
-# JavaScript
+# Customizing JavaScript
 
 In order to add custom JavaScript code, you can create a file under `app/assets/javascripts/custom/`.
 

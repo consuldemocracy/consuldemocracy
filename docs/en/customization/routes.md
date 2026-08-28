@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/routes
----
-
-# Routes
+# Customizing routes
 
 When adding custom controller actions, you also need to define a route to configure the URL that will be used for those actions. You can do so by editing the `config/routes/custom.rb` file.
 

@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/controllers
----
-
-# Controllers
+# Customizing controllers
 
 Just like models, controllers are written using Ruby code, so their customization is similar, only we'll use the `app/controllers/custom/` folder instead of the `app/models/custom/` folder. Check the [models customization](models.md) section for more information.
 

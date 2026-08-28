@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/ruby
----
-
-# Other Ruby classes (GraphQL, lib, mailers, builders)
+# Customizing other Ruby classes
 
 Other than models, controllers and components, there are a few other folders containing Ruby code:
 

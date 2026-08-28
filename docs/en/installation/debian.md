@@ -1,11 +1,4 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/local_installation/debian
----
-
-# Debian Linux
+# Configuration for development and test environments (Debian GNU/Linux 12 - Bookworm)
 
 ## Superuser
 

@@ -1,10 +1,3 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/introduction/local_installation/vagrant
----
-
 # Vagrant
 
 Install [Vagrant](https://www.vagrantup.com/) and setup a virtual machine with [Linux](prerequisites.md)

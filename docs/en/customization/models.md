@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/customization/models
----
-
-# Models
+# Customizing models
 
 In order to create new models or customize existing ones, you can use the `app/models/custom/` folder.
 

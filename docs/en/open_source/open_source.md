@@ -1,9 +1,3 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/d9LWVG9gklmB6Mj632co/open_source
----
-
 # Open Source project
 
 * [Code of conduct](code_of_conduct.md)
