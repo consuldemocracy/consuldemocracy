@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_29_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_28_184039) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -1477,10 +1477,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_29_120000) do
 
   create_table "site_customization_images", id: :serial, force: :cascade do |t|
     t.string "name", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.bigint "image_file_size"
-    t.datetime "image_updated_at", precision: nil
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["name"], name: "index_site_customization_images_on_name", unique: true
