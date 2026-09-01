@@ -104,12 +104,12 @@ group :development do
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-rubocop", "~> 0.11.6", require: false
   gem "pronto-stylelint", "~> 0.11.1", require: false
-  gem "rubocop", "~> 1.86.1", require: false
-  gem "rubocop-capybara", "~> 2.22.1", require: false
+  gem "rubocop", "~> 1.90.0", require: false
+  gem "rubocop-capybara", "~> 3.0.0", require: false
   gem "rubocop-factory_bot", "~> 2.28.0", require: false
-  gem "rubocop-performance", "~> 1.26.1", require: false
-  gem "rubocop-rails", "~> 2.34.3", require: false
-  gem "rubocop-rspec", "~> 3.9.0", require: false
+  gem "rubocop-performance", "~> 1.27.0", require: false
+  gem "rubocop-rails", "~> 2.37.0", require: false
+  gem "rubocop-rspec", "~> 3.10.2", require: false
   gem "rubocop-rspec_rails", "~> 2.32.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "web-console", "~> 4.2.1"
