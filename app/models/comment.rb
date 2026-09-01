@@ -4,6 +4,7 @@ class Comment < ApplicationRecord
   include Graphqlable
   include Notifiable
   include Searchable
+  include AiModeratable
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
                          Legislation::Question Legislation::Annotation

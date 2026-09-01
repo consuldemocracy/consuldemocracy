@@ -22,6 +22,7 @@
             <% else %>
               <%= link_to comment.commentable.title, commentable_path(comment) %>
             <% end %>
+            <%= render "shared/ai_moderation_info", comment: comment %>
           </td>
           <td>
             <%= render Admin::HiddenTableActionsComponent.new(comment) %>

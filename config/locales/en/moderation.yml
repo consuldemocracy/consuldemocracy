@@ -1,5 +1,13 @@
 en:
   moderation:
+    ai:
+      logs:
+        flagged_or_hidden: "[AI Moderation] Comment #%{id} FLAGGED/HIDDEN by %{model}. Triggers: %{triggers}. Reason: %{reason}"
+        clean: "[AI Moderation] Comment #%{id} marked CLEAN by %{model}."
+      errors:
+        ruby_llm_crash: "RubyLLM Error for Comment #%{id}: %{message}"
+        json_parser_crash: "JSON Parsing crash for Comment #%{id}. Content: %{content}"
+        unexpected_exception: "Unexpected exception caught for Comment #%{id}: %{message}"
     actions:
       confirm_action: "Are you sure? %{action}"
     comments:
