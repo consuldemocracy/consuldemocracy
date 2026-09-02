@@ -1,5 +1,6 @@
 //= link ckeditor/application.css
 //= link ckeditor/application.js
+//= link graphiql/rails/application.js
 //
 //= link_tree ../images
 //= link application.css

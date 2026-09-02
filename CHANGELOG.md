@@ -40,6 +40,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - **Maintenance-Gems:** Bump sitemap_generator from 6.3.0 to 7.0.1 [#6343](https://github.com/consuldemocracy/consuldemocracy/pull/6343)
 - **Maintenance-Gems:** Upgrade to Rails 8.0 [#6152](https://github.com/consuldemocracy/consuldemocracy/pull/6152)
 - **Maintenance-Gems:** Bump font-awesome-sass from 5.15.1 to 6.4.0 [#5449](https://github.com/consuldemocracy/consuldemocracy/pull/5449)
+- **Maintenance-Gems:** Bump graphiql-rails from 1.8.0 to 1.10.5 [#5413](https://github.com/consuldemocracy/consuldemocracy/pull/5413)
 - **Maintenance-JavaScript:** Bump stylelint from 17.8.0 to 17.14.1 [#6465](https://github.com/consuldemocracy/consuldemocracy/pull/6465)
 - **Maintenance-JavaScript:** \[Security\] Bump ESLint from 9.39.4 to 10.8.0 [#6454](https://github.com/consuldemocracy/consuldemocracy/pull/6454)
 - **Maintenance-JavaScript:** \[Security\] Bump brace-expansion from 1.1.13 to 5.0.9 [#6453](https://github.com/consuldemocracy/consuldemocracy/pull/6453) and [#6482](https://github.com/consuldemocracy/consuldemocracy/pull/6482)
