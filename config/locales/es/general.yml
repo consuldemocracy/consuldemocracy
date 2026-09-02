@@ -580,8 +580,8 @@ es:
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     questions_count:
-      one: "Esta votación tiene 1 pregunta."
-      other: "Esta votación tiene %{count} preguntas."
+      one: "Esta encuesta tiene 1 pregunta."
+      other: "Esta encuesta tiene %{count} preguntas."
     form:
       vote: "Votar"
       maximum_exceeded: "has seleccionado %{given} respuestas, pero el máximo que puedes seleccionar es %{maximum}"
