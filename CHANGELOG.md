@@ -2,6 +2,68 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.6.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.6.0) (2026-09-02)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.5.1...2.6.0)
+
+### Added
+
+- **Documentation:** Add security policy [#6515](https://github.com/consuldemocracy/consuldemocracy/pull/6515)
+- **Documentation:** Add section to encourage supporting consul [#6444](https://github.com/consuldemocracy/consuldemocracy/pull/6444)
+- **Documentation:** Add WSIS Award to publiccode.yml [#6443](https://github.com/consuldemocracy/consuldemocracy/pull/6443)
+- **Polls:** Allow voting for essay option in unique and multiple question [#6065](https://github.com/consuldemocracy/consuldemocracy/pull/6065)
+- **Translations:** Update translations from Crowdin [#6493](https://github.com/consuldemocracy/consuldemocracy/pull/6493)
+
+### Changed
+
+- **Documentation:** Update Debian local installation instructions for Trixie [#6442](https://github.com/consuldemocracy/consuldemocracy/pull/6442)
+- **Maintenance:** Add groups to dependabot configuration [#6497](https://github.com/consuldemocracy/consuldemocracy/pull/6497)
+- **Maintenance-Deployment:** Update Node.js from 20.20.2 to 22.23.2 [#6405](https://github.com/consuldemocracy/consuldemocracy/pull/6405) and [#6500](https://github.com/consuldemocracy/consuldemocracy/pull/6500)
+- **Maintenance-Deployment:** Upgrade Ruby to version 3.4.10 [#6402](https://github.com/consuldemocracy/consuldemocracy/pull/6402) and [#6498](https://github.com/consuldemocracy/consuldemocracy/pull/6498)
+- **Maintenance-Gems:** Replace Uglifier with Terser for JS compression [#6484](https://github.com/consuldemocracy/consuldemocracy/pull/6484)
+- **Maintenance-Gems:** \[Security\] Bump omniauth-twitter from 1.4.0 to 1.5.0 [#6471](https://github.com/consuldemocracy/consuldemocracy/pull/6471)
+- **Maintenance-Gems:** \[Security\] Bump savon from 2.15.1 to 2.17.2 [#6463](https://github.com/consuldemocracy/consuldemocracy/pull/6463)
+- **Maintenance-Gems:** \[Security\] Bump activestorage from 8.0.5 to 8.0.5.1 [#6462](https://github.com/consuldemocracy/consuldemocracy/pull/6462)
+- **Maintenance-Gems:** \[Security\] Bump oauth2 from 2.0.18 to 2.0.22 [#6456](https://github.com/consuldemocracy/consuldemocracy/pull/6456)
+- **Maintenance-Gems:** \[Security\] Bump rails-html-sanitizer from 1.7.0 to 1.7.1 [#6450](https://github.com/consuldemocracy/consuldemocracy/pull/6450)
+- **Maintenance-Gems:** \[Security\] Bump websocket-driver from 0.8.1 to 0.8.2 [#6449](https://github.com/consuldemocracy/consuldemocracy/pull/6449)
+- **Maintenance-Gems:** \[Security\] Bump loofah from 2.25.1 to 2.25.2 [#6447](https://github.com/consuldemocracy/consuldemocracy/pull/6447)
+- **Maintenance-Gems:** \[Security\] Bump view_component from 4.9.0 to 4.12.0 [#6417](https://github.com/consuldemocracy/consuldemocracy/pull/6417)
+- **Maintenance-Gems:** \[Security\] Bump faraday from 2.14.2 to 2.14.3 [#6412](https://github.com/consuldemocracy/consuldemocracy/pull/6412)
+- **Maintenance-Gems:** \[Security\] Bump nokogiri from 1.19.3 to 1.19.4 [#6411](https://github.com/consuldemocracy/consuldemocracy/pull/6411)
+- **Maintenance-Gems:** \[Security\] Bump concurrent-ruby from 1.3.6 to 1.3.7 [#6410](https://github.com/consuldemocracy/consuldemocracy/pull/6410)
+- **Maintenance-Gems:** Replace capybara-webmock with Puffing Billy [#6401](https://github.com/consuldemocracy/consuldemocracy/pull/6401) and [#6403](https://github.com/consuldemocracy/consuldemocracy/pull/6403)
+- **Maintenance-Gems:** \[Security\] Bump net-imap from 0.6.4 to 0.6.4.1 [#6400](https://github.com/consuldemocracy/consuldemocracy/pull/6400)
+- **Maintenance-Gems:** Upgrade to Rack 3 [#6399](https://github.com/consuldemocracy/consuldemocracy/pull/6399)
+- **Maintenance-Gems:** \[Security\] Bump puma from 6.6.1 to 7.2.1 [#6398](https://github.com/consuldemocracy/consuldemocracy/pull/6398)
+- **Maintenance-Gems:** Bump dalli from 4.3.3 to 5.0.5 [#6391](https://github.com/consuldemocracy/consuldemocracy/pull/6391)
+- **Maintenance-Gems:** Bump sitemap_generator from 6.3.0 to 7.0.1 [#6343](https://github.com/consuldemocracy/consuldemocracy/pull/6343)
+- **Maintenance-Gems:** Upgrade to Rails 8.0 [#6152](https://github.com/consuldemocracy/consuldemocracy/pull/6152)
+- **Maintenance-Gems:** Bump font-awesome-sass from 5.15.1 to 6.4.0 [#5449](https://github.com/consuldemocracy/consuldemocracy/pull/5449)
+- **Maintenance-JavaScript:** Bump stylelint from 17.8.0 to 17.14.1 [#6465](https://github.com/consuldemocracy/consuldemocracy/pull/6465)
+- **Maintenance-JavaScript:** \[Security\] Bump ESLint from 9.39.4 to 10.8.0 [#6454](https://github.com/consuldemocracy/consuldemocracy/pull/6454)
+- **Maintenance-JavaScript:** \[Security\] Bump brace-expansion from 1.1.13 to 5.0.9 [#6453](https://github.com/consuldemocracy/consuldemocracy/pull/6453) and [#6482](https://github.com/consuldemocracy/consuldemocracy/pull/6482)
+- **Maintenance-JavaScript:** \[Security\] Bump postcss from 8.5.12 to 8.5.24 [#6452](https://github.com/consuldemocracy/consuldemocracy/pull/6452)
+- **Maintenance-JavaScript:** \[Security\] Bump fast-uri from 3.1.2 to 3.1.5 [#6451](https://github.com/consuldemocracy/consuldemocracy/pull/6451) and [#6483](https://github.com/consuldemocracy/consuldemocracy/pull/6483)
+- **Maintenance-JavaScript:** Replace C3.js with billboard.js [#6439](https://github.com/consuldemocracy/consuldemocracy/pull/6439)
+- **Maintenance-JavaScript:** \[Security\] Bump @stylistic/stylelint-plugin from 5.1.0 to 5.3.0 [#6420](https://github.com/consuldemocracy/consuldemocracy/pull/6420) and [#6489](https://github.com/consuldemocracy/consuldemocracy/pull/6489)
+- **Maintenance-JavaScript:** \[Security\] Bump js-yaml from 4.1.1 to 4.3.1 [#6416](https://github.com/consuldemocracy/consuldemocracy/pull/6416) and [#6487](https://github.com/consuldemocracy/consuldemocracy/pull/6487)
+- **Maintenance-JavaScript:** Replace blueimp-file-upload with Dropzone for direct uploads [#6414](https://github.com/consuldemocracy/consuldemocracy/pull/6414) and [#6438](https://github.com/consuldemocracy/consuldemocracy/pull/6438)
+- **Maintenance-JavaScript:** Bump font awesome from 6.4.2 to 6.7.2 [#6413](https://github.com/consuldemocracy/consuldemocracy/pull/6413)
+- **Maintenance-JavaScript:** Replace jquery-ujs with rails-ujs before jQuery 4 [#6406](https://github.com/consuldemocracy/consuldemocracy/pull/6406)
+- **Maintenance-JavaScript:** \[Security\] Bump stylelint-scss from 7.0.0 to 7.2.0 [#6389](https://github.com/consuldemocracy/consuldemocracy/pull/6389)
+- **Maintenance-JavaScript:** \[Security\] Bump markdown-it from 14.1.1 to 14.3.0 [#6386](https://github.com/consuldemocracy/consuldemocracy/pull/6386)
+- **Maintenance-JavaScript:** Bump jquery from 3.7.1 to 4.0.0 [#6224](https://github.com/consuldemocracy/consuldemocracy/pull/6224)
+- **Maintenance-JavaScript:** Bump jquery-ui from 1.13.3 to 1.14.2 [#6219](https://github.com/consuldemocracy/consuldemocracy/pull/6219)
+- **Maintenance-Specs:** Don't print "error message" in machine learning tests [#6495](https://github.com/consuldemocracy/consuldemocracy/pull/6495)
+- **UX:** Use datetime fields in proposal dashboard polls [#6494](https://github.com/consuldemocracy/consuldemocracy/pull/6494)
+
+### Fixed
+
+- **Accessibility:** Make form error messages accessible to everyone [#6440](https://github.com/consuldemocracy/consuldemocracy/pull/6440) and [#6446](https://github.com/consuldemocracy/consuldemocracy/pull/6446)
+- **AI:** Fix image suggestions button alignment after failed upload [#6448](https://github.com/consuldemocracy/consuldemocracy/pull/6448)
+- **Proposals:** Avoid creating duplicate votes [#6441](https://github.com/consuldemocracy/consuldemocracy/pull/6441)
+
 ## [2.5.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.5.1) (2026-06-04)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.5.0...2.5.1)
