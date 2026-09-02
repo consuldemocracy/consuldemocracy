@@ -11,6 +11,18 @@ class Polls::PollComponent < ApplicationComponent
       t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
     end
 
+    def questions_to_list
+      poll.questions.sort_for_list.first(2)
+    end
+
+    def more_questions_than_shown?
+      poll.questions.count > 2
+    end
+
+    def questions_count_text
+      t("polls.questions_count", count: poll.questions.count)
+    end
+
     def header_text
       if poll.questions.one?
         poll.questions.first.title
