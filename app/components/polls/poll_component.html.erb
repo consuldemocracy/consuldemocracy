@@ -12,10 +12,13 @@
     <div class="dates"><%= dates %></div>
     <% if poll.questions.many? %>
       <ul class="margin-top">
-        <% poll.questions.sort_for_list.each do |question| %>
+        <% questions_to_list.each do |question| %>
           <li><%= question.title %></li>
         <% end %>
       </ul>
+      <% if more_questions_than_shown? %>
+        <div class="questions-count"><%= questions_count_text %></div>
+      <% end %>
     <% end %>
     <%= render Polls::GeozonesComponent.new(poll) %>
     <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>

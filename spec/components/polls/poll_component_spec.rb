@@ -24,6 +24,34 @@ describe Polls::PollComponent do
     end
   end
 
+  describe "questions" do
+    it "shows all questions when there are 2, without a count line" do
+      poll = create(:poll)
+      create(:poll_question, poll: poll, title: "First question")
+      create(:poll_question, poll: poll, title: "Second question")
+
+      render_inline Polls::PollComponent.new(poll)
+
+      expect(page).to have_content "First question"
+      expect(page).to have_content "Second question"
+      expect(page).not_to have_content "This poll has"
+    end
+
+    it "shows only the first 2 questions plus a count when there are more than 2" do
+      poll = create(:poll)
+      create(:poll_question, poll: poll, title: "First question")
+      create(:poll_question, poll: poll, title: "Second question")
+      create(:poll_question, poll: poll, title: "Third question")
+
+      render_inline Polls::PollComponent.new(poll)
+
+      expect(page).to have_content "First question"
+      expect(page).to have_content "Second question"
+      expect(page).not_to have_content "Third question"
+      expect(page).to have_content "This poll has 3 questions."
+    end
+  end
+
   describe "geozones" do
     it "renders a list of geozones when the poll is geozone-restricted" do
       render_inline Polls::PollComponent.new(create(:poll, geozone_restricted_to: [create(:geozone)]))

@@ -383,6 +383,9 @@ es-PE:
   polls:
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
+    questions_count:
+      one: "Esta votación tiene 1 pregunta."
+      other: "Esta votación tiene %{count} preguntas."
     index:
       filters:
         current: "Abierto"
