@@ -19,11 +19,6 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-# TODO: remove after upgrading to ruby_llm 2.0.0
-RubyLLM.configure do |config|
-  config.use_new_acts_as = true
-end
-
 module Consul
   class Application < Rails::Application
     def secrets

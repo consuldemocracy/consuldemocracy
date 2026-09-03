@@ -42,4 +42,45 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
   def image_suggestions_disabled?
     !::Llm::Config.configured? || Tenant.current_secrets.pexels_access_key.blank?
   end
+
+  def speech_to_text_provider_options
+    current = Setting["llm.speech_to_text_provider"]
+    available = speech_to_text_providers
+    options_values = available.keys.map { |key| [key.to_s, key.to_s] }
+    disabled_values = available.reject { |_key, value| value[:enabled] }.keys
+
+    options_for_select(options_values, selected: current, disabled: disabled_values)
+  end
+
+  def speech_to_text_models
+    provider = Setting["llm.speech_to_text_provider"]
+    return {} if provider.blank?
+
+    RubyLLM.models.by_provider(provider.downcase.to_sym)
+      .select { |model| model.supports?(:transcription) }
+      .to_h { |model| [model.name, { id: model.id }] }
+  end
+
+  def speech_to_text_model_options
+    current = Setting["llm.speech_to_text_model"]
+    options_values = speech_to_text_models.map { |name, value| [name, value[:id]] }
+
+    options_for_select(options_values, selected: current)
+  end
+
+  def speech_to_text_model_disabled?
+    Setting["llm.speech_to_text_provider"].blank?
+  end
+
+  def speech_to_text_feature_disabled?
+    !::Llm::Config.speech_to_text_model_available?
+  end
+
+  private
+
+    def speech_to_text_providers
+      providers.select do |key, _value|
+        RubyLLM.models.by_provider(key.downcase.to_sym).any? { |model| model.supports?(:transcription) }
+      end
+    end
 end

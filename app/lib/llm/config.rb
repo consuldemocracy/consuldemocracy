@@ -29,6 +29,23 @@ module Llm
         llm_provider.present? && llm_model.present?
       end
 
+      def speech_to_text_configured?
+        Setting["llm.use_llm_speech_to_text"].present? && speech_to_text_model_available?
+      end
+
+      def speech_to_text_model_available?(model = Setting["llm.speech_to_text_model"])
+        provider = speech_to_text_provider
+        return false if model.blank? || provider.blank?
+
+        configured_providers = providers
+        provider_key = configured_providers.keys.find { |key| key.to_s.casecmp(provider.to_s).zero? }
+        return false unless provider_key && configured_providers[provider_key][:enabled]
+
+        RubyLLM.models.find(model, provider).supports?(:transcription)
+      rescue RubyLLM::ModelNotFoundError
+        false
+      end
+
       private
 
         def llm_provider
@@ -37,6 +54,10 @@ module Llm
 
         def llm_model
           Setting["llm.model"]
+        end
+
+        def speech_to_text_provider
+          Setting["llm.speech_to_text_provider"]&.downcase&.to_sym
         end
 
         def llm_secrets
