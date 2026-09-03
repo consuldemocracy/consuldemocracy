@@ -75,7 +75,7 @@ describe "Poll Officing" do
     login_as(user)
     visit root_path
 
-    click_link "Menu"
+    click_summary "Menu"
     click_link "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
@@ -87,7 +87,7 @@ describe "Poll Officing" do
     login_as(user)
     visit root_path
 
-    click_link "Menu"
+    click_summary "Menu"
     click_link "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)

@@ -11,19 +11,6 @@
     }
   }
 
-  .is-dropdown-submenu {
-    @extend %body-colors;
-    margin: 0;
-    margin-top: rem-calc(-12);
-    padding: 0;
-    z-index: 9;
-  }
-
-  .is-submenu-item {
-    display: block;
-    margin-bottom: 0;
-  }
-
   li {
     display: block;
     width: 100%;
@@ -33,7 +20,8 @@
     }
 
     a,
-    button {
+    button,
+    summary {
       color: inherit;
       cursor: pointer;
       line-height: inherit;
@@ -61,10 +49,26 @@
     }
   }
 
-  .has-submenu {
+  .admin-login-items {
+    details {
+      position: relative;
 
-    &.is-active a {
-      font-weight: bold;
+      &[open] {
+        summary {
+          font-weight: bold;
+        }
+      }
+
+      ul {
+        @extend %body-colors;
+        background: $dropdownmenu-submenu-background;
+        border: $dropdownmenu-border;
+        margin-top: calc($line-height / 4);
+        min-width: $dropdownmenu-min-width;
+        position: absolute;
+        top: 100%;
+        z-index: 9;
+      }
     }
   }
 }

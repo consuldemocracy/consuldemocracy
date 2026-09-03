@@ -29,7 +29,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Administration"
@@ -46,7 +46,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Moderation"
@@ -59,7 +59,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Valuation"
@@ -72,7 +72,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Management"
@@ -85,7 +85,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "SDG content"
@@ -99,7 +99,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Administration"
@@ -115,7 +115,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Polling officers"
@@ -130,7 +130,7 @@ describe Layout::AdminLoginItemsComponent do
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
-    expect(page).to have_link "Menu"
+    expect(page).to have_css "summary", exact_text: "Menu"
 
     page.find("ul") do |menu|
       expect(menu).to have_link "Moderation"
