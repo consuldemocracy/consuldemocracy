@@ -28,6 +28,10 @@ module CommonActions
     Capybara::Server.ports.values.last
   end
 
+  def click_summary(text = nil, **)
+    find("summary", exact_text: text, **).click
+  end
+
   def fill_in_signup_form(email = "manuela@consul.dev", password = "judgementday")
     fill_in "user_username",              with: "Manuela Carmena #{rand(99999)}"
     fill_in "user_email",                 with: email

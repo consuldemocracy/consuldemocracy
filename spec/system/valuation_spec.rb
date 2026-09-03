@@ -64,7 +64,7 @@ describe "Valuation" do
       login_as(user)
 
       visit root_path
-      click_link "Menu"
+      click_summary "Menu"
       click_link "Valuation"
 
       expect(page).to have_current_path(valuation_root_path)
@@ -80,7 +80,7 @@ describe "Valuation" do
       login_as(user)
 
       visit root_path
-      click_link "Menu"
+      click_summary "Menu"
       click_link "Valuation"
 
       expect(page).to have_current_path(valuation_root_path)

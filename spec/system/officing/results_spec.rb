@@ -27,7 +27,7 @@ describe "Officing Results", :with_frozen_time do
     not_allowed_poll_3 = create(:poll, officers: [poll_officer])
 
     visit root_path
-    click_link "Menu"
+    click_summary "Menu"
     click_link "Polling officers"
 
     expect(page).to have_content("Poll officing")

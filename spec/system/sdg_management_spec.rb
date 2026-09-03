@@ -32,7 +32,7 @@ describe "SDGManagement" do
       login_as(user)
       visit root_path
 
-      click_link "Menu"
+      click_summary "Menu"
       click_link "SDG content"
 
       expect(page).to have_current_path(sdg_management_root_path)
