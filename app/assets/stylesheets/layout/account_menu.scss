@@ -48,17 +48,6 @@
         text-decoration: underline;
       }
     }
-
-    .button {
-      background: none;
-      text-align: left;
-
-      @include breakpoint(medium) {
-        @include brand-color;
-        background: $body-background;
-        text-align: center;
-      }
-    }
   }
 
   .has-submenu {
