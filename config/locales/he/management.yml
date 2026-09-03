@@ -96,7 +96,6 @@ he:
       search_results:
         one: " המכיל את המונח '%{search_term}'"
         two: " המכיל את המונחים '%{search_term}'"
-        many: " המכיל את המונחים '%{search_term}'"
         other: " המכיל את המונחים '%{search_term}'"
     sessions:
       signed_out: יצאת בהצלחה

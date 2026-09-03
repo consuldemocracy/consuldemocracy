@@ -5,7 +5,6 @@ he:
         zero: אין כניסות
         one: כניסה
         two: כניסות
-        many: כניסות
         other: כניסות
       more_pages:
         display_entries: מציג <b>%{first}&nbsp;-&nbsp;%{last}</b> מתוך<b>%{total}</b> %{entry_name}
@@ -14,7 +13,6 @@ he:
           zero: "%{entry_name} לא נמצא"
           one: יש <strong>1 %{entry_name}</strong>
           two: ישנם <strong>%{count} %{entry_name}</strong>
-          many: ישנם <strong>%{count} %{entry_name}</strong>
           other: ישנם <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
