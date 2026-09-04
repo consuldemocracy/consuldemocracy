@@ -50,7 +50,7 @@ class Attachable::FieldsComponent < ApplicationComponent
     end
 
     def file_field
-      klass = attachable.persisted? || attachable.cached_attachment.present? ? " hide" : ""
+      klass = attachable.persisted? || attachable.cached_attachment.present? ? "hide" : ""
       f.file_field :attachment,
                    label_options: { class: "button hollow #{klass}" },
                    accept: accepted_content_types_extensions,
