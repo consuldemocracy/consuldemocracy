@@ -64,7 +64,7 @@ describe "Admin" do
   scenario "Access as administrator is authorized", :admin do
     visit root_path
 
-    click_link "Menu"
+    click_summary "Menu"
     click_link "Administration"
 
     expect(page).to have_current_path(admin_root_path)
@@ -101,6 +101,24 @@ describe "Admin" do
       click_button "Menu"
 
       expect(page).to have_link "My account"
+    end
+
+    scenario "shows admin links when resizing the window" do
+      visit admin_root_path
+
+      click_summary "Menu"
+
+      expect(page).to have_link "Administration"
+
+      with_small_window do
+        expect(page).to have_button "Menu"
+        expect(page).not_to have_css "summary", text: "Menu"
+        expect(page).not_to have_link "Administration"
+
+        click_button "Menu"
+
+        expect(page).to have_link "Administration"
+      end
     end
   end
 end

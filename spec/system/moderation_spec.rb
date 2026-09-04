@@ -30,7 +30,7 @@ describe "Moderation" do
 
         login_as(user)
         visit root_path
-        click_link "Menu"
+        click_summary "Menu"
         click_link "Moderation"
 
         expect(page).to have_current_path moderation_root_path

@@ -19,6 +19,7 @@ module CommonActions
   include Translations
   include Users
   include Verifications
+  include WindowSizeHelper
 
   def app_host
     "#{Capybara.app_host}:#{app_port}"
@@ -26,6 +27,10 @@ module CommonActions
 
   def app_port
     Capybara::Server.ports.values.last
+  end
+
+  def click_summary(text = nil, **)
+    find("summary", exact_text: text, **).click
   end
 
   def fill_in_signup_form(email = "manuela@consul.dev", password = "judgementday")
