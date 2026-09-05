@@ -192,8 +192,10 @@ GEM
     debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    delayed_job (4.1.13)
+    delayed_job (4.2.0)
       activesupport (>= 3.0, < 9.0)
+      benchmark
+      logger
     delayed_job_active_record (4.1.11)
       activerecord (>= 3.0, < 9.0)
       delayed_job (>= 3.0, < 5)
