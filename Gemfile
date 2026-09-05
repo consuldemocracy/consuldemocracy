@@ -81,7 +81,7 @@ end
 group :test do
   gem "capybara", "~> 3.40.0"
   gem "email_spec", "~> 2.3.1"
-  gem "pdf-reader", "~> 2.15.1"
+  gem "pdf-reader", "~> 2.16.0"
   gem "puffing-billy", "~> 4.0"
   gem "rspec-rails", "~> 8.0.4"
   gem "selenium-webdriver", "~> 4.48.0"
