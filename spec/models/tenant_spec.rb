@@ -149,6 +149,24 @@ describe Tenant do
       expect(Tenant.resolve_host("consul.dev")).to be nil
     end
 
+    context "non-local environment" do
+      before { allow(Rails.env).to receive(:local?).and_return(false) }
+
+      it "returns subdomains when used" do
+        expect(Tenant.resolve_host("saturn.consul.dev")).to eq "saturn"
+      end
+
+      it "returns full domains using development and test domains" do
+        expect(Tenant.resolve_host("jupiter.lvh.me")).to eq "jupiter.lvh.me"
+        expect(Tenant.resolve_host("saturn.example.com")).to eq "saturn.example.com"
+        expect(Tenant.resolve_host("mars.localhost")).to eq "mars.localhost"
+      end
+
+      it "returns full domains when other domains are used" do
+        expect(Tenant.resolve_host("saturn.unrelated.dev")).to eq "saturn.unrelated.dev"
+      end
+    end
+
     context "multitenancy disabled" do
       before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }
 

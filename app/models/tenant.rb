@@ -51,8 +51,15 @@ class Tenant < ApplicationRecord
   end
 
   def self.allowed_domains
-    dev_domains = %w[localhost lvh.me example.com]
-    dev_domains + [default_host]
+    if Rails.env.local?
+      [default_host] + dev_domains
+    else
+      [default_host]
+    end
+  end
+
+  def self.dev_domains
+    %w[localhost lvh.me example.com]
   end
 
   def self.excluded_subdomains
