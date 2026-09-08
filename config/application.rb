@@ -51,7 +51,7 @@ module Consul
     end
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 8.0
+    config.load_defaults 8.1
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -79,11 +79,8 @@ module Consul
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
 
-    ###
-    # Enables YJIT on production but not on development/test
-    # because this will be the default in Rails 8.1
-    # TODO: remove after upgrading to Rails 8.1
-    Rails.application.config.yjit = !Rails.env.local?
+    # Keep adding automplete tag to hidden fields for Firefox compatibility
+    config.action_view.remove_hidden_field_autocomplete = false
 
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
