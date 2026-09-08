@@ -23,7 +23,7 @@ namespace :management do
     get :edit_password_manually
   end
 
-  resource :session, only: [:create, :destroy]
+  resource :session, only: :create
   get "sign_in", to: "sessions#create", as: :sign_in
 
   resources :proposals, only: [:index, :new, :create, :show] do
