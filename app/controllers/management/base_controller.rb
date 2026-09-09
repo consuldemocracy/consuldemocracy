@@ -6,13 +6,13 @@ class Management::BaseController < ActionController::Base
   layout "management"
   default_form_builder ConsulFormBuilder
 
-  before_action :authenticate_user!, unless: :external_manager?
+  before_action :authenticate_user!
   before_action :verify_manager
   around_action :switch_locale
 
   helper_method :managed_user
-  helper_method :manager_user
   helper_method :current_user
+  helper_method :current_manager
 
   private
 
@@ -21,27 +21,15 @@ class Management::BaseController < ActionController::Base
     end
 
     def current_manager
-      @current_manager ||= external_manager || manager_user
+      @current_manager ||= manager_user
     end
 
     def current_manager_login
-      if external_manager
-        current_manager[:login]
+      if current_manager.administrator?
+        "admin_user_#{current_manager.id}"
       else
-        if current_manager.administrator?
-          "admin_user_#{current_manager.id}"
-        else
-          "manager_user_#{current_manager.id}"
-        end
+        "manager_user_#{current_manager.id}"
       end
-    end
-
-    def external_manager
-      session[:manager]
-    end
-
-    def external_manager?
-      external_manager.present?
     end
 
     def manager_user

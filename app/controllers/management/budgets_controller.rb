@@ -9,7 +9,7 @@ class Management::BudgetsController < Management::BaseController
   def create_investments
     @budgets = Budget.accepting.order(created_at: :desc).page(params[:page])
 
-    if current_manager_administrator?
+    if current_manager.administrator?
       @budgets += Budget.reviewing.order(created_at: :desc) +
                   Budget.selecting.order(created_at: :desc)
     end
@@ -27,9 +27,5 @@ class Management::BudgetsController < Management::BaseController
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
-    end
-
-    def current_manager_administrator?
-      manager_user&.administrator?
     end
 end
