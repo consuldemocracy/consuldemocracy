@@ -26,7 +26,7 @@ describe "HTML injection protection" do
 
   scenario "proposals search in the management area" do
     login_managed_user(create(:user, :level_two))
-    login_as_manager
+    login_as create(:manager).user
 
     visit management_proposals_path(search: attack_code)
 

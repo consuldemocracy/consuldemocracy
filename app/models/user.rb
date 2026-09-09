@@ -428,10 +428,6 @@ class User < ApplicationRecord
       where(conditions.to_hash).find_by(["username = ?", login])
   end
 
-  def self.find_by_manager_login(manager_login)
-    find_by(id: manager_login.split("_").last)
-  end
-
   def interests
     followables = follows.map(&:followable)
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq

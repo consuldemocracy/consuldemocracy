@@ -8,7 +8,7 @@
 
   <body class="admin">
     <%= render Layout::SkipToMainContentComponent.new %>
-    <%= render Layout::AdminHeaderComponent.new(manager_logged_in) %>
+    <%= render Layout::AdminHeaderComponent.new(manager_user) %>
 
     <div class="menu-and-content">
       <%= check_box_tag :show_menu, nil, false, role: "switch" %>

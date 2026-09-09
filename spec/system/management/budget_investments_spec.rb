@@ -21,7 +21,7 @@ describe "Budget Investments" do
 
     scenario "finds investment using budget slug" do
       login_managed_user(user)
-      login_as_manager(manager)
+      login_as manager.user
       visit management_budget_investment_path("budget_slug", investment)
 
       expect(page).to have_content investment.title
@@ -230,7 +230,7 @@ describe "Budget Investments" do
     login_managed_user(user)
     login_as(create(:administrator).user)
 
-    visit management_sign_in_path
+    visit management_root_path
 
     click_link "Create budget investment"
 
@@ -301,7 +301,7 @@ describe "Budget Investments" do
       create(:budget_investment, heading: create(:budget_heading, group: group))
 
       login_managed_user(user)
-      login_as_manager(manager)
+      login_as manager.user
 
       visit management_budget_investments_path(budget)
       click_link "Default heading investment"
@@ -321,7 +321,7 @@ describe "Budget Investments" do
       create(:budget_investment, heading: heading)
 
       login_managed_user(user)
-      login_as_manager(manager)
+      login_as manager.user
 
       visit management_budget_investments_path(budget)
       click_button "Support"
@@ -342,7 +342,7 @@ describe "Budget Investments" do
       create(:budget_investment, heading: heading, title: "Don't support me!")
 
       login_managed_user(user)
-      login_as_manager(manager)
+      login_as manager.user
 
       visit management_budget_investments_path(budget)
       click_link "Don't support me!"

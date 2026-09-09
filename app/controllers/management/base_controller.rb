@@ -1,25 +1,53 @@
 class Management::BaseController < ActionController::Base
   include TenantVariants
   include GlobalizeFallbacks
+  include AccessDeniedHandler
 
   layout "management"
   default_form_builder ConsulFormBuilder
 
+  before_action :authenticate_user!, unless: :external_manager?
   before_action :verify_manager
   around_action :switch_locale
 
   helper_method :managed_user
+  helper_method :manager_user
   helper_method :current_user
-  helper_method :manager_logged_in
 
   private
 
     def verify_manager
-      raise ActionController::RoutingError, "Not Found" if current_manager.blank?
+      raise CanCan::AccessDenied if current_manager.blank?
     end
 
     def current_manager
+      @current_manager ||= external_manager || manager_user
+    end
+
+    def current_manager_login
+      if external_manager
+        current_manager[:login]
+      else
+        if current_manager.administrator?
+          "admin_user_#{current_manager.id}"
+        else
+          "manager_user_#{current_manager.id}"
+        end
+      end
+    end
+
+    def external_manager
       session[:manager]
+    end
+
+    def external_manager?
+      external_manager.present?
+    end
+
+    def manager_user
+      user = warden.authenticate!(scope: :user)
+
+      user if user.administrator? || user.manager?
     end
 
     def current_user
@@ -52,11 +80,5 @@ class Management::BaseController < ActionController::Base
 
     def clear_password
       session[:new_password] = nil
-    end
-
-    def manager_logged_in
-      if current_manager
-        @manager_logged_in = User.find_by_manager_login(session[:manager]["login"])
-      end
     end
 end

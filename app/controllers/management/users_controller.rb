@@ -25,7 +25,7 @@ class Management::UsersController < Management::BaseController
 
   def erase
     if current_manager.present?
-      managed_user.erase(t("management.users.erased_by_manager", manager: current_manager["login"]))
+      managed_user.erase(t("management.users.erased_by_manager", manager: current_manager_login))
     end
 
     destroy_session

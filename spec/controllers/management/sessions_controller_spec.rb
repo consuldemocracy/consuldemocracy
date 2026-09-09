@@ -27,17 +27,19 @@ describe Management::SessionsController do
     it "redirects to management root path if user is admin" do
       user = create(:administrator).user
       sign_in user
+
       get :create
-      expect(response).to be_redirect
-      expect(session[:manager][:login]).to eq "admin_user_#{user.id}"
+
+      expect(response).to redirect_to management_root_path
     end
 
     it "redirects to management root path if user is manager" do
       user = create(:manager).user
       sign_in user
+
       get :create
-      expect(response).to be_redirect
-      expect(session[:manager][:login]).to eq "manager_user_#{user.id}"
+
+      expect(response).to redirect_to management_root_path
     end
 
     it "denies access if user is not admin or manager" do
