@@ -35,7 +35,7 @@ module Users
 
   def login_as_manager(manager = create(:manager))
     login_as(manager.user)
-    visit management_sign_in_path
+    visit management_root_path
 
     expect(page).to have_content "Management"
   end

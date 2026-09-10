@@ -4,7 +4,6 @@ describe Management::Budgets::InvestmentsController do
   before do
     manager = create(:manager)
     sign_in(manager.user)
-    session[:manager] = { login: "manager_user_#{manager.user.id}" }
     login_managed_user(create(:user, :level_two))
   end
 

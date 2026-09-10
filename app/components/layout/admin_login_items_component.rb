@@ -36,7 +36,7 @@ class Layout::AdminLoginItemsComponent < ApplicationComponent
     end
 
     def management_link
-      [t("layouts.header.management"), management_sign_in_path]
+      [t("layouts.header.management"), management_root_path]
     end
 
     def officing_link

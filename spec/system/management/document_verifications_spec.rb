@@ -4,7 +4,7 @@ describe "DocumentVerifications" do
   scenario "Verifying a level 3 user shows an 'already verified' page" do
     user = create(:user, :level_three)
 
-    login_as_manager
+    login_as create(:manager).user
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: user.document_number
     click_button "Check document"
@@ -15,7 +15,7 @@ describe "DocumentVerifications" do
   scenario "Verifying a level 2 user displays the verification form" do
     user = create(:user, :level_two)
 
-    login_as_manager
+    login_as create(:manager).user
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: user.document_number
     click_button "Check document"
@@ -40,7 +40,7 @@ describe "DocumentVerifications" do
           .to receive(:in_census?)
           .and_return(false)
 
-        login_as_manager
+        login_as create(:manager).user
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "inexisting"
         click_button "Check document"
@@ -49,7 +49,7 @@ describe "DocumentVerifications" do
       end
 
       scenario "Verifying a user who exists in the census but not in the db allows sending an email" do
-        login_as_manager
+        login_as create(:manager).user
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"
         click_button "Check document"
@@ -64,7 +64,7 @@ describe "DocumentVerifications" do
           .to receive(:in_census?)
           .and_return(false)
 
-        login_as_manager
+        login_as create(:manager).user
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"
         fill_in "Date of birth", with: Date.new(1980, 12, 31)
@@ -78,7 +78,7 @@ describe "DocumentVerifications" do
                 redirects allows sending an email" do
         mock_valid_remote_census_response
 
-        login_as_manager
+        login_as create(:manager).user
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"
         fill_in "Date of birth", with: Date.new(1980, 12, 31)
@@ -91,7 +91,7 @@ describe "DocumentVerifications" do
   end
 
   scenario "Document number is format-standarized" do
-    login_as_manager
+    login_as create(:manager).user
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345 - h"
     click_button "Check document"

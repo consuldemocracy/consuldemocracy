@@ -8,7 +8,7 @@ describe "Management" do
     create(:moderator, user: create(:user, :in_census, document_number: "12345678M"))
 
     login_as(user)
-    visit management_sign_in_path
+    visit management_root_path
     click_link "Select user"
     fill_in "Document number", with: "12345678M"
     click_button "Check document"

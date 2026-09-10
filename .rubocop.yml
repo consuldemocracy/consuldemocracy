@@ -427,7 +427,6 @@ Rails/DynamicFindBy:
     - find_by_domain
     - find_by_slug_or_id
     - find_by_slug_or_id!
-    - find_by_manager_login
 
 Rails/EnumHash:
   Enabled: true
