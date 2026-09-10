@@ -100,7 +100,6 @@ de:
         other: "enthält die Begriffe  '%{search_term}'"
     sessions:
       need_managed_user: Um diese Aktion durchzuführen, müssen Sie einen Benutzer auswählen.
-      signed_out: Erfolgreich abgemeldet.
       signed_out_managed_user: Benutzersitzung erfolgreich abgemeldet.
     username_label: Benutzer*innenname
     users:
