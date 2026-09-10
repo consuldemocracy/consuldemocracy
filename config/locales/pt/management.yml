@@ -100,7 +100,6 @@ pt:
         other: " contendo os termos '%{search_term}'"
     sessions:
       need_managed_user: Para realizar esta ação deve selecionar um utilizador
-      signed_out: Sessão encerrada com sucesso.
       signed_out_managed_user: Sessão do utilizador encerrada com sucesso.
     username_label: Nome de utilizador
     users:
