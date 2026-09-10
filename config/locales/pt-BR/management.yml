@@ -99,7 +99,6 @@ pt-BR:
         one: " contendo o termo '%{search_term}'"
         other: " contendo o termo '%{search_term}'"
     sessions:
-      signed_out: Sessão encerrada com êxito.
       signed_out_managed_user: Você saiu da sua conta com sucesso.
     username_label: Nome de usuário
     users:
