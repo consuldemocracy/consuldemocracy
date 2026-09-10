@@ -73,7 +73,6 @@ ast:
         one: " contienen el término '%{search_term}'"
         other: " contienen el término '%{search_term}'"
     sessions:
-      signed_out: Has cerrado la sesión correctamente.
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
     username_label: Nome d'usuariu
     users:

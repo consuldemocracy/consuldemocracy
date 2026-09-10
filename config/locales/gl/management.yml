@@ -100,7 +100,6 @@ gl:
         other: " conteñen os termos '%{search_term}'"
     sessions:
       need_managed_user: Para levar a cabo esta acción debes seleccionar un usuario
-      signed_out: Cerraches a sesión correctamente.
       signed_out_managed_user: Cerrouse correctamente a sesión do usuario.
     username_label: Nome de usuario/a
     users:

@@ -105,7 +105,6 @@ cs:
         other: " obsahující výraz %{search_term}'"
     sessions:
       need_managed_user: Chcete-li provést tuto akci, musíte vybrat uživatele
-      signed_out: Odhlášení bylo úspěšné.
       signed_out_managed_user: Uživatelská relace byla úspěšně odhlášená.
     username_label: Uživatelské jméno
     users:

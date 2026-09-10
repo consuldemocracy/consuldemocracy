@@ -97,7 +97,6 @@ so:
         one: " oo ku jira ereyga %{search_term}"
         other: " oo ku jira ereyga %{search_term}"
     sessions:
-      signed_out: Uga baxay siguul ah.
       signed_out_managed_user: Fadhiga isticmaalaha ayaa si guul leh u saxeexay.
     username_label: Magaca Isticmaalaha
     users:
