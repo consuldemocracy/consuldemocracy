@@ -30,7 +30,7 @@ describe Debate::Exporter do
           #{reply.id},#{reply.author.email},#{reply.body},#{root_comment.id},2026-06-01 14:59:10
         CSV
 
-        expect(Debate::Exporter.new([debate]).to_csv).to eq csv_contents
+        expect(Debate::Exporter.new([debate]).to_csv).to eq "\xEF\xBB\xBF" + csv_contents
       end
     end
   end
