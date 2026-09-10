@@ -103,7 +103,6 @@ it:
         other: " contenenti il termine '%{search_term}'"
     sessions:
       need_managed_user: Per eseguire quest'azione devi selezionare un utente
-      signed_out: Disconnesso correttamente.
       signed_out_managed_user: Sessione utente disconnessa correttamente.
     username_label: Nome utente
     users:
