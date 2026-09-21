@@ -30,7 +30,7 @@
             ) do |actions| %>
               <%= actions.action(:download,
                                  text: t("documents.buttons.download_document"),
-                                 path: document.attachment,
+                                 path: permanent_document_path(document),
                                  rel: "nofollow") %>
             <% end %>
           </td>

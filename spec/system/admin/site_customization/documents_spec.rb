@@ -17,13 +17,27 @@ describe "Documents", :admin do
     3.times { create(:document, :admin) }
     1.times { create(:document) }
 
-    document = Document.first
-    url = polymorphic_path(document.attachment)
-
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
-    expect(page).to have_link "Download file", href: url
+
+    ActiveStorage.with(service_urls_expire_in: 0.001.seconds) do
+      within("tbody tr:first-child") do
+        click_link "Download file"
+
+        expect(page).not_to have_current_path admin_site_customization_documents_path
+      end
+
+      document_url = current_path
+
+      visit admin_site_customization_documents_path
+
+      within("tbody tr:first-child") do
+        click_link "Download file"
+
+        expect(page).to have_current_path document_url
+      end
+    end
   end
 
   scenario "Index (pagination)" do
