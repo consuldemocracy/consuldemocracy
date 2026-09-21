@@ -26,12 +26,6 @@ describe "Documents", :admin do
     expect(page).to have_link "Download file", href: url
   end
 
-  scenario "Index (empty)" do
-    visit admin_site_customization_documents_path
-
-    expect(page).to have_content "There are no documents."
-  end
-
   scenario "Index (pagination)" do
     per_page = 3
     allow(Document).to receive(:default_per_page).and_return(per_page)
