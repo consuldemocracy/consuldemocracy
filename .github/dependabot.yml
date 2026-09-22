@@ -16,6 +16,14 @@ updates:
       patterns:
         - "caxlsx"
         - "caxlsx_rails"
+    image_processing:
+      patterns:
+        - "image_processing"
+        - "mini_magick"
+    pdf_metadata:
+      patterns:
+        - "exiftool_vendored"
+        - "pdf-reader"
     rubocop:
       patterns:
         - "rubocop"
