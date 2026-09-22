@@ -79,7 +79,7 @@ module Users
   def do_login_for(user, management:)
     if management
       login_managed_user(user)
-      login_as_manager
+      login_as create(:manager).user
     else
       login_as(user)
     end
