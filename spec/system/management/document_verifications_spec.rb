@@ -102,7 +102,7 @@ describe "DocumentVerifications" do
   scenario "User age is checked" do
     expect_any_instance_of(Verification::Management::Document).to receive(:under_age?).and_return(true)
 
-    login_as_manager
+    login_as create(:manager).user
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
