@@ -36,8 +36,8 @@ describe Abilities::Moderator do
     let(:rejected_organization) { create(:organization, :rejected) }
     let(:verified_organization) { create(:organization, :verified) }
 
-    it { should be_able_to(:verify, pending_organization)  }
-    it { should be_able_to(:reject, pending_organization)  }
+    it { should be_able_to(:verify, pending_organization) }
+    it { should be_able_to(:reject, pending_organization) }
 
     it { should_not be_able_to(:verify, verified_organization) }
     it { should be_able_to(:reject, verified_organization) }

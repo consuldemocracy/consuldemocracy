@@ -25,20 +25,20 @@ Bundler/OrderedGems:
 Capybara/AmbiguousClick:
   Enabled: true
 
-Capybara/CurrentPathExpectation:
+Capybara/RSpec/CurrentPathExpectation:
   Enabled: true
-
-Capybara/NegationMatcher:
-  Enabled: true
-  EnforcedStyle: not_to
 
 Capybara/RSpec/HaveSelector:
   Enabled: true
 
-Capybara/SpecificActions:
+Capybara/RSpec/NegationMatcher:
+  Enabled: true
+  EnforcedStyle: not_to
+
+Capybara/RSpec/VisibilityMatcher:
   Enabled: true
 
-Capybara/VisibilityMatcher:
+Capybara/SpecificActions:
   Enabled: true
 
 FactoryBot/AssociationStyle:
