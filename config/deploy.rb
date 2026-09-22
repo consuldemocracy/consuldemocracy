@@ -1,5 +1,5 @@
 # Avoid using a different version when running `cap` without `bundle exec`
-lock "~> 3.20.0"
+lock "~> 3.20.1"
 
 def deploysecret(key, default: "")
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml", aliases: true)[fetch(:stage).to_s]
