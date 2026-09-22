@@ -184,7 +184,7 @@ GEM
     connection_pool (3.0.2)
     cookiejar (0.3.4)
     crass (1.0.7)
-    csv (3.3.5)
+    csv (3.3.6)
     daemons (1.4.1)
     dalli (5.0.5)
       logger
@@ -899,7 +899,7 @@ DEPENDENCIES
   caxlsx_rails (~> 0.6.4)
   ckeditor (~> 4.3.0)
   cocoon (~> 1.2.15)
-  csv (~> 3.3.5)
+  csv (~> 3.3.6)
   daemons (~> 1.4.1)
   dalli (~> 5.0.5)
   debug (~> 1.11.0)
