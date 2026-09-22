@@ -659,6 +659,9 @@ RSpec/LetBeforeExamples:
 RSpec/LetSetup:
   Enabled: true
 
+RSpec/MatchWithSimpleRegex:
+  Enabled: true
+
 RSpec/MetadataStyle:
   Enabled: true
 
