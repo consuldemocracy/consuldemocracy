@@ -13,16 +13,11 @@ describe "Mailing" do
     expect(page).to have_content("The email has been sent")
   end
 
-  scenario "Preview contains the proposal title" do
+  scenario "Preview page contains the proposal title and can send the email" do
     click_link "Preview"
 
-    expect(page).to have_content(proposal.title)
-  end
-
-  scenario "Preview page can send the email as well" do
-    click_link "Preview"
-
-    expect(page).not_to have_link("Preview")
-    expect(page).to have_button("Send to #{proposal.author.email}")
+    expect(page).not_to have_link "Preview"
+    expect(page).to have_content proposal.title
+    expect(page).to have_button "Send to #{proposal.author.email}"
   end
 end
