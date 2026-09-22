@@ -24,6 +24,10 @@ updates:
       patterns:
         - "exiftool_vendored"
         - "pdf-reader"
+    puma:
+      patterns:
+        - "capistrano3-puma"
+        - "puma"
     rubocop:
       patterns:
         - "rubocop"
