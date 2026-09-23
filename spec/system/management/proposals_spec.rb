@@ -61,7 +61,7 @@ describe "Proposals" do
 
       right_path = management_proposal_path(proposal)
       login_managed_user(user)
-      login_as_manager
+      login_as create(:manager).user
       visit right_path
 
       expect(page).to have_current_path(right_path)
@@ -74,7 +74,7 @@ describe "Proposals" do
       old_path = "#{management_proposals_path}/#{proposal.id}-something-else"
 
       login_managed_user(user)
-      login_as_manager
+      login_as create(:manager).user
       visit old_path
 
       expect(page).not_to have_current_path(old_path)
@@ -85,7 +85,7 @@ describe "Proposals" do
       proposal = create(:proposal, :successful, title: "Success!")
 
       login_managed_user(user)
-      login_as_manager
+      login_as create(:manager).user
       visit management_proposal_path(proposal)
 
       expect(page).to have_content("Success!")

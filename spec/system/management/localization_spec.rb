@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Localization" do
   scenario "Wrong locale" do
-    login_as_manager
+    login_as create(:manager).user
     visit management_root_path(locale: :es)
     visit management_root_path(locale: :klingon)
 

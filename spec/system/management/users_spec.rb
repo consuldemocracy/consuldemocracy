@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Users" do
   scenario "Create a level 3 user with email from scratch" do
-    login_as_manager
+    login_as create(:manager).user
     visit management_document_verifications_path
     fill_in "Document number", with: "12345678Z"
     click_button "Check document"
@@ -62,7 +62,7 @@ describe "Users" do
 
   scenario "Create a level 3 user without email from scratch" do
     stub_secrets(security: { password_complexity: true })
-    login_as_manager
+    login_as create(:manager).user
 
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
@@ -102,7 +102,7 @@ describe "Users" do
     manager = create(:manager)
     administrator = create(:administrator)
 
-    login_as_manager(manager)
+    login_as manager.user
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
