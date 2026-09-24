@@ -26,6 +26,9 @@ module Sensemaker
 
     belongs_to :analysable, polymorphic: true, optional: true
 
+    # Sanitized CLI option snapshot for audit / future re-run (filled by JobRunner later).
+    attribute :cli_flags, :json, default: -> { {} }
+
     scope :published, -> { where(published: true) }
     scope :unpublished, -> { where(published: false) }
 
