@@ -4,8 +4,6 @@ class Legislation::ProposalsController < Legislation::BaseController
   include ImageAttributes
 
   before_action :load_categories, only: [:new, :create, :edit]
-  before_action :load_geozones, only: :edit
-
   before_action :authenticate_user!, except: :show
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :proposal, class: "Legislation::Proposal", through: :process
@@ -41,7 +39,6 @@ class Legislation::ProposalsController < Legislation::BaseController
     if @proposal.update(proposal_params)
       redirect_to polymorphic_path(@proposal), notice: t("flash.actions.update.proposal")
     else
-      load_geozones
       render :edit
     end
   end
