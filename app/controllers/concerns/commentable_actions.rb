@@ -46,16 +46,6 @@ module CommentableActions
   def edit
   end
 
-  def update
-    if resource.update(strong_params)
-      redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
-    else
-      load_geozones
-      set_resource_instance
-      render :edit
-    end
-  end
-
   private
 
     def tag_cloud
