@@ -33,6 +33,14 @@ describe Sensemaker::Job do
     it "belongs to a user" do
       expect(job.user).to eq(user)
     end
+
+    it "destroys children when the parent job is destroyed" do
+      child = create(:sensemaker_job, parent_job: job, user: user)
+
+      job.destroy!
+
+      expect(Sensemaker::Job.exists?(child.id)).to be false
+    end
   end
 
   describe "instance methods" do
