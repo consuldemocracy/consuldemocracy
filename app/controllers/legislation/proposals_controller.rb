@@ -3,10 +3,10 @@ class Legislation::ProposalsController < Legislation::BaseController
   include FlagActions
   include ImageAttributes
 
-  before_action :load_categories, only: [:new, :create, :edit, :summary]
-  before_action :load_geozones, only: [:edit, :summary]
+  before_action :load_categories, only: [:new, :create, :edit]
+  before_action :load_geozones, only: :edit
 
-  before_action :authenticate_user!, except: [:show, :summary]
+  before_action :authenticate_user!, except: :show
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :proposal, class: "Legislation::Proposal", through: :process
 
