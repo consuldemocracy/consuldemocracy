@@ -45,6 +45,15 @@ class ProposalsController < ApplicationController
 
   def created; end
 
+  def update
+    if @proposal.update(proposal_params)
+      redirect_to proposal_path(@proposal), notice: t("flash.actions.update.proposal")
+    else
+      load_geozones
+      render :edit
+    end
+  end
+
   def index_customization
     discard_draft
     discard_archived
