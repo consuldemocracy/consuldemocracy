@@ -37,6 +37,16 @@ class Legislation::ProposalsController < Legislation::BaseController
     end
   end
 
+  def update
+    if @proposal.update(proposal_params)
+      redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
+                  notice: t("flash.actions.update.proposal")
+    else
+      load_geozones
+      render :edit
+    end
+  end
+
   private
 
     def proposal_params

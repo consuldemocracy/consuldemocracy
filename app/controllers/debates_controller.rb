@@ -29,6 +29,14 @@ class DebatesController < ApplicationController
     end
   end
 
+  def update
+    if @debate.update(debate_params)
+      redirect_to debate_path(@debate), notice: t("flash.actions.update.debate")
+    else
+      render :edit
+    end
+  end
+
   def index_customization
     @featured_debates = @debates.featured
   end
