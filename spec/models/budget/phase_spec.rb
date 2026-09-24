@@ -197,12 +197,12 @@ describe Budget::Phase do
       end
 
       it "doesn't change previous enabled phase end date" do
-        expect { accepting_phase.update(starts_at: Date.current, ends_at:  Date.current + 2.days) }
+        expect { accepting_phase.update(starts_at: Date.current, ends_at: Date.current + 2.days) }
           .not_to change { prev_enabled_phase.ends_at }
       end
 
       it "doesn't change next enabled phase start date" do
-        expect { accepting_phase.update(starts_at: Date.current, ends_at:  Date.current + 2.days) }
+        expect { accepting_phase.update(starts_at: Date.current, ends_at: Date.current + 2.days) }
           .not_to change { next_enabled_phase.starts_at }
       end
     end

@@ -3,8 +3,8 @@ class CreateBudgetInvestments < ActiveRecord::Migration[4.2]
     create_table :budget_investments do |t|
       t.references "geozone"
 
-      t.integer  "author_id", index: true
-      t.integer  "administrator_id", index: true
+      t.integer "author_id", index: true
+      t.integer "administrator_id", index: true
 
       t.string   "title"
       t.text     "description"

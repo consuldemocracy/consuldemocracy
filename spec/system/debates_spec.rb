@@ -155,9 +155,9 @@ describe "Debates" do
     3.times  { create(:vote, votable: debate_positive, vote_flag: false) }
 
     5.times { create(:vote, votable: debate_zero, vote_flag: true) }
-    5.times  { create(:vote, votable: debate_zero, vote_flag: false) }
+    5.times { create(:vote, votable: debate_zero, vote_flag: false) }
 
-    6.times  { create(:vote, votable: debate_negative, vote_flag: false) }
+    6.times { create(:vote, votable: debate_negative, vote_flag: false) }
 
     visit debates_path
 

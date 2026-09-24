@@ -664,9 +664,9 @@ describe Debate do
       end
 
       it "is able to reorder by created_at after searching" do
-        recent  = create(:debate,  title: "stop corruption", cached_votes_up: 1, created_at: 1.week.ago)
-        newest  = create(:debate,  title: "stop corruption", cached_votes_up: 2, created_at: Time.current)
-        oldest  = create(:debate,  title: "stop corruption", cached_votes_up: 3, created_at: 1.month.ago)
+        recent  = create(:debate, title: "stop corruption", cached_votes_up: 1, created_at: 1.week.ago)
+        newest  = create(:debate, title: "stop corruption", cached_votes_up: 2, created_at: Time.current)
+        oldest  = create(:debate, title: "stop corruption", cached_votes_up: 3, created_at: 1.month.ago)
 
         results = Debate.search("stop corruption")
 
@@ -755,9 +755,9 @@ describe Debate do
     it "returns debates related to the user's interests ordered by cached_votes_total" do
       create(:proposal, tag_list: "Sport", followers: [user])
 
-      debate1 =  create(:debate, cached_votes_total: 1, tag_list: "Sport")
-      debate2 =  create(:debate, cached_votes_total: 5, tag_list: "Sport")
-      debate3 =  create(:debate, cached_votes_total: 10, tag_list: "Sport")
+      debate1 = create(:debate, cached_votes_total: 1, tag_list: "Sport")
+      debate2 = create(:debate, cached_votes_total: 5, tag_list: "Sport")
+      debate3 = create(:debate, cached_votes_total: 10, tag_list: "Sport")
 
       results = Debate.recommendations(user).sort_by_recommendations
 

@@ -171,9 +171,9 @@ describe "Legislation Proposals" do
     3.times  { create(:vote, votable: legislation_proposal_positive, vote_flag: false) }
 
     5.times { create(:vote, votable: legislation_proposal_zero, vote_flag: true) }
-    5.times  { create(:vote, votable: legislation_proposal_zero, vote_flag: false) }
+    5.times { create(:vote, votable: legislation_proposal_zero, vote_flag: false) }
 
-    6.times  { create(:vote, votable: legislation_proposal_negative, vote_flag: false) }
+    6.times { create(:vote, votable: legislation_proposal_negative, vote_flag: false) }
 
     visit legislation_process_proposals_path(process)
 

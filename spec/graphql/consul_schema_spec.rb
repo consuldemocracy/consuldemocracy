@@ -32,7 +32,7 @@ describe ConsulSchema do
     response = execute(query)
 
     expect(response["errors"]).not_to be nil
-    expect(response["errors"].first["message"]).to match(/exceeds max depth/)
+    expect(response["errors"].first["message"]).to include("exceeds max depth")
   end
 
   it "returns an error for queries requesting all records from more than 2 collections" do
@@ -71,6 +71,6 @@ describe ConsulSchema do
     response = execute(query)
 
     expect(response["errors"]).not_to be nil
-    expect(response["errors"].first["message"]).to match(/Query has complexity/)
+    expect(response["errors"].first["message"]).to include("Query has complexity")
   end
 end

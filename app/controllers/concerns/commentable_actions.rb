@@ -67,7 +67,7 @@ module CommentableActions
     end
 
     def set_geozone
-      geozone_id = params[resource_name.to_sym].try(:[], :geozone_id)
+      geozone_id = params.dig(resource_name.to_sym, :geozone_id)
       @resource.geozone = Geozone.find(geozone_id) if geozone_id.present?
     end
 

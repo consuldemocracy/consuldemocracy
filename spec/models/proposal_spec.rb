@@ -671,9 +671,9 @@ describe Proposal do
       end
 
       it "is able to reorder by created_at after searching" do
-        recent  = create(:proposal,  title: "stop corruption", cached_votes_up: 1, created_at: 1.week.ago)
-        newest  = create(:proposal,  title: "stop corruption", cached_votes_up: 2, created_at: Time.current)
-        oldest  = create(:proposal,  title: "stop corruption", cached_votes_up: 3, created_at: 1.month.ago)
+        recent  = create(:proposal, title: "stop corruption", cached_votes_up: 1, created_at: 1.week.ago)
+        newest  = create(:proposal, title: "stop corruption", cached_votes_up: 2, created_at: Time.current)
+        oldest  = create(:proposal, title: "stop corruption", cached_votes_up: 3, created_at: 1.month.ago)
 
         results = Proposal.search("stop corruption")
 
