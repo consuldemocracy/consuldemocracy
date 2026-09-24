@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   include Translatable
 
   before_action :load_categories, only: [:index, :map, :summary]
-  before_action :load_geozones, only: [:edit, :map, :summary]
+  before_action :load_geozones, only: :map
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :proposals_recommendations, only: :index, if: :current_user
 
@@ -49,7 +49,6 @@ class ProposalsController < ApplicationController
     if @proposal.update(proposal_params)
       redirect_to proposal_path(@proposal), notice: t("flash.actions.update.proposal")
     else
-      load_geozones
       render :edit
     end
   end
@@ -174,6 +173,10 @@ class ProposalsController < ApplicationController
           @resources = @resources.excluding(@featured_proposals)
         end
       end
+    end
+
+    def load_geozones
+      @geozones = Geozone.order(name: :asc)
     end
 
     def remove_archived_from_order_links

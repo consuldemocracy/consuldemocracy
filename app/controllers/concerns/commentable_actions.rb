@@ -52,10 +52,6 @@ module CommentableActions
       TagCloud.new(resource_model, params[:search])
     end
 
-    def load_geozones
-      @geozones = Geozone.order(name: :asc)
-    end
-
     def set_geozone
       geozone_id = params.dig(resource_name.to_sym, :geozone_id)
       @resource.geozone = Geozone.find(geozone_id) if geozone_id.present?
