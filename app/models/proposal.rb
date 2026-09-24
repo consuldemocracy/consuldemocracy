@@ -267,6 +267,10 @@ class Proposal < ApplicationRecord
     end
   end
 
+  def as_json(options = {})
+    super(only: Types::ProposalType.fields.keys, methods: [:public_created_at])
+  end
+
   protected
 
     def set_responsible_name

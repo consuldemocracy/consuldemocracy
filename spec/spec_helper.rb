@@ -70,6 +70,10 @@ RSpec.configure do |config|
     InvisibleCaptcha.with(timestamp_enabled: false) { example.run }
   end
 
+  config.around(:each, type: :request) do |example|
+    InvisibleCaptcha.with(timestamp_enabled: false) { example.run }
+  end
+
   config.before(:each, :admin, type: :system) do
     login_as(create(:administrator).user)
   end

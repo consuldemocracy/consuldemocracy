@@ -22,7 +22,7 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource
   before_action :destroy_map_location_association, only: :update
 
-  respond_to :html, :js
+  respond_to :html, :js, :json
 
   def index
     @proposals = search_and_filter(Proposal.all)
@@ -52,10 +52,10 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
     if @proposal.save
-      redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
-    else
-      render :new
+      flash[:notice] = I18n.t("flash.actions.create.proposal")
     end
+
+    respond_with @proposal, location: -> { created_proposal_path(@proposal) }
   end
 
   def created; end
