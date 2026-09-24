@@ -1702,7 +1702,7 @@ describe "Admin budget investments", :admin do
                      "#{second_investment.author.username},2026-06-01 14:58:20," \
                      "\"\",\"\",\"\",\"\",\"\"\n"
 
-      expect(page.body).to eq(csv_contents)
+      expect(page.body).to eq("\xEF\xBB\xBF" + csv_contents)
     end
 
     scenario "Downloading CSV file with applied filter" do

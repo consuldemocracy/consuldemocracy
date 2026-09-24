@@ -41,7 +41,7 @@ describe CsvExporter do
                                       created_at: Time.zone.local(2026, 6, 1, 15, 15, 0))
 
       csv = exporter_class.new([resource]).to_csv
-      rows = CSV.parse(csv, headers: true)
+      rows = CSV.parse(csv.delete_prefix("\xEF\xBB\xBF"), headers: true)
 
       expect(rows.by_col["Comment Content"]).to eq [
         first_root.body,
@@ -50,6 +50,28 @@ describe CsvExporter do
         second_reply.body,
         second_root.body
       ]
+    end
+  end
+
+  describe "Excel-friendly encoding" do
+    factories = [:budget_investment, :debate, :proposal]
+    let(:factory) { factories.sample }
+    let(:exporter_class) do
+      case factory
+      when :proposal
+        Proposal::Exporter
+      when :debate
+        Debate::Exporter
+      when :budget_investment
+        Budget::Investment::Exporter
+      end
+    end
+    let(:resource) { create(factory) }
+
+    it "includes a UTF-8 byte order mark so Excel detects the encoding" do
+      csv = exporter_class.new([resource]).to_csv
+
+      expect(csv.b).to start_with("\xEF\xBB\xBF".b)
     end
   end
 end
