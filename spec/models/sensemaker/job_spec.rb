@@ -13,6 +13,21 @@ describe Sensemaker::Job do
            additional_context: "Test context")
   end
 
+  describe "cli_flags" do
+    it "defaults to an empty hash" do
+      expect(job.cli_flags).to eq({})
+    end
+
+    it "persists a JSON object" do
+      job.update!(cli_flags: { "adapter" => "vertex", "modelName" => "gemini-2.5-flash-lite" })
+
+      expect(job.reload.cli_flags).to eq(
+        "adapter" => "vertex",
+        "modelName" => "gemini-2.5-flash-lite"
+      )
+    end
+  end
+
   describe "validations" do
     it "is valid with valid attributes" do
       expect(job).to be_valid
