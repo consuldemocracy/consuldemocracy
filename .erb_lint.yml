@@ -23,6 +23,7 @@ linters:
       - app/views/layouts/application.html.erb
       - app/views/layouts/dashboard.html.erb
       - app/views/layouts/devise.html.erb
+      - app/views/**/*.json.erb
   ExtraNewline:
     enabled: true
   FinalNewline:
