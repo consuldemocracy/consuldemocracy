@@ -64,7 +64,7 @@ class Management::ProposalsController < Management::BaseController
                     :terms_of_service, :geozone_id,
                     map_location_attributes: map_location_attributes]
 
-      [*attributes, translation_params(Proposal)]
+      [*attributes, *translation_params(Proposal)]
     end
 
     def resource_model

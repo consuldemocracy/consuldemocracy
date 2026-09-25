@@ -43,6 +43,6 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
     end
 
     def allowed_params
-      [:status, :final_version, translation_params(Legislation::DraftVersion)]
+      [:status, :final_version, *translation_params(Legislation::DraftVersion)]
     end
 end

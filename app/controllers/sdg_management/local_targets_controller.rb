@@ -43,6 +43,6 @@ class SDGManagement::LocalTargetsController < SDGManagement::BaseController
     def allowed_params
       translations_attributes = translation_params(::SDG::LocalTarget)
 
-      [:code, :target_id, translations_attributes]
+      [:code, :target_id, *translations_attributes]
     end
 end

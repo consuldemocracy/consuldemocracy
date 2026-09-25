@@ -126,7 +126,7 @@ class ProposalsController < ApplicationController
                     map_location_attributes: map_location_attributes]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
 
-      [*attributes, translations_attributes]
+      [*attributes, *translations_attributes]
     end
 
     def retired_params
@@ -134,7 +134,7 @@ class ProposalsController < ApplicationController
     end
 
     def allowed_retired_params
-      [:retired_reason, translation_params(Proposal, only: :retired_explanation)]
+      [:retired_reason, *translation_params(Proposal, only: :retired_explanation)]
     end
 
     def resource_model
