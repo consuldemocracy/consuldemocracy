@@ -29,6 +29,10 @@ class DebatesController < ApplicationController
     end
   end
 
+  def suggest
+    @debates = Debate.all
+  end
+
   def update
     if @debate.update(debate_params)
       redirect_to debate_path(@debate), notice: t("flash.actions.update.debate")

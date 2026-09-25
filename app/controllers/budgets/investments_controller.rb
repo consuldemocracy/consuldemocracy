@@ -81,9 +81,7 @@ module Budgets
 
     def suggest
       @resource_path_method = :namespaced_budget_investment_path
-      @resource_relation    = resource_model.where(budget: @budget)
-                                            .apply_filters_and_search(@budget, params, @current_filter)
-      super
+      @investments = @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
     end
 
     private
