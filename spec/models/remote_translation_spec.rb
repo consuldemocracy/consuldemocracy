@@ -82,4 +82,45 @@ describe RemoteTranslation, :remote_translations do
       remote_translation.enqueue_remote_translation
     end
   end
+
+  describe ".for" do
+    it "detects remote translations when collections and featured_proposals are not translated" do
+      proposals = create_list(:proposal, 3)
+      featured_proposals = create_featured_proposals
+
+      I18n.with_locale(:es) do
+        expect(RemoteTranslation.for(proposals, featured_proposals).count).to eq 6
+      end
+    end
+
+    it "detects remote translations with nil as argument when collections are not translated" do
+      proposals = create_list(:proposal, 3)
+
+      I18n.with_locale(:es) do
+        expect(RemoteTranslation.for(proposals, nil).count).to eq 3
+      end
+    end
+
+    it "detects remote translations with [] as argument when collections are not translated" do
+      proposals = create_list(:proposal, 3)
+
+      I18n.with_locale(:es) do
+        expect(RemoteTranslation.for(proposals, []).count).to eq 3
+      end
+    end
+
+    it "detects remote translations when widget feeds are not translated" do
+      create_list(:proposal, 3)
+      create_list(:debate, 3)
+      create_list(:legislation_process, 3)
+      create(:widget_feed, kind: "proposals")
+      create(:widget_feed, kind: "debates")
+      create(:widget_feed, kind: "processes")
+      widget_feeds = Widget::Feed.active
+
+      I18n.with_locale(:es) do
+        expect(RemoteTranslation.for(widget_feeds).count).to eq 9
+      end
+    end
+  end
 end
