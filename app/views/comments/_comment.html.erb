@@ -1,27 +1,28 @@
 <% valuation = local_assigns.fetch(:valuation, false) %>
-<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
-  <div id="<%= dom_id(comment) %>" class="comment small-12">
-    <div class="comment-body">
-      <% if comment.hidden? %>
-        <% if comment.children.size > 0 %>
+<% unless (comment.hidden? || comment.user.hidden?) && comment.children.blank? %>
+  <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
+    <div id="<%= dom_id(comment) %>" class="comment small-12">
+      <div class="comment-body">
+        <% if comment.hidden? || comment.user.hidden? %>
           <div class="callout secondary">
             <p><%= t("comments.comment.deleted") %></p>
           </div>
+        <% else %>
+          <%= render Comments::AvatarComponent.new(comment) %>
+          <%= render Comments::InfoComponent.new(comment, valuation: valuation) %>
+
+          <div class="comment-user
+                    <%= user_level_class comment %>
+                    <%= comment_author_class comment, comment.commentable.author_id %>">
+            <%= simple_format sanitize_and_auto_link(comment.body), {}, sanitize: false %>
+          </div>
+
+          <%= render Comments::StatusBarComponent.new(comment, valuation: valuation) %>
         <% end %>
-      <% else %>
-        <%= render Comments::AvatarComponent.new(comment) %>
-        <%= render Comments::InfoComponent.new(comment, valuation: valuation) %>
+      </div>
 
-        <div class="comment-user
-                  <%= user_level_class comment %>
-                  <%= comment_author_class comment, comment.commentable.author_id %>">
-          <%= simple_format sanitize_and_auto_link(comment.body), {}, sanitize: false %>
-        </div>
-
-        <%= render Comments::StatusBarComponent.new(comment, valuation: valuation) %>
-      <% end %>
+      <%= render "comments/comment_list", comments: child_comments_of(comment), valuation: valuation %>
     </div>
+  <% end %>
 
-    <%= render "comments/comment_list", comments: child_comments_of(comment), valuation: valuation %>
-  </div>
 <% end %>
