@@ -29,7 +29,25 @@ describe "Proposals API" do
       post "/proposals", as: :json, params: { proposal: { title: "" }}
 
       expect(response).to have_http_status(:unprocessable_content)
-      expect(response.parsed_body["errors"]).to be_present
+      expect(response.parsed_body["errors"]["title"]).to include "can't be blank"
+    end
+
+    it "rejects invalid nested translations using the attribute names" do
+      sign_in(create(:user, document_number: "13572468A"))
+
+      post "/proposals", as: :json, params: {
+        proposal: {
+          translations_attributes: {
+            "0" => { locale: "en", title: "", summary: "" }
+          },
+          terms_of_service: "1"
+        }
+      }
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"].keys).to include("translations.title", "translations.summary")
+      expect(response.parsed_body["errors"]["translations.title"]).to include "can't be blank"
+      expect(response.parsed_body["errors"]["translations.summary"]).to include "can't be blank"
     end
 
     it "doesn't authorize anonymous users" do
@@ -44,6 +62,58 @@ describe "Proposals API" do
 
       expect(response).to have_http_status(:unauthorized)
       expect(response.parsed_body["error"]).to eq "You must sign in or register to continue."
+    end
+  end
+
+  describe "PATCH update" do
+    let(:proposal) { create(:proposal) }
+
+    it "updates a valid proposal" do
+      sign_in(proposal.author)
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: { proposal: { title: "Update!" }}
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["title"]).to eq "Update!"
+    end
+
+    it "does no update an invalid proposal" do
+      sign_in(proposal.author)
+      original_title = proposal.title
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: { proposal: { title: "", summary: "" }}
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"].keys).to eq ["title", "summary"]
+      expect(response.parsed_body["errors"]["title"]).to include "can't be blank"
+      expect(proposal.reload.title).to eq original_title
+    end
+
+    it "does not delete the only translation" do
+      sign_in(proposal.author)
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: {
+        proposal: {
+          translations_attributes: {
+            "0" => { id: proposal.translations.first.id, _destroy: "1" }
+          }
+        }
+      }
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"]["base"]).to eq [
+        "It's mandatory to provide at least one translation"
+      ]
+      expect(proposal.reload.translations).to be_present
+    end
+
+    it "forbids access to other users" do
+      sign_in(create(:user))
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: { proposal: { title: "Update!" }}
+
+      expect(response).to have_http_status(:forbidden)
+      expect(response.parsed_body["error"]).to include "You do not have permission"
     end
   end
 end

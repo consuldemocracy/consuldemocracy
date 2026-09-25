@@ -69,10 +69,10 @@ class ProposalsController < ApplicationController
 
   def update
     if @proposal.update(proposal_params)
-      redirect_to proposal_path(@proposal), notice: t("flash.actions.update.proposal")
-    else
-      render :edit
+      flash[:notice] = t("flash.actions.update.proposal")
     end
+
+    respond_with @proposal
   end
 
   def vote
