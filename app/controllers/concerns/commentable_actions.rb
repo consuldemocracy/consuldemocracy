@@ -18,8 +18,6 @@ module CommentableActions
 
     index_customization
 
-    @tag_cloud = tag_cloud
-
     set_resources_instance
     @remote_translation_resources = [*@resources, *featured_proposals]
   end
@@ -39,10 +37,6 @@ module CommentableActions
   end
 
   private
-
-    def tag_cloud
-      TagCloud.new(resource_model, params[:search])
-    end
 
     def set_geozone
       geozone_id = params.dig(resource_name.to_sym, :geozone_id)
