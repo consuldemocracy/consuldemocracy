@@ -12,8 +12,8 @@ class Management::ProposalsController < Management::BaseController
   has_orders %w[most_voted newest], only: :show
 
   def create
-    @resource = resource_model.new(strong_params.merge(author: current_user,
-                                                       published_at: Time.current))
+    @resource = resource_model.new(proposal_params.merge(author: current_user,
+                                                         published_at: Time.current))
 
     if @resource.save
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
