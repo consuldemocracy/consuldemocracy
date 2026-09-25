@@ -46,4 +46,46 @@ describe "Proposals API" do
       expect(response.parsed_body["error"]).to eq "You must sign in or register to continue."
     end
   end
+
+  describe "PATCH update" do
+    let(:proposal) { create(:proposal) }
+
+    it "updates a valid proposal" do
+      sign_in(proposal.author)
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: { proposal: { title: "Update!" }}
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["title"]).to eq "Update!"
+    end
+
+    it "does no update an invalid proposal" do
+      sign_in(proposal.author)
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: {
+        proposal: {
+          translations_attributes: {
+            "0" => {
+              locale: "en",
+              id: proposal.translations.first.id,
+              title: "",
+              summary: ""
+            }
+          }
+        }
+      }
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"]).to be_present
+    end
+
+    it "forbids access to other users" do
+      sign_in(create(:user))
+
+      patch "/proposals/#{proposal.to_param}", as: :json, params: { proposal: { title: "Update!" }}
+
+      expect(response).to have_http_status(:forbidden)
+      expect(response.parsed_body["error"]).to include "You do not have permission"
+    end
+  end
 end
