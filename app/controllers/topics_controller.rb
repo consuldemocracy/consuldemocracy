@@ -23,8 +23,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @commentable = @topic
-    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    @comment_tree = CommentTree.new(@topic, params[:page], @current_order)
   end
 
   def edit
