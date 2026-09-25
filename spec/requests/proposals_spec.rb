@@ -89,6 +89,26 @@ describe "Proposals API" do
     end
   end
 
+  describe "POST vote" do
+    let(:proposal) { create(:proposal) }
+
+    it "creates a vote for verified users" do
+      sign_in(create(:user, :level_two))
+
+      post "/proposals/#{proposal.to_param}/vote", as: :json
+
+      expect(response).to have_http_status(:created)
+      expect(response.parsed_body["cached_votes_up"]).to eq 1
+    end
+
+    it "doesn't authorize anonymous users" do
+      post "/proposals/#{proposal.to_param}/vote", as: :json
+
+      expect(response).to have_http_status(:unauthorized)
+      expect(response.parsed_body["error"]).to eq "You must sign in or register to continue."
+    end
+  end
+
   describe "PATCH retire" do
     let(:proposal) { create(:proposal) }
 

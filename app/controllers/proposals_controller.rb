@@ -78,6 +78,8 @@ class ProposalsController < ApplicationController
   def vote
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
+
+    respond_with @proposal
   end
 
   def retire
