@@ -47,7 +47,7 @@ class Admin::ProgressBarsController < Admin::BaseController
       [
         :kind,
         :percentage,
-        translation_params(ProgressBar)
+        *translation_params(ProgressBar)
       ]
     end
 

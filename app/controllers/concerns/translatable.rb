@@ -4,12 +4,20 @@ module Translatable
   private
 
     def translation_params(resource_model, options = {})
-      attributes = [:id, :locale, :_destroy]
-      if options[:only]
-        attributes += Array(options[:only])
+      base_attributes = [:id, :locale, :_destroy]
+
+      attributes = if options[:only]
+                     Array(options[:only])
+                   else
+                     resource_model.translated_attribute_names
+                   end
+
+      filtered_attributes = attributes - Array(options[:except])
+
+      if request.format.json?
+        [*filtered_attributes, { translations_attributes: base_attributes + filtered_attributes }]
       else
-        attributes += resource_model.translated_attribute_names
+        [{ translations_attributes: base_attributes + filtered_attributes }]
       end
-      { translations_attributes: attributes - Array(options[:except]) }
     end
 end
