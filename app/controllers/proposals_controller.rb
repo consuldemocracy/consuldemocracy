@@ -82,10 +82,10 @@ class ProposalsController < ApplicationController
 
   def retire
     if @proposal.update(retired_params.merge(retired_at: Time.current))
-      redirect_to proposal_path(@proposal), notice: t("proposals.notice.retired")
-    else
-      render action: :retire_form
+      flash[:notice] = t("proposals.notice.retired")
     end
+
+    respond_with @proposal, action: :retire_form
   end
 
   def retire_form
