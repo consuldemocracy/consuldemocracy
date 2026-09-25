@@ -50,9 +50,9 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
 
     def allowed_params
       [
-        translation_params(::Legislation::Question),
+        *translation_params(::Legislation::Question),
         question_options_attributes: [:id, :_destroy,
-                                      translation_params(::Legislation::QuestionOption)]
+                                      *translation_params(::Legislation::QuestionOption)]
       ]
     end
 end
