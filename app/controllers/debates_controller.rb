@@ -42,7 +42,8 @@ class DebatesController < ApplicationController
   end
 
   def show
-    super
+    @remote_translation_resources = @debate
+
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 
