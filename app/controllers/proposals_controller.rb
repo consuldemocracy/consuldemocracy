@@ -25,6 +25,18 @@ class ProposalsController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def index
+    @proposals = search_and_filter(Proposal.all)
+    @remote_translation_resources = [*@proposals, *@featured_proposals]
+
+    discard_draft
+    discard_archived
+    load_retired
+    load_selected
+    load_featured
+    remove_archived_from_order_links
+  end
+
   def show
     @remote_translation_resources = @proposal
     @notifications = @proposal.notifications.not_moderated
@@ -55,15 +67,6 @@ class ProposalsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def index_customization
-    discard_draft
-    discard_archived
-    load_retired
-    load_selected
-    load_featured
-    remove_archived_from_order_links
   end
 
   def vote
@@ -133,32 +136,32 @@ class ProposalsController < ApplicationController
     end
 
     def discard_draft
-      @resources = @resources.published
+      @proposals = @proposals.published
     end
 
     def discard_archived
       unless @current_order == "archival_date" || params[:selected].present?
-        @resources = @resources.not_archived
+        @proposals = @proposals.not_archived
       end
     end
 
     def load_retired
       if params[:retired].present?
-        @resources = @resources.retired
+        @proposals = @proposals.retired
 
         if Proposal::RETIRE_OPTIONS.include?(params[:retired])
-          @resources = @resources.where(retired_reason: params[:retired])
+          @proposals = @proposals.where(retired_reason: params[:retired])
         end
       else
-        @resources = @resources.not_retired
+        @proposals = @proposals.not_retired
       end
     end
 
     def load_selected
       if params[:selected].present?
-        @resources = @resources.selected
+        @proposals = @proposals.selected
       else
-        @resources = @resources.not_selected
+        @proposals = @proposals.not_selected
       end
     end
 
@@ -172,7 +175,7 @@ class ProposalsController < ApplicationController
                                       .sort_by_confidence_score
                                       .limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
-          @resources = @resources.excluding(@featured_proposals)
+          @proposals = @proposals.excluding(@featured_proposals)
         end
       end
     end
