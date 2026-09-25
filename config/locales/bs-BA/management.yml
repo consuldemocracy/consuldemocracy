@@ -99,7 +99,6 @@ bs:
         few: " sadrži pojam %{search_term}"
         other: " sadrži pojam %{search_term}"
     sessions:
-      signed_out: Odjava uspješna.
       signed_out_managed_user: Korisnička sesija uspješno odjavljena.
     username_label: Korisničko ime
     users:

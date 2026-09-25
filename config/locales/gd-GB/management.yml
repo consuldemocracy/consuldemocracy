@@ -102,7 +102,6 @@ gd:
         other: "anns a bheil am facal '%{search_term}'"
     sessions:
       need_managed_user: Gus an gnìomh seo a choileanadh feumaidh tu cleachdaiche a thaghadh
-      signed_out: Chlàraich thu a-mach.
       signed_out_managed_user: Chaidh clàradh a-mach bhon t-seisean cleachdaiche.
     username_label: Ainm-cleachdaiche
     users:

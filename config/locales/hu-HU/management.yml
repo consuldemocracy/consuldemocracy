@@ -103,7 +103,6 @@ hu:
         other: " a(z) '%{search_term}' kifejezéssel"
     sessions:
       need_managed_user: Ehhez a művelethez ki kell választanod egy felhasználót
-      signed_out: Sikeres kijelentkezés.
       signed_out_managed_user: A felhasználói munkamenet sikeresen kijelentkeztetve.
     username_label: Felhasználónév
     users:

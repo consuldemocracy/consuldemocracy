@@ -99,7 +99,6 @@ pl:
         many: " zawierające terminy '%{search_term}'"
         other: " zawierające terminy '%{search_term}'"
     sessions:
-      signed_out: Wylogowano pomyślnie.
       signed_out_managed_user: Sesja użytkownika została pomyślnie wylogowana.
     username_label: Nazwa użytkownika
     users:

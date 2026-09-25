@@ -99,7 +99,6 @@ oc:
         one: " que contenon '%{search_term}'"
         other: " que contenon '%{search_term}'"
     sessions:
-      signed_out: As barrat la session corrèctament.
       signed_out_managed_user: S'es barrat corrèctament la session de l'usatgièr.
     username_label: Nom d'usatgièr
     users:

@@ -96,7 +96,6 @@ zh-CN:
       search_results:
         other: " 包含术语'%{search_term}'"
     sessions:
-      signed_out: 已成功登出
       signed_out_managed_user: 用户会话已成功登出。
     username_label: 用户名
     users:

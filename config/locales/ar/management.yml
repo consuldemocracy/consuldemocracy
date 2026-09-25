@@ -102,7 +102,6 @@ ar:
         many: "يحتوي على المصطلح '%{search_term}'"
         other: "يحتوي على المصطلح '%{search_term}'"
     sessions:
-      signed_out: تم الخروج بنجاح.
       signed_out_managed_user: تم تسجيل خروج المستخدم بنجاح.
     username_label: اسم المستخدم
     users:

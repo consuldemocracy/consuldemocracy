@@ -96,10 +96,8 @@ he:
       search_results:
         one: " המכיל את המונח '%{search_term}'"
         two: " המכיל את המונחים '%{search_term}'"
-        many: " המכיל את המונחים '%{search_term}'"
         other: " המכיל את המונחים '%{search_term}'"
     sessions:
-      signed_out: יצאת בהצלחה
       signed_out_managed_user: התנתקת בהצלחה משם המשתמש/ת.
     username_label: שם משתמש/ת
     users:

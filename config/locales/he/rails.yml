@@ -53,63 +53,51 @@ he:
       about_x_hours:
         one: כשעה
         two: כ %{count} שעות
-        many: כ %{count} שעות
         other: כ %{count} שעות
       about_x_months:
         one: כחודש
         two: כ %{count} חודשים
-        many: כ %{count} חודשים
         other: כ %{count} חודשים
       about_x_years:
         one: כשנה
         two: כ %{count} שנים
-        many: כ %{count} שנים
         other: כ %{count} שנים
       almost_x_years:
         one: כמעט שנה
         two: כמעט %{count} שנים
-        many: כמעט %{count} שנים
         other: כמעט %{count} שנים
       half_a_minute: חצי דקה
       less_than_x_minutes:
         one: פחות מדקה
         two: פחות מ %{count} דקות
-        many: פחות מ %{count} דקות
         other: פחות מ %{count} דקות
       less_than_x_seconds:
         one: פחות משניה
         two: פחות מ %{count} שניות
-        many: פחות מ %{count} שניות
         other: פחות מ %{count} שניות
       over_x_years:
         one: מעל שנה
         two: מעל %{count} שנים
-        many: מעל %{count} שנים
         other: מעל %{count} שנים
       x_days:
         one: יום אחד
         two: "%{count} ימים"
-        many: "%{count} ימים"
         other: "%{count} ימים"
       x_minutes:
         one: דקה אחת
         two: "%{count} דקות"
-        many: "%{count} דקות"
         other: "%{count} דקות"
       x_months:
         one: חודש אחד
         two: "%{count} חודשים"
-        many: "%{count} חודשים"
         other: "%{count} חודשים"
       x_years:
         one: שנה אחת
         two: "%{count} שנים"
-        many: "%{count} שנים"
         other: "%{count} שנים"
       x_seconds:
         one: שניה אחת
         two: "%{count} שניות"
-        many: "%{count} שניות"
         other: "%{count} שניות"
     prompts:
       day: יום
@@ -144,17 +132,14 @@ he:
       too_long:
         one: ארוך מדי (מקסימום הוא תו אחד)
         two: ארוך מדי (מקסימום %{count} תווים)
-        many: ארוך מדי (מקסימום %{count} תווים)
         other: ארוך מדי (מקסימום %{count} תווים)
       too_short:
         one: הוא קצר מדי (המינימום הוא תו אחד)
         two: קצר מדי (המינימום הוא %{count} תווים)
-        many: קצר מדי (המינימום הוא %{count} תווים)
         other: קצר מדי (המינימום הוא %{count} תווים)
       wrong_length:
         one: הוא אורך הלא נכון (צריך להיות תו אחד)
         two: האורך לא נכון (צריך להיות %{count} תווים)
-        many: האורך לא נכון (צריך להיות %{count} תווים)
         other: האורך לא נכון (צריך להיות %{count} תווים)
       other_than: חייב להיות שונה מ- %{count}
     template:
@@ -162,7 +147,6 @@ he:
       header:
         one: שגיאה מנעה מה%{model} להישמר
         two: "%{count} שגיאות מנעו מה%{model} להישמר"
-        many: "%{count} שגיאות מנעו מה%{model} להישמר"
         other: "%{count} שגיאות מנעו מה%{model} להישמר"
   helpers:
     select:
@@ -206,7 +190,6 @@ he:
           byte:
             one: בייט
             two: בייטים
-            many: בייטים
             other: בייטים
           gb: ג'יגה-בייט
           kb: קילו-בייט

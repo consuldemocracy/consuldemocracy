@@ -97,7 +97,6 @@ val:
         one: " que contenen '%{search_term}'"
         other: " que contenen '%{search_term}'"
     sessions:
-      signed_out: Has tancat la sessió correctament.
       signed_out_managed_user: S'ha tancat correctament la sessió de l'usuari.
     username_label: Nom d'usuari
     users:

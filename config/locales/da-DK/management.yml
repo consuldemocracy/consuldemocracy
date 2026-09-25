@@ -99,7 +99,6 @@ da:
         one: " indeholder betegnelsen '%{search_term}'"
         other: " indeholder betegnelserne '%{search_term}'"
     sessions:
-      signed_out: Du er nu logget af.
       signed_out_managed_user: Brugersessionen blev afsluttet.
     username_label: Brugernavn
     users:

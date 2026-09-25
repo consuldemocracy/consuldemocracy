@@ -97,7 +97,6 @@ sq:
         one: "që përmbajnë termin '%{search_term}'"
         other: "që përmbajnë termin '%{search_term}'"
     sessions:
-      signed_out: U c'kycët me sukses.
       signed_out_managed_user: Sesioni i përdoruesit u  c'kyc me sukses.
     username_label: Emer përdoruesi
     users:

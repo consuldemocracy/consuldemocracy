@@ -103,7 +103,6 @@ el:
         other: " που περιέχουν τον όρο '%{search_term} '"
     sessions:
       need_managed_user: Για να εκτελέσετε αυτήν την ενέργεια πρέπει να επιλέξετε έναν χρήστη
-      signed_out: Αποσύνδεση με επιτυχία.
       signed_out_managed_user: Το πεδίο χρήστη αποσυνδέθηκε με επιτυχία.
     username_label: Όνομα χρήστη
     users:
