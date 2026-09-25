@@ -15,16 +15,12 @@ describe ProposalsController do
     end
 
     it "does not offer to translate proposals hidden by the index filters" do
-      Setting["feature.remote_translations"] = true
-      stub_secrets(microsoft_api_key: "123")
-
       published = create(:proposal)
       draft = create(:proposal, :draft)
 
-      get :index, params: { locale: :es }
+      get :index
 
-      translation_resources = controller.instance_variable_get(:@remote_translations)
-                                        .map(&:remote_translatable)
+      translation_resources = controller.instance_variable_get(:@remote_translation_resources)
 
       expect(translation_resources).to include(published)
       expect(translation_resources).not_to include(draft)

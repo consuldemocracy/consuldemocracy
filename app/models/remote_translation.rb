@@ -19,9 +19,10 @@ class RemoteTranslation < ApplicationRecord
   end
 
   def self.resources_groups(*args)
-    feeds = args.find { |arg| arg&.first.class == Widget::Feed } || []
+    resources = args.flatten.compact
+    feeds = resources.select { |resource| resource.is_a?(Widget::Feed) }
 
-    args.compact - [feeds] + feeds.map(&:items)
+    (resources - feeds) + feeds.map(&:items)
   end
 
   def self.translation_empty?(resource)

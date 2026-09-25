@@ -41,7 +41,7 @@ module Budgets
 
       @investments_in_map = investments
       @tag_cloud = tag_cloud
-      @remote_translations = detect_remote_translations(@investments)
+      @remote_translation_resources = @investments
     end
 
     def new
@@ -51,7 +51,7 @@ module Budgets
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       @investment_ids = [@investment.id]
-      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
+      @remote_translation_resources = @investment
     end
 
     def create
