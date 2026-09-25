@@ -227,17 +227,6 @@ describe "Tags" do
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
     let(:phase) { Budget::Phase::PHASE_KINDS.sample }
 
-    scenario "Display user tags" do
-      budget.update!(phase: phase)
-
-      visit budget_investments_path(budget, heading_id: heading.id)
-
-      within "#tag-cloud" do
-        expect(page).to have_content(new_tag)
-        expect(page).to have_content(newer_tag)
-      end
-    end
-
     scenario "Filter by user tags" do
       budget.update!(phase: phase)
 

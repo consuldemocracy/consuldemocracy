@@ -208,18 +208,6 @@ describe "Tags" do
   end
 
   context "Tag cloud" do
-    scenario "Display user tags" do
-      create(:proposal, tag_list: "Medio Ambiente")
-      create(:proposal, tag_list: "Economía")
-
-      visit proposals_path
-
-      within "#tag-cloud" do
-        expect(page).to have_content "Medio Ambiente"
-        expect(page).to have_content "Economía"
-      end
-    end
-
     scenario "Filter by user tags" do
       proposal1 = create(:proposal, tag_list: "Medio Ambiente")
       proposal2 = create(:proposal, tag_list: "Medio Ambiente")

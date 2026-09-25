@@ -40,7 +40,6 @@ module Budgets
       @investment_ids = @investments.unscope(:includes).ids
 
       @investments_in_map = investments
-      @tag_cloud = tag_cloud
       @remote_translation_resources = @investments
     end
 
@@ -127,10 +126,6 @@ module Budgets
 
       def load_categories
         @categories = Tag.category.order(:name)
-      end
-
-      def tag_cloud
-        TagCloud.new(Budget::Investment, params[:search])
       end
 
       def load_budget
