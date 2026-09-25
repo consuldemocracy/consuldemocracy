@@ -130,4 +130,41 @@ describe Api::ProposalsController do
       expect(response.parsed_body["error"]).to include "You do not have permission"
     end
   end
+
+  describe "PATCH retire" do
+    let(:proposal) { create(:proposal) }
+
+    it "retires a proposal with an explanation" do
+      sign_in(proposal.author)
+
+      patch "/api/proposals/#{proposal.id}/retire", as: :json, params: {
+        proposal: { retired_reason: "duplicated", retired_explanation: "Submitted twice." }
+      }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["retired_explanation"]).to eq "Submitted twice."
+    end
+
+    it "does not retire a proposal without a reason" do
+      sign_in(proposal.author)
+
+      patch "/api/proposals/#{proposal.id}/retire", as: :json, params: {
+        proposal: { retired_explanation: "Submitted twice." }
+      }
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"]).to be_present
+    end
+
+    it "forbids access to other users" do
+      sign_in(create(:user))
+
+      patch "/api/proposals/#{proposal.id}/retire", as: :json, params: {
+        proposal: { retired_reason: "duplicated", retired_explanation: "Submitted twice." }
+      }
+
+      expect(response).to have_http_status(:forbidden)
+      expect(response.parsed_body["error"]).to include "You do not have permission"
+    end
+  end
 end
