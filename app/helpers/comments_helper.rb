@@ -27,10 +27,6 @@ module CommentsHelper
     parent_id.blank? ? dom_id(commentable) : "comment_#{parent_id}"
   end
 
-  def comment_tree
-    @comment_tree
-  end
-
   def commentable_path(comment)
     polymorphic_path(comment.commentable)
   end

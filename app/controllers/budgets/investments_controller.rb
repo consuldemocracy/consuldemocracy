@@ -48,7 +48,6 @@ module Budgets
     end
 
     def show
-      @comment_tree = CommentTree.new(@investment, params[:page], @current_order)
       @investment_ids = [@investment.id]
       @remote_translation_resources = @investment
     end
