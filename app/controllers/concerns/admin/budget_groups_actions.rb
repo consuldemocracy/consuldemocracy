@@ -61,6 +61,6 @@ module Admin::BudgetGroupsActions
     def allowed_params
       valid_attributes = [:max_votable_headings]
 
-      [*valid_attributes, translation_params(Budget::Group)]
+      [*valid_attributes, *translation_params(Budget::Group)]
     end
 end
