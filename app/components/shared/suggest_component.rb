@@ -9,12 +9,16 @@ class Shared::SuggestComponent < ApplicationComponent
   end
 
   def render?
-    search_terms && resources.any?
+    search_terms && suggestions.any?
   end
 
   private
 
     def limit
       5
+    end
+
+    def suggestions
+      @suggestions ||= resources.search(search_terms)
     end
 end
