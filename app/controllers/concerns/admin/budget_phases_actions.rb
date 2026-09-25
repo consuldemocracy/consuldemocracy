@@ -56,6 +56,6 @@ module Admin::BudgetPhasesActions
       valid_attributes = [:starts_at, :ends_at, :enabled,
                           image_attributes: image_attributes]
 
-      [*valid_attributes, translation_params(Budget::Phase)]
+      [*valid_attributes, *translation_params(Budget::Phase)]
     end
 end

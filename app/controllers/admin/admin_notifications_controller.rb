@@ -67,6 +67,6 @@ class Admin::AdminNotificationsController < Admin::BaseController
     end
 
     def allowed_params
-      [:link, :segment_recipient, translation_params(AdminNotification)]
+      [:link, :segment_recipient, *translation_params(AdminNotification)]
     end
 end

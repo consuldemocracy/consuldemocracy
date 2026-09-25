@@ -7,14 +7,9 @@ describe Api::ProposalsController do
 
       post "/api/proposals", as: :json, params: {
         proposal: {
-          translations_attributes: {
-            "0" => {
-              locale: "en",
-              title: "I'm responsible",
-              summary: "I have a document number",
-              description: "But you won't see my document number"
-            }
-          },
+          title: "I'm responsible",
+          summary: "I have a document number",
+          description: "But you won't see my document number",
           terms_of_service: "1"
         }
       }
@@ -27,27 +22,36 @@ describe Api::ProposalsController do
     it "rejects invalid proposals" do
       sign_in(create(:user, document_number: "13572468A"))
 
+      post "/api/proposals", as: :json, params: { proposal: { title: "" }}
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"]["title"]).to include "can't be blank"
+    end
+
+    it "rejects invalid nested translations using the attribute names" do
+      sign_in(create(:user, document_number: "13572468A"))
+
       post "/api/proposals", as: :json, params: {
         proposal: {
-          translations_attributes: { "0" => { locale: "en", title: "" }}
+          translations_attributes: {
+            "0" => { locale: "en", title: "", summary: "" }
+          },
+          terms_of_service: "1"
         }
       }
 
       expect(response).to have_http_status(:unprocessable_content)
-      expect(response.parsed_body["errors"]).to be_present
+      expect(response.parsed_body["errors"].keys).to include("translations.title", "translations.summary")
+      expect(response.parsed_body["errors"]["translations.title"]).to include "can't be blank"
+      expect(response.parsed_body["errors"]["translations.summary"]).to include "can't be blank"
     end
 
     it "doesn't authorize anonymous users" do
       post "/api/proposals", as: :json, params: {
         proposal: {
-          translations_attributes: {
-            "0" => {
-              locale: "en",
-              title: "I'm responsible",
-              summary: "I have a document number",
-              description: "But you won't see my document number"
-            }
-          },
+          title: "I'm responsible",
+          summary: "I have a document number",
+          description: "But you won't see my document number",
           terms_of_service: "1"
         }
       }

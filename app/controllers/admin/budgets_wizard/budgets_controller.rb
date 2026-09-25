@@ -43,7 +43,7 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BudgetsWizard::BaseContro
                           valuator_ids: [],
                           image_attributes: image_attributes]
 
-      [*valid_attributes, translation_params(Budget)]
+      [*valid_attributes, *translation_params(Budget)]
     end
 
     def groups_index

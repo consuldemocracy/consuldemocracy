@@ -51,6 +51,6 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
     def allowed_params
       attributes = [:poll_id, :question, :proposal_id, votation_type_attributes: [:vote_type, :max_votes]]
-      [*attributes, translation_params(Poll::Question)]
+      [*attributes, *translation_params(Poll::Question)]
     end
 end
