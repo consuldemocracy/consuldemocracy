@@ -3,22 +3,22 @@
     <p>
       <strong>
         <%= t("shared.suggest.#{resource_name}.found",
-              count: resources.count,
+              count: suggestions.count,
               query: search_terms) %>
       </strong>
     </p>
 
     <ul>
-      <% resources.limit(limit).each do |resource| %>
-        <li><%= link_to resource.title, resource_path_method.present? ? send(resource_path_method, resource) : resource %></li>
+      <% suggestions.limit(limit).each do |suggestion| %>
+        <li><%= link_to suggestion.title, resource_path_method.present? ? send(resource_path_method, suggestion) : suggestion %></li>
       <% end %>
     </ul>
 
-    <% if resources.count > limit %>
+    <% if suggestions.count > limit %>
       <p>
         <strong>
           <%= t("shared.suggest.#{resource_name}.message",
-                count: resources.count,
+                count: suggestions.count,
                 query: search_terms,
                 limit: limit) %>
         </strong>
