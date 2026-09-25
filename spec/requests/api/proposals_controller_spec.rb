@@ -1,6 +1,17 @@
 require "rails_helper"
 
 describe Api::ProposalsController do
+  describe "GET show" do
+    it "shows proposals" do
+      proposal = create(:proposal)
+      get "/api/proposals/#{proposal.id}", as: :json
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["id"]).to be_present
+      expect(response.parsed_body["title"]).to be_present
+    end
+  end
+
   describe "POST create" do
     it "creates valid proposals" do
       sign_in(create(:user, document_number: "13572468A"))
