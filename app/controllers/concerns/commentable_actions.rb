@@ -25,7 +25,6 @@ module CommentableActions
   end
 
   def show
-    @comment_tree = CommentTree.new(resource, params[:page], @current_order)
     set_resource_instance
     @remote_translation_resources = @resource
   end

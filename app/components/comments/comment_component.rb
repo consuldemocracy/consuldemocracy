@@ -1,6 +1,6 @@
 class Comments::CommentComponent < ApplicationComponent
   attr_reader :comment, :valuation
-  delegate :comment_tree, :locale_and_user_status, :commentable_cache_key, :sanitize_and_auto_link,
+  delegate :current_order, :locale_and_user_status, :commentable_cache_key, :sanitize_and_auto_link,
            to: :helpers
 
   def initialize(comment, valuation: false)
@@ -11,8 +11,8 @@ class Comments::CommentComponent < ApplicationComponent
   private
 
     def child_comments
-      if comment_tree.present?
-        comment_tree.ordered_children_of(comment)
+      if current_order
+        comment.children.send("sort_descendants_by_#{current_order}")
       else
         comment.children
       end
