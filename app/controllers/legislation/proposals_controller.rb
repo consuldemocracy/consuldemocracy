@@ -35,6 +35,10 @@ class Legislation::ProposalsController < Legislation::BaseController
     end
   end
 
+  def suggest
+    @proposals = Legislation::Proposal.all
+  end
+
   def update
     if @proposal.update(proposal_params)
       redirect_to polymorphic_path(@proposal), notice: t("flash.actions.update.proposal")
