@@ -25,7 +25,7 @@ class Management::ProposalsController < Management::BaseController
   end
 
   def show
-    super
+    @remote_translation_resources = @proposal
     @notifications = @proposal.notifications
 
     if request.path != management_proposal_path(@proposal)

@@ -16,7 +16,7 @@ class Legislation::ProposalsController < Legislation::BaseController
   respond_to :html, :js
 
   def show
-    super
+    @remote_translation_resources = @proposal
     @document = Document.new(documentable: @proposal)
     if request.path != legislation_process_proposal_path(params[:process_id], @proposal)
       redirect_to legislation_process_proposal_path(params[:process_id], @proposal),

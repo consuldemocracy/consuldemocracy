@@ -24,11 +24,6 @@ module CommentableActions
     @remote_translation_resources = [*@resources, *featured_proposals]
   end
 
-  def show
-    set_resource_instance
-    @remote_translation_resources = @resource
-  end
-
   def new
     @resource = resource_model.new
     set_geozone
