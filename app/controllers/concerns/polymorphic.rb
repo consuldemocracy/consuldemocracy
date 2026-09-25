@@ -26,8 +26,4 @@ module Polymorphic
     def set_resources_instance
       instance_variable_set("@#{resource_name.pluralize}", @resources)
     end
-
-    def strong_params
-      send("#{resource_name}_params")
-    end
 end
