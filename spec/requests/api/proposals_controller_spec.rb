@@ -60,4 +60,74 @@ describe Api::ProposalsController do
       expect(response.parsed_body["error"]).to eq "You must sign in or register to continue."
     end
   end
+
+  describe "PATCH update" do
+    let(:proposal) { create(:proposal, title: "Original title") }
+
+    it "updates a valid proposal" do
+      sign_in(proposal.author)
+
+      patch "/api/proposals/#{proposal.id}", as: :json, params: { proposal: { title: "Update!" }}
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["title"]).to eq "Update!"
+    end
+
+    it "adds a new translation when using a different locale" do
+      sign_in(proposal.author)
+
+      patch "/api/proposals/#{proposal.id}?locale=es", as: :json, params: {
+        proposal: {
+          title: "Nuevo texto",
+          summary: "En otro idioma",
+          description: "Y con correcciones de algunos fallos"
+        }
+      }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["title"]).to eq "Nuevo texto"
+      expect(proposal.reload.translations.pluck(:locale, :title).to_h).to eq(
+        { "en" => "Original title", "es" => "Nuevo texto" }
+      )
+    end
+
+    it "does not update an invalid proposal" do
+      sign_in(proposal.author)
+      original_title = proposal.title
+
+      patch "/api/proposals/#{proposal.id}", as: :json, params: { proposal: { title: "", summary: "" }}
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"].keys).to eq ["title", "summary"]
+      expect(response.parsed_body["errors"]["title"]).to include "can't be blank"
+      expect(proposal.reload.title).to eq original_title
+    end
+
+    it "does not delete the only translation" do
+      sign_in(proposal.author)
+
+      patch "/api/proposals/#{proposal.id}", as: :json, params: {
+        proposal: {
+          translations_attributes: {
+            "0" => { id: proposal.translations.first.id, _destroy: "1" }
+          }
+        }
+      }
+
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.parsed_body["errors"]["base"]).to eq [
+        "It's mandatory to provide at least one translation"
+      ]
+      expect(proposal.reload.translations).to be_present
+    end
+
+    it "forbids access to other users" do
+      sign_in(create(:user))
+
+      patch "/api/proposals/#{proposal.id}", as: :json, params: { proposal: { title: "Update!" }}
+
+      expect(response).to have_http_status(:forbidden)
+      expect(response.parsed_body["error"]).to include "You do not have permission"
+    end
+  end
 end
