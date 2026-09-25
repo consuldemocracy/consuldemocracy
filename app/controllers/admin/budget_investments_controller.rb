@@ -26,7 +26,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def show
-    load_comments
   end
 
   def edit
@@ -93,10 +92,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   private
-
-    def load_comments
-      @comment_tree = CommentTree.new(@investment, params[:page], @current_order, valuations: true)
-    end
 
     def resource_model
       Budget::Investment

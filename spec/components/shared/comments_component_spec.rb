@@ -14,10 +14,9 @@ describe Shared::CommentsComponent do
 
   let(:factory) { factories.sample }
   let(:record) { create(factory) }
-  let(:comment_tree) { CommentTree.new(record, nil, "most_voted") }
 
   before do
-    allow_any_instance_of(Comments::CommentComponent).to receive(:comment_tree).and_return(comment_tree)
+    allow(vc_test_controller).to receive(:current_order).and_return("most_voted")
     allow_any_instance_of(Shared::OrderLinksComponent).to receive(:render?).and_return(false)
   end
 
@@ -27,7 +26,7 @@ describe Shared::CommentsComponent do
     create(:comment, commentable: record, parent: middle, body: "Visible reply")
     middle.hide
 
-    render_inline Shared::CommentsComponent.new(record, comment_tree)
+    render_inline Shared::CommentsComponent.new(record)
 
     expect(page).to have_content "Root comment"
     expect(page).to have_content "This comment has been deleted"

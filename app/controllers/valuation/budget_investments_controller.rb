@@ -36,24 +36,17 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       notice = t("valuation.budget_investments.notice.valuate")
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice
     else
-      load_comments
       render action: :edit
     end
   end
 
   def show
-    load_comments
   end
 
   def edit
-    load_comments
   end
 
   private
-
-    def load_comments
-      @comment_tree = CommentTree.new(@investment, params[:page], @current_order, valuations: true)
-    end
 
     def resource_model
       Budget::Investment

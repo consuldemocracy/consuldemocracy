@@ -1,10 +1,11 @@
 class Comments::CommentComponent < ApplicationComponent
-  attr_reader :comment, :valuation
-  delegate :comment_tree, :locale_and_user_status, :commentable_cache_key, :sanitize_and_auto_link,
+  attr_reader :comment, :comment_tree, :valuation
+  delegate :locale_and_user_status, :commentable_cache_key, :sanitize_and_auto_link,
            to: :helpers
 
-  def initialize(comment, valuation: false)
+  def initialize(comment, comment_tree: nil, valuation: false)
     @comment = comment
+    @comment_tree = comment_tree
     @valuation = valuation
   end
 

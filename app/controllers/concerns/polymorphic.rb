@@ -20,7 +20,7 @@ module Polymorphic
     end
 
     def set_resource_instance
-      instance_variable_set("@#{resource_name}", @resource)
+      instance_variable_set("@#{resource_name}", resource)
     end
 
     def set_resources_instance

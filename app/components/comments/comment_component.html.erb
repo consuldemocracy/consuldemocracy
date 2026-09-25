@@ -19,6 +19,6 @@
       <% end %>
     </div>
 
-    <%= render Comments::CommentListComponent.new(child_comments, valuation: valuation) %>
+    <%= render Comments::CommentListComponent.new(child_comments, comment_tree: comment_tree, valuation: valuation) %>
   </div>
 <% end %>
