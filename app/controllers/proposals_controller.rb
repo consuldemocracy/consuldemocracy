@@ -109,7 +109,8 @@ class ProposalsController < ApplicationController
 
   def publish
     @proposal.publish
-    redirect_to share_proposal_path(@proposal), notice: t("proposals.notice.published")
+
+    respond_with @proposal, location: share_proposal_path(@proposal), notice: t("proposals.notice.published")
   end
 
   private
