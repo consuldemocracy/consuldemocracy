@@ -5,6 +5,17 @@ describe "Proposals API" do
     ActionController::Base.with(allow_forgery_protection: true) { example.run }
   end
 
+  describe "GET show" do
+    it "shows proposals" do
+      proposal = create(:proposal)
+      get "/proposals/#{proposal.to_param}", as: :json
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body["id"]).to be_present
+      expect(response.parsed_body["title"]).to be_present
+    end
+  end
+
   describe "POST create" do
     it "creates valid proposals" do
       sign_in(create(:user, document_number: "13572468A"))
