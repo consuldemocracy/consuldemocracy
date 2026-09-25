@@ -1,0 +1,24 @@
+<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
+  <div id="<%= dom_id(comment) %>" class="comment small-12">
+    <div class="comment-body">
+      <% if comment.hidden? %>
+        <% if comment.children.size > 0 %>
+          <div class="callout secondary">
+            <p><%= t("comments.comment.deleted") %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <%= render Comments::AvatarComponent.new(comment) %>
+        <%= render Comments::InfoComponent.new(comment, valuation: valuation) %>
+
+        <div class="comment-user <%= user_level_class %> <%= comment_author_class %>">
+          <%= simple_format sanitize_and_auto_link(comment.body), {}, sanitize: false %>
+        </div>
+
+        <%= render Comments::StatusBarComponent.new(comment, valuation: valuation) %>
+      <% end %>
+    </div>
+
+    <%= render Comments::CommentListComponent.new(child_comments, valuation: valuation) %>
+  </div>
+<% end %>
