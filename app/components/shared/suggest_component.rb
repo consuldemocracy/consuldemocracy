@@ -8,6 +8,10 @@ class Shared::SuggestComponent < ApplicationComponent
     @resource_path_method = resource_path_method
   end
 
+  def render?
+    search_terms && resources.any?
+  end
+
   private
 
     def limit
