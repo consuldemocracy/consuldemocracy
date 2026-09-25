@@ -26,7 +26,7 @@ class ProposalsController < ApplicationController
   respond_to :html, :js
 
   def show
-    super
+    @remote_translation_resources = @proposal
     @notifications = @proposal.notifications.not_moderated
 
     if request.path != proposal_path(@proposal)
