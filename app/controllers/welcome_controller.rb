@@ -1,6 +1,4 @@
 class WelcomeController < ApplicationController
-  include RemotelyTranslatable
-
   skip_authorization_check
   before_action :set_user_recommendations, only: :index, if: :current_user
   before_action :authenticate_user!, only: :welcome
@@ -11,9 +9,7 @@ class WelcomeController < ApplicationController
     @header = Widget::Card.header.first
     @feeds = Widget::Feed.active
     @cards = Widget::Card.body
-    @remote_translations = detect_remote_translations(@feeds,
-                                                      @recommended_debates,
-                                                      @recommended_proposals)
+    @remote_translation_resources = [*@feeds, *@recommended_debates, *@recommended_proposals]
   end
 
   def welcome

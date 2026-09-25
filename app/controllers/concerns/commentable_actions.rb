@@ -2,7 +2,6 @@ module CommentableActions
   extend ActiveSupport::Concern
   include Polymorphic
   include Search
-  include RemotelyTranslatable
 
   def index
     @resources = resource_model.all
@@ -22,14 +21,14 @@ module CommentableActions
     @tag_cloud = tag_cloud
 
     set_resources_instance
-    @remote_translations = detect_remote_translations(@resources, featured_proposals)
+    @remote_translation_resources = [*@resources, *featured_proposals]
   end
 
   def show
     @commentable = resource
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_resource_instance
-    @remote_translations = detect_remote_translations([@resource], @comment_tree.comments)
+    @remote_translation_resources = @resource
   end
 
   def new
