@@ -1,11 +1,15 @@
 class Shared::CommentsComponent < ApplicationComponent
-  attr_reader :record, :comment_tree, :valuation
+  attr_reader :record, :valuation
   delegate :current_order, :locale_and_user_status, :commentable_cache_key, to: :helpers
 
-  def initialize(record, comment_tree, valuation: false)
+  def initialize(record, comment_tree = nil, valuation: false)
     @record = record
     @comment_tree = comment_tree
     @valuation = valuation
+  end
+
+  def comment_tree
+    @comment_tree ||= CommentTree.new(record, params[:page], current_order, valuations: valuation)
   end
 
   private
