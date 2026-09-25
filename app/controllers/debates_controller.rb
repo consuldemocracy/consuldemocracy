@@ -18,6 +18,12 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def index
+    @debates = search_and_filter(Debate.all)
+    @featured_debates = @debates.featured
+    @remote_translation_resources = [*@debates, *@featured_debates]
+  end
+
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
@@ -39,10 +45,6 @@ class DebatesController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def index_customization
-    @featured_debates = @debates.featured
   end
 
   def show

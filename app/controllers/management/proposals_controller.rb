@@ -11,6 +11,11 @@ class Management::ProposalsController < Management::BaseController
   has_orders %w[confidence_score hot_score created_at most_commented random], only: [:index, :print]
   has_orders %w[most_voted newest], only: :show
 
+  def index
+    @proposals = search_and_filter(Proposal.all)
+    @remote_translation_resources = @proposals
+  end
+
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user, published_at: Time.current))
 
