@@ -66,6 +66,10 @@ RSpec.configure do |config|
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)
   end
 
+  config.around(:each, type: :controller) do |example|
+    InvisibleCaptcha.with(timestamp_enabled: false) { example.run }
+  end
+
   config.before(:each, :admin, type: :system) do
     login_as(create(:administrator).user)
   end
