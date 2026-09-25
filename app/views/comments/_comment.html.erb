@@ -22,6 +22,6 @@
       <% end %>
     </div>
 
-    <%= render "comments/comment_list", comments: child_comments_of(comment), valuation: valuation %>
+    <%= render Comments::CommentListComponent.new(child_comments_of(comment), valuation: valuation) %>
   </div>
 <% end %>
