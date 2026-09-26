@@ -1,7 +1,7 @@
 module Budgets
   class InvestmentsController < ApplicationController
     include FeatureFlags
-    include CommentableActions
+    include Search
     include FlagActions
     include RandomSeed
     include ImageAttributes
@@ -61,6 +61,9 @@ module Budgets
       else
         render :new
       end
+    end
+
+    def edit
     end
 
     def update
