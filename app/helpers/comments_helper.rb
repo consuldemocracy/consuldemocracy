@@ -47,7 +47,7 @@ module CommentsHelper
     elsif comment.user.official?
       "level-#{comment.user.official_level}"
     else
-      "" # Default no special user class
+      ""
     end
   end
 
@@ -55,7 +55,7 @@ module CommentsHelper
     if comment.user_id == author_id
       "is-author"
     else
-      "" # Default not author class
+      ""
     end
   end
 
