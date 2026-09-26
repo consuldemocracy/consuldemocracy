@@ -1,11 +1,10 @@
 class Shared::SuggestComponent < ApplicationComponent
-  attr_reader :resources, :search_terms, :resource_path_method
-  delegate :resource_name, :resource_model, :namespaced_budget_investment_path, to: :helpers
+  attr_reader :resources, :search_terms
+  delegate :resource_name, :resource_model, to: :helpers
 
-  def initialize(resources, search_terms:, resource_path_method: nil)
+  def initialize(resources, search_terms:)
     @resources = resources
     @search_terms = search_terms
-    @resource_path_method = resource_path_method
   end
 
   def render?
