@@ -46,6 +46,10 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def new
+    @proposal = Proposal.new
+  end
+
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
     if @proposal.save

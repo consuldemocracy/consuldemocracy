@@ -24,6 +24,10 @@ class DebatesController < ApplicationController
     @featured_debates = @debates.featured
   end
 
+  def new
+    @debate = Debate.new
+  end
+
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
