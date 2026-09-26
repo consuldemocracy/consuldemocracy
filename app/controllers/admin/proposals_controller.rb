@@ -1,6 +1,6 @@
 class Admin::ProposalsController < Admin::BaseController
   include HasOrders
-  include CommentableActions
+  include Search
   include FeatureFlags
 
   feature_flag :proposals
