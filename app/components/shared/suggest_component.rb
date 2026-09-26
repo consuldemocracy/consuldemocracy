@@ -1,6 +1,5 @@
 class Shared::SuggestComponent < ApplicationComponent
   attr_reader :resources, :search_terms
-  delegate :resource_name, :resource_model, to: :helpers
 
   def initialize(resources, search_terms:)
     @resources = resources
@@ -19,5 +18,13 @@ class Shared::SuggestComponent < ApplicationComponent
 
     def suggestions
       @suggestions ||= resources.search(search_terms)
+    end
+
+    def resource_name
+      resource_model.to_s.parameterize(separator: "_")
+    end
+
+    def resource_model
+      resources.first.class
     end
 end

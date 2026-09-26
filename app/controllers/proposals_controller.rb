@@ -22,7 +22,6 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource
   before_action :destroy_map_location_association, only: :update
 
-  helper_method :resource_model, :resource_name
   respond_to :html, :js
 
   def index
