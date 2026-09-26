@@ -5,6 +5,19 @@ describe "Proposals API" do
     ActionController::Base.with(allow_forgery_protection: true) { example.run }
   end
 
+  describe "GET index" do
+    it "lists all proposals" do
+      titles = ["API for me!", "API for you!", "API for everyone!"]
+      titles.each { |title| create(:proposal, title: title) }
+
+      get "/proposals", as: :json
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body.count).to eq 3
+      expect(response.parsed_body.map { it[:title] }).to match_array titles
+    end
+  end
+
   describe "GET show" do
     it "shows proposals" do
       proposal = create(:proposal)
