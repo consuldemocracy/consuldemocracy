@@ -24,6 +24,10 @@ class DebatesController < ApplicationController
     @remote_translation_resources = [*@debates, *@featured_debates]
   end
 
+  def new
+    @debate = Debate.new
+  end
+
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user

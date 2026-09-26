@@ -14,8 +14,4 @@ module Polymorphic
     def resource_name
       @resource_name ||= resource_model.to_s.downcase
     end
-
-    def set_resource_instance
-      instance_variable_set("@#{resource_name}", resource)
-    end
 end
