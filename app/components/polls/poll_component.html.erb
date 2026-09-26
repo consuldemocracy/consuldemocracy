@@ -16,9 +16,7 @@
           <li><%= question.title %></li>
         <% end %>
       </ul>
-      <% if more_questions_than_shown? %>
         <div class="questions-count"><%= questions_count_text %></div>
-      <% end %>
     <% end %>
     <%= render Polls::GeozonesComponent.new(poll) %>
     <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>

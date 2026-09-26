@@ -15,10 +15,6 @@ class Polls::PollComponent < ApplicationComponent
       poll.questions.sort_for_list.first(2)
     end
 
-    def more_questions_than_shown?
-      poll.questions.count > 2
-    end
-
     def questions_count_text
       t("polls.questions_count", count: poll.questions.count)
     end

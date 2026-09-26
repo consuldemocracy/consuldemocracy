@@ -25,7 +25,7 @@ describe Polls::PollComponent do
   end
 
   describe "questions" do
-    it "shows all questions when there are 2, without a count line" do
+    it "shows all questions and its count when there are 2" do
       poll = create(:poll)
       create(:poll_question, poll: poll, title: "First question")
       create(:poll_question, poll: poll, title: "Second question")
@@ -34,7 +34,7 @@ describe Polls::PollComponent do
 
       expect(page).to have_content "First question"
       expect(page).to have_content "Second question"
-      expect(page).not_to have_content "This poll has"
+      expect(page).to have_content "This poll has 2 questions."
     end
 
     it "shows only the first 2 questions plus a count when there are more than 2" do
