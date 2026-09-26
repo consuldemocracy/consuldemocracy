@@ -55,4 +55,8 @@ module ModerateActions
     def author_id
       :author_id
     end
+
+    def set_resources_instance
+      instance_variable_set("@#{resource_name.pluralize}", @resources)
+    end
 end
