@@ -25,7 +25,7 @@ class Management::ProposalsController < Management::BaseController
 
     if @proposal.save
       redirect_path = url_for(controller: controller_name, action: :show, id: @proposal.id)
-      redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
+      redirect_to redirect_path, notice: t("flash.actions.create.proposal")
     else
       render :new
     end
