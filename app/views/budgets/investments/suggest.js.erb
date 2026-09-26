@@ -1,1 +1,1 @@
-<%= render "shared/suggest" %>
+<%= render Shared::SuggestComponent.new(@investments, search_terms: @search_terms) %>

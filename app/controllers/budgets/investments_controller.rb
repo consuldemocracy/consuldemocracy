@@ -1,7 +1,7 @@
 module Budgets
   class InvestmentsController < ApplicationController
     include FeatureFlags
-    include CommentableActions
+    include Search
     include FlagActions
     include RandomSeed
     include ImageAttributes
@@ -32,7 +32,6 @@ module Budgets
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
-    helper_method :resource_model, :resource_name
     respond_to :html, :js
 
     def index
@@ -40,18 +39,15 @@ module Budgets
       @investment_ids = @investments.unscope(:includes).ids
 
       @investments_in_map = investments
-      @tag_cloud = tag_cloud
-      @remote_translations = detect_remote_translations(@investments)
+      @remote_translation_resources = @investments
     end
 
     def new
     end
 
     def show
-      @commentable = @investment
-      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       @investment_ids = [@investment.id]
-      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
+      @remote_translation_resources = @investment
     end
 
     def create
@@ -65,6 +61,9 @@ module Budgets
       else
         render :new
       end
+    end
+
+    def edit
     end
 
     def update
@@ -83,20 +82,13 @@ module Budgets
     end
 
     def suggest
-      @resource_path_method = :namespaced_budget_investment_path
-      @resource_relation    = resource_model.where(budget: @budget)
-                                            .apply_filters_and_search(@budget, params, @current_filter)
-      super
+      @investments = @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
     end
 
     private
 
       def resource_model
         Budget::Investment
-      end
-
-      def resource_name
-        "budget_investment"
       end
 
       def investment_params
@@ -129,10 +121,6 @@ module Budgets
 
       def load_categories
         @categories = Tag.category.order(:name)
-      end
-
-      def tag_cloud
-        TagCloud.new(Budget::Investment, params[:search])
       end
 
       def load_budget

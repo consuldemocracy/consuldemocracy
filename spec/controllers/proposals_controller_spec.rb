@@ -16,10 +16,6 @@ describe ProposalsController do
   end
 
   describe "PATCH update" do
-    around do |example|
-      InvisibleCaptcha.with(timestamp_enabled: false) { example.run }
-    end
-
     it "does not delete other proposal's map location" do
       proposal = create(:proposal)
       other_proposal = create(:proposal, :with_map_location)

@@ -1,5 +1,4 @@
 class Admin::Poll::QuestionsController < Admin::Poll::BaseController
-  include CommentableActions
   include Translatable
 
   load_and_authorize_resource :poll
