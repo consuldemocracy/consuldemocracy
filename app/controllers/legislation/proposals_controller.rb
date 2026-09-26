@@ -1,5 +1,5 @@
 class Legislation::ProposalsController < Legislation::BaseController
-  include CommentableActions
+  include Search
   include FlagActions
   include ImageAttributes
 

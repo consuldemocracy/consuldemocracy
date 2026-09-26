@@ -1,6 +1,5 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
-  include CommentableActions
   include Translatable
 
   feature_flag :budgets
@@ -92,10 +91,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   private
-
-    def resource_model
-      Budget::Investment
-    end
 
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter).order_filter(params)

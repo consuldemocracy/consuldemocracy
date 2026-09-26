@@ -1,6 +1,5 @@
 class Valuation::BudgetInvestmentsController < Valuation::BaseController
   include FeatureFlags
-  include CommentableActions
 
   feature_flag :budgets
 
@@ -47,10 +46,6 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   end
 
   private
-
-    def resource_model
-      Budget::Investment
-    end
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
