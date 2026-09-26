@@ -16,6 +16,10 @@ class Management::ProposalsController < Management::BaseController
     @remote_translation_resources = @proposals
   end
 
+  def new
+    @proposal = Proposal.new
+  end
+
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user, published_at: Time.current))
 

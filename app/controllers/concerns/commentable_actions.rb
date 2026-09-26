@@ -3,11 +3,6 @@ module CommentableActions
   include Polymorphic
   include Search
 
-  def new
-    @resource = resource_model.new
-    set_resource_instance
-  end
-
   def edit
   end
 

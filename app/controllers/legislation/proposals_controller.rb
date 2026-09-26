@@ -24,6 +24,10 @@ class Legislation::ProposalsController < Legislation::BaseController
     end
   end
 
+  def new
+    @proposal = Legislation::Proposal.new
+  end
+
   def create
     @proposal = Legislation::Proposal.new(proposal_params.merge(author: current_user))
 
