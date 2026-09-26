@@ -1,6 +1,5 @@
 module CommentableActions
   extend ActiveSupport::Concern
-  include Polymorphic
   include Search
 
   def edit
