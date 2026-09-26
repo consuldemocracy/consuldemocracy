@@ -32,7 +32,6 @@ module Budgets
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
-    helper_method :resource_model, :resource_name
     respond_to :html, :js
 
     def index
@@ -87,10 +86,6 @@ module Budgets
 
       def resource_model
         Budget::Investment
-      end
-
-      def resource_name
-        "budget_investment"
       end
 
       def investment_params

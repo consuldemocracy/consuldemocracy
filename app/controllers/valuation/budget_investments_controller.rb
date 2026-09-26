@@ -52,10 +52,6 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       Budget::Investment
     end
 
-    def resource_name
-      resource_model.parameterize(separator: "_")
-    end
-
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
