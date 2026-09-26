@@ -1,6 +1,6 @@
 class Management::ProposalsController < Management::BaseController
   include HasOrders
-  include CommentableActions
+  include SearchAndFilter
   include Translatable
   include MapLocationAttributes
 

@@ -1,9 +1,6 @@
-module CommentableActions
+module SearchAndFilter
   extend ActiveSupport::Concern
   include Search
-
-  def edit
-  end
 
   private
 

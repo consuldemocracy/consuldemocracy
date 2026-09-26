@@ -1,6 +1,6 @@
 class DebatesController < ApplicationController
   include FeatureFlags
-  include CommentableActions
+  include SearchAndFilter
   include FlagActions
   include Translatable
 
@@ -40,6 +40,9 @@ class DebatesController < ApplicationController
 
   def suggest
     @debates = Debate.all
+  end
+
+  def edit
   end
 
   def update

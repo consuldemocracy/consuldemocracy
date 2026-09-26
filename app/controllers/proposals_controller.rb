@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
   include FeatureFlags
-  include CommentableActions
+  include SearchAndFilter
   include FlagActions
   include ImageAttributes
   include DocumentAttributes
@@ -62,6 +62,9 @@ class ProposalsController < ApplicationController
 
   def suggest
     @proposals = Proposal.all
+  end
+
+  def edit
   end
 
   def update

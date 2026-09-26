@@ -41,6 +41,9 @@ class Legislation::ProposalsController < Legislation::BaseController
     @proposals = @process.proposals
   end
 
+  def edit
+  end
+
   def update
     if @proposal.update(proposal_params)
       redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
