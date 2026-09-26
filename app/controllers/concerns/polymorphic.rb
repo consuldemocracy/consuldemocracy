@@ -18,8 +18,4 @@ module Polymorphic
     def set_resource_instance
       instance_variable_set("@#{resource_name}", resource)
     end
-
-    def set_resources_instance
-      instance_variable_set("@#{resource_name.pluralize}", @resources)
-    end
 end
