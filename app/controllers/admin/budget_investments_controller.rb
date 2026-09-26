@@ -1,6 +1,5 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
-  include CommentableActions
   include Translatable
 
   feature_flag :budgets
