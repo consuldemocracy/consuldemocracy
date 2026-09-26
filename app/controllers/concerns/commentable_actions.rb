@@ -2,9 +2,6 @@ module CommentableActions
   extend ActiveSupport::Concern
   include Search
 
-  def edit
-  end
-
   private
 
     def load_categories
