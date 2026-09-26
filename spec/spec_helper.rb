@@ -27,6 +27,10 @@ RSpec.configure do |config|
     metadata[:type] = :component
   end
 
+  config.define_derived_metadata(file_path: Regexp.new("/spec/requests/api/")) do |metadata|
+    metadata[:subtype] = :api
+  end
+
   config.before(:suite) do
     Rails.application.load_seed
   end
@@ -64,6 +68,10 @@ RSpec.configure do |config|
 
   config.before(:each, type: :system) do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)
+  end
+
+  config.around(:each, type: :request, subtype: :api) do |example|
+    ActionController::Base.with(allow_forgery_protection: true) { example.run }
   end
 
   config.around(:each, type: :controller) do |example|
