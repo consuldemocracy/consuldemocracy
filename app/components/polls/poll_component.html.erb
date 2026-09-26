@@ -16,7 +16,7 @@
           <li><%= question.title %></li>
         <% end %>
       </ul>
-        <div class="questions-count"><%= questions_count_text %></div>
+      <div class="questions-count"><%= questions_count_text %></div>
     <% end %>
     <%= render Polls::GeozonesComponent.new(poll) %>
     <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
