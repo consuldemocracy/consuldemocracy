@@ -1,6 +1,5 @@
 class Valuation::BudgetInvestmentsController < Valuation::BaseController
   include FeatureFlags
-  include CommentableActions
 
   feature_flag :budgets
 
