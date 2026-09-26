@@ -1,5 +1,5 @@
 namespace :api do
-  resources :proposals, only: [:show, :create, :update] do
+  resources :proposals, only: [:index, :show, :create, :update] do
     member do
       post :vote
       patch :retire
