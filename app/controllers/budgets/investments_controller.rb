@@ -80,7 +80,6 @@ module Budgets
     end
 
     def suggest
-      @resource_path_method = :namespaced_budget_investment_path
       @investments = @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
     end
 
