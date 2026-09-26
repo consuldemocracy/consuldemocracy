@@ -97,10 +97,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       Budget::Investment
     end
 
-    def resource_name
-      resource_model.parameterize(separator: "_")
-    end
-
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter).order_filter(params)
       @investments = Kaminari.paginate_array(@investments) if @investments.is_a?(Array)

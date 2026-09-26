@@ -12,7 +12,6 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   has_orders %w[most_voted newest oldest], only: :show
 
-  helper_method :resource_model, :resource_name
   respond_to :html, :js
 
   def show
@@ -70,9 +69,5 @@ class Legislation::ProposalsController < Legislation::BaseController
 
     def resource_model
       Legislation::Proposal
-    end
-
-    def resource_name
-      "proposal"
     end
 end
