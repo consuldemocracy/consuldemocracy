@@ -5,7 +5,6 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
-    set_geozone
     set_resource_instance
   end
 
@@ -13,11 +12,6 @@ module CommentableActions
   end
 
   private
-
-    def set_geozone
-      geozone_id = params.dig(resource_name.to_sym, :geozone_id)
-      @resource.geozone = Geozone.find(geozone_id) if geozone_id.present?
-    end
 
     def load_categories
       @categories = Tag.category.order(:name)
