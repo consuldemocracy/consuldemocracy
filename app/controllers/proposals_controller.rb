@@ -52,10 +52,10 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
     if @proposal.save
-      redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
-    else
-      render :new
+      flash[:notice] = I18n.t("flash.actions.create.proposal")
     end
+
+    respond_with @proposal, location: -> { created_proposal_path(@proposal) }
   end
 
   def created; end
