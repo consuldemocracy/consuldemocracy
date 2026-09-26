@@ -64,6 +64,9 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.all
   end
 
+  def edit
+  end
+
   def update
     if @proposal.update(proposal_params)
       redirect_to proposal_path(@proposal), notice: t("flash.actions.update.proposal")
