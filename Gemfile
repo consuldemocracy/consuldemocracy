@@ -84,6 +84,7 @@ group :test do
   gem "email_spec", "~> 2.3.1"
   gem "pdf-reader", "~> 2.16.0"
   gem "puffing-billy", "~> 4.0"
+  gem "rspec-openapi", "~> 0.34.0"
   gem "rspec-rails", "~> 8.0.4"
   gem "selenium-webdriver", "~> 4.48.0"
   gem "simplecov", "~> 1.3.0", require: false
