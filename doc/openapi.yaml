@@ -1,0 +1,819 @@
+---
+openapi: 3.2.0
+info:
+  title: consul
+  version: 1.0.0
+servers: []
+paths:
+  "/proposals":
+    get:
+      summary: index
+      tags:
+      - Proposal
+      responses:
+        '200':
+          description: lists all proposals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    cached_votes_up:
+                      type: integer
+                    comments_count:
+                      type: integer
+                    confidence_score:
+                      type: integer
+                    description:
+                      type: string
+                    geozone_id:
+                      type: 'null'
+                    hot_score:
+                      type: integer
+                    id:
+                      type: integer
+                    retired_at:
+                      type: 'null'
+                    retired_explanation:
+                      type: 'null'
+                    retired_reason:
+                      type: 'null'
+                    summary:
+                      type: string
+                    title:
+                      type: string
+                    video_url:
+                      type: 'null'
+                    public_created_at:
+                      type: string
+                  required:
+                  - cached_votes_up
+                  - comments_count
+                  - confidence_score
+                  - description
+                  - geozone_id
+                  - hot_score
+                  - id
+                  - retired_at
+                  - retired_explanation
+                  - retired_reason
+                  - summary
+                  - title
+                  - video_url
+                  - public_created_at
+              example:
+              - cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 715
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 5
+                title: API for me!
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+              - cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 716
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 6
+                title: API for you!
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+              - cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 717
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 7
+                title: API for everyone!
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+    post:
+      summary: create
+      tags:
+      - Proposal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                proposal:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    summary:
+                      type: string
+                    description:
+                      type: string
+                    terms_of_service:
+                      type: string
+                  required:
+                  - title
+                  - summary
+                  - description
+                  - terms_of_service
+              required:
+              - proposal
+            example:
+              proposal:
+                title: I'm responsible
+                summary: I have a document number
+                description: But you won't see my document number
+                terms_of_service: '1'
+      responses:
+        '201':
+          description: creates valid proposals
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached_votes_up:
+                    type: integer
+                  comments_count:
+                    type: integer
+                  confidence_score:
+                    type: integer
+                  description:
+                    type: string
+                  geozone_id:
+                    type: 'null'
+                  hot_score:
+                    type: integer
+                  id:
+                    type: integer
+                  retired_at:
+                    type: 'null'
+                  retired_explanation:
+                    type: 'null'
+                  retired_reason:
+                    type: 'null'
+                  summary:
+                    type: string
+                  title:
+                    type: string
+                  video_url:
+                    type: 'null'
+                  public_created_at:
+                    type: string
+                required:
+                - cached_votes_up
+                - comments_count
+                - confidence_score
+                - description
+                - geozone_id
+                - hot_score
+                - id
+                - retired_at
+                - retired_explanation
+                - retired_reason
+                - summary
+                - title
+                - video_url
+                - public_created_at
+              example:
+                cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: But you won't see my document number
+                geozone_id:
+                hot_score: 0
+                id: 720
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: I have a document number
+                title: I'm responsible
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+        '422':
+          description: rejects invalid proposals
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      title:
+                        type: array
+                        items:
+                          type: string
+                      summary:
+                        type: array
+                        items:
+                          type: string
+                      terms_of_service:
+                        type: array
+                        items:
+                          type: string
+                    required:
+                    - title
+                    - summary
+                    - terms_of_service
+                required:
+                - errors
+              example:
+                errors:
+                  title:
+                  - can't be blank
+                  - is too short (minimum is 4 characters)
+                  summary:
+                  - can't be blank
+                  terms_of_service:
+                  - must be accepted
+  "/proposals/{id}":
+    get:
+      summary: show
+      tags:
+      - Proposal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 714-proposal-4-title
+      responses:
+        '200':
+          description: shows proposals
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached_votes_up:
+                    type: integer
+                  comments_count:
+                    type: integer
+                  confidence_score:
+                    type: integer
+                  description:
+                    type: string
+                  geozone_id:
+                    type: 'null'
+                  hot_score:
+                    type: integer
+                  id:
+                    type: integer
+                  retired_at:
+                    type: 'null'
+                  retired_explanation:
+                    type: 'null'
+                  retired_reason:
+                    type: 'null'
+                  summary:
+                    type: string
+                  title:
+                    type: string
+                  video_url:
+                    type: 'null'
+                  public_created_at:
+                    type: string
+                required:
+                - cached_votes_up
+                - comments_count
+                - confidence_score
+                - description
+                - geozone_id
+                - hot_score
+                - id
+                - retired_at
+                - retired_explanation
+                - retired_reason
+                - summary
+                - title
+                - video_url
+                - public_created_at
+              example:
+                cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 714
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 4
+                title: Proposal 4 title
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+    patch:
+      summary: update
+      tags:
+      - Proposal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 713-proposal-3-title
+      responses:
+        '200':
+          description: updates a valid proposal
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached_votes_up:
+                    type: integer
+                  comments_count:
+                    type: integer
+                  confidence_score:
+                    type: integer
+                  description:
+                    type: string
+                  geozone_id:
+                    type: 'null'
+                  hot_score:
+                    type: integer
+                  id:
+                    type: integer
+                  retired_at:
+                    type: 'null'
+                  retired_explanation:
+                    type: 'null'
+                  retired_reason:
+                    type: 'null'
+                  summary:
+                    type: string
+                  title:
+                    type: string
+                  video_url:
+                    type: 'null'
+                  public_created_at:
+                    type: string
+                required:
+                - cached_votes_up
+                - comments_count
+                - confidence_score
+                - description
+                - geozone_id
+                - hot_score
+                - id
+                - retired_at
+                - retired_explanation
+                - retired_reason
+                - summary
+                - title
+                - video_url
+                - public_created_at
+              example:
+                cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 712
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 2
+                title: Update!
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+        '403':
+          description: forbids access to other users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+              example:
+                error: You do not have permission to carry out the action 'update'
+                  on Citizen proposal.
+        '422':
+          description: does no update an invalid proposal
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      translations.title:
+                        type: array
+                        items:
+                          type: string
+                      translations.summary:
+                        type: array
+                        items:
+                          type: string
+                    required:
+                    - translations.title
+                    - translations.summary
+                required:
+                - errors
+              example:
+                errors:
+                  translations.title:
+                  - is too short (minimum is 4 characters)
+                  - can't be blank
+                  translations.summary:
+                  - can't be blank
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                proposal:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                  required:
+                  - title
+              required:
+              - proposal
+            example:
+              proposal:
+                title: Update!
+  "/proposals/{id}/publish":
+    patch:
+      summary: publish
+      tags:
+      - Proposal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 722-proposal-8-title
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            example: {}
+      responses:
+        '200':
+          description: publishes a proposal
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached_votes_up:
+                    type: integer
+                  comments_count:
+                    type: integer
+                  confidence_score:
+                    type: integer
+                  description:
+                    type: string
+                  geozone_id:
+                    type: 'null'
+                  hot_score:
+                    type: integer
+                  id:
+                    type: integer
+                  retired_at:
+                    type: 'null'
+                  retired_explanation:
+                    type: 'null'
+                  retired_reason:
+                    type: 'null'
+                  summary:
+                    type: string
+                  title:
+                    type: string
+                  video_url:
+                    type: 'null'
+                  public_created_at:
+                    type: string
+                required:
+                - cached_votes_up
+                - comments_count
+                - confidence_score
+                - description
+                - geozone_id
+                - hot_score
+                - id
+                - retired_at
+                - retired_explanation
+                - retired_reason
+                - summary
+                - title
+                - video_url
+                - public_created_at
+              example:
+                cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 721
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 10
+                title: Proposal 7 title
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+        '403':
+          description: forbids access to other users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+              example:
+                error: You do not have permission to carry out the action 'publish'
+                  on Citizen proposal.
+  "/proposals/{id}/retire":
+    patch:
+      summary: retire
+      tags:
+      - Proposal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 725-proposal-11-title
+      responses:
+        '200':
+          description: retires a proposal with an explanation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached_votes_up:
+                    type: integer
+                  comments_count:
+                    type: integer
+                  confidence_score:
+                    type: integer
+                  description:
+                    type: string
+                  geozone_id:
+                    type: 'null'
+                  hot_score:
+                    type: integer
+                  id:
+                    type: integer
+                  retired_at:
+                    type: string
+                  retired_explanation:
+                    type: string
+                  retired_reason:
+                    type: string
+                  summary:
+                    type: string
+                  title:
+                    type: string
+                  video_url:
+                    type: 'null'
+                  public_created_at:
+                    type: string
+                required:
+                - cached_votes_up
+                - comments_count
+                - confidence_score
+                - description
+                - geozone_id
+                - hot_score
+                - id
+                - retired_at
+                - retired_explanation
+                - retired_reason
+                - summary
+                - title
+                - video_url
+                - public_created_at
+              example:
+                cached_votes_up: 0
+                comments_count: 0
+                confidence_score: 1
+                description: Proposal description
+                geozone_id:
+                hot_score: 0
+                id: 724
+                retired_at: '2026-09-27T14:30:14.565+02:00'
+                retired_explanation: Submitted twice.
+                retired_reason: duplicated
+                summary: In summary, what we want is... 13
+                title: Proposal 10 title
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+        '403':
+          description: forbids access to other users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+              example:
+                error: You do not have permission to carry out the action 'retire'
+                  on Citizen proposal.
+        '422':
+          description: does not retire a proposal without a reason
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      retired_reason:
+                        type: array
+                        items:
+                          type: string
+                    required:
+                    - retired_reason
+                required:
+                - errors
+              example:
+                errors:
+                  retired_reason:
+                  - can't be blank
+                  - is not included in the list
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                proposal:
+                  type: object
+                  properties:
+                    retired_reason:
+                      type: string
+                    retired_explanation:
+                      type: string
+                  required:
+                  - retired_reason
+                  - retired_explanation
+              required:
+              - proposal
+            example:
+              proposal:
+                retired_reason: duplicated
+                retired_explanation: Submitted twice.
+  "/proposals/{id}/vote":
+    post:
+      summary: vote
+      tags:
+      - Proposal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 719-proposal-6-title
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            example: {}
+      responses:
+        '201':
+          description: creates a vote for verified users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached_votes_up:
+                    type: integer
+                  comments_count:
+                    type: integer
+                  confidence_score:
+                    type: integer
+                  description:
+                    type: string
+                  geozone_id:
+                    type: 'null'
+                  hot_score:
+                    type: integer
+                  id:
+                    type: integer
+                  retired_at:
+                    type: 'null'
+                  retired_explanation:
+                    type: 'null'
+                  retired_reason:
+                    type: 'null'
+                  summary:
+                    type: string
+                  title:
+                    type: string
+                  video_url:
+                    type: 'null'
+                  public_created_at:
+                    type: string
+                required:
+                - cached_votes_up
+                - comments_count
+                - confidence_score
+                - description
+                - geozone_id
+                - hot_score
+                - id
+                - retired_at
+                - retired_explanation
+                - retired_reason
+                - summary
+                - title
+                - video_url
+                - public_created_at
+              example:
+                cached_votes_up: 1
+                comments_count: 0
+                confidence_score: 100
+                description: Proposal description
+                geozone_id:
+                hot_score: 1
+                id: 719
+                retired_at:
+                retired_explanation:
+                retired_reason:
+                summary: In summary, what we want is... 9
+                title: Proposal 6 title
+                video_url:
+                public_created_at: '2026-09-27T14:00:00.000+02:00'
+  "/unauthenticated":
+    post:
+      summary: POST /unauthenticated
+      parameters:
+      - name: action
+        in: path
+        required: true
+        schema:
+          type: string
+        example: create
+      - name: controller
+        in: path
+        required: true
+        schema:
+          type: string
+        example: proposals
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 718-proposal-5-title
+      responses:
+        '401':
+          description: doesn't authorize anonymous users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+              example:
+                error: You must sign in or register to continue.
