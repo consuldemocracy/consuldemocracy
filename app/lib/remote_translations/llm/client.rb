@@ -5,6 +5,9 @@ module RemoteTranslations
         fields_values.map do |text|
           request_translation(text, locale)
         end
+      rescue StandardError => e
+        Rails.logger.error("LLM remote translation to #{locale} failed: #{e.class}: #{e.message}")
+        raise
       end
 
       private

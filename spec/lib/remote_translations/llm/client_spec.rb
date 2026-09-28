@@ -28,4 +28,14 @@ describe RemoteTranslations::Llm::Client do
 
     expect(result).to eq ["translated", "translated"]
   end
+
+  it "logs and re-raises errors from the LLM provider" do
+    allow(Rails.logger).to receive(:error)
+    allow(chat).to receive(:ask).and_raise(RubyLLM::BadRequestError.new(nil, "Model deprecated"))
+
+    expect { client.call(["Hello"], "es") }.to raise_error(RubyLLM::BadRequestError)
+    expect(Rails.logger).to have_received(:error).with(
+      "LLM remote translation to es failed: RubyLLM::BadRequestError: Model deprecated"
+    )
+  end
 end
