@@ -142,7 +142,8 @@ describe "Polls" do
       visit polls_path
 
       expect("First question edited").to appear_before("Second question")
-      expect("Second question").to appear_before("Third question")
+      expect(page).not_to have_content "Third question"
+      expect(page).to have_content "This poll has 3 questions"
 
       visit poll_path(poll)
 
