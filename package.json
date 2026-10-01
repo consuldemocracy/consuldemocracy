@@ -18,8 +18,8 @@
     "eslint": "^10.8.0",
     "globals": "^17.12.0",
     "postcss-scss": "^4.0.9",
-    "stylelint": "^17.14.1",
+    "stylelint": "^17.15.0",
     "stylelint-order": "^8.1.1",
-    "stylelint-scss": "^7.2.0"
+    "stylelint-scss": "^7.3.0"
   }
 }
