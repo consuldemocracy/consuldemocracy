@@ -15,8 +15,17 @@ class DebatesController < ApplicationController
   has_orders %w[most_voted newest oldest], only: :show
 
   load_and_authorize_resource
-  helper_method :resource_model, :resource_name
   respond_to :html, :js
+
+  def index
+    @debates = search_and_filter(Debate.all)
+    @remote_translation_resources = @debates
+    @featured_debates = @debates.featured
+  end
+
+  def new
+    @debate = Debate.new
+  end
 
   def create
     @debate = Debate.new(debate_params)
@@ -29,12 +38,24 @@ class DebatesController < ApplicationController
     end
   end
 
-  def index_customization
-    @featured_debates = @debates.featured
+  def suggest
+    @debates = Debate.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @debate.update(debate_params)
+      redirect_to debate_path(@debate), notice: t("flash.actions.update.debate")
+    else
+      render :edit
+    end
   end
 
   def show
-    super
+    @remote_translation_resources = @debate
+
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 

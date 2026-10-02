@@ -3,10 +3,8 @@ class Legislation::ProposalsController < Legislation::BaseController
   include FlagActions
   include ImageAttributes
 
-  before_action :load_categories, only: [:new, :create, :edit, :summary]
-  before_action :load_geozones, only: [:edit, :summary]
-
-  before_action :authenticate_user!, except: [:show, :summary]
+  before_action :load_categories, only: [:new, :create, :edit]
+  before_action :authenticate_user!, except: :show
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :proposal, class: "Legislation::Proposal", through: :process
 
@@ -14,16 +12,19 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   has_orders %w[most_voted newest oldest], only: :show
 
-  helper_method :resource_model, :resource_name
   respond_to :html, :js
 
   def show
-    super
+    @remote_translation_resources = @proposal
     @document = Document.new(documentable: @proposal)
     if request.path != legislation_process_proposal_path(params[:process_id], @proposal)
       redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
                   status: :moved_permanently
     end
+  end
+
+  def new
+    @proposal = Legislation::Proposal.new
   end
 
   def create
@@ -34,6 +35,21 @@ class Legislation::ProposalsController < Legislation::BaseController
                   notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
+    end
+  end
+
+  def suggest
+    @proposals = Legislation::Proposal.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @proposal.update(proposal_params)
+      redirect_to polymorphic_path(@proposal), notice: t("flash.actions.update.proposal")
+    else
+      render :edit
     end
   end
 
@@ -55,9 +71,5 @@ class Legislation::ProposalsController < Legislation::BaseController
 
     def resource_model
       Legislation::Proposal
-    end
-
-    def resource_name
-      "proposal"
     end
 end

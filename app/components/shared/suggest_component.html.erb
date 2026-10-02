@@ -1,0 +1,31 @@
+<div class="small-12 column">
+  <div class="callout warning">
+    <p>
+      <strong>
+        <%= t("shared.suggest.#{resource_name}.found",
+              count: suggestions.count,
+              query: search_terms) %>
+      </strong>
+    </p>
+
+    <ul>
+      <% suggestions.limit(limit).each do |suggestion| %>
+        <li><%= link_to suggestion.title, polymorphic_path(suggestion) %></li>
+      <% end %>
+    </ul>
+
+    <% if suggestions.count > limit %>
+      <p>
+        <strong>
+          <%= t("shared.suggest.#{resource_name}.message",
+                count: suggestions.count,
+                query: search_terms,
+                limit: limit) %>
+        </strong>
+        <%= link_to t("shared.suggest.#{resource_name}.see_all"),
+                    polymorphic_path(resource_model, search: search_terms) %>
+      </p>
+    <% end %>
+
+  </div>
+</div>

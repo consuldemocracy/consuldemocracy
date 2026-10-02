@@ -7,27 +7,32 @@ class Management::ProposalsController < Management::BaseController
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
-  before_action :load_geozones, only: [:edit]
 
   has_orders %w[confidence_score hot_score created_at most_commented random], only: [:index, :print]
   has_orders %w[most_voted newest], only: :show
 
-  def create
-    @resource = resource_model.new(strong_params.merge(author: current_user,
-                                                       published_at: Time.current))
+  def index
+    @proposals = search_and_filter(Proposal.all)
+    @remote_translation_resources = @proposals
+  end
 
-    if @resource.save
-      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
-      redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
+  def new
+    @proposal = Proposal.new
+  end
+
+  def create
+    @proposal = Proposal.new(proposal_params.merge(author: current_user, published_at: Time.current))
+
+    if @proposal.save
+      redirect_path = url_for(controller: controller_name, action: :show, id: @proposal.id)
+      redirect_to redirect_path, notice: t("flash.actions.create.proposal")
     else
-      load_geozones
-      set_resource_instance
       render :new
     end
   end
 
   def show
-    super
+    @remote_translation_resources = @proposal
     @notifications = @proposal.notifications
 
     if request.path != management_proposal_path(@proposal)

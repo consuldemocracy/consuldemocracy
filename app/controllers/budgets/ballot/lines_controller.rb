@@ -4,7 +4,6 @@ module Budgets
       before_action :authenticate_user!
       before_action :load_budget
       before_action :load_ballot
-      before_action :load_tag_cloud
       before_action :load_categories
       before_action :load_investments
 
@@ -60,10 +59,6 @@ module Budgets
 
         def load_heading
           @heading = @investment.heading
-        end
-
-        def load_tag_cloud
-          @tag_cloud = TagCloud.new(Budget::Investment, params[:search])
         end
 
         def load_categories
