@@ -5,6 +5,10 @@ class Proposals::ProposalComponent < ApplicationComponent
     @proposal = proposal
   end
 
+  def proposal_json
+    proposal.as_json(only: [], methods: fields)
+  end
+
   private
 
     def fields
