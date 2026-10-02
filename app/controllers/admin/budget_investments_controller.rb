@@ -110,7 +110,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       attributes = [:external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :selected,
                     :milestone_tag_list, valuator_ids: [], valuator_group_ids: []]
-      [*attributes, translation_params(Budget::Investment)]
+      [*attributes, *translation_params(Budget::Investment)]
     end
 
     def load_budget
