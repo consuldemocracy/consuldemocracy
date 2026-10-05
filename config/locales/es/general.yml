@@ -949,9 +949,6 @@ es:
         more:
           one: "Una etiqueta más"
           other: "%{count} etiquetas más"
-  machine_learning:
-    comments_summary: "Resumen de comentarios"
-    info_text: "Contenido generado mediante IA / Machine Learning"
   cookies_consent:
     accept_all_cookies: "Aceptar todo"
     accept_essential_cookies: "Aceptar cookies esenciales"

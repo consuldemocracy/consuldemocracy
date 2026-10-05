@@ -24,7 +24,6 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.valuation_comment_notification
       feature.graphql_api
       feature.sdg
-      feature.machine_learning
       feature.remove_investments_supports
       feature.gdpr.require_consent_for_notifications
       feature.gdpr.require_consent_for_embedded_videos

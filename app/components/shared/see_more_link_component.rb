@@ -1,10 +1,15 @@
 class Shared::SeeMoreLinkComponent < ApplicationComponent
   attr_reader :record, :association_name, :limit
 
-  def initialize(record, association_name, limit: nil)
+  def initialize(record, association_name, i18n_namespace: nil, limit: nil)
     @record = record
     @association_name = association_name
+    @i18n_namespace = i18n_namespace
     @limit = limit
+  end
+
+  def i18n_namespace
+    @i18n_namespace ||= association_name.to_s.tr("_", ".")
   end
 
   private
@@ -25,10 +30,6 @@ class Shared::SeeMoreLinkComponent < ApplicationComponent
       return 0 unless limit
 
       record.send(association_name).size - limit
-    end
-
-    def i18n_namespace
-      association_name.to_s.tr("_", ".")
     end
 
     def html_class

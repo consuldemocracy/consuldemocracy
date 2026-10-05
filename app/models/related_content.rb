@@ -21,8 +21,6 @@ class RelatedContent < ApplicationRecord
   after_create :create_author_score
 
   scope :not_hidden, -> { where(hidden_at: nil) }
-  scope :from_users, -> { where(machine_learning: false) }
-  scope :from_machine_learning, -> { where(machine_learning: true) }
   scope :for_proposals, -> do
     where(parent_relationable_type: "Proposal", child_relationable_type: "Proposal")
   end
@@ -62,7 +60,6 @@ class RelatedContent < ApplicationRecord
       related_content = RelatedContent.create!(opposite_related_content: self,
                                                parent_relationable: child_relationable,
                                                child_relationable: parent_relationable,
-                                               machine_learning: machine_learning,
                                                author: author)
       self.opposite_related_content = related_content
     end
