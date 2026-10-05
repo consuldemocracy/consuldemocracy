@@ -86,7 +86,6 @@ fa:
         one: "حاوی اصطلاح%{search_term}"
         other: "حاوی اصطلاح%{search_term}"
     sessions:
-      signed_out: با موفقیت خارج شد
       signed_out_managed_user: شما با موفقیت خارج شده اید
     username_label: نام کاربری
     users:

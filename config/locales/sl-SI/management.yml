@@ -91,7 +91,6 @@ sl:
       print:
         print_button: Natisni
     sessions:
-      signed_out: Uspešno izpisan/-a.
       signed_out_managed_user: Uporabniška seja uspešno izpisana.
     username_label: Uporabniško ime
     users:

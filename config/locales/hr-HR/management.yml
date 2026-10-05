@@ -100,7 +100,6 @@ hr:
         few: " sadrži termine '%{search_term}'"
         other: " sadrži termine '%{search_term}'"
     sessions:
-      signed_out: Uspješna odjava.
       signed_out_managed_user: Korisnička sjednica je uspješno odjavljena.
     username_label: Korisničko ime
     users:

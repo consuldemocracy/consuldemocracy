@@ -75,7 +75,6 @@ id:
       search_results:
         other: " mengandung istilah '%{search_term}'"
     sessions:
-      signed_out: Berhasil keluar.
       signed_out_managed_user: Sesi pengguna berhasil ditandatangani.
     username_label: Nama pengguna
     users:

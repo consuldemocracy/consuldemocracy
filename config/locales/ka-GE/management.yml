@@ -99,7 +99,6 @@ ka:
         one: " შეიცავს საძიებო სიტყვას '%{search_term}'"
         other: " შეიცავს საძიებო სიტყვას '%{search_term}'"
     sessions:
-      signed_out: წარმატებით გამოხვედით.
       signed_out_managed_user: მომხმარებლის სესია წარმატებით დამთავრდა.
     username_label: მომხმარებლის სახელი
     users:

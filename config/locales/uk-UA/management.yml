@@ -101,7 +101,6 @@ uk-UA:
         many: " містить термін '%{search_term}'"
         other: " містить термін '%{search_term}'"
     sessions:
-      signed_out: Вихід здійснено.
       signed_out_managed_user: Сеанс користування завершено.
     username_label: Ім'я користувача
     users:
