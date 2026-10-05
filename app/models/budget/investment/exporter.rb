@@ -1,15 +1,10 @@
 class Budget::Investment::Exporter
   include CsvExporter
-  include JsonExporter
 
   attr_reader :records
 
   def initialize(investments)
     @records = investments
-  end
-
-  def model
-    Budget::Investment
   end
 
   private
@@ -65,13 +60,5 @@ class Budget::Investment::Exporter
       else
         I18n.t(price_string)
       end
-    end
-
-    def json_values(investment)
-      {
-        id: investment.id,
-        title: investment.title,
-        description: strip_tags(investment.description)
-      }
     end
 end

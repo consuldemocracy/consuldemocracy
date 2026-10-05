@@ -27,8 +27,7 @@ class Admin::MenuComponent < ApplicationComponent
         profiles_links,
         stats_link,
         settings_links,
-        dashboard_links,
-        (machine_learning_link if ::MachineLearning.enabled?)
+        dashboard_links
       ]
     end
 
@@ -555,15 +554,6 @@ class Admin::MenuComponent < ApplicationComponent
           administrator_tasks_link
         )
       end
-    end
-
-    def machine_learning_link
-      [
-        t("admin.menu.machine_learning"),
-        admin_machine_learning_path,
-        controller_name == "machine_learning",
-        class: "ml-link"
-      ]
     end
 
     def administrator_tasks_link
