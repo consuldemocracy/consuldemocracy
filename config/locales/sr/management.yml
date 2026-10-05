@@ -100,7 +100,6 @@ sr:
         few: " садржи термине%{search_term}"
         other: " садржи термине%{search_term}"
     sessions:
-      signed_out: Успешно сте се одјавили.
       signed_out_managed_user: Успешно сте се одјавили са корисничке сесије.
     username_label: Корисничко име
     users:

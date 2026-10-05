@@ -99,7 +99,6 @@ ru:
         many: " содержащие термин '%{search_term}'"
         other: " содержащие термин '%{search_term}'"
     sessions:
-      signed_out: Успешно вышли.
       signed_out_managed_user: Пользователь успешно вышел из сессии.
     username_label: Имя пользователя
     users:

@@ -100,7 +100,6 @@ fr:
         other: " contenant les termes  '%{search_term}'"
     sessions:
       need_managed_user: Pour effectuer cette action, vous devez sélectionner un utilisateur
-      signed_out: Déconnecté avec succès.
       signed_out_managed_user: Session utilisateur déconnectée avec succès.
     username_label: Nom d'utilisateur
     users:

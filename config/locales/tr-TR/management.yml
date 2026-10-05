@@ -103,7 +103,6 @@ tr:
         other: " '%{search_term} terimi geçen"
     sessions:
       need_managed_user: Bu işlemi yapmak için bir kullanıcı seçmelisiniz
-      signed_out: Oturumunuz kapatıldı.
       signed_out_managed_user: Kullanıcı oturumu kapatıldı.
     username_label: Kullanıcı adı
     users:

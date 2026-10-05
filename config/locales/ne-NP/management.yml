@@ -100,7 +100,6 @@ ne:
         other: "शब्द '%{search_term}' समावेश भएको"
     sessions:
       need_managed_user: यो कार्य गर्नको लागि तपाईंले प्रयोगकर्ता चयन गर्नुपर्छ
-      signed_out: सफलतापूर्वक साइन आउट गरियो।
       signed_out_managed_user: प्रयोगकर्ता सत्र सफलतापूर्वक साइन आउट भयो।
     username_label: प्रयोगकर्ता नाम
     users:

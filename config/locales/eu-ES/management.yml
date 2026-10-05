@@ -97,7 +97,6 @@ eu:
         one: " '%{search_term}' hitza dauka"
         other: " '%{search_term}' hitza dauka"
     sessions:
-      signed_out: Saioa ondo itxi duzu.
       signed_out_managed_user: Erabiltzaile saioa ondo itxi da.
     username_label: Erabiltzaile izena
     users:
