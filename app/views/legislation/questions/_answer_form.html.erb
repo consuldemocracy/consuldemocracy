@@ -17,7 +17,7 @@
     <form class="controls-stacked disabled">
       <% question.question_options.each do |question_option| %>
         <label class="control radio <%= "is-active" if answer.persisted? && (answer.legislation_question_option_id == question_option.id) %>">
-          <input id="quiz-1" name="radio" type="radio" disabled="true">
+          <input id="quiz-1" name="radio" type="radio" disabled>
           <span class="control-indicator"></span>
           <%= question_option.value %>
         </label>
