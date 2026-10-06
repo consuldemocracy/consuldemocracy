@@ -8,7 +8,7 @@ class Shared::TagListComponent < ApplicationComponent
   end
 
   def render?
-    taggable.tags_list.any?
+    taggable.tags.any?
   end
 
   private
@@ -27,7 +27,7 @@ class Shared::TagListComponent < ApplicationComponent
     end
 
     def see_more_link
-      render Shared::SeeMoreLinkComponent.new(taggable, :tags_list, limit: limit)
+      render Shared::SeeMoreLinkComponent.new(taggable, :tags, limit: limit)
     end
 
     def taggables_path(taggable, tag_name)
@@ -37,9 +37,5 @@ class Shared::TagListComponent < ApplicationComponent
       else
         polymorphic_path(taggable.class, search: tag_name)
       end
-    end
-
-    def machine_learning?
-      Tag.machine_learning?
     end
 end

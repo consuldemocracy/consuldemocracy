@@ -5,6 +5,6 @@ module SiteCustomizationHelper
 
   def information_texts_tabs
     [:basic, :debates, :community, :proposals, :polls, :legislation, :budgets, :layouts, :mailers,
-     :management, :welcome, :machine_learning]
+     :management, :welcome]
   end
 end

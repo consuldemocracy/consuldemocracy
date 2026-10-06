@@ -56,10 +56,6 @@ FactoryBot.define do
       parent_relationable factory: :budget_investment
       child_relationable factory: :budget_investment
     end
-
-    trait :from_machine_learning do
-      machine_learning { true }
-    end
   end
 
   factory :related_content_score do

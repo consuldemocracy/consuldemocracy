@@ -13,13 +13,7 @@ module Relationable
   end
 
   def relationed_contents
-    if MachineLearning.enabled? && Setting["machine_learning.related_content"].present?
-      related_content = related_contents.not_hidden.order(machine_learning_score: :desc)
-    else
-      related_content = related_contents.not_hidden.from_users
-    end
-
-    related_content.map(&:child_relationable).reject do |related|
+    related_contents.not_hidden.map(&:child_relationable).reject do |related|
       related.respond_to?(:retired?) && related.retired?
     end
   end

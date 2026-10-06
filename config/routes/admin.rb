@@ -300,11 +300,6 @@ namespace :admin do
       resources :imports, only: [:new, :create, :show]
     end
 
-    resource :machine_learning, controller: :machine_learning, only: [:show] do
-      post :execute, on: :collection
-      delete :cancel, on: :collection
-    end
-
     namespace :cookies do
       resources :vendors, except: [:index, :show]
     end
