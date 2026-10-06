@@ -32,6 +32,16 @@ linter:
     #   true:  start from every rule, including the ones off by default
     all:
       enabled: false
+    a11y-disabled-attribute:
+      enabled: true
+    a11y-nested-interactive-elements:
+      enabled: true
+    a11y-no-aria-label-misuse:
+      enabled: true
+    a11y-no-aria-unsupported-elements:
+      enabled: true
+    a11y-svg-has-accessible-text:
+      enabled: true
     actionview-no-implicit-partial:
       enabled: true
       exclude:
