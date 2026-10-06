@@ -11,7 +11,9 @@
       </tr>
     </thead>
     <tbody>
-      <%= render @local_census_records %>
+      <% @local_census_records.each do |local_census_record| %>
+        <%= render "local_census_record", local_census_record: local_census_record %>
+      <% end %>
     </tbody>
   </table>
 

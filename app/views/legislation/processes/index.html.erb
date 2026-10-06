@@ -11,7 +11,9 @@
 
     <div id="legislation-list">
       <% if @processes.any? %>
-        <%= render @processes %>
+        <% @processes.each do |process| %>
+          <%= render "process", process: process %>
+        <% end %>
         <%= paginate @processes %>
       <% else %>
         <div class="callout primary margin-top">

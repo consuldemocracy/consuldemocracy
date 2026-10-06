@@ -16,7 +16,9 @@
               <p><%= t("legislation.processes.debate.empty_questions") %></p>
             </div>
           <% else %>
-            <%= render @process.questions %>
+            <% @process.questions.each do |question| %>
+              <%= render "legislation/questions/question", question: question %>
+            <% end %>
           <% end %>
         </div>
       </div>

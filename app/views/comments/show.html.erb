@@ -8,7 +8,7 @@
 <section class="comments">
   <div class="row">
     <div id="comments" class="small-12 column">
-      <%= render @comment %>
+      <%= render Comments::CommentComponent.new(@comment) %>
     </div>
   </div>
 </section>
