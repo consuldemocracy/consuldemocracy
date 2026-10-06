@@ -49,6 +49,8 @@ linter:
       enabled: true
     actionview-prefer-link-to-helper:
       enabled: true
+    erb-no-unused-block-argument:
+      enabled: true
 
 formatter:
   enabled: true
