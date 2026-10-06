@@ -169,13 +169,69 @@ linter:
       enabled: true
     html-anchor-require-href:
       enabled: false # TODO: fix and enable
+    html-aria-attribute-must-be-valid:
+      enabled: true
+    html-aria-label-is-well-formatted:
+      enabled: true
+    html-aria-level-must-be-valid:
+      enabled: true
+    html-aria-role-heading-requires-level:
+      enabled: true
+    html-aria-role-must-be-valid:
+      enabled: true
+    html-attribute-double-quotes:
+      enabled: true
+    html-attribute-equals-spacing:
+      enabled: true
+    html-attribute-name-valid-characters:
+      enabled: true
     html-attribute-values-require-quotes:
+      enabled: true
+    html-avoid-both-disabled-and-aria-disabled:
+      enabled: true
+    html-body-only-elements:
       enabled: true
     html-boolean-attributes-no-value:
       enabled: true
+    html-details-has-summary:
+      enabled: true
+    html-iframe-has-title:
+      enabled: true
     html-img-require-alt:
       enabled: true
+    html-no-abstract-roles:
+      enabled: true
+    html-no-aria-hidden-on-body:
+      enabled: true
+    html-no-aria-hidden-on-focusable:
+      enabled: true
+    html-no-block-inside-inline:
+      enabled: true
+    html-no-duplicate-attributes:
+      enabled: true
+    html-no-duplicate-meta-names:
+      enabled: true
     html-no-empty-attributes:
+      enabled: true
+    html-no-empty-css-rule:
+      enabled: true
+    html-no-empty-headings:
+      enabled: true
+    html-no-event-handler-attributes:
+      enabled: true
+    html-no-inline-script-elements:
+      enabled: true
+      exclude:
+        - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    html-no-literal-nbsp:
+      enabled: true
+    html-no-nested-forms:
+      enabled: true
+    html-no-nested-links:
+      enabled: true
+    html-no-obsolete-tags:
+      enabled: true
+    html-no-positive-tab-index:
       enabled: true
     html-no-self-closing:
       enabled: true
@@ -185,6 +241,18 @@ linter:
       enabled: true
       exclude:
         - "public/**/*"
+    html-no-underscores-in-attribute-names:
+      enabled: true
+    html-no-unknown-tag:
+      enabled: true
+    html-require-closing-tags:
+      enabled: true
+    html-require-script-nonce:
+      enabled: true
+      exclude:
+        - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    html-tag-name-lowercase:
+      enabled: true
     parser-no-errors:
       enabled: true
     source-indentation:
