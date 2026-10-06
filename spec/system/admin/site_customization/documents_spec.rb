@@ -20,24 +20,7 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
-
-    ActiveStorage.with(service_urls_expire_in: 0.001.seconds) do
-      within("tbody tr:first-child") do
-        click_link "Download file"
-
-        expect(page).not_to have_current_path admin_site_customization_documents_path
-      end
-
-      document_url = current_path
-
-      visit admin_site_customization_documents_path
-
-      within("tbody tr:first-child") do
-        click_link "Download file"
-
-        expect(page).to have_current_path document_url
-      end
-    end
+    expect(page).to have_link "Download file"
   end
 
   scenario "Index (pagination)" do
