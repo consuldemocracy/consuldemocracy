@@ -51,6 +51,8 @@ linter:
       enabled: true
     erb-no-unused-block-argument:
       enabled: true
+    erb-no-unused-local-variable:
+      enabled: true
     erb-prefer-each-over-map:
       enabled: true
 
