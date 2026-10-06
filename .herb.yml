@@ -61,6 +61,8 @@ linter:
       enabled: true
     html-attribute-values-require-quotes:
       enabled: true
+    html-boolean-attributes-no-value:
+      enabled: true
 
 formatter:
   enabled: true
