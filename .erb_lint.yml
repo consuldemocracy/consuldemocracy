@@ -4,49 +4,12 @@ exclude:
   - '**/vendor/**/*'
   - 'lib/capistrano/templates/*'
 linters:
-  AllowedScriptType:
-    enabled: true
-  ClosingErbTagIndent:
-    enabled: true
-  CommentSyntax:
-    enabled: true
-  ErbSafety:
-    enabled: true
-    exclude:
-      - app/components/budgets/investments/content_blocks_component.html.erb
-      - app/components/layout/cookies_consent/vendors/scripts_component.html.erb
-      - app/components/layout/legal_links_component.html.erb
-      - app/components/layout/social_component.html.erb
-      - app/components/layout/subnavigation_component.html.erb
-      - app/components/layout/top_links_component.html.erb
-      - app/views/admin/site_customization/content_blocks/index.html.erb
-      - app/views/layouts/application.html.erb
-      - app/views/layouts/dashboard.html.erb
-      - app/views/layouts/devise.html.erb
-  ExtraNewline:
-    enabled: true
-  FinalNewline:
-    enabled: true
   HardCodedString:
     enabled: true
     exclude:
       - app/views/mailer/proposal_notification_digest.html.erb
       - app/views/**/*.js.erb
       - app/views/**/*.json.erb
-  NoJavascriptTagHelper:
-    enabled: true
-  ParserErrors:
-    enabled: true
-  RightTrim:
-    enabled: true
-  SpaceAroundErbTag:
-    enabled: true
-  SpaceIndentation:
-    enabled: true
-  SpaceInHtmlTag:
-    enabled: true
-  TrailingWhitespace:
-    enabled: true
   Rubocop:
     enabled: true
     rubocop_config:
