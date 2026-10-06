@@ -37,6 +37,12 @@ linter:
       exclude:
         - "app/components/admin/allowed_table_actions_component.html.erb"
         - "app/components/admin/budgets/table_actions_component.html.erb"
+    actionview-no-implicit-polymorphic-url:
+      enabled: true
+      exclude:
+        - "app/components/documents/document_component.html.erb"
+        - "app/components/polls/gallery_component.html.erb"
+        - "app/views/admin/milestones/_milestones.html.erb"
 
 formatter:
   enabled: true
