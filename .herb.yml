@@ -69,6 +69,8 @@ linter:
       enabled: true
       exclude:
         - "app/components/relationable/related_list_component.html.erb"
+    html-no-empty-attributes:
+      enabled: true
 
 formatter:
   enabled: false
