@@ -4,7 +4,7 @@
   <div class="quiz-header row small-collapse">
     <div class="quiz-title">
       <p class="quiz-header-title"><%= t("legislation.questions.show.title") %></p>
-      <strong><%= link_to @process.title, @process %></strong>
+      <strong><%= link_to @process.title, legislation_process_path(@process) %></strong>
     </div>
     <div class="quiz-next">
       <% if @question.next_question_id %>

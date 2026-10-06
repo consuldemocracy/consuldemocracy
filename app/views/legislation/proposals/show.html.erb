@@ -16,7 +16,7 @@
       <p class="process-title">
         <strong><%= t("legislation.proposals.process_title") %></strong>
       </p>
-      <%= link_to @process.title, @process, class: "process-link" %>
+      <%= link_to @process.title, legislation_process_path(@process), class: "process-link" %>
     </div>
   </div>
 </div>
