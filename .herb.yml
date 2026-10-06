@@ -65,6 +65,8 @@ linter:
       enabled: true
     html-img-require-alt:
       enabled: true
+    html-no-empty-attributes:
+      enabled: true
 
 formatter:
   enabled: true
