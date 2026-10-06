@@ -65,15 +65,49 @@ linter:
       enabled: true
     actionview-prefer-link-to-helper:
       enabled: true
+    erb-closing-tag-indent:
+      enabled: true
+    erb-comment-syntax:
+      enabled: true
     erb-no-duplicate-branch-elements:
       enabled: true
       exclude:
         - "app/components/polls/results/question_component.html.erb"
+    erb-no-extra-newline:
+      enabled: true
+    erb-no-javascript-tag-helper:
+      enabled: true
+    erb-no-statement-in-script:
+      enabled: true
+      exclude:
+        - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    erb-no-trailing-whitespace:
+      enabled: true
+    erb-no-unsafe-raw:
+      enabled: true
+      exclude:
+        - "app/components/budgets/investments/content_blocks_component.html.erb"
+        - "app/components/layout/legal_links_component.html.erb"
+        - "app/components/layout/social_component.html.erb"
+        - "app/components/layout/subnavigation_component.html.erb"
+        - "app/components/layout/top_links_component.html.erb"
+        - "app/views/admin/site_customization/content_blocks/index.html.erb"
+        - "app/views/layouts/application.html.erb"
+        - "app/views/layouts/dashboard.html.erb"
+        - "app/views/layouts/devise.html.erb"
     erb-no-unused-block-argument:
       enabled: true
     erb-no-unused-local-variable:
       enabled: true
     erb-prefer-each-over-map:
+      enabled: true
+    erb-require-trailing-newline:
+      enabled: true
+    erb-require-whitespace-inside-tags:
+      enabled: true
+    erb-right-trim:
+      enabled: true
+    html-allowed-script-type:
       enabled: true
     html-attribute-values-require-quotes:
       enabled: true
@@ -85,10 +119,16 @@ linter:
       enabled: true
     html-no-self-closing:
       enabled: true
+    html-no-space-in-tag:
+      enabled: true
     html-no-style-elements:
       enabled: true
       exclude:
         - "public/**/*"
+    parser-no-errors:
+      enabled: true
+    source-indentation:
+      enabled: true
 
 formatter:
   enabled: true
