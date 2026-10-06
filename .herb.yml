@@ -1,0 +1,40 @@
+version: 0.11.0
+
+# Framework and template engine configuration
+#
+# Options: ruby | actionview | hanami | sinatra (default: ruby)
+framework: actionview
+
+# Options: erubi | erb | herb (default: erubi)
+template_engine: herb
+
+engine:
+  validators:
+    security: true
+    nesting: true
+    accessibility: true
+
+linter:
+  enabled: true
+  # Exit with error code when diagnostics of this severity or higher are present
+  # Valid values: error (default), warning, info, hint
+  failLevel: hint
+
+  # Only report diagnostics of this severity or higher
+  # Affects the CLI output only: lower-severity offenses are still counted in the
+  # summary and still show up in your editor, they just aren't printed or
+  # annotated in CI. Valid values: error, warning, info, hint (default)
+  # logLevel: warning
+
+  rules:
+    # The 'all' pseudo rule sets the default for every rule you don't list.
+    #   false: start from an empty set and opt back in explicitly
+    #   true:  start from every rule, including the ones off by default
+    all:
+      enabled: false
+
+formatter:
+  enabled: true
+  indentWidth: 2
+  indentStyle: space
+  maxLineLength: 110
