@@ -63,6 +63,8 @@ linter:
       enabled: true
     html-boolean-attributes-no-value:
       enabled: true
+    html-img-require-alt:
+      enabled: true
 
 formatter:
   enabled: true
