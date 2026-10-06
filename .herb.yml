@@ -32,6 +32,11 @@ linter:
     #   true:  start from every rule, including the ones off by default
     all:
       enabled: false
+    actionview-no-implicit-partial:
+      enabled: true
+      exclude:
+        - "app/components/admin/allowed_table_actions_component.html.erb"
+        - "app/components/admin/budgets/table_actions_component.html.erb"
 
 formatter:
   enabled: true
