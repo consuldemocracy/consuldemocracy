@@ -65,6 +65,10 @@ linter:
       enabled: true
     html-img-require-alt:
       enabled: true
+    html-no-duplicate-ids:
+      enabled: true
+      exclude:
+        - "app/components/relationable/related_list_component.html.erb"
 
 formatter:
   enabled: false
