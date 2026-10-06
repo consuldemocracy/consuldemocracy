@@ -26,14 +26,16 @@ Billy.configure do |config|
   config.non_whitelisted_requests_disabled = true
 end
 
-module Axe
-  module Matchers
-    class BeAxeClean
-      def audit(page)
-        @audit ||= Core.new(page).call(@run).tap do |audit|
-          audit.results.violations.select! { |violation| [:critical, :serious].include?(violation.impact) }
-        end
-      end
+module CapybaraAccessibilityAudit
+  class AxeAuditor
+    def audit(**options)
+      settle
+      install
+
+      results = run(options)
+      results[:violations].select! { |violation| %w[critical serious].include?(violation[:impact]) }
+
+      @reporter.report Axe::API::Results.new(results)
     end
   end
 end
