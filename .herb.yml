@@ -42,6 +42,8 @@ linter:
       enabled: true
     a11y-svg-has-accessible-text:
       enabled: true
+    actionview-no-content-argument-with-block:
+      enabled: true
     actionview-no-implicit-partial:
       enabled: true
       exclude:
@@ -53,9 +55,13 @@ linter:
         - "app/components/documents/document_component.html.erb"
         - "app/components/polls/gallery_component.html.erb"
         - "app/views/admin/milestones/_milestones.html.erb"
+    actionview-no-render-option-shadowing:
+      enabled: true
     actionview-no-silent-helper:
       enabled: true
     actionview-no-silent-render:
+      enabled: true
+    actionview-no-void-element-content:
       enabled: true
     actionview-prefer-link-to-helper:
       enabled: true
