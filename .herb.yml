@@ -69,18 +69,66 @@ linter:
       enabled: true
     erb-comment-syntax:
       enabled: true
+    erb-no-byte-order-mark:
+      enabled: true
+    erb-no-case-node-children:
+      enabled: true
+    erb-no-class-definitions:
+      enabled: true
+    erb-no-commented-out-output-tags:
+      enabled: true
+    erb-no-conditional-html-element:
+      enabled: true
+    erb-no-conditional-open-tag:
+      enabled: true
+    erb-no-debug-output:
+      enabled: true
     erb-no-duplicate-branch-elements:
       enabled: true
       exclude:
         - "app/components/polls/results/question_component.html.erb"
+    erb-no-empty-control-flow:
+      enabled: true
+    erb-no-empty-tags:
+      enabled: true
     erb-no-extra-newline:
       enabled: true
+    erb-no-extra-whitespace-inside-tags:
+      enabled: true
+    erb-no-inline-case-conditions:
+      enabled: true
     erb-no-javascript-tag-helper:
+      enabled: true
+    erb-no-method-definitions:
+      enabled: true
+    erb-no-module-definitions:
+      enabled: true
+    erb-no-multiple-statements:
+      enabled: true
+    erb-no-output-control-flow:
+      enabled: true
+    erb-no-output-in-attribute-name:
+      enabled: true
+      exclude:
+        - "app/views/layouts/application.html.erb"
+        - "app/views/layouts/dashboard.html.erb"
+        - "app/views/layouts/mailer.html.erb"
+    erb-no-raw-output-in-attribute-value:
+      enabled: true
+    erb-no-return:
+      enabled: true
+    erb-no-shadowed-block-argument:
+      enabled: true
+    erb-no-silent-tag-in-attribute-name:
+      enabled: true
+    erb-no-sleep:
       enabled: true
     erb-no-statement-in-script:
       enabled: true
       exclude:
         - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    erb-no-then-in-control-flow:
+      enabled: true
     erb-no-trailing-whitespace:
       enabled: true
     erb-no-unsafe-raw:
@@ -95,11 +143,21 @@ linter:
         - "app/views/layouts/application.html.erb"
         - "app/views/layouts/dashboard.html.erb"
         - "app/views/layouts/devise.html.erb"
+    erb-no-unsafe-script-interpolation:
+      enabled: true
     erb-no-unused-block-argument:
+      enabled: true
+    erb-no-unused-literals:
       enabled: true
     erb-no-unused-local-variable:
       enabled: true
+    erb-prefer-do-end-blocks:
+      enabled: true
     erb-prefer-each-over-map:
+      enabled: true
+    erb-prefer-image-tag-helper:
+      enabled: true
+    erb-require-template-format:
       enabled: true
     erb-require-trailing-newline:
       enabled: true
