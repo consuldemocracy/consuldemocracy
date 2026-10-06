@@ -47,6 +47,8 @@ linter:
       enabled: true
     actionview-no-silent-render:
       enabled: true
+    actionview-prefer-link-to-helper:
+      enabled: true
 
 formatter:
   enabled: true
