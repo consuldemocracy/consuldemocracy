@@ -578,6 +578,9 @@ sv:
   polls:
     dates: "Från %{open_at} till %{closed_at}"
     final_date: "Slutresultat"
+    questions_count:
+      one: "Den här omröstningen har 1 fråga."
+      other: "Den här omröstningen har %{count} frågor."
     form:
       vote: "Rösta"
       maximum_exceeded: "du har valt %{given} svar, men det mesta du kan välja är %{maximum}"
