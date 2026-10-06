@@ -43,6 +43,10 @@ linter:
         - "app/components/documents/document_component.html.erb"
         - "app/components/polls/gallery_component.html.erb"
         - "app/views/admin/milestones/_milestones.html.erb"
+    actionview-no-silent-helper:
+      enabled: true
+    actionview-no-silent-render:
+      enabled: true
 
 formatter:
   enabled: true
