@@ -13,7 +13,9 @@
     </ul>
 
     <ul class="no-bullet clear notifications-list">
-      <%= render @notifications %>
+      <% @notifications.each do |notification| %>
+        <%= render "notification", notification: notification %>
+      <% end %>
     </ul>
   </div>
 </div>

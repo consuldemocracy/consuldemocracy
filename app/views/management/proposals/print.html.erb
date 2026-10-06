@@ -18,7 +18,9 @@
       </div>
     </div>
 
-    <%= render @proposals %>
+    <% @proposals.each do |proposal| %>
+      <%= render "proposal", proposal: proposal %>
+    <% end %>
 
     <div class="for-print-only">
       <p><strong><%= t("management.print.proposals_info") %></strong></p>
