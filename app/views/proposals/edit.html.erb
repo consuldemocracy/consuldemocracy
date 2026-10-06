@@ -4,7 +4,7 @@
     <%= back_link_to %>
 
     <div class="float-right">
-      <%= link_to t("proposals.edit.show_link"), @proposal %>
+      <%= link_to t("proposals.edit.show_link"), proposal_path(@proposal) %>
     </div>
 
     <h1><%= t("proposals.edit.editing") %></h1>

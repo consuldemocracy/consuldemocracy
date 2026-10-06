@@ -13,7 +13,7 @@
     <% @signature_sheets.each do |signature_sheet| %>
       <tr id="<%= dom_id(signature_sheet) %>" class="signature_sheet">
         <td>
-          <%= link_to signature_sheet.name, [:admin, signature_sheet] %>
+          <%= link_to signature_sheet.name, admin_signature_sheet_path(signature_sheet) %>
         </td>
         <td>
           <%= signature_sheet.author.name %>
