@@ -622,6 +622,7 @@
           .comment-actions {
             .cancel-comment {
               color: #87a3b9;
+              cursor: pointer;
               display: inline-block;
               font-size: $small-font-size;
               text-decoration: underline;

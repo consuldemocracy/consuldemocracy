@@ -14,7 +14,7 @@
           <%= f.text_area :text %>
 
           <div class="comment-actions">
-            <a class="cancel-comment" href="#" data-cancel-annotation><%= t("legislation.annotations.comments.cancel") %></a>
+            <%= button_tag t("legislation.annotations.comments.cancel"), type: "button", class: "cancel-comment" %>
             <%= f.submit value: t("legislation.annotations.comments.publish_comment"), class: "button publish-comment" %>
           </div>
 
