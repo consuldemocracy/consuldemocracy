@@ -54,10 +54,9 @@
         App.Comments.toggle_form($(this).data().id);
       });
 
-      $("body").on("click", ".js-toggle-children", function() {
+      $("body").on("click", ".toggle-children", function() {
         $(this).closest(".comment").find(".comment-list:first").toggle("slow");
         $(this).closest(".responses-count").toggleClass("collapsed");
-        return false;
       });
     }
   };
