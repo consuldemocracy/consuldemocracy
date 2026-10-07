@@ -9,12 +9,21 @@ class Comments::StatusBarComponent < ApplicationComponent
 
   private
 
-    def link_text
+    def button_text
       if comment.present?
         t("comments_helper.reply_link")
       else
         t("comments_helper.comment_link")
       end
+    end
+
+    def button_attributes
+      {
+        type: "button",
+        class: "add-comment",
+        "aria-expanded": false,
+        data: { id: dom_id(comment) }
+      }
     end
 
     def can_comment?

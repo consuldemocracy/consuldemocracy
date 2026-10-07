@@ -69,7 +69,7 @@ shared_examples "notifiable in-app" do |factory_name|
       login_as(user)
       visit path_for(notifiable)
 
-      within("#comment_#{comment.id}_reply") { click_link "Reply" }
+      within("#comment_#{comment.id}_reply") { click_button "Reply" }
       within "#js-comment-form-comment_#{comment.id}" do
         fill_in comment_body(notifiable), with: "Reply number #{n}"
         click_button "Publish reply"
