@@ -454,7 +454,7 @@ describe "Legislation Draft Versions" do
       login_as(administrator)
 
       visit path
-      click_link "Launch text editor"
+      click_button "Launch text editor"
 
       expect(page).to have_table
       expect(page).to have_content "Roberta"
