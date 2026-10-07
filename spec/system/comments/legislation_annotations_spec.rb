@@ -48,7 +48,7 @@ describe "Commenting legislation annotations" do
         first(:link, "0 replies").click
       end
 
-      click_link "Reply"
+      click_button "Reply"
 
       within "#js-comment-form-comment_#{comment1.id}" do
         fill_in "Leave your comment", with: "replying in single annotation thread"
@@ -81,7 +81,7 @@ describe "Commenting legislation annotations" do
       click_link "2 comment"
 
       within("#comment_#{comment2.id}") do
-        click_link "Reply"
+        click_button "Reply"
       end
 
       within "#js-comment-form-comment_#{comment2.id}" do

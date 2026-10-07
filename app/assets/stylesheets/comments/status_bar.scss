@@ -34,10 +34,14 @@
   }
 
   .flag-actions,
-  .js-add-comment-link {
+  .add-comment {
     &::before {
       @include vertical-separator($color: $text-light);
       opacity: 1;
     }
+  }
+
+  .add-comment {
+    @include link;
   }
 }
