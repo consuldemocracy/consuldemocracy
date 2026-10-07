@@ -55,7 +55,7 @@ describe "Public area translatable records" do
 
     scenario "Add only single translation at once not having the current locale" do
       visit new_proposal_path
-      click_link "Remove language"
+      click_button "Remove language"
       select "Français", from: "Add language"
 
       fill_in_new_proposal_title with: "Titre en Français"
@@ -70,7 +70,7 @@ describe "Public area translatable records" do
       budget = create(:budget_heading, name: "Everywhere").group.budget
 
       visit new_budget_investment_path(budget)
-      click_link "Remove language"
+      click_button "Remove language"
       select "Português brasileiro", from: "Add language"
       fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
@@ -95,7 +95,7 @@ describe "Public area translatable records" do
       budget = create(:budget_heading, name: "Everywhere").group.budget
 
       visit new_budget_investment_path(budget)
-      click_link "Remove language"
+      click_button "Remove language"
 
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
@@ -132,7 +132,7 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(create(:budget))
 
       expect(find("#select_language").value).to eq "en"
-      click_link "Remove language"
+      click_button "Remove language"
 
       expect_not_to_have_language("English")
     end
@@ -155,7 +155,7 @@ describe "Public area translatable records" do
       scenario "Decrease description count after remove a language" do
         visit new_proposal_path
 
-        click_link "Remove language"
+        click_button "Remove language"
 
         expect(page).to have_content "0 languages in use"
       end
