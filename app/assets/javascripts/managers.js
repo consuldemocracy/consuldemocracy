@@ -34,9 +34,7 @@
       $("#user_password").prop("type", type);
     },
     initialize: function() {
-      $(".generate-random-value").on("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+      $(".generate-random-value").on("click", function() {
         $("#user_password").val(App.Managers.generatePassword());
       });
       $(".show-password").on("click", function() {
