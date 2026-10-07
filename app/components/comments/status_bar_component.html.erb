@@ -4,7 +4,7 @@
   <% end %>
 
   <span class="responses-count">
-    <%= render "comments/responses_count", count: comment.children.size %>
+    <%= render Comments::ResponsesCountComponent.new(comment.children.size) %>
   </span>
 
   <% if can_comment? %>
