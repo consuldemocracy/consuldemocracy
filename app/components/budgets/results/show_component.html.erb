@@ -44,9 +44,10 @@
   </div>
 
   <div class="small-12 medium-9 large-10 column">
-    <%= link_to t("budgets.results.show_all_link"), "#",
-                class: "js-toggle-link button hollow margin-bottom float-right-medium",
-                data: { "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+    <%= button_tag t("budgets.results.show_all_link"),
+                   type: "button",
+                   class: "show-all button hollow margin-bottom float-right-medium",
+                   data: { "toggle-text" => t("budgets.results.hide_discarded_link") } %>
 
     <%= render "results_table", results_type: :compatible,
                                 title: heading.name,
