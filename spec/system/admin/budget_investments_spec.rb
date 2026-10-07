@@ -1158,7 +1158,7 @@ describe "Admin budget investments", :admin do
 
       visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
-      find(".js-add-tag-link", text: "Education").click
+      click_button "Education"
 
       click_button "Update"
 

@@ -4,7 +4,7 @@
     initialize: function() {
       var $tag_input;
       $tag_input = $("input.js-tag-list");
-      $("body").on("click", ".js-add-tag-link", function() {
+      $("body").on("click", ".add-tag", function() {
         var current_tags, name;
         name = "\"" + ($(this).text()) + "\"";
         current_tags = $tag_input.val().split(",").filter(Boolean);
@@ -14,7 +14,6 @@
           current_tags.push(name);
         }
         $tag_input.val(current_tags.join(","));
-        return false;
       });
     }
   };

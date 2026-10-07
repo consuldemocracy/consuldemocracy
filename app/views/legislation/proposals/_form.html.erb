@@ -48,7 +48,7 @@
 
       <div id="category_tags" class="tags">
         <% @process.tag_list_on(:customs).each do |tag| %>
-          <a class="js-add-tag-link"><%= tag %></a>
+          <%= button_tag tag.name, type: "button", class: "add-tag" %>
         <% end %>
       </div>
 

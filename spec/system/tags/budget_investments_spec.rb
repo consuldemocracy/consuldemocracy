@@ -89,7 +89,7 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
-    find(".js-add-tag-link", text: tag_economia.name).click
+    click_button tag_economia.name
     click_button "Create Investment"
 
     expect(page).to have_content "Budget Investment created successfully."
@@ -113,7 +113,7 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
-    find(".js-add-tag-link", text: "Education").click
+    click_button "Education"
     click_button "Create Investment"
 
     expect(page).to have_content "Budget Investment created successfully."
@@ -137,7 +137,7 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
-    find(".js-add-tag-link", text: "Education").click
+    click_button "Education"
     click_button "Create Investment"
 
     expect(page).to have_content "Budget Investment created successfully."
