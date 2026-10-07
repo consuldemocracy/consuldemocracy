@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-  App.BudgetEditAssociations = {
+  App.AdminBudgetsForm = {
     initialize: function() {
       $(".js-budget-users-list [type='checkbox']").on({
         change: function() {
