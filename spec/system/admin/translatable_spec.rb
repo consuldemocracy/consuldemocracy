@@ -80,26 +80,26 @@ describe "Admin edit translatable records", :admin do
 
         select "Français", from: "Add language"
         fill_in "Version title", with: "Titre en Français"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
         fill_in "Text", with: "Texte en Français"
-        click_link class: "fullscreen-toggle"
+        click_button "Close text editor"
         click_button "Save changes"
 
         expect(page).to have_content "Draft updated successfully"
 
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
 
         expect(page).to have_field "Text", with: "Text in English"
 
-        click_link class: "fullscreen-toggle"
+        click_button "Close text editor"
         select "Español", from: "Current language"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
 
         expect(page).to have_field "Text", with: "Texto en español"
 
-        click_link class: "fullscreen-toggle"
+        click_button "Close text editor"
         select "Français", from: "Current language"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
 
         expect(page).to have_field "Text", with: "Texte en Français"
       end
@@ -175,15 +175,15 @@ describe "Admin edit translatable records", :admin do
 
         select "Français", from: "Add language"
         fill_in "Version title", with: "Titre en Français"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
         fill_in "Text", with: ""
-        click_link class: "fullscreen-toggle"
+        click_button "Close text editor"
         click_button "Save changes"
 
         expect(page).to have_css "#error_explanation"
 
         select "Français", from: "Current language"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
 
         expect(page).to have_field "Text", with: "", class: "is-invalid-input"
       end
@@ -302,18 +302,18 @@ describe "Admin edit translatable records", :admin do
         visit edit_admin_legislation_process_draft_version_path(translatable.process, translatable)
 
         select "Español", from: "Current language"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
 
         expect(page).to have_field "Text", with: "Texto en español"
 
         fill_in "Text", with: ""
-        click_link class: "fullscreen-toggle"
+        click_button "Close text editor"
         click_button "Save changes"
 
         expect(page).to have_css "#error_explanation"
 
         select "Español", from: "Current language"
-        click_link class: "fullscreen-toggle"
+        click_button "Launch text editor"
 
         expect(page).to have_field "Text", with: ""
       end
