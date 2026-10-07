@@ -8,7 +8,7 @@
   </span>
 
   <% if can_comment? %>
-    <%= link_to(link_text, "#", class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
+    <%= button_tag(button_text, button_attributes) %>
 
     <% unless valuation %>
       <%= render Comments::ActionsComponent.new(comment) %>
