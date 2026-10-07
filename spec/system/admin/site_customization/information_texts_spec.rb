@@ -119,7 +119,7 @@ describe "Admin custom information texts", :admin do
       expect(page).to have_field "debates.index.featured_debates", with: "Destacar personalizado"
       expect(page).to have_field "debates.new.start_new", with: "Empezar un nuevo debate personalizado"
 
-      click_link "Remove language"
+      click_button "Remove language"
       click_button "Save"
 
       expect(page).to have_content "Translation updated successfully"

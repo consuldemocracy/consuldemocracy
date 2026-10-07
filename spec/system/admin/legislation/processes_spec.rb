@@ -334,7 +334,7 @@ describe "Admin collaborative legislation", :admin do
     scenario "Edit milestones summary" do
       visit admin_legislation_process_milestones_path(process)
 
-      expect(page).not_to have_link "Remove language"
+      expect(page).not_to have_button "Remove language"
       expect(page).not_to have_field "translation_locale"
 
       fill_in_ckeditor "Summary", with: "There is still a long journey ahead of us"
@@ -359,14 +359,14 @@ describe "Admin collaborative legislation", :admin do
       visit edit_admin_legislation_process_homepage_path(process)
 
       expect(page).not_to have_css "#add_language"
-      expect(page).not_to have_link "Remove language"
+      expect(page).not_to have_button "Remove language"
     end
 
     scenario "Cant manage translations on milestones summary form" do
       visit admin_legislation_process_milestones_path(process)
 
       expect(page).not_to have_css "#add_language"
-      expect(page).not_to have_link "Remove language"
+      expect(page).not_to have_button "Remove language"
     end
   end
 
