@@ -83,7 +83,6 @@
 //= require cookies
 //= require cookies_consent
 //= require columns_selector
-//= require budget_edit_associations
 //= require budget_hide_money
 //= require authenticity_token_refresh
 //= require_tree ./admin
@@ -136,6 +135,7 @@ var initialize_modules = function() {
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();
   }
+  App.AdminBudgetsForm.initialize();
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminDashboardActionsForm.initialize();
   App.AdminMachineLearningScripts.initialize();
@@ -144,7 +144,6 @@ var initialize_modules = function() {
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
-  App.BudgetEditAssociations.initialize();
   App.BudgetHideMoney.initialize();
   App.PollsForm.initialize();
   App.SDGRelatedListSelector.initialize();
