@@ -6,7 +6,7 @@
     <div id="category_tags" class="tags">
       <%= form.label :category_tag_list, tag_category_label %>
       <% categories.each do |category| %>
-        <a class="js-add-tag-link"><%= category_name(category) %></a>
+        <%= button_tag category_name(category), type: "button", class: "add-tag" %>
       <% end %>
     </div>
 
