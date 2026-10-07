@@ -55,7 +55,7 @@ describe "Account" do
 
     login_as_manager
     click_link "Reset password manually"
-    click_link "Generate random password"
+    click_button "Generate random password"
 
     new_password = find_field("user_password").value
 
