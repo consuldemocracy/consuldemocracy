@@ -48,11 +48,11 @@ module Verifications
   end
 
   def fill_in_markdown_editor(label, with:)
-    click_link "Launch text editor"
+    click_button "Launch text editor"
     fill_in label, with: with
 
     within(".fullscreen") do
-      click_link "Close text editor"
+      click_button "Close text editor"
     end
   end
 end
