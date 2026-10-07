@@ -59,6 +59,8 @@ linter:
       enabled: true
     erb-prefer-each-over-map:
       enabled: true
+    html-attribute-values-require-quotes:
+      enabled: true
 
 formatter:
   enabled: true
