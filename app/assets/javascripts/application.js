@@ -86,6 +86,7 @@
 //= require budget_hide_money
 //= require authenticity_token_refresh
 //= require_tree ./admin
+//= require_tree ./budgets
 //= require_tree ./polls
 //= require_tree ./sdg
 //= require_tree ./sdg_management
@@ -144,6 +145,7 @@ var initialize_modules = function() {
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
+  App.BudgetsResultsShow.initialize();
   App.BudgetHideMoney.initialize();
   App.PollsForm.initialize();
   App.SDGRelatedListSelector.initialize();
