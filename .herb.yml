@@ -168,7 +168,7 @@ linter:
     html-allowed-script-type:
       enabled: true
     html-anchor-require-href:
-      enabled: false # TODO: fix and enable
+      enabled: true
     html-aria-attribute-must-be-valid:
       enabled: true
     html-aria-label-is-well-formatted:
