@@ -139,7 +139,7 @@ describe "Comments" do
     expect(page).to have_content("1 response (collapse)", count: 2)
 
     within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (collapse)"
+      click_button text: "1 response (collapse)"
     end
 
     expect(page).to have_css(".comment", count: 2)
@@ -148,7 +148,7 @@ describe "Comments" do
     expect(page).not_to have_content grandchild_comment.body
 
     within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (show)"
+      click_button text: "1 response (show)"
     end
 
     expect(page).to have_css(".comment", count: 3)
@@ -156,7 +156,7 @@ describe "Comments" do
     expect(page).to have_content grandchild_comment.body
 
     within ".comment", text: parent_comment.body do
-      click_link text: "1 response (collapse)", match: :first
+      click_button text: "1 response (collapse)", match: :first
     end
 
     expect(page).to have_css(".comment", count: 1)
@@ -178,7 +178,7 @@ describe "Comments" do
 
       expect(page).to have_content("It will be done next week.")
 
-      click_link text: "1 response (collapse)"
+      click_button text: "1 response (collapse)"
 
       expect(page).not_to have_content("It will be done next week.")
     end
@@ -438,7 +438,7 @@ describe "Comments" do
     visit polymorphic_path(resource)
 
     within ".comment", text: comment.body do
-      click_link text: "1 response (collapse)"
+      click_button text: "1 response (collapse)"
       click_button "Reply"
       fill_in fill_text, with: "It will be done next week."
 
