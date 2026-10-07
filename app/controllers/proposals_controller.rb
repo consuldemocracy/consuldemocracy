@@ -22,7 +22,7 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource
   before_action :destroy_map_location_association, only: :update
 
-  respond_to :html, :js
+  respond_to :html, :js, :json
 
   def index
     @proposals = search_and_filter(Proposal.all)
@@ -52,10 +52,10 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
     if @proposal.save
-      redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
-    else
-      render :new
+      flash[:notice] = I18n.t("flash.actions.create.proposal")
     end
+
+    respond_with @proposal, location: -> { created_proposal_path(@proposal) }
   end
 
   def created; end
@@ -69,23 +69,25 @@ class ProposalsController < ApplicationController
 
   def update
     if @proposal.update(proposal_params)
-      redirect_to proposal_path(@proposal), notice: t("flash.actions.update.proposal")
-    else
-      render :edit
+      flash[:notice] = t("flash.actions.update.proposal")
     end
+
+    respond_with @proposal
   end
 
   def vote
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
+
+    respond_with @proposal
   end
 
   def retire
     if @proposal.update(retired_params.merge(retired_at: Time.current))
-      redirect_to proposal_path(@proposal), notice: t("proposals.notice.retired")
-    else
-      render action: :retire_form
+      flash[:notice] = t("proposals.notice.retired")
     end
+
+    respond_with @proposal, action: :retire_form
   end
 
   def retire_form
@@ -109,7 +111,8 @@ class ProposalsController < ApplicationController
 
   def publish
     @proposal.publish
-    redirect_to share_proposal_path(@proposal), notice: t("proposals.notice.published")
+
+    respond_with @proposal, location: share_proposal_path(@proposal), notice: t("proposals.notice.published")
   end
 
   private
@@ -126,7 +129,7 @@ class ProposalsController < ApplicationController
                     map_location_attributes: map_location_attributes]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
 
-      [*attributes, translations_attributes]
+      [*attributes, *translations_attributes]
     end
 
     def retired_params
@@ -134,7 +137,7 @@ class ProposalsController < ApplicationController
     end
 
     def allowed_retired_params
-      [:retired_reason, translation_params(Proposal, only: :retired_explanation)]
+      [:retired_reason, *translation_params(Proposal, only: :retired_explanation)]
     end
 
     def resource_model
