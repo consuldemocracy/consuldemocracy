@@ -20,5 +20,3 @@ if ($(".comment").length == 0) {
   var new_comment_count_text = current_comment_text.replace(/(\d+)/, new_comment_count);
   $("#annotation-link a").text(new_comment_count_text)
 }
-
-<%= render "comments_box_form", comment: @comment, annotation: @annotation %>
