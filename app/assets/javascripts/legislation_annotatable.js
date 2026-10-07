@@ -194,8 +194,7 @@
       var current_user_id;
       $("body").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments);
       $("body").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick);
-      $("body").on("click", "[data-cancel-annotation]", function(e) {
-        e.preventDefault();
+      $("body").on("click", ".cancel-comment", function() {
         $("#comments-box").html("");
         $("#comments-box").hide();
         App.LegislationAnnotatable.remove_highlight();
