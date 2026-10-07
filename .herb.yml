@@ -71,6 +71,8 @@ linter:
         - "app/components/relationable/related_list_component.html.erb"
     html-no-empty-attributes:
       enabled: true
+    html-no-self-closing:
+      enabled: true
     html-no-style-elements:
       enabled: true
       exclude:
