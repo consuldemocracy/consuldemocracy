@@ -1,5 +1,10 @@
 .comment-body .status-bar {
   .responses-count {
+    .show-children,
+    .collapse-children {
+      @include link;
+    }
+
     .show-children {
       @include has-fa-icon(square-plus, regular);
     }
