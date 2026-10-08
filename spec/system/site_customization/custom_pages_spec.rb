@@ -8,8 +8,7 @@ describe "Custom Pages" do
           :site_customization_page, :published,
           slug: "other-slug",
           title_en: "Custom page",
-          content_en: "Text for new custom page",
-          print_content_flag: false
+          content_en: "Text for new custom page"
         )
 
         visit custom_page.url
@@ -17,7 +16,6 @@ describe "Custom Pages" do
         expect(page).to have_title("Custom page")
         expect(page).to have_css "h1", text: "Custom page"
         expect(page).to have_content("Text for new custom page")
-        expect(page).not_to have_content("Print this info")
       end
 
       scenario "Show all fields and text with links" do
@@ -26,8 +24,7 @@ describe "Custom Pages" do
           slug: "slug-with-all-fields-filled",
           title_en: "Custom page",
           subtitle_en: "This is my new custom page",
-          content_en: "Text for new custom page with a link to https://consul.dev",
-          print_content_flag: true
+          content_en: "Text for new custom page with a link to https://consul.dev"
         )
 
         visit custom_page.url
@@ -37,7 +34,6 @@ describe "Custom Pages" do
         expect(page).to have_css "h2", text: "This is my new custom page"
         expect(page).to have_content("Text for new custom page with a link to https://consul.dev")
         expect(page).to have_link("https://consul.dev")
-        expect(page).to have_content("Print this info")
       end
 
       scenario "Don't show subtitle if its blank" do
@@ -46,8 +42,7 @@ describe "Custom Pages" do
           slug: "slug-without-subtitle",
           title_en: "Custom page",
           subtitle_en: "",
-          content_en: "Text for new custom page",
-          print_content_flag: false
+          content_en: "Text for new custom page"
         )
 
         visit custom_page.url
@@ -56,7 +51,6 @@ describe "Custom Pages" do
         expect(page).to have_css "h1", text: "Custom page"
         expect(page).to have_content("Text for new custom page")
         expect(page).not_to have_css "h2"
-        expect(page).not_to have_content("Print this info")
       end
 
       scenario "Listed in more information page" do
