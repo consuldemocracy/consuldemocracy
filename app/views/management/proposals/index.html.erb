@@ -15,7 +15,9 @@
         </h3>
       <% end %>
 
-      <%= render @proposals %>
+      <% @proposals.each do |proposal| %>
+        <%= render "proposal", proposal: proposal %>
+      <% end %>
       <%= paginate @proposals %>
     </div>
   </div>

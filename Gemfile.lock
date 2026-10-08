@@ -310,6 +310,7 @@ GEM
     hashery (2.1.2)
     hashie (5.1.0)
       logger
+    herb (0.11.0)
     highline (3.1.2)
       reline
     htmlbeautifier (1.4.3)
@@ -912,6 +913,7 @@ DEPENDENCIES
   graphiql-rails (~> 1.10.5)
   graphql (~> 2.6.10)
   groupdate (~> 6.8.0)
+  herb (~> 0.11.0)
   htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
   image_processing (~> 2.1.0)

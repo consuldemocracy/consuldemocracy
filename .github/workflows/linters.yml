@@ -23,6 +23,8 @@ jobs:
             run: bundle exec mdl *.md docs/
           - name: HTML Beautifier
             run: find app/ -name "*.html.erb" -exec bundle exec htmlbeautifier --lint-only --keep-blank-lines 1 -e {} +
+          - name: Herb linter
+            run: bundle exec herb lint
     name: ${{ matrix.name }}
     steps:
       - name: Checkout code

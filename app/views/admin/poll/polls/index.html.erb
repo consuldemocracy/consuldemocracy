@@ -21,7 +21,9 @@
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
-      <%= render @polls %>
+      <% @polls.each do |poll| %>
+        <%= render "poll", poll: poll %>
+      <% end %>
     </tbody>
   </table>
 <% else %>

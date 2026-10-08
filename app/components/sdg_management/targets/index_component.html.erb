@@ -10,7 +10,7 @@
     </thead>
 
     <tbody>
-      <% targets.group_by(&:goal).map do |goal, targets| %>
+      <% targets.group_by(&:goal).each do |goal, targets| %>
         <tr class="goal-header">
           <th id="<%= header_id(goal) %>" colspan="2" scope="colgroup">
             <%= goal.code_and_title %>

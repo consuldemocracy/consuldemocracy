@@ -11,7 +11,7 @@
     <% goals.each do |goal| %>
       <li class="tabs-title <%= active_class(goal) %>">
         <%= link_to "#goal_#{goal.code}_tab" do %>
-          <% render SDG::Goals::IconComponent.new(goal) %>
+          <%= render SDG::Goals::IconComponent.new(goal) %>
         <% end %>
       </li>
     <% end %>

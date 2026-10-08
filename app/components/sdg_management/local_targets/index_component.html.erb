@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-      <% local_targets.group_by(&:target).map do |target, local_targets| %>
+      <% local_targets.group_by(&:target).each do |target, local_targets| %>
         <tr class="target-header">
           <th id="<%= header_id(target) %>" colspan="3" scope="colgroup">
             <%= target.code_and_title %>
