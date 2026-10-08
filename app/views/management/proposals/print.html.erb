@@ -1,8 +1,8 @@
 <div class="row">
   <div class="proposals-list">
-    <a id="print_link" href="javascript:window.print();" class="button warning float-right">
-      <%= t("management.proposals.print.print_button") %>
-    </a>
+    <div class="not-print float-right">
+      <%= render Management::PrintComponent.new(t("management.proposals.print.print_button")) %>
+    </div>
 
     <div class="filters">
       <span class="for-print-only date-for-print"><%= l Date.current, format: :long %></span>
