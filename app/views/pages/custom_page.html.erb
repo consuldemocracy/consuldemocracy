@@ -12,12 +12,6 @@
     <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
   </div>
 
-  <% if @custom_page.print_content_flag %>
-    <div class="small-12 medium-3 column">
-      <%= render "/shared/print" %>
-    </div>
-  <% end %>
-
   <% if @cards.any? %>
     <div class="small-12 column">
       <%= render "shared/cards", cards: @cards %>

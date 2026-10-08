@@ -95,7 +95,7 @@ describe "Tags" do
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-    find(".js-add-tag-link", text: "Education").click
+    click_button "Education"
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."

@@ -185,7 +185,7 @@ Depending on whether we enable or disable the **Translation Interface** feature 
 * When the translation interface is active:
   As you can see in the image below, the translation interface has two selectors, the first one "Select language" is to switch between enabled languages and the second one "Add language" is to add new languages to the form. Translatable fields appears with a blue background to facilitate users to distinguish between translatable and not translatable fields.
 
-  Additionally, the interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation they can recover it by re-adding it to the form.
+  Additionally, the interface provides a button `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation they can recover it by re-adding it to the form.
 
   This feature is visible during the creation and edition of translatable resources.
 

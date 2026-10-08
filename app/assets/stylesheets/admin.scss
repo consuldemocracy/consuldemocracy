@@ -517,8 +517,8 @@ table {
 
 .fullscreen-container {
 
-  a {
-    line-height: 8rem;
+  button {
+    @include link;
 
     &:active,
     &:focus,
@@ -533,7 +533,8 @@ table {
   .fullscreen-container {
     color: color-pick-contrast($admin-color);
 
-    a {
+    button {
+      color: inherit;
       line-height: 3rem;
 
       @include breakpoint(medium) {
@@ -579,10 +580,6 @@ table {
       @include breakpoint(medium) {
         margin: 0.5rem;
       }
-    }
-
-    a {
-      color: inherit;
     }
   }
 }

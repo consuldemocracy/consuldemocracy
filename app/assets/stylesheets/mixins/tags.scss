@@ -8,8 +8,14 @@
   }
 
   a,
+  button,
   span {
     @extend %tag;
+  }
+
+  button {
+    cursor: pointer;
+    line-height: inherit;
   }
 }
 

@@ -63,7 +63,7 @@
       <div id="category_tags" class="tags">
         <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
         <% categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
+          <%= button_tag tag.name, type: "button", class: "add-tag" %>
         <% end %>
       </div>
 

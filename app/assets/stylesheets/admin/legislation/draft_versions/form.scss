@@ -2,6 +2,8 @@
 
   .fullscreen-container {
     background: #ccdbe6;
+    padding-bottom: 2 * $line-height;
+    padding-top: 2 * $line-height;
     text-align: center;
 
     .markdown-editor-header,

@@ -71,7 +71,7 @@ describe "Cross-Site Scripting protection" do
     I18nContent.create!(key: "shared.translations.languages_in_use", value: attack_code)
 
     visit edit_admin_budget_path(create(:budget))
-    click_link "Remove language"
+    click_button "Remove language"
 
     expect(page.text).not_to be_empty
   end

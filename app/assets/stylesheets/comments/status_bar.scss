@@ -1,5 +1,10 @@
 .comment-body .status-bar {
   .responses-count {
+    .show-children,
+    .collapse-children {
+      @include link;
+    }
+
     .show-children {
       @include has-fa-icon(square-plus, regular);
     }
@@ -34,10 +39,14 @@
   }
 
   .flag-actions,
-  .js-add-comment-link {
+  .add-comment {
     &::before {
       @include vertical-separator($color: $text-light);
       opacity: 1;
     }
+  }
+
+  .add-comment {
+    @include link;
   }
 }

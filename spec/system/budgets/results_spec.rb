@@ -71,7 +71,7 @@ describe "Results" do
   scenario "Show non winner & incompatible investments" do
     visit budget_path(budget)
     click_link "See results"
-    click_link "Show all"
+    click_button "Show all"
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"
@@ -156,7 +156,7 @@ describe "Results" do
     expect(page).to have_content "Compatible investment"
     expect(page).not_to have_content "Exceeding price"
 
-    click_link "Show all"
+    click_button "Show all"
 
     expect(page).to have_content "Exceeding price"
     expect(page).not_to have_content "Incompatibles"

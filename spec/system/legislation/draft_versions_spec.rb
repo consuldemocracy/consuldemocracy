@@ -253,7 +253,6 @@ describe "Legislation Draft Versions" do
       first(:css, ".annotator-hl").click
       expect(page).to have_content "my annotation"
 
-      click_link "Publish Comment"
       fill_in "comment[body]", with: "My interesting comment"
       click_button "Publish comment"
       expect(page).to have_content "My interesting comment"
@@ -296,7 +295,7 @@ describe "Legislation Draft Versions" do
 
       find(:css, ".annotator-hl").click
 
-      expect(page).to have_link "Publish Comment"
+      expect(page).to have_button "Publish comment"
 
       click_link "CONSUL"
 
@@ -306,7 +305,6 @@ describe "Legislation Draft Versions" do
 
       expect(page).to have_content "A collaborative legislation process"
 
-      click_link "Publish Comment"
       fill_in "comment[body]", with: "My interesting comment"
       click_button "Publish comment"
 
@@ -454,7 +452,7 @@ describe "Legislation Draft Versions" do
       login_as(administrator)
 
       visit path
-      click_link "Launch text editor"
+      click_button "Launch text editor"
 
       expect(page).to have_table
       expect(page).to have_content "Roberta"

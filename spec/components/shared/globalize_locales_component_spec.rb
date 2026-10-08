@@ -36,20 +36,20 @@ describe Shared::GlobalizeLocalesComponent do
     end
   end
 
-  describe "links to destroy languages" do
+  describe "buttons to destroy languages" do
     it "only includes enabled locales" do
       Setting["locales.enabled"] = "en nl"
 
       I18n.with_locale(:en) do
         render_inline Shared::GlobalizeLocalesComponent.new
 
-        expect(page).to have_css "a[data-locale]", count: 1
+        expect(page).to have_css "button[data-locale]", count: 1
       end
 
       I18n.with_locale(:es) do
         render_inline Shared::GlobalizeLocalesComponent.new
 
-        expect(page).not_to have_css "a[data-locale]"
+        expect(page).not_to have_css "button[data-locale]"
       end
     end
   end
