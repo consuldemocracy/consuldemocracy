@@ -19,7 +19,6 @@ class PollsController < ApplicationController
 
   def show
     @web_vote = Poll::WebVote.new(@poll, current_user)
-    @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
   end
 
   def answer
@@ -34,7 +33,6 @@ class PollsController < ApplicationController
         redirect_to @poll, notice: t("flash.actions.create.poll_voter")
       end
     else
-      @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
       render :show
     end
   end

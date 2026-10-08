@@ -1,6 +1,5 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
-  include CommentableActions
   include Translatable
 
   feature_flag :budgets
@@ -26,7 +25,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def show
-    load_comments
   end
 
   def edit
@@ -94,17 +92,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   private
 
-    def load_comments
-      @commentable = @investment
-      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, valuations: true)
-    end
-
     def resource_model
       Budget::Investment
-    end
-
-    def resource_name
-      resource_model.parameterize(separator: "_")
     end
 
     def load_investments
