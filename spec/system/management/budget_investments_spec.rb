@@ -447,7 +447,7 @@ describe "Budget Investments" do
       end
 
       expect(page).to have_css(".budget-investment", count: 15)
-      expect(page).to have_link("Print", href: "javascript:window.print();")
+      expect(page).to have_button "Print"
     end
 
     scenario "Printing voted budget investments in balloting phase" do
@@ -463,7 +463,7 @@ describe "Budget Investments" do
       end
 
       expect(page).to have_content voted_investment.title
-      expect(page).to have_link("Print", href: "javascript:window.print();")
+      expect(page).to have_button "Print"
     end
 
     scenario "Filtering budget investments by heading to be printed" do
