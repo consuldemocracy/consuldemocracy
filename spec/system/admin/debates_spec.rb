@@ -58,7 +58,7 @@ describe "Admin debates", :admin do
         #{first_debate.author.email},2026-06-01 14:56:10,"","","","",""
       CSV
 
-      expect(page.body).to eq(csv_contents)
+      expect(page.body).to eq("\xEF\xBB\xBF" + csv_contents)
     end
 
     scenario "Downloading CSV file with applied filter" do
