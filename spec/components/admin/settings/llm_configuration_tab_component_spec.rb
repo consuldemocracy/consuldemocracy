@@ -11,8 +11,10 @@ describe Admin::Settings::LlmConfigurationTabComponent do
   end
   let(:models_for_openai) do
     [
-      double(name: "GPT-4o", id: "gpt-4o"),
-      double(name: "GPT-4o-mini", id: "gpt-4o-mini")
+      double(name: "GPT-4o", id: "gpt-4o", created_at: Time.current),
+      double(name: "GPT-4o-mini", id: "gpt-4o-mini", created_at: Time.current),
+      double(name: "GPT-3.5 Turbo", id: "gpt-3.5-turbo", created_at: 2.years.ago),
+      double(name: "Undated", id: "undated-model", created_at: nil)
     ]
   end
   let(:provider_setting) { Setting.find_by!(key: "llm.provider") }
