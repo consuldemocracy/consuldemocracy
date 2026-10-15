@@ -20,7 +20,7 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
     return {} if provider.blank?
 
     RubyLLM.models.by_provider(provider.downcase.to_sym).select do |model|
-      model.created_at && model.created_at >= 18.months.ago
+      model.created_at && model.created_at >= 18.months.ago && !model.id.to_s.end_with?(":free")
     end.to_h do |model|
       [model.name, { id: model.id }]
     end

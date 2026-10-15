@@ -14,7 +14,8 @@ describe Admin::Settings::LlmConfigurationTabComponent do
       double(name: "GPT-4o", id: "gpt-4o", created_at: Time.current),
       double(name: "GPT-4o-mini", id: "gpt-4o-mini", created_at: Time.current),
       double(name: "GPT-3.5 Turbo", id: "gpt-3.5-turbo", created_at: 2.years.ago),
-      double(name: "Undated", id: "undated-model", created_at: nil)
+      double(name: "Undated", id: "undated-model", created_at: nil),
+      double(name: "Gemma 2 9B (free)", id: "google/gemma-2-9b-it:free", created_at: Time.current)
     ]
   end
   let(:provider_setting) { Setting.find_by!(key: "llm.provider") }
@@ -77,6 +78,7 @@ describe Admin::Settings::LlmConfigurationTabComponent do
         expect(page).to have_selector(:option, "GPT-4o-mini", selected: false)
         expect(page).not_to have_selector(:option, "GPT-3.5 Turbo")
         expect(page).not_to have_selector(:option, "Undated")
+        expect(page).not_to have_selector(:option, "Gemma 2 9B (free)")
         expect(page).not_to have_css "fieldset[disabled]"
       end
 
