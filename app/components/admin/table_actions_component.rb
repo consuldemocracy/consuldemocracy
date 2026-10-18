@@ -51,6 +51,6 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def html_class
-      "table-actions #{html_options[:class]}"
+      "table-actions #{html_options[:class]}".strip
     end
 end

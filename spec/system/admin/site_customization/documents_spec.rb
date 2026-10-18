@@ -20,6 +20,27 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
+    expect(page).not_to have_content "Download file"
+
+    within("tbody tr:first-child") do
+      click_button "Copy link"
+
+      page.driver.browser.execute_cdp("Browser.grantPermissions",
+                                      permissions: ["clipboardReadWrite"],
+                                      origin: page.server_url)
+      clip_text = page.evaluate_async_script("navigator.clipboard.readText().then(arguments[0])")
+
+      download_link = find_link("Download file", visible: :hidden)[:href]
+
+      expect(clip_text).to include download_link
+      expect(clip_text).to match(/^https?:\/\//)
+    end
+  end
+
+  scenario "Index shows the link to download file when JavaScript is disabled", :no_js do
+    create(:document, :admin)
+
+    visit admin_site_customization_documents_path
 
     ActiveStorage.with(service_urls_expire_in: 0.001.seconds) do
       within("tbody tr:first-child") do
@@ -67,7 +88,7 @@ describe "Documents", :admin do
 
     expect(page).to have_content "Document uploaded successfully"
 
-    within("tr", text: "logo.pdf") { expect(page).to have_link "Download file" }
+    within("tr", text: "logo.pdf") { expect(page).to have_button "Copy link" }
   end
 
   scenario "Errors on create" do
