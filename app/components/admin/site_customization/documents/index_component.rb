@@ -9,10 +9,6 @@ class Admin::SiteCustomization::Documents::IndexComponent < ApplicationComponent
 
   private
 
-    def permanent_document_path(document)
-      rails_storage_proxy_path(document.attachment)
-    end
-
     def title
       t("admin.documents.index.title")
     end

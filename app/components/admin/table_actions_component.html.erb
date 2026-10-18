@@ -1,4 +1,4 @@
-<div class="table-actions">
+<%= tag.div(**attributes) do %>
   <%= content %>
 
   <% if actions.include?(:edit) %>
@@ -8,4 +8,4 @@
   <% if actions.include?(:destroy) %>
     <%= action(:destroy, **destroy_options, text: destroy_text, path: destroy_path) %>
   <% end %>
-</div>
+<% end %>
