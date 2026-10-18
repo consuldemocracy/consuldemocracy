@@ -118,6 +118,11 @@
     @include has-fa-icon(screwdriver-wrench, solid);
   }
 
+  .copy-link {
+    @include has-fa-icon(copy, regular);
+    @include anchor-color;
+  }
+
   .download-link {
     @include has-fa-icon(download, solid);
   }
