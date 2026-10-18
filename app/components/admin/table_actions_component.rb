@@ -41,4 +41,16 @@ class Admin::TableActionsComponent < ApplicationComponent
         confirm: options[:destroy_confirmation] || true
       }.merge(options[:destroy_options] || {})
     end
+
+    def html_options
+      options[:html_options] || {}
+    end
+
+    def attributes
+      { class: html_class }.merge(html_options.except(:class))
+    end
+
+    def html_class
+      "table-actions #{html_options[:class]}"
+    end
 end

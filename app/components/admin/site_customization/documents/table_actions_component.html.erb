@@ -1,0 +1,11 @@
+<%= render Admin::TableActionsComponent.new(
+  document,
+  actions: [:destroy],
+  destroy_path: admin_site_customization_document_path(document),
+  html_options: { class: "site-customization-documents-table-actions" }
+) do |actions| %>
+  <%= actions.action(:download,
+                     text: t("documents.buttons.download_document"),
+                     path: permanent_document_path,
+                     rel: "nofollow") %>
+<% end %>
