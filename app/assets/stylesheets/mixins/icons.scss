@@ -121,6 +121,11 @@
   .copy-link {
     @include has-fa-icon(copy, regular);
     @include anchor-color;
+
+    &.copied {
+      @include has-fa-icon(circle-check, solid);
+      color: $color-success;
+    }
   }
 
   .download-link {

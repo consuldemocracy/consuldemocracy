@@ -8,5 +8,5 @@
                      text: t("documents.buttons.download_document"),
                      path: permanent_document_path,
                      rel: "nofollow") %>
-  <%= actions.action(:copy, type: "button") %>
+  <%= actions.action(:copy, type: "button", data: { copied_text: t("admin.actions.copied") }) %>
 <% end %>

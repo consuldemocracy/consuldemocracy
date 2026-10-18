@@ -8,6 +8,7 @@ es:
       confirm_action: "¿Estás seguro? %{action} \"%{name}\""
       confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
+      copied: ¡Copiado!
       copy: Copiar enlace
       delete: Borrar
       hide: Ocultar

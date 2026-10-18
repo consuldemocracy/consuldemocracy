@@ -25,6 +25,10 @@ describe "Documents", :admin do
     within("tbody tr:first-child") do
       click_button "Copy link"
 
+      expect(page).to have_button "Copied!"
+      expect(page).to have_css ".copy-link.copied"
+      expect(page).to have_css "button[aria-label='Copied!']"
+
       page.driver.browser.execute_cdp("Browser.grantPermissions",
                                       permissions: ["clipboardReadWrite"],
                                       origin: page.server_url)
