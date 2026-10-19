@@ -143,6 +143,23 @@ describe "Remotely translatable" do
           expect(page).to have_button "Traducir página"
         end
       end
+
+      context "on the home page" do
+        let(:user) { create(:user) }
+
+        before do
+          followed = create(:proposal, tag_list: "climate")
+          create(:follow, user: user, followable: followed)
+          create(:proposal, tag_list: "climate")
+        end
+
+        scenario "is present when the user has untranslated recommended resources" do
+          login_as(user)
+          visit "#{root_path}?locale=es"
+
+          expect(page).to have_button "Traducir página"
+        end
+      end
     end
 
     context "with delayed job active", :delay_jobs do
