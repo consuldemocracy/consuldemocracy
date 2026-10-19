@@ -22,7 +22,7 @@ module CommentableActions
     @tag_cloud = tag_cloud
 
     set_resources_instance
-    @remote_translations = detect_remote_translations(@resources, featured_proposals)
+    @remote_translations = detect_remote_translations(@resources, featured_proposals, featured_debates)
   end
 
   def show
@@ -67,5 +67,9 @@ module CommentableActions
 
     def featured_proposals
       @featured_proposals ||= []
+    end
+
+    def featured_debates
+      @featured_debates ||= []
     end
 end

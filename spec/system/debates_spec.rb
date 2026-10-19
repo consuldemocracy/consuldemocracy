@@ -641,13 +641,15 @@ describe "Debates" do
       create(:debate, title: "Abcdefghi")
 
       visit debates_path
+
+      expect(page).to have_content "FEATURED"
+
       within "#search_form" do
         fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end
 
-      expect(page).not_to have_css "#debates .debate-featured"
-      expect(page).not_to have_css "#featured-debates"
+      expect(page).not_to have_content "FEATURED"
     end
   end
 

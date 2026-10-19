@@ -1053,13 +1053,13 @@ describe "Proposals" do
 
       visit proposals_path
 
+      expect(page).to have_content "FEATURED"
       expect(page).to have_css "#proposals .proposal-featured"
-      expect(page).to have_css "#featured-proposals"
 
       click_link "View selected proposals"
 
+      expect(page).not_to have_content "FEATURED"
       expect(page).not_to have_css "#proposals .proposal-featured"
-      expect(page).not_to have_css "#featured-proposals"
     end
 
     scenario "do not show recommented proposal in selected proposals list" do
@@ -1238,13 +1238,17 @@ describe "Proposals" do
       create(:proposal, title: "Abcdefghi")
 
       visit proposals_path
+
+      expect(page).to have_content "FEATURED"
+      expect(page).to have_css "#proposals .proposal-featured"
+
       within "#search_form" do
         fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end
 
+      expect(page).not_to have_content "FEATURED"
       expect(page).not_to have_css "#proposals .proposal-featured"
-      expect(page).not_to have_css "#featured-proposals"
     end
   end
 
