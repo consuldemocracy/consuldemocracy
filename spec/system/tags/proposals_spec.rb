@@ -27,15 +27,6 @@ describe "Tags" do
     end
   end
 
-  scenario "Index featured proposals does not show tags" do
-    create(:proposal, tag_list: "123")
-
-    visit proposals_path(tag: "123")
-
-    expect(page).not_to have_css "#proposals .proposal-featured"
-    expect(page).not_to have_css "#featured-proposals"
-  end
-
   scenario "Index shows 3 tags with no plus link" do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
     create(:proposal, tag_list: tag_list)

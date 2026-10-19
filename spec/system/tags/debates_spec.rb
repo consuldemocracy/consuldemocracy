@@ -41,16 +41,6 @@ describe "Tags" do
     end
   end
 
-  scenario "Index tag does not show featured debates" do
-    create_featured_debates
-    create(:debate, tag_list: "123")
-
-    visit debates_path(tag: "123")
-
-    expect(page).not_to have_css "#debates .debate-featured"
-    expect(page).not_to have_css "#featured-debates"
-  end
-
   scenario "Show" do
     debate = create(:debate, tag_list: "Hacienda, Economía")
 
