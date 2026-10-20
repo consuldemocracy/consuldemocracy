@@ -184,6 +184,10 @@ class ProposalsController < ApplicationController
       @geozones = Geozone.order(name: :asc)
     end
 
+    def load_categories
+      @categories = Tag.category.order(:name)
+    end
+
     def remove_archived_from_order_links
       @valid_orders.delete("archival_date")
     end

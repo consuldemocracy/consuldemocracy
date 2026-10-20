@@ -13,10 +13,6 @@ module CommentableActions
 
   private
 
-    def load_categories
-      @categories = Tag.category.order(:name)
-    end
-
     def search_and_filter(resources)
       resources = if @current_order == "recommendations" && current_user.present?
                     resources.recommendations(current_user)
