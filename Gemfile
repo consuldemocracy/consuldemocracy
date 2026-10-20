@@ -84,7 +84,7 @@ group :test do
   gem "pdf-reader", "~> 2.16.0"
   gem "puffing-billy", "~> 4.0"
   gem "rspec-rails", "~> 8.0.4"
-  gem "selenium-webdriver", "~> 4.48.0"
+  gem "selenium-webdriver", "~> 4.49.0"
   gem "simplecov", "~> 1.3.0", require: false
   gem "simplecov-lcov", "~> 0.9.0", require: false
 end
