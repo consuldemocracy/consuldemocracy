@@ -9,7 +9,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   before_action :restrict_access, only: [:edit, :valuate]
   before_action :load_investment, only: [:show, :edit, :valuate]
 
-  has_orders %w[oldest], only: [:show, :edit]
+  has_orders %w[oldest], only: [:show, :edit, :valuate]
   has_filters %w[valuating valuation_finished], only: :index
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
@@ -36,6 +36,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       notice = t("valuation.budget_investments.notice.valuate")
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice
     else
+      load_comments
       render action: :edit
     end
   end

@@ -1,4 +1,2 @@
 <h2><%= t("valuation.budget_investments.valuation_comments") %></h2>
-<% unless @comment_tree.nil? %>
-  <%= render Shared::CommentsComponent.new(@investment, @comment_tree, valuation: true) %>
-<% end %>
+<%= render Shared::CommentsComponent.new(@investment, @comment_tree, valuation: true) %>

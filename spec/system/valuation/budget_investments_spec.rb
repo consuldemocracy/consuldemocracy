@@ -479,8 +479,9 @@ describe "Valuation budget investments" do
       end
     end
 
-    scenario "Validates price formats on the server side", :no_js do
+    scenario "Validates price formats on the server side and keeps showing comments", :no_js do
       investment.update!(visible_to_valuators: true)
+      create(:comment, :valuation, commentable: investment, body: "This is bad!")
 
       visit edit_valuation_budget_budget_investment_path(budget, investment)
 
@@ -488,8 +489,9 @@ describe "Valuation budget investments" do
       fill_in "Cost during the first year (€) (optional, data not public)", with: "9876.6"
       click_button "Save changes"
 
-      expect(page).to have_content("2 errors")
-      expect(page).to have_content("Only integer numbers", count: 2)
+      expect(page).to have_content "2 errors"
+      expect(page).to have_content "Only integer numbers", count: 2
+      expect(page).to have_content "This is bad!"
     end
 
     scenario "not visible to valuators when budget is not valuating" do
