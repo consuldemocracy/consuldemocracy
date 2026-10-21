@@ -6,7 +6,6 @@ class Management::ProposalsController < Management::BaseController
 
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
-  before_action :parse_search_terms, only: :index
 
   has_orders %w[confidence_score hot_score created_at most_commented random], only: [:index, :print]
   has_orders %w[most_voted newest], only: :show
