@@ -1,6 +1,4 @@
 class TopicsController < ApplicationController
-  include CommentableActions
-
   before_action :load_community
   before_action :load_topic, only: [:show, :edit, :update, :destroy]
 
@@ -23,8 +21,6 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @commentable = @topic
-    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
   end
 
   def edit

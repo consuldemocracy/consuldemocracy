@@ -122,18 +122,40 @@ describe "Remotely translatable" do
         end
       end
 
-      describe "should evaluate missing translations on featured resources" do
+      describe "missing translations on featured resources" do
         let(:factory) { [:debate, :proposal].sample }
+        before { Setting["feature.featured_proposals"] = true }
 
-        scenario "display when exists featured resources without translations" do
+        scenario "display when there are featured resources without translations" do
+          allow(resource.class).to receive(:default_per_page).and_return(2)
           add_translations(resource, :es)
+
           send("create_featured_#{factory.to_s.pluralize}")
+          create_list(factory, 2).each { |record| add_translations(record, :es) }
 
-          visit path
+          visit "#{path}?order=created_at"
 
+          expect(page).to have_content "FEATURED"
           expect(page).not_to have_button "Translate page"
 
           select "Español", from: "Language:"
+
+          expect(page).to have_button "Traducir página"
+        end
+      end
+
+      context "on the home page" do
+        let(:user) { create(:user) }
+
+        before do
+          followed = create(:proposal, tag_list: "climate")
+          create(:follow, user: user, followable: followed)
+          create(:proposal, tag_list: "climate")
+        end
+
+        scenario "is present when the user has untranslated recommended resources" do
+          login_as(user)
+          visit "#{root_path}?locale=es"
 
           expect(page).to have_button "Traducir página"
         end

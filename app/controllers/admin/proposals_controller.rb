@@ -1,6 +1,6 @@
 class Admin::ProposalsController < Admin::BaseController
   include HasOrders
-  include CommentableActions
+  include Search
   include FeatureFlags
 
   feature_flag :proposals
@@ -57,10 +57,6 @@ class Admin::ProposalsController < Admin::BaseController
   end
 
   private
-
-    def resource_model
-      Proposal
-    end
 
     def load_proposal
       @proposal = Proposal.find(params[:id])

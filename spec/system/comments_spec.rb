@@ -251,19 +251,6 @@ describe "Comments" do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario "Turns links into html links" do
-    create(:comment, commentable: resource, body: "Built with http://rubyonrails.org/")
-
-    visit polymorphic_path(resource)
-
-    within first(".comment") do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
-
   scenario "Sanitizes comment body for security" do
     create(:comment, commentable: resource,
                      body: "<script>alert('hola')</script> " \

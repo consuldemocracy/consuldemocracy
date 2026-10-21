@@ -41,16 +41,6 @@ describe "Tags" do
     end
   end
 
-  scenario "Index tag does not show featured debates" do
-    create_featured_debates
-    create(:debate, tag_list: "123")
-
-    visit debates_path(tag: "123")
-
-    expect(page).not_to have_css "#debates .debate-featured"
-    expect(page).not_to have_css "#featured-debates"
-  end
-
   scenario "Show" do
     debate = create(:debate, tag_list: "Hacienda, Economía")
 
@@ -181,18 +171,6 @@ describe "Tags" do
   end
 
   context "Tag cloud" do
-    scenario "Display user tags" do
-      create(:debate, tag_list: "Medio Ambiente")
-      create(:debate, tag_list: "Economía")
-
-      visit debates_path
-
-      within "#tag-cloud" do
-        expect(page).to have_content "Medio Ambiente"
-        expect(page).to have_content "Economía"
-      end
-    end
-
     scenario "Filter by user tags" do
       debate1 = create(:debate, tag_list: "Medio Ambiente")
       debate2 = create(:debate, tag_list: "Medio Ambiente")

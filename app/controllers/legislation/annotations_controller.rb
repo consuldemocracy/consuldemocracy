@@ -14,13 +14,11 @@ class Legislation::AnnotationsController < Legislation::BaseController
   end
 
   def show
-    @commentable = @annotation
-
     if params[:sub_annotation_ids].present?
       @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(","))
-      annotations = [@commentable, @sub_annotations]
+      annotations = [@annotation, @sub_annotations]
     else
-      annotations = [@commentable]
+      annotations = [@annotation]
     end
 
     @comment_tree = MergedCommentTree.new(annotations, params[:page], @current_order)

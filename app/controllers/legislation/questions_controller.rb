@@ -5,8 +5,6 @@ class Legislation::QuestionsController < Legislation::BaseController
   has_orders %w[most_voted newest oldest], only: :show
 
   def show
-    @commentable = @question
-    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     @answer = @question.answer_for_user(current_user) || Legislation::Answer.new
   end
 end
