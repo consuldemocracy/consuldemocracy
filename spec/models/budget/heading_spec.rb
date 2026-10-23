@@ -49,6 +49,15 @@ describe Budget::Heading do
       expect(build(:budget_heading, group: group, name_en: "English")).not_to be_valid
       expect(build(:budget_heading, group: group, name_en: "Español")).not_to be_valid
     end
+
+    it "must not be repeated when updating the record directly using the `name` attribute" do
+      another_heading = create(:budget_heading, group: group, name: "Free name")
+
+      expect(another_heading.update(name: "object name")).to be false
+      expect(another_heading.errors[:name]).to include("has already been taken")
+      expect(another_heading.errors[:"translations.name"]).to be_blank
+      expect(another_heading.reload.name).to eq "Free name"
+    end
   end
 
   describe "Save population" do

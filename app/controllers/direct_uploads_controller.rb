@@ -3,7 +3,7 @@ class DirectUploadsController < ApplicationController
 
   skip_authorization_check only: :create
 
-  def create
+  def create # TODO: JSON request here
     @direct_upload = DirectUpload.new(
       direct_upload_params.merge(user: current_user, attachment: params[:attachment])
     )

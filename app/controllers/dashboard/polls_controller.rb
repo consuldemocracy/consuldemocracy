@@ -24,7 +24,7 @@ class Dashboard::PollsController < Dashboard::BaseController
   def edit
   end
 
-  def update
+  def update # TODO: for some reason, JSON request here
     respond_to do |format|
       if @poll.update(poll_params)
         format.html do

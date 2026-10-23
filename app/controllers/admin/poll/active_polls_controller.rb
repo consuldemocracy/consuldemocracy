@@ -33,6 +33,6 @@ class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
     end
 
     def allowed_params
-      [translation_params(ActivePoll)]
+      translation_params(ActivePoll)
     end
 end

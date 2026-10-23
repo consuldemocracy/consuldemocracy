@@ -72,7 +72,7 @@ class Admin::BudgetsController < Admin::BaseController
         image_attributes: image_attributes
       ] + descriptions
 
-      [*valid_attributes, *report_attributes, translation_params(Budget)]
+      [*valid_attributes, *report_attributes, *translation_params(Budget)]
     end
 
     def load_budget
