@@ -8,18 +8,10 @@ class TagCloud
 
   def tags
     resource_model_scoped
-      .last_week.send(counts)
+      .last_week.tag_counts
       .where("lower(name) NOT IN (?)", category_names + geozone_names + default_blacklist)
       .order("#{table_name}_count": :desc, name: :asc)
       .limit(10)
-  end
-
-  def counts
-    if Tag.machine_learning? && [Proposal, Budget::Investment].include?(resource_model)
-      :ml_tag_counts
-    else
-      :tag_counts
-    end
   end
 
   def category_names

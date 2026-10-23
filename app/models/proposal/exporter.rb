@@ -1,6 +1,5 @@
 class Proposal::Exporter
   include CsvExporter
-  include JsonExporter
 
   attr_reader :records
 
@@ -8,20 +7,7 @@ class Proposal::Exporter
     @records = proposals
   end
 
-  def model
-    Proposal
-  end
-
   private
-
-    def json_values(proposal)
-      {
-        id: proposal.id,
-        title: proposal.title,
-        summary: strip_tags(proposal.summary),
-        description: strip_tags(proposal.description)
-      }
-    end
 
     def model_headers
       [
