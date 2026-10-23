@@ -7,6 +7,8 @@ module Globalizable
     accepts_nested_attributes_for :translations, allow_destroy: true
 
     validate :check_translations_number, on: :update, if: :translations_required?
+    before_validation :assign_stashed_translations, on: :update
+    after_validation :relocate_direct_translation_errors, on: :update
     after_validation :copy_error_to_current_translation, on: :update
 
     def locales_not_marked_for_destruction
@@ -49,6 +51,37 @@ module Globalizable
 
       def traslations_count_valid?
         translations.reject(&:marked_for_destruction?).count >= MIN_TRANSLATIONS
+      end
+
+      def assign_stashed_translations
+        @directly_edited_translation = nil
+
+        globalize.stash.each do |locale, attributes|
+          next if attributes.blank?
+
+          translation = translation_for(locale)
+          @directly_edited_translation = translation if locale.to_s == I18n.locale.to_s
+          attributes.each { |name, value| translation[name] = value }
+        end
+      end
+
+      def relocate_direct_translation_errors
+        return unless @directly_edited_translation
+
+        translation = @directly_edited_translation
+        @directly_edited_translation = nil
+
+        copied_errors = errors.objects.select do |error|
+          error.is_a?(ActiveModel::NestedError) && error.inner_error.base.equal?(translation)
+        end
+
+        translation.errors.reject { |error| error.attribute == :base }.each do |error|
+          errors.import(error, attribute: error.attribute)
+        end
+
+        copied_errors.reject { |error| error.inner_error.attribute == :base }.each do |error|
+          errors.objects.delete(error)
+        end
       end
 
       def copy_error_to_current_translation
