@@ -8,7 +8,7 @@ When you open a pull request, our continuous integration (CI) system automatical
 
 Since you probably want to check these conventions at all times during development instead of waiting until you've already opened a pull request, we recommend you check whether your text editor has support for these linters. When an editor supports these linters, every time you save a file you'll get immediate feedback about whether you're following these conventions.
 
-A current limitation is that there are two Rubocop (the linter we use for Ruby) rules that aren't followed by old code and one rule that contains false positives. These rules are marked with `Severity: refactor` in the `.rubocop.yml` file; you might want to configure your editor so it ignores them.
+A current limitation is that there are two Rubocop (the linter we use for Ruby) rules that aren't followed by old code and one rule that contains false positives. These rules are marked with `Severity: refactor` and `Severity: info` in the `.rubocop.yml` file; you might want to configure your editor so it ignores them.
 
 If your editor doesn't support these linters, you can also run the `bundle exec pronto run` command, which will only analyze the changes in the current development branch, meaning that you'll get feedback much faster than you'd do if you ran the commands to analyze every file in the project.
 

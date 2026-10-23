@@ -8,7 +8,7 @@ Cuando abras una _pull request_ (PR), nuestro sistema de integración continua (
 
 Es muy probable que prefieras seguir estas convenciones mientras desarrollas en vez de tener que esperar a tenerlo todo listo para abrir una PR. Para ello, recomendamos que compruebes si tu editor ofrece soporte para estos linters. Cuando un editor tiene suporte para estos linters, cada vez que grabas un fichero recibes información de forma inmediata sobre si estás siguiendo estas convenciones.
 
-Una limitación que tenemos en la actualidad es que hay dos reglas de Rubocop (el linter que usamos para Ruby) que no se siguen siempre en código escrito hace varios años y otra regla que da falsos positivos. Estas reglas aparecen marcadas con `Severity: refactor` en el fichero `.rubocop.yml`; sería conveniente que configuraras tu editor para que no informase sobre estas reglas.
+Una limitación que tenemos en la actualidad es que hay dos reglas de Rubocop (el linter que usamos para Ruby) que no se siguen siempre en código escrito hace varios años y otra regla que da falsos positivos. Estas reglas aparecen marcadas con `Severity: refactor` y `Severity: info` en el fichero `.rubocop.yml`; sería conveniente que configuraras tu editor para que no informase sobre estas reglas.
 
 Si tu editor no ofrece soporte para estos linters, puedes ejecutar la orden `bundle exec pronto run`, que analizará los cambios que hay en tu rama actual, con lo que es considerablemente más rápido que ejecutar las órdenes que analizan todos los ficheros del proyecto.
 
