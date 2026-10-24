@@ -56,7 +56,10 @@ describe "Results" do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_css "a.is-active", text: heading.name
+    within("#headings") do
+      expect(page).to have_css "a.is-active", text: heading.name
+      expect(page).to have_css "a.is-active", count: 1
+    end
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"
