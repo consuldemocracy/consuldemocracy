@@ -1,0 +1,265 @@
+version: 0.11.0
+
+# Framework and template engine configuration
+#
+# Options: ruby | actionview | hanami | sinatra (default: ruby)
+framework: actionview
+
+# Options: erubi | erb | herb (default: erubi)
+template_engine: herb
+
+engine:
+  validators:
+    security: true
+    nesting: true
+    accessibility: true
+
+linter:
+  enabled: true
+  # Exit with error code when diagnostics of this severity or higher are present
+  # Valid values: error (default), warning, info, hint
+  failLevel: hint
+
+  # Only report diagnostics of this severity or higher
+  # Affects the CLI output only: lower-severity offenses are still counted in the
+  # summary and still show up in your editor, they just aren't printed or
+  # annotated in CI. Valid values: error, warning, info, hint (default)
+  # logLevel: warning
+
+  rules:
+    # The 'all' pseudo rule sets the default for every rule you don't list.
+    #   false: start from an empty set and opt back in explicitly
+    #   true:  start from every rule, including the ones off by default
+    all:
+      enabled: false
+    a11y-disabled-attribute:
+      enabled: true
+    a11y-nested-interactive-elements:
+      enabled: true
+    a11y-no-aria-label-misuse:
+      enabled: true
+    a11y-no-aria-unsupported-elements:
+      enabled: true
+    a11y-svg-has-accessible-text:
+      enabled: true
+    actionview-no-content-argument-with-block:
+      enabled: true
+    actionview-no-implicit-partial:
+      enabled: true
+      exclude:
+        - "app/components/admin/allowed_table_actions_component.html.erb"
+        - "app/components/admin/budgets/table_actions_component.html.erb"
+    actionview-no-implicit-polymorphic-url:
+      enabled: true
+      exclude:
+        - "app/components/documents/document_component.html.erb"
+        - "app/components/polls/gallery_component.html.erb"
+        - "app/views/admin/milestones/_milestones.html.erb"
+    actionview-no-render-option-shadowing:
+      enabled: true
+    actionview-no-silent-helper:
+      enabled: true
+    actionview-no-silent-render:
+      enabled: true
+    actionview-no-void-element-content:
+      enabled: true
+    actionview-prefer-link-to-helper:
+      enabled: true
+    erb-closing-tag-indent:
+      enabled: true
+    erb-comment-syntax:
+      enabled: true
+    erb-no-byte-order-mark:
+      enabled: true
+    erb-no-case-node-children:
+      enabled: true
+    erb-no-class-definitions:
+      enabled: true
+    erb-no-commented-out-output-tags:
+      enabled: true
+    erb-no-conditional-html-element:
+      enabled: true
+    erb-no-conditional-open-tag:
+      enabled: true
+    erb-no-debug-output:
+      enabled: true
+    erb-no-duplicate-branch-elements:
+      enabled: true
+      exclude:
+        - "app/components/polls/results/question_component.html.erb"
+    erb-no-empty-control-flow:
+      enabled: true
+    erb-no-empty-tags:
+      enabled: true
+    erb-no-extra-newline:
+      enabled: true
+    erb-no-extra-whitespace-inside-tags:
+      enabled: true
+    erb-no-inline-case-conditions:
+      enabled: true
+    erb-no-javascript-tag-helper:
+      enabled: true
+    erb-no-method-definitions:
+      enabled: true
+    erb-no-module-definitions:
+      enabled: true
+    erb-no-multiple-statements:
+      enabled: true
+    erb-no-output-control-flow:
+      enabled: true
+    erb-no-output-in-attribute-name:
+      enabled: true
+      exclude:
+        - "app/views/layouts/application.html.erb"
+        - "app/views/layouts/dashboard.html.erb"
+        - "app/views/layouts/mailer.html.erb"
+    erb-no-raw-output-in-attribute-value:
+      enabled: true
+    erb-no-return:
+      enabled: true
+    erb-no-shadowed-block-argument:
+      enabled: true
+    erb-no-silent-tag-in-attribute-name:
+      enabled: true
+    erb-no-sleep:
+      enabled: true
+    erb-no-statement-in-script:
+      enabled: true
+      exclude:
+        - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    erb-no-then-in-control-flow:
+      enabled: true
+    erb-no-trailing-whitespace:
+      enabled: true
+    erb-no-unsafe-raw:
+      enabled: true
+      exclude:
+        - "app/components/budgets/investments/content_blocks_component.html.erb"
+        - "app/components/layout/legal_links_component.html.erb"
+        - "app/components/layout/social_component.html.erb"
+        - "app/components/layout/subnavigation_component.html.erb"
+        - "app/components/layout/top_links_component.html.erb"
+        - "app/views/admin/site_customization/content_blocks/index.html.erb"
+        - "app/views/layouts/application.html.erb"
+        - "app/views/layouts/dashboard.html.erb"
+        - "app/views/layouts/devise.html.erb"
+    erb-no-unsafe-script-interpolation:
+      enabled: true
+    erb-no-unused-block-argument:
+      enabled: true
+    erb-no-unused-literals:
+      enabled: true
+    erb-no-unused-local-variable:
+      enabled: true
+    erb-prefer-do-end-blocks:
+      enabled: true
+    erb-prefer-each-over-map:
+      enabled: true
+    erb-prefer-image-tag-helper:
+      enabled: true
+    erb-require-template-format:
+      enabled: true
+    erb-require-trailing-newline:
+      enabled: true
+    erb-require-whitespace-inside-tags:
+      enabled: true
+    erb-right-trim:
+      enabled: true
+    html-allowed-script-type:
+      enabled: true
+    html-anchor-require-href:
+      enabled: false # TODO: fix and enable
+    html-aria-attribute-must-be-valid:
+      enabled: true
+    html-aria-label-is-well-formatted:
+      enabled: true
+    html-aria-level-must-be-valid:
+      enabled: true
+    html-aria-role-heading-requires-level:
+      enabled: true
+    html-aria-role-must-be-valid:
+      enabled: true
+    html-attribute-double-quotes:
+      enabled: true
+    html-attribute-equals-spacing:
+      enabled: true
+    html-attribute-name-valid-characters:
+      enabled: true
+    html-attribute-values-require-quotes:
+      enabled: true
+    html-avoid-both-disabled-and-aria-disabled:
+      enabled: true
+    html-body-only-elements:
+      enabled: true
+    html-boolean-attributes-no-value:
+      enabled: true
+    html-details-has-summary:
+      enabled: true
+    html-iframe-has-title:
+      enabled: true
+    html-img-require-alt:
+      enabled: true
+    html-no-abstract-roles:
+      enabled: true
+    html-no-aria-hidden-on-body:
+      enabled: true
+    html-no-aria-hidden-on-focusable:
+      enabled: true
+    html-no-block-inside-inline:
+      enabled: true
+    html-no-duplicate-attributes:
+      enabled: true
+    html-no-duplicate-meta-names:
+      enabled: true
+    html-no-empty-attributes:
+      enabled: true
+    html-no-empty-css-rule:
+      enabled: true
+    html-no-empty-headings:
+      enabled: true
+    html-no-event-handler-attributes:
+      enabled: true
+    html-no-inline-script-elements:
+      enabled: true
+      exclude:
+        - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    html-no-literal-nbsp:
+      enabled: true
+    html-no-nested-forms:
+      enabled: true
+    html-no-nested-links:
+      enabled: true
+    html-no-obsolete-tags:
+      enabled: true
+    html-no-positive-tab-index:
+      enabled: true
+    html-no-self-closing:
+      enabled: true
+    html-no-space-in-tag:
+      enabled: true
+    html-no-style-elements:
+      enabled: true
+      exclude:
+        - "public/**/*"
+    html-no-underscores-in-attribute-names:
+      enabled: true
+    html-no-unknown-tag:
+      enabled: true
+    html-require-closing-tags:
+      enabled: true
+    html-require-script-nonce:
+      enabled: true
+      exclude:
+        - "app/components/layout/cookies_consent/vendors/scripts_component.html.erb"
+    html-tag-name-lowercase:
+      enabled: true
+    parser-no-errors:
+      enabled: true
+    source-indentation:
+      enabled: true
+
+formatter:
+  enabled: true
+  indentWidth: 2
+  indentStyle: space
+  maxLineLength: 110

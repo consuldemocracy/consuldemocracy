@@ -33,7 +33,7 @@
       <%= t("budgets.executions.heading_selection_title") %>
     </h3>
     <ul class="menu vertical no-margin-top no-padding-top">
-      <% @investments_by_heading.each_pair do |heading, investments| %>
+      <% @investments_by_heading.keys.each do |heading| %>
         <li>
           <%= link_to heading.name, "#" + heading.name.parameterize %>
         </li>

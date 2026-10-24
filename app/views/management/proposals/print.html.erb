@@ -4,8 +4,6 @@
       <%= t("management.proposals.print.print_button") %>
     </a>
 
-    <%= image_tag "header_print_proposals.jpg", class: "for-print-only" %>
-
     <div class="filters">
       <span class="for-print-only date-for-print"><%= l Date.current, format: :long %></span>
 
@@ -18,7 +16,9 @@
       </div>
     </div>
 
-    <%= render @proposals %>
+    <% @proposals.each do |proposal| %>
+      <%= render "proposal", proposal: proposal %>
+    <% end %>
 
     <div class="for-print-only">
       <p><strong><%= t("management.print.proposals_info") %></strong></p>

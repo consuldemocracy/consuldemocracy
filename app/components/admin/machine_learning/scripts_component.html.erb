@@ -50,7 +50,7 @@
       <%= select_tag "script", options_for_select(script_select_options) %>
 
       <div id="script_descriptions">
-        <% scripts_info.each_with_index do |script_info, index| %>
+        <% scripts_info.each do |script_info| %>
           <div id="<%= script_info[:name] %>" class="help-text">
             <%= sanitize(script_info[:description]) %>
           </div>
