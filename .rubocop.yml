@@ -529,7 +529,7 @@ Rails/SafeNavigation:
 
 Rails/SaveBang:
   Enabled: true
-  Severity: refactor
+  Severity: info
 
 Rails/SelectMap:
   Enabled: true
