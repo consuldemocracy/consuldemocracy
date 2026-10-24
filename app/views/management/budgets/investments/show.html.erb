@@ -1,5 +1,5 @@
 <% provide :title, @investment.title %>
 
-<%= render "/shared/print" %>
+<%= render Management::PrintComponent.new %>
 
 <%= render "/budgets/investments/investment_show", investment: @investment %>

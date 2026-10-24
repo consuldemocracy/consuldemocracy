@@ -1,5 +1,0 @@
-<% if comment.errors.any? %>
-  $("#comments-box-<%= @annotation.id %> a.publish-comment").hide();
-  $("#js-comment-form-annotation-<%= annotation.id %>").toggle();
-  $("#js-comment-form-annotation-<%= annotation.id %> textarea").trigger("focus");
-<% end %>

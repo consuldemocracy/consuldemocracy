@@ -17,19 +17,15 @@
 
     <% if @process.allegations_phase.open? %>
       <% if user_signed_in? %>
-        <a class="button publish-comment" href="#"><strong><%= t("legislation.annotations.comments.publish_comment") %></strong></a>
-        &nbsp;
         <% css_id = parent_or_commentable_dom_id(nil, annotation) %>
-        <div id="js-comment-form-annotation-<%= annotation.id %>" style="display:none" class="comment-form js-comment-form-annotation">
-          <%= form_for @comment, url: legislation_process_draft_version_annotation_new_comment_path(annotation.draft_version.process, annotation.draft_version, annotation), remote: true do |f| %>
-            <%= f.text_area :body,
-                            id: "comment-body-#{css_id}",
-                            maxlength: Comment.body_max_length,
-                            label: leave_comment_text(annotation),
-                            rows: 8 %>
-            <%= f.submit comment_button_text(nil, annotation), class: "button" %>
-          <% end %>
-        </div>
+        <%= form_for @comment, url: legislation_process_draft_version_annotation_new_comment_path(annotation.draft_version.process, annotation.draft_version, annotation), remote: true do |f| %>
+          <%= f.text_area :body,
+                          id: "comment-body-#{css_id}",
+                          maxlength: Comment.body_max_length,
+                          label: leave_comment_text(annotation),
+                          rows: 8 %>
+          <%= f.submit comment_button_text(nil, annotation), class: "button" %>
+        <% end %>
       <% else %>
         <%= render "shared/login_to_comment" %>
       <% end %>

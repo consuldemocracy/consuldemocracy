@@ -700,7 +700,7 @@ describe "Proposals" do
         visit retire_form_proposal_path(proposal)
 
         expect(page).not_to have_css "#add_language"
-        expect(page).not_to have_link "Remove language"
+        expect(page).not_to have_button "Remove language"
       end
     end
   end

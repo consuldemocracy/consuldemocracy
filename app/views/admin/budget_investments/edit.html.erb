@@ -61,7 +61,7 @@
         <%= f.label :valuation_tag_list %>
         <div class="tags">
           <% @tags.each do |tag| %>
-            <a class="js-add-tag-link"><%= tag.name %></a>
+            <%= button_tag tag.name, type: "button", class: "add-tag" %>
           <% end %>
         </div>
         <%= f.text_field :valuation_tag_list,
