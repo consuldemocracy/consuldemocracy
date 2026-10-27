@@ -104,8 +104,6 @@ sr:
       share: Подели
       share_comment: Коментаришите на %{version_name} од нацрта процеса %{process_name}
     proposals:
-      form:
-        tags_label: "Категорије"
       not_verified: "За гласање предлога %{verify_account}."
       process_title: Заједнички законодавни процес
     summary:
