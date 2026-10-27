@@ -81,6 +81,7 @@ en:
       show_link: View debate
     form:
       tags_instructions: Tag this debate.
+      tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_debates: Featured

@@ -43,21 +43,12 @@
     <% end %>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("legislation.proposals.form.tags_label") %>
-      <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
-
-      <div id="category_tags" class="tags">
-        <% @process.tag_list_on(:customs).each do |tag| %>
-          <a class="js-add-tag-link"><%= tag %></a>
-        <% end %>
-      </div>
-
-      <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
-                                  label: false,
-                                  placeholder: t("proposals.form.tags_placeholder"),
-                                  class: "js-tag-list",
-                                  aria: { describedby: "tag-list-help-text" } %>
+      <%= render Taggable::FieldsComponent.new(
+            f,
+            categories: @process.tag_list_on(:customs),
+            i18n_namespace: "proposals.form",
+            autocomplete: false
+          ) %>
     </div>
 
     <div class="small-12 column">

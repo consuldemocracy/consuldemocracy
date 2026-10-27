@@ -16,10 +16,6 @@ class Budgets::Investments::FormComponent < ApplicationComponent
       investment.budget
     end
 
-    def categories
-      Tag.category.order(:name)
-    end
-
     def map_location
       investment.map_location || MapLocation.new(investment: Budget::Investment.new)
     end

@@ -54,25 +54,7 @@
 
     <%= render MapLocations::FormFieldsComponent.new(f, map_location: map_location) %>
 
-    <div>
-      <%= f.label :tag_list, t("proposals.form.tags_label") %>
-      <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
-
-      <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
-        <% categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
-        <% end %>
-      </div>
-
-      <br>
-      <%= f.text_field :tag_list, value: proposal.tag_list.to_s,
-                                  label: false,
-                                  placeholder: t("proposals.form.tags_placeholder"),
-                                  class: "js-tag-list tag-autocomplete",
-                                  aria: { describedby: "tag-list-help-text" },
-                                  data: { js_url: suggest_tags_path } %>
-    </div>
+    <%= render Taggable::FieldsComponent.new(f, i18n_namespace: "proposals.form") %>
 
     <% if current_user.unverified? %>
       <div>

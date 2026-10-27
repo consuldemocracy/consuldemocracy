@@ -27,13 +27,7 @@
   <fieldset>
     <legend><%= t("shared.optional") %></legend>
 
-    <div>
-      <%= f.text_field :tag_list, value: debate.tag_list.to_s,
-                                  hint: t("debates.form.tags_instructions"),
-                                  placeholder: t("debates.form.tags_placeholder"),
-                                  data: { js_url: suggest_tags_path },
-                                  class: "tag-autocomplete" %>
-    </div>
+    <%= render Taggable::FieldsComponent.new(f, categories: [], i18n_namespace: "debates.form") %>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
   </fieldset>

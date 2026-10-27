@@ -226,6 +226,7 @@ ignore_unused:
   - "sdg.*.filter.more.*"
   - "sdg_management.relations.index.filter*"
   - "tags.list.filter.more.*"
+  - "{proposals,debates,budgets.investments}.form.tag*"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:

@@ -81,6 +81,7 @@ es:
       show_link: Ver debate
     form:
       tags_instructions: Etiqueta este debate.
+      tags_label: Etiquetas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
       featured_debates: Destacar
