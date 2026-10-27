@@ -105,8 +105,6 @@ gd:
       share: Co-roinn
       share_comment: Thoir beachd seachad air %{version_name} bhon dreach phròiseas %{process_name}
     proposals:
-      form:
-        tags_label: "Roinnean-seòrsa"
       not_verified: "Airson molaidhean bhòtaidh %{verify_account}."
       process_title: Pròiseas reachdais cho-obrachail
     summary:
