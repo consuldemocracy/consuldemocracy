@@ -103,8 +103,6 @@ it:
       share: Condividere
       share_comment: Commenta la bozza %{version_name} del procedimento %{process_name}
     proposals:
-      form:
-        tags_label: "Categorie"
       not_verified: "Per votare le proposte %{verify_account}."
       process_title: Procedimento legislativo collaborativo
     summary:
