@@ -47,9 +47,6 @@ fi:
         share: Jaa
     shared:
       share: Jaa
-    proposals:
-      form:
-        tags_label: "Kategoriat"
     summary:
       title: "Yhteenveto"
       votes:
