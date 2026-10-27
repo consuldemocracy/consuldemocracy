@@ -120,6 +120,8 @@
 
       <%= render "communities/access_button", community: investment.community %>
 
+      <%= render Sensemaker::ReportLinkComponent.new(investment.budget) %>
+
     </aside>
   </div>
 </section>

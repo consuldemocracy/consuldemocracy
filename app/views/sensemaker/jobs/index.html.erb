@@ -1,0 +1,7 @@
+<% provide :title, "Sensemaker Analysis" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <%= render Sensemaker::JobIndexComponent.new(jobs: @sensemaker_jobs, parent_resource: @parent_resource, resource: @resource) %>
+  </div>
+</div>

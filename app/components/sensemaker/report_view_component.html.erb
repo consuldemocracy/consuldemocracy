@@ -1,0 +1,14 @@
+<div class="sensemaker">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <section>
+        <h1><%= t("sensemaker.report_view.title") %></h1>
+        <p><%= introductory_text %></p>
+        <p><%= explanatory_text %> <%= report_description %></p>
+      </section>
+
+      <h2><%= t("sensemaker.report_view.metadata_title") %></h2>
+      <%= render Sensemaker::ReportJobMetaComponent.new(@sensemaker_job) %>
+    </div>
+  </div>
+</div>

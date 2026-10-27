@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     draw :related_content
     draw :sdg
     draw :sdg_management
+    draw :sensemaker
     draw :tag
     draw :user
     draw :valuation

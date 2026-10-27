@@ -1,0 +1,7 @@
+<% provide :title, t("sensemaker.report_view.title") %>
+
+<div class="row">
+  <div class="small-12 column">
+    <%= render Sensemaker::ReportViewComponent.new(@sensemaker_job) %>
+  </div>
+</div>

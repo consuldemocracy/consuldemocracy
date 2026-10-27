@@ -203,6 +203,10 @@ en:
       investment_proyects: List of all investment projects
       unfeasible_investment_proyects: List of all unfeasible investment projects
       not_selected_investment_proyects: List of all investment projects not selected for balloting
+    sensemaking:
+      link: Sensemaking
+      page_title: "%{budget} - Sensemaking"
+      heading: "Discover what citizens said about this budget"
     executions:
       link: "Milestones"
       page_title: "%{budget} - Milestones"
