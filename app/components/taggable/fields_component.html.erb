@@ -1,0 +1,22 @@
+<div>
+  <%= form.label :tag_list, tags_label %>
+  <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
+
+  <% if categories.any? %>
+    <div id="category_tags" class="tags">
+      <%= form.label :category_tag_list, tag_category_label %>
+      <% categories.each do |category| %>
+        <a class="js-add-tag-link"><%= category_name(category) %></a>
+      <% end %>
+    </div>
+
+    <br>
+  <% end %>
+
+  <%= form.text_field :tag_list, value: form.object.tag_list.to_s,
+                                 label: false,
+                                 placeholder: tags_placeholder,
+                                 class: tag_list_classes,
+                                 aria: { describedby: "tag-list-help-text" },
+                                 data: tag_list_data %>
+</div>
