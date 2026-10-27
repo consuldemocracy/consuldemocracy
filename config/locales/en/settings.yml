@@ -254,3 +254,5 @@ en:
       model_description: "The LLM model to use."
       use_ai_image_suggestions: "AI Image Suggestions"
       use_ai_image_suggestions_description: "Allow users to use AI for suggesting images from Pexels, instead of uploading their own."
+      use_sensemaker: "Sensemaker"
+      use_sensemaker_description: "Enable Sensemaker integration to help make sense of large-scale conversations."
