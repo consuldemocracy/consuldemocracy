@@ -34,9 +34,6 @@ nn:
         unauthenticated: Du må %{signin} eller %{signup} for å delta.
     shared:
       share: Del
-    proposals:
-      form:
-        tags_label: "Kategorier"
     summary:
       votes:
         zero: "%{count} stemmer"
