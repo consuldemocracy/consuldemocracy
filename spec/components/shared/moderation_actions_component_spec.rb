@@ -11,8 +11,8 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(debate)
 
-      page.find("form[action='#{hide_moderation_debate_path(debate)}']") do
-        expect(page).to have_button "Hide"
+      page.find("form[action='#{hide_moderation_debate_path(debate)}']") do |form|
+        expect(form).to have_button "Hide"
       end
     end
 
@@ -21,8 +21,8 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(proposal)
 
-      page.find("form[action='#{hide_moderation_proposal_path(proposal)}']") do
-        expect(page).to have_button "Hide"
+      page.find("form[action='#{hide_moderation_proposal_path(proposal)}']") do |form|
+        expect(form).to have_button "Hide"
       end
     end
 
@@ -31,8 +31,8 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(notification)
 
-      page.find("form[action='#{hide_moderation_proposal_notification_path(notification)}']") do
-        expect(page).to have_button "Hide"
+      page.find("form[action='#{hide_moderation_proposal_notification_path(notification)}']") do |form|
+        expect(form).to have_button "Hide"
       end
     end
 
@@ -41,8 +41,8 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(comment)
 
-      page.find("form[action='#{hide_moderation_comment_path(comment)}']") do
-        expect(page).to have_button "Hide"
+      page.find("form[action='#{hide_moderation_comment_path(comment)}']") do |form|
+        expect(form).to have_button "Hide"
       end
     end
 
@@ -51,8 +51,8 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(investment)
 
-      page.find("form[action='#{hide_moderation_budget_investment_path(investment)}']") do
-        expect(page).to have_button "Hide"
+      page.find("form[action='#{hide_moderation_budget_investment_path(investment)}']") do |form|
+        expect(form).to have_button "Hide"
       end
     end
 
@@ -61,8 +61,8 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(proposal)
 
-      page.find("form[action='#{hide_moderation_legislation_proposal_path(proposal)}']") do
-        expect(page).to have_button "Hide"
+      page.find("form[action='#{hide_moderation_legislation_proposal_path(proposal)}']") do |form|
+        expect(form).to have_button "Hide"
       end
     end
 
