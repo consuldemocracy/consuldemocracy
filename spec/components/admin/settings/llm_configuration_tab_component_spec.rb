@@ -18,9 +18,11 @@ describe Admin::Settings::LlmConfigurationTabComponent do
   let(:provider_setting) { Setting.find_by!(key: "llm.provider") }
   let(:model_setting) { Setting.find_by!(key: "llm.model") }
   let(:feature_setting) { Setting.find_by!(key: "llm.use_llm_for_translations") }
+  let(:sensemaker_setting) { Setting.find_by!(key: "llm.use_sensemaker") }
   let(:provider_select_selector) { "#value_setting_#{provider_setting.id}" }
   let(:model_select_selector) { "#value_setting_#{model_setting.id}" }
   let(:feature_button_selector) { "button[aria-labelledby='title_setting_#{feature_setting.id}']" }
+  let(:sensemaker_button_selector) { "button[aria-labelledby='title_setting_#{sensemaker_setting.id}']" }
 
   before do
     Setting["llm.provider"] = nil
@@ -55,6 +57,12 @@ describe Admin::Settings::LlmConfigurationTabComponent do
         expect(page).to have_content "Content Translation"
         expect(page).to have_content "Use LLM for content translations and take precedence over " \
                                      "Microsoft translation services."
+        expect(page).to have_button "No", disabled: true
+      end
+
+      stub_secrets(sensemaker_data_folder: "vendor/sensemaking-tools/data")
+
+      page.find(sensemaker_button_selector) do
         expect(page).to have_button "No", disabled: true
       end
     end
@@ -101,6 +109,35 @@ describe Admin::Settings::LlmConfigurationTabComponent do
       end
 
       page.find(feature_button_selector) do
+        expect(page).to have_button "No", disabled: false
+      end
+    end
+  end
+
+  describe "sensemaker toggle" do
+    before do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o"
+      Setting["llm.use_sensemaker"] = false
+    end
+
+    it "is disabled when sensemaker_data_folder is not configured" do
+      stub_secrets(sensemaker_data_folder: "")
+
+      render_inline component
+
+      page.find(sensemaker_button_selector) do
+        expect(page).to have_content "Sensemaker"
+        expect(page).to have_button "No", disabled: true
+      end
+    end
+
+    it "is enabled when LLM and sensemaker_data_folder are configured" do
+      stub_secrets(sensemaker_data_folder: "vendor/sensemaking-tools/data")
+
+      render_inline component
+
+      page.find(sensemaker_button_selector) do
         expect(page).to have_button "No", disabled: false
       end
     end
