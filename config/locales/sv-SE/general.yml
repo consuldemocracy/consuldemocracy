@@ -81,6 +81,7 @@ sv:
       show_link: Visa debatt
     form:
       tags_instructions: Tagga debatten.
+      tags_label: Taggar
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
     index:
       featured_debates: Utvalda
