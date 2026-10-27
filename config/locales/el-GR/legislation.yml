@@ -103,8 +103,6 @@ el:
       share: Κοινοποιήστε
       share_comment: Σχόλιο στο %{version_name} από το σχεδιασμό διαδικασίας %{process_name}
     proposals:
-      form:
-        tags_label: "Κατηγορίες"
       not_verified: "Για να ψηφίσετε %{verify_account}."
       process_title: Διαδικασία συνεργατικής νομοθεσίας
     summary:
