@@ -783,7 +783,6 @@ sv:
           legislation: "Medborgardialoger"
           budgets: "Budgetar"
           layouts: "Layouter"
-          machine_learning: "AI/maskininlärning"
           mailers: "E-postadresser"
           management: "Användarhantering"
           welcome: "Välkommen"
@@ -804,7 +803,6 @@ sv:
       debates: "Debatter"
       comments: "Kommentarer"
       local_census_records: Hantera lokalt adressregister
-      machine_learning: "AI/maskininlärning"
       multitenancy: Flera hyresgäster
     administrators:
       index:
@@ -1761,56 +1759,6 @@ sv:
           created: Skapade poster
         local_census_records:
           no_records_found: Inga rader.
-    machine_learning:
-      cancel: "Avbryt åtgärd"
-      cancel_alert: "Den här åtgärden avbryter det nuvarande skriptet och det blir nödvändigt att köra skriptet igen."
-      comments_summary: "Kommentarsammanfattning"
-      comments_summary_description: "Visar en automatiskt genererad kommentarsammanfattning på alla objekt som kan kommenteras."
-      data_folder_content: "Datamappsinnehåll"
-      error: "Fel:"
-      execute_script: "Kör skript"
-      executed_by: "Kört av:"
-      executed_script: "Kört skript:"
-      feature_disabled: "Den här funktionen har inaktiverats. För att använda maskininlärning kan du aktivera den från %{link}."
-      feature_disabled_link: "inställningssida"
-      help:
-        title_1: "Vad är AI/maskininlärning?"
-        description_1: "Traditionellt utformas datorprogram genom att fastställa precisa regler om vad programmet ska göra i varje situation, och hur det ska behandla tillgänglig information vid varje tillfälle. Det som allmänt kallas AI/maskininlärning är en typ av program för vilket det fastställs exakt vilken uppgift som ska utföras och det bedöms om uppgiften utförs bättre eller sämre. Men till skillnad från den traditionella typen upptäcker, eller lär sig, systemet metoden som är lämpligast för att utföra uppgiften."
-        title_2: "Vad är modulen AI/maskininlärning till för i CONSUL DEMOCRACY?"
-        description_2: "Med den här modulen kan alla typer av AI-/maskininlärningsprogram implementeras i CONSUL DEMOCRACY. Programmen kan bearbeta informationen som är tillgänglig i CONSUL DEMOCRACY och ge resultat som hjälper både användare och administratörer att genomföra medborgardeltagande på ett mer effektivt och intelligent sätt. Modulen har utvecklas för att göra det enkelt att implementera och köra nya program, så att CONSUL DEMOCRACY:s allmänna kod hålls oberoende från dessa nya programs kod."
-        title_3: "Så här används den här modulen"
-        description_3: "Innan du använder det för första gången måste du aktivera denna modul på rätt sätt enligt instruktionerna i CONSUL-dokumentationen. När modulen har aktiverats korrekt körs programmen från fliken \"Kör skript\". Före körningen kan vi på samma flik se uppskattad körtid och annan relevant information. I slutet av körningen kan vi aktivera innehållet som ska visas i CONSUL DEMOCRACY från fliken \"Inställningar\", samt hämta andra genererade filer som kan vara användbara för oss."
-        title_4: "Så här implementeras nya AI-/maskininlärningsskript"
-        description_4: "Använd föregående skript som exempel."
-        description_4b: "De nya skripten ska placeras i mappen <code>public/machine_learning/scripts</code>"
-        description_4c: "Indata som ska användas av skriptet kommer att skapas som JSON-filer i mappen <code>../data</code>"
-        description_4d: "All genererad utdata ska placeras i mappen <code>../data</code>"
-        description_4e: "Det rekommenderas att skapa en oberoende <code>.ini</code>-textfil med skriptets inställningar, med samma namn som skriptet, som kan läsas av configparser. Med den här filen blir det lättare för administratörer att ändra i inställningarna."
-        description_4f: "Det rekommenderas att som första rad i skriptet omfatta en inledande trippelcitatsträng med lite kort information om det och länkar till all relevant information. Den här strängen kommer automatiskt att visas i administrationsgränssnittet."
-        description_4g: "Det rekommenderas att logga skriptets relevanta information i en <code>.log</code>-textfil, med samma namn som skriptet."
-        title_5: "För att använda AI-/maskininlärningsskript måste du ha installerat Python på din server"
-        description_5: "Här kan du se exempelinstruktionerna för en Ubuntu 18.04-server:"
-      help_text: "Den här funktionen är experimentell."
-      last_execution: "Senaste körningen"
-      no_content: "Inget innehåll har genererats än."
-      notice:
-        success: "Det senaste skriptet har körts."
-        error: "Det uppstod ett fel. Du kan se detaljerna nedan."
-        working: "Skriptet körs. Administratören som körde det får ett e-postbrev när det är klart."
-        delete_generated_content: "Genererat innehåll har raderats."
-      output_files: "Utdatafiler:"
-      related_content: "Relaterat innehåll"
-      related_content_description: "Lägger till automatiskt genererat relaterat innehåll till förslag och medborgarbudgetprojekt."
-      script_info: "Du kommer att få ett e-postbrev till %{email} när skriptet har körts klart."
-      script_name: "Skriptnamn:"
-      select_script: "Välj python-skript som ska köras"
-      started_at: "Startade kl.:"
-      tab_help: "Hjälp"
-      tab_scripts: "Kör skript"
-      tab_settings: "Inställningar/genererat innehåll"
-      tags: "Taggar"
-      tags_description: "Genererar automatiska taggar på alla objekt som kan taggas."
-      title: "AI/maskininlärning"
     cookies:
       vendors:
         empty: Det hittades inga leverantörer
