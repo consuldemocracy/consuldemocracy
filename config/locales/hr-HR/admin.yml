@@ -1539,7 +1539,3 @@ hr:
           created: Stvoreni zapisi
         local_census_records:
           no_records_found: Zapisi nisu pronađeni.
-    machine_learning:
-      related_content: "Povezani sadržaj"
-      tab_help: "Pomoć"
-      tags: "Oznake"
