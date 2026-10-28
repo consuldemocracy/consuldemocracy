@@ -949,9 +949,6 @@ sv:
         more:
           one: "En tagg till"
           other: "%{count} taggar till"
-  machine_learning:
-    comments_summary: "Kommentarsammanfattning"
-    info_text: "Innehåll har genererats av AI/maskininlärning"
   cookies_consent:
     accept_all_cookies: "Godkänn alla"
     accept_essential_cookies: "Godkänn essentiella cookies"
