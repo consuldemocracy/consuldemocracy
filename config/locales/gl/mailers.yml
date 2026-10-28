@@ -86,16 +86,6 @@ gl:
       hi: Ola
       new_comment_by: Hai unha nova avaliación do comentario de <strong>%{commenter}</strong> para a partida de investimento %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Visitar o panel de Machine Learning"
-      subject: "Machine learning - Produciuse un erro durante a execución do guión"
-      text: "Produciuse un erro ao executar o guión de Machine Learning."
-      title: "Guión Machine Learning"
-    machine_learning_success:
-      link: "Visitar o panel de Machine Learning"
-      subject: "Machine learning - Contido xerado correctamente"
-      text: "Contido xerado correctamente."
-      title: "Guión Machine Learning"
     new_actions_notification_on_create:
       subject: "Foi creada o borrador de proposta cidadá"
       hi: "Ola %{name}!"
