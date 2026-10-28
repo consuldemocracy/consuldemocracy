@@ -948,9 +948,6 @@ tr:
         more:
           one: "Bir etiket daha"
           other: "%{count} etiket daha"
-  machine_learning:
-    comments_summary: "Yorumların özeti"
-    info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"
   cookies_consent:
     accept_all_cookies: "Tümünü onayla"
     accept_essential_cookies: "Temel tanımlama bilgilerini onayla"
