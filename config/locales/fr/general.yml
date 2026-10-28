@@ -915,6 +915,3 @@ fr:
         more:
           one: "Un tag de plus"
           other: "%{count} tags supplémentaires"
-  machine_learning:
-    comments_summary: "Résumé des commentaires"
-    info_text: "Contenu généré par l'IA/le machine learning"
