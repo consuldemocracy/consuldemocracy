@@ -783,7 +783,6 @@ hu:
           legislation: "Együttműködésen alapuló jogalkotás"
           budgets: "Költségvetések"
           layouts: "Elrendezések"
-          machine_learning: "AI / gépi tanulás"
           mailers: "E-mailek"
           management: "Kezelés"
           welcome: "Üdvözlés"
@@ -804,7 +803,6 @@ hu:
       debates: "Viták"
       comments: "Hozzászólások"
       local_census_records: Helyi népesség-nyilvántartás
-      machine_learning: "AI / gépi tanulás"
       multitenancy: Több-bérlős működés
     administrators:
       index:
@@ -1759,56 +1757,6 @@ hu:
           created: Létrehozott rekordok
         local_census_records:
           no_records_found: Nem találhatók rekordok.
-    machine_learning:
-      cancel: "Művelet megszakítása"
-      cancel_alert: "Ez a művelet megszakítja az aktuális szkriptet, és újra kell majd futtatni."
-      comments_summary: "Hozzászólás-összefoglaló"
-      comments_summary_description: "Automatikusan generált hozzászólás-összefoglalót jelenít meg minden olyan elemen, amelyhez hozzá lehet szólni."
-      data_folder_content: "Az adatkönyvtár tartalma"
-      error: "Hiba:"
-      execute_script: "Szkript futtatása"
-      executed_by: "Futtatta:"
-      executed_script: "Futtatott szkript:"
-      feature_disabled: "Ez a funkció le van tiltva. A gépi tanulás használatához engedélyezheted innen: %{link}."
-      feature_disabled_link: "beállítások oldal"
-      help:
-        title_1: "Mi az AI / gépi tanulás?"
-        description_1: "A számítógépes programokat hagyományosan úgy tervezik, hogy pontos szabályokat határoznak meg arra, mit kell tennie a programnak az egyes helyzetekben, és hogyan kell feldolgoznia az adott pillanatban rendelkezésre álló információt. Az AI/gépi tanulásként ismert megközelítés olyan programok típusa, ahol pontosan azt rögzítjük, mi a végrehajtandó feladat és hogyan mérhető, hogy a feladatot jobban vagy rosszabbul végzi-e a rendszer. A korábbi megközelítéstől eltérően azonban a rendszer maga fedezi fel vagy tanulja meg, mi a legalkalmasabb módszer a feladat végrehajtására."
-        title_2: "Mit tud a CONSUL DEMOCRACY AI / gépi tanulás modulja?"
-        description_2: "Ez a modul lehetővé teszi bármilyen AI/gépi tanulási program beépítését a CONSUL DEMOCRACY rendszerbe. A programok feldolgozhatják a CONSUL DEMOCRACY-ben elérhető információkat, és olyan eredményeket hozhatnak létre, amelyek segítik a felhasználókat és az adminisztrátorokat a hatékonyabb és intelligensebb polgári részvétel megvalósításában. A modult úgy fejlesztették, hogy könnyű legyen új programokat bevezetni és futtatni, miközben a CONSUL DEMOCRACY általános kódja és az új programok kódja egymástól független marad."
-        title_3: "Hogyan használd ezt a modult"
-        description_3: "Az első használathoz követned kell a CONSUL DEMOCRACY dokumentációjában elérhető utasításokat a modul megfelelő aktiválásához. Miután a modult helyesen aktiváltad, a programok a \"Szkriptek futtatása\" fülről indíthatók. Futtatás előtt ugyanazon a fülön látható a futási idő becslése és más releváns információk. A futás végén a \"Beállítások\" fülön aktiválhatod a CONSUL DEMOCRACY-ben megjelenítendő tartalmat, illetve letölthetsz más létrejött fájlokat is, amelyek hasznosak lehetnek."
-        title_4: "Hogyan valósíts meg új AI / gépi tanulási szkripteket"
-        description_4: "Használd a korábbi szkripteket példaként."
-        description_4b: "Az új szkripteknek a <code>public/machine_learning/scripts</code> mappában kell lenniük"
-        description_4c: "A szkript által felhasználandó bemeneti adatok JSON fájlként jönnek létre a <code>../data</code> mappában"
-        description_4d: "Minden létrehozott kimenetet a <code>../data</code> mappába kell helyezni"
-        description_4e: "Javasolt egy külön <code>.ini</code> szövegfájl létrehozása a szkript beállításaival, a szkripttel azonos néven, a configparser által olvasható formában. Ez megkönnyíti a beállítások adminisztrátorok általi módosítását."
-        description_4f: "Javasolt a szkript első soraként egy kezdő tripla idézőjeles sztringet elhelyezni néhány rövid információval és a releváns hivatkozásokkal. Ez a sztring automatikusan megjelenik az adminisztrációs felületen."
-        description_4g: "Javasolt a szkript releváns információit egy <code>.log</code> szövegfájlba naplózni, a szkripttel azonos néven."
-        title_5: "Az AI / gépi tanulási szkriptek használatához Pythonnak kell telepítve lennie a szerveren"
-        description_5: "Itt láthatod a példautasításokat egy Ubuntu 18.04 szerverhez:"
-      help_text: "Ez a funkció kísérleti jellegű."
-      last_execution: "Utolsó futtatás"
-      no_content: "Még nem jött létre tartalom."
-      notice:
-        success: "Az utolsó szkript sikeresen lefutott."
-        error: "Hiba történt. A részleteket lent láthatod."
-        working: "A szkript fut. Az adminisztrátor, aki elindította, e-mailt kap, amikor befejeződik."
-        delete_generated_content: "A generált tartalom sikeresen törölve lett."
-      output_files: "Kimeneti fájlok:"
-      related_content: "Kapcsolódó tartalom"
-      related_content_description: "Automatikusan generált kapcsolódó tartalmat ad a javaslatokhoz és a részvételi költségvetési projektekhez."
-      script_info: "A szkript futásának befejezésekor e-mailt kapsz ide: %{email}."
-      script_name: "Szkript neve:"
-      select_script: "Válaszd ki a futtatandó Python szkriptet"
-      started_at: "Indult ekkor:"
-      tab_help: "Súgó"
-      tab_scripts: "Szkript futtatása"
-      tab_settings: "Beállítások / Generált tartalom"
-      tags: "Címkék"
-      tags_description: "Automatikus címkéket generál minden olyan elemhez, amely címkézhető."
-      title: "AI / gépi tanulás"
     cookies:
       vendors:
         empty: Nem találhatók szolgáltatók
