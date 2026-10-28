@@ -1297,7 +1297,3 @@ val:
         document_type: Tipus de document
         document_number: Número de document
         date_of_birth: Data de naixement
-    machine_learning:
-      related_content: "Contingut relacionat"
-      tab_help: "Ajuda"
-      tags: "Temes"
