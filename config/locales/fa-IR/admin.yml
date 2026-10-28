@@ -1147,7 +1147,3 @@ fa:
         document_type: نوع سند
         document_number: شماره سند
         date_of_birth: تاریخ تولد
-    machine_learning:
-      related_content: "مطالب مرتبط"
-      tab_help: "کمک"
-      tags: "برچسب ها"
