@@ -917,6 +917,3 @@ pt:
         more:
           one: "Mais uma etiqueta"
           other: "Mais %{count} etiquetas"
-  machine_learning:
-    comments_summary: "Resumo de comentários"
-    info_text: "Conteúdo gerado por IA / Machine Learning"
