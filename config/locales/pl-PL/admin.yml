@@ -1383,8 +1383,3 @@ pl:
         document_type: Rodzaj dokumentu
         document_number: Numer dokumentu
         date_of_birth: Data urodzenia
-    machine_learning:
-      error: "Błąd:"
-      related_content: "Powiązana zawartość"
-      tab_help: "Pomoc"
-      tags: "Tagi"
