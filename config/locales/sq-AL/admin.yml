@@ -1244,7 +1244,3 @@ sq:
         document_type: Tipi i dokumentit
         document_number: Numri i dokumentit
         date_of_birth: Data e lindjes
-    machine_learning:
-      related_content: "Përmbajtja e ngjashme"
-      tab_help: "Ndihmë"
-      tags: "Etiketë"
