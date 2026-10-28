@@ -106,8 +106,6 @@ gl:
         recommendations_on_proposals_description: "Amosa as recomendacións de usuarios aos usuarios na páxina de propostas baseadas nas etiquetas dos elementos seguidos"
       community: "Comunidade de propostas e proxectos de investimento"
       community_description: "Habilita a sección de comunidade nas propostas e nos proxectos de investimento dos Orzamentos Participativos"
-      machine_learning: "IA / Machine Learning"
-      machine_learning_description: "Activar a sección de IA / Machine Learning para executar guións de python e enriquecer o contido de xeito automático."
       map: "Xeolocalización de propostas e proxectos de investimento"
       map_description: "Habilita a xeolocalización das propostas e dos proxectos de investimento"
       allow_images: "Permitir subir e amosar imaxes"
