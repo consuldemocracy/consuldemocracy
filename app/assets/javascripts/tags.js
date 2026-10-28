@@ -2,19 +2,30 @@
   "use strict";
   App.Tags = {
     initialize: function() {
-      var $tag_input;
-      $tag_input = $("input.js-tag-list");
-      $("body").on("click", ".js-add-tag-link", function() {
-        var current_tags, name;
-        name = "\"" + ($(this).text()) + "\"";
-        current_tags = $tag_input.val().split(",").filter(Boolean);
-        if (current_tags.indexOf(name) >= 0) {
-          current_tags.splice(current_tags.indexOf(name), 1);
-        } else {
-          current_tags.push(name);
+      $(".js-taggable-fields").each(function() {
+        var $root = $(this);
+        var $input = $root.find("input.js-tag-list");
+        var options;
+        var suggestions_url;
+
+        if (!$input.length) {
+          return;
         }
-        $tag_input.val(current_tags.join(","));
-        return false;
+
+        options = {
+          whiteList: false,
+          checkboxes: $root.find("input.js-tag-category"),
+          classes: {
+            sTagsInput: ".js-tag-list-input"
+          }
+        };
+
+        suggestions_url = $input.data("suggestions-url");
+        if (suggestions_url) {
+          options.suggestionsUrl = suggestions_url;
+        }
+
+        App.AmsifyListField.mount($input, options);
       });
     }
   };

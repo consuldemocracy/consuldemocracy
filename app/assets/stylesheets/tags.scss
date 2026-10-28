@@ -1,3 +1,28 @@
 .tags {
   @extend %tags;
 }
+
+.js-taggable-fields {
+
+  @include amsify-suggestags-input-area;
+
+  input.js-tag-category {
+    @include element-invisible;
+
+    &:focus + label {
+      @include focus-outline;
+    }
+
+    &:checked + label {
+      opacity: 0.5;
+    }
+  }
+
+  input.js-tag-category + label {
+    @extend %tag;
+    cursor: pointer;
+    font-weight: normal;
+    margin-left: 0;
+    margin-right: rem-calc(3);
+  }
+}

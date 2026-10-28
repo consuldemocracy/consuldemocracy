@@ -590,7 +590,7 @@ describe "Budget Investments" do
       fill_in "Location additional info", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, " \
               "or on behalf of more people, write its name", with: "T.I.A."
-      fill_in "Tags", with: "Towers"
+      fill_in_tag_list "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
@@ -658,7 +658,7 @@ describe "Budget Investments" do
       fill_in "Location additional info", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, " \
               "or on behalf of more people, write its name", with: "T.I.A."
-      fill_in "Tags", with: "Towers"
+      fill_in_tag_list "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"

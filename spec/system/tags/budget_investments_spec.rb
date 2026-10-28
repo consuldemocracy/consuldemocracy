@@ -69,9 +69,9 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
+    check "budget_investment_terms_of_service"
 
-    fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
+    fill_in_tag_list "#{tag_medio_ambiente.name}, #{tag_economia.name}"
 
     click_button "Create Investment"
 
@@ -89,7 +89,7 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
-    find(".js-add-tag-link", text: tag_economia.name).click
+    find("label", exact_text: tag_economia.name).click
     click_button "Create Investment"
 
     expect(page).to have_content "Budget Investment created successfully."
@@ -113,7 +113,7 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
-    find(".js-add-tag-link", text: "Education").click
+    find("label", exact_text: "Education").click
     click_button "Create Investment"
 
     expect(page).to have_content "Budget Investment created successfully."
@@ -137,7 +137,7 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
-    find(".js-add-tag-link", text: "Education").click
+    find("label", exact_text: "Education").click
     click_button "Create Investment"
 
     expect(page).to have_content "Budget Investment created successfully."
@@ -156,10 +156,9 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
+    check "budget_investment_terms_of_service"
 
-    fill_in "budget_investment_tag_list",
-            with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+    fill_in_tag_list "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
     click_button "Create Investment"
 
@@ -174,9 +173,9 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
+    check "budget_investment_terms_of_service"
 
-    fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
+    fill_in_tag_list "user_id=1, &a=3, <script>alert('hey');</script>"
 
     click_button "Create Investment"
 
@@ -308,7 +307,7 @@ describe "Tags" do
       expect(page).not_to have_content "Education"
     end
 
-    scenario "Valuators do not see user tags", :admin do
+    scenario "keeps user tags separate from valuation tags", :admin do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
       investment.set_tag_list_on(:valuation_tags, "Education")
       investment.save!
@@ -316,8 +315,14 @@ describe "Tags" do
       visit admin_budget_budget_investment_path(budget, investment)
       click_link "Edit classification"
 
-      expect(page).to     have_content "Education"
-      expect(page).not_to have_content "Park"
+      within "#admin_user_tags" do
+        expect(page).to have_content "Park"
+      end
+
+      within "#admin_valuation_tags" do
+        expect(page).to have_content "Education"
+        expect(page).not_to have_content "Park"
+      end
     end
   end
 end
