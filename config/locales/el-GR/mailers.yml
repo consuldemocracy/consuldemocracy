@@ -86,16 +86,6 @@ el:
       hi: Γεια
       new_comment_by: Υπάρχει νέο σχόλιο αξιολόγησης από <strong>%{commenter}</strong> στην επένδυση του προϋπολογισμού %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Επισκεφθείτε τον πίνακα Machine Learning"
-      subject: "Machine Learning - Παρουσιάστηκε σφάλμα κατά την εκτέλεση του σεναρίου"
-      text: "Παρουσιάστηκε σφάλμα κατά την εκτέλεση του σεναρίου Machine Learning."
-      title: "Σενάριο Machine Learning"
-    machine_learning_success:
-      link: "Επισκεφθείτε τον πίνακα Machine Learning"
-      subject: "Machine Learning - Το περιεχόμενο δημιουργήθηκε με επιτυχία"
-      text: "Το περιεχόμενο δημιουργήθηκε με επιτυχία."
-      title: "Σενάριο Machine Learning"
     new_actions_notification_on_create:
       subject: "Δημιουργήθηκε το προσχέδιο της πρότασή σας ως πολίτες"
       hi: "Γεια %{name}!"
