@@ -40,6 +40,7 @@
 //= require gettext
 //= require annotator
 //= require jquery.amsify.suggestags
+//= require amsify_list_field
 //= require tags
 //= require participation_not_allowed
 //= require advanced_search
