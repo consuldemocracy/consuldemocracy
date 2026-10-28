@@ -1232,7 +1232,3 @@ zh-TW:
         document_type: 文檔類型
         document_number: 文檔編號
         date_of_birth: 出生日期
-    machine_learning:
-      related_content: "相關內容"
-      tab_help: "說明"
-      tags: "標籤"
