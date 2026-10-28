@@ -16,7 +16,7 @@ cd consul
 git clone --mirror https://github.com/consuldemocracy/consuldemocracy.git repo
 mkdir releases shared
 mkdir shared/log shared/tmp shared/config shared/public shared/storage
-mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets shared/public/machine_learning/data
+mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets
 ```
 
 ## Initial release
