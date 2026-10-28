@@ -11,6 +11,7 @@
       var keep_checkbox_checked = settings.keepCheckboxChecked || function() {
         return false;
       };
+      var amsify_settings;
 
       amsify.getItem = function(value) {
         var item_key = this.getItemKey(value);
@@ -18,11 +19,14 @@
       };
 
       amsify.getTag = function(value) {
-        if (this.getItem(value) !== undefined) {
-          return $("<div>" + this.getItem(value).display_text + "</div>").text();
-        } else {
-          return value;
+        var item = this.getItem(value);
+        var label = value;
+
+        if (typeof item === "object" && item.display_text !== undefined) {
+          label = item.display_text;
         }
+
+        return $("<div>").text(label).html();
       };
 
       amsify.setIcon = function() {
@@ -31,9 +35,10 @@
           this.classes.removeTag.substring(1) + '">&#10006;</button>';
       };
 
-      amsify._settings({
-        suggestions: settings.suggestions,
+      amsify_settings = {
+        suggestions: settings.suggestions || [],
         whiteList: settings.whiteList,
+        tagLimit: settings.tagLimit !== undefined ? settings.tagLimit : -1,
         keepLastOnHoverTag: settings.keepLastOnHoverTag !== undefined ?
           settings.keepLastOnHoverTag : false,
         checkSimilar: settings.checkSimilar !== undefined ? settings.checkSimilar : false,
@@ -62,15 +67,24 @@
             settings.afterRemove(amsify, value);
           }
         }
-      });
+      };
 
-      if (settings.classes) {
-        if (settings.classes.focus) {
-          amsify.classes.focus = settings.classes.focus;
-        }
-        if (settings.classes.sTagsInput) {
-          amsify.classes.sTagsInput = settings.classes.sTagsInput;
-        }
+      if (settings.suggestionsAction) {
+        amsify_settings.suggestionsAction = settings.suggestionsAction;
+      } else if (settings.suggestionsUrl) {
+        amsify_settings.suggestionsAction = {
+          url: settings.suggestionsUrl,
+          type: "GET"
+        };
+      }
+
+      amsify._settings(amsify_settings);
+
+      amsify.classes.focus = (settings.classes && settings.classes.focus) ||
+        ".js-amsify-list-focus";
+
+      if (settings.classes && settings.classes.sTagsInput) {
+        amsify.classes.sTagsInput = settings.classes.sTagsInput;
       }
 
       amsify._init();
@@ -96,7 +110,9 @@
         attribute || "listValue"
       );
 
-      return $checkboxes.filter("[data-" + data_attribute + "=" + token + "]");
+      return $checkboxes.filter(
+        "[data-" + data_attribute + "=\"" + token + "\"]"
+      );
     },
     sync_checkboxes: function(amsify, $checkboxes, attribute) {
       var value_attribute = attribute || "listValue";

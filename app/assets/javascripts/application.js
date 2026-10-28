@@ -14,14 +14,9 @@
 //= require rails-ujs
 //= require jquery-ui/ui/version
 //= require jquery-ui/ui/data
-//= require jquery-ui/ui/keycode
-//= require jquery-ui/ui/position
 //= require jquery-ui/ui/scroll-parent
-//= require jquery-ui/ui/unique-id
 //= require jquery-ui/ui/widget
-//= require jquery-ui/ui/widgets/menu
 //= require jquery-ui/ui/widgets/mouse
-//= require jquery-ui/ui/widgets/autocomplete
 //= require jquery-ui/ui/widgets/sortable
 //= require @deltablot/dropzone/dist/dropzone-min
 //= require foundation-sites
@@ -69,7 +64,6 @@
 //= require documentable
 //= require imageable
 //= require tree_navigator
-//= require tag_autocomplete
 //= require leaflet/dist/leaflet
 //= require leaflet.markercluster/dist/leaflet.markercluster
 //= require map
@@ -125,7 +119,6 @@ var initialize_modules = function() {
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
   App.Imageable.initialize();
-  App.TagAutocomplete.initialize();
   App.Map.initialize();
   App.Polls.initialize();
   App.TableSortable.initialize();
