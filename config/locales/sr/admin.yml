@@ -1539,7 +1539,3 @@ sr:
           created: Креирани записи
         local_census_records:
           no_records_found: Нема нађених записа.
-    machine_learning:
-      related_content: "Повезани садржај"
-      tab_help: "Помоћ"
-      tags: "Ознаке"
