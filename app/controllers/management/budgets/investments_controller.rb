@@ -56,7 +56,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
                     documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]
 
-      [*attributes, translation_params(Budget::Investment)]
+      [*attributes, *translation_params(Budget::Investment)]
     end
 
     def only_verified_users
