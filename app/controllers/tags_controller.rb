@@ -3,7 +3,8 @@ class TagsController < ApplicationController
   respond_to :json
 
   def suggest
-    @tags = Tag.search(params[:search]).map(&:name)
-    respond_with @tags
+    tags = params[:term].present? ? Tag.search(params[:term]).map(&:name) : []
+
+    render json: { suggestions: tags }
   end
 end

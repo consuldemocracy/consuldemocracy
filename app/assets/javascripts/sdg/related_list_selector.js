@@ -15,7 +15,6 @@
         suggestions: $input.data("suggestions-list"),
         whiteList: true,
         classes: {
-          focus: ".sdg-related-list-focus",
           sTagsInput: ".sdg-related-list-selector-input"
         },
         checkboxes: $root.find(".goals input"),

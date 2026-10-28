@@ -1,0 +1,20 @@
+@mixin amsify-suggestags-input-area {
+  .amsify-suggestags-area {
+    position: relative;
+
+    .amsify-suggestags-list {
+      top: $input-height;
+    }
+  }
+
+  .amsify-suggestags-input-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+
+    > input {
+      margin-bottom: calc($line-height / 4) !important;
+      order: -1;
+    }
+  }
+}
