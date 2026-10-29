@@ -12,10 +12,10 @@ class Budget
     include Mappable
     include Documentable
     include SDG::Relatable
+    include Votable
     include HasPublicAuthor
 
     acts_as_taggable_on :valuation_tags
-    acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
     include Relationable
