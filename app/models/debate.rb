@@ -103,7 +103,7 @@ class Debate < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      user.with_lock { vote_by(voter: user, vote: vote_value) }
+      vote_by(voter: user, vote: vote_value)
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_28_184039) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_28_225302) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -1720,6 +1720,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_28_184039) do
     t.integer "signature_id"
     t.index ["signature_id"], name: "index_votes_on_signature_id"
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["votable_id", "votable_type", "voter_id", "voter_type"], name: "idx_on_votable_id_votable_type_voter_id_voter_type_8483770159", unique: true
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
