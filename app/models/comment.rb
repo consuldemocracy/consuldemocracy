@@ -4,6 +4,7 @@ class Comment < ApplicationRecord
   include Graphqlable
   include Notifiable
   include Searchable
+  include Votable
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
                          Legislation::Question Legislation::Annotation
@@ -12,7 +13,6 @@ class Comment < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  acts_as_votable
   has_ancestry touch: true
 
   attr_accessor :as_moderator, :as_administrator
