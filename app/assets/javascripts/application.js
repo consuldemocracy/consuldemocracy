@@ -140,6 +140,7 @@ var initialize_modules = function() {
   App.AdminDashboardActionsForm.initialize();
   App.AdminPollQuestionOptionsTable.initialize();
   App.AdminPollShiftsForm.initialize();
+  App.AdminSiteCustomizationDocumentsTableActions.initialize();
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();

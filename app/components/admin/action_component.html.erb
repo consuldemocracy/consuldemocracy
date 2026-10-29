@@ -1,4 +1,6 @@
-<% if button? %>
+<% if button_tag? %>
+  <%= button_tag text, html_options %>
+<% elsif button? %>
   <%= button_to text, path, html_options %>
 <% else %>
   <%= link_to text, path, html_options %>

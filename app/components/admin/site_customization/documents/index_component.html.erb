@@ -1,8 +1,8 @@
-<h2 class="inline-block"><%= t("admin.documents.index.title") %></h2>
-
-<%= link_to t("admin.documents.index.new_link"),
-            new_admin_site_customization_document_path,
-            class: "button float-right" %>
+<%= header do %>
+  <%= link_to t("admin.documents.index.new_link"),
+              new_admin_site_customization_document_path,
+              class: "button" %>
+<% end %>
 
 <% if documents.any? %>
   <h3><%= page_entries_info documents %></h3>
@@ -23,16 +23,7 @@
           <td><%= document.attachment.content_type %></td>
           <td><%= number_to_human_size(document.attachment.byte_size) %></td>
           <td>
-            <%= render Admin::TableActionsComponent.new(
-              document,
-              actions: [:destroy],
-              destroy_path: admin_site_customization_document_path(document)
-            ) do |actions| %>
-              <%= actions.action(:download,
-                                 text: t("documents.buttons.download_document"),
-                                 path: permanent_document_path(document),
-                                 rel: "nofollow") %>
-            <% end %>
+            <%= render Admin::SiteCustomization::Documents::TableActionsComponent.new(document) %>
           </td>
         </tr>
       <% end %>
