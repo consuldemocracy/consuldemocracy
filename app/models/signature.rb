@@ -27,13 +27,16 @@ class Signature < ApplicationRecord
 
   def assign_vote_to_user
     set_user
-    user.with_lock do
-      if signable.is_a? Budget::Investment
+
+    if signable.is_a? Budget::Investment
+      user.with_lock do
         if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
           signable.vote_by(voter: user, vote: "yes")
           assign_signature_to_vote
         end
-      else
+      end
+    else
+      transaction do
         signable.register_vote(user, "yes")
         assign_signature_to_vote
       end

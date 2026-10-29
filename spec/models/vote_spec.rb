@@ -1,6 +1,15 @@
 require "rails_helper"
 
 describe Vote do
+  describe "validations" do
+    it "is not valid if the user has already voted on that votable" do
+      vote = create(:vote)
+      duplicate = build(:vote, voter: vote.voter, votable: vote.votable)
+
+      expect { duplicate.save }.to raise_error ActiveRecord::RecordNotUnique
+    end
+  end
+
   describe ".count_for" do
     it "returns the number of records for a votable type" do
       3.times { create(:vote, votable: create(:debate)) }
