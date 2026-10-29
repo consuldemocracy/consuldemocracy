@@ -8,6 +8,7 @@ describe Admin::SiteCustomization::Documents::TableActionsComponent do
 
     expect(page).to have_link count: 1
     expect(page).to have_link "Download file", href: /active_storage/
+    expect(page).to have_css "a[download]"
     expect(page).to have_button count: 2
     expect(page).to have_css "button[type=button]", exact_text: "Copy link"
     expect(page).to have_css "button[type=submit]", exact_text: "Delete"
