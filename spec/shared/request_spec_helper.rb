@@ -1,22 +1,5 @@
 module RequestSpecHelper
-  include Warden::Test::Helpers
-
-  def self.included(base)
-    base.before { Warden.test_mode! }
-    base.after { Warden.test_reset! }
+  def sign_in(user)
+    post user_session_path, params: { user: { login: user.email, password: user.password }}
   end
-
-  def sign_in(resource)
-    login_as(resource, scope: warden_scope(resource))
-  end
-
-  def sign_out(resource)
-    logout(warden_scope(resource))
-  end
-
-  private
-
-    def warden_scope(resource)
-      resource.class.name.underscore.to_sym
-    end
 end
