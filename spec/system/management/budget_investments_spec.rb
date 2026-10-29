@@ -50,7 +50,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
-      fill_in "budget_investment_tag_list", with: "green"
+      fill_in_tag_list "green"
 
       click_button "Create Investment"
 

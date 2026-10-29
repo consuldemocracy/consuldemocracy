@@ -18,14 +18,18 @@ class Taggable::FieldsComponent < ApplicationComponent
       category.respond_to?(:name) ? category.name : category.to_s
     end
 
-    def tag_list_classes
-      classes = ["js-tag-list"]
-      classes << "tag-autocomplete" if autocomplete
-      classes.join(" ")
+    def category_selected?(name)
+      form.object.tag_list.include?(name)
+    end
+
+    def tag_list_value
+      form.object.tag_list.to_s
     end
 
     def tag_list_data
-      autocomplete ? { js_url: suggest_tags_path } : {}
+      data = { remove_tag_text: t("shared.tags.remove_tag") }
+      data[:suggestions_url] = suggest_tags_path if autocomplete
+      data
     end
 
     def tags_label

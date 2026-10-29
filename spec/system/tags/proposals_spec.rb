@@ -59,7 +59,7 @@ describe "Tags" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    fill_in "Tags", with: "Economía, Hacienda"
+    fill_in_tag_list "Economía, Hacienda"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -86,7 +86,7 @@ describe "Tags" do
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-    find(".js-add-tag-link", text: "Education").click
+    find("label", exact_text: "Education").click
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
@@ -110,7 +110,7 @@ describe "Tags" do
     fill_in_ckeditor "Proposal text", with: "Description"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-    fill_in "Tags", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+    fill_in_tag_list "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
     click_button "Create proposal"
 
@@ -130,7 +130,7 @@ describe "Tags" do
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-    fill_in "Tags", with: "user_id=1, &a=3, <script>alert('hey');</script>"
+    fill_in_tag_list "user_id=1, &a=3, <script>alert('hey');</script>"
 
     click_button "Create proposal"
 
@@ -150,9 +150,9 @@ describe "Tags" do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(page).to have_css "input[value='Economía']"
+    expect(page).to have_css ".js-taggable-fields span[data-val='Economía']"
 
-    fill_in "Tags", with: "Economía, Hacienda"
+    fill_in_tag_list "Hacienda"
     click_button "Save changes"
 
     expect(page).to have_content "Proposal updated successfully."
@@ -168,7 +168,7 @@ describe "Tags" do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    fill_in "Tags", with: ""
+    remove_tag_list_tag "Economía"
     click_button "Save changes"
 
     expect(page).to have_content "Proposal updated successfully."

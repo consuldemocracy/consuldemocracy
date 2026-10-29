@@ -23,6 +23,42 @@ var AmsifySuggestags;
 		return (type === "number" || type === "string") && !isNaN(value - parseFloat(value));
 	}
 
+  function parseTagList(value) {
+    var string = value == null ? "" : String(value);
+    var tags = [];
+    var doubleQuotePattern = /(^|,)\s*"(.*?)"\s*(?=,\s*|$)/g;
+    var singleQuotePattern = /(^|,)\s*'(.*?)'\s*(?=,\s*|$)/g;
+
+    string = string.replace(doubleQuotePattern, function(_match, _delimiter, tag) {
+      tags.push(tag);
+      return "";
+    });
+
+    string = string.replace(singleQuotePattern, function(_match, _delimiter, tag) {
+      tags.push(tag);
+      return "";
+    });
+
+    $.each(string.split(","), function(_index, item) {
+      item = trimString(item);
+      if (item) {
+        tags.push(item);
+      }
+    });
+
+    return tags;
+  }
+
+  function serializeTagList(names) {
+    return $.map(names, function(name) {
+      name = String(name);
+      if (name.indexOf(",") !== -1) {
+        return '"' + name + '"';
+      }
+      return name;
+    }).join(", ");
+  }
+
 	AmsifySuggestags = function(selector) {
 		this.selector = selector;
 		this.settings = {
@@ -478,10 +514,10 @@ var AmsifySuggestags;
 
 		setDefault : function() {
 			var _self = this;
-			var items = $(this.selector).val().split(',');
+			var items = parseTagList($(this.selector).val());
 			if(items.length) {
 				$.each(items, function(index, item){
-					_self.addTag(trimString(item));
+					_self.addTag(item);
 				});
 			}
 		},
@@ -713,7 +749,7 @@ var AmsifySuggestags;
 
 		setInputValue: function() {
 			this.updateIsRequired();
-			$(this.selector).val(this.tagNames.join(','));
+			$(this.selector).val(serializeTagList(this.tagNames));
 			if(this.settings.printValues) {
 				this.printValues();
 			}
@@ -903,6 +939,9 @@ var AmsifySuggestags;
 			}
 		}
 	};
+
+  AmsifySuggestags.parseTagList = parseTagList;
+  AmsifySuggestags.serializeTagList = serializeTagList;
 
 	$.fn.amsifySuggestags = function(options, method) {
 		return this.each(function() {

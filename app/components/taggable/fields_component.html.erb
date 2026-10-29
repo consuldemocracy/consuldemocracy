@@ -1,4 +1,4 @@
-<div>
+<div class="js-taggable-fields">
   <%= form.label :tag_list, tags_label %>
   <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
 
@@ -6,17 +6,23 @@
     <div id="category_tags" class="tags">
       <%= form.label :category_tag_list, tag_category_label %>
       <% categories.each do |category| %>
-        <a class="js-add-tag-link"><%= category_name(category) %></a>
+        <% name = category_name(category) %>
+        <% checkbox_id = "tag_category_#{name.parameterize}" %>
+        <%= check_box_tag nil, name, category_selected?(name),
+                          id: checkbox_id,
+                          class: "js-tag-category",
+                          data: { list_value: name } %>
+        <%= label_tag checkbox_id, name %>
       <% end %>
     </div>
 
     <br>
   <% end %>
 
-  <%= form.text_field :tag_list, value: form.object.tag_list.to_s,
+  <%= form.text_field :tag_list, value: tag_list_value,
                                  label: false,
                                  placeholder: tags_placeholder,
-                                 class: tag_list_classes,
+                                 class: "js-tag-list",
                                  aria: { describedby: "tag-list-help-text" },
                                  data: tag_list_data %>
 </div>

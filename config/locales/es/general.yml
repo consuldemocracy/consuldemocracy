@@ -660,6 +660,8 @@ es:
     show:
       back: "Volver a mi contenido"
   shared:
+    tags:
+      remove_tag: "Eliminar"
     embedded_video:
       accept: "Ver vídeo"
       warning: "Esta página contiene un vídeo de un proveedor externo. Al acceder al contenido, aceptas que tus datos puedan ser transferidos a proveedores externos."

@@ -29,9 +29,15 @@
       <% end %>
 
       <div class="small-12 column">
-        <%= f.text_field :tag_list,
-                         value: @investment.tag_list.sort.join(","),
-                         label: t("admin.budget_investments.edit.user_tags") %>
+        <div class="js-taggable-fields" id="admin_user_tags">
+          <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
+          <%= f.text_field :tag_list,
+                           value: ActsAsTaggableOn::TagList.new(*@investment.tag_list.sort).to_s,
+                           label: false,
+                           class: "js-tag-list",
+                           data: { remove_tag_text: t("shared.tags.remove_tag"),
+                                   suggestions_url: suggest_tags_path } %>
+        </div>
       </div>
 
       <div class="small-12 column">
@@ -58,17 +64,28 @@
       </div>
 
       <div class="small-12 column">
-        <%= f.label :valuation_tag_list %>
-        <div class="tags">
-          <% @tags.each do |tag| %>
-            <a class="js-add-tag-link"><%= tag.name %></a>
+        <div class="js-taggable-fields" id="admin_valuation_tags">
+          <%= f.label :valuation_tag_list %>
+          <% if @tags.any? %>
+            <div class="tags">
+              <% @tags.each do |tag| %>
+                <% checkbox_id = "valuation_tag_#{tag.name.parameterize}" %>
+                <%= check_box_tag nil, tag.name, @investment.valuation_tag_list.include?(tag.name),
+                                  id: checkbox_id,
+                                  class: "js-tag-category",
+                                  data: { list_value: tag.name } %>
+                <%= label_tag checkbox_id, tag.name %>
+              <% end %>
+            </div>
+            <br>
           <% end %>
+          <%= f.text_field :valuation_tag_list,
+                           value: ActsAsTaggableOn::TagList.new(*@investment.valuation_tag_list.sort).to_s,
+                           label: false,
+                           placeholder: t("admin.budget_investments.edit.tags_placeholder"),
+                           class: "js-tag-list",
+                           data: { remove_tag_text: t("shared.tags.remove_tag") } %>
         </div>
-        <%= f.text_field :valuation_tag_list,
-                         value: @investment.valuation_tag_list.sort.join(","),
-                         label: false,
-                         placeholder: t("admin.budget_investments.edit.tags_placeholder"),
-                         class: "js-tag-list" %>
       </div>
 
       <div class="small-12 column margin-top">

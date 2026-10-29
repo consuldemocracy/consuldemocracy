@@ -62,7 +62,7 @@ describe "Tags" do
     fill_in_ckeditor "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
-    fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda"
+    fill_in_tag_list "Impuestos, Economía, Hacienda"
 
     click_button "Start a debate"
 
@@ -81,7 +81,7 @@ describe "Tags" do
     fill_in_ckeditor "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
-    fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+    fill_in_tag_list "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
     click_button "Start a debate"
 
@@ -95,9 +95,9 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_css "input[value='Economía']"
+    expect(page).to have_css ".js-taggable-fields span[data-val='Economía']"
 
-    fill_in "debate_tag_list", with: "Economía, Hacienda"
+    fill_in_tag_list "Hacienda"
     click_button "Save changes"
 
     expect(page).to have_content "Debate updated successfully."
@@ -113,7 +113,7 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    fill_in "debate_tag_list", with: ""
+    clear_tag_list
     click_button "Save changes"
 
     expect(page).to have_content "Debate updated successfully."

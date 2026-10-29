@@ -1158,7 +1158,7 @@ describe "Admin budget investments", :admin do
 
       visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
-      find(".js-add-tag-link", text: "Education").click
+      find("label", exact_text: "Education").click
 
       click_button "Update"
 
@@ -1170,13 +1170,31 @@ describe "Admin budget investments", :admin do
       end
     end
 
+    scenario "Keeps valuation tags that contain commas as a single chip" do
+      budget_investment = create(:budget_investment)
+      budget_investment.valuation_tags << Tag.find_or_create_by!(name: "Culture, Leisure and Tourism")
+
+      visit edit_admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within "#admin_valuation_tags" do
+        expect(page).to have_css "span.amsify-select-tag[data-val='Culture, Leisure and Tourism']", count: 1
+        expect(page).not_to have_css "span.amsify-select-tag[data-val='Culture']"
+        expect(page).not_to have_css "span.amsify-select-tag[data-val='Leisure and Tourism']"
+      end
+
+      click_button "Update"
+
+      expect(page).to have_content "Investment project updated successfully."
+      expect(budget_investment.reload.valuation_tag_list).to eq(["Culture, Leisure and Tourism"])
+    end
+
     scenario "Adds non existent valuation tags" do
       budget_investment = create(:budget_investment)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
-      fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
+      fill_in_tag_list "Refugees, Solidarity", within: "#admin_valuation_tags"
       click_button "Update"
 
       expect(page).to have_content "Investment project updated successfully."
@@ -1201,8 +1219,10 @@ describe "Admin budget investments", :admin do
 
       click_link "Edit classification"
 
-      fill_in "budget_investment_tag_list", with: "Park, Trees"
-      fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
+      clear_tag_list within: "#admin_user_tags"
+      fill_in_tag_list "Park, Trees", within: "#admin_user_tags"
+      clear_tag_list within: "#admin_valuation_tags"
+      fill_in_tag_list "Education, Environment", within: "#admin_valuation_tags"
       click_button "Update"
 
       expect(page).to have_content "Investment project updated successfully"
@@ -1230,7 +1250,7 @@ describe "Admin budget investments", :admin do
 
       click_link "Edit classification"
 
-      fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
+      fill_in_tag_list "Refugees, Solidarity", within: "#admin_valuation_tags"
       click_button "Update"
 
       expect(page).to have_content "Investment project updated successfully."
