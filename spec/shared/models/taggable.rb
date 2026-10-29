@@ -9,5 +9,21 @@ shared_examples "taggable" do
 
       expect(sanitizable.tag_list).to eq(["user_id1"])
     end
+
+    it "keeps tag names that contain commas" do
+      sanitizable.tag_list = '"Culture, Leisure and Tourism"'
+
+      sanitizable.valid?
+
+      expect(sanitizable.tag_list).to eq(["Culture, Leisure and Tourism"])
+    end
+
+    it "keeps comma-containing tags alongside other tags" do
+      sanitizable.tag_list = '"Culture, Leisure and Tourism", Local Issues'
+
+      sanitizable.valid?
+
+      expect(sanitizable.tag_list).to eq(["Culture, Leisure and Tourism", "Local Issues"])
+    end
   end
 end

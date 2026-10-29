@@ -56,7 +56,9 @@
         },
         afterRemove: function(value) {
           if (settings.checkboxes) {
-            var selected_values = $(amsify.selector).val().split(",");
+            var selected_values = AmsifySuggestags.parseTagList(
+              $(amsify.selector).val()
+            );
             App.AmsifyListField.checkbox_element(
               settings.checkboxes,
               checkbox_list_value(value),

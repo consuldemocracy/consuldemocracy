@@ -1170,6 +1170,24 @@ describe "Admin budget investments", :admin do
       end
     end
 
+    scenario "Keeps valuation tags that contain commas as a single chip" do
+      budget_investment = create(:budget_investment)
+      budget_investment.valuation_tags << Tag.find_or_create_by!(name: "Culture, Leisure and Tourism")
+
+      visit edit_admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within "#admin_valuation_tags" do
+        expect(page).to have_css "span.amsify-select-tag[data-val='Culture, Leisure and Tourism']", count: 1
+        expect(page).not_to have_css "span.amsify-select-tag[data-val='Culture']"
+        expect(page).not_to have_css "span.amsify-select-tag[data-val='Leisure and Tourism']"
+      end
+
+      click_button "Update"
+
+      expect(page).to have_content "Investment project updated successfully."
+      expect(budget_investment.reload.valuation_tag_list).to eq(["Culture, Leisure and Tourism"])
+    end
+
     scenario "Adds non existent valuation tags" do
       budget_investment = create(:budget_investment)
 

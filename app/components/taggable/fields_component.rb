@@ -23,7 +23,7 @@ class Taggable::FieldsComponent < ApplicationComponent
     end
 
     def tag_list_value
-      form.object.tag_list.to_a.join(",")
+      form.object.tag_list.to_s
     end
 
     def tag_list_data

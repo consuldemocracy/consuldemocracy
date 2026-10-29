@@ -28,6 +28,7 @@ module Taggable
   protected
 
     def sanitize_tag_list
-      self.tag_list = TagSanitizer.new.sanitize_tag_list(tag_list)
+      sanitized = TagSanitizer.new.sanitize_tag_list(tag_list)
+      self.tag_list = ActsAsTaggableOn::TagList.new(*sanitized).to_s
     end
 end

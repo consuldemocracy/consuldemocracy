@@ -134,6 +134,22 @@ describe Taggable::FieldsComponent do
     expect(page).to have_field "Tags", with: "existing"
   end
 
+  it "quotes tag names that contain commas" do
+    proposal = create(:proposal)
+    proposal.tags << Tag.find_or_create_by!(name: "Culture, Leisure and Tourism")
+    proposal.reload
+    form = ConsulFormBuilder.new(:proposal, proposal, ApplicationController.new.view_context, {})
+    component = Taggable::FieldsComponent.new(
+      form,
+      categories: [],
+      i18n_namespace: "proposals.form"
+    )
+
+    render_inline component
+
+    expect(page.find("input.js-tag-list")[:value]).to eq("\"Culture, Leisure and Tourism\"")
+  end
+
   it "wraps fields in a js-taggable-fields root" do
     component = Taggable::FieldsComponent.new(
       form,

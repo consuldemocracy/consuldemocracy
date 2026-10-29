@@ -32,7 +32,7 @@
         <div class="js-taggable-fields" id="admin_user_tags">
           <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
           <%= f.text_field :tag_list,
-                           value: @investment.tag_list.sort.join(","),
+                           value: ActsAsTaggableOn::TagList.new(*@investment.tag_list.sort).to_s,
                            label: false,
                            class: "js-tag-list",
                            data: { remove_tag_text: t("shared.tags.remove_tag"),
@@ -80,7 +80,7 @@
             <br>
           <% end %>
           <%= f.text_field :valuation_tag_list,
-                           value: @investment.valuation_tag_list.sort.join(","),
+                           value: ActsAsTaggableOn::TagList.new(*@investment.valuation_tag_list.sort).to_s,
                            label: false,
                            placeholder: t("admin.budget_investments.edit.tags_placeholder"),
                            class: "js-tag-list",
