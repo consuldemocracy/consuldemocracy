@@ -9,7 +9,9 @@
               <p><%= t("legislation.processes.proposals.empty_proposals") %></p>
             </div>
           <% else %>
-            <%= render proposals %>
+            <% proposals.each do |proposal| %>
+              <%= render "legislation/proposals/proposal", proposal: proposal %>
+            <% end %>
             <%= paginate proposals %>
           <% end %>
         </div>
