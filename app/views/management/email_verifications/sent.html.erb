@@ -7,5 +7,5 @@
            user: @email_verification.user %>
 
 <p>
-  <a href="javascript:window.print();" class="button warning"><%= t("management.print_info") %></a>
+  <%= render Management::PrintComponent.new(t("management.print_info")) %>
 </p>

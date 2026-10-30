@@ -20,8 +20,8 @@ describe Taggable::FieldsComponent do
       render_inline component
 
       expect(page).to have_css "#category_tags"
-      expect(page).to have_css "a.js-add-tag-link", count: 1
-      expect(page).to have_css "a.js-add-tag-link", text: "Education"
+      expect(page).to have_button class: "add-tag", count: 1
+      expect(page).to have_button "Education", class: "add-tag"
       expect(page).to have_content "Categories"
     end
 
@@ -44,9 +44,9 @@ describe Taggable::FieldsComponent do
 
       render_inline component
 
-      expect(page).to have_css "a.js-add-tag-link", count: 2
-      expect(page).to have_css "a.js-add-tag-link", text: "Education"
-      expect(page).to have_css "a.js-add-tag-link", text: "Health"
+      expect(page).to have_button class: "add-tag", count: 2
+      expect(page).to have_button "Education", class: "add-tag"
+      expect(page).to have_button "Health", class: "add-tag"
     end
   end
 
@@ -76,7 +76,7 @@ describe Taggable::FieldsComponent do
     expect(page).to have_css "input.js-tag-list"
     expect(page).not_to have_css "input.tag-autocomplete"
     expect(page).not_to have_css "input[data-js-url]"
-    expect(page).to have_css "a.js-add-tag-link", text: "Health"
+    expect(page).to have_button "Health", class: "add-tag"
   end
 
   it "renders string category names" do
@@ -89,7 +89,7 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css "a.js-add-tag-link", text: "Custom category"
+    expect(page).to have_button "Custom category", class: "add-tag"
   end
 
   it "uses labels from the given i18n namespace" do

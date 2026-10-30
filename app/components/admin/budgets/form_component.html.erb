@@ -67,10 +67,10 @@
 
     <% %w[administrators valuators].each do |staff| %>
       <div class="small-12 medium-6 large-3 column end">
-        <%= link_to t("admin.budgets.edit.#{staff}", count: budget.send(staff).count),
-                    "#",
-                    class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
-                    data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
+        <%= button_tag t("admin.budgets.edit.#{staff}", count: budget.send(staff).count),
+                       type: "button",
+                       class: "button expanded hollow budget-show-#{staff}-list budget-show-users-list",
+                       data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
       </div>
     <% end %>
 

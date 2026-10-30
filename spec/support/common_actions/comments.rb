@@ -5,7 +5,7 @@ module Comments
     visit polymorphic_path(comment.commentable)
 
     within "#comment_#{comment.id}" do
-      click_link "Reply"
+      click_button "Reply"
     end
 
     within "#js-comment-form-comment_#{comment.id}" do

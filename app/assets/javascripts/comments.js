@@ -48,15 +48,14 @@
       $("#js-comment-form-" + id).toggle();
     },
     initialize: function() {
-      $("body").on("click", ".js-add-comment-link", function() {
+      $("body").on("click", ".add-comment", function() {
+        $(this).attr("aria-expanded", !JSON.parse($(this).attr("aria-expanded")));
         App.Comments.toggle_form($(this).data().id);
-        return false;
       });
 
-      $("body").on("click", ".js-toggle-children", function() {
+      $("body").on("click", ".toggle-children", function() {
         $(this).closest(".comment").find(".comment-list:first").toggle("slow");
         $(this).closest(".responses-count").toggleClass("collapsed");
-        return false;
       });
     }
   };

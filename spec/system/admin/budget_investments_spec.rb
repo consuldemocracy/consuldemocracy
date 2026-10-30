@@ -1046,7 +1046,7 @@ describe "Admin budget investments", :admin do
 
       visit edit_admin_budget_path(budget_investment.budget)
 
-      click_link "Select administrators"
+      click_button "Select administrators"
       check "Marta"
       click_button "Update Budget"
 
@@ -1075,7 +1075,7 @@ describe "Admin budget investments", :admin do
 
       visit edit_admin_budget_path(budget_investment.budget)
 
-      click_link "Select valuators"
+      click_button "Select valuators"
 
       check "Valentina"
       check "Val"
@@ -1158,7 +1158,7 @@ describe "Admin budget investments", :admin do
 
       visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
-      find(".js-add-tag-link", text: "Education").click
+      click_button "Education"
 
       click_button "Update"
 

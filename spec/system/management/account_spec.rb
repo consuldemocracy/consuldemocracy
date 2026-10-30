@@ -39,7 +39,7 @@ describe "Account" do
     click_button "Save password"
 
     expect(page).to have_content "Password reseted successfully"
-    expect(page).to have_link "Print password", href: "javascript:window.print();"
+    expect(page).to have_button "Print password"
     expect(page).to have_css "div.for-print-only", text: "new_password", visible: :hidden
 
     logout
@@ -55,7 +55,7 @@ describe "Account" do
 
     login_as_manager
     click_link "Reset password manually"
-    click_link "Generate random password"
+    click_button "Generate random password"
 
     new_password = find_field("user_password").value
 
