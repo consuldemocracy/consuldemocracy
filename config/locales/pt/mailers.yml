@@ -86,16 +86,6 @@ pt:
       hi: Olá
       new_comment_by: Há um novo comentário de avaliação de <strong>%{commenter}</strong> no investimento orçamental %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Visitar o painel de Machine Learning"
-      subject: "Machine learning - Ocorreu um erro"
-      text: "Ocorreu um erro executando o script de Machine Learning."
-      title: "Script Machine Learning"
-    machine_learning_success:
-      link: "Visitar o painel de Machine Learning"
-      subject: "Machine learning - Conteúdo gerado corretamente"
-      text: "O conteúdo foi gerado corretamente."
-      title: "Script Machine Learning"
     new_actions_notification_on_create:
       subject: "O rascunho da sua proposta foi criado"
       hi: "Olá %{name}!"

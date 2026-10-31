@@ -70,8 +70,5 @@ val:
       subject: "Nou comentari d'avaluació"
       hi: Hola
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_success:
-      link: "Visita el panell de d'Aprenentatge Automatic"
-      title: "Script d'Aprenentatge Automàtic"
     new_actions_notification_on_create:
       hi: "Hola %{name}!"

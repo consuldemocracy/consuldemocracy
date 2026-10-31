@@ -931,6 +931,3 @@ ast:
         document_type: Tipu de documentu
         document_number: Número de documento
         date_of_birth: Fecha de nacencia
-    machine_learning:
-      tab_help: "Ayuda"
-      tags: "Temes"

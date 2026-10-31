@@ -601,6 +601,3 @@ fi:
       index:
         document_type: Asiakirjatyyppi
         date_of_birth: Syntymäaika
-    machine_learning:
-      tab_help: "Apua"
-      tags: "Tunnisteet"

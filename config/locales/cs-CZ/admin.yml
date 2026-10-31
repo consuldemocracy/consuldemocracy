@@ -788,7 +788,6 @@ cs:
           legislation: "Participativní legislativa"
           budgets: "Rozpočty"
           layouts: "Rozložení"
-          machine_learning: "AI / strojové učení"
           mailers: "E-maily"
           management: "Správa"
           welcome: "Vítejte"
@@ -809,7 +808,6 @@ cs:
       debates: "Debaty"
       comments: "Komentáře"
       local_census_records: Správa místního registru občanů
-      machine_learning: "AI / strojové učení"
       multitenancy: Víceuživatelské služby
     administrators:
       index:
@@ -1765,56 +1763,6 @@ cs:
           created: Vytvořené záznamy
         local_census_records:
           no_records_found: Nenalezeny žádné záznamy.
-    machine_learning:
-      cancel: "Cancel operation"
-      cancel_alert: "Tato akce zruší aktuální skript a je nutné jej spustit znovu."
-      comments_summary: "Souhrn komentářů"
-      comments_summary_description: "Zobrazí automaticky generovaný souhrn komentářů ke všem položkám, které lze komentovat."
-      data_folder_content: "Obsah datové složky"
-      error: "Chyba:"
-      execute_script: "Spustit skript"
-      executed_by: "Spuštěn od:"
-      executed_script: "Spuštěný skript:"
-      feature_disabled: "Tato funkce je vypnutá. Chcete-li používat funkci strojového učení, můžete ji povolit na %{link}."
-      feature_disabled_link: "strana nastavení"
-      help:
-        title_1: "Co je AI / strojové učení?"
-        description_1: "Počítačové programy se tradičně navrhují tak, že se stanoví přesná pravidla, co má program v každé situaci dělat a jak má v každém okamžiku zpracovávat dostupné informace. To, co se běžně označuje jako umělá inteligence/strojové učení, je typ programů, u nichž je přesně stanoveno, jaký úkol má být proveden a jak se vyhodnocuje, zda je úkol proveden lépe nebo hůře. Na rozdíl od prvně jmenovaného však systém objevuje nebo se učí, jaká by byla nejvhodnější metoda k provedení úkolu."
-        title_2: "Co dělá modul AI / strojového učení v systému CONSUL DEMOCRACY?"
-        description_2: "Tento modul umožňuje implementovat v CONSULu libovolný typ programů AI/Machine Learning. Tyto programy mohou zpracovávat informace dostupné v systému CONSUL DEMOCRACY a vytvářet výsledky, které pomáhají uživatelům i správcům provádět efektivnější a inteligentnější zapojení občanů. Modul byl vyvinut tak, aby bylo možné snadno implementovat a spouštět nové programy, přičemž obecný kód CONSULu a kód těchto nových programů jsou na sobě nezávislé."
-        title_3: "Jak používat tento modul"
-        description_3: "Při prvním použití je nutné postupovat podle pokynů uvedených v dokumentaci CONSUL DEMOCRACY a modul správně aktivovat. Po správné aktivaci modulu se programy spouštějí na kartě \"Spustit skripty\". Před spuštěním se nám na téže kartě zobrazí odhad doby spuštění a další důležité informace. Na konci provádění můžeme na kartě \"Nastavení\" aktivovat obsah, který se bude v CONSUL DEMOCRACY zobrazovat, a také stáhnout další vygenerované soubory, které se nám mohou hodit."
-        title_4: "Jak implementovat nové skripty AI / strojového učení"
-        description_4: "Jako příklady použijte předchozí skripty."
-        description_4b: "Nové skripty by měly být umístěny ve složce <code>public/machine_learning/scripts</code>"
-        description_4c: "Vstupní data, která má skript použít, se vytvoří jako soubory JSON ve složce <code>../data</code>"
-        description_4d: "Veškerý vygenerovaný výstup by měl být umístěn ve složce <code>../data</code>"
-        description_4e: "Doporučujeme vytvořit nezávislý textový soubor <code>.ini</code> s nastavením skriptu, který se bude jmenovat stejně jako skript a bude čitelný pro configparser. Tento soubor usnadní správcům změnu nastavení."
-        description_4f: "Jako první řádek skriptu se doporučuje uvést úvodní řetězec trojtečky s krátkými informacemi o něm a odkazy na všechny důležité informace. Tento řetězec se automaticky zobrazí v rozhraní pro správu."
-        description_4g: "Doporučujeme zaznamenávat příslušné informace o skriptu do textového souboru <code>.log</code> se stejným názvem jako skript."
-        title_5: "Chcete-li používat skripty AI / strojového učení, musíte mít na serveru nainstalovaný Python"
-        description_5: "Zde si můžete prohlédnout příklad pokynů pro server Ubuntu 18.04:"
-      help_text: "Tato funkce je experimentální."
-      last_execution: "Poslední spuštění"
-      no_content: "Zatím nebyl vygenerován žádný obsah."
-      notice:
-        success: "Poslední skript byl úspěšně proveden."
-        error: "Došlo k chybě. Podrobnosti si můžete prohlédnout níže."
-        working: "Skript je spuštěn. Správce, který jej spustil, obdrží e-mail po jeho dokončení."
-        delete_generated_content: "Vygenerovaný obsah byl úspěšně odstraněn."
-      output_files: "Výstupní soubory:"
-      related_content: "Související obsah"
-      related_content_description: "Přidává automaticky generovaný související obsah do návrhů a projektů participativního rozpočtu."
-      script_info: "Po dokončení skriptu obdržíte e-mail na %{email}."
-      script_name: "Název skriptu:"
-      select_script: "Vyberte python skript, který chcete spustit"
-      started_at: "Začíná na:"
-      tab_help: "Nápověda"
-      tab_scripts: "Spustit skript"
-      tab_settings: "Nastavení / Vygenerovaný obsah"
-      tags: "Štítky"
-      tags_description: "Generuje automatické značky pro všechny položky, které lze označit."
-      title: "AI / strojové učení"
     cookies:
       vendors:
         empty: Nenalezen žádný poskytovatel

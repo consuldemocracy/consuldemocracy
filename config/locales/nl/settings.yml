@@ -108,8 +108,6 @@ nl:
         recommendations_on_proposals_description: "Toont aanbevelingen aan gebruikers op de pagina van de debatten op basis van de codes van de items die zijn gevolgd"
       community: "Community van voorstellen en investeringen"
       community_description: "De sectie van de gemeenschap in de voorstellen en de investeringsprojecten die de participatieve budgetten in staat stelt"
-      machine_learning: "AI / Machine learning"
-      machine_learning_description: "Activeer de AI / Machine Learning sectie om python scripts uit te voeren en content automatisch te verrijken."
       map: "Voorstellen en inversteringen geolocatie"
       map_description: "Maakt geolocatie van voorstellen en investeringsprojecten mogelijk"
       allow_images: "Sta uploads en tonen van afbeeldingen toe"

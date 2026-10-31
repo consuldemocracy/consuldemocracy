@@ -1498,7 +1498,3 @@ da:
           title: Lokal census data
         show:
           title: Administrer lokal census data
-    machine_learning:
-      related_content: "Relateret indhold"
-      tab_help: "Hjælp"
-      tags: "Tags"

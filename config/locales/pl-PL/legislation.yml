@@ -105,8 +105,6 @@ pl:
       share: Udostępnij
       share_comment: Komentarz odnośnie %{version_name} z projektu procesu %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorie"
       not_verified: "W przypadku propozycji głosowania %{verify_account}."
       process_title: Wspólny proces legislacyjny
     summary:

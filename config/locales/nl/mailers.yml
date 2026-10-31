@@ -86,16 +86,6 @@ nl:
       hi: Hoi
       new_comment_by: Er is nieuw evaluatiecommentaar van <strong>%{commenter}</strong> op investering %{investment}
       commenter_info: "%{commenter},%{time}:"
-    machine_learning_error:
-      link: "Bekijk Machine Learning panel"
-      subject: "Machine Learning - Er is een fout opgetreden bij het uitvoeren van het script"
-      text: "Er is een fout opgetreden bij het uitvoeren van het Machine Learning script."
-      title: "Machine Learning script"
-    machine_learning_success:
-      link: "Bekijk Machine Learning panel"
-      subject: "Machine Learning - Content werd succesvol gegenereerd"
-      text: "Content werd succesvol gegenereerd."
-      title: "Machine Learning script"
     new_actions_notification_on_create:
       subject: "Je conceptvoorstel is aangemaakt"
       hi: "Hoi %{name}!"

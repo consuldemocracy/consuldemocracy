@@ -103,8 +103,6 @@ bg:
       share: Споделете
       share_comment: Коментирайте относно %{version_name} от черновата на процеса %{process_name}
     proposals:
-      form:
-        tags_label: "Категории"
       not_verified: "За предложения за гласуване %{verify_account}."
       process_title: Процес на съвместно законодателство
     summary:

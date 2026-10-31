@@ -105,8 +105,6 @@ uk-UA:
       share: Поділитися
       share_comment: Коментувати %{version_name} із чернетки процесу %{process_name}
     proposals:
-      form:
-        tags_label: "Категорії"
       not_verified: "Для надання пропозицій щодо голосів %{verify_account}."
       process_title: Процес спільної законотворчості
     summary:

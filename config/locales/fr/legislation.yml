@@ -103,8 +103,6 @@ fr:
       share: Partager
       share_comment: Commenter la version %{version_name} du brouillon du processus %{process_name}
     proposals:
-      form:
-        tags_label: "Catégories"
       not_verified: "Pour voter pour les propositions, %{verify_account}."
       process_title: Processus législatif collaboratif
     summary:

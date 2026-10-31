@@ -101,8 +101,6 @@ fa:
       share: "اشتراک گذاری\n"
       share_comment: نظر در%{version_name}از پیش نویس پروسه %{process_name}
     proposals:
-      form:
-        tags_label: "دسته بندی ها\n"
       not_verified: "برای  رای به پیشنهادات%{verify_account}"
       process_title: روند قانونی همکاری
     summary:

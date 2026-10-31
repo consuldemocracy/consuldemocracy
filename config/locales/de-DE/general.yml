@@ -910,6 +910,3 @@ de:
         more:
           one: "Einen Tag mehr"
           other: "%{count} mehr Tags"
-  machine_learning:
-    comments_summary: "Zusammenfassung der Kommentare"
-    info_text: "Durch KI/Maschinelles Lernen generierte Inhalte"

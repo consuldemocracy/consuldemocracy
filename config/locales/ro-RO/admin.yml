@@ -1624,7 +1624,3 @@ ro:
           created: Înregistrări create
         local_census_records:
           no_records_found: Nu a fost găsită nici o înregistrare.
-    machine_learning:
-      related_content: "Conținut asemănător"
-      tab_help: "Ajutor"
-      tags: "Etichete"

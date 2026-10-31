@@ -912,6 +912,3 @@ ne:
         more:
           one: "थप एक ट्याग"
           other: "%{count} थप ट्यागहरू"
-  machine_learning:
-    comments_summary: "टिप्पणीहरू सारांश"
-    info_text: "एआई / मेसिन लर्निंग द्वारा उत्पन्न सामग्री"
