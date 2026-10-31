@@ -81,6 +81,7 @@ tr:
       show_link: Tartışmayı göster
     form:
       tags_instructions: Bu tartışmayı etiketle.
+      tags_label: Etiketler
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
     index:
       featured_debates: Öne çıkarılmış
