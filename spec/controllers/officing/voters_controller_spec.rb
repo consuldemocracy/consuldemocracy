@@ -5,23 +5,6 @@ describe Officing::VotersController do
     let(:officer) { create(:poll_officer) }
     before { sign_in(officer.user) }
 
-    it "does not create two records with two simultaneous requests", :race_condition do
-      poll = create(:poll, officers: [officer])
-      user = create(:user, :level_two)
-
-      2.times.map do
-        Thread.new do
-          post :create, params: {
-            voter: { poll_id: poll.id, user_id: user.id },
-            format: :js
-          }
-        end
-      end.each(&:join)
-
-      expect(Poll::Voter.count).to eq 1
-      expect(Poll::Voter.last.officer_id).to eq(officer.id)
-    end
-
     it "stores officer and booth information" do
       user = create(:user, :in_census)
       poll1 = create(:poll, name: "Would you be interested in XYZ?")

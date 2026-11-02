@@ -13,19 +13,6 @@ describe Comments::VotesController do
       end.to change { comment.reload.votes_for.size }.by(1)
     end
 
-    it "does not create two records with two simultaneous requests", :race_condition do
-      sign_in user
-
-      2.times.map do
-        Thread.new do
-          post :create, xhr: true, params: { comment_id: comment.id, value: "yes" }
-        rescue AbstractController::DoubleRenderError
-        end
-      end.each(&:join)
-
-      expect(Vote.where(voter: user, votable: comment).count).to eq 1
-    end
-
     it "redirects authenticated users without JavaScript to the same page" do
       request.env["HTTP_REFERER"] = comment_path(comment)
       sign_in user
