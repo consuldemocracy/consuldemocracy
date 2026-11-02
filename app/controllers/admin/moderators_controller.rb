@@ -10,8 +10,7 @@ class Admin::ModeratorsController < Admin::BaseController
   end
 
   def create
-    @moderator.user_id = params[:user_id]
-    @moderator.save!
+    Moderator.find_or_create_by_user_id(params[:user_id])
 
     redirect_to admin_moderators_path
   end

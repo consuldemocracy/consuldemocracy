@@ -19,8 +19,7 @@ class Admin::Poll::OfficersController < Admin::Poll::BaseController
   end
 
   def create
-    @officer.user_id = params[:user_id]
-    @officer.save!
+    Poll::Officer.find_or_create_by_user_id(params[:user_id])
 
     redirect_to admin_officers_path
   end

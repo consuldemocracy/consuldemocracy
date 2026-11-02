@@ -14,8 +14,7 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def create
-    @valuator.user_id = params[:user_id]
-    @valuator.save!
+    Valuator.find_or_create_by_user_id(params[:user_id])
 
     redirect_to admin_valuators_path
   end

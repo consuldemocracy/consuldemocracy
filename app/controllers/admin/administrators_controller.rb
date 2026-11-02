@@ -10,8 +10,7 @@ class Admin::AdministratorsController < Admin::BaseController
   end
 
   def create
-    @administrator.user_id = params[:user_id]
-    @administrator.save!
+    Administrator.find_or_create_by_user_id(params[:user_id])
 
     redirect_to admin_administrators_path
   end
