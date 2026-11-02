@@ -4,7 +4,7 @@
       <% if poll.related.nil? %>
         <%= back_link_to polls_path, t("polls.show.back") %>
       <% else %>
-        <%= link_to t("polls.poll_header.back_to_proposal"), [poll.related] %>
+        <%= link_to t("polls.poll_header.back_to_proposal"), polymorphic_path(poll.related) %>
       <% end %>
 
       <h1><%= poll.name %></h1>

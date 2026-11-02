@@ -98,6 +98,7 @@ group :development do
   gem "capistrano3-puma", "~> 7.1.0"
   gem "erb_lint", "~> 0.9.0", require: false
   gem "faraday-retry", "~> 2.4.0", require: false
+  gem "herb", "~> 0.11.1", require: false
   gem "htmlbeautifier", "~> 1.4.3", require: false
   gem "mdl", "~> 0.18.1", require: false
   gem "pronto", "~> 0.11.5", require: false
