@@ -1116,6 +1116,18 @@ describe Budget::Investment do
 
       expect(Vote.where(voter: user, votable: investment).count).to eq 1
     end
+
+    it "does not create two votes when voting on different headings at the same time", :race_condition do
+      investment2 = create(:budget_investment, heading: create(:budget_heading, group: investment.group))
+      user = create(:user, :level_two)
+
+      [
+        Thread.new { investment.register_selection(user) },
+        Thread.new { investment2.register_selection(user) }
+      ].each(&:join)
+
+      expect(Vote.where(voter: user, votable: [investment, investment2]).count).to eq 1
+    end
   end
 
   describe "#voted_in?" do
