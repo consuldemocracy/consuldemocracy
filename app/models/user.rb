@@ -326,7 +326,7 @@ class User < ApplicationRecord
     end
   end
 
-  def take_votes_from(other_user)
+  def take_votes_from(other_user, log: true)
     return if other_user.blank?
 
     Poll::Voter.where(user_id: other_user.id).find_each do |poll_voter|
@@ -362,8 +362,10 @@ class User < ApplicationRecord
       end
     end
 
-    data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
-    update!(former_users_data_log: "#{former_users_data_log} | #{data_log}")
+    if log
+      data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
+      update!(former_users_data_log: "#{former_users_data_log} | #{data_log}")
+    end
   end
 
   def locked?
