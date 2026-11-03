@@ -214,7 +214,7 @@ describe Verification::Residence do
     end
   end
 
-  describe "new" do
+  describe "document_number normalization" do
     it "upcases document number" do
       residence = Verification::Residence.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")

@@ -7,7 +7,7 @@ class Signature < ApplicationRecord
   validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   validates :signature_sheet, presence: true
 
-  normalizes :document_number, with: ->(document_number) { document_number.gsub(/[^a-z0-9]+/i, "").upcase }
+  normalizes :document_number, with: DocumentNumberNormalizer
 
   scope :verified,   -> { where(verified: true) }
   scope :unverified, -> { where(verified: false) }
