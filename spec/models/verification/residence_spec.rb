@@ -241,6 +241,21 @@ describe Verification::Residence do
       expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
     end
+
+    it "does not create two users when calling the method twice at the same time", :race_condition do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      with_sleep_after_validations(User) do
+        [user1, user2].map do |user|
+          Thread.new do
+            build(:verification_residence, user: user, document_type: "1", document_number: "12345678Z").save
+          end
+        end.each(&:join)
+
+        expect(User.by_document("1", "12345678Z").count).to eq 1
+      end
+    end
   end
 
   describe "tries" do
