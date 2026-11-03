@@ -180,6 +180,24 @@ describe Signature do
         expect(votes.count).to eq 1
         expect(votes.first.signature).to eq(signature)
       end
+
+      it "does not create two votes when voting on different headings at the same time", :race_condition do
+        investment = create(:budget_investment)
+        investment2 = create(:budget_investment, heading: create(:budget_heading, group: investment.group))
+        signature = create(:signature, signature_sheet: create(:signature_sheet, signable: investment),
+                                       document_number: user.document_number)
+        signature2 = create(:signature, signature_sheet: create(:signature_sheet, signable: investment2),
+                                        document_number: user.document_number)
+
+        [
+          Thread.new { signature.assign_vote_to_user },
+          Thread.new { signature2.assign_vote_to_user }
+        ].each(&:join)
+
+        votes = Vote.where(voter: user, votable: [investment, investment2])
+        expect(votes.count).to eq 1
+        expect([signature, signature2]).to include votes.first.signature
+      end
     end
 
     context "inexistent user" do

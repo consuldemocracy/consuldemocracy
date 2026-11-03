@@ -313,15 +313,12 @@ class User < ApplicationRecord
 
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
 
-    with_lock do
-      Vote.where(voter_id: other_user.id, voter_type: "User").find_each do |vote|
-        votable = vote.votable
-        if Vote.where(voter_id: id, voter_type: "User", votable: votable).any?
-          vote.delete
-          votable&.update_cached_votes
-        else
-          vote.update_column(:voter_id, id)
-        end
+    Vote.where(voter_id: other_user.id, voter_type: "User").find_each do |vote|
+      transaction(requires_new: true) { vote.update_column(:voter_id, id) }
+    rescue ActiveRecord::RecordNotUnique
+      transaction do
+        vote.delete
+        vote.votable&.update_cached_votes
       end
     end
 

@@ -18,8 +18,8 @@ class Proposal < ApplicationRecord
   include Milestoneable
   include Randomizable
   include SDG::Relatable
+  include Votable
 
-  acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
@@ -182,7 +182,7 @@ class Proposal < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user) && !archived?
-      user.with_lock { vote_by(voter: user, vote: vote_value) }
+      vote_by(voter: user, vote: vote_value)
     end
   end
 
