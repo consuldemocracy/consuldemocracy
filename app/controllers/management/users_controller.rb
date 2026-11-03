@@ -16,7 +16,7 @@ class Management::UsersController < Management::BaseController
     @user.residence_verified_at = Time.current
     @user.verified_at = Time.current
 
-    if @user.save
+    if User.with_document_lock(@user.document_type, @user.document_number) { @user.save }
       render :show
     else
       render :new

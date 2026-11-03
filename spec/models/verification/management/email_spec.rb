@@ -77,5 +77,28 @@ describe Verification::Management::Email do
                                                        email: user.email)
       expect(validation.save).to be false
     end
+
+    it "does not create two users when calling the method twice at the same time", :race_condition do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      mail = double(:mail)
+      allow(mail).to receive(:deliver_later)
+      allow(Mailer).to receive(:email_verification).and_return(mail)
+
+      with_sleep_after_validations(User) do
+        results = [user1, user2].map do |user|
+          Thread.new do
+            validation = Verification::Management::Email.new(document_type: "1",
+                                                             document_number: "1234",
+                                                             email: user.email)
+            validation.save
+          end
+        end.map(&:value)
+
+        expect(results).to match_array [true, false]
+        expect(User.by_document("1", "1234").count).to eq 1
+      end
+    end
   end
 end
