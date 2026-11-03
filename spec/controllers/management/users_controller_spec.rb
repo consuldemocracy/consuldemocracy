@@ -20,6 +20,38 @@ describe Management::UsersController do
   describe "POST create" do
     before { sign_in(create(:manager).user) }
 
+    it "creates a new user when passing valid data" do
+      expect do
+        post :create, params: {
+          user: {
+            document_type: "1",
+            document_number: "12345678A",
+            username: "newuser",
+            email: "newuser@consul.dev",
+            date_of_birth: 20.years.from_now.to_date
+          }
+        }
+      end.to change { User.count }.by(1)
+
+      expect(response).to be_successful
+    end
+
+    it "does not create a new user when passing invalid data" do
+      expect do
+        post :create, params: {
+          user: {
+            document_type: "1",
+            document_number: "12345678A",
+            username: "",
+            email: "newuser@consul.dev",
+            date_of_birth: 20.years.from_now.to_date
+          }
+        }
+      end.not_to change { User.count }
+
+      expect(response).to be_successful
+    end
+
     it "creates a new user when an erased one existed" do
       erased_user = create(:user, :level_two, erased_at: 1.month.ago)
 

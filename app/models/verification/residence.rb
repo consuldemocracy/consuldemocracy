@@ -25,14 +25,16 @@ class Verification::Residence
   def save
     return false unless valid?
 
-    user.update_and_take_votes_if_erased_document(
-      document_type,
-      document_number,
-      geozone: geozone,
-      date_of_birth: date_of_birth.in_time_zone.to_datetime,
-      gender: gender,
-      residence_verified_at: Time.current
-    )
+    User.with_document_lock(document_type, document_number) do
+      user.update_and_take_votes_if_erased_document(
+        document_type,
+        document_number,
+        geozone: geozone,
+        date_of_birth: date_of_birth.in_time_zone.to_datetime,
+        gender: gender,
+        residence_verified_at: Time.current
+      )
+    end
   end
 
   def save!

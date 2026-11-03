@@ -16,7 +16,11 @@ class Management::UsersController < Management::BaseController
     @user.residence_verified_at = Time.current
     @user.verified_at = Time.current
 
-    if @user.save_and_take_votes_if_erased_document
+    saved = User.with_document_lock(@user.document_type, @user.document_number) do
+      @user.save_and_take_votes_if_erased_document
+    end
+
+    if saved
       render :show
     else
       render :new
