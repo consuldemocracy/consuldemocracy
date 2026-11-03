@@ -669,6 +669,54 @@ describe User do
     end
   end
 
+  describe ".create_from_census_response!" do
+    before { create(:geozone, census_code: "01") }
+    let(:response) { double(gender: "V", date_of_birth: 30.years.ago.to_date, district_code: "01") }
+
+    it "does not create two users when calling the method twice at the same time", :race_condition do
+      2.times.map do
+        Thread.new do
+          User.create_from_census_response!(response,
+                                            document_type: "1",
+                                            document_number: "12345678Z")
+        end
+      end.each(&:join)
+
+      expect(User.by_document("1", "12345678Z").count).to eq 1
+    end
+
+    it "returns the existing user given an existing document" do
+      existing_user = create(:user, document_type: "1", document_number: "12345678Z")
+      user = User.create_from_census_response!(response,
+                                               document_type: "1",
+                                               document_number: "12345678Z")
+
+      expect(user).to eq existing_user
+      expect(User.count).to eq 1
+    end
+
+    it "creates a new user when the document number is nil" do
+      existing = create(:user, document_number: nil)
+      user = User.create_from_census_response!(response)
+
+      expect(User.count).to eq 2
+      expect(user.id).to be_present
+      expect(user.id).not_to eq existing.id
+      expect(user.document_type).to be nil
+      expect(user.document_number).to be nil
+    end
+
+    it "tries to create a new user when the normalized document number is blank" do
+      create(:user, document_number: "Á}!")
+
+      expect do
+        User.create_from_census_response!(response, document_number: "Á}!")
+      end.to raise_error ActiveRecord::RecordInvalid
+
+      expect(User.count).to eq 1
+    end
+  end
+
   describe "#erase" do
     it "erases user information and marks him as erased" do
       user = create(:user,
