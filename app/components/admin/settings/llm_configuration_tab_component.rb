@@ -19,7 +19,9 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
     provider = Setting["llm.provider"]
     return {} if provider.blank?
 
-    RubyLLM.models.by_provider(provider.downcase.to_sym).to_h do |model|
+    RubyLLM.models.by_provider(provider.downcase.to_sym).select do |model|
+      model.created_at && model.created_at >= 18.months.ago && !model.id.to_s.end_with?(":free")
+    end.to_h do |model|
       [model.name, { id: model.id }]
     end
   end

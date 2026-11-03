@@ -11,15 +11,18 @@ describe Admin::Settings::LlmConfigurationTabComponent do
   end
   let(:models_for_openai) do
     [
-      double(name: "GPT-4o", id: "gpt-4o"),
-      double(name: "GPT-4o-mini", id: "gpt-4o-mini")
+      double(name: "GPT-4o", id: "gpt-4o", created_at: Time.current),
+      double(name: "GPT-4o-mini", id: "gpt-4o-mini", created_at: Time.current),
+      double(name: "GPT-3.5 Turbo", id: "gpt-3.5-turbo", created_at: 2.years.ago),
+      double(name: "Undated", id: "undated-model", created_at: nil),
+      double(name: "Gemma 2 9B (free)", id: "google/gemma-2-9b-it:free", created_at: Time.current)
     ]
   end
   let(:provider_setting) { Setting.find_by!(key: "llm.provider") }
   let(:model_setting) { Setting.find_by!(key: "llm.model") }
   let(:feature_setting) { Setting.find_by!(key: "llm.use_llm_for_translations") }
-  let(:provider_select_selector) { "#value_setting_#{provider_setting.id}" }
-  let(:model_select_selector) { "#value_setting_#{model_setting.id}" }
+  let(:provider_select_id) { "value_setting_#{provider_setting.id}" }
+  let(:model_select_id) { "value_setting_#{model_setting.id}" }
   let(:feature_button_selector) { "button[aria-labelledby='title_setting_#{feature_setting.id}']" }
 
   before do
@@ -36,26 +39,27 @@ describe Admin::Settings::LlmConfigurationTabComponent do
 
       expect(page).to have_content "LLM Settings"
 
-      page.find(provider_select_selector) do
-        expect(page).to have_content "LLM Provider"
-        expect(page).to have_content "Providers will be disabled until credentials are configured " \
-                                     "in the secrets.yml."
-        expect(page).to have_selector(:option, "OpenAI", selected: false)
-        expect(page).to have_selector(:option, "Gemini", selected: false)
-        expect(page).to have_selector(:option, "Anthropic", disabled: true, selected: false)
+      page.find("tr", text: "LLM Provider") do |provider_row|
+        expect(provider_row).to have_content "LLM Provider"
+        expect(provider_row).to have_content "Providers will be disabled until credentials are configured " \
+                                             "in the secrets.yml."
+        expect(provider_row).to have_select provider_select_id,
+                                            options: ["None", "OpenAI", "Anthropic", "Gemini"],
+                                            disabled_options: ["Anthropic"],
+                                            selected: nil
       end
 
-      page.find(model_select_selector) do
-        expect(page).to have_content "Model"
-        expect(page).to have_content "The LLM model to use."
-        expect(page).to have_css "fieldset[disabled]"
+      page.find("tr", text: "Model") do |model_row|
+        expect(model_row).to have_content "The LLM model to use."
+        expect(model_row).to have_css "fieldset[disabled]"
+        expect(model_row).to have_select model_select_id, options: ["None"], selected: nil
       end
 
-      page.find(feature_button_selector) do
-        expect(page).to have_content "Content Translation"
-        expect(page).to have_content "Use LLM for content translations and take precedence over " \
-                                     "Microsoft translation services."
-        expect(page).to have_button "No", disabled: true
+      page.find("tr", text: "Content Translation") do |translation_row|
+        expect(translation_row).to have_content "Use LLM for content translations and take precedence over " \
+                                                "Microsoft translation services."
+        expect(translation_row).to have_css feature_button_selector
+        expect(translation_row).to have_button "No", disabled: true
       end
     end
   end
@@ -66,18 +70,20 @@ describe Admin::Settings::LlmConfigurationTabComponent do
     it "enables the model dropdown while keeping the feature toggle disabled" do
       render_inline component
 
-      page.find(provider_select_selector) do
-        expect(page).to have_selector(:option, "OpenAI", selected: true)
+      page.find("tr", text: "LLM Provider") do |provider_row|
+        expect(provider_row).to have_select selected: "OpenAI"
       end
 
-      page.find(model_select_selector) do
-        expect(page).to have_selector(:option, "GPT-4o", selected: false)
-        expect(page).to have_selector(:option, "GPT-4o-mini", selected: false)
-        expect(page).not_to have_css "fieldset[disabled]"
+      page.find("tr", text: "Model") do |model_row|
+        expect(model_row).to have_select model_select_id,
+                                         options: ["None", "GPT-4o", "GPT-4o-mini"],
+                                         selected: nil
+        expect(model_row).not_to have_css "fieldset[disabled]"
       end
 
-      page.find(feature_button_selector) do
-        expect(page).to have_button "No", disabled: true
+      page.find("tr", text: "Content Translation") do |translation_row|
+        expect(translation_row).to have_css feature_button_selector
+        expect(translation_row).to have_button "No", disabled: true
       end
     end
   end
@@ -91,17 +97,19 @@ describe Admin::Settings::LlmConfigurationTabComponent do
     it "enables the feature toggle once provider and model are selected" do
       render_inline component
 
-      page.find(provider_select_selector) do
-        expect(page).to have_selector(:option, "OpenAI", selected: true)
+      page.find("tr", text: "LLM Provider") do |provider_row|
+        expect(provider_row).to have_select selected: "OpenAI"
       end
 
-      page.find(model_select_selector) do
-        expect(page).to have_selector(:option, "GPT-4o", selected: true)
-        expect(page).not_to have_css "fieldset[disabled]"
+      page.find("tr", text: "Model") do |model_row|
+        expect(model_row).to have_select options: ["None", "GPT-4o", "GPT-4o-mini"],
+                                         selected: "GPT-4o"
+        expect(model_row).not_to have_css "fieldset[disabled]"
       end
 
-      page.find(feature_button_selector) do
-        expect(page).to have_button "No", disabled: false
+      page.find("tr", text: "Content Translation") do |translation_row|
+        expect(translation_row).to have_css feature_button_selector
+        expect(translation_row).to have_button "No", disabled: false
       end
     end
   end
