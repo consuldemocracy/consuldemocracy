@@ -14,7 +14,7 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def create
-    @valuator = Valuator.new(valuator_params)
+    @valuator.user_id = params[:user_id]
     @valuator.save!
 
     redirect_to admin_valuators_path
@@ -27,7 +27,7 @@ class Admin::ValuatorsController < Admin::BaseController
 
   def update
     @valuator = Valuator.find(params[:id])
-    if @valuator.update(valuator_params)
+    if @valuator.update(update_valuator_params)
       notice = t("admin.valuators.form.updated")
       redirect_to [:admin, @valuator], notice: notice
     else
@@ -42,7 +42,7 @@ class Admin::ValuatorsController < Admin::BaseController
 
   private
 
-    def valuator_params
+    def update_valuator_params
       params[:valuator][:description] = nil if params[:valuator][:description].blank?
       params.require(:valuator).permit(allowed_params)
     end
