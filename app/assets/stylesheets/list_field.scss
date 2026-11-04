@@ -1,0 +1,44 @@
+.js-taggable-fields,
+.sdg-related-list-selector {
+  .ts-wrapper {
+    margin-bottom: $form-spacing;
+
+    .ts-control {
+      background: $white;
+      border: $input-border;
+      border-radius: $input-radius;
+      box-shadow: $input-shadow;
+    }
+
+    &.focus .ts-control {
+      border: $input-border-focus;
+      box-shadow: $input-shadow-focus;
+    }
+
+    &.multi .ts-control > div.item {
+      background: #ececec;
+      border-color: #ececec;
+      border-radius: rem-calc(6);
+      color: color-pick-contrast(#ececec);
+      font-size: $small-font-size;
+    }
+
+    .item .remove {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: inherit;
+      cursor: pointer;
+      font-size: inherit;
+      line-height: inherit;
+      margin: 0;
+      padding: 0 0.4rem;
+
+      &:focus,
+      &:hover {
+        background: transparent;
+        color: inherit;
+      }
+    }
+  }
+}

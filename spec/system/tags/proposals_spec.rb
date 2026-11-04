@@ -150,7 +150,7 @@ describe "Tags" do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(page).to have_css ".js-taggable-fields span[data-val='Economía']"
+    expect(page).to have_css ".js-taggable-fields [data-value='Economía']"
 
     fill_in_tag_list "Hacienda"
     click_button "Save changes"

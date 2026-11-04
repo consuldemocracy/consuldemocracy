@@ -1177,9 +1177,9 @@ describe "Admin budget investments", :admin do
       visit edit_admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
       within "#admin_valuation_tags" do
-        expect(page).to have_css "span.amsify-select-tag[data-val='Culture, Leisure and Tourism']", count: 1
-        expect(page).not_to have_css "span.amsify-select-tag[data-val='Culture']"
-        expect(page).not_to have_css "span.amsify-select-tag[data-val='Leisure and Tourism']"
+        expect(page).to have_css ".ts-control [data-value='Culture, Leisure and Tourism']", count: 1
+        expect(page).not_to have_css ".ts-control [data-value='Culture']"
+        expect(page).not_to have_css ".ts-control [data-value='Leisure and Tourism']"
       end
 
       click_button "Update"

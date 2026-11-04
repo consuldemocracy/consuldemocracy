@@ -69,6 +69,27 @@ describe "Tags" do
     expect(page).to have_content "Impuestos"
   end
 
+  scenario "Selects an existing tag from autocomplete" do
+    user = create(:user)
+    create(:tag, name: "Hacienda")
+    login_as(user)
+
+    visit new_debate_path
+    fill_in_new_debate_title with: "Title"
+    fill_in_ckeditor "Initial debate text", with: "Description"
+    check "debate_terms_of_service"
+
+    within ".js-taggable-fields" do
+      find(".js-tag-list-input").set("Ha")
+    end
+
+    within(".ts-dropdown") { find("[data-value='Hacienda']").click }
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+    expect(page).to have_content "Hacienda"
+  end
+
   scenario "Create with too many tags" do
     user = create(:user)
     login_as(user)
@@ -113,7 +134,7 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_css ".js-taggable-fields span[data-val='Economía']"
+    expect(page).to have_css ".js-taggable-fields [data-value='Economía']"
 
     fill_in_tag_list "Hacienda"
     click_button "Save changes"

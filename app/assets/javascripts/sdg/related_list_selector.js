@@ -9,43 +9,39 @@
         return;
       }
 
-      $input = $root.find(".input");
+      $input = $root.find("input.input");
 
-      App.AmsifyListField.mount($input, {
-        suggestions: $input.data("suggestions-list"),
-        whiteList: true,
-        classes: {
-          sTagsInput: ".sdg-related-list-selector-input"
-        },
-        checkboxes: $root.find(".goals input"),
-        checkboxValueAttribute: "code",
+      App.ListField.mount($input, {
+        afterAdd: App.SDGRelatedListSelector.manage_add_help,
+        afterRemove: App.SDGRelatedListSelector.manage_remove_help,
         checkboxListValue: App.SDGRelatedListSelector.goal_code,
+        checkboxValueAttribute: "code",
+        checkboxes: $root.find(".goals input"),
+        inputClass: "sdg-related-list-selector-input",
         keepCheckboxChecked: function(value, selected_values) {
           return selected_values.some(function(selected_value) {
             return App.SDGRelatedListSelector.goal_code(value) ===
               App.SDGRelatedListSelector.goal_code(selected_value);
           });
         },
-        afterAdd: function(amsify, value) {
-          App.SDGRelatedListSelector.manage_add_help(amsify, value);
-        },
-        afterRemove: function(amsify, value) {
-          App.SDGRelatedListSelector.manage_remove_help(amsify, value);
-        }
+        suggestions: $input.data("suggestions-list"),
+        whiteList: true
       });
     },
     goal_code: function(value) {
       return value.toString().split(".")[0];
     },
-    manage_add_help: function(amsify_suggestags, value) {
-      var title = amsify_suggestags.getItem(value).title;
-      var html = '<li data-id="' + value + '">' + "<strong>" + value + "</strong> " + title + "</li>";
+    manage_add_help: function(control, value) {
+      var title = control.options[value].title;
+      var html = "<li data-id=\"" + value + "\"><strong>" + value + "</strong> " + title + "</li>";
+
       $(".sdg-related-list-selector .help-section").removeClass("hide");
       $(".sdg-related-list-selector .selected-info").append(html);
     },
-    manage_remove_help: function(amsify_suggestags, value) {
-      $('[data-id="' + value + '"]').remove();
-      if ($(amsify_suggestags.selector).val() === "") {
+    manage_remove_help: function(control, value) {
+      $("[data-id=\"" + value + "\"]").remove();
+
+      if (control.items.length === 0) {
         $(".sdg-related-list-selector .help-section").addClass("hide");
       }
     }

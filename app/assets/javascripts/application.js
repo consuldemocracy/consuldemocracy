@@ -39,8 +39,8 @@
 //= require moderator
 //= require gettext
 //= require annotator
-//= require jquery.amsify.suggestags
-//= require amsify_list_field
+//= require tom-select/dist/js/tom-select.complete
+//= require list_field
 //= require tags
 //= require participation_not_allowed
 //= require advanced_search
@@ -160,6 +160,7 @@ var destroy_non_idempotent_modules = function() {
   App.ColumnsSelector.destroy();
   App.HTMLEditor.destroy();
   App.LegislationAnnotatable.destroy();
+  App.ListField.destroy();
   App.Map.destroy();
   App.SocialShare.destroy();
 };

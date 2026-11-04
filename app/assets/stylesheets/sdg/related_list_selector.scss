@@ -1,18 +1,18 @@
 .sdg-related-list-selector {
-
-  @include amsify-suggestags-input-area;
   clear: both;
 
   > legend {
     margin-bottom: 0;
   }
 
-  .amsify-suggestags-area .amsify-select-tag {
+  .ts-wrapper.multi .ts-control > div.item {
+    border-color: transparent;
     color: $sdg-text;
 
     @each $code, $color in $sdg-colors {
-      &[data-val^="#{$code}"] {
+      &[data-value^="#{$code}"] {
         background-color: $color;
+        border-color: $color;
       }
     }
   }
@@ -53,18 +53,6 @@
 
   .input-section {
     margin-bottom: calc(2 * $line-height / 3);
-  }
-
-  .amsify-suggestags-area {
-    position: relative;
-
-    .amsify-suggestags-list {
-      top: $input-height;
-    }
-  }
-
-  .remove-tag {
-    color: $sdg-text;
   }
 
   h3 {

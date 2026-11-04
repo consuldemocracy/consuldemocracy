@@ -17,7 +17,7 @@ module Tags
 
   def remove_tag_list_tag(name, within: ".js-taggable-fields")
     within within do
-      within "span[data-val=\"#{name}\"]" do
+      within ".ts-control [data-value=\"#{name}\"]" do
         click_button "Remove"
       end
     end
@@ -25,7 +25,7 @@ module Tags
 
   def clear_tag_list(within: ".js-taggable-fields")
     within(within) do
-      all(".amsify-suggestags-input-area button.remove-tag").reverse_each(&:click)
+      all(".ts-control .item .remove").reverse_each(&:click)
     end
   end
 end

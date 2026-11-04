@@ -358,19 +358,19 @@ describe "SDG Relations" do
       visit sdg_management_edit_legislation_process_path(process)
 
       fill_in "Goals and Targets", with: "3"
-      within(".amsify-list") { find(:css, "[data-val='3']").click }
+      within(".ts-dropdown") { find(:css, "[data-value='3']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "SDG3" }
 
       fill_in "Goals and Targets", with: "1.1"
-      within(".amsify-list") { find(:css, "[data-val='1.1']").click }
+      within(".ts-dropdown") { find(:css, "[data-value='1.1']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "1.1" }
 
       fill_in "Goals and Targets", with: "1.1.1"
-      within(".amsify-list") { find(:css, "[data-val='1.1.1']").click }
+      within(".ts-dropdown") { find(:css, "[data-value='1.1.1']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "1.1.1" }
 
       click_button "Update Process"
 
@@ -384,13 +384,41 @@ describe "SDG Relations" do
       end
     end
 
+    scenario "selects a goal by typing its full title and a comma" do
+      process = create(:legislation_process, title: "SDG process")
+
+      visit sdg_management_edit_legislation_process_path(process)
+      fill_in "Goals and Targets", with: "No Poverty,"
+
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).not_to have_content "SDG1"
+      end
+
+      fill_in "Goals and Targets", with: "1. No Poverty,"
+
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "SDG1" }
+      expect(find("input[data-code='1']")).to be_checked
+
+      click_button "Update Process"
+
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1"
+      end
+    end
+
     scenario "allows adding only white list suggestions" do
       process = create(:legislation_process, title: "SDG process")
 
       visit sdg_management_edit_legislation_process_path(process)
       fill_in "Goals and Targets", with: "tag nonexistent,"
 
-      within(".amsify-suggestags-input-area") { expect(page).not_to have_content "tag nonexistent" }
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).not_to have_content "tag nonexistent"
+      end
     end
 
     describe "by clicking on a Goal icon" do

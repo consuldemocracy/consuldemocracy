@@ -87,6 +87,43 @@ describe "Tags" do
 
     expect(page).to have_content error_message
     expect(page).to have_content "tags must be less than or equal to 6"
+    expect(page).to have_css "[data-value='Impuestos']"
+    expect(page).to have_css "[data-value='Igualdad']"
+  end
+
+  scenario "Keeps names with quotes, apostrophes and accents" do
+    debate = create(:debate, tag_list: ["Say \"hi\"", "It's fine", "Economía"])
+
+    login_as(debate.author)
+    visit edit_debate_path(debate)
+
+    expect(page).to have_css "[data-value='Say \"hi\"']"
+    expect(page).to have_css "[data-value=\"It's fine\"]"
+    expect(page).to have_css "[data-value='Economía']"
+
+    click_button "Save changes"
+
+    expect(page).to have_content "Debate updated successfully."
+    expect(debate.reload.tag_list).to contain_exactly("Say \"hi\"", "It's fine", "Economía")
+  end
+
+  scenario "Does not add a case-variant duplicate" do
+    user = create(:user)
+    login_as(user)
+
+    visit new_debate_path
+    fill_in_new_debate_title with: "Title"
+    fill_in_ckeditor "Initial debate text", with: "Description"
+    check "debate_terms_of_service"
+    fill_in_tag_list "Economía, economía"
+
+    expect(page).to have_css "[data-value='Economía']", count: 1
+    expect(page).not_to have_css "[data-value='economía']"
+
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+    expect(Debate.last.tag_list).to eq(["Economía"])
   end
 
   scenario "Update" do
@@ -95,7 +132,7 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_css ".js-taggable-fields span[data-val='Economía']"
+    expect(page).to have_css ".js-taggable-fields [data-value='Economía']"
 
     fill_in_tag_list "Hacienda"
     click_button "Save changes"
