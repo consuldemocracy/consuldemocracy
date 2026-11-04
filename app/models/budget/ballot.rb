@@ -9,6 +9,8 @@ class Budget
     has_many :groups, -> { distinct }, through: :lines
     has_many :headings, -> { distinct }, through: :groups
 
+    validates :user_id, uniqueness: { scope: :budget_id }, allow_nil: true
+
     def add_investment(investment)
       line = lines.create(investment: investment)
 
