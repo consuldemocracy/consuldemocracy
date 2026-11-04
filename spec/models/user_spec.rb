@@ -845,6 +845,112 @@ describe User do
       expect(Vote.find_by(id: other_vote.id)).to be nil
     end
 
+    it "deletes the other user's ballot if the user has already voted" do
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+      budget = create(:budget)
+      investment = create(:budget_investment, :selected, budget: budget)
+      other_investment = create(:budget_investment, :selected, budget: budget)
+
+      ballot = create(:budget_ballot, budget: budget, user: user, investments: [investment])
+      other_ballot = create(:budget_ballot, budget: budget, user: other_user, investments: [other_investment])
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq 1
+      expect(Budget::Ballot.where(user: user).count).to eq 1
+
+      user.take_votes_from other_user
+
+      expect(Budget::Ballot.where(user: user)).to eq [ballot]
+      expect(Budget::Ballot.where(user: other_user)).to eq []
+      expect(Budget::Ballot.find_by(id: other_ballot.id)).to be nil
+      expect(Budget::Ballot::Line.where(investment: investment).count).to eq 1
+      expect(Budget::Ballot::Line.where(investment: other_investment)).to eq []
+      expect(investment.reload.ballot_lines_count).to eq 1
+      expect(other_investment.reload.ballot_lines_count).to eq 0
+    end
+
+    it "reassigns budget ballots and deletes the user's ballot when the user has an empty one" do
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+
+      ballot = create(:budget_ballot, budget: create(:budget, :balloting), user: user)
+      other_ballot = create(
+        :budget_ballot,
+        user: other_user,
+        budget: ballot.budget,
+        investments: [create(:budget_investment, :selected, budget: ballot.budget)]
+      )
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq 1
+      expect(Budget::Ballot.where(user: user).count).to eq 1
+
+      user.take_votes_from other_user
+
+      expect(Budget::Ballot.where(user: other_user)).to eq []
+      expect(Budget::Ballot.where(user: user)).to eq [other_ballot]
+      expect(Budget::Ballot.find_by(id: ballot.id)).to be nil
+      expect(other_ballot.reload.investments.count).to eq 1
+    end
+
+    it "only reassigns one ballot on the same budget and deletes the rest" do
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+      budget = create(:budget)
+
+      ballot1 = create(:budget_ballot, budget: budget, user: other_user)
+      ballot2 = build(:budget_ballot, budget: budget, user: other_user)
+      ballot2.save!(validate: false)
+      ballot3 = build(:budget_ballot, budget: budget, user: other_user)
+      ballot3.save!(validate: false)
+
+      create(:budget_ballot_line,
+             ballot: ballot2,
+             investment: create(:budget_investment, :selected, budget: budget))
+      create(:budget_ballot_line,
+             ballot: ballot3,
+             investment: create(:budget_investment, :selected, budget: budget))
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq 3
+      expect(Budget::Ballot.where(user: user).count).to eq 0
+
+      user.take_votes_from other_user
+
+      expect(Budget::Ballot.where(user: other_user)).to eq []
+      expect(Budget::Ballot.where(user: user)).to eq [ballot2]
+      expect(Budget::Ballot.find_by(id: ballot1.id)).to be nil
+      expect(Budget::Ballot.find_by(id: ballot3.id)).to be nil
+      expect(Budget::Ballot.count).to eq 1
+      expect(ballot2.reload.investments.count).to eq 1
+    end
+
+    it "deletes the other user's ballot if the user's got duplicate non-empty ballots" do
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+      budget = create(:budget)
+      investment = create(:budget_investment, :selected, budget: budget)
+      other_investment = create(:budget_investment, :selected, budget: budget)
+
+      empty_ballot = create(:budget_ballot, budget: budget, user: user)
+      ballot = build(:budget_ballot, budget: budget, user: user)
+      ballot.save!(validate: false)
+      create(:budget_ballot_line, ballot: ballot, investment: investment)
+
+      other_ballot = create(:budget_ballot, budget: budget, user: other_user, investments: [other_investment])
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq 1
+      expect(Budget::Ballot.where(user: user).count).to eq 2
+
+      user.take_votes_from other_user
+
+      expect(Budget::Ballot.where(user: user)).to match_array [empty_ballot, ballot]
+      expect(Budget::Ballot.where(user: other_user)).to eq []
+      expect(Budget::Ballot.find_by(id: other_ballot.id)).to be nil
+      expect(Budget::Ballot::Line.where(investment: investment).count).to eq 1
+      expect(Budget::Ballot::Line.where(investment: other_investment)).to eq []
+      expect(investment.reload.ballot_lines_count).to eq 1
+      expect(other_investment.reload.ballot_lines_count).to eq 0
+    end
+
     it "updates cached vote counters when deleting duplicate votes" do
       proposal = create(:proposal, cached_votes_up: 0)
       user = create(:user, :level_three)
