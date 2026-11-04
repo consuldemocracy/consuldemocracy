@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_28_225302) do
+ActiveRecord::Schema[8.0].define(version: 2026_11_04_010756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -1786,7 +1786,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_28_225302) do
   add_foreign_key "legislation_draft_versions", "legislation_processes"
   add_foreign_key "legislation_proposals", "legislation_processes"
   add_foreign_key "locks", "users"
-  add_foreign_key "machine_learning_jobs", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
