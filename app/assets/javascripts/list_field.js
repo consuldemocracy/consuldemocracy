@@ -1,302 +1,155 @@
 (function() {
   "use strict";
 
-  // Quotes wrap a name only when they enclose the whole name, as in ActsAsTaggableOn.
+  // Same rules as ActsAsTaggableOn::DefaultParser
   var parse_tag_list = function(value) {
-    var string = String(value || "");
     var tags = [];
-    var current = "";
-    var quote = "";
-    var i;
-    var character;
-
-    var push_current = function() {
-      var tag = current.replace(/^\s+|\s+$/g, "");
-
-      if (tag) {
+    var quoted_tags = [/(^|,)\s*"(.*?)"\s*(?=,|$)/g, /(^|,)\s*'(.*?)'\s*(?=,|$)/g];
+    var unquoted = quoted_tags.reduce(function(string, pattern) {
+      return string.replace(pattern, function(match, delimiter, tag) {
         tags.push(tag);
-      }
+        return "";
+      });
+    }, value);
 
-      current = "";
-    };
-
-    for (i = 0; i < string.length; i++) {
-      character = string.charAt(i);
-
-      if (quote) {
-        if (character === quote) {
-          quote = "";
-        } else {
-          current += character;
-        }
-      } else if ((character === "\"" || character === "'") && current.trim() === "") {
-        quote = character;
-        current = "";
-      } else if (character === ",") {
-        push_current();
-      } else {
-        current += character;
-      }
-    }
-
-    push_current();
-
-    return tags;
+    return tags.concat(unquoted.split(",")).map(function(tag) {
+      return tag.trim();
+    }).filter(Boolean);
   };
 
   var serialize_tag_list = function(names) {
     return names.map(function(name) {
-      var label = String(name);
-
-      return label.indexOf(",") === -1 ? label : "\"" + label + "\"";
+      return name.indexOf(",") === -1 ? name : "\"" + name + "\"";
     }).join(", ");
   };
 
-  var option_for = function(item) {
-    var value;
-    var text;
-
-    if (item !== null && typeof item === "object") {
-      value = String(item.value);
-      text = String(item.display_text || item.tag || value);
-
-      return {
-        tag: String(item.tag || text),
-        text: text,
-        title: item.title || "",
-        value: value
-      };
-    }
-
-    value = String(item);
-
-    return { tag: value, text: value, value: value };
+  var tag_option = function(name) {
+    return { display_text: name, tag: name, value: name };
   };
 
-  var matching_option = function(control, label) {
-    var needle = label.toLowerCase();
-    var key;
-    var option;
+  var find_option = function(control, text) {
+    var needle = text.toLowerCase();
+    var value;
 
-    if (!needle) {
-      return null;
-    }
-
-    for (key in control.options) {
-      if (Object.prototype.hasOwnProperty.call(control.options, key)) {
-        option = control.options[key];
-        if (String(option.tag || option.value).toLowerCase() === needle ||
-            String(option.value).toLowerCase() === needle) {
-          return option;
-        }
+    for (value in control.options) {
+      if (value.toLowerCase() === needle || control.options[value].tag.toLowerCase() === needle) {
+        return control.options[value];
       }
     }
-
-    return null;
-  };
-
-  var sync_value = function(control) {
-    control.input.value = serialize_tag_list(control.items);
-  };
-
-  var restore_label = function(input, control) {
-    var label;
-
-    if (!control.focus_node || !control.focus_node.id || !input.id) {
-      return;
-    }
-
-    label = document.querySelector("label[for='" + control.focus_node.id + "']");
-    if (label) {
-      label.setAttribute("for", input.id);
-    }
-  };
-
-  var checkbox_for = function($checkboxes, attribute, token) {
-    return $checkboxes.filter(function() {
-      return this.dataset[attribute] === String(token);
-    });
   };
 
   App.ListField = {
-    mount: function($input, options) {
-      var settings = options || {};
+    mount: function($input, settings) {
       var input = $input[0];
-      var selected = input ? parse_tag_list(input.value) : [];
-      var source = settings.suggestions || [];
-      var known = {};
-      var choices = [];
+      var items = parse_tag_list(input.value);
       var checkboxes = settings.checkboxes;
       var checkbox_attribute = settings.checkboxValueAttribute || "listValue";
-      var checkbox_value = settings.checkboxListValue || function(value) {
-        return String(value);
-      };
-      var keep_checked = settings.keepCheckboxChecked || function() {
+      var checkbox_list_value = settings.checkboxListValue || String;
+      var keep_checkbox_checked = settings.keepCheckboxChecked || function() {
         return false;
       };
-      var i;
-      var choice;
-      var on_add;
-      var on_remove;
-      var config;
       var control;
 
-      if (!input || input.tomselect) {
+      var check = function(value, checked) {
+        checkboxes.filter(function() {
+          return this.dataset[checkbox_attribute] === checkbox_list_value(value);
+        }).prop("checked", checked);
+      };
+
+      var after_add = function(value) {
+        check(value, true);
+
+        if (settings.afterAdd) {
+          settings.afterAdd(control, value);
+        }
+      };
+
+      if (input.tomselect) {
         return;
       }
 
-      for (i = 0; i < source.length; i++) {
-        choice = option_for(source[i]);
-        known[choice.value] = true;
-        choices.push(choice);
-      }
-
-      for (i = 0; i < selected.length; i++) {
-        if (!known[selected[i]]) {
-          choices.push(option_for(selected[i]));
-        }
-      }
-
-      on_add = function(select, value) {
-        if (checkboxes && checkboxes.length) {
-          checkbox_for(checkboxes, checkbox_attribute, checkbox_value(value)).prop("checked", true);
-        }
-
-        if (typeof settings.afterAdd === "function") {
-          settings.afterAdd(select, value);
-        }
-      };
-
-      on_remove = function(select, value) {
-        var checked = keep_checked(value, select.items);
-
-        if (checkboxes && checkboxes.length) {
-          checkbox_for(checkboxes, checkbox_attribute, checkbox_value(value)).prop("checked", checked);
-        }
-
-        if (typeof settings.afterRemove === "function") {
-          settings.afterRemove(select, value);
-        }
-      };
-
-      config = {
+      control = new TomSelect(input, {
         clearAfterSelect: true,
         controlInput: "<input type=\"text\" autocomplete=\"off\" size=\"1\" class=\"" +
           settings.inputClass + "\">",
-        create: function(typed) {
-          var name = typed.trim();
-          var match = matching_option(this, name);
+        create: function(text) {
+          var option = find_option(this, text);
 
-          if (match) {
-            this.setTextboxValue("");
-            this.addItem(match.value);
-            return false;
+          if (!option && !settings.whiteList) {
+            return tag_option(text);
           }
 
-          if (name && !settings.whiteList) {
-            return option_for(name);
+          if (option) {
+            this.addItem(option.value);
           }
-
           this.setTextboxValue("");
           return false;
         },
-        items: selected,
-        maxOptions: settings.suggestions ? null : 50,
-        onChange: function() {
-          sync_value(this);
-        },
-        onInitialize: function() {
-          var index;
-
-          sync_value(this);
-
-          for (index = 0; index < this.items.length; index++) {
-            on_add(this, this.items[index]);
-          }
-        },
-        onItemAdd: function(value) {
-          on_add(this, value);
-        },
-        onItemRemove: function(value) {
-          on_remove(this, value);
-        },
-        openOnFocus: false,
-        options: choices,
-        plugins: {
-          remove_button: {
-            className: "remove",
-            html: function(data) {
-              var button = document.createElement("button");
-
-              button.type = "button";
-              button.className = data.className;
-              button.title = data.title;
-              button.setAttribute("aria-label", data.title);
-              button.textContent = data.label;
-
-              return button;
-            },
-            label: "\u00d7",
-            title: $input.data("remove-tag-text") || "Remove"
-          }
-        },
-        render: {
-          no_results: function() {
-            return null;
-          },
-          option: function(data, escape) {
-            return "<div>" + escape(data.tag || data.text) + "</div>";
-          },
-          option_create: function(data, escape) {
-            if (settings.whiteList) {
-              return null;
-            }
-
-            return "<div>" + escape(data.input) + "</div>";
-          }
-        },
-        searchField: ["text", "tag", "value"]
-      };
-
-      if (settings.suggestionsUrl) {
-        config.load = function(query, callback) {
+        items: items,
+        labelField: "display_text",
+        load: settings.suggestionsUrl && function(query, callback) {
           $.getJSON(settings.suggestionsUrl, { term: query }).done(function(data) {
-            var names = (data && data.suggestions) || [];
-
-            callback(names.map(option_for));
+            callback(data.suggestions.map(tag_option));
           }).fail(function() {
             callback();
           });
-        };
-        config.shouldLoad = function(query) {
+        },
+        maxOptions: null,
+        onChange: function() {
+          input.value = serialize_tag_list(this.items);
+        },
+        onItemAdd: after_add,
+        onItemRemove: function(value) {
+          check(value, keep_checkbox_checked(value, this.items));
+
+          if (settings.afterRemove) {
+            settings.afterRemove(this, value);
+          }
+        },
+        openOnFocus: false,
+        options: settings.suggestions || items.map(tag_option),
+        plugins: {
+          remove_button: {
+            html: function(data) {
+              return "<button type=\"button\" class=\"remove\" aria-label=\"" + data.title + "\">" +
+                data.label + "</button>";
+            },
+            title: $input.data("remove-tag-text")
+          }
+        },
+        render: {
+          no_results: null,
+          option: function(data, escape) {
+            return "<div>" + escape(data.tag) + "</div>";
+          },
+          option_create: null
+        },
+        searchField: ["tag"],
+        shouldLoad: function(query) {
           return query.length >= 2;
-        };
-      }
+        }
+      });
 
-      control = new TomSelect(input, config);
-
-      if (input.getAttribute("aria-describedby")) {
+      if (input.hasAttribute("aria-describedby")) {
         control.control_input.setAttribute("aria-describedby", input.getAttribute("aria-describedby"));
       }
 
-      if (!checkboxes || !checkboxes.length) {
-        return;
-      }
+      // Tom Select only clips this input. The combobox is the control assistive technology should use.
+      input.setAttribute("aria-hidden", "true");
+
+      input.value = serialize_tag_list(control.items);
+      control.items.forEach(after_add);
 
       checkboxes.on("change", function() {
-        var token = this.dataset[checkbox_attribute];
+        var value = this.dataset[checkbox_attribute];
 
-        if (!token) {
-          return;
-        }
-
-        if (control.items.indexOf(token) === -1) {
-          if (!control.options[token] && !settings.whiteList) {
-            control.addOption(option_for(token));
+        if (control.items.indexOf(value) === -1) {
+          if (!control.options[value]) {
+            control.addOption(tag_option(value));
           }
-          control.addItem(token);
+          control.addItem(value);
         } else {
-          control.removeItem(token);
+          control.removeItem(value);
         }
       }).on("keydown", function(event) {
         if (event.keyCode === 13) {
@@ -308,15 +161,14 @@
     },
     destroy: function() {
       $("input.tomselected").each(function() {
-        var control = this.tomselect;
+        var label = document.querySelector("label[for='" + this.tomselect.control_input.id + "']");
 
-        if (!control) {
-          return;
+        if (label) {
+          label.htmlFor = this.id;
         }
 
-        sync_value(control);
-        restore_label(this, control);
-        control.destroy();
+        this.removeAttribute("aria-hidden");
+        this.tomselect.destroy();
       });
     }
   };

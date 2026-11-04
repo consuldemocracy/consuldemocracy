@@ -9,23 +9,27 @@
         return;
       }
 
-      $input = $root.find("input.input");
+      $input = $root.find(".input");
 
       App.ListField.mount($input, {
-        afterAdd: App.SDGRelatedListSelector.manage_add_help,
-        afterRemove: App.SDGRelatedListSelector.manage_remove_help,
-        checkboxListValue: App.SDGRelatedListSelector.goal_code,
-        checkboxValueAttribute: "code",
-        checkboxes: $root.find(".goals input"),
+        suggestions: $input.data("suggestions-list"),
+        whiteList: true,
         inputClass: "sdg-related-list-selector-input",
+        checkboxes: $root.find(".goals input"),
+        checkboxValueAttribute: "code",
+        checkboxListValue: App.SDGRelatedListSelector.goal_code,
         keepCheckboxChecked: function(value, selected_values) {
           return selected_values.some(function(selected_value) {
             return App.SDGRelatedListSelector.goal_code(value) ===
               App.SDGRelatedListSelector.goal_code(selected_value);
           });
         },
-        suggestions: $input.data("suggestions-list"),
-        whiteList: true
+        afterAdd: function(control, value) {
+          App.SDGRelatedListSelector.manage_add_help(control, value);
+        },
+        afterRemove: function(control, value) {
+          App.SDGRelatedListSelector.manage_remove_help(control, value);
+        }
       });
     },
     goal_code: function(value) {
@@ -33,15 +37,13 @@
     },
     manage_add_help: function(control, value) {
       var title = control.options[value].title;
-      var html = "<li data-id=\"" + value + "\"><strong>" + value + "</strong> " + title + "</li>";
-
+      var html = '<li data-id="' + value + '">' + "<strong>" + value + "</strong> " + title + "</li>";
       $(".sdg-related-list-selector .help-section").removeClass("hide");
       $(".sdg-related-list-selector .selected-info").append(html);
     },
     manage_remove_help: function(control, value) {
-      $("[data-id=\"" + value + "\"]").remove();
-
-      if (control.items.length === 0) {
+      $('[data-id="' + value + '"]').remove();
+      if ($(control.input).val() === "") {
         $(".sdg-related-list-selector .help-section").addClass("hide");
       }
     }

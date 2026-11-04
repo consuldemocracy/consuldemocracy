@@ -21,23 +21,10 @@
       border-radius: rem-calc(6);
       color: color-pick-contrast(#ececec);
       font-size: $small-font-size;
-    }
 
-    .item .remove {
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      color: inherit;
-      cursor: pointer;
-      font-size: inherit;
-      line-height: inherit;
-      margin: 0;
-      padding: 0 0.4rem;
-
-      &:focus,
-      &:hover {
-        background: transparent;
-        color: inherit;
+      .remove {
+        border-left: 0;
+        cursor: pointer;
       }
     }
   }

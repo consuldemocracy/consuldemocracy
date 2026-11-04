@@ -126,6 +126,41 @@ describe "Tags" do
     expect(Debate.last.tag_list).to eq(["Economía"])
   end
 
+  scenario "Exposes only the interactive tag field to assistive technology" do
+    login_as(create(:user))
+    visit new_debate_path
+
+    expect_accessible_tag_field
+
+    within ".subnavigation" do
+      click_link "Debates"
+    end
+
+    click_link "Start a debate"
+
+    expect_accessible_tag_field
+
+    fill_in_tag_list "Hacienda"
+    expect(find(".js-taggable-fields input.js-tag-list", visible: :all).value).to eq "Hacienda"
+
+    page.execute_script("App.ListField.destroy()")
+
+    within ".js-taggable-fields" do
+      original = find("input.js-tag-list")
+
+      expect(original["aria-hidden"]).to be_nil
+      expect(original.value).to eq "Hacienda"
+      expect(original).not_to be_disabled
+      expect(find("label", text: "Tags")[:for]).to eq original[:id]
+      expect(page).not_to have_css ".ts-wrapper"
+    end
+
+    page.execute_script("App.Tags.initialize()")
+
+    expect_accessible_tag_field
+    expect(page).to have_css ".js-taggable-fields [data-value='Hacienda']"
+  end
+
   scenario "Update" do
     debate = create(:debate, tag_list: "Economía")
 
@@ -230,5 +265,28 @@ describe "Tags" do
       expect(page).to have_content proposal2.title
       expect(page).not_to have_content proposal3.title
     end
+  end
+
+  def expect_accessible_tag_field
+    within ".js-taggable-fields" do
+      original = find("input.js-tag-list", visible: :all)
+      control = find("input.js-tag-list-input")
+      label = find("label", text: "Tags")
+
+      expect(original["aria-hidden"]).to eq "true"
+      expect(original["tabindex"]).to eq "-1"
+      expect(original[:class]).to include "ts-hidden-accessible"
+      expect(original).not_to be_disabled
+      expect(original[:name]).to eq "debate[tag_list]"
+
+      expect(label[:for]).to eq control[:id]
+      expect(control["aria-labelledby"]).to eq label[:id]
+      expect(control["aria-hidden"]).to be_nil
+      expect(control["tabindex"]).to eq "0"
+
+      label.click
+    end
+
+    expect(page.evaluate_script("document.activeElement.id")).to eq find(".js-tag-list-input")[:id]
   end
 end
