@@ -15,5 +15,12 @@ describe Budgets::BallotsController do
         get :show, params: { budget_id: 0 }
       end.to raise_error ActiveRecord::RecordNotFound
     end
+
+    it "does not create a ballot if it doesn't exist" do
+      get :show, params: { budget_id: create(:budget, :balloting).id }
+
+      expect(response).to be_successful
+      expect(Budget::Ballot.count).to eq 0
+    end
   end
 end

@@ -9,6 +9,26 @@ describe Budgets::InvestmentsController do
         get :index, params: { budget_id: create(:budget).id }
       end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
+
+    context "balloting" do
+      let!(:budget) { create(:budget, :balloting) }
+
+      it "does not create a ballot for anonymous users" do
+        get :index, params: { budget_id: budget.id }
+
+        expect(response).to be_successful
+        expect(Budget::Ballot.count).to eq 0
+      end
+
+      it "does not create a ballot for authorized users" do
+        sign_in(create(:user, :level_two))
+
+        get :index, params: { budget_id: budget.id }
+
+        expect(response).to be_successful
+        expect(Budget::Ballot.count).to eq 0
+      end
+    end
   end
 
   describe "GET show" do
@@ -36,6 +56,26 @@ describe Budgets::InvestmentsController do
       expect do
         get :show, params: { budget_id: investment.budget.id, id: investment.id, heading_id: 0 }
       end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    context "balloting" do
+      before { investment.budget.update!(phase: "balloting") }
+
+      it "does not create a ballot for anonymous users" do
+        get :show, params: { budget_id: investment.budget.id, id: investment.id }
+
+        expect(response).to be_successful
+        expect(Budget::Ballot.count).to eq 0
+      end
+
+      it "does not create a ballot for authorized users" do
+        sign_in(create(:user, :level_two))
+
+        get :show, params: { budget_id: investment.budget.id, id: investment.id }
+
+        expect(response).to be_successful
+        expect(Budget::Ballot.count).to eq 0
+      end
     end
   end
 end
