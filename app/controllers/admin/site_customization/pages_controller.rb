@@ -42,6 +42,6 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
     def allowed_params
       attributes = [:slug, :more_info_flag, :print_content_flag, :status]
 
-      [*attributes, translation_params(SiteCustomization::Page)]
+      [*attributes, *translation_params(SiteCustomization::Page)]
     end
 end
