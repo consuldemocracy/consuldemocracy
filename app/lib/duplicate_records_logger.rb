@@ -3,6 +3,10 @@ class DuplicateRecordsLogger
     logger.info(message)
   end
 
+  def warn(message)
+    logger.warn(message)
+  end
+
   def logger
     @logger ||= ActiveSupport::Logger.new(log_file).tap do |logger|
       logger.formatter = Rails.application.config.log_formatter
