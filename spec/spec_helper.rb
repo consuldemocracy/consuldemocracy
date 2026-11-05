@@ -78,6 +78,10 @@ RSpec.configure do |config|
     sign_in(create(:administrator).user)
   end
 
+  config.before(:each, :admin, type: :request) do
+    sign_in(create(:administrator).user)
+  end
+
   config.before(:each, type: :component) do
     sign_in(nil)
   end

@@ -1,11 +1,10 @@
 class Poll
   class Officer < ApplicationRecord
-    belongs_to :user
+    include UserRole
+
     has_many :officer_assignments
     has_many :shifts
     has_many :failed_census_calls, foreign_key: :poll_officer_id, inverse_of: :poll_officer
-
-    validates :user_id, presence: true, uniqueness: true
 
     def name
       user&.name || I18n.t("shared.author_info.author_deleted")

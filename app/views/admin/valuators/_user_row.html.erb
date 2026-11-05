@@ -5,10 +5,6 @@
   <td></td>
   <td></td>
   <td>
-    <%= form_for Valuator.new(user: user), url: admin_valuators_path do |f| %>
-      <%= f.hidden_field :user_id %>
-      <%= f.submit t("admin.valuators.valuator.add"),
-                   class: "button success expanded" %>
-    <% end %>
+    <%= render Admin::Roles::TableActionsComponent.new(user.build_valuator) %>
   </td>
 </tr>

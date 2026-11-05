@@ -7,6 +7,11 @@ namespace :consul do
 
   desc "Runs tasks needed to upgrade from 2.6.1 to 2.7.0"
   task "execute_release_2.7.0_tasks": [
-    "identities:remove_duplicate_identities"
+    "identities:remove_duplicate_identities",
+    "administrators:remove_duplicate_administrators",
+    "managers:remove_duplicate_managers",
+    "moderators:remove_duplicate_moderators",
+    "poll_officers:remove_duplicate_poll_officers",
+    "valuators:remove_duplicate_valuators"
   ]
 end
