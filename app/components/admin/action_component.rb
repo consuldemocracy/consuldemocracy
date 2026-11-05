@@ -11,6 +11,10 @@ class Admin::ActionComponent < ApplicationComponent
 
   private
 
+    def button_tag?
+      options[:type] == "button"
+    end
+
     def button?
       method && method != :get
     end
