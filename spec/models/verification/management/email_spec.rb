@@ -68,5 +68,14 @@ describe Verification::Management::Email do
       expect(user.document_type).to eq("1")
       expect(user.document_number).to eq("1234")
     end
+
+    it "returns false when the document number is already in use" do
+      create(:user, document_type: "1", document_number: "1234")
+      user = create(:user)
+      validation = Verification::Management::Email.new(document_type: "1",
+                                                       document_number: "1234",
+                                                       email: user.email)
+      expect(validation.save).to be false
+    end
   end
 end
