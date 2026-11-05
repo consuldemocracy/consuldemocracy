@@ -106,8 +106,6 @@ pt:
         recommendations_on_proposals_description: "Mostra recomendações aos utilizadores na página de propostas com base nas etiquetas dos itens seguidos"
       community: "Comunidade sobre propostas e investimentos"
       community_description: "Ativa a secção comunidade nas propostas e projetos de investimento dos Orçamentos Participativos"
-      machine_learning: "AI / Machine learning"
-      machine_learning_description: "Ativa a secção AI/Machine Learning para executar scripts python e enriquecer o conteúdo automaticamente."
       map: "Geolocalização de propostas e investimentos orçamentais"
       map_description: "Permite a geolocalização nas propostas e projetos de investimentos"
       allow_images: "Permitir carregar e mostrar imagens"

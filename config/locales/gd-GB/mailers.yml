@@ -86,16 +86,6 @@ gd:
       hi: Haidh
       new_comment_by: Tha beachd luachaidh ùr ann bho <strong>%{commenter}</strong> dhan tasgadh buidseit %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Tadhail air pannal Ionnsachadh Inneil"
-      subject: "Ionnsachadh Inneill - Thachair mearachd le bhith a’ ruith an sgriobt"
-      text: "Thachair mearachd le bhith a’ ruith an sgriobt Ionnsachadh Inneil."
-      title: "Sgriobt Ionnsachaidh Inneil"
-    machine_learning_success:
-      link: "Tadhail air pannal Ionnsachadh Inneil"
-      subject: "Ionnsachadh Inneil - Chaidh susbaint a chruthachadh gu soirbheachail"
-      text: "Chaidh an t-susbaint a chruthachadh."
-      title: "Sgriobt Ionnsachaidh Inneil"
     new_actions_notification_on_create:
       subject: "Chaidh an dreachd mholadh saoranach agad a chruthachadh"
       hi: "Haidh %{name}!"

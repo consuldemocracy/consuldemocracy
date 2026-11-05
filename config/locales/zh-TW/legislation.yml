@@ -101,8 +101,6 @@ zh-TW:
       share: 共用
       share_comment: 從進程草稿%{process_name} 中對%{version_name} 的評論
     proposals:
-      form:
-        tags_label: "類別"
       not_verified: "為投票建議%{verify_account}。"
       process_title: 合作立法進程
     summary:

@@ -106,8 +106,6 @@ de:
         recommendations_on_proposals_description: "Zeigt Nutzern Empfehlungen für Vorschlagsseiten an, basierend auf den Tags und den Objekten, denen sie folgen"
       community: "Community für Anträge und Investitionen"
       community_description: "Schaltet den Community-Bereich in der Rubrik Vorschläge und Investitionsprojekte der Bürgerhaushalte ein"
-      machine_learning: "KI / Maschinelles Lernen"
-      machine_learning_description: "Aktivieren Sie den Bereich KI/Maschinelles Lernen, um Python-Skripte auszuführen und Inhalte automatisch anzureichern."
       map: "Standort des Antrages und der Budgetinvestition"
       map_description: "Ermöglicht die Geolokalisierung der Vorschläge und Investitionsprojekte"
       allow_images: "Upload und Anzeigen von Bildern erlauben"

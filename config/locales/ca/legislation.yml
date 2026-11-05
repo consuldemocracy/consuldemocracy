@@ -103,8 +103,6 @@ ca:
       share: compartir
       share_comment: Comentari sobre la %{version_name} de l'esborrany del procés %{process_name}
     proposals:
-      form:
-        tags_label: "Categories"
       not_verified: "Per a propostes de vot %{verify_account}."
       process_title: Procés de legislació col·laborativa
     summary:

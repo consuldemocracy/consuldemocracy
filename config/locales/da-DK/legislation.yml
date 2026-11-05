@@ -103,8 +103,6 @@ da:
       share: Del
       share_comment: Kommenter på %{version_name} fra processen %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorier"
       not_verified: "For at stemme på borgerforslag %{verify_account}."
       process_title: Borgerproces
     summary:

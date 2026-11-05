@@ -970,6 +970,3 @@ gd:
           two: "%{count} thaga a bharrachd"
           few: "%{count} thagaichean a bharrachd"
           other: "%{count} thagaichean a bharrachd"
-  machine_learning:
-    comments_summary: "Geàrr-chunntas de bheachdan"
-    info_text: "Susbaint air a chruthachadh le AI / Ionnsachadh Inneil"

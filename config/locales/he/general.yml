@@ -880,5 +880,3 @@ he:
       surveys: סקרים
     poll:
       take_part: קח חלק מ- %{from} ל- %{to}
-  machine_learning:
-    comments_summary: "סיכום תגובות"

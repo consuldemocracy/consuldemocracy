@@ -103,8 +103,6 @@ ka:
       share: გაზიარება
       share_comment: დატოვეთ კომენტარი %{version_name}-ზე საპროცესო პროექტიდან - %{process_name}
     proposals:
-      form:
-        tags_label: "კატეგორიები"
       not_verified: "ინიციატივაზე ხმის მისაცემად %{verify_account}."
       process_title: ერთობლივ სამოქალაქო ინიციატივაზე მუშაობის პროცესი
     summary:

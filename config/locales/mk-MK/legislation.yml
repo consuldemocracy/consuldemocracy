@@ -103,8 +103,6 @@ mk:
       share: Сподели
       share_comment: Коментирај на %{version_name} од нацрт текстот за процесот %{process_name}
     proposals:
-      form:
-        tags_label: "Категории"
       not_verified: "За предлози за гласање %{verify_account}."
       process_title: Колаборативен легислативен процес
     summary:

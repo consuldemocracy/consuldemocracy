@@ -783,7 +783,6 @@ tr:
           legislation: "Katılımcı mevzuat"
           budgets: "Bütçeler"
           layouts: "Düzenler"
-          machine_learning: "Yapay Zeka / Makine Öğrenmesi"
           mailers: "E-postalar"
           management: "Yönetim"
           welcome: "Hoş geldiniz"
@@ -804,7 +803,6 @@ tr:
       debates: "Tartışmalar"
       comments: "Yorumlar"
       local_census_records: Yerel seçmen bilgi sistemi
-      machine_learning: "Yapay Zeka / Makine Öğrenmesi"
       multitenancy: Çok kiracılı
     administrators:
       index:
@@ -1761,56 +1759,6 @@ tr:
           created: Oluşturulan kayıtlar
         local_census_records:
           no_records_found: Herhangi bir kayıt bulunamadı.
-    machine_learning:
-      cancel: "İşlemi iptal et"
-      cancel_alert: "Bu işlem, geçerli betiği iptal edecek ve betiğin yeniden yürütülmesi gerekecek."
-      comments_summary: "Yorum özeti"
-      comments_summary_description: "Yorum yapılabilecek tüm ögeler için otomatik olarak oluşturulmuş bir yorum özeti görüntüler."
-      data_folder_content: "Veri klasörü içeriği"
-      error: "Hata:"
-      execute_script: "Betiği yürüt"
-      executed_by: "Yürüten:"
-      executed_script: "Yürütülen betik:"
-      feature_disabled: "Bu özellik kapatılmış. Makine öğrenmesini %{link}ndan açabilirsiniz."
-      feature_disabled_link: "ayarlar sayfası"
-      help:
-        title_1: "Yapay Zeka / Makine Öğrenmesi nedir?"
-        description_1: "Geleneksel olarak bilgisayar programları, programın her durumda ne yapması gerektiği ve her an var olan bilgilerin nasıl işleneceği hakkında kesin kurallar belirlenerek tasarlanır. Yaygın olarak Yapay Zeka /Makine Öğrenmesi olarak bilinen şey, gerçekleştirilecek görevin tam olarak belirlendiği ve görevin nasıl daha iyi ya da daha kötü gerçekleştirildiğinin değerlendirildiği bir program türüdür. Ancak öncekinden farklı olarak sistem, görevi gerçekleştirmek için en uygun yöntemin ne olacağını keşfeder veya öğrenir."
-        title_2: "CONSUL DEMOCRACY üzerinde Yapay Zeka / Makine Öğrenmesi modülü ne yapar?"
-        description_2: "Bu modül, CONSUL DEMOCRACY üzerinde her türlü Yapay Zeka / Makine Öğrenmesi programının uygulanmasını sağlar. Programlar CONSUL DEMOCRACY üzerinde bulunan bilgileri işleyebilir ve hem kullanıcıların hem de yöneticilerin daha etkili ve akıllı yurttaş katılımı sağlamasına yardımcı olan sonuçlar üretebilir. Modül, genel CONSUL DEMOCRACY kodunu ve bu yeni programların kodunu birbirinden bağımsız tutarak, yeni programların uygulanmasını ve çalıştırılmasını kolaylaştırmak için geliştirilmiştir."
-        title_3: "Bu modül nasıl kullanılır"
-        description_3: "İlk kez kullanırken, bu modülü uygun şekilde etkinleştirmek için CONSUL DEMOCRACY belgelerinde bulunan yönergelerin izlenmesi gerekir. Modül doğru şekilde etkinleştirildiğinde, programlar \"Betikleri çalıştır\" sekmesinden yürütülür. Yürütmeden önce, aynı sekmede yürütme süresi öngörüsünü ve diğer ilgili bilgileri görebiliriz. Yürütmenin sonunda, \"Ayarlar\" sekmesinden CONSUL DEMOCRACY üzerinde gösterilecek içeriği etkinleştirebilir ve bizim için yararlı olabilecek diğer üretilmiş dosyaları indirebiliriz."
-        title_4: "Yeni Yapay Zeka / Makine Öğrenmesi betikleri nasıl uygulanır"
-        description_4: "Lütfen örnek olarak önceki betikleri kullanın."
-        description_4b: "Yeni betikler <code>public/machine_learning/scripts</code> klasöründe bulunmalıdır"
-        description_4c: "Betik tarafından kullanılacak giriş verileri, <code>../data</code> klasöründe JSON dosyaları biçiminde oluşturulur"
-        description_4d: "Üretilen herhangi bir çıktı <code>../data</code> klasöründe bulunmalıdır"
-        description_4e: "Betik ayarlarıyla, betik ile aynı ada sahip ve configparser tarafından okunabilen bağımsız bir <code>.ini</code> metin dosyası oluşturmanız önerilir. Bu dosya, yöneticiler tarafından ayar değişikliği yapılmasını kolaylaştırır."
-        description_4f: "Betiğin ilk satırı olarak, kendisi hakkında kısa bilgiler ve ilgili tüm bilgilere bağlantılar içeren bir üçlü alıntı açılış dizgesi eklemeniz önerilir. Bu dizge, yönetim arayüzünde otomatik olarak gösterilir."
-        description_4g: "Betikle ilgili bilgileri, betikle aynı adlı bir <code>.log</code> metin dosyasına kaydetmeniz önerilir."
-        title_5: "Yapay Zeka / Makine Öğrenmesi betiklerini kullanabilmek için sunucunuzda Python kurulu olmalıdır"
-        description_5: "Bir Ubuntu 18.04 sunucusu için örnek yönergeleri şurada görebilirsiniz:"
-      help_text: "Bu deneysel bir özelliktir."
-      last_execution: "Son yürütülme"
-      no_content: "Henüz bir içerik üretilmemiş."
-      notice:
-        success: "Son betik sorunsuz yürütüldü."
-        error: "Bir sorun çıktı. Ayrıntıları aşağıda görebilirsiniz."
-        working: "Betik yürütülüyor. İşlem tamamlandığında betiği yürüten yöneticiye bir bildirim e-postası gönderilecek."
-        delete_generated_content: "Üretilen içerik silindi."
-      output_files: "Çıktı dosyaları:"
-      related_content: "İlgili içerik"
-      related_content_description: "Önergelere ve katılımcı bütçe projelerine otomatik olarak üretilen ilgili içeriği ekler."
-      script_info: "Betiğin yürütülmesi tamamlandığında %{email} adresinize bir e-posta gönderilecek."
-      script_name: "Betik adı:"
-      select_script: "Yürütülecek Python betiğini seçin"
-      started_at: "Başlangıç:"
-      tab_help: "Yardım"
-      tab_scripts: "Betiği yürüt"
-      tab_settings: "Ayarlar / Üretilmiş içerik"
-      tags: "Etiketler"
-      tags_description: "Etiketlenebilecek tüm ögelere otomatik olarak etiketler üretir."
-      title: "Yapay Zeka / Makine Öğrenmesi"
     cookies:
       vendors:
         empty: Herhangi bir sağlayıcı bulunamadı

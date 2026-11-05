@@ -107,8 +107,6 @@ cs:
         recommendations_on_proposals_description: "Zobrazit doporučení uživatelů na stránce návrhů na základě štítků sledovaných položek"
       community: "Komunita kolem návrhů a investic"
       community_description: "Povolit sekci komunit v návrzích a investičních projektech participativního rozpočtu"
-      machine_learning: "AI / Machine learning"
-      machine_learning_description: "Povolte sekci AI / Machine Learning pro automatické spouštění skriptů Python a obohacování obsahu."
       map: "Provádět geolokaci návrhů a projektů rozpočtu"
       map_description: "Povolit geolokaci návrhů a investičních projektů"
       allow_images: "Umožnit nahrát a zobrazit obrázky"

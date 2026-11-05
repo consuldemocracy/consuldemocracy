@@ -81,6 +81,7 @@ tr:
       show_link: Tartışmayı göster
     form:
       tags_instructions: Bu tartışmayı etiketle.
+      tags_label: Etiketler
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
     index:
       featured_debates: Öne çıkarılmış
@@ -578,6 +579,9 @@ tr:
   polls:
     dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
+    questions_count:
+      one: "Bu ankette 1 soru var."
+      other: "Bu ankette %{count} soru var."
     form:
       vote: "Oy ver"
       maximum_exceeded: "%{given} yanıt seçtiniz ancak en fazla %{maximum} yanıt seçebilirsiniz"
@@ -945,9 +949,6 @@ tr:
         more:
           one: "Bir etiket daha"
           other: "%{count} etiket daha"
-  machine_learning:
-    comments_summary: "Yorumların özeti"
-    info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"
   cookies_consent:
     accept_all_cookies: "Tümünü onayla"
     accept_essential_cookies: "Temel tanımlama bilgilerini onayla"

@@ -103,8 +103,6 @@ sv:
       share: Dela
       share_comment: Kommentera %{version_name} från processutkastet %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorier"
       not_verified: "%{verify_account} för att rösta på förslag."
       process_title: Medborgardialoger
     summary:

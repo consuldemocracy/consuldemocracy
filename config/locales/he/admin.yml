@@ -1493,7 +1493,3 @@ he:
         document_type: סוג תעודה מזהה
         document_number: מספר תעודה מזהה
         date_of_birth: תאריך לידה
-    machine_learning:
-      related_content: "תוכן רלוונטי"
-      tab_help: "עזרה"
-      tags: "תגיות"

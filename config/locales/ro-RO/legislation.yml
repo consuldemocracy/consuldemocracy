@@ -104,8 +104,6 @@ ro:
       share: Distribuie
       share_comment: Comentează la %{version_name} din schița procesului %{process_name}
     proposals:
-      form:
-        tags_label: "Categorii"
       not_verified: "Pentru a vota propunerile %{verify_account}."
       process_title: Procesul legislației colaborative
     summary:

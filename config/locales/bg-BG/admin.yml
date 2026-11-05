@@ -1589,8 +1589,3 @@ bg:
           created: Създадени записи
         local_census_records:
           no_records_found: Не са намерени записи.
-    machine_learning:
-      related_content: "Свързано съдържание"
-      related_content_description: "Добавя автоматично генерирано свързано съдържание към предложения и проекти на граждански бюджети."
-      tab_help: "Помощ"
-      tags: "Тагове"

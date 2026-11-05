@@ -102,8 +102,6 @@ zh-CN:
       share: 共用
       share_comment: 从进程草稿%{process_name} 中对%{version_name} 的评论
     proposals:
-      form:
-        tags_label: "类别"
       not_verified: "为投票提议%{verify_account}。"
       process_title: 合作立法进程
     summary:

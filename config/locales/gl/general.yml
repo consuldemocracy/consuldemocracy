@@ -915,6 +915,3 @@ gl:
         more:
           one: "Unha etiqueta máis"
           other: "%{count} etiquetas máis"
-  machine_learning:
-    comments_summary: "Resumo de comentarios"
-    info_text: "Contido creado mediante IA / Machine Learning"

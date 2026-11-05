@@ -1438,7 +1438,3 @@ bs:
         document_type: Vrsta dokumenta
         document_number: Broj dokumenta
         date_of_birth: Datum rođenja
-    machine_learning:
-      related_content: "Vezani sadržaj"
-      tab_help: "Pomoć"
-      tags: "Tagovi"
