@@ -16,15 +16,26 @@ namespace :budget_ballots do
         valid_ballot = ballots.find { |ballot| ballot.lines.any? } || ballots.first
 
         ballots.excluding(valid_ballot).each do |ballot|
-          ballot.destroy!
-
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
-          log_message = "Deleted duplicate record with ID #{ballot.id} " \
-                        "from the #{Budget::Ballot.table_name} table " \
-                        "with user_id #{user_id} and budget_id #{budget_id}" \
-                        + tenant_info.to_s
-          logger.info(log_message)
-          duplicate_records_logger.info(log_message)
+
+          if valid_ballot.lines.any? && ballot.lines.any?
+            log_message = "Skipping ballots with IDs #{valid_ballot.id} " \
+                          "and #{ballot.id}, with user_id #{user_id} and " \
+                          "budget_id #{budget_id}, because both ballots " \
+                          "contain investments. Review these ballots manually, " \
+                          "update them, and delete one of them."
+            logger.warn(log_message)
+            duplicate_records_logger.warn(log_message)
+          else
+            ballot.destroy!
+
+            log_message = "Deleted duplicate record with ID #{ballot.id} " \
+                          "from the #{Budget::Ballot.table_name} table " \
+                          "with user_id #{user_id} and budget_id #{budget_id}" \
+                          + tenant_info.to_s
+            logger.info(log_message)
+            duplicate_records_logger.info(log_message)
+          end
         end
       end
     end
