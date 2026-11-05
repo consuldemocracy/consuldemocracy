@@ -28,5 +28,17 @@ describe Budgets::Groups::ShowComponent do
 
       expect(page).not_to have_css ".is-active"
     end
+
+    it "does not mark a heading as active for anonymous users" do
+      budget = create(:budget, :balloting)
+      heading = create(:budget_heading, budget: budget)
+      investment = create(:budget_investment, :selected, heading: heading)
+      create(:budget_ballot, budget: budget, user: nil, physical: true,
+                             investments: [investment])
+
+      render_inline Budgets::Groups::ShowComponent.new(heading.group)
+
+      expect(page).not_to have_css ".is-active"
+    end
   end
 end

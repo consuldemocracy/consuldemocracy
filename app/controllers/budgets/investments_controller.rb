@@ -106,7 +106,11 @@ module Budgets
       end
 
       def load_ballot
-        @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_initialize
+        if current_user
+          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_initialize
+        else
+          @ballot = Budget::Ballot.new(budget: @budget)
+        end
       end
 
       def load_heading

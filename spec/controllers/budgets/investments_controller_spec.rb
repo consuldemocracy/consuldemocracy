@@ -28,6 +28,21 @@ describe Budgets::InvestmentsController do
         expect(response).to be_successful
         expect(Budget::Ballot.count).to eq 0
       end
+
+      context "physical ballots" do
+        render_views
+
+        it "does not mark a physical ballot's investments as voted to anonymous users" do
+          investment = create(:budget_investment, :selected, budget: budget)
+          create(:budget_ballot, budget: budget, user: nil, physical: true, investments: [investment])
+
+          get :index, params: { budget_id: budget.id }
+
+          expect(response).to be_successful
+          expect(response.body).to include "Vote"
+          expect(response.body).not_to include "Remove vote"
+        end
+      end
     end
   end
 
@@ -75,6 +90,22 @@ describe Budgets::InvestmentsController do
 
         expect(response).to be_successful
         expect(Budget::Ballot.count).to eq 0
+      end
+
+      context "physical ballots" do
+        render_views
+
+        it "does not mark a physical ballot's investments as voted to anonymous users" do
+          budget = create(:budget, :balloting)
+          investment = create(:budget_investment, :selected, budget: budget)
+          create(:budget_ballot, budget: budget, user: nil, physical: true, investments: [investment])
+
+          get :show, params: { budget_id: budget.id, id: investment.id }
+
+          expect(response).to be_successful
+          expect(response.body).to include "Vote"
+          expect(response.body).not_to include "Remove vote"
+        end
       end
     end
   end

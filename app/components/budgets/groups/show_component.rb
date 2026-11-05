@@ -17,6 +17,6 @@ class Budgets::Groups::ShowComponent < ApplicationComponent
     end
 
     def current_ballot
-      Budget::Ballot.find_by(user: current_user, budget: budget)
+      Budget::Ballot.find_by(user: current_user, budget: budget) if current_user
     end
 end
