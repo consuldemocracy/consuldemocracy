@@ -107,18 +107,21 @@ describe "Poll question options", :admin do
   end
 
   scenario "Reorder" do
-    question = create(:poll_question)
+    question = create(:poll_question, poll: future_poll)
     create(:poll_question_option, question: question, title: "First", given_order: 1)
     create(:poll_question_option, question: question, title: "Last", given_order: 2)
 
     visit admin_question_path(question)
 
-    within(".poll-question-options-table tbody") do
-      expect("First").to appear_before("Last")
+    expect("First").to appear_before "Last"
 
-      find("tr", text: "Last").drag_to(find("tr", text: "First"))
+    within("tr", text: "First") { click_link "Edit" }
 
-      expect("Last").to appear_before("First")
-    end
+    fill_in "Order", with: "3"
+    click_button "Save"
+
+    expect(page).to have_content "Changes saved"
+
+    expect("Last").to appear_before "First"
   end
 end

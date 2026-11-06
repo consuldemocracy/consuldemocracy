@@ -13,16 +13,12 @@
 //= require jquery
 //= require rails-ujs
 //= require jquery-ui/ui/version
-//= require jquery-ui/ui/data
 //= require jquery-ui/ui/keycode
 //= require jquery-ui/ui/position
-//= require jquery-ui/ui/scroll-parent
 //= require jquery-ui/ui/unique-id
 //= require jquery-ui/ui/widget
 //= require jquery-ui/ui/widgets/menu
-//= require jquery-ui/ui/widgets/mouse
 //= require jquery-ui/ui/widgets/autocomplete
-//= require jquery-ui/ui/widgets/sortable
 //= require @deltablot/dropzone/dist/dropzone-min
 //= require foundation-sites
 //= require turbolinks
@@ -138,7 +134,6 @@ var initialize_modules = function() {
   }
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminDashboardActionsForm.initialize();
-  App.AdminPollQuestionOptionsTable.initialize();
   App.AdminPollShiftsForm.initialize();
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
