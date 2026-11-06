@@ -715,6 +715,20 @@ describe User do
 
       expect(User.count).to eq 1
     end
+
+    it "does not create two users with a blank-normalizing document at the same time", :race_condition do
+      with_sleep_after_validations(User) do
+        2.times.map do
+          Thread.new do
+            User.create_from_census_response!(response, document_number: "Á}!")
+          rescue ActiveRecord::RecordInvalid
+            nil
+          end
+        end.each(&:join)
+
+        expect(User.where(document_number: "").count).to eq 1
+      end
+    end
   end
 
   describe "#erase" do

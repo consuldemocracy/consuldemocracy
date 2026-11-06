@@ -174,7 +174,7 @@ class User < ApplicationRecord
   def self.with_document_lock(document_type, document_number, &block)
     normalized_number = normalize_value_for(:document_number, document_number)
 
-    return block.call if normalized_number.blank?
+    return block.call if normalized_number.nil?
 
     lock_id = Zlib.crc32("users:#{document_type}:#{normalized_number}")
     sleep 0.01 until connection.get_advisory_lock(lock_id)
