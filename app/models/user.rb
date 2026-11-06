@@ -150,16 +150,40 @@ class User < ApplicationRecord
   end
 
   def self.create_from_census_response!(response, params = {})
-    create!({
-      verified_at: Time.current,
-      erased_at: Time.current,
-      password: random_password,
-      terms_of_service: "1",
-      email: nil,
-      gender: response.gender,
-      date_of_birth: response.date_of_birth.in_time_zone.to_datetime,
-      geozone: Geozone.find_by(census_code: response.district_code)
-    }.merge(params))
+    with_document_lock(params[:document_type], params[:document_number]) do
+      find_user_with_present_document(params[:document_type], params[:document_number]) ||
+        create!({
+          verified_at: Time.current,
+          erased_at: Time.current,
+          password: random_password,
+          terms_of_service: "1",
+          email: nil,
+          gender: response.gender,
+          date_of_birth: response.date_of_birth.in_time_zone.to_datetime,
+          geozone: Geozone.find_by(census_code: response.district_code)
+        }.merge(params))
+    end
+  end
+
+  def self.find_user_with_present_document(document_type, document_number)
+    return if normalize_value_for(:document_number, document_number).blank?
+
+    by_document(document_type, document_number).first
+  end
+
+  def self.with_document_lock(document_type, document_number, &block)
+    normalized_number = normalize_value_for(:document_number, document_number)
+
+    return block.call if normalized_number.nil?
+
+    lock_id = Zlib.crc32("users:#{document_type}:#{normalized_number}")
+    sleep 0.01 until connection.get_advisory_lock(lock_id)
+
+    begin
+      block.call
+    ensure
+      connection.release_advisory_lock(lock_id)
+    end
   end
 
   def name
