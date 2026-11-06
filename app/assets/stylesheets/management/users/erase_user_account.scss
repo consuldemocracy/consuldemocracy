@@ -1,0 +1,16 @@
+.erase-user-account {
+  @supports(interpolate-size: allow-keywords) {
+    &::details-content {
+      height: 0;
+      interpolate-size: allow-keywords;
+      overflow: clip;
+      transition: height 0.4s ease, content-visibility 0.4s ease allow-discrete;
+    }
+
+    &[open] {
+      &::details-content {
+        height: auto;
+      }
+    }
+  }
+}

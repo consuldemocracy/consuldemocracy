@@ -86,7 +86,7 @@ describe "Internal valuation comments on Budget::Investments" do
       login_as(valuator_user)
       visit valuation_budget_budget_investment_path(budget, investment)
 
-      click_link "Reply"
+      click_button "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
         fill_in "Leave your comment", with: "It will be done next week."
@@ -143,7 +143,7 @@ describe "Internal valuation comments on Budget::Investments" do
       login_as(admin_user)
       visit valuation_budget_budget_investment_path(budget, investment)
 
-      click_link "Reply"
+      click_button "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
         fill_in "Leave your comment", with: "Top of the world!"

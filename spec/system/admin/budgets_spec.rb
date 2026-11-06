@@ -429,15 +429,15 @@ describe "Admin budgets", :admin do
       budget = create(:budget, administrators: [admin], valuators: [valuator])
 
       visit edit_admin_budget_path(budget)
-      click_link "1 administrator selected"
+      click_button "1 administrator selected"
       uncheck admin.name
 
-      expect(page).to have_link "Select administrators"
+      expect(page).to have_button "Select administrators"
 
-      click_link "1 valuator selected"
+      click_button "1 valuator selected"
       uncheck valuator.name
 
-      expect(page).to have_link "Select valuators"
+      expect(page).to have_button "Select valuators"
 
       click_button "Update Budget"
 
@@ -445,8 +445,8 @@ describe "Admin budgets", :admin do
 
       visit edit_admin_budget_path(budget)
 
-      expect(page).to have_link "Select administrators"
-      expect(page).to have_link "Select valuators"
+      expect(page).to have_button "Select administrators"
+      expect(page).to have_button "Select valuators"
     end
   end
 

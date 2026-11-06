@@ -14,10 +14,11 @@
     <div class="margin-bottom">
       <% if manage_languages %>
         <% Setting.enabled_locales.each do |locale| %>
-          <%= link_to t("shared.translations.remove_language"), "#",
-                      style: display_destroy_locale_style(locale),
-                      class: "delete js-delete-language js-delete-#{locale}",
-                      data: { locale: locale } %>
+          <%= button_tag t("shared.translations.remove_language"),
+                         type: "button",
+                         style: display_destroy_locale_style(locale),
+                         class: "delete delete-language delete-#{locale}",
+                         data: { locale: locale } %>
         <% end %>
       <% end %>
     </div>

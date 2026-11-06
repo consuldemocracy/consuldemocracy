@@ -190,21 +190,11 @@
         }
       };
     },
-    initCommentFormToggler: function() {
-      $("body").on("click", ".comment-box a.publish-comment", function(e) {
-        e.preventDefault();
-        var annotation_id = $(this).closest(".comment-box").data("id");
-        $("a.publish-comment").hide();
-        $("#js-comment-form-annotation-" + annotation_id).toggle();
-        $("#js-comment-form-annotation-" + annotation_id + " textarea").trigger("focus");
-      });
-    },
     initialize: function() {
       var current_user_id;
       $("body").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments);
       $("body").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick);
-      $("body").on("click", "[data-cancel-annotation]", function(e) {
-        e.preventDefault();
+      $("body").on("click", ".cancel-comment", function() {
         $("#comments-box").html("");
         $("#comments-box").hide();
         App.LegislationAnnotatable.remove_highlight();
@@ -239,8 +229,6 @@
           });
         });
       });
-
-      App.LegislationAnnotatable.initCommentFormToggler();
     },
     destroy: function() {
       if ($(".legislation-annotatable").length > 0) {

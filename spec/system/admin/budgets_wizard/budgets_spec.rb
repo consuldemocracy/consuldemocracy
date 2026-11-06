@@ -46,7 +46,7 @@ describe "Budgets wizard, first step", :admin do
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Approval"
 
-      click_link "Select administrators"
+      click_button "Select administrators"
 
       expect(page).to have_field admin.name
     end
