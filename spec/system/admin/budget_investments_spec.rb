@@ -1158,7 +1158,7 @@ describe "Admin budget investments", :admin do
 
       visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
-      find(".js-add-tag-link", text: "Education").click
+      find("label", exact_text: "Education").click
 
       click_button "Update"
 
@@ -1176,7 +1176,9 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
-      fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
+      within "#admin_valuation_tags" do
+        fill_in_tag_list "Refugees, Solidarity"
+      end
       click_button "Update"
 
       expect(page).to have_content "Investment project updated successfully."
@@ -1201,8 +1203,14 @@ describe "Admin budget investments", :admin do
 
       click_link "Edit classification"
 
-      fill_in "budget_investment_tag_list", with: "Park, Trees"
-      fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
+      within "#admin_user_tags" do
+        clear_tag_list
+        fill_in_tag_list "Park, Trees", label: "User assigned tags"
+      end
+      within "#admin_valuation_tags" do
+        clear_tag_list
+        fill_in_tag_list "Education, Environment"
+      end
       click_button "Update"
 
       expect(page).to have_content "Investment project updated successfully"
@@ -1230,7 +1238,9 @@ describe "Admin budget investments", :admin do
 
       click_link "Edit classification"
 
-      fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
+      within "#admin_valuation_tags" do
+        fill_in_tag_list "Refugees, Solidarity"
+      end
       click_button "Update"
 
       expect(page).to have_content "Investment project updated successfully."

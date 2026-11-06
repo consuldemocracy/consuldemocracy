@@ -1,4 +1,6 @@
 .sdg-related-list-selector {
+
+  @include amsify-suggestags-input-area;
   clear: both;
 
   > legend {
@@ -51,24 +53,6 @@
 
   .input-section {
     margin-bottom: calc(2 * $line-height / 3);
-  }
-
-  .amsify-suggestags-area {
-    position: relative;
-
-    .amsify-suggestags-list {
-      top: $input-height;
-    }
-  }
-
-  .amsify-suggestags-input-area {
-    display: flex;
-    flex-wrap: wrap;
-
-    > input {
-      margin-bottom: calc($line-height / 4) !important;
-      order: -1;
-    }
   }
 
   .remove-tag {
