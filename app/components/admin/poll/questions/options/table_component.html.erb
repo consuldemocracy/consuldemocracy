@@ -3,11 +3,11 @@
   <thead>
     <tr>
       <th><%= t("admin.questions.show.answers.title") %></th>
-      <th scope="col" class="description"><%= t("admin.questions.show.answers.description") %></th>
-      <th scope="col" class="allow-custom-text"><%= Poll::Question::Option.human_attribute_name(:allow_custom_text) %></th>
-      <th scope="col" class="association-count"><%= t("admin.questions.show.answers.images") %></th>
-      <th scope="col" class="association-count"><%= t("admin.questions.show.answers.documents") %></th>
-      <th scope="col" class="association-count"><%= t("admin.questions.show.answers.videos") %></th>
+      <th class="description"><%= t("admin.questions.show.answers.description") %></th>
+      <th class="allow-custom-text"><%= Poll::Question::Option.human_attribute_name(:allow_custom_text) %></th>
+      <th class="association-count"><%= t("admin.questions.show.answers.images") %></th>
+      <th class="association-count"><%= t("admin.questions.show.answers.documents") %></th>
+      <th class="association-count"><%= t("admin.questions.show.answers.videos") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
