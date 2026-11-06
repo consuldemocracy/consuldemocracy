@@ -13,6 +13,7 @@ namespace :consul do
     "moderators:remove_duplicate_moderators",
     "poll_officers:remove_duplicate_poll_officers",
     "valuators:remove_duplicate_valuators",
-    "budget_ballots:remove_duplicate_budget_ballots"
+    "budget_ballots:remove_duplicate_budget_ballots",
+    "users:remove_duplicate_users"
   ]
 end
