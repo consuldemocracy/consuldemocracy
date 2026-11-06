@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+  include NormalizesDocumentNumber
 
   attribute :registering_from_web, default: false
   %i[newsletter email_digest email_on_direct_message public_activity recommended_debates
@@ -94,8 +95,6 @@ class User < ApplicationRecord
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates_associated :organization, message: false
-
-  normalizes :document_number, with: ->(document_number) { document_number.gsub(/[^a-z0-9]+/i, "").upcase }
 
   accepts_nested_attributes_for :organization, update_only: true
 

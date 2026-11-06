@@ -1,4 +1,6 @@
 class Signature < ApplicationRecord
+  include NormalizesDocumentNumber
+
   belongs_to :signature_sheet
   belongs_to :user
 
@@ -6,8 +8,6 @@ class Signature < ApplicationRecord
   validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
   validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   validates :signature_sheet, presence: true
-
-  normalizes :document_number, with: ->(document_number) { document_number.gsub(/[^a-z0-9]+/i, "").upcase }
 
   scope :verified,   -> { where(verified: true) }
   scope :unverified, -> { where(verified: false) }
