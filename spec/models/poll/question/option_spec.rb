@@ -8,6 +8,10 @@ describe Poll::Question::Option do
       expect(build(:poll_question_option)).to be_valid
     end
 
+    it "is not valid without a question" do
+      expect(build(:poll_question_option, question: nil)).not_to be_valid
+    end
+
     it "is not valid with an alphanumerical given_order" do
       expect(build(:poll_question_option, given_order: "3fb0")).not_to be_valid
     end
@@ -181,14 +185,14 @@ describe Poll::Question::Option do
     end
 
     it "defaults to 1 with no question when there are options without a question" do
-      create(:poll_question_option, given_order: 1, question: nil)
+      build(:poll_question_option, given_order: 1, question: nil).save!(validate: false)
       option = Poll::Question::Option.new
 
       expect(option.given_order_or_last).to eq 1
     end
 
     it "defaults to 1 with a new question when there are options without a question" do
-      create(:poll_question_option, given_order: 1, question: nil)
+      build(:poll_question_option, given_order: 1, question: nil).save!(validate: false)
       option = Poll::Question::Option.new(question: build(:poll_question))
 
       expect(option.given_order_or_last).to eq 1
@@ -261,12 +265,13 @@ describe Poll::Question::Option do
       question = create(:poll_question)
       create(:poll_question_option, question: question, given_order: 1, title: "Was first")
       was_second = create(:poll_question_option, question: question, given_order: 2, title: "Was second")
-      create(:poll_question_option, question: question, given_order: 3, title: "Last")
+      create(:poll_question_option, question: question, given_order: 4, title: "Last")
+      create(:poll_question_option, question: question, given_order: 3, title: "Third")
 
       was_second.update!(given_order: 1)
 
       expect(Poll::Question::Option.pluck(:title, :given_order).to_h).to eq({
-        "Was second" => 1, "Was first" => 2, "Last" => 3
+        "Was second" => 1, "Was first" => 2, "Third" => 3, "Last" => 4
       })
     end
 
@@ -345,7 +350,9 @@ describe Poll::Question::Option do
     end
 
     it "does not crash when the question doesn't have an option" do
-      expect { create(:poll_question_option, question: nil) }.not_to raise_exception
+      expect do
+        build(:poll_question_option, given_order: 1, question: nil).save!(validate: false)
+      end.not_to raise_exception
     end
   end
 end

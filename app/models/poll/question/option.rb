@@ -10,7 +10,7 @@ class Poll::Question::Option < ApplicationRecord
 
   accepts_nested_attributes_for :documents, allow_destroy: true
 
-  belongs_to :question, class_name: "Poll::Question"
+  belongs_to :question, class_name: "Poll::Question", optional: false
   has_many :answers, class_name: "Poll::Answer", dependent: :nullify
   has_many :partial_results, class_name: "Poll::PartialResult", dependent: :nullify
   has_many :videos, class_name: "Poll::Question::Option::Video",
