@@ -463,6 +463,7 @@ en:
         title: Answer
         description: Description
         allow_custom_text: "Allow custom text"
+        given_order: Order
       poll/question/option/translation:
         title: Answer
         description: "Description (optional)"

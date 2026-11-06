@@ -101,7 +101,7 @@ module Abilities
       can [:update, :destroy], Poll::Question do |question|
         !question.poll.started?
       end
-      can [:read, :order_options], Poll::Question::Option
+      can :read, Poll::Question::Option
       can [:create, :update, :destroy], Poll::Question::Option do |option|
         can?(:update, option.question) && option.question.accepts_options?
       end
