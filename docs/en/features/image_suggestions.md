@@ -98,6 +98,8 @@ Once you have configured both the LLM provider and the Pexels API key:
 
 ### User Experience
 
+The AI suggestion button appears when creating or editing budget investments. That form is only available while the budget is in the **Accepting projects** phase. If it is in another phase (for example, **Voting projects**), navigate to **Admin > Participatory budgets**, edit the budget and select **Accepting projects** as the active phase before following the steps below.
+
 When creating or editing budget investments:
 
 1. **User fills in title and/or description**: The feature uses whichever of these fields is present to generate image suggestions.
