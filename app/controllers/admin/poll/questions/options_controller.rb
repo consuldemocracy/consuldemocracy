@@ -35,11 +35,6 @@ class Admin::Poll::Questions::OptionsController < Admin::Poll::BaseController
     redirect_to admin_question_path(@question), notice: t("admin.answers.destroy.success_notice")
   end
 
-  def order_options
-    ::Poll::Question::Option.order_options(params[:ordered_list])
-    head :ok
-  end
-
   private
 
     def option_params
