@@ -9,7 +9,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   before_action :load_budget
   before_action :load_investment, except: [:index]
-  before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
   before_action :load_investments, only: :index
 
@@ -128,11 +127,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_tags
       @tags = Budget::Investment.tags_on(:valuation_tags).order(:name).distinct
-    end
-
-    def load_ballot
-      query = Budget::Ballot.where(user: current_user, budget: @budget)
-      @ballot = @budget.balloting? ? query.first_or_create! : query.first_or_initialize
     end
 
     def parse_valuation_filters

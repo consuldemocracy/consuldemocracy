@@ -1554,26 +1554,6 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Highlight voted heading" do
-      budget.update!(phase: "balloting")
-      user = create(:user, :level_two)
-
-      heading_1 = create(:budget_heading, group: group, name: "Heading 1")
-      heading_2 = create(:budget_heading, group: group, name: "Heading 2")
-
-      create(:budget_investment, :selected, heading: heading_1, title: "Zero-emission zone")
-
-      login_as(user)
-      visit budget_investments_path(budget, heading_id: heading_1)
-
-      add_to_ballot("Zero-emission zone")
-
-      visit budget_group_path(budget, group)
-
-      expect(page).to have_css("#budget_heading_#{heading_1.id}.is-active")
-      expect(page).to have_css("#budget_heading_#{heading_2.id}")
-    end
-
     scenario "Ballot is visible" do
       login_as(author)
 

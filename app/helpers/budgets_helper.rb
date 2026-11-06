@@ -8,14 +8,6 @@ module BudgetsHelper
     end
   end
 
-  def css_for_ballot_heading(heading)
-    current_ballot&.has_lines_in_heading?(heading) ? "is-active" : ""
-  end
-
-  def current_ballot
-    Budget::Ballot.find_by(user: current_user, budget: @budget)
-  end
-
   def unfeasible_or_unselected_filter?
     ["unselected", "unfeasible"].include?(@current_filter)
   end

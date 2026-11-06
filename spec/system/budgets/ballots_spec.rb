@@ -292,7 +292,9 @@ describe "Ballots" do
       visit budget_group_path(budget, states)
 
       expect(page).to have_content "California"
-      expect(page).to have_css("#budget_heading_#{california.id}.is-active")
+      expect(page).to have_css "#budget_heading_#{california.id}.is-active"
+      expect(page).to have_css "#budget_heading_#{new_york.id}"
+      expect(page).not_to have_css "#budget_heading_#{new_york.id}.is-active"
     end
 
     scenario "Change my heading" do

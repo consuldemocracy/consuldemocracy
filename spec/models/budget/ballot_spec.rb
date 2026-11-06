@@ -2,19 +2,46 @@ require "rails_helper"
 
 describe Budget::Ballot do
   describe "validations" do
+    let(:budget) { create(:budget) }
+
     it "is valid" do
-      budget = create(:budget)
       ballot = create(:budget_ballot, budget: budget)
 
       expect(ballot).to be_valid
     end
 
     it "is not valid with the same investment twice" do
-      budget = create(:budget)
       investment = create(:budget_investment, :selected, budget: budget)
       ballot = create(:budget_ballot, budget: budget.reload, investments: [investment])
 
       expect { ballot.investments << investment }.to raise_error(ActiveRecord::RecordNotUnique)
+    end
+
+    it "is not valid if the user has a ballot for the same budget" do
+      user = create(:user)
+      create(:budget_ballot, budget: budget, user: user)
+
+      expect(build(:budget_ballot, budget: budget, user: user)).not_to be_valid
+    end
+
+    it "is valid if the user has a ballot for a different budget" do
+      user = create(:user)
+      create(:budget_ballot, budget: create(:budget), user: user)
+
+      expect(build(:budget_ballot, budget: budget, user: user)).to be_valid
+    end
+
+    it "is valid if a different user has a ballot for the same budget" do
+      user = create(:user)
+      create(:budget_ballot, budget: budget, user: create(:user))
+
+      expect(build(:budget_ballot, budget: budget, user: user)).to be_valid
+    end
+
+    it "is valid for physical ballots without a user" do
+      create(:budget_ballot, budget: budget, user: nil, physical: true)
+
+      expect(build(:budget_ballot, budget: budget, user: nil, physical: true)).to be_valid
     end
   end
 

@@ -43,7 +43,9 @@ module Budgets
         end
 
         def load_ballot
-          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create!
+          current_user.with_lock do
+            @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create!
+          end
         end
 
         def load_investment
