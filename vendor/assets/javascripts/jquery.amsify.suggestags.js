@@ -204,6 +204,10 @@ var AmsifySuggestags;
 						key = ',';
 					}
 				}
+				if(keycode == 229 && key == 'Unidentified' && /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()) && $(this).val()[$(this).val().length - 1] == ',')
+				{
+					key = ',';
+				}
 				var isDelimiter = ($.inArray(key, _self.settings.delimiters) !== -1)? true: false;
 				if(key == 'Enter' || key == ',' || isDelimiter) {
 					var value = trimString($(this).val().replace(/,/g , ''));
