@@ -2,6 +2,16 @@
   .tabs-content > .tabs-panel {
     display: block;
   }
+
+  .site-customization-documents-table-actions {
+    .copy-link {
+      display: none;
+    }
+
+    .download-link {
+      display: flex;
+    }
+  }
 }
 
 .check-all-none {

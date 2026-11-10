@@ -1,4 +1,6 @@
 class Admin::SiteCustomization::Documents::IndexComponent < ApplicationComponent
+  include Header
+
   attr_reader :documents
 
   def initialize(documents)
@@ -7,7 +9,7 @@ class Admin::SiteCustomization::Documents::IndexComponent < ApplicationComponent
 
   private
 
-    def permanent_document_path(document)
-      rails_storage_proxy_path(document.attachment)
+    def title
+      t("admin.documents.index.title")
     end
 end
