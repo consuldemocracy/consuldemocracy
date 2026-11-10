@@ -463,6 +463,7 @@ sv:
         title: Svar
         description: Beskrivning
         allow_custom_text: "Tillåt anpassad text"
+        given_order: Sortering
       poll/question/option/translation:
         title: Svar
         description: "Beskrivning (valfritt)"
