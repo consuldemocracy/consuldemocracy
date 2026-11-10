@@ -21,6 +21,24 @@ describe "Documents", :admin do
       visit admin_option_documents_path(option)
 
       expect(page).to have_content(document.title)
+
+      ActiveStorage.with(service_urls_expire_in: 0.001.seconds) do
+        within("tbody tr:first-child") do
+          click_link "Download file"
+
+          expect(page).not_to have_current_path admin_option_documents_path(option)
+        end
+
+        document_url = current_path
+
+        visit admin_option_documents_path(option)
+
+        within("tbody tr:first-child") do
+          click_link "Download file"
+
+          expect(page).to have_current_path document_url
+        end
+      end
     end
   end
 
