@@ -5,6 +5,15 @@ describe DocumentNumberNormalizer do
     expect(DocumentNumberNormalizer.call(" 12.345.678 - b")).to eq "12345678B"
   end
 
+  it "returns nil when the document number is nil" do
+    expect(DocumentNumberNormalizer.call(nil)).to be nil
+  end
+
+  it "returns an empty string when the document number is blank" do
+    expect(DocumentNumberNormalizer.call("")).to eq ""
+    expect(DocumentNumberNormalizer.call("   ")).to eq ""
+  end
+
   it "leaves an already normalized document number unchanged" do
     expect(DocumentNumberNormalizer.call("X1234567Z")).to eq "X1234567Z"
   end
