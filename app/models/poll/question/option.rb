@@ -22,6 +22,7 @@ class Poll::Question::Option < ApplicationRecord
   validates :given_order, presence: true, numericality: { greater_than_or_equal_to: 1, only_integer: true }
 
   before_validation :assign_default_given_order
+  after_destroy :reorder_options
   after_save :reorder_options, if: -> { saved_change_to_given_order? }
 
   scope :with_content, -> { excluding(without_content) }
@@ -57,8 +58,8 @@ class Poll::Question::Option < ApplicationRecord
     def reorder_options
       return unless question
 
-      siblings = question.question_options.excluding(self)
-      ids = siblings.ids.insert([given_order - 1, siblings.size].min, id)
+      ids = question.question_options.excluding(self).ids
+      ids.insert([given_order - 1, ids.size].min, id) unless destroyed?
 
       ids.each.with_index(1) do |option_id, order|
         question.question_options.find_by(id: option_id)&.update_column(:given_order, order)

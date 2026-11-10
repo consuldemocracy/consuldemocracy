@@ -283,6 +283,19 @@ describe Poll::Question::Option do
       })
     end
 
+    it "reorders existing options after destroy one" do
+      question = create(:poll_question)
+      was_first = create(:poll_question_option, question: question, given_order: 1, title: "Was first")
+      create(:poll_question_option, question: question, given_order: 2, title: "Was second")
+      create(:poll_question_option, question: question, given_order: 3, title: "Was last")
+
+      was_first.destroy!
+
+      expect(Poll::Question::Option.pluck(:title, :given_order).to_h).to eq({
+        "Was second" => 1, "Was last" => 2
+      })
+    end
+
     it "does not reorder existing options when the option is the last one" do
       question = create(:poll_question)
       create(:poll_question_option, question: question, given_order: 1, title: "First")
