@@ -26,21 +26,25 @@
 
   <% if documents.present? %>
     <table>
-      <tr>
-        <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
-        <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
-      </tr>
-
-      <% documents.each do |document| %>
+      <thead>
         <tr>
-          <td>
-            <%= document.title %>
-          </td>
-          <td>
-            <%= render Admin::Poll::Questions::Options::Documents::TableActionsComponent.new(document) %>
-          </td>
+          <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
+          <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
         </tr>
-      <% end %>
+      </thead>
+
+      <tbody>
+        <% documents.each do |document| %>
+          <tr>
+            <td>
+              <%= document.title %>
+            </td>
+            <td>
+              <%= render Admin::Poll::Questions::Options::Documents::TableActionsComponent.new(document) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   <% end %>
 </div>
