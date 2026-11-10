@@ -58,7 +58,6 @@ FactoryBot.define do
     subtitle { "About an example" }
     content { "This page is about..." }
     more_info_flag { false }
-    print_content_flag { false }
     status { "draft" }
 
     trait :published do
