@@ -16,29 +16,7 @@ namespace :valuators do
         valid_valuator = valuators.first
 
         valuators.excluding(valid_valuator).each do |valuator|
-          ActiveRecord::Base.transaction do
-            budget_ids = BudgetValuator.where(valuator_id: valid_valuator.id).pluck(:budget_id)
-            BudgetValuator.where(valuator_id: valuator.id, budget_id: budget_ids)
-                          .delete_all
-            BudgetValuator.where(valuator_id: valuator.id)
-                          .where.not(budget_id: budget_ids)
-                          .update_all(valuator_id: valid_valuator.id)
-
-            investment_ids = Budget::ValuatorAssignment.where(valuator_id: valid_valuator.id)
-                                                       .pluck(:investment_id)
-            Budget::ValuatorAssignment.where(valuator_id: valuator.id, investment_id: investment_ids)
-                                      .delete_all
-            Budget::ValuatorAssignment.where(valuator_id: valuator.id)
-                                      .where.not(investment_id: investment_ids)
-                                      .update_all(valuator_id: valid_valuator.id)
-            Valuator.reset_counters(valid_valuator.id, :valuator_assignments)
-
-            investment_ids.each do |investment_id|
-              Budget::Investment.reset_counters(investment_id, :valuator_assignments)
-            end
-
-            valuator.delete
-          end
+          RoleDeduplicator.new(valid_valuator, valuator).deduplicate
 
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
           log_message = "Deleted duplicate record with ID #{valuator.id} " \

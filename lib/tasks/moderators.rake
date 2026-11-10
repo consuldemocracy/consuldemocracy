@@ -16,10 +16,7 @@ namespace :moderators do
         valid_moderator = moderators.first
 
         moderators.excluding(valid_moderator).each do |moderator|
-          ActiveRecord::Base.transaction do
-            Comment.where(moderator_id: moderator.id).update_all(moderator_id: valid_moderator.id)
-            moderator.delete
-          end
+          RoleDeduplicator.new(valid_moderator, moderator).deduplicate
 
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
           log_message = "Deleted duplicate record with ID #{moderator.id} " \
