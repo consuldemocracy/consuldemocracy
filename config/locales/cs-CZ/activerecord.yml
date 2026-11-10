@@ -519,6 +519,7 @@ cs:
       poll/question/option:
         title: Odpověď
         description: Popis
+        given_order: Pořadí
       poll/question/option/translation:
         title: Odpověď
         description: "Popis (volitelné)"
