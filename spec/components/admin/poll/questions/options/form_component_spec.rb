@@ -27,4 +27,14 @@ describe Admin::Poll::Questions::Options::FormComponent do
       )
     end
   end
+
+  describe "order field" do
+    it "renders with the default value for new options" do
+      create(:poll_question_option, question: question, given_order: 1)
+
+      render_inline component
+
+      expect(page).to have_field "Order", with: "2"
+    end
+  end
 end

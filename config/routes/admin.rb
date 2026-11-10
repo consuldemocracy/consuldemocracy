@@ -200,7 +200,6 @@ namespace :admin do
           resources :videos, controller: "questions/options/videos", shallow: false
           resources :documents, only: [:index, :create], controller: "questions/options/documents"
         end
-        post "/options/order_options", to: "questions/options#order_options"
       end
 
       resource :active_polls, only: [:create, :edit, :update]

@@ -4,9 +4,6 @@
 
   <%= render "shared/errors", resource: option %>
 
-  <%= f.hidden_field :given_order,
-                     value: option.persisted? ? option.given_order : option.class.last_position(option.question_id) + 1 %>
-
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="column end">
@@ -19,6 +16,9 @@
   </div>
 
   <div class="row">
+    <div class="column medium-6">
+      <%= f.number_field :given_order, min: 1, value: option.given_order_or_last %>
+    </div>
     <div class="column">
       <%= f.check_box :allow_custom_text, aria: { describedby: allow_custom_text_help_id(f) } %>
       <span class="help-text" id="<%= allow_custom_text_help_id(f) %>">
