@@ -444,7 +444,7 @@ GEM
     net-ssh (7.3.3)
     nio4r (2.7.5)
     nkf (0.3.0)
-    nokogiri (1.19.4)
+    nokogiri (1.19.5)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nori (2.9.1)
