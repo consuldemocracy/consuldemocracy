@@ -62,6 +62,7 @@ cs:
         filter: Zobrazit
         filters:
           all: Vše
+          on_budget_investments: Investiční projekty
           on_comments: Komentáře
           on_debates: Debaty
           on_proposals: Návrhy
@@ -1768,6 +1769,10 @@ cs:
         empty: Nenalezen žádný poskytovatel
         third_party_cookies: Soubory cookie třetích stran
         create_button: Vytvořit poskytovatele cookie
+        new:
+          title: Nový poskytovatel cookie
+        edit:
+          title: Upravit poskytovatele cookie
         form:
           name:
             help_text: Tato informace bude veřejně viditelná.
