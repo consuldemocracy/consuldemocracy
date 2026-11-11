@@ -102,8 +102,6 @@ id:
       share: Berbagi
       share_comment: Komentar pada %{version_name} dari proses draft %{process_name}
     proposals:
-      form:
-        tags_label: "Kategori"
       not_verified: "Untuk memilih proposal %{verify_account}."
       process_title: Kolaboratif dalam proses legislasi
     summary:

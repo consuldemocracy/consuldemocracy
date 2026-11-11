@@ -9,6 +9,7 @@ gl:
       cancel_button: Cancelar
       note: "Podes subir até un máximo de %{max_documents_allowed} documentos nos formatos seguintes: %{accepted_content_types}, e de ata %{max_file_size} MB por ficheiro."
       add_new_document: Engadir novo documento
+      progress: Progreso da subida
     actions:
       destroy:
         notice: O documento eliminouse correctamente.

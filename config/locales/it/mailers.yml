@@ -86,16 +86,6 @@ it:
       hi: Ciao
       new_comment_by: C'è un nuovo commento valutativo da <strong>%{commenter}</strong> all'investimento di budget %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Visita il pannello d'Apprendimento Automatico"
-      subject: "Apprendimento Automatico - Si è verificato un errore eseguendo lo script"
-      text: "Si è verificato un errore eseguendo lo script d'Apprendimento Automatico."
-      title: "Script d'Apprendimento Automatico"
-    machine_learning_success:
-      link: "Visita il pannello d'Apprendimento Automatico"
-      subject: "Apprendimento Automatico - Contenuto generato correttamente"
-      text: "Il contenuto è stato generato correttamente."
-      title: "Script d'Apprendimento Automatico"
     new_actions_notification_on_create:
       subject: "La bozza della tua proposta cittadina è stata creata"
       hi: "Salve %{name}!"

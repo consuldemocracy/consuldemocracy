@@ -42,9 +42,6 @@ bs:
         unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi učestvovali.
     shared:
       share: Podijeli
-    proposals:
-      form:
-        tags_label: "Kategorije"
     summary:
       title: "Sažetak"
       votes:

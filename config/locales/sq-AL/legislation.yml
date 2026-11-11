@@ -103,8 +103,6 @@ sq:
       share: Shpërndaj
       share_comment: Komento mbi %{version_name} nga drafti i procesit%{process_name}
     proposals:
-      form:
-        tags_label: "Kategoritë"
       not_verified: "Për propozimet e votimit %{verify_account}"
       process_title: Procesi i Legjislacionit bashkëpunues
     summary:

@@ -1,5 +1,6 @@
 gl:
   attributes:
+    created_at: Data de creación
     geozone_id: "Ámbitos de actuación"
     results_enabled: "Amosar resultados"
     stats_enabled: "Amosar estatísticas"
@@ -106,6 +107,21 @@ gl:
       legislation/proposal:
         one: "a proposta"
         other: "Propostas cidadás"
+      legislation/draft_version:
+        one: "Versión do borrador"
+        other: "Versións do borrador"
+      legislation/question:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_option:
+        one: "Opción de resposta pechada"
+        other: "Opcións de resposta pechada"
+      legislation/answer:
+        one: "Resposta"
+        other: "Respostas"
+      image:
+        one: "Imaxe"
+        other: "Imaxes"
       tenant:
         one: "entidade"
         other: "entidades"
@@ -133,6 +149,9 @@ gl:
       votation_type:
         one: Tipo de votación
         other: Tipos de votación
+      cookies/vendor:
+        one: provedor de cookies
+        other: provedores de cookies
     attributes:
       budget:
         name: "Nome"
@@ -230,6 +249,7 @@ gl:
         main_link_url: "A ligazón lévate a (engade unha ligazón)"
       comment:
         body: "Comentar"
+        parent_id: "Comentario pai"
         user: "Usuario/a"
       debate:
         author: "Autoría"
@@ -442,6 +462,8 @@ gl:
       poll/question/option:
         title: Resposta
         description: Descrición
+        allow_custom_text: "Permitir texto libre"
+        given_order: Orde
       poll/question/option/translation:
         title: Resposta
         description: "Descrición (opcional)"
@@ -512,8 +534,13 @@ gl:
         max_votes: Número máximo de votos
         vote_type: Tipo de votación
       votation_type/vote_type:
+        open: Resposta aberta
         unique: Risposta única
         multiple: Respostas múltiples
+      cookies/vendor:
+        name: Nome do provedor
+        cookie: Nome da cookie
+        script: Código JavaScript
     errors:
       models:
         user:
@@ -532,6 +559,7 @@ gl:
           attributes:
             geojson:
               invalid: "O GeoJSON proporcionado non segue o formato correcto. Debe seguir o formato de tipo «Polygon» ou «MultiPolygon»."
+              invalid_coordinates: "O GeoJSON proporcionado contén coordenadas non válidas; as coordenadas deben estar no formato «Lonxitude, Latitude» e seguir o formato estándar RFC 7946"
         image:
           attributes:
             attachment:
@@ -601,6 +629,10 @@ gl:
           attributes:
             code:
               invalid: "ten que empezar co código da súa meta, seguido dun punto, e rematar cun número"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "non se pode cambiar ao tipo de resposta aberta porque xa definiches posibles respostas válidas para esta pregunta"
       messages:
         translations_too_short: É necesaria unha tradución como mínimo
         record_invalid: "Erro de validación: %{errors}"

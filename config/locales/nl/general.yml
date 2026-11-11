@@ -928,9 +928,6 @@ nl:
         more:
           one: "Nog een label"
           other: "Nog %{count} labels"
-  machine_learning:
-    comments_summary: "Samenvatting reacties"
-    info_text: "Content gegenereerd door AI / Machine Learning"
   cookies_consent:
     accept_all_cookies: "Accepteer alle"
     accept_essential_cookies: "Accepteer noodzakelijke cookies"

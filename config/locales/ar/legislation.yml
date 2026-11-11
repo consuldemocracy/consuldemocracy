@@ -107,8 +107,6 @@ ar:
       share: مشاركة
       share_comment: التعليق على %{version_name} من مسودة العملية %{process_name}
     proposals:
-      form:
-        tags_label: "فئات"
       not_verified: "لمقترحات التصويت %{verify_account}."
       process_title: عملية تشريع تشاركية
     summary:

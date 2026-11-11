@@ -104,8 +104,6 @@ hr:
       share: Podijeli
       share_comment: Komentirajte %{version_name} iz nacrta procesa %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorije"
       not_verified: "Za izglasavanje prijedloga %{verify_account}."
       process_title: Proces javnog savjetovanja
     summary:

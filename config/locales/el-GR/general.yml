@@ -944,9 +944,6 @@ el:
         more:
           one: "Μία ακόμα ετικέτα"
           other: "%{count} ακόμα ετικέτες"
-  machine_learning:
-    comments_summary: "Σύνοψη σχολίων"
-    info_text: "Περιεχόμενο παραγόμενο από Τεχνητή Νοημοσύνη / Μηχανική Μάθηση"
   cookies_consent:
     accept_all_cookies: "Αποδοχή όλων"
     accept_essential_cookies: "Αποδοχή βασικών cookies"

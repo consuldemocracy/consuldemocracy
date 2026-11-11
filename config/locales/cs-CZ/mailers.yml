@@ -86,16 +86,6 @@ cs:
       hi: Dobrý den
       new_comment_by: K rozpočtové investici %{investment} přibyl nový hodnotící komentář od <strong>%{commenter}</strong>
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Navštivte panel Strojové učení"
-      subject: "Strojové učení - Při spouštění skriptu došlo k chybě"
-      text: "Při spouštění skriptu strojového učení došlo k chybě."
-      title: "Skript strojového učení"
-    machine_learning_success:
-      link: "Navštivte panel Strojové učení"
-      subject: "Strojové učení - obsah byl úspěšně vygenerován"
-      text: "Obsah byl úspěšně vygenerován."
-      title: "Skript strojového učení"
     new_actions_notification_on_create:
       subject: "Váš návrh občanského návrhu je vytvořen"
       hi: "Ahoj %{name}!"

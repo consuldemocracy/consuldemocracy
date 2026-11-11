@@ -103,8 +103,6 @@ pt-BR:
       share: Compartilhar
       share_comment: Comente em %{version_name} do rascunho de processo %{process_name}
     proposals:
-      form:
-        tags_label: "Categorias"
       not_verified: "Para votar as propostas %{verify_account}."
       process_title: Processo de legislação colaborativa
     summary:

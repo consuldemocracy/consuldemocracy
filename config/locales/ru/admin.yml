@@ -1461,7 +1461,3 @@ ru:
         document_type: Тип документа
         document_number: Номер документа
         date_of_birth: Дата рождения
-    machine_learning:
-      related_content: "Соответствующее содержимое"
-      tab_help: "Помощь"
-      tags: "Метки"

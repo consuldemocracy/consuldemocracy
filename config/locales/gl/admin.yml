@@ -16,6 +16,8 @@ gl:
       unmark_featured: Quitar destacado
       edit: Editar proposta
       configure: Configurar
+      select: Seleccionar
+      show_to_valuators: "Amosar %{name} ás persoas avaliadoras"
     officing_booth:
       title: "Agora mesmo estás na mesa localizada en %{booth}. Se isto non é correcto, non sigas adiante e chama ao teléfono de incidencias. Grazas."
     banners:
@@ -60,6 +62,7 @@ gl:
         filter: Amosar
         filters:
           all: Todo
+          on_budget_investments: Proxectos de gasto
           on_comments: Comentarios
           on_debates: Debates
           on_proposals: Propostas cidadás
@@ -232,6 +235,9 @@ gl:
         title: "Fases de %{budget}"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Persoa avaliadora ou grupo
+          title_or_id: Título ou ID
         heading_filter_all: Todas as partidas
         administrator_filter_all: Todos os administradores
         valuator_filter_all: Todos os avaliadores
@@ -777,7 +783,6 @@ gl:
           legislation: "Lexislación colaborativa"
           budgets: "Orzamentos"
           layouts: "Capas"
-          machine_learning: "IA / Machine Learning"
           mailers: "Correos"
           management: "Xestión"
           welcome: "Benvida"
@@ -798,7 +803,6 @@ gl:
       debates: "Debates"
       comments: "Comentarios"
       local_census_records: Censo local
-      machine_learning: "IA / Machine Learning"
       multitenancy: Multientidade
     administrators:
       index:
@@ -1126,6 +1130,7 @@ gl:
         title: "Tipo de votación"
         unique_description: "Só se permite responder unha vez á pregunta."
         multiple_description: "Permite escoller máis dunha resposta. Pódese elixir o número máximo de respostas."
+        open_description: "Pregunta aberta que permite á persoa usuaria dar unha única resposta coas súas propias palabras."
     questions:
       index:
         create: "Crear pregunta"
@@ -1164,6 +1169,8 @@ gl:
           documents_list: Listaxe de documentos
           document_title: Título
           document_actions: Accións
+          allow_custom_text:
+            help: "Permite que as persoas usuarias escriban a súa propia resposta ao escoller esta opción. Útil para opcións como «Outra (especificar)»."
       no_edit: "Unha vez iniciada a enquisa non será posible crear, editar ou eliminar preguntas, respostas ou calquera outro contido asociado á votación."
     answers:
       new:
@@ -1286,6 +1293,11 @@ gl:
         selected: Seleccionadas
         milestones: Seguimento
         no_proposals: Non hai ningunha proposta.
+        list:
+          id: ID
+          title: Proposta
+          author: Autoría
+          summary: Resumo
       show:
         create_question: Engade esta proposta para ser votada na enquisa
       form:
@@ -1320,6 +1332,7 @@ gl:
         participation_processes: "Procesos de participación"
         images_and_documents: "Imaxes e documentos"
         feature_flags: Funcionalidades
+        blank_option: "Ningún"
         features:
           enabled: "Funcionalidade activada"
         map:
@@ -1338,6 +1351,12 @@ gl:
         sdg:
           title: Configuración ODS
           how_to_enable: 'Para amosar as opcións de configuración dos Obxectivos de Desenvolvemento Sostible hai que activar «SDG» na lapela «Funcionalidades».'
+        cookies_consent:
+          title: Consentimento de cookies
+        cookies_consent_banner:
+          title: Aviso de consentimento de cookies
+        llm:
+          title: Configuración do LLM
       remote_census_general_name: Información xeral
       remote_census_request_name: Datos petición
       remote_census_response_name: Datos resposta
@@ -1603,6 +1622,7 @@ gl:
             subnavigation_right: Dereita Navegación Principal
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Imaxes
           update: Actualizar
           image: Imaxe
@@ -1739,53 +1759,27 @@ gl:
           created: Rexistros creados
         local_census_records:
           no_records_found: Non se atoparon rexistros.
-    machine_learning:
-      cancel: "Cancelar operación"
-      cancel_alert: "Esta acción cancelará o guión actual e será necesario volver a executalo."
-      comments_summary: "Resumo de comentarios"
-      comments_summary_description: "Amosa un resumo de comentarios xerado de xeito automático en todos os elementos que poden ser comentados."
-      data_folder_content: "Contido do cartafol Data"
-      error: "Erro:"
-      execute_script: "Lanzar guión"
-      executed_by: "Executado por:"
-      executed_script: "Guión executado:"
-      feature_disabled: "Esta funcionalidade está desactivada. Para utilizar Machine Learning podes activala desde %{link}."
-      feature_disabled_link: "páxina de axustes"
-      help:
-        title_1: "Que é IA / Machine Learning?"
-        description_1: "Tradicionalmente, os programas informáticos deséñanse establecendo regras precisas sobre o que debe facer o programa en cada situación, e como procesar a información dispoñible en cada momento. O que comunmente se coñece como IA/Machine Learning é un tipo de programa no que se establece con precisión cal é a tarefa a realizar, e o xeito de avaliar se a tarefa se realiza mellor ou peor. Pero a diferenza do primeiro, o sistema descobre, ou aprende, cal sería o método máis axeitado para realizar a tarefa."
-        title_2: "Que fai o módulo de IA / Machine Learning en CONSUL DEMOCRACY?"
-        description_2: "Este módulo permite implantar calquera tipo de programas de IA/Machine Learning en CONSUL DEMOCRACY. Os programas poden procesar a información dispoñible en CONSUL DEMOCRACY e producir resultados que axuden tanto aos usuarios como aos administradores a levar a cabo unha participación cidadá máis eficaz e intelixente. O módulo foi desenvolvido para facilitar a implantación e execución de novos programas, mantendo independentes entre si o código xeral de CONSUL DEMOCRACY e o código destes novos programas."
-        title_3: "Como usar este módulo"
-        description_3: "Para utilizalo por primeira vez é necesario seguir as instrucións dispoñibles na documentación de CONSUL DEMOCRACY para activar correctamente este módulo. Unha vez activado correctamente o módulo, os programas execútanse dende a lapela «Executar guións». Antes de executalo, podemos ver na mesma lapela unha estimación do tempo de execución e outra información relevante. Ao finalizar a execución, podemos activar o contido que se amosará en CONSUL DEMOCRACY desde a lapela «Configuración», así como descargar outros ficheiros xerados que nos poidan ser útiles."
-        title_4: "Como poñer en funcionamento novos guións de IA / Machine Learning"
-        description_4: "Usa guións anteriores como exemplos."
-        description_4b: "Os novos guións deben estar situados no cartafol <code>public/machine_learning/scripts</code>"
-        description_4c: "Os datos de entrada que utilizará o guión crearanse como ficheiros JSON no cartafol <code>../data</code>"
-        description_4d: "Calquera saída xerada debe colocarse no cartafol <code>../data</code>"
-        description_4e: "Recoméndase crear un ficheiro de texto <code>.ini</code> independente coa configuración do guión, co mesmo nome do guión e con permiso de lectura para «configparser». Este ficheiro facilitará o cambio de configuración por parte dos administradores."
-        description_4f: "Recoméndase incluír como primeira liña do guión unha cadea inicial de comiñas triplas con información breve sobre o mesmo e ligazóns a calquera información relevante. Esta cadea amosarase de xeito automático na interface de administración."
-        description_4g: "Recomendase crear un rexistro coa información relevante do guión nun ficheiro de texto <code>.log</code>, co mesmo nome do guión."
-        title_5: "Para utilizar os guións de IA / Machine Learning necesitas ter Python instalado no teu servidor"
-        description_5: "Aquí podes ver as instrucións de exemplo para un servidor Ubuntu 18.04:"
-      help_text: "Esta funcionalidade é expermiental."
-      last_execution: "Última execución"
-      no_content: "Aínda non se creou contido."
-      notice:
-        success: "O último guión foi executado correctamente."
-        error: "Produciuse un erro. Máis información a continuación."
-        working: "O guión está executándose. O administrador que o lanzou recibirá unha mensaxe de correo cando remate."
-        delete_generated_content: "O contido xerado foi eliminado correctamente."
-      output_files: "Ficheiros de saída:"
-      related_content: "Contido relacionado"
-      related_content_description: "Engade contido relacionado xerado automaticamente ás propostas e proxectos de orzamentos participativos."
-      script_info: "Recibirás unha mensaxe de correo en %{email} cando o guión remate de executarse."
-      script_name: "Nome do guión:"
-      select_script: "Selecciona o guión de Python a executar"
-      started_at: "Iniciado ás:"
-      tab_help: "Axuda"
-      tab_scripts: "Lanzar guión"
-      tab_settings: "Axustes / Contido xerado"
-      tags: "Etiquetas"
-      tags_description: "Xera etiquetas automáticas en todos os elementos que se poden etiquetar."
-      title: "IA / Machine Learning"
+    cookies:
+      vendors:
+        empty: Non se atopou ningún provedor
+        third_party_cookies: Cookies de terceiros
+        create_button: Crear provedor de cookies
+        create:
+          notice: Provedor de cookies creado correctamente
+        new:
+          title: Novo provedor de cookies
+        edit:
+          title: Editar provedor de cookies
+        update:
+          notice: Provedor de cookies actualizado correctamente
+        destroy:
+          notice: Provedor de cookies eliminado correctamente
+        form:
+          name:
+            help_text: Esta información será visible publicamente.
+          cookie:
+            help_text: Esta información usarase internamente. O nome da cookie debe ser único e só pode conter letras, díxitos e guións baixos.
+          description:
+            help_text: Esta información será visible publicamente.
+          script:
+            help_text: Este é o script que se executa cando a persoa usuaria acepta esta cookie. Podes introducir código JavaScript simple e facer referencia a outro JavaScript da aplicación.

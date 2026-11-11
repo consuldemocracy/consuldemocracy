@@ -103,8 +103,6 @@ hu:
       share: Megosztás
       share_comment: Hozzászólás a(z) %{version_name} változathoz a(z) %{process_name} folyamat tervezetéből
     proposals:
-      form:
-        tags_label: "Kategóriák"
       not_verified: "A javaslatokra való szavazáshoz %{verify_account}."
       process_title: Közös jogalkotási folyamat
     summary:
