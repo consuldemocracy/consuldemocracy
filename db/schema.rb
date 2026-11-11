@@ -13,8 +13,8 @@
 ActiveRecord::Schema[8.0].define(version: 2026_11_06_212245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
-  enable_extension "pg_trgm"
-  enable_extension "unaccent"
+  enable_extension "shared_extensions.pg_trgm"
+  enable_extension "shared_extensions.unaccent"
 
   create_table "active_poll_translations", id: :serial, force: :cascade do |t|
     t.integer "active_poll_id", null: false
