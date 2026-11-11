@@ -10,6 +10,8 @@ gl:
         poll_question_option: "Resposta creada correctamente"
         poll_question_option_video: "Vídeo creado correctamente"
         poll_question_option_image: "Imaxe cargada correctamente"
+        poll_voter: "Grazas por votar!"
+        poll_voter_blank: "Grazas por votar! O teu voto contabilizouse como voto en branco."
         proposal: "Proposta creada correctamente."
         proposal_notification: "A mensaxe enviouse correctamente."
         budget_investment: "A proposta de investimento creouse correctamente."
