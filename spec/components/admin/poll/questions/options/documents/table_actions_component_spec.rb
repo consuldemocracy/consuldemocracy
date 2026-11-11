@@ -23,4 +23,13 @@ describe Admin::Poll::Questions::Options::Documents::TableActionsComponent, :adm
     expect(page).not_to have_button "Delete"
     expect(page).not_to have_link "Edit"
   end
+
+  it "displays a link to download the document instead of opening it" do
+    document = create(:document, documentable: [future_option, current_option].sample)
+
+    render_inline Admin::Poll::Questions::Options::Documents::TableActionsComponent.new(document)
+
+    expect(page).to have_link count: 1
+    expect(page).to have_link "Download file", href: /active_storage(.+)\?disposition=attachment/
+  end
 end
