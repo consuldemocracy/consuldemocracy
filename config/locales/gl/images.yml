@@ -6,11 +6,21 @@ gl:
       delete_button: Borrar imaxe
       note: "Podes subir unha imaxe nos formatos seguintes: %{accepted_content_types}, e de até %{max_file_size} MB por ficheiro."
       add_new_image: Engadir imaxe
+      or_separator: ou
+      suggest_image_with_ai: Suxerir unha imaxe con IA
+      suggested_images_container: Imaxes suxeridas
+      attach_suggested_image_aria_label: "Anexar a imaxe suxerida %{index} de %{count}"
+      pick_an_image: "Escolle unha imaxe das suxestións seguintes:"
+      no_images_found: Non se atopou ningunha suxestión.
+      suggested_image_filename: Imaxe de %{author_name}.jpg
     actions:
       destroy:
         notice: A imaxe borrouse correctamente.
         alert: A imaxe non se puido borrar.
     errors:
       messages:
+        title_and_description_required: Para suxerir imaxes, escribe primeiro un título e unha descrición.
+        llm_not_configured: O LLM non está ben configurado. Contacta cunha persoa administradora.
+        rate_limit_exceeded: Agarda uns minutos antes de xerar novas suxestións.
         in_between: debe estar entre %{min} e %{max}
         wrong_content_type: O tipo %{content_type} do ficheiro non coincide con ningún dos tipos de contido aceptados, %{accepted_content_types}
