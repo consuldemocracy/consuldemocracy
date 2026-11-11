@@ -81,6 +81,7 @@ gl:
       show_link: Ver debate
     form:
       tags_instructions: Etiqueta este debate.
+      tags_label: Etiquetas
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
       featured_debates: Destacar
@@ -196,12 +197,14 @@ gl:
       consul: aplicación CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Configuración das cookies
       description: Este portal usa a %{consul} que é %{open_source}. De Madrid, para o mundo enteiro.
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide como debe ser a cidade de Madrid que queres.
       participation_title: Participación
       privacy: Política de privacidade
+      source_code: Código fonte
     header:
       administration_menu: Admin
       administration: Administración
@@ -275,6 +278,14 @@ gl:
     info:
       sign_in: "Entra con:"
       sign_up: "Rexístrate con:"
+    saml:
+      sign_in: Entra con SAML
+      sign_up: Rexístrate con SAML
+      name: SAML
+    oidc:
+      sign_in: Entra con OIDC
+      sign_up: Rexístrate con OIDC
+      name: OIDC
     or_fill: "Ou cubre o formulario seguinte:"
   proposals:
     create:
@@ -318,6 +329,7 @@ gl:
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
       map_location: "Localización no mapa"
       map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
+      map_marker_coordinates: "Latitude: %{latitude}. Lonxitude: %{longitude}"
       map_remove_marker: "Borrar o marcador do mapa"
     index:
       featured_proposals: Destacar
@@ -469,6 +481,8 @@ gl:
       see_proposed_actions: Consultar as accións recomendadas
       hide_proposed_actions: Agochar as accións recomendadas
       pending_title: Pendentes
+      execute: "Marcar a acción %{name} como feita"
+      unexecute: "Desmarcar a acción %{name} como feita"
       show_description: Amosar a descrición
       without_pending_actions: Non hai accións recomendadas pendentes
       done_title: Realizadas
@@ -565,6 +579,12 @@ gl:
   polls:
     dates: "Desde o %{open_at} a %{closed_at}"
     final_date: "Reconto final/resultados"
+    questions_count:
+      one: "Esta votación ten 1 pregunta."
+      other: "Esta votación ten %{count} preguntas."
+    form:
+      vote: "Votar"
+      maximum_exceeded: "escolliches %{given} respostas, pero o máximo que podes escoller é %{maximum}"
     index:
       filters:
         current: "Abertas"
@@ -590,6 +610,7 @@ gl:
     show:
       already_voted_in_booth: "Xa participaches nesta votación en urnas presenciais polo que non podes volver participar."
       already_voted_in_web: "Xa participaches nesta votación. Se volves votar, modificarás o teu voto anterior."
+      already_voted_blank_in_web: "Xa participaches nesta votación cun voto en branco. Se votas de novo, substituirase o teu voto anterior."
       back: Volver ás votacións
       cant_answer_not_logged_in: "Precisas %{signin} ou %{signup} para participares."
       comments_tab: Comentarios
@@ -619,12 +640,16 @@ gl:
       results:
         title: "Preguntas"
         most_voted_answer: "Resposta máis votada: "
+        open_ended:
+          valid: Válidas
+          blank: En branco
     poll_header:
       back_to_proposal: Volver á proposta
   poll_questions:
     description:
       multiple: "Podes seleccionar un máximo de %{maximum} respostas."
     read_more_about: "Ler máis:"
+    custom_answer_aria_label: "Resposta para %{option}"
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
@@ -634,6 +659,12 @@ gl:
     show:
       back: "Volver á miña actividade"
   shared:
+    embedded_video:
+      accept: "Ver o vídeo"
+      warning: "Esta páxina contén un vídeo dun provedor externo. Ao acceder ao seu contido, aceptas que os teus datos poidan transferirse a provedores externos."
+    warning_for_external_links: "Ao confirmar, aceptas saír do sitio web."
+    actions:
+      label: "%{action} %{name}"
     edit: "Editar proposta"
     filter: "Filtro"
     save: "Guardar"
@@ -730,6 +761,7 @@ gl:
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
     translations:
+      current_language: Idioma actual
       remove_language: Eliminar idioma
       add_language: Engadir idioma
       languages_in_use:
@@ -748,6 +780,8 @@ gl:
     youtube: "%{org} YouTube"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
+  ip_denied_handler:
+    unauthorized: "Acceso denegado. O teu enderezo IP non ten permiso para ver este contido."
   unauthorized:
     default: Non tes permiso para acceder a esta páxina.
     manage:
@@ -915,3 +949,21 @@ gl:
         more:
           one: "Unha etiqueta máis"
           other: "%{count} etiquetas máis"
+  cookies_consent:
+    accept_all_cookies: "Aceptar todas"
+    accept_essential_cookies: "Aceptar as cookies esenciais"
+    message: "As cookies axúdannos a ofrecer os nosos servizos. Ao utilizar os nosos servizos, aceptas o uso de cookies."
+    more_info_link: "Máis información sobre as cookies"
+    management: "Configurar"
+    title: "Política de cookies"
+  cookies_management:
+    title: Configuración das cookies
+    description: Este sitio web usa cookies propias e de terceiros para funcionar correctamente. Ao premer o botón «Aceptar todas», aceptas o uso destas tecnoloxías e o tratamento dos teus datos con estes fins.
+    essentials:
+      title: Cookies esenciais
+      description: Úsanse para fins moi diversos, como recoñecerte como persoa usuaria, escoller o idioma ou personalizar o xeito en que se amosa o contido.
+      hint: Sen elas, as funcións básicas de navegación veríanse afectadas, polo que deben estar sempre activas.
+    third_party:
+      title: Cookies de terceiros
+      description: Este sitio web usa cookies de terceiros. Estas cookies poden engadir funcionalidades ou recoller información para mellorar a túa experiencia de uso.
+    save_preferences: Gardar as preferencias
