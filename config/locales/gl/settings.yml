@@ -91,6 +91,10 @@ gl:
       google_login_description: "Permitir aos usuarios o inicio de sesión coa conta de Google"
       wordpress_login: "Rexistro con Wordpress"
       wordpress_login_description: "Permitir o rexistro de usuarios coa conta de Wordpress"
+      oidc_login: "Inicio de sesión con OpenID Connect"
+      oidc_login_description: "Permitir que as persoas usuarias inicien sesión con OpenID Connect (OIDC)"
+      saml_login: "Inicio de sesión con SAML"
+      saml_login_description: "Permitir que as persoas usuarias inicien sesión con SAML"
       featured_proposals: "Propostas destacadas"
       featured_proposals_description: "Amosar as propostas destacadas na páxina principal das propostas"
       signature_sheets: "Follas de sinaturas"
@@ -132,6 +136,15 @@ gl:
       remove_investments_supports_description: "Permite aos usuarios eliminar apoios aos investimentos dos orzamentos participativos durante a fase de selección de proxectos."
       sdg: ODS
       sdg_description: Activa as seccións dos Obxectivos de Desenvolvemento Sostible no menú de administración e na configuración global.
+      cookies_consent: Aviso de consentimento de cookies
+      cookies_consent_description: Activa o aviso de consentimento de cookies para informar as persoas usuarias sobre as cookies que usa a aplicación.
+      gdpr:
+        require_consent_for_notifications: Consentimento explícito para as notificacións
+        require_consent_for_notifications_description: Pedir o consentimento explícito das persoas usuarias para enviarlles boletíns e información semellante, como esixe o Regulamento Xeral de Protección de Datos (RXPD).
+        require_consent_for_embedded_videos: Consentimento para vídeos incrustados
+        require_consent_for_embedded_videos_description: Amosar un aviso e pedir confirmación á persoa usuaria antes de cargar vídeos incrustados de provedores externos.
+        warning_for_external_links: "Aviso nas ligazóns externas"
+        warning_for_external_links_description: "Activa unha xanela emerxente que pide confirmación antes de ir a un sitio web externo."
     remote_census:
       general:
         endpoint: "Punto final"
@@ -224,3 +237,18 @@ gl:
         budgets_description: Permitir que os orzamentos participativos se vinculen aos Obxectivos de Desenvolvemento Sostible
         legislation: ODS relacionados na lexislación colaborativa
         legislation_description: Permitir que a lexislación colaborativa se vincule aos Obxectivos de Desenvolvemento Sostible
+    cookies_consent:
+      more_info_link: Ligazón á política de cookies
+      more_info_link_description: Ligazón á páxina da política de cookies que se amosa no aviso de consentimento.
+      version_name: Nome da versión
+      version_name_description: Cambia o nome da versión para que todas as persoas usuarias teñan que dar de novo o consentimento das cookies. Pode ser útil cando se introducen cambios importantes na política de cookies que requiren un novo consentimento.
+    llm:
+      title: Configuración do LLM
+      provider: "Provedor de LLM"
+      provider_description: "Os provedores estarán desactivados ata que se configuren as credenciais en secrets.yml."
+      use_llm_for_translations: "Tradución de contidos"
+      use_llm_for_translations_description: "Usar un LLM para traducir os contidos, con prioridade sobre os servizos de tradución de Microsoft."
+      model: "Modelo"
+      model_description: "O modelo de LLM que se vai usar."
+      use_ai_image_suggestions: "Suxestións de imaxes con IA"
+      use_ai_image_suggestions_description: "Permitir que as persoas usuarias usen IA para suxerir imaxes de Pexels, en vez de subir as súas propias."
