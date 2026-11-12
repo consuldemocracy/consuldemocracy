@@ -101,6 +101,23 @@ describe "Tags" do
     end
   end
 
+  scenario "Category checkbox stays in sync with the tags field" do
+    create(:tag, :category, name: "Education")
+    create(:tag, :category, name: "Health")
+
+    login_as(create(:user))
+    visit new_proposal_path
+
+    fill_in_tag_list "Education"
+
+    expect(page).to have_checked_field "Education"
+    expect(page).to have_unchecked_field "Health"
+
+    remove_tag_list_tag "Education"
+
+    expect(page).to have_unchecked_field "Education"
+  end
+
   scenario "Create with too many tags" do
     user = create(:user)
     login_as(user)
@@ -150,7 +167,7 @@ describe "Tags" do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(page).to have_css ".taggable-fields span[data-val='Economía']"
+    expect(page).to have_css ".taggable-fields .item[data-value='Economía']"
 
     fill_in_tag_list "Hacienda"
     click_button "Save changes"

@@ -1,0 +1,29 @@
+// Overrides styles of tom-select so it looks like other form inputs
+//
+
+.ts-wrapper {
+  margin-bottom: $form-spacing;
+}
+
+.ts-control,
+.ts-control input,
+.ts-dropdown {
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+}
+
+.ts-control {
+  border: $input-border;
+  border-radius: $input-radius;
+  box-shadow: $input-shadow;
+  min-height: $input-height;
+
+  &:focus-within {
+    border: $input-border-focus;
+    box-shadow: $input-shadow-focus;
+  }
+
+  > input {
+    height: auto !important;
+  }
+}

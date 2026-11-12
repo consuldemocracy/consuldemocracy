@@ -3,51 +3,33 @@
   App.SDGRelatedListSelector = {
     initialize: function() {
       var $root = $(".sdg-related-list-selector");
-      var $input;
+      var control;
 
       if (!$root.length) {
         return;
       }
 
-      $input = $root.find(".input");
-
-      App.AmsifyListField.mount($input, {
-        suggestions: $input.data("suggestions-list"),
-        whiteList: true,
-        classes: {
-          sTagsInput: ".sdg-related-list-selector-input"
-        },
+      control = App.ListField.mount($root.find(".input"), {
         checkboxes: $root.find(".goals input"),
         checkboxValueAttribute: "code",
-        checkboxListValue: App.SDGRelatedListSelector.goal_code,
-        keepCheckboxChecked: function(value, selected_values) {
-          return selected_values.some(function(selected_value) {
-            return App.SDGRelatedListSelector.goal_code(value) ===
-              App.SDGRelatedListSelector.goal_code(selected_value);
-          });
-        },
-        afterAdd: function(amsify, value) {
-          App.SDGRelatedListSelector.manage_add_help(amsify, value);
-        },
-        afterRemove: function(amsify, value) {
-          App.SDGRelatedListSelector.manage_remove_help(amsify, value);
-        }
+        checkboxListValue: App.SDGRelatedListSelector.goal_code
       });
+
+      control.on("change", function() {
+        App.SDGRelatedListSelector.update_help($root, control);
+      });
+      App.SDGRelatedListSelector.update_help($root, control);
     },
-    goal_code: function(value) {
-      return value.toString().split(".")[0];
+    goal_code: function(code) {
+      return code.split(".")[0];
     },
-    manage_add_help: function(amsify_suggestags, value) {
-      var title = amsify_suggestags.getItem(value).title;
-      var html = '<li data-id="' + value + '">' + "<strong>" + value + "</strong> " + title + "</li>";
-      $(".sdg-related-list-selector .help-section").removeClass("hide");
-      $(".sdg-related-list-selector .selected-info").append(html);
-    },
-    manage_remove_help: function(amsify_suggestags, value) {
-      $('[data-id="' + value + '"]').remove();
-      if ($(amsify_suggestags.selector).val() === "") {
-        $(".sdg-related-list-selector .help-section").addClass("hide");
-      }
+    update_help: function($root, control) {
+      var items = control.items.map(function(code) {
+        return $("<li>").text(" " + control.options[code].title).prepend($("<strong>").text(code));
+      });
+
+      $root.find(".selected-info").empty().append(items);
+      $root.find(".help-section").toggleClass("hide", control.items.length === 0);
     }
   };
 }).call(this);

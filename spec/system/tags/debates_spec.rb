@@ -113,7 +113,7 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_css ".taggable-fields span[data-val='Economía']"
+    expect(page).to have_css ".taggable-fields .item[data-value='Economía']"
 
     fill_in_tag_list "Hacienda"
     click_button "Save changes"
