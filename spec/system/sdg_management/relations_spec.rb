@@ -421,6 +421,38 @@ describe "SDG Relations" do
       end
     end
 
+    scenario "selects an existing goal or target when leaving the field" do
+      process = create(:legislation_process, title: "SDG process")
+
+      visit sdg_management_edit_legislation_process_path(process)
+      fill_in "Goals and Targets", with: "1.1"
+      find("body").click
+
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).to have_css ".item", count: 1
+        expect(page).to have_css ".item[data-value='1.1']"
+      end
+
+      fill_in "Goals and Targets", with: "tag nonexistent"
+      find("body").click
+
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).to have_css ".item", count: 1
+        expect(page).not_to have_css ".item[data-value='tag nonexistent']"
+      end
+
+      click_button "Update Process"
+
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1"
+        expect(page).to have_css "td", exact_text: "1.1"
+      end
+    end
+
     scenario "describes the goals and targets field" do
       process = create(:legislation_process)
 

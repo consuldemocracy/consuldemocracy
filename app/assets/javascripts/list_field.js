@@ -55,6 +55,7 @@
         create: function(text) {
           return App.ListField.find_option(this, text) || (settings.create && { tag: text, value: text });
         },
+        createOnBlur: true,
         labelField: "tag",
         onItemAdd: function() {
           this.close();
