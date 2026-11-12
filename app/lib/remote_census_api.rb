@@ -3,7 +3,7 @@ class RemoteCensusApi
 
   def call(document_type, document_number, date_of_birth, postal_code)
     response = nil
-    get_document_number_variants(document_type, document_number).each do |variant|
+    document_number_variants(document_type, document_number).each do |variant|
       response = Response.new(get_response_body(document_type, variant, date_of_birth, postal_code))
       return response if response.valid?
     end
