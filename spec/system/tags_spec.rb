@@ -89,6 +89,22 @@ describe "Tags" do
     expect(page).to have_content "tags must be less than or equal to 6"
   end
 
+  scenario "Create without JavaScript", :no_js do
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
+    fill_in "Tags", with: "Taxes, Economy"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
+
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+    expect(page).to have_link "Taxes"
+    expect(page).to have_link "Economy"
+  end
+
   scenario "Update" do
     debate = create(:debate, tag_list: "Economía")
 
