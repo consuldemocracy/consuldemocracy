@@ -43,17 +43,17 @@ production:
 
 ## Habilitar el uso de S3 en la aplicación
 
-Primero, agrega la siguiente línea dentro de la clase `class Application < Rails::Application` en el fichero `config/application_custom.rb`:
+Primero, agrega las siguientes líneas dentro del bloque `Rails.application.configure do` en el fichero `config/environments/custom/production.rb`:
 
 ```ruby
-# Store uploaded files on the local file system (see config/storage.yml for options).
-config.active_storage.service = :s3
+# Store uploaded files using S3 (see config/storage.yml for options).
+config.active_storage.service = :amazon
 ```
 
-Luego, descomenta el bloque de **s3** que encontrarás en el fichero *storage.yml*:
+Luego, descomenta el bloque de **amazon** que encontrarás en el fichero *storage.yml*:
 
 ```yaml
-s3:
+amazon:
   service: S3
   access_key_id: <%= Rails.application.secrets.dig(:s3, :access_key_id) %>
   secret_access_key: <%= Rails.application.secrets.dig(:s3, :secret_access_key) %>

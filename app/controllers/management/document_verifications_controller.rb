@@ -49,10 +49,7 @@ class Management::DocumentVerificationsController < Management::BaseController
     end
 
     def clean_document_number
-      return if params[:document_verification][:document_number].blank?
-
-      params[:document_verification][:document_number] = params[:document_verification][:document_number]
-                                                         .gsub(/[^a-z0-9]+/i, "")
-                                                         .upcase
+      params[:document_verification][:document_number] =
+        DocumentNumberNormalizer.call(params[:document_verification][:document_number])
     end
 end

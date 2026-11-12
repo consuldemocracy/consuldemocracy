@@ -1,10 +1,14 @@
 class Officing::Residence
   include ActiveModel::Model
   include ActiveModel::Attributes
+  include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
 
   attribute :date_of_birth, :date
-  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth, :postal_code
+  attribute :document_number, :string
+  normalizes :document_number, with: DocumentNumberNormalizer
+
+  attr_accessor :user, :officer, :document_type, :year_of_birth, :postal_code
 
   before_validation :retrieve_census_data
 
@@ -16,11 +20,6 @@ class Officing::Residence
 
   validate :allowed_age
   validate :local_residence
-
-  def initialize(attrs = {})
-    super
-    clean_document_number
-  end
 
   def save
     return false unless valid?
@@ -106,9 +105,5 @@ class Officing::Residence
       return true if Setting.force_presence_date_of_birth?
 
       @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
-    end
-
-    def clean_document_number
-      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
     end
 end
