@@ -5,4 +5,10 @@ class Admin::Poll::Questions::Options::TableComponent < ApplicationComponent
   def initialize(question)
     @question = question
   end
+
+  private
+
+    def attribute_name(attribute)
+      Poll::Question::Option.human_attribute_name(attribute)
+    end
 end

@@ -5,7 +5,9 @@ module Comments
     visit polymorphic_path(comment.commentable)
 
     within "#comment_#{comment.id}" do
-      click_link "Reply"
+      expect(page).to have_css "#comment_#{comment.id}_reply [aria-expanded='false']", exact_text: "Reply"
+      click_button "Reply"
+      expect(page).to have_css "#comment_#{comment.id}_reply [aria-expanded='true']", exact_text: "Reply"
     end
 
     within "#js-comment-form-comment_#{comment.id}" do
@@ -15,6 +17,7 @@ module Comments
 
     within "#comment_#{comment.id}" do
       expect(page).to have_content with
+      expect(page).to have_css "#comment_#{comment.id}_reply [aria-expanded='false']", exact_text: "Reply"
     end
   end
 end

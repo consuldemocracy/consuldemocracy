@@ -146,7 +146,6 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:destroy, current_poll_question) }
 
   it { should be_able_to(:read, Poll::Question::Option) }
-  it { should be_able_to(:order_options, Poll::Question::Option) }
   it { should be_able_to(:create, future_poll_question_option) }
   it { should be_able_to(:update, future_poll_question_option) }
   it { should be_able_to(:destroy, future_poll_question_option) }

@@ -14,4 +14,4 @@
   <%= f.submit t("management.document_verifications.verify"), class: "button success" %>
 <% end %>
 
-<%= render "management/users/erase_user_account" %>
+<%= render Management::Users::EraseUserAccountComponent.new %>

@@ -15,18 +15,6 @@
         return false;
       });
     },
-    toggleLink: function() {
-      $("body").on("click", ".js-toggle-link", function() {
-        var toggle_txt;
-        $($(this).data("toggle-selector")).toggle("down");
-        if ($(this).data("toggle-text") !== undefined) {
-          toggle_txt = $(this).text();
-          $(this).text($(this).data("toggle-text"));
-          $(this).data("toggle-text", toggle_txt);
-        }
-        return false;
-      });
-    },
     synchronizeInputs: function() {
       var banners, geozones, inputs, processes, progress_bar;
       progress_bar = "[name='progress_bar[percentage]']";
@@ -61,7 +49,6 @@
     initialize: function() {
       App.Forms.disableEnter();
       App.Forms.submitOnChange(".js-submit-on-change");
-      App.Forms.toggleLink();
       App.Forms.synchronizeInputs();
       App.Forms.hideOrShowFieldsAfterSelection();
     }

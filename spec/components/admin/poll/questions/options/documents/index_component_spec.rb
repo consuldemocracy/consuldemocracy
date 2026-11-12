@@ -16,4 +16,13 @@ describe Admin::Poll::Questions::Options::Documents::IndexComponent do
 
     expect(page).not_to have_link "Add new document"
   end
+
+  it "uses <thead> for the headers and <tbody> for the content" do
+    create(:document, documentable: current_option)
+
+    render_inline Admin::Poll::Questions::Options::Documents::IndexComponent.new(current_option)
+
+    expect(page).to have_css "thead", text: "Title"
+    expect(page).to have_css "tbody", text: "Download file"
+  end
 end

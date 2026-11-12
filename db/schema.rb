@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_11_04_010756) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_06_212245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
-  enable_extension "pg_trgm"
-  enable_extension "unaccent"
+  enable_extension "shared_extensions.pg_trgm"
+  enable_extension "shared_extensions.unaccent"
 
   create_table "active_poll_translations", id: :serial, force: :cascade do |t|
     t.integer "active_poll_id", null: false
@@ -1111,7 +1111,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_11_04_010756) do
 
   create_table "poll_question_answers", id: :serial, force: :cascade do |t|
     t.integer "question_id"
-    t.integer "given_order", default: 1
+    t.integer "given_order"
     t.boolean "most_voted", default: false
     t.boolean "allow_custom_text", default: false
     t.index ["question_id"], name: "index_poll_question_answers_on_question_id"

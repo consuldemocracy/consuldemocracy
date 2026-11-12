@@ -13,14 +13,14 @@
         <th scope="col" class="text-center">
           <%= t("budgets.results.ballot_lines_count") %>
         </th>
-        <% if @budget.show_money? %>
+        <% if budget.show_money? %>
           <th scope="col" class="text-center">
             <%= t("budgets.results.price") %>
           </th>
           <% if results_type == :compatible %>
             <th scope="col" class="text-right">
               <small><%= t("budgets.results.amount_available") %></small><br>
-              <%= @budget.formatted_amount(heading_price) %><br>
+              <%= budget.formatted_amount(heading_price) %><br>
             </th>
           <% end %>
         <% end %>
@@ -47,19 +47,19 @@
                 </span>
               </span>
             <% end %>
-            <%= link_to investment.title, budget_investment_path(@budget, investment) %>
+            <%= link_to investment.title, budget_investment_path(budget, investment) %>
           </td>
           <td class="text-center">
             <%= investment.ballot_lines_count %>
           </td>
-          <% if @budget.show_money? %>
+          <% if budget.show_money? %>
             <td class="text-center">
-              <%= @budget.formatted_amount(investment.price) %>
+              <%= budget.formatted_amount(investment.price) %>
             </td>
             <% if results_type == :compatible %>
               <td class="small text-right"
-                  title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
-                <%= @budget.formatted_amount(amount_available - investment.price) %>
+                  title="<%= budget.formatted_amount(amount_available) %> - <%= budget.formatted_amount(investment.price) %>">
+                <%= budget.formatted_amount(amount_available - investment.price) %>
                 <% amount_available -= investment.price if investment.winner? %>
               </td>
             <% end %>

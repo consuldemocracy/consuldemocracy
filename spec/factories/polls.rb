@@ -125,7 +125,6 @@ FactoryBot.define do
   factory :poll_question_option, class: "Poll::Question::Option" do
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
-    sequence(:given_order) { |n| n }
 
     transient { poll { association(:poll) } }
 

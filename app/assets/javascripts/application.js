@@ -12,17 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require jquery-ui/ui/version
-//= require jquery-ui/ui/data
-//= require jquery-ui/ui/keycode
-//= require jquery-ui/ui/position
-//= require jquery-ui/ui/scroll-parent
-//= require jquery-ui/ui/unique-id
-//= require jquery-ui/ui/widget
-//= require jquery-ui/ui/widgets/menu
-//= require jquery-ui/ui/widgets/mouse
-//= require jquery-ui/ui/widgets/autocomplete
-//= require jquery-ui/ui/widgets/sortable
 //= require @deltablot/dropzone/dist/dropzone-min
 //= require foundation-sites
 //= require turbolinks
@@ -40,6 +29,7 @@
 //= require gettext
 //= require annotator
 //= require jquery.amsify.suggestags
+//= require amsify_list_field
 //= require tags
 //= require participation_not_allowed
 //= require advanced_search
@@ -68,7 +58,6 @@
 //= require documentable
 //= require imageable
 //= require tree_navigator
-//= require tag_autocomplete
 //= require leaflet/dist/leaflet
 //= require leaflet.markercluster/dist/leaflet.markercluster
 //= require map
@@ -83,10 +72,11 @@
 //= require cookies
 //= require cookies_consent
 //= require columns_selector
-//= require budget_edit_associations
 //= require budget_hide_money
 //= require authenticity_token_refresh
 //= require_tree ./admin
+//= require_tree ./budgets
+//= require_tree ./management
 //= require_tree ./polls
 //= require_tree ./sdg
 //= require_tree ./sdg_management
@@ -124,7 +114,6 @@ var initialize_modules = function() {
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
   App.Imageable.initialize();
-  App.TagAutocomplete.initialize();
   App.Map.initialize();
   App.Polls.initialize();
   App.TableSortable.initialize();
@@ -136,15 +125,16 @@ var initialize_modules = function() {
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();
   }
+  App.AdminBudgetsForm.initialize();
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminDashboardActionsForm.initialize();
-  App.AdminPollQuestionOptionsTable.initialize();
   App.AdminPollShiftsForm.initialize();
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
-  App.BudgetEditAssociations.initialize();
+  App.BudgetsResultsShow.initialize();
   App.BudgetHideMoney.initialize();
+  App.ManagementPrint.initialize();
   App.PollsForm.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();

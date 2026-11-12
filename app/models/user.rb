@@ -95,7 +95,7 @@ class User < ApplicationRecord
 
   validates_associated :organization, message: false
 
-  normalizes :document_number, with: ->(document_number) { document_number.gsub(/[^a-z0-9]+/i, "").upcase }
+  normalizes :document_number, with: DocumentNumberNormalizer
 
   accepts_nested_attributes_for :organization, update_only: true
 

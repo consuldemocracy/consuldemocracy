@@ -23,7 +23,7 @@ describe "Documents", :admin do
 
     ActiveStorage.with(service_urls_expire_in: 0.001.seconds) do
       within("tbody tr:first-child") do
-        click_link "Download file"
+        visit find_link("Download file")[:href].gsub("disposition=attachment", "")
 
         expect(page).not_to have_current_path admin_site_customization_documents_path
       end
@@ -33,7 +33,7 @@ describe "Documents", :admin do
       visit admin_site_customization_documents_path
 
       within("tbody tr:first-child") do
-        click_link "Download file"
+        visit find_link("Download file")[:href].gsub("disposition=attachment", "")
 
         expect(page).to have_current_path document_url
       end

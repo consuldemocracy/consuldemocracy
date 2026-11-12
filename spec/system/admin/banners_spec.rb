@@ -94,7 +94,7 @@ describe "Admin banners magement", :admin do
 
     expect_to_have_language_selected "English"
 
-    click_link "Remove language"
+    click_button "Remove language"
     select "Français", from: "Add language"
 
     fill_in "Title", with: "En Français"

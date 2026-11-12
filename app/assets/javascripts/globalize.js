@@ -17,8 +17,8 @@
         } else {
           $(this).hide();
         }
-        $(".js-delete-language").hide();
-        $(".js-delete-" + locale).show();
+        $(".delete-language").hide();
+        $(".delete-" + locale).show();
       });
     },
     add_language: function(locale) {
@@ -90,8 +90,7 @@
       $(".js-select-language").on("change", function() {
         App.Globalize.display_translations($(this).val());
       });
-      $(".js-delete-language").on("click", function(e) {
-        e.preventDefault();
+      $(".delete-language").on("click", function() {
         App.Globalize.remove_language($(this).data("locale"));
         $(this).hide();
       });

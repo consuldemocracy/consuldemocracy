@@ -7,8 +7,6 @@ module Budgets
 
     def show
       authorize! :read_results, @budget
-      @investments = Budget::Result.new(@budget, @heading).investments
-      @headings = @budget.headings.sort_by_name
     end
 
     private

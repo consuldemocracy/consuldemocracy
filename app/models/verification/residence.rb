@@ -1,10 +1,14 @@
 class Verification::Residence
   include ActiveModel::Model
   include ActiveModel::Attributes
+  include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
 
   attribute :date_of_birth, :date
-  attr_accessor :user, :document_number, :document_type, :postal_code, :terms_of_service
+  attribute :document_number, :string
+  normalizes :document_number, with: DocumentNumberNormalizer
+
+  attr_accessor :user, :document_type, :postal_code, :terms_of_service
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -17,11 +21,6 @@ class Verification::Residence
 
   validate :local_postal_code
   validate :local_residence
-
-  def initialize(attrs = {})
-    super
-    clean_document_number
-  end
 
   def save
     return false unless valid?
@@ -99,10 +98,6 @@ class Verification::Residence
       census_data.valid? &&
         census_data.postal_code == postal_code &&
         census_data.date_of_birth == date_of_birth
-    end
-
-    def clean_document_number
-      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
     end
 
     def valid_postal_code?

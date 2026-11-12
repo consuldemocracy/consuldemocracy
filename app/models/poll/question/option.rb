@@ -10,7 +10,7 @@ class Poll::Question::Option < ApplicationRecord
 
   accepts_nested_attributes_for :documents, allow_destroy: true
 
-  belongs_to :question, class_name: "Poll::Question"
+  belongs_to :question, class_name: "Poll::Question", optional: false
   has_many :answers, class_name: "Poll::Answer", dependent: :nullify
   has_many :partial_results, class_name: "Poll::PartialResult", dependent: :nullify
   has_many :videos, class_name: "Poll::Question::Option::Video",
@@ -19,7 +19,11 @@ class Poll::Question::Option < ApplicationRecord
                     inverse_of: :option
 
   validates_translation :title, presence: true
-  validates :given_order, presence: true, uniqueness: { scope: :question_id }
+  validates :given_order, presence: true, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+
+  before_validation :assign_default_given_order
+  after_destroy :reorder_options
+  after_save :reorder_options, if: -> { saved_change_to_given_order? }
 
   scope :with_content, -> { excluding(without_content) }
   scope :without_content, -> do
@@ -29,14 +33,12 @@ class Poll::Question::Option < ApplicationRecord
       .where.missing(:videos)
   end
 
-  def self.order_options(ordered_array)
-    ordered_array.each_with_index do |option_id, order|
-      find(option_id).update_column(:given_order, order + 1)
-    end
+  def self.last_position(question)
+    question&.question_options&.maximum("given_order") || 0
   end
 
-  def self.last_position(question_id)
-    where(question_id: question_id).maximum("given_order") || 0
+  def given_order_or_last
+    given_order || self.class.last_position(question) + 1
   end
 
   def total_votes
@@ -50,4 +52,21 @@ class Poll::Question::Option < ApplicationRecord
   def with_read_more?
     description.present? || images.any? || documents.any? || videos.any?
   end
+
+  private
+
+    def reorder_options
+      return unless question
+
+      ids = question.question_options.excluding(self).ids
+      ids.insert([given_order - 1, ids.size].min, id) unless destroyed?
+
+      ids.each.with_index(1) do |option_id, order|
+        question.question_options.find_by(id: option_id)&.update_column(:given_order, order)
+      end
+    end
+
+    def assign_default_given_order
+      self.given_order ||= given_order_or_last if new_record?
+    end
 end
