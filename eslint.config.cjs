@@ -18,7 +18,6 @@ module.exports = defineConfig([globalIgnores([
       ...globals.browser,
       $: "readonly",
       App: "readonly",
-      AmsifySuggestags: "readonly",
       annotator: "readonly",
       bb: "readonly",
       CKEDITOR: "readonly",
