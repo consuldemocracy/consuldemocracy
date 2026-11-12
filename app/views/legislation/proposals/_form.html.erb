@@ -18,7 +18,8 @@
     <div class="small-12 column">
       <%= f.text_area :description,
                       maxlength: Legislation::Proposal.description_max_length,
-                      class: "html-area" %>
+                      class: "html-area",
+                      hint: t("shared.voice_input_hint") %>
     </div>
 
     <div class="small-12 column">

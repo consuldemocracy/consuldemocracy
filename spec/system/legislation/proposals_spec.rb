@@ -287,6 +287,14 @@ describe "Legislation Proposals" do
     expect(page).not_to have_link("All city")
   end
 
+  scenario "form shows the voice input hint" do
+    login_as user
+
+    visit new_legislation_process_proposal_path(process)
+
+    expect(page).to have_css ".help-text", text: "You can dictate using your device's voice typing."
+  end
+
   scenario "form shows the geozone selector when there are geozones defined" do
     create(:geozone)
     login_as user
