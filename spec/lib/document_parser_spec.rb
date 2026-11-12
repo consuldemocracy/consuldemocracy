@@ -25,8 +25,12 @@ describe DocumentParser do
       expect(dummy.document_number_variants(3, "1234")).to eq(["1234"])
     end
 
-    it "takes only the last 8 digits for dnis and resicence cards" do
-      expect(dummy.document_number_variants(1, "543212345678")).to eq(["12345678"])
+    it "does not discard numbers for dnis and residence cards with more than 8 numbers" do
+      expect(dummy.document_number_variants(1, "543212345678")).to eq ["543212345678"]
+    end
+
+    it "discards leading zeros for dnis and residence cards even with more than 8 numbers" do
+      expect(dummy.document_number_variants(1, "000543212345678")).to eq ["543212345678"]
     end
 
     it "tries all the dni variants padding with zeros" do
