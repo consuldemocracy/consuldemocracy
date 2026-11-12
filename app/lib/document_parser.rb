@@ -26,7 +26,7 @@ module DocumentParser
   end
 
   def number_variants_with_leading_zeros_from(document_number, digits = 8)
-    number_without_leading_zeros = document_number.last(digits).gsub(/^0+/, "")
+    number_without_leading_zeros = document_number.gsub(/^0+/, "")
 
     return [] if number_without_leading_zeros.blank?
     return [number_without_leading_zeros] if number_without_leading_zeros.size >= digits
