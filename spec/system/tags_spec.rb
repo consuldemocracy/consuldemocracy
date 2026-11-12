@@ -166,6 +166,21 @@ describe "Tags" do
     expect(page).to have_link "Economy"
   end
 
+  scenario "Create with a tag not followed by a comma" do
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in_new_debate_title with: "Title"
+    fill_in_ckeditor "Initial debate text", with: "Description"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
+    fill_in "Tags", with: "Impuestos"
+
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+    expect(page).to have_link "Impuestos"
+  end
+
   scenario "Create with a suggested tag" do
     create(:tag, name: "Hacienda")
     login_as(create(:user))
@@ -271,6 +286,28 @@ describe "Tags" do
       expect(page).to have_link count: 2
       expect(page).to have_link "Agua potable"
       expect(page).to have_link "Economía"
+    end
+  end
+
+  scenario "Create with a tag not followed by a comma while suggestions are shown" do
+    create(:tag, name: "Agua potable")
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in_new_debate_title with: "Title"
+    fill_in_ckeditor "Initial debate text", with: "Description"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
+    fill_in "Tags", with: "agua"
+
+    expect(page).to have_css ".ts-dropdown [data-value='Agua potable']"
+
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+
+    within(".tags") do
+      expect(page).to have_link count: 1
+      expect(page).to have_link "agua"
     end
   end
 
