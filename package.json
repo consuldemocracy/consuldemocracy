@@ -9,7 +9,8 @@
     "jquery": "^4.0.0",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
-    "markdown-it": "^14.3.3"
+    "markdown-it": "^14.3.3",
+    "tom-select": "^2.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
