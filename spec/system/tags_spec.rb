@@ -159,6 +159,12 @@ describe "Tags" do
     login_as(create(:user))
 
     visit new_debate_path
+
+    expect(page).to have_css ".taggable-fields .help-text",
+                             text: "Enter the tags you would like to use, separated by commas (',')"
+    expect(page).not_to have_css ".taggable-fields input[placeholder]"
+    expect(find_field("Tags")["aria-describedby"]).to eq "debate_tag_list_help_text"
+
     fill_in "Debate title", with: "Title"
     fill_in "Initial debate text", with: "Description"
     fill_in "Tags", with: "Taxes, Economy"
@@ -169,6 +175,17 @@ describe "Tags" do
     expect(page).to have_content "Debate created successfully."
     expect(page).to have_link "Taxes"
     expect(page).to have_link "Economy"
+  end
+
+  scenario "Describes the tags field" do
+    login_as(create(:user))
+
+    visit new_debate_path
+
+    expect(find_field("Tags")["aria-describedby"]).to eq "debate_tag_list_help_text"
+    expect(page).to have_css "#tag-list-help-text", text: "Tag this debate."
+    expect(page).to have_css "#debate_tag_list_help_text",
+                             text: "Enter the tags you would like to use, separated by commas (',')"
   end
 
   scenario "Create with a tag not followed by a comma" do
