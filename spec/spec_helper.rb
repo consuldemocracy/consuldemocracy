@@ -66,6 +66,10 @@ RSpec.configure do |config|
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)
   end
 
+  config.around(:each, type: :request) do |example|
+    ActionController::Base.with(allow_forgery_protection: true) { example.run }
+  end
+
   config.around(:each, type: :controller) do |example|
     InvisibleCaptcha.with(timestamp_enabled: false) { example.run }
   end

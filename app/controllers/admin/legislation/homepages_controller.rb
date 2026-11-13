@@ -23,6 +23,6 @@ class Admin::Legislation::HomepagesController < Admin::Legislation::BaseControll
     end
 
     def allowed_params
-      [:homepage, :homepage_enabled, translation_params(::Legislation::Process)]
+      [:homepage, :homepage_enabled, *translation_params(::Legislation::Process)]
     end
 end
