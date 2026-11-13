@@ -154,6 +154,11 @@ describe "Tags" do
     login_as(create(:user))
 
     visit new_debate_path
+
+    expect(page).to have_css ".taggable-fields .help-text",
+                             text: "Enter the tags you would like to use, separated by commas (',')"
+    expect(page).not_to have_css ".taggable-fields input[placeholder]"
+
     fill_in "Debate title", with: "Title"
     fill_in "Initial debate text", with: "Description"
     fill_in "Tags", with: "Impuestos, Economía"

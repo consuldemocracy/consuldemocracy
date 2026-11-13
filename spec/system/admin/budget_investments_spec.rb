@@ -1149,6 +1149,22 @@ describe "Admin budget investments", :admin do
       end
     end
 
+    scenario "Valuation tag instructions stay visible after adding a tag" do
+      budget_investment = create(:budget_investment)
+
+      visit edit_admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within "#admin_valuation_tags" do
+        expect(page).to have_css ".help-text", text: "Write the tags you want separated by commas (,)"
+        expect(page).not_to have_css "input[placeholder]"
+
+        fill_in_tag_list "Refugees"
+
+        expect(page).to have_css ".item[data-value='Refugees']"
+        expect(page).to have_css ".help-text", text: "Write the tags you want separated by commas (,)"
+      end
+    end
+
     scenario "Adds existing valuation tags" do
       budget_investment1 = create(:budget_investment)
       budget_investment1.set_tag_list_on(:valuation_tags, "Education, Health")
