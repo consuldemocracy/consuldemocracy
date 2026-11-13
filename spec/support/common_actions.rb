@@ -103,4 +103,15 @@ module CommonActions
       click_button "Remove"
     end
   end
+
+  def with_sleep_after_validations(model, &block)
+    sleep_a_bit = -> { sleep 0.2 }
+    model.set_callback(:validation, :after, sleep_a_bit)
+
+    begin
+      block.call
+    ensure
+      model.skip_callback(:validation, :after, sleep_a_bit)
+    end
+  end
 end

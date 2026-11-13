@@ -16,7 +16,7 @@ module RemoteCensusMock
     xml = File.read(file_fixture("remote_census_api/invalid.xml"))
 
     Signature.new.document_types.each do |document_type|
-      get_document_number_variants(document_type, "12345678Z").each do
+      document_number_variants(document_type, "12345678Z").each do
         mock_remote_census_response(xml)
       end
     end
