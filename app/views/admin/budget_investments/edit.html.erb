@@ -82,7 +82,7 @@
           <%= f.text_field :valuation_tag_list,
                            value: @investment.valuation_tag_list.sort.join(","),
                            label: false,
-                           placeholder: t("admin.budget_investments.edit.tags_placeholder"),
+                           hint: t("admin.budget_investments.edit.tags_placeholder"),
                            class: "js-tag-list",
                            data: { remove_tag_text: t("sdg.related_list_selector.remove_tag") } %>
         </div>

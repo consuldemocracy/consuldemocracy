@@ -1,6 +1,6 @@
 <div class="taggable-fields">
   <%= form.label :tag_list, tags_label %>
-  <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
+  <p class="help-text"><%= tags_instructions %></p>
 
   <% if categories.any? %>
     <div id="category_tags" class="tags">
@@ -21,8 +21,7 @@
 
   <%= form.text_field :tag_list, value: tag_list_value,
                                  label: false,
-                                 placeholder: tags_placeholder,
+                                 hint: tags_placeholder,
                                  class: "js-tag-list",
-                                 aria: { describedby: "tag-list-help-text" },
                                  data: tag_list_data %>
 </div>
