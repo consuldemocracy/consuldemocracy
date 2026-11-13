@@ -173,13 +173,15 @@ $table-header:   #ecf1f6;
     }
 
     [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]),
-    select {
+    select,
+    .ts-control {
       background-color: $white;
       border: $admin-border;
       border-radius: rem-calc(6);
       box-shadow: none;
 
-      &:focus {
+      &:focus,
+      &:focus-within {
         border: $input-border-focus;
       }
     }

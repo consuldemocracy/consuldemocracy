@@ -297,7 +297,7 @@ describe "SDG Relations" do
 
       visit sdg_management_edit_legislation_process_path(process)
 
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2, 1.1.1, ")
+      fill_in "Goals and Targets", with: "1.2, 2, 1.1.1, "
 
       click_button "Update Process"
 
@@ -339,7 +339,7 @@ describe "SDG Relations" do
       debate = create(:sdg_review, relatable: create(:debate, title: "SDG debate")).relatable
 
       visit sdg_management_edit_debate_path(debate, filter: "sdg_reviewed")
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2.1,")
+      fill_in "Goals and Targets", with: "1.2, 2.1,"
       click_button "Update Debate"
 
       expect(page).not_to have_content "Debate updated successfully and marked as reviewed"
@@ -358,19 +358,19 @@ describe "SDG Relations" do
       visit sdg_management_edit_legislation_process_path(process)
 
       fill_in "Goals and Targets", with: "3"
-      within(".amsify-list") { find(:css, "[data-val='3']").click }
+      within(".ts-dropdown") { find("[data-value='3']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "SDG3" }
 
       fill_in "Goals and Targets", with: "1.1"
-      within(".amsify-list") { find(:css, "[data-val='1.1']").click }
+      within(".ts-dropdown") { find("[data-value='1.1']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "1.1" }
 
       fill_in "Goals and Targets", with: "1.1.1"
-      within(".amsify-list") { find(:css, "[data-val='1.1.1']").click }
+      within(".ts-dropdown") { find("[data-value='1.1.1']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "1.1.1" }
 
       click_button "Update Process"
 
@@ -384,13 +384,60 @@ describe "SDG Relations" do
       end
     end
 
+    scenario "allows adding a goal by typing its full title" do
+      process = create(:legislation_process, title: "SDG process")
+
+      visit sdg_management_edit_legislation_process_path(process)
+      fill_in "Goals and Targets", with: "1. No Poverty,"
+
+      within(".sdg-related-list-selector .ts-control") { expect(page).to have_content "SDG1" }
+      expect(find("input[data-code='1']")).to be_checked
+
+      click_button "Update Process"
+
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1"
+      end
+    end
+
+    scenario "allows adding a target by typing its code and pressing enter" do
+      create(:sdg_local_target, code: "1.1.1")
+      process = create(:legislation_process)
+
+      visit sdg_management_edit_legislation_process_path(process)
+      fill_in "Goals and Targets", with: "1.1"
+
+      expect(page).to have_css ".ts-dropdown [data-value='1.1.1']"
+
+      find_field("Goals and Targets").send_keys :enter
+
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).to have_css ".item", count: 1
+        expect(page).to have_css ".item[data-value='1.1']"
+      end
+    end
+
+    scenario "describes the goals and targets field" do
+      process = create(:legislation_process)
+
+      visit sdg_management_edit_legislation_process_path(process)
+
+      description_id = find_field("Goals and Targets")["aria-describedby"]
+
+      expect(page).to have_css "##{description_id}", text: "You can introduce the code of a specific goal"
+    end
+
     scenario "allows adding only white list suggestions" do
       process = create(:legislation_process, title: "SDG process")
 
       visit sdg_management_edit_legislation_process_path(process)
       fill_in "Goals and Targets", with: "tag nonexistent,"
 
-      within(".amsify-suggestags-input-area") { expect(page).not_to have_content "tag nonexistent" }
+      within(".sdg-related-list-selector .ts-control") { expect(page).not_to have_content "tag nonexistent" }
     end
 
     describe "by clicking on a Goal icon" do

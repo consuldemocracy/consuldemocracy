@@ -122,6 +122,24 @@ describe Taggable::FieldsComponent do
     expect(page).to have_content "Categories"
   end
 
+  it "shows how to enter tags in a hint instead of a placeholder" do
+    component = Taggable::FieldsComponent.new(
+      form,
+      categories: ["Health"],
+      i18n_namespace: "proposals.form"
+    )
+
+    render_inline component
+
+    instructions = "Tag this proposal. You can choose from proposed categories or add your own"
+    entry_hint = "Enter the tags you would like to use, separated by commas (',')"
+
+    expect(page).to have_css ".help-text", text: instructions
+    expect(page).to have_css "#proposal_tag_list_help_text", text: entry_hint
+    expect(page).to have_css "input.js-tag-list[aria-describedby='proposal_tag_list_help_text']"
+    expect(page).not_to have_css "input[placeholder]"
+  end
+
   it "prefills the tag list from the form object without quotes" do
     component = Taggable::FieldsComponent.new(
       form,

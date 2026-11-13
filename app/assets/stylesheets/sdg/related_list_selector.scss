@@ -1,18 +1,15 @@
 .sdg-related-list-selector {
-
-  @include amsify-suggestags-input-area;
   clear: both;
 
   > legend {
     margin-bottom: 0;
   }
 
-  .amsify-suggestags-area .amsify-select-tag {
-    color: $sdg-text;
-
+  .ts-control .item {
     @each $code, $color in $sdg-colors {
-      &[data-val^="#{$code}"] {
+      &[data-value^="#{$code}"] {
         background-color: $color;
+        color: $sdg-text;
       }
     }
   }
@@ -53,10 +50,6 @@
 
   .input-section {
     margin-bottom: calc(2 * $line-height / 3);
-  }
-
-  .remove-tag {
-    color: $sdg-text;
   }
 
   h3 {
