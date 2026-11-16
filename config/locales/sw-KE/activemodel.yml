@@ -1,1 +1,6 @@
 sw:
+  activemodel:
+    models:
+      verification:
+        residence: "Makazi"
+        sms: "SMS"
