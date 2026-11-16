@@ -28,4 +28,14 @@ describe "rake db:seed" do
       end
     end
   end
+
+  it "includes the voice input section in the accessibility page" do
+    SiteCustomization::Page.destroy_all
+    load Rails.root.join("db", "pages.rb")
+
+    page = SiteCustomization::Page.find_by(slug: "accessibility")
+
+    expect(page.content).to include "Voice input (dictation)"
+    expect(page.content).to include "Windows key + H"
+  end
 end

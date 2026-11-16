@@ -6,6 +6,8 @@ Consul Democracy no incluye ningún reconocimiento de voz propio. No graba, reci
 
 Para que los usuarios conozcan esta opción, el campo de descripción de los formularios para crear propuestas, debates, proyectos de gasto y propuestas de legislación colaborativa muestra una breve indicación: "Puedes dictar con la escritura por voz de tu dispositivo." Puedes cambiar el texto de la indicación como se explica en [Traducciones y textos](../customization/translations.md) (el identificador es `shared.voice_input_hint`).
 
+La página de accesibilidad por defecto, enlazada desde el pie de página, también tiene una breve sección sobre la entrada por voz. Esta página se guarda en la base de datos y solo se crea en las instalaciones nuevas. Si tu instalación ya tiene una página de accesibilidad, puedes añadir la sección editando la página en el área de administración.
+
 Esta página explica cómo usar el dictado integrado en cada sistema operativo. Puedes compartir estos pasos con tus usuarios o enlazar esta página desde tus propias páginas de ayuda.
 
 ## Resumen

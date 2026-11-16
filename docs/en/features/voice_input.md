@@ -6,6 +6,8 @@ Consul Democracy does not include any speech recognition of its own. It does not
 
 To let users know about this option, the description field of the forms to create proposals, debates, budget investments and collaborative legislation proposals shows a short hint: "You can dictate using your device's voice typing." You can change the text of the hint as explained in [Translations and texts](../customization/translations.md) (the identifier is `shared.voice_input_hint`).
 
+The default accessibility page, which is linked from the footer, also has a short section about voice input. This page is stored in the database and only created for new installations. If your installation already has an accessibility page, you can add the section by editing the page in the administration area.
+
 This page explains how to use the dictation built into each operating system. You can share these steps with your users, or link to this page from your own help pages.
 
 ## Overview
