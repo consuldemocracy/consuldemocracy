@@ -20,10 +20,10 @@ class Signature < ApplicationRecord
     if document_owner.present?
       assign_user_and_vote(user: document_owner)
     else
-      response = census_response
+      response, document_type = census_response_and_document_type
 
       if response
-        assign_user_and_vote(user: create_user(response))
+        assign_user_and_vote(user: create_user(response, document_type))
       end
     end
   end
@@ -47,10 +47,11 @@ class Signature < ApplicationRecord
     vote&.update!(signature: self)
   end
 
-  def create_user(census_response)
-    user_params = { document_number: document_number, created_from_signature: true }
-
-    User.create_from_census_response!(census_response, user_params)
+  def create_user(census_response, document_type)
+    User.create_from_census_response!(census_response,
+                                      document_number: document_number,
+                                      document_type: document_type,
+                                      created_from_signature: true)
   end
 
   def document_types
@@ -59,10 +60,10 @@ class Signature < ApplicationRecord
 
   private
 
-    def census_response
+    def census_response_and_document_type
       document_types.each do |document_type|
         response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
-        return response if response.valid?
+        return [response, document_type] if response.valid?
       end
 
       nil

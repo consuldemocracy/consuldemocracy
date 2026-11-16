@@ -231,7 +231,8 @@ describe Signature do
         signature.verify
 
         user = User.last
-        expect(user.document_number).to eq("12345678Z")
+        expect(user.document_number).to eq "12345678Z"
+        expect(user.document_type).to eq "1"
         expect(user.created_from_signature).to be true
         expect(user.verified_at).to be
         expect(user.erased_at).to be
@@ -270,6 +271,21 @@ describe Signature do
         signature.verify
 
         expect(signature.user).to be_valid
+      end
+    end
+
+    context "unregistered user in the local census" do
+      before { create(:local_census_record, document_number: "99999999R", document_type: "3") }
+
+      it "creates a user with the document type found in the census" do
+        signature = create(:signature, document_number: "99999999R")
+
+        signature.verify
+        user = User.last
+
+        expect(user.document_number).to eq "99999999R"
+        expect(user.document_type).to eq "3"
+        expect(user.created_from_signature).to be true
       end
     end
 
