@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include Verification
-  include HasDocumentNumber
+  include HasDocumentNumberAndDocumentType
 
   attribute :registering_from_web, default: false
   %i[newsletter email_digest email_on_direct_message public_activity recommended_debates
@@ -172,11 +172,12 @@ class User < ApplicationRecord
   end
 
   def self.with_document_lock(document_type, document_number, &block)
+    normalized_type = normalize_value_for(:document_type, document_type)
     normalized_number = normalize_value_for(:document_number, document_number)
 
     return block.call if normalized_number.nil?
 
-    lock_id = Zlib.crc32("users:#{document_type}:#{normalized_number}")
+    lock_id = Zlib.crc32("users:#{normalized_type}:#{normalized_number}")
     sleep 0.01 until connection.get_advisory_lock(lock_id)
 
     begin

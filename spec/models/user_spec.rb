@@ -49,6 +49,15 @@ describe User do
     expect(new_user).not_to be_valid
   end
 
+  it "is not valid when document number and document type only differ in whitespaces" do
+    user = create(:user, :level_two)
+
+    new_user = build(:user, document_number: " " + user.document_number + " ",
+                            document_type: " " + user.document_type + " ")
+
+    expect(new_user).not_to be_valid
+  end
+
   describe "#terms" do
     it "is not valid without accepting the terms of service" do
       subject.terms_of_service = nil
@@ -708,6 +717,20 @@ describe User do
         end.each(&:join)
 
         expect(User.where(document_number: "").count).to eq 1
+      end
+    end
+
+    it "does not create two users when the document type only differs in whitespace", :race_condition do
+      with_sleep_after_validations(User) do
+        ["1", " 1 "].map do |document_type|
+          Thread.new do
+            User.create_from_census_response!(response,
+                                              document_type: document_type,
+                                              document_number: "12345678Z")
+          end
+        end.each(&:join)
+
+        expect(User.by_document("1", "12345678Z").count).to eq 1
       end
     end
 

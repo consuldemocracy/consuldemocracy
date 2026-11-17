@@ -3,10 +3,10 @@ class Verification::Residence
   include ActiveModel::Attributes
   include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
-  include HasDocumentNumber
+  include HasDocumentNumberAndDocumentType
 
   attribute :date_of_birth, :date
-  attr_accessor :user, :document_type, :postal_code, :terms_of_service
+  attr_accessor :user, :postal_code, :terms_of_service
 
   validates :document_number, presence: true
   validates :document_type, presence: true

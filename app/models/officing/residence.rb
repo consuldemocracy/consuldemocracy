@@ -3,10 +3,10 @@ class Officing::Residence
   include ActiveModel::Attributes
   include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
-  include HasDocumentNumber
+  include HasDocumentNumberAndDocumentType
 
   attribute :date_of_birth, :date
-  attr_accessor :user, :officer, :document_type, :year_of_birth, :postal_code
+  attr_accessor :user, :officer, :year_of_birth, :postal_code
 
   before_validation :retrieve_census_data
 
