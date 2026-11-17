@@ -68,8 +68,45 @@ describe Management::UsersController do
       end.to change { User.count }.by(1)
     end
 
+    it "creates a new user when a hidden erased one existed" do
+      erased_user = create(:user, :level_two, :hidden, erased_at: 1.month.ago)
+
+      expect do
+        post :create, params: {
+          user: {
+            document_type: erased_user.document_type,
+            document_number: erased_user.document_number,
+            username: "newuser",
+            email: "newuser@consul.dev",
+            date_of_birth: 20.years.from_now.to_date
+          }
+        }
+      end.to change { User.count }.by(1)
+
+      expect(erased_user.reload.document_number).to be_blank
+      expect(erased_user).to be_hidden
+    end
+
     it "takes votes from an erased user" do
       erased_user = create(:user, :level_two, erased_at: 1.month.ago)
+      vote = create(:vote, voter: erased_user)
+
+      post :create, params: {
+        user: {
+          document_type: erased_user.document_type,
+          document_number: erased_user.document_number,
+          username: "newuser",
+          email: "newuser@consul.dev",
+          date_of_birth: 20.years.from_now.to_date
+        }
+      }
+
+      expect(response).to be_successful
+      expect(vote.reload.voter.email).to eq "newuser@consul.dev"
+    end
+
+    it "takes votes from an erased hidden user" do
+      erased_user = create(:user, :level_two, :hidden, erased_at: 1.month.ago)
       vote = create(:vote, voter: erased_user)
 
       post :create, params: {

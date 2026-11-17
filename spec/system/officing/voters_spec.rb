@@ -32,6 +32,26 @@ describe "Voters" do
     expect(page).not_to have_button "Confirm vote"
   end
 
+  scenario "A hidden user can vote" do
+    create(:user, :level_two, :hidden, document_number: "12345678Z", document_type: "1")
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content "Polls"
+    expect(page).to have_content poll.name
+
+    click_button "Confirm vote"
+
+    expect(page).to have_content "Vote introduced!"
+    expect(page).not_to have_button "Confirm vote"
+
+    refresh
+
+    expect(page).to have_content "Has already participated in this poll"
+    expect(page).not_to have_button "Confirm vote"
+  end
+
   scenario "Cannot vote" do
     unvotable_poll = create(:poll, geozone_restricted_to: [create(:geozone, census_code: "02")])
     create(:poll_officer_assignment, officer: officer, poll: unvotable_poll, booth: booth)

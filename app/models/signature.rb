@@ -15,7 +15,7 @@ class Signature < ApplicationRecord
   delegate :signable, to: :signature_sheet
 
   def verify
-    document_owner = User.find_by(document_number: document_number)
+    document_owner = User.with_hidden.find_by(document_number: document_number)
 
     if document_owner.present?
       assign_user_and_vote(user: document_owner)

@@ -40,6 +40,14 @@ describe Verification::Residence do
       expect(residence.errors[:document_number]).to include("has already been taken")
     end
 
+    it "validates uniqueness of document_number for hidden users" do
+      create(:user, :hidden, document_number: residence.document_number,
+                             document_type: residence.document_type)
+
+      expect(residence).not_to be_valid
+      expect(residence.errors[:document_number]).to include("has already been taken")
+    end
+
     it "validates census terms" do
       residence.terms_of_service = nil
       expect(residence).not_to be_valid

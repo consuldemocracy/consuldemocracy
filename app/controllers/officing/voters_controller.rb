@@ -6,13 +6,13 @@ class Officing::VotersController < Officing::BaseController
   before_action :verify_booth
 
   def new
-    @user = User.find(params[:id])
+    @user = User.with_hidden.find(params[:id])
     @polls = current_booth.polls.current
   end
 
   def create
     @poll = Poll.find(voter_params[:poll_id])
-    @user = User.find(voter_params[:user_id])
+    @user = User.with_hidden.find(voter_params[:user_id])
 
     @voter = Poll::Voter.create_with(
       document_type: @user.document_type,

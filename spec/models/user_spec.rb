@@ -39,6 +39,16 @@ describe User do
     expect(subject).to be_valid
   end
 
+  it "is not valid when a deleted user has the same document number and document type" do
+    user = create(:user, :level_two)
+    user.hide
+
+    new_user = build(:user, document_number: user.document_number,
+                            document_type: user.document_type)
+
+    expect(new_user).not_to be_valid
+  end
+
   describe "#terms" do
     it "is not valid without accepting the terms of service" do
       subject.terms_of_service = nil
@@ -711,6 +721,16 @@ describe User do
       expect(User.count).to eq 1
     end
 
+    it "returns the existing user even when the user is hidden" do
+      existing_user = create(:user, :hidden, document_type: "1", document_number: "12345678Z")
+      user = User.create_from_census_response!(response,
+                                               document_type: "1",
+                                               document_number: "12345678Z")
+
+      expect(user).to eq existing_user
+      expect(User.with_hidden.count).to eq 1
+    end
+
     it "creates a new user when the document number is nil" do
       existing = create(:user, document_number: nil)
       user = User.create_from_census_response!(response)
@@ -1073,6 +1093,21 @@ describe User do
 
       expect(Poll::Voter.where(user: user_1).count).to eq(0)
       expect(Poll::Voter.where(user: user_2).count).to eq(1)
+    end
+
+    it "takes votes from a hidden erased user with received document" do
+      user_1 = create(:user, :level_two, :hidden, document_number: "12345777", document_type: "1")
+      user_2 = create(:user)
+
+      create(:vote, voter: user_1)
+
+      user_1.erase
+
+      user_2.take_votes_if_erased_document("1", "12345777")
+
+      expect(user_1.votes.count).to eq 0
+      expect(user_2.votes.count).to eq 1
+      expect(user_1.reload.document_number).to be_blank
     end
 
     it "removes document from erased user and logs info" do

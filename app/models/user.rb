@@ -86,7 +86,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
-  validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
+  validates :document_number, uniqueness: { scope: :document_type, conditions: -> { with_hidden }},
+                              allow_nil: true
 
   validate :validate_username_length
 
@@ -168,7 +169,7 @@ class User < ApplicationRecord
   def self.find_user_by_document_if_present(document_type, document_number)
     return if normalize_value_for(:document_number, document_number).blank?
 
-    by_document(document_type, document_number).first
+    with_hidden.by_document(document_type, document_number).first
   end
 
   def self.with_document_lock(document_type, document_number, &block)
@@ -343,8 +344,8 @@ class User < ApplicationRecord
   end
 
   def nullify_erased_user_document(document_type, document_number)
-    erased_user = User.erased.find_by(document_number: document_number,
-                                      document_type: document_type)
+    erased_user = User.with_hidden.erased.find_by(document_number: document_number,
+                                                  document_type: document_type)
     if erased_user.present?
       erased_user.update!(document_number: nil, document_type: nil)
       erased_user

@@ -289,6 +289,35 @@ describe Signature do
       end
     end
 
+    context "hidden user" do
+      it "creates a vote without restoring the account" do
+        user = create(:user, :level_two, :hidden, document_number: "12345678Z")
+        signature = create(:signature, document_number: user.document_number)
+
+        signature.verify
+
+        expect(signature.reload).to be_verified
+        expect(signature.user_id).to eq user.id
+        expect(Vote.where(votable: signature.signable, voter: user).count).to eq 1
+        expect(User.ids).not_to include user.id
+        expect(User.only_hidden).to eq [user]
+      end
+
+      it "does not create a second vote when the user has already voted" do
+        user = create(:user, :level_two, :hidden, document_number: "12345678Z")
+        signature = create(:signature, document_number: user.document_number)
+        create(:vote, voter: user, votable: signature.signable)
+
+        signature.verify
+
+        expect(signature.reload).to be_verified
+        expect(signature.user_id).to eq user.id
+        expect(Vote.where(votable: signature.signable, voter: user).count).to eq 1
+        expect(User.ids).not_to include user.id
+        expect(User.only_hidden).to eq [user]
+      end
+    end
+
     describe "document in census" do
       it "calls assign_vote_to_user" do
         signature = create(:signature, document_number: "12345678Z")

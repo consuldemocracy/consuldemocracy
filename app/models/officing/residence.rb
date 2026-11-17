@@ -24,7 +24,7 @@ class Officing::Residence
   def save
     return false unless valid?
 
-    document_owner = User.by_document(document_type, document_number).first
+    document_owner = User.with_hidden.by_document(document_type, document_number).first
 
     if document_owner.present?
       self.user = document_owner

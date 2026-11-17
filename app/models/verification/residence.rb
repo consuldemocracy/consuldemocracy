@@ -48,7 +48,7 @@ class Verification::Residence
   end
 
   def document_number_uniqueness
-    if User.active.where(document_number: document_number).any?
+    if User.with_hidden.active.where(document_number: document_number).any?
       errors.add(:document_number, I18n.t("errors.messages.taken"))
     end
   end
