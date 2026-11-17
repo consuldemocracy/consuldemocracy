@@ -3,11 +3,9 @@ class Verification::Residence
   include ActiveModel::Attributes
   include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
+  include HasDocumentNumber
 
   attribute :date_of_birth, :date
-  attribute :document_number, :string
-  normalizes :document_number, with: DocumentNumberNormalizer
-
   attr_accessor :user, :document_type, :postal_code, :terms_of_service
 
   validates :document_number, presence: true
