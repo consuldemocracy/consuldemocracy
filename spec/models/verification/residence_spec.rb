@@ -241,6 +241,35 @@ describe Verification::Residence do
       expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
     end
+
+    it "takes votes from an erased user" do
+      user = create(:user)
+      erased_user = create(:user, erased_at: 1.month.ago,
+                                  document_number: residence.document_number,
+                                  document_type: residence.document_type)
+      vote = create(:vote, voter: erased_user)
+
+      residence.user = user
+      residence.save!
+
+      expect(vote.reload.voter).to eq user
+    end
+
+    it "does not take votes from an erased user if there are validation errors" do
+      user = create(:user)
+      erased_user = create(:user, erased_at: 1.month.ago,
+                                  document_number: residence.document_number,
+                                  document_type: residence.document_type)
+      vote = create(:vote, voter: erased_user)
+      user.singleton_class.validate do
+        errors.add(:document_number, :taken) if document_number.present?
+      end
+
+      residence.user = user
+      residence.save!
+
+      expect(vote.reload.voter).to eq erased_user
+    end
   end
 
   describe "tries" do
