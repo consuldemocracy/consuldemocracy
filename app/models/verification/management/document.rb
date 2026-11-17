@@ -1,9 +1,11 @@
 class Verification::Management::Document
   include ActiveModel::Model
   include ActiveModel::Attributes
+  include ActiveModel::Attributes::Normalization
+  include HasDocumentNumberAndDocumentType
 
   attribute :date_of_birth, :date
-  attr_accessor :document_type, :document_number, :postal_code
+  attr_accessor :postal_code
 
   validates :document_type, :document_number, presence: true
   validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }

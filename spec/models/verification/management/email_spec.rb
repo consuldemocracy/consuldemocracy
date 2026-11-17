@@ -36,6 +36,16 @@ describe Verification::Management::Email do
                                                  document_number: "5678",
                                                  email: user.email)).not_to be_valid
     end
+
+    it "is valid when document number and type only differ in whitespace" do
+      user = create(:user, document_number: "1234", document_type: "1")
+
+      verification = Verification::Management::Email.new(document_type: " 1 ",
+                                                         document_number: " 1234 ",
+                                                         email: user.email)
+
+      expect(verification).to be_valid
+    end
   end
 
   describe "#save" do
@@ -126,6 +136,23 @@ describe Verification::Management::Email do
         expect(results).to match_array [true, false]
         expect(User.by_document("1", "1234").count).to eq 1
       end
+    end
+  end
+
+  describe "document number and type normalization" do
+    it "upcases document number" do
+      document = Verification::Management::Email.new(document_number: "x1234567z")
+      expect(document.document_number).to eq("X1234567Z")
+    end
+
+    it "removes all characters except numbers and letters" do
+      document = Verification::Management::Email.new(document_number: " 12.345.678 - B")
+      expect(document.document_number).to eq("12345678B")
+    end
+
+    it "strips leading and trailing whitespace from the document type" do
+      verification = Verification::Management::Email.new(document_type: " 1 ")
+      expect(verification.document_type).to eq "1"
     end
   end
 end
