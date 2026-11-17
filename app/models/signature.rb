@@ -18,10 +18,14 @@ class Signature < ApplicationRecord
     if user_exists?
       assign_vote_to_user
       mark_as_verified
-    elsif in_census?
-      create_user
-      assign_vote_to_user
-      mark_as_verified
+    else
+      response = census_response
+
+      if response
+        create_user(response)
+        assign_vote_to_user
+        mark_as_verified
+      end
     end
   end
 
@@ -52,24 +56,10 @@ class Signature < ApplicationRecord
     User.where(document_number: document_number).any?
   end
 
-  def create_user
+  def create_user(census_response)
     user_params = { document_number: document_number, created_from_signature: true }
 
-    User.create_from_census_response!(@census_api_response, user_params)
-  end
-
-  def in_census?
-    document_types.find do |document_type|
-      response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
-      if response.valid?
-        @census_api_response = response
-        true
-      else
-        false
-      end
-    end
-
-    @census_api_response.present?
+    User.create_from_census_response!(census_response, user_params)
   end
 
   def set_user
@@ -84,4 +74,15 @@ class Signature < ApplicationRecord
   def document_types
     %w[1 2 3 4]
   end
+
+  private
+
+    def census_response
+      document_types.each do |document_type|
+        response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
+        return response if response.valid?
+      end
+
+      nil
+    end
 end
