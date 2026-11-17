@@ -293,12 +293,37 @@ class User < ApplicationRecord
     sdg_manager&.destroy!
   end
 
+  def update_and_take_votes_if_erased_document(document_type, document_number, **attributes)
+    with_transaction_returning_status do
+      take_votes_if_erased_document(document_type, document_number)
+
+      update(document_number: document_number, document_type: document_type, **attributes)
+    end
+  end
+
+  def save_and_take_votes_if_erased_document
+    with_transaction_returning_status do
+      erased_user = nullify_erased_user_document(document_type, document_number)
+
+      if save
+        take_votes_from(erased_user)
+        true
+      else
+        false
+      end
+    end
+  end
+
   def take_votes_if_erased_document(document_type, document_number)
+    take_votes_from(nullify_erased_user_document(document_type, document_number))
+  end
+
+  def nullify_erased_user_document(document_type, document_number)
     erased_user = User.erased.find_by(document_number: document_number,
                                       document_type: document_type)
     if erased_user.present?
-      take_votes_from(erased_user)
       erased_user.update!(document_number: nil, document_type: nil)
+      erased_user
     end
   end
 

@@ -77,5 +77,32 @@ describe Verification::Management::Email do
                                                        email: user.email)
       expect(validation.save).to be false
     end
+
+    it "takes votes from an erased user" do
+      user = create(:user)
+      erased_user = create(:user, :level_two, erased_at: 1.month.ago)
+      vote = create(:vote, voter: erased_user)
+      email = Verification::Management::Email.new(document_type: erased_user.document_type,
+                                                  document_number: erased_user.document_number,
+                                                  email: user.email)
+
+      email.save!
+
+      expect(vote.reload.voter).to eq user
+    end
+
+    it "does not take votes from an erased user if there are validation errors" do
+      user = create(:user)
+      erased_user = create(:user, :level_two, erased_at: 1.month.ago)
+      vote = create(:vote, voter: erased_user)
+      email = Verification::Management::Email.new(document_type: erased_user.document_type,
+                                                  document_number: erased_user.document_number,
+                                                  email: user.email)
+      allow_any_instance_of(User).to receive(:update).and_return(false)
+
+      email.save!
+
+      expect(vote.reload.voter).to eq erased_user
+    end
   end
 end
