@@ -293,7 +293,7 @@ class User < ApplicationRecord
     sdg_manager&.destroy!
   end
 
-  def take_votes_if_erased_document(document_number, document_type)
+  def take_votes_if_erased_document(document_type, document_number)
     erased_user = User.erased.find_by(document_number: document_number,
                                       document_type: document_type)
     if erased_user.present?

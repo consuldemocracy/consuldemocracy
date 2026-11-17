@@ -977,7 +977,7 @@ describe User do
       create(:budget_ballot, user: user_1)
       create(:poll_voter, user: user_1)
 
-      user_2.take_votes_if_erased_document(111, 1)
+      user_2.take_votes_if_erased_document(1, 111)
 
       expect(user_1.votes.count).to eq(1)
       expect(user_2.votes.count).to eq(0)
@@ -999,7 +999,7 @@ describe User do
 
       user_1.erase
 
-      user_2.take_votes_if_erased_document("12345777", "1")
+      user_2.take_votes_if_erased_document("1", "12345777")
 
       expect(user_1.votes.count).to eq(0)
       expect(user_2.votes.count).to eq(1)
@@ -1016,7 +1016,7 @@ describe User do
       user_2 = create(:user)
       user_1.erase
 
-      user_2.take_votes_if_erased_document("12345777", "1")
+      user_2.take_votes_if_erased_document("1", "12345777")
 
       expect(user_2.reload.former_users_data_log).to include("id: #{user_1.id}")
       expect(user_1.reload.document_number).to be_blank

@@ -26,7 +26,7 @@ class Verification::Residence
     return false unless valid?
 
     user.with_transaction_returning_status do
-      user.take_votes_if_erased_document(document_number, document_type)
+      user.take_votes_if_erased_document(document_type, document_number)
 
       user.update(document_number: document_number,
                   document_type: document_type,
