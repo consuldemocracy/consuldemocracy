@@ -173,7 +173,7 @@ describe Signature do
         signature = create(:signature, document_number: user.document_number)
 
         2.times.map do
-          Thread.new { signature.assign_vote_to_user }
+          Thread.new { signature.verify }
         end.each(&:join)
 
         votes = Vote.where(voter: user, votable: signature.signable)
@@ -190,8 +190,8 @@ describe Signature do
                                         document_number: user.document_number)
 
         [
-          Thread.new { signature.assign_vote_to_user },
-          Thread.new { signature2.assign_vote_to_user }
+          Thread.new { signature.verify },
+          Thread.new { signature2.verify }
         ].each(&:join)
 
         votes = Vote.where(voter: user, votable: [investment, investment2])

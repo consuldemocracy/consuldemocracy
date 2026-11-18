@@ -15,14 +15,17 @@ class Signature < ApplicationRecord
   delegate :signable, to: :signature_sheet
 
   def verify
-    if user_exists?
+    document_owner = User.find_by(document_number: document_number)
+
+    if document_owner.present?
+      update(user: document_owner)
       assign_vote_to_user
       mark_as_verified
     else
       response = census_response
 
       if response
-        create_user(response)
+        update(user: create_user(response))
         assign_vote_to_user
         mark_as_verified
       end
@@ -30,8 +33,6 @@ class Signature < ApplicationRecord
   end
 
   def assign_vote_to_user
-    set_user
-
     if signable.is_a? Budget::Investment
       user.with_lock do
         if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
@@ -52,19 +53,10 @@ class Signature < ApplicationRecord
     vote&.update!(signature: self)
   end
 
-  def user_exists?
-    User.where(document_number: document_number).any?
-  end
-
   def create_user(census_response)
     user_params = { document_number: document_number, created_from_signature: true }
 
     User.create_from_census_response!(census_response, user_params)
-  end
-
-  def set_user
-    user = User.find_by(document_number: document_number)
-    update(user: user)
   end
 
   def mark_as_verified
