@@ -431,6 +431,37 @@ describe "SDG Relations" do
       expect(page).to have_css "##{description_id}", text: "You can introduce the code of a specific goal"
     end
 
+    scenario "selects existing goals and targets separated by mobile commas" do
+      process = create(:legislation_process, title: "SDG process")
+
+      visit sdg_management_edit_legislation_process_path(process)
+      type_mobile_comma "Goals and Targets", "1.1"
+      type_mobile_comma "Goals and Targets", "2"
+
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).to have_css ".item", count: 2
+        expect(page).to have_css ".item[data-value='1.1']"
+        expect(page).to have_css ".item[data-value='2']"
+      end
+
+      type_mobile_comma "Goals and Targets", "tag nonexistent"
+
+      within(".sdg-related-list-selector .ts-control") do
+        expect(page).to have_css ".item", count: 2
+        expect(page).not_to have_content "tag nonexistent"
+      end
+
+      click_button "Update Process"
+
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1, 2"
+        expect(page).to have_css "td", exact_text: "1.1"
+      end
+    end
 
     scenario "allows adding only white list suggestions" do
       process = create(:legislation_process, title: "SDG process")

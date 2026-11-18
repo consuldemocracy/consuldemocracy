@@ -14,6 +14,35 @@
 
       input.setAttribute("aria-hidden", "true");
 
+      control.control_input.addEventListener("input", function(event) {
+        var pending;
+
+        if (event.isComposing) {
+          return;
+        }
+
+        if (event.inputType === "insertFromPaste" || event.inputType === "insertFromDrop") {
+          return;
+        }
+
+        if (event.data !== ",") {
+          return;
+        }
+
+        pending = control.inputValue();
+
+        if (pending.slice(-1) !== ",") {
+          return;
+        }
+
+        pending = pending.slice(0, -1).trim();
+        control.setTextboxValue("");
+
+        if (pending) {
+          control.createItem(pending);
+        }
+      });
+
       App.ListField.sync_checkboxes(control, settings);
 
       return control;
