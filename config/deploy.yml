@@ -9,7 +9,12 @@ ssh:
 servers:
   web:
     - <%= ENV.fetch("DEPLOY_HOST") %>
-
+  cron:
+    hosts:
+      - <%= ENV.fetch("KAMAL_HOST") %>
+    cmd: bash -c "bundle exec whenever --roles cron --update-crontab && (env && crontab -l) | crontab - && cron -f"
+    options:
+      user: root
 registry:
   username: <%= ENV.fetch("KAMAL_REGISTRY_USERNAME") %>
   password:

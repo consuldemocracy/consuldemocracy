@@ -87,6 +87,7 @@ WORKDIR $RAILS_ROOT
 RUN apt-get update && apt-get install -y --no-install-recommends \
     imagemagick \
     libpq5 \
+    cron \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --system --gid 10001 app \
     && useradd --system \
