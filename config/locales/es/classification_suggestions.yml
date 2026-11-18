@@ -1,0 +1,7 @@
+es:
+  classification_suggestions:
+    errors:
+      messages:
+        llm_not_configured: El LLM no está configurado correctamente. Por favor, contacta con un administrador.
+        generic: Algo salió mal al generar sugerencias. Por favor, inténtalo de nuevo.
+        blank_draft: Añade un título, resumen o descripción antes de solicitar sugerencias.
