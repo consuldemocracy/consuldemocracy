@@ -1,11 +1,12 @@
 class Taggable::FieldsComponent < ApplicationComponent
-  attr_reader :form, :i18n_namespace, :autocomplete
+  attr_reader :form, :i18n_namespace, :autocomplete, :ai_suggestions
 
-  def initialize(form, i18n_namespace:, categories: nil, autocomplete: true)
+  def initialize(form, i18n_namespace:, categories: nil, autocomplete: true, ai_suggestions: false)
     @form = form
     @i18n_namespace = i18n_namespace
     @categories = categories
     @autocomplete = autocomplete
+    @ai_suggestions = ai_suggestions
   end
 
   def categories
@@ -46,5 +47,17 @@ class Taggable::FieldsComponent < ApplicationComponent
 
     def tag_category_label
       t("#{i18n_namespace}.tag_category_label")
+    end
+
+    def show_ai_suggestions?
+      ai_suggestions &&
+        ::Llm::Config.configured? &&
+        Setting["llm.use_ai_classification_suggestions"].present?
+    end
+
+    def suggest_button_data
+      data = { resource_type: form.object.class.name }
+      data[:resource_id] = form.object.id if form.object.persisted?
+      data
     end
 end
