@@ -72,6 +72,67 @@ describe "Tags" do
     expect(page).to have_content "Impuestos"
   end
 
+  scenario "Create tags separated by commas from a mobile keyboard" do
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in_new_debate_title with: "Title"
+    fill_in_ckeditor "Initial debate text", with: "Description"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
+    type_mobile_comma "Tags", "agua"
+    type_mobile_comma "Tags", "potable"
+
+    expect(page).to have_css ".taggable-fields .item", count: 2
+    expect(page).to have_css ".item[data-value='agua']"
+    expect(page).to have_css ".item[data-value='potable']"
+
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+
+    within(".tags") do
+      expect(page).to have_link "agua"
+      expect(page).to have_link "potable"
+    end
+  end
+
+  scenario "Does not create a tag for a mid-text or composing comma" do
+    login_as(create(:user))
+
+    visit new_debate_path
+
+    execute_script(<<~JS, find_field("Tags"))
+      var input = arguments[0];
+
+      input.focus();
+      input.value = "ag,ua";
+      input.dispatchEvent(new InputEvent("input", {
+        bubbles: true,
+        data: ",",
+        inputType: "insertText"
+      }));
+    JS
+
+    expect(page).not_to have_css ".taggable-fields .item"
+    expect(find_field("Tags").value).to eq "ag,ua"
+
+    execute_script(<<~JS, find_field("Tags"))
+      var input = arguments[0];
+
+      input.focus();
+      input.value = "agua,";
+      input.dispatchEvent(new InputEvent("input", {
+        bubbles: true,
+        data: ",",
+        inputType: "insertCompositionText",
+        isComposing: true
+      }));
+    JS
+
+    expect(page).not_to have_css ".taggable-fields .item"
+    expect(find_field("Tags").value).to eq "agua,"
+  end
+
   scenario "Create with too many tags" do
     user = create(:user)
     login_as(user)
