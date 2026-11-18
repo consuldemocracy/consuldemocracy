@@ -18,6 +18,28 @@
 
       input.setAttribute("aria-hidden", "true");
 
+      control.control_input.addEventListener("input", function(event) {
+        var value;
+
+        if (event.isComposing) {
+          return;
+        }
+
+        if (event.inputType === "insertFromPaste" || event.inputType === "insertFromDrop") {
+          return;
+        }
+
+        value = control.inputValue();
+
+        if (event.data !== "," || !value.endsWith(",")) {
+          return;
+        }
+
+        // Leave the typed text for createItem, as Tom Select does on keypress.
+        control.setTextboxValue(value.slice(0, -1));
+        control.createItem();
+      });
+
       App.ListField.sync_checkboxes(control, settings);
 
       return control;
