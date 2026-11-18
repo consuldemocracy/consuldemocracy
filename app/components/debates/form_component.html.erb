@@ -27,7 +27,8 @@
   <fieldset>
     <legend><%= t("shared.optional") %></legend>
 
-    <%= render Taggable::FieldsComponent.new(f, categories: [], i18n_namespace: "debates.form") %>
+    <%= render Taggable::FieldsComponent.new(f, categories: [], i18n_namespace: "debates.form",
+                                                ai_suggestions: true) %>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
   </fieldset>

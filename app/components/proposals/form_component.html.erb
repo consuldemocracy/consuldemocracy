@@ -54,7 +54,8 @@
 
     <%= render MapLocations::FormFieldsComponent.new(f, map_location: map_location) %>
 
-    <%= render Taggable::FieldsComponent.new(f, i18n_namespace: "proposals.form") %>
+    <%= render Taggable::FieldsComponent.new(f, i18n_namespace: "proposals.form",
+                                                ai_suggestions: true) %>
 
     <% if current_user.unverified? %>
       <div>

@@ -1,6 +1,14 @@
 <div class="taggable-fields">
-  <%= form.label :tag_list, tags_label %>
-  <p class="help-text"><%= tags_instructions %></p>
+  <div class="taggable-fields-heading <%= "taggable-fields-heading-with-suggest" if show_ai_suggestions? %>">
+    <h3><%= form.label :tag_list, tags_label %></h3>
+    <% if show_ai_suggestions? %>
+      <%= button_tag t("classification_suggestions.suggest_tags"),
+                     type: "button",
+                     class: "button small suggest-classification",
+                     data: suggest_button_data %>
+    <% end %>
+  </div>
+  <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
 
   <% if categories.any? %>
     <div id="category_tags" class="tags">
@@ -15,8 +23,6 @@
         <%= label_tag checkbox_id, name %>
       <% end %>
     </div>
-
-    <br>
   <% end %>
 
   <%= form.text_field :tag_list, value: tag_list_value,
@@ -24,4 +30,19 @@
                                  hint: tags_placeholder,
                                  class: "js-tag-list",
                                  data: tag_list_data %>
+
+  <% if show_ai_suggestions? %>
+    <div class="classification-suggestions-tags classification-suggestions hide"
+         role="region"
+         aria-label="<%= t("classification_suggestions.tags_region") %>"
+         data-title="<%= t("classification_suggestions.tags_title") %>"
+         data-accept-all="<%= t("classification_suggestions.accept_all") %>"
+         data-close="<%= t("classification_suggestions.close") %>"
+         data-loading="<%= t("classification_suggestions.loading") %>"
+         data-empty="<%= t("classification_suggestions.empty") %>"
+         data-error="<%= t("classification_suggestions.error") %>">
+      <div class="classification-suggestions-body"></div>
+      <%= render "shared/classification_suggestion_template" %>
+    </div>
+  <% end %>
 </div>
