@@ -1,0 +1,7 @@
+en:
+  classification_suggestions:
+    errors:
+      messages:
+        llm_not_configured: LLM is not properly configured. Please contact an administrator.
+        generic: Something went wrong generating suggestions. Please try again.
+        blank_draft: Please add a title, summary or description before requesting suggestions.

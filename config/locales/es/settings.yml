@@ -252,3 +252,5 @@ es:
       model_description: "El modelo LLM a usar."
       use_ai_image_suggestions: "Sugerencias de Imágenes con IA"
       use_ai_image_suggestions_description: "Permitir a los usuarios usar IA para sugerir imágenes de Pexels, en lugar de subir las suyas propias."
+      use_ai_classification_suggestions: "Sugerencias de Clasificación con IA"
+      use_ai_classification_suggestions_description: "Permitir a los usuarios obtener sugerencias de IA para categorías, etiquetas y ODS en los formularios de propuestas e inversiones."
