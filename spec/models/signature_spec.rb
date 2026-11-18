@@ -169,6 +169,16 @@ describe Signature do
         expect(Vote.last.signature).to eq(signature)
       end
 
+      it "does not update the signature when assigning the vote raises an exception" do
+        signature = create(:signature, document_number: user.document_number)
+        allow(signature).to receive(:assign_vote_to_user).and_raise "Not assigned!"
+
+        expect { signature.verify }.to raise_error "Not assigned!"
+
+        expect(signature.reload.user).to be nil
+        expect(signature).not_to be_verified
+      end
+
       it "does not create two votes when calling the method twice at the same time", :race_condition do
         signature = create(:signature, document_number: user.document_number)
 
@@ -197,6 +207,18 @@ describe Signature do
         votes = Vote.where(voter: user, votable: [investment, investment2])
         expect(votes.count).to eq 1
         expect([signature, signature2]).to include votes.first.signature
+      end
+
+      it "does not create two users when signing twice at the same time", :race_condition do
+        signature = create(:signature, document_number: "12345678Z")
+        signature2 = create(:signature, document_number: "12345678Z")
+
+        [
+          Thread.new { signature.verify },
+          Thread.new { signature2.verify }
+        ].each(&:join)
+
+        expect(User.by_document("1", "12345678Z").count).to eq 1
       end
     end
 
@@ -231,6 +253,15 @@ describe Signature do
         signature.verify
 
         expect(Vote.last.signature).to eq(signature)
+      end
+
+      it "does not update the signature when assigning the vote raises an exception" do
+        allow(signature).to receive(:assign_vote_to_user).and_raise "Not assigned!"
+
+        expect { signature.verify }.to raise_error "Not assigned!"
+
+        expect(signature.reload.user).to be nil
+        expect(signature).not_to be_verified
       end
 
       it "generates a complex password for the user" do

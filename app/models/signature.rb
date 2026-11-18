@@ -18,16 +18,12 @@ class Signature < ApplicationRecord
     document_owner = User.find_by(document_number: document_number)
 
     if document_owner.present?
-      update(user: document_owner)
-      assign_vote_to_user
-      mark_as_verified
+      assign_user_and_vote(user: document_owner)
     else
       response = census_response
 
       if response
-        update(user: create_user(response))
-        assign_vote_to_user
-        mark_as_verified
+        assign_user_and_vote(user: create_user(response))
       end
     end
   end
@@ -41,10 +37,8 @@ class Signature < ApplicationRecord
         end
       end
     else
-      transaction do
-        signable.register_vote(user, "yes")
-        assign_signature_to_vote
-      end
+      signable.register_vote(user, "yes")
+      assign_signature_to_vote
     end
   end
 
@@ -57,10 +51,6 @@ class Signature < ApplicationRecord
     user_params = { document_number: document_number, created_from_signature: true }
 
     User.create_from_census_response!(census_response, user_params)
-  end
-
-  def mark_as_verified
-    update(verified: true)
   end
 
   def document_types
@@ -76,5 +66,12 @@ class Signature < ApplicationRecord
       end
 
       nil
+    end
+
+    def assign_user_and_vote(user:)
+      transaction do
+        update(user: user, verified: true)
+        assign_vote_to_user
+      end
     end
 end
