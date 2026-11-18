@@ -24,8 +24,10 @@ class Officing::Residence
   def save
     return false unless valid?
 
-    if user_exists?
-      self.user = find_user_by_document
+    document_owner = User.by_document(document_type, document_number).first
+
+    if document_owner.present?
+      self.user = document_owner
       user.update!(verified_at: Time.current)
     else
       user_params = {
@@ -52,14 +54,6 @@ class Officing::Residence
       year_of_birth: year_of_birth,
       poll_officer: officer
     )
-  end
-
-  def user_exists?
-    find_user_by_document.present?
-  end
-
-  def find_user_by_document
-    User.find_by(document_number: document_number, document_type: document_type)
   end
 
   def local_residence
