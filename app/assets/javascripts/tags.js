@@ -5,13 +5,9 @@
       $(".taggable-fields").each(function() {
         var $input = $(this).find("input.js-tag-list");
 
-        App.AmsifyListField.mount($input, {
-          whiteList: false,
-          checkboxes: $(this).find("input.js-tag-category"),
-          classes: {
-            sTagsInput: ".js-tag-list-input"
-          },
-          suggestionsUrl: $input.data("suggestions-url")
+        App.ListField.mount($input, {
+          create: true,
+          checkboxes: $(this).find("input.js-tag-category")
         });
       });
     }
