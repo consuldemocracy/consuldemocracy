@@ -36,6 +36,16 @@ describe Verification::Management::Email do
                                                  document_number: "5678",
                                                  email: user.email)).not_to be_valid
     end
+
+    it "is valid when document number and type only differ in whitespace" do
+      user = create(:user, document_number: "1234", document_type: "1")
+
+      verification = Verification::Management::Email.new(document_type: " 1 ",
+                                                         document_number: " 1234 ",
+                                                         email: user.email)
+
+      expect(verification).to be_valid
+    end
   end
 
   describe "#save" do
@@ -67,6 +77,82 @@ describe Verification::Management::Email do
       expect(user.reload).to be_level_two_verified
       expect(user.document_type).to eq("1")
       expect(user.document_number).to eq("1234")
+    end
+
+    it "returns false when the document number is already in use" do
+      create(:user, document_type: "1", document_number: "1234")
+      user = create(:user)
+      validation = Verification::Management::Email.new(document_type: "1",
+                                                       document_number: "1234",
+                                                       email: user.email)
+      expect(validation.save).to be false
+    end
+
+    it "takes votes from an erased user" do
+      user = create(:user)
+      erased_user = create(:user, :level_two, erased_at: 1.month.ago)
+      vote = create(:vote, voter: erased_user)
+      email = Verification::Management::Email.new(document_type: erased_user.document_type,
+                                                  document_number: erased_user.document_number,
+                                                  email: user.email)
+
+      email.save!
+
+      expect(vote.reload.voter).to eq user
+    end
+
+    it "does not take votes from an erased user if there are validation errors" do
+      user = create(:user)
+      erased_user = create(:user, :level_two, erased_at: 1.month.ago)
+      vote = create(:vote, voter: erased_user)
+      email = Verification::Management::Email.new(document_type: erased_user.document_type,
+                                                  document_number: erased_user.document_number,
+                                                  email: user.email)
+      allow_any_instance_of(User).to receive(:update).and_return(false)
+
+      email.save!
+
+      expect(vote.reload.voter).to eq erased_user
+    end
+
+    it "does not create two users when calling the method twice at the same time", :race_condition do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      mail = double(:mail)
+      allow(mail).to receive(:deliver_later)
+      allow(Mailer).to receive(:email_verification).and_return(mail)
+
+      with_sleep_after_validations(User) do
+        results = [user1, user2].map do |user|
+          Thread.new do
+            validation = Verification::Management::Email.new(document_type: "1",
+                                                             document_number: "1234",
+                                                             email: user.email)
+            validation.save
+          end
+        end.map(&:value)
+
+        expect(results).to match_array [true, false]
+        expect(User.by_document("1", "1234").count).to eq 1
+      end
+    end
+  end
+
+  describe "document number and type normalization" do
+    it "upcases document number" do
+      document = Verification::Management::Email.new(document_number: "x1234567z")
+      expect(document.document_number).to eq("X1234567Z")
+    end
+
+    it "removes all characters except numbers and letters" do
+      document = Verification::Management::Email.new(document_number: " 12.345.678 - B")
+      expect(document.document_number).to eq("12345678B")
+    end
+
+    it "strips leading and trailing whitespace from the document type" do
+      verification = Verification::Management::Email.new(document_type: " 1 ")
+      expect(verification.document_type).to eq "1"
     end
   end
 end

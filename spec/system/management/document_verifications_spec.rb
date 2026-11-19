@@ -12,6 +12,17 @@ describe "DocumentVerifications" do
     expect(page).to have_content "already verified"
   end
 
+  scenario "Verifying a level 3 hidden user shows an 'already verified' page" do
+    user = create(:user, :level_three, :hidden)
+
+    login_as create(:manager).user
+    visit management_document_verifications_path
+    fill_in "document_verification_document_number", with: user.document_number
+    click_button "Check document"
+
+    expect(page).to have_content "already verified"
+  end
+
   scenario "Verifying a level 2 user displays the verification form" do
     user = create(:user, :level_two)
 

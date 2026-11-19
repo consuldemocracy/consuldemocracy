@@ -113,4 +113,30 @@ describe Verification::Management::Document do
       end
     end
   end
+
+  describe "document_number and document_type normalization" do
+    it "upcases document number" do
+      document = Verification::Management::Document.new(document_number: "x1234567z")
+      expect(document.document_number).to eq("X1234567Z")
+    end
+
+    it "removes all characters except numbers and letters" do
+      document = Verification::Management::Document.new(document_number: " 12.345.678 - B")
+      expect(document.document_number).to eq("12345678B")
+    end
+
+    it "strips leading and trailing whitespace from the document type" do
+      verification = Verification::Management::Document.new(document_type: " 1 ")
+      expect(verification.document_type).to eq "1"
+    end
+
+    it "passes the normalized document type and number to the census caller" do
+      verification = Verification::Management::Document.new(document_type: " 1 ")
+      census_caller = instance_double(CensusCaller)
+      allow(CensusCaller).to receive(:new).and_return(census_caller)
+
+      expect(census_caller).to receive(:call).with("1", any_args).and_return(double(valid?: false))
+      verification.in_census?
+    end
+  end
 end

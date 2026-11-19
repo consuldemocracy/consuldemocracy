@@ -3,12 +3,10 @@ class Verification::Residence
   include ActiveModel::Attributes
   include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
+  include HasDocumentNumberAndDocumentType
 
   attribute :date_of_birth, :date
-  attribute :document_number, :string
-  normalizes :document_number, with: DocumentNumberNormalizer
-
-  attr_accessor :user, :document_type, :postal_code, :terms_of_service
+  attr_accessor :user, :postal_code, :terms_of_service
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -25,14 +23,16 @@ class Verification::Residence
   def save
     return false unless valid?
 
-    user.take_votes_if_erased_document(document_number, document_type)
-
-    user.update(document_number: document_number,
-                document_type: document_type,
-                geozone: geozone,
-                date_of_birth: date_of_birth.in_time_zone.to_datetime,
-                gender: gender,
-                residence_verified_at: Time.current)
+    User.with_document_lock(document_type, document_number) do
+      user.update_and_take_votes_if_erased_document(
+        document_type,
+        document_number,
+        geozone: geozone,
+        date_of_birth: date_of_birth.in_time_zone.to_datetime,
+        gender: gender,
+        residence_verified_at: Time.current
+      )
+    end
   end
 
   def save!
@@ -46,7 +46,7 @@ class Verification::Residence
   end
 
   def document_number_uniqueness
-    if User.active.where(document_number: document_number).any?
+    if User.with_hidden.active.where(document_number: document_number).any?
       errors.add(:document_number, I18n.t("errors.messages.taken"))
     end
   end

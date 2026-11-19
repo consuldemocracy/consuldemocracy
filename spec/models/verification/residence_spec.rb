@@ -40,6 +40,14 @@ describe Verification::Residence do
       expect(residence.errors[:document_number]).to include("has already been taken")
     end
 
+    it "validates uniqueness of document_number for hidden users" do
+      create(:user, :hidden, document_number: residence.document_number,
+                             document_type: residence.document_type)
+
+      expect(residence).not_to be_valid
+      expect(residence.errors[:document_number]).to include("has already been taken")
+    end
+
     it "validates census terms" do
       residence.terms_of_service = nil
       expect(residence).not_to be_valid
@@ -240,6 +248,50 @@ describe Verification::Residence do
       expect(user.date_of_birth.day).to eq(31)
       expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
+    end
+
+    it "takes votes from an erased user" do
+      user = create(:user)
+      erased_user = create(:user, erased_at: 1.month.ago,
+                                  document_number: residence.document_number,
+                                  document_type: residence.document_type)
+      vote = create(:vote, voter: erased_user)
+
+      residence.user = user
+      residence.save!
+
+      expect(vote.reload.voter).to eq user
+    end
+
+    it "does not take votes from an erased user if there are validation errors" do
+      user = create(:user)
+      erased_user = create(:user, erased_at: 1.month.ago,
+                                  document_number: residence.document_number,
+                                  document_type: residence.document_type)
+      vote = create(:vote, voter: erased_user)
+      user.singleton_class.validate do
+        errors.add(:document_number, :taken) if document_number.present?
+      end
+
+      residence.user = user
+      residence.save!
+
+      expect(vote.reload.voter).to eq erased_user
+    end
+
+    it "does not create two users when calling the method twice at the same time", :race_condition do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      with_sleep_after_validations(User) do
+        [user1, user2].map do |user|
+          Thread.new do
+            build(:verification_residence, user: user, document_type: "1", document_number: "12345678Z").save
+          end
+        end.each(&:join)
+
+        expect(User.by_document("1", "12345678Z").count).to eq 1
+      end
     end
   end
 

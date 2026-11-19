@@ -191,6 +191,19 @@ describe Officing::Residence do
       expect(user.geozone).to eq(geozone)
     end
 
+    it "finds an existing hidden user without restoring the account" do
+      user = create(:user, :hidden, document_number: "12345678Z", document_type: "1")
+
+      residence = build(:officing_residence, document_number: user.document_number,
+                                             document_type: user.document_type)
+      residence.save!
+
+      expect(residence.user).to eq user
+      expect(user.reload.verified_at).to be_present
+      expect(User.ids).not_to include user.id
+      expect(User.only_hidden).to eq [user]
+    end
+
     it "makes half-verified users fully verified" do
       user = create(:user,
                     residence_verified_at: Time.current,

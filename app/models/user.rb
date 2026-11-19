@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+  include HasDocumentNumberAndDocumentType
 
   attribute :registering_from_web, default: false
   %i[newsletter email_digest email_on_direct_message public_activity recommended_debates
@@ -86,7 +87,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
-  validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
+  validates :document_number, uniqueness: { scope: :document_type, conditions: -> { with_hidden }},
+                              allow_nil: true
 
   validate :validate_username_length
 
@@ -94,8 +96,6 @@ class User < ApplicationRecord
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates_associated :organization, message: false
-
-  normalizes :document_number, with: DocumentNumberNormalizer
 
   accepts_nested_attributes_for :organization, update_only: true
 
@@ -150,16 +150,41 @@ class User < ApplicationRecord
   end
 
   def self.create_from_census_response!(response, params = {})
-    create!({
-      verified_at: Time.current,
-      erased_at: Time.current,
-      password: random_password,
-      terms_of_service: "1",
-      email: nil,
-      gender: response.gender,
-      date_of_birth: response.date_of_birth.in_time_zone.to_datetime,
-      geozone: Geozone.find_by(census_code: response.district_code)
-    }.merge(params))
+    with_document_lock(params[:document_type], params[:document_number]) do
+      find_user_by_document_if_present(params[:document_type], params[:document_number]) ||
+        create!({
+          verified_at: Time.current,
+          erased_at: Time.current,
+          password: random_password,
+          terms_of_service: "1",
+          email: nil,
+          gender: response.gender,
+          date_of_birth: response.date_of_birth.in_time_zone.to_datetime,
+          geozone: Geozone.find_by(census_code: response.district_code)
+        }.merge(params))
+    end
+  end
+
+  def self.find_user_by_document_if_present(document_type, document_number)
+    return if normalize_value_for(:document_number, document_number).blank?
+
+    with_hidden.by_document(document_type, document_number).first
+  end
+
+  def self.with_document_lock(document_type, document_number, &block)
+    normalized_type = normalize_value_for(:document_type, document_type)
+    normalized_number = normalize_value_for(:document_number, document_number)
+
+    return block.call if normalized_number.nil?
+
+    lock_id = Zlib.crc32("users:#{normalized_type}:#{normalized_number}")
+    sleep 0.01 until connection.get_advisory_lock(lock_id)
+
+    begin
+      block.call
+    ensure
+      connection.release_advisory_lock(lock_id)
+    end
   end
 
   def name
@@ -293,12 +318,37 @@ class User < ApplicationRecord
     sdg_manager&.destroy!
   end
 
-  def take_votes_if_erased_document(document_number, document_type)
-    erased_user = User.erased.find_by(document_number: document_number,
-                                      document_type: document_type)
+  def update_and_take_votes_if_erased_document(document_type, document_number, **attributes)
+    with_transaction_returning_status do
+      take_votes_if_erased_document(document_type, document_number)
+
+      update(document_number: document_number, document_type: document_type, **attributes)
+    end
+  end
+
+  def save_and_take_votes_if_erased_document
+    with_transaction_returning_status do
+      erased_user = nullify_erased_user_document(document_type, document_number)
+
+      if save
+        take_votes_from(erased_user)
+        true
+      else
+        false
+      end
+    end
+  end
+
+  def take_votes_if_erased_document(document_type, document_number)
+    take_votes_from(nullify_erased_user_document(document_type, document_number))
+  end
+
+  def nullify_erased_user_document(document_type, document_number)
+    erased_user = User.with_hidden.erased.find_by(document_number: document_number,
+                                                  document_type: document_type)
     if erased_user.present?
-      take_votes_from(erased_user)
       erased_user.update!(document_number: nil, document_type: nil)
+      erased_user
     end
   end
 

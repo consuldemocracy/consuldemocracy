@@ -1,4 +1,6 @@
 class Signature < ApplicationRecord
+  include HasDocumentNumber
+
   belongs_to :signature_sheet
   belongs_to :user
 
@@ -7,27 +9,26 @@ class Signature < ApplicationRecord
   validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   validates :signature_sheet, presence: true
 
-  normalizes :document_number, with: DocumentNumberNormalizer
-
   scope :verified,   -> { where(verified: true) }
   scope :unverified, -> { where(verified: false) }
 
   delegate :signable, to: :signature_sheet
 
   def verify
-    if user_exists?
-      assign_vote_to_user
-      mark_as_verified
-    elsif in_census?
-      create_user
-      assign_vote_to_user
-      mark_as_verified
+    document_owner = User.with_hidden.find_by(document_number: document_number)
+
+    if document_owner.present?
+      assign_user_and_vote(user: document_owner)
+    else
+      response, document_type = census_response_and_document_type
+
+      if response
+        assign_user_and_vote(user: create_user(response, document_type))
+      end
     end
   end
 
   def assign_vote_to_user
-    set_user
-
     if signable.is_a? Budget::Investment
       user.with_lock do
         if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
@@ -36,10 +37,8 @@ class Signature < ApplicationRecord
         end
       end
     else
-      transaction do
-        signable.register_vote(user, "yes")
-        assign_signature_to_vote
-      end
+      signable.register_vote(user, "yes")
+      assign_signature_to_vote
     end
   end
 
@@ -48,40 +47,32 @@ class Signature < ApplicationRecord
     vote&.update!(signature: self)
   end
 
-  def user_exists?
-    User.where(document_number: document_number).any?
-  end
-
-  def create_user
-    user_params = { document_number: document_number, created_from_signature: true }
-
-    User.create_from_census_response!(@census_api_response, user_params)
-  end
-
-  def in_census?
-    document_types.find do |document_type|
-      response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
-      if response.valid?
-        @census_api_response = response
-        true
-      else
-        false
-      end
-    end
-
-    @census_api_response.present?
-  end
-
-  def set_user
-    user = User.find_by(document_number: document_number)
-    update(user: user)
-  end
-
-  def mark_as_verified
-    update(verified: true)
+  def create_user(census_response, document_type)
+    User.create_from_census_response!(census_response,
+                                      document_number: document_number,
+                                      document_type: document_type,
+                                      created_from_signature: true)
   end
 
   def document_types
     %w[1 2 3 4]
   end
+
+  private
+
+    def census_response_and_document_type
+      document_types.each do |document_type|
+        response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
+        return [response, document_type] if response.valid?
+      end
+
+      nil
+    end
+
+    def assign_user_and_vote(user:)
+      transaction do
+        update(user: user, verified: true)
+        assign_vote_to_user
+      end
+    end
 end

@@ -39,6 +39,25 @@ describe User do
     expect(subject).to be_valid
   end
 
+  it "is not valid when a deleted user has the same document number and document type" do
+    user = create(:user, :level_two)
+    user.hide
+
+    new_user = build(:user, document_number: user.document_number,
+                            document_type: user.document_type)
+
+    expect(new_user).not_to be_valid
+  end
+
+  it "is not valid when document number and document type only differ in whitespaces" do
+    user = create(:user, :level_two)
+
+    new_user = build(:user, document_number: " " + user.document_number + " ",
+                            document_type: " " + user.document_type + " ")
+
+    expect(new_user).not_to be_valid
+  end
+
   describe "#terms" do
     it "is not valid without accepting the terms of service" do
       subject.terms_of_service = nil
@@ -669,6 +688,94 @@ describe User do
     end
   end
 
+  describe ".create_from_census_response!" do
+    before { create(:geozone, census_code: "01") }
+    let(:response) { double(gender: "V", date_of_birth: 30.years.ago.to_date, district_code: "01") }
+
+    it "does not create two users when calling the method twice at the same time", :race_condition do
+      2.times.map do
+        Thread.new do
+          User.create_from_census_response!(response,
+                                            document_type: "1",
+                                            document_number: "12345678Z")
+        end
+      end.each(&:join)
+
+      expect(User.by_document("1", "12345678Z").count).to eq 1
+    end
+
+    it "does not create two users with a blank-normalizing document at the same time", :race_condition do
+      with_sleep_after_validations(User) do
+        ["Á}!", "#é?"].map do |document_number|
+          Thread.new do
+            User.create_from_census_response!(response,
+                                              document_type: "1",
+                                              document_number: document_number)
+          rescue ActiveRecord::RecordInvalid
+            nil
+          end
+        end.each(&:join)
+
+        expect(User.where(document_number: "").count).to eq 1
+      end
+    end
+
+    it "does not create two users when the document type only differs in whitespace", :race_condition do
+      with_sleep_after_validations(User) do
+        ["1", " 1 "].map do |document_type|
+          Thread.new do
+            User.create_from_census_response!(response,
+                                              document_type: document_type,
+                                              document_number: "12345678Z")
+          end
+        end.each(&:join)
+
+        expect(User.by_document("1", "12345678Z").count).to eq 1
+      end
+    end
+
+    it "returns the existing user given an existing document" do
+      existing_user = create(:user, document_type: "1", document_number: "12345678Z")
+      user = User.create_from_census_response!(response,
+                                               document_type: "1",
+                                               document_number: "12345678Z")
+
+      expect(user).to eq existing_user
+      expect(User.count).to eq 1
+    end
+
+    it "returns the existing user even when the user is hidden" do
+      existing_user = create(:user, :hidden, document_type: "1", document_number: "12345678Z")
+      user = User.create_from_census_response!(response,
+                                               document_type: "1",
+                                               document_number: "12345678Z")
+
+      expect(user).to eq existing_user
+      expect(User.with_hidden.count).to eq 1
+    end
+
+    it "creates a new user when the document number is nil" do
+      existing = create(:user, document_number: nil)
+      user = User.create_from_census_response!(response)
+
+      expect(User.count).to eq 2
+      expect(user.id).to be_present
+      expect(user.id).not_to eq existing.id
+      expect(user.document_type).to be nil
+      expect(user.document_number).to be nil
+    end
+
+    it "tries to create a new user when the normalized document number is blank" do
+      create(:user, document_number: "Á}!")
+
+      expect do
+        User.create_from_census_response!(response, document_number: "Á}!")
+      end.to raise_error ActiveRecord::RecordInvalid
+
+      expect(User.count).to eq 1
+    end
+  end
+
   describe "#erase" do
     it "erases user information and marks him as erased" do
       user = create(:user,
@@ -977,7 +1084,7 @@ describe User do
       create(:budget_ballot, user: user_1)
       create(:poll_voter, user: user_1)
 
-      user_2.take_votes_if_erased_document(111, 1)
+      user_2.take_votes_if_erased_document(1, 111)
 
       expect(user_1.votes.count).to eq(1)
       expect(user_2.votes.count).to eq(0)
@@ -999,7 +1106,7 @@ describe User do
 
       user_1.erase
 
-      user_2.take_votes_if_erased_document("12345777", "1")
+      user_2.take_votes_if_erased_document("1", "12345777")
 
       expect(user_1.votes.count).to eq(0)
       expect(user_2.votes.count).to eq(1)
@@ -1011,12 +1118,27 @@ describe User do
       expect(Poll::Voter.where(user: user_2).count).to eq(1)
     end
 
+    it "takes votes from a hidden erased user with received document" do
+      user_1 = create(:user, :level_two, :hidden, document_number: "12345777", document_type: "1")
+      user_2 = create(:user)
+
+      create(:vote, voter: user_1)
+
+      user_1.erase
+
+      user_2.take_votes_if_erased_document("1", "12345777")
+
+      expect(user_1.votes.count).to eq 0
+      expect(user_2.votes.count).to eq 1
+      expect(user_1.reload.document_number).to be_blank
+    end
+
     it "removes document from erased user and logs info" do
       user_1 = create(:user, document_number: "12345777", document_type: "1")
       user_2 = create(:user)
       user_1.erase
 
-      user_2.take_votes_if_erased_document("12345777", "1")
+      user_2.take_votes_if_erased_document("1", "12345777")
 
       expect(user_2.reload.former_users_data_log).to include("id: #{user_1.id}")
       expect(user_1.reload.document_number).to be_blank

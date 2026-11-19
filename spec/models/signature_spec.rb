@@ -169,11 +169,21 @@ describe Signature do
         expect(Vote.last.signature).to eq(signature)
       end
 
+      it "does not update the signature when assigning the vote raises an exception" do
+        signature = create(:signature, document_number: user.document_number)
+        allow(signature).to receive(:assign_vote_to_user).and_raise "Not assigned!"
+
+        expect { signature.verify }.to raise_error "Not assigned!"
+
+        expect(signature.reload.user).to be nil
+        expect(signature).not_to be_verified
+      end
+
       it "does not create two votes when calling the method twice at the same time", :race_condition do
         signature = create(:signature, document_number: user.document_number)
 
         2.times.map do
-          Thread.new { signature.assign_vote_to_user }
+          Thread.new { signature.verify }
         end.each(&:join)
 
         votes = Vote.where(voter: user, votable: signature.signable)
@@ -190,13 +200,25 @@ describe Signature do
                                         document_number: user.document_number)
 
         [
-          Thread.new { signature.assign_vote_to_user },
-          Thread.new { signature2.assign_vote_to_user }
+          Thread.new { signature.verify },
+          Thread.new { signature2.verify }
         ].each(&:join)
 
         votes = Vote.where(voter: user, votable: [investment, investment2])
         expect(votes.count).to eq 1
         expect([signature, signature2]).to include votes.first.signature
+      end
+
+      it "does not create two users when signing twice at the same time", :race_condition do
+        signature = create(:signature, document_number: "12345678Z")
+        signature2 = create(:signature, document_number: "12345678Z")
+
+        [
+          Thread.new { signature.verify },
+          Thread.new { signature2.verify }
+        ].each(&:join)
+
+        expect(User.by_document("1", "12345678Z").count).to eq 1
       end
     end
 
@@ -209,7 +231,8 @@ describe Signature do
         signature.verify
 
         user = User.last
-        expect(user.document_number).to eq("12345678Z")
+        expect(user.document_number).to eq "12345678Z"
+        expect(user.document_type).to eq "1"
         expect(user.created_from_signature).to be true
         expect(user.verified_at).to be
         expect(user.erased_at).to be
@@ -233,12 +256,65 @@ describe Signature do
         expect(Vote.last.signature).to eq(signature)
       end
 
+      it "does not update the signature when assigning the vote raises an exception" do
+        allow(signature).to receive(:assign_vote_to_user).and_raise "Not assigned!"
+
+        expect { signature.verify }.to raise_error "Not assigned!"
+
+        expect(signature.reload.user).to be nil
+        expect(signature).not_to be_verified
+      end
+
       it "generates a complex password for the user" do
         stub_secrets(security: { password_complexity: true })
 
         signature.verify
 
         expect(signature.user).to be_valid
+      end
+    end
+
+    context "unregistered user in the local census" do
+      before { create(:local_census_record, document_number: "99999999R", document_type: "3") }
+
+      it "creates a user with the document type found in the census" do
+        signature = create(:signature, document_number: "99999999R")
+
+        signature.verify
+        user = User.last
+
+        expect(user.document_number).to eq "99999999R"
+        expect(user.document_type).to eq "3"
+        expect(user.created_from_signature).to be true
+      end
+    end
+
+    context "hidden user" do
+      it "creates a vote without restoring the account" do
+        user = create(:user, :level_two, :hidden, document_number: "12345678Z")
+        signature = create(:signature, document_number: user.document_number)
+
+        signature.verify
+
+        expect(signature.reload).to be_verified
+        expect(signature.user_id).to eq user.id
+        expect(Vote.where(votable: signature.signable, voter: user).count).to eq 1
+        expect(User.ids).not_to include user.id
+        expect(User.only_hidden).to eq [user]
+      end
+
+      it "does not create a second vote when the user has already voted" do
+        user = create(:user, :level_two, :hidden, document_number: "12345678Z")
+        signature = create(:signature, document_number: user.document_number)
+        create(:vote, voter: user, votable: signature.signable)
+
+        signature.verify
+
+        expect(signature.reload).to be_verified
+        expect(signature.user_id).to eq user.id
+        expect(Vote.where(votable: signature.signable, voter: user).count).to eq 1
+        expect(User.ids).not_to include user.id
+        expect(User.only_hidden).to eq [user]
       end
     end
 

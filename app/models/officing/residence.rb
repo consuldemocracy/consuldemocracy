@@ -3,12 +3,10 @@ class Officing::Residence
   include ActiveModel::Attributes
   include ActiveModel::Attributes::Normalization
   include ActiveModel::Validations::Callbacks
+  include HasDocumentNumberAndDocumentType
 
   attribute :date_of_birth, :date
-  attribute :document_number, :string
-  normalizes :document_number, with: DocumentNumberNormalizer
-
-  attr_accessor :user, :officer, :document_type, :year_of_birth, :postal_code
+  attr_accessor :user, :officer, :year_of_birth, :postal_code
 
   before_validation :retrieve_census_data
 
@@ -24,8 +22,10 @@ class Officing::Residence
   def save
     return false unless valid?
 
-    if user_exists?
-      self.user = find_user_by_document
+    document_owner = User.with_hidden.by_document(document_type, document_number).first
+
+    if document_owner.present?
+      self.user = document_owner
       user.update!(verified_at: Time.current)
     else
       user_params = {
@@ -52,14 +52,6 @@ class Officing::Residence
       year_of_birth: year_of_birth,
       poll_officer: officer
     )
-  end
-
-  def user_exists?
-    find_user_by_document.present?
-  end
-
-  def find_user_by_document
-    User.find_by(document_number: document_number, document_type: document_type)
   end
 
   def local_residence

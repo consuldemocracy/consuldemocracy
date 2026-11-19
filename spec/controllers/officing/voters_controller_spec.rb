@@ -56,5 +56,21 @@ describe Officing::VotersController do
       expect(existing.origin).to eq "web"
       expect(existing.document_number).to eq "11223344Z"
     end
+
+    it "creates a vote for a hidden user without restoring the account" do
+      user = create(:user, :level_two, :hidden)
+      poll = create(:poll)
+
+      booth = create(:poll_booth)
+      create(:poll_booth_assignment, poll: poll, booth: booth)
+      create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
+
+      post :create, params: { voter: { poll_id: poll.id, user_id: user.id }, format: :js }
+
+      expect(response).to be_successful
+      expect(Poll::Voter.where(poll: poll, user: user).count).to eq 1
+      expect(User.ids).not_to include user.id
+      expect(User.only_hidden).to eq [user]
+    end
   end
 end
