@@ -64,6 +64,9 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   # config.action_controller.raise_on_missing_callback_actions = true
 
+  # Don't rotate the log file on CI
+  config.log_file_size = nil if ENV["CI"].present?
+
   # Allow managing different tenants using the same application
   config.multitenancy = true
 
