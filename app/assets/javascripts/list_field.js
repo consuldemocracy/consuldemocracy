@@ -118,10 +118,9 @@
           control.removeItem(value);
         }
       }).on("keydown", function(event) {
-        if (event.keyCode === 13) {
+        if (event.key === "Enter") {
           $(this).trigger("click");
           event.preventDefault();
-          event.stopPropagation();
         }
       });
 

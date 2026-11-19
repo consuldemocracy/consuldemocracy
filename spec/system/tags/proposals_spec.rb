@@ -118,6 +118,25 @@ describe "Tags" do
     expect(page).to have_unchecked_field "Education"
   end
 
+  scenario "Select a category tag with the Enter key without submitting" do
+    create(:tag, :category, name: "Education")
+
+    login_as(create(:user))
+    visit new_proposal_path
+
+    page.execute_script(<<~JS)
+      document.querySelector("form.proposal-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.body.dataset.formSubmitted = "true";
+      });
+    JS
+
+    find_field("Education", visible: :all).send_keys :enter
+
+    expect(page).not_to have_css "body[data-form-submitted]"
+    expect(page).to have_css ".item[data-value='Education']"
+  end
+
   scenario "Create with too many tags" do
     user = create(:user)
     login_as(user)
