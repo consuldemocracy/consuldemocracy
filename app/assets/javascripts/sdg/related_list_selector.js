@@ -3,29 +3,29 @@
   App.SDGRelatedListSelector = {
     initialize: function() {
       var $root = $(".sdg-related-list-selector");
-      var input;
+      var control;
 
       if (!$root.length) {
         return;
       }
 
-      input = App.ListField.mount($root.find(".input"), {
+      control = App.ListField.mount($root.find(".input"), {
         checkboxes: $root.find(".goals input"),
         checkboxValueAttribute: "code",
         checkboxListValue: App.SDGRelatedListSelector.goal_code
       });
 
-      input.on("change", function() {
-        App.SDGRelatedListSelector.manage_help($root, input);
+      control.on("change", function() {
+        App.SDGRelatedListSelector.manage_help($root, control);
       });
-      App.SDGRelatedListSelector.manage_help($root, input);
+      App.SDGRelatedListSelector.manage_help($root, control);
     },
-    goal_code: function(value) {
-      return value.toString().split(".")[0];
+    goal_code: function(code) {
+      return code.split(".")[0];
     },
-    manage_help: function($root, input) {
-      var items = input.items.map(function(value) {
-        return $("<li>").text(" " + input.options[value].title).prepend($("<strong>").text(value));
+    manage_help: function($root, control) {
+      var items = control.items.map(function(code) {
+        return $("<li>").text(" " + control.options[code].title).prepend($("<strong>").text(code));
       });
 
       $root.find(".selected-info").empty().append(items);
