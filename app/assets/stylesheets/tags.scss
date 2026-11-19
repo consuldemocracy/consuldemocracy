@@ -4,8 +4,6 @@
 
 .taggable-fields {
 
-  @include amsify-suggestags-input-area;
-
   input.js-tag-category {
     @include element-invisible;
 

@@ -99,7 +99,7 @@ module CommonActions
   end
 
   def remove_sdg_goal_or_target_tag(code)
-    within "span[data-val='#{code}']" do
+    within ".item[data-value='#{code}']" do
       click_button "Remove"
     end
   end

@@ -12,7 +12,7 @@ module Tags
   end
 
   def remove_tag_list_tag(name)
-    within "span[data-val=\"#{name}\"]" do
+    within ".item[data-value=\"#{name}\"]" do
       click_button "Remove"
     end
   end
