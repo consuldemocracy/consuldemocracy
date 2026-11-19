@@ -3,29 +3,16 @@
   App.Tags = {
     initialize: function() {
       $(".taggable-fields").each(function() {
-        var $root = $(this);
-        var $input = $root.find("input.js-tag-list");
-        var options;
-        var suggestions_url;
+        var $input = $(this).find("input.js-tag-list");
 
-        if (!$input.length) {
-          return;
-        }
-
-        options = {
+        App.AmsifyListField.mount($input, {
           whiteList: false,
-          checkboxes: $root.find("input.js-tag-category"),
+          checkboxes: $(this).find("input.js-tag-category"),
           classes: {
             sTagsInput: ".js-tag-list-input"
-          }
-        };
-
-        suggestions_url = $input.data("suggestions-url");
-        if (suggestions_url) {
-          options.suggestionsUrl = suggestions_url;
-        }
-
-        App.AmsifyListField.mount($input, options);
+          },
+          suggestionsUrl: $input.data("suggestions-url")
+        });
       });
     }
   };
