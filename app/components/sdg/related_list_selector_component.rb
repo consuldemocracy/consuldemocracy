@@ -30,6 +30,11 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
     SDG::ProcessEnabled.new(f.object).enabled?
   end
 
+  def show_classification_suggestions?
+    ::Llm::Config.configured? &&
+      Setting["llm.use_ai_classification_suggestions"].present?
+  end
+
   private
 
     def goals

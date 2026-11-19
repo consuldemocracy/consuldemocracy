@@ -34,6 +34,38 @@ describe SDG::RelatedListSelectorComponent do
     expect(page).to have_css ".help-section"
   end
 
+  describe "classification suggestions" do
+    before do
+      Setting["llm.provider"] = nil
+      Setting["llm.model"] = nil
+      Setting["llm.use_ai_classification_suggestions"] = nil
+    end
+
+    it "does not render the suggestions panel when the feature is disabled" do
+      render_inline component
+
+      expect(page).not_to have_css ".classification-suggestions-sdgs"
+      expect(page).to have_css ".js-sdg-selected-help"
+    end
+
+    it "renders a hidden suggestions panel when the feature is enabled" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o"
+      Setting["llm.use_ai_classification_suggestions"] = true
+
+      render_inline component
+
+      expect(page).to have_css ".classification-suggestions-sdgs.classification-suggestions.hide"
+      expect(page).to have_css ".classification-suggestions-sdgs .classification-suggestions-body"
+      expect(page).to have_css ".classification-suggestions-sdgs[data-close]"
+      expect(page).to have_css(
+        ".classification-suggestions-sdgs template.classification-suggestion-template",
+        visible: :all
+      )
+      expect(page).to have_css ".js-sdg-selected-help"
+    end
+  end
+
   describe "#goals_and_targets" do
     it "return all goals and target with order" do
       create(:sdg_local_target, code: "1.1.1")

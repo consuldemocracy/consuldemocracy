@@ -56,7 +56,8 @@
       <%= f.text_field :organization_name %>
     </div>
 
-    <%= render Taggable::FieldsComponent.new(f, i18n_namespace: "budgets.investments.form") %>
+    <%= render Taggable::FieldsComponent.new(f, i18n_namespace: "budgets.investments.form",
+                                                ai_suggestions: true) %>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
   </fieldset>
