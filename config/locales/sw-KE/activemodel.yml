@@ -32,6 +32,7 @@ sw:
       verification/sms:
         confirmation_code: "Weka msimbo uliopokea kwenye rununu yako"
       officing/residence:
+        document_type: "Aina ya nyaraka"
         year_of_birth: "Mwaka wa kuzaliwa"
       local_census_records/import:
         file: Faili
