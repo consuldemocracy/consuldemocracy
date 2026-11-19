@@ -3,9 +3,7 @@
   App.Tags = {
     initialize: function() {
       $(".taggable-fields").each(function() {
-        var $input = $(this).find("input.js-tag-list");
-
-        App.ListField.mount($input, {
+        App.ListField.mount($(this).find("input.js-tag-list"), {
           create: true,
           checkboxes: $(this).find("input.js-tag-category")
         });
