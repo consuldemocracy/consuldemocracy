@@ -129,6 +129,7 @@ var initialize_modules = function() {
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminDashboardActionsForm.initialize();
   App.AdminPollShiftsForm.initialize();
+  App.AdminSiteCustomizationDocumentsTableActions.initialize();
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
