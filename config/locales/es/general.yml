@@ -771,6 +771,7 @@ es:
         other: "%{count} idiomas en uso"
     optional: "Campos opcionales"
     required: "Campos obligatorios"
+    voice_input_hint: "Puedes dictar con la escritura por voz de tu dispositivo."
     comments:
       one: "1 comentario"
       other: "%{count} comentarios"

@@ -161,6 +161,15 @@ es:
             -
               shortcut_column: CTRL y - (CMD y - en MAC)
               description_column: para reducir el tamaño del texto
+      voice_input:
+        title: Entrada por voz (dictado)
+        description: La mayoría de los dispositivos pueden convertir la voz en texto, así que puedes hablar en lugar de escribir en los campos de texto de este sitio web. El dictado lo proporciona tu dispositivo, no este sitio web, que no graba ni almacena audio.
+        options:
+          - Windows - pulsa la tecla Windows + H.
+          - macOS - usa el atajo de Dictado, o elige Edición > Comenzar dictado.
+          - Android - toca el icono del micrófono del teclado.
+          - iPhone y iPad - toca la tecla del micrófono del teclado.
+        note: Lee siempre el texto después de dictar, ya que el reconocimiento de voz puede cometer errores.
       compatibility:
         title: Compatibilidad con estándares y diseño visual
         description: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'

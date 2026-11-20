@@ -26,7 +26,8 @@
       <div>
         <%= translations_form.text_area :description,
                                         maxlength: Budget::Investment.description_max_length,
-                                        class: "html-area" %>
+                                        class: "html-area",
+                                        hint: t("shared.voice_input_hint") %>
       </div>
     <% end %>
   </fieldset>
