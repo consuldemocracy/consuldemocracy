@@ -340,7 +340,7 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
-    image_processing (2.1.0)
+    image_processing (2.2.0)
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.9.4)
@@ -919,7 +919,7 @@ DEPENDENCIES
   herb (~> 0.11.1)
   htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
-  image_processing (~> 2.1.0)
+  image_processing (~> 2.2.0)
   invisible_captcha (~> 2.3.0)
   kaminari (~> 1.2.2)
   knapsack_pro (~> 8.4.0)
