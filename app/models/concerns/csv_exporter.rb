@@ -1,6 +1,6 @@
 module CsvExporter
   def to_csv
-    CSV.generate(headers: true) do |csv|
+    "\xEF\xBB\xBF" + CSV.generate(headers: true) do |csv|
       csv << headers
       records.each do |record|
         comments = comments_in_reading_order(record)
