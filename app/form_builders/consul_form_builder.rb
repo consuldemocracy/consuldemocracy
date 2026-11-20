@@ -14,7 +14,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
       label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
         super(attribute, options.merge(
           label: false, hint: nil,
-          aria: { describedby: help_text_id(attribute, options) }
+          aria: { describedby: describedby(attribute, options) }
         ))
     end
   end
@@ -43,7 +43,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   def select(attribute, choices, options = {}, html_options = {})
     label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
       super(attribute, choices, options.merge(label: false, hint: nil), html_options.merge({
-        aria: { describedby: help_text_id(attribute, options) }
+        aria: { describedby: describedby(attribute, options) }
       }))
   end
 
@@ -112,6 +112,10 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
       if options[:hint].present?
         field_id(attribute, :help_text)
       end
+    end
+
+    def describedby(attribute, options)
+      [options.dig(:aria, :describedby), help_text_id(attribute, options)].compact.join(" ").presence
     end
 
     def aria_error_options(attribute)

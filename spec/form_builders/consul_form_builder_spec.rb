@@ -44,6 +44,19 @@ describe ConsulFormBuilder do
       expect(page).to have_css "input[aria-describedby='dummy_title_help_text']"
     end
 
+    it "keeps a custom aria-describedby when there is no hint" do
+      render builder.text_field(:title, aria: { describedby: "custom-help" })
+
+      expect(page).to have_css "input[aria-describedby='custom-help']"
+    end
+
+    it "combines a custom aria-describedby with the hint id" do
+      render builder.text_field(:title, hint: "Make it quick", aria: { describedby: "custom-help" })
+
+      expect(page).to have_css ".help-text", text: "Make it quick"
+      expect(page).to have_css "input[aria-describedby='custom-help dummy_title_help_text']"
+    end
+
     it "does not generate empty hints" do
       render builder.text_field(:title, hint: "")
 

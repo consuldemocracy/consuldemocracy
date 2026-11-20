@@ -3,6 +3,21 @@ module Tags
     tag_cloud.tags.map(&:name)
   end
 
+  def type_mobile_comma(label, text)
+    execute_script(<<~JS, find_field(label), text)
+      var input = arguments[0];
+      var text = arguments[1];
+
+      input.focus();
+      input.value = text + ",";
+      input.dispatchEvent(new InputEvent("input", {
+        bubbles: true,
+        data: ",",
+        inputType: "insertText"
+      }));
+    JS
+  end
+
   def fill_in_tag_list(tags, label: "Tags")
     text = tags.to_s.strip
     text = "#{text}," unless text.empty? || text.end_with?(",")
@@ -12,7 +27,7 @@ module Tags
   end
 
   def remove_tag_list_tag(name)
-    within "span[data-val=\"#{name}\"]" do
+    within ".item[data-value=\"#{name}\"]" do
       click_button "Remove"
     end
   end
