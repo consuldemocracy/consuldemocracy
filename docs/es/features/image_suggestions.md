@@ -97,6 +97,8 @@ Una vez que hayas configurado tanto el proveedor LLM como la clave API de Pexels
 
 ### Experiencia del Usuario
 
+El botón de sugerencias con IA aparece al crear o editar proyectos de gasto. Ese formulario solo está disponible mientras el presupuesto está en la fase **Presentación de proyectos**. Si está en otra fase (por ejemplo, **Votación final**), navega a **Admin > Presupuestos participativos**, edita el presupuesto y selecciona **Presentación de proyectos** como fase activa antes de seguir los pasos.
+
 Al crear o editar proyectos de gasto:
 
 1. **El usuario completa título y/o descripción**: La funcionalidad usa el contenido de estos campos cuando están disponibles para generar sugerencias.
