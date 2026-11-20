@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-
+  get "up" => "rails/health#show", as: :rails_health_check
   draw :custom
 
   draw :account
