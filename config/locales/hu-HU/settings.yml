@@ -110,8 +110,6 @@ hu:
         recommendations_on_proposals_description: "A javaslatok oldalán ajánlásokat jelenít meg a felhasználóknak a követett elemek címkéi alapján"
       community: "Közösség a javaslatoknál és beruházásoknál"
       community_description: "Engedélyezi a közösségi szakaszt a javaslatoknál és a részvételi költségvetések beruházási projektjeinél"
-      machine_learning: "AI / gépi tanulás"
-      machine_learning_description: "Engedélyezi az AI / gépi tanulás szakaszt Python szkriptek futtatásához és a tartalom automatikus gazdagításához."
       map: "Javaslatok és költségvetési beruházások geolokációja"
       map_description: "Engedélyezi a javaslatok és beruházási projektek geolokációját"
       allow_images: "Képfeltöltés és képek megjelenítésének engedélyezése"

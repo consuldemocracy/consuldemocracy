@@ -106,8 +106,6 @@ gd:
         recommendations_on_proposals_description: "Seolaidh seo mholaidhean do chleachdaichean air duilleag nam molaidhean stèidhichte air tagaichean nan nithean a lean iad"
       community: "Coimhearsnachd mu mholaidhean agus tasgaidhean"
       community_description: "Cuiridh seo roinn na coimhearsnachd an comas ann am molaidhean agus pròiseactan tasgaidh nam Buidseatan Com-pàirteachail"
-      machine_learning: "AI / Ionnsachadh Inneil"
-      machine_learning_description: "Cuir an earrann AI / Ionnsachadh Inneil an comas gus sgriobtaichean python a ruith agus gus susbaint a neartachadh gu fèin-obrachail."
       map: "Geò-lorgadh mholaidhean agus tasgaidhean buidseit"
       map_description: "Tha seo a’ cur an comas geò-lorgadh de mholaidhean agus de pròiseactan tasgaidh"
       allow_images: "Ceadaich luachdadh suas agus seall dealbhan"

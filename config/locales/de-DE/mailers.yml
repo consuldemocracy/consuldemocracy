@@ -86,16 +86,6 @@ de:
       hi: Hallo
       new_comment_by: Es gibt einen neuen Bewertungs-Kommentar <strong>%{commenter}</strong> für den Bürgerhaushalt %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Panel Maschinelles Lernen besuchen."
-      subject: "Maschinelles Lernen - Bei der Ausführung des Skripts ist ein Fehler aufgetreten."
-      text: "Bei der Ausführung des Skripts für maschinelles Lernen ist ein Fehler aufgetreten."
-      title: "Skript für maschinelles Lernen."
-    machine_learning_success:
-      link: "Panel Maschinelles Lernen besuchen."
-      subject: "Maschinelles Lernen - Inhalt wurde erfolgreich generiert."
-      text: "Der Inhalt wurde erfolgreich erstellt."
-      title: "Skript für maschinelles Lernen"
     new_actions_notification_on_create:
       subject: "Ihr Entwurf eines Bürger-Vorschlags ist erstellt"
       hi: "Hallo %{name}!"

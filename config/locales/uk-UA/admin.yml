@@ -1584,9 +1584,3 @@ uk-UA:
           created: Створені записи
         local_census_records:
           no_records_found: Записів не знайдено.
-    machine_learning:
-      help:
-        title_3: "Як використовувати цей модуль"
-      related_content: "Пов'язаний контент"
-      tab_help: "Допомога"
-      tags: "Теги"

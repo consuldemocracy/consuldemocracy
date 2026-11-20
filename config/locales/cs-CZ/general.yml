@@ -971,9 +971,6 @@ cs:
           few: "%{count} další značky"
           many: "%{count} dalších značek"
           other: "%{count} dalších značek"
-  machine_learning:
-    comments_summary: "Souhrn komentářů"
-    info_text: "Obsah generovaný umělou inteligencí / strojovým učením"
   cookies_consent:
     accept_all_cookies: "Přijmout vše"
     accept_essential_cookies: "Přijmout základní cookies"

@@ -1144,7 +1144,3 @@ eu:
         document_type: Agiri mota
         document_number: NAN/Pasaportea/Egoitza txartela
         date_of_birth: Jaiotze data
-    machine_learning:
-      related_content: "Erlazionatutako edukia"
-      tab_help: "Laguntza"
-      tags: "Gaiak"

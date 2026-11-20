@@ -41,6 +41,8 @@ gl:
         heading: Partida do orzamento
         dossier: Informe
         edit_dossier: Editar informe
+        price_with_currency: Prezo (%{currency})
+        price_first_year_with_currency: Custo durante o primeiro ano (%{currency})
         feasibility: Viabilidade
         feasible: Viable
         unfeasible: Non viables

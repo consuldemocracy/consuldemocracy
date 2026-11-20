@@ -1530,7 +1530,3 @@ ka:
           created: შექმნილი ჩანაწერები
         local_census_records:
           no_records_found: ჩანაწერები არ მოიძებნა.
-    machine_learning:
-      related_content: "მსგავსი ინფორმაცია"
-      tab_help: "დახმარება"
-      tags: "ტეგები"

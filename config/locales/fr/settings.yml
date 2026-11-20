@@ -106,8 +106,6 @@ fr:
         recommendations_on_proposals_description: "Affiche les recommandations aux utilisateurs sur la page de débats en fonction des mots-clés des éléments suivis"
       community: "Communauté sur les propositions et les investissements"
       community_description: "Autorise à la section communauté l'accès aux propositions et aux projets d'investissement des budgets participatifs"
-      machine_learning: "IA / Apprentissage automatique"
-      machine_learning_description: "Activer la section IA/Machine Learning pour exécuter des scripts python et enrichir le contenu automatiquement."
       map: "Localisation des propositions et des projets d'investissement"
       map_description: "Permet la géolocalisation des propositions et des projets d’investissement"
       allow_images: "Permettre d'importer et d'afficher des images"

@@ -110,8 +110,6 @@ it:
         recommendations_on_proposals_description: "Mostra i consigli agli utenti sulla pagina delle proposte a seconda dei tag degli elementi seguiti"
       community: "Community su proposte e investimenti"
       community_description: "Abilita la sezione della community nelle proposte e nei progetti d'investimento dei Budget Partecipativi"
-      machine_learning: "IA / Apprendimento Automatico"
-      machine_learning_description: "Abilita la sezione dell'IA / Apprendimento Automatico per eseguire script in Python e arricchire automaticamente il contenuto."
       map: "Geolocalizzazione di proposte e investimenti del budget"
       map_description: "Abilita la geolocalizzazione delle proposte e dei progetti d'investimento"
       allow_images: "Consenti il caricamento e la visualizzazione di immagini"

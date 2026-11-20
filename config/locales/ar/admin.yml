@@ -1509,7 +1509,3 @@ ar:
         document_type: نوع الوثيقة
         document_number: رقم الوثيقة
         date_of_birth: تاريخ الميلاد
-    machine_learning:
-      related_content: "محتوى ذات الصلة"
-      tab_help: "المساعدة"
-      tags: "علامات"

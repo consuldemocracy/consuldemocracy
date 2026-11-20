@@ -103,8 +103,6 @@ de:
       share: Teilen
       share_comment: Kommentieren Sie %{version_name} vom Prozessentwurf %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorien"
       not_verified: "Für Wahlvorschläge %{verify_account}."
       process_title: Kollaboratives Gesetzgebungsverfahren
     summary:

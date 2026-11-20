@@ -86,16 +86,6 @@ ne:
       hi: नमस्ते
       new_comment_by: त्यहाँ <strong>%{commenter}</strong> बाट बजेट लगानी %{investment} मा नयाँ मूल्याङ्कन टिप्पणी छ
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "मेसिन लर्निङ प्यानलमा जानुहोस्"
-      subject: "मेसिन लर्निङ - स्क्रिप्ट चलाउँदा त्रुटि भयो"
-      text: "मेसिन लर्निङ स्क्रिप्ट चलाउँदा त्रुटि भयो।"
-      title: "मेसिन लर्निङ स्क्रिप्ट"
-    machine_learning_success:
-      link: "मेसिन लर्निङ प्यानलमा जानुहोस्"
-      subject: "मेसिन लर्निङ - सामग्री सफलतापूर्वक उत्पन्न गरिएको छ"
-      text: "सामग्री सफलतापूर्वक उत्पन्न भएको छ।"
-      title: "मेसिन लर्निङ स्क्रिप्ट"
     new_actions_notification_on_create:
       subject: "तपाईंको मस्यौदा नागरिक प्रस्ताव सिर्जना गरिएको छ"
       hi: "नमस्ते %{name}!"

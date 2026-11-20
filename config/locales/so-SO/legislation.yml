@@ -103,8 +103,6 @@ so:
       share: Lawadag
       share_comment: Faallada ku jirta%{version_name} ka socota qabyo-socodka%{process_name}
     proposals:
-      form:
-        tags_label: "Qaybaha"
       not_verified: "Soo jeedinta cod bixinta%{verify_account}."
       process_title: Nidaamka sharciyeed ee wadajirka ah
     summary:

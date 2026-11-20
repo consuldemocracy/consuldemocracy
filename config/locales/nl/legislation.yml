@@ -103,8 +103,6 @@ nl:
       share: Deel
       share_comment: Geef een reactie op %{version_name} van het concept proces %{process_name}
     proposals:
-      form:
-        tags_label: "Categorieën"
       not_verified: "Om op voorstellen te stemmen %{verify_account}."
       process_title: Samenwerken in plannen
     summary:

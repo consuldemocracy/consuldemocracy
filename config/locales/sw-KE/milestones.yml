@@ -1,1 +1,6 @@
 sw:
+  milestones:
+    index:
+      no_milestones: Hakuna hatua muhimu zilizobainishwa
+    show:
+      publication_date: "Published %{publication_date}"

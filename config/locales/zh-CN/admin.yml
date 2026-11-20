@@ -1242,7 +1242,3 @@ zh-CN:
         document_type: 文档类型
         document_number: 文档编号
         date_of_birth: 出生日期
-    machine_learning:
-      related_content: "相关的内容"
-      tab_help: "帮助"
-      tags: "标签"

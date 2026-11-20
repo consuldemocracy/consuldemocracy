@@ -912,6 +912,3 @@ da:
         more:
           one: "Et tag mere"
           other: "%{count} flere tags"
-  machine_learning:
-    comments_summary: "Kommentar resume"
-    info_text: "Indhold generet af AI"

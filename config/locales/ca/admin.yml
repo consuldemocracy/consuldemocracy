@@ -1534,7 +1534,3 @@ ca:
           created: Registres creats
         local_census_records:
           no_records_found: No s’han trobat registres.
-    machine_learning:
-      related_content: "Contingut relacionat"
-      tab_help: "Ajuda"
-      tags: "Etiquetes"

@@ -371,7 +371,3 @@ nn:
       index:
         document_type: Dokumenttype
         date_of_birth: Fødselsdato
-    machine_learning:
-      related_content: "Relatert innhold"
-      tab_help: "Hjelp"
-      tags: "Tagger"

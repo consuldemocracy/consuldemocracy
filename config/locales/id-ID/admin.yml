@@ -1096,7 +1096,3 @@ id:
         document_type: Tipe dokumen
         document_number: Nomor Dokumen
         date_of_birth: Tanggal lahir
-    machine_learning:
-      related_content: "Konten terkait"
-      tab_help: "Bantuan"
-      tags: "Tag"

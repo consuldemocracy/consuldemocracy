@@ -105,8 +105,6 @@ ru:
       share: Доля
       share_comment: Комментировать %{version_name} из черновика процесса %{process_name}
     proposals:
-      form:
-        tags_label: "Категории"
       not_verified: "Для предложений голосов, %{verify_account}."
       process_title: Процесс совместного законотворчества
     summary:

@@ -99,8 +99,6 @@ sl:
       share: Deli
       share_comment: Komentiraj na %{version_name} iz osnutka procesa %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorije"
       not_verified: "Za glasovanje o predlogih %{verify_account}."
       process_title: Sodelovalni zakonodajni proces
     summary:

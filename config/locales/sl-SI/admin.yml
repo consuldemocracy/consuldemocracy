@@ -1105,7 +1105,3 @@ sl:
         document_type: Vrsta dokumenta
         document_number: Številka dokumenta
         date_of_birth: Datum rojstva
-    machine_learning:
-      related_content: "Povezane vsebine"
-      tab_help: "Pomoč"
-      tags: "Oznake"

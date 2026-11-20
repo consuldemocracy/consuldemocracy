@@ -944,9 +944,6 @@ hu:
         more:
           one: "Még egy címke"
           other: "Még %{count} címke"
-  machine_learning:
-    comments_summary: "Hozzászólások összefoglalója"
-    info_text: "MI / gépi tanulás által létrehozott tartalom"
   cookies_consent:
     accept_all_cookies: "Összes elfogadása"
     accept_essential_cookies: "Csak a szükségesek elfogadása"

@@ -103,8 +103,6 @@ tr:
       share: Paylaş
       share_comment: '%{process_name} süreç taslağının %{version_name} sürümüne yorum'
     proposals:
-      form:
-        tags_label: "Kategoriler"
       not_verified: "Önergeleri oylamak için %{verify_account}."
       process_title: Katılımcı mevzuat süreci
     summary:

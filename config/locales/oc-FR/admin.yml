@@ -1524,7 +1524,3 @@ oc:
           created: Registres creats
         local_census_records:
           no_records_found: No s’han trobat registres.
-    machine_learning:
-      related_content: "Contengut ligat"
-      tab_help: "Ajuda"
-      tags: "d'Etiquetas"

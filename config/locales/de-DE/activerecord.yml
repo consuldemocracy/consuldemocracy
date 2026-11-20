@@ -1,5 +1,6 @@
 de:
   attributes:
+    created_at: Erstellt am
     geozone_id: "Rahmen der Operation"
     results_enabled: "Ergebnisse anzeigen"
     stats_enabled: "Statistiken anzeigen"
@@ -106,6 +107,21 @@ de:
       legislation/proposal:
         one: "Vorschlag"
         other: "Vorschläge"
+      legislation/draft_version:
+        one: "Entwurfsfassung"
+        other: "Entwurfsfassung"
+      legislation/question:
+        one: "Frage"
+        other: "Fragen"
+      legislation/question_option:
+        one: "Frageoption"
+        other: "Frageoptionen"
+      legislation/answer:
+        one: "Antwort"
+        other: "Antworten"
+      image:
+        one: "Bild"
+        other: "Bilder"
       topic:
         one: "Thema"
         other: "Inhalte"
@@ -127,6 +143,9 @@ de:
       local_census_record:
         one: Import von Datensatz aus dem Melderegister
         other: Import von Datensätzen aus dem Melderegister
+      cookies/vendor:
+        one: Cookie Anbieter
+        other: Cookie Anbieter
     attributes:
       budget:
         name: "Name"
@@ -177,7 +196,9 @@ de:
       geozone:
         name: Name
         external_code: "Externer Code (optional)"
+        color: "Farbe (optional)"
         census_code: "Register Code (optional)"
+        geojson: "GeoJSON Daten (optional)"
         html_map_coordinates: "HTML <map> Koordinaten (optional)"
       milestone:
         status_id: "Aktueller Status (optional)"
@@ -431,6 +452,17 @@ de:
       image:
         title: Titel
         attachment: "Anhang"
+      poll/question/option:
+        title: Antwort
+        description: Beschreibung
+        allow_custom_text: "Benutzerdefinierten Text zulassen"
+        given_order: Reihenfolge
+      poll/question/option/translation:
+        title: Antwort
+        description: "Beschreibung (optional)"
+      poll/question/option/video:
+        title: Titel
+        url: Externes Video
       newsletter:
         segment_recipient: Empfänger*innen
         subject: Betreff

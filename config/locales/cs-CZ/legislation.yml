@@ -105,8 +105,6 @@ cs:
       share: Sdílet
       share_comment: Komentář k %{version_name} z fáze návrhu %{process_name}
     proposals:
-      form:
-        tags_label: "Kategorie"
       not_verified: "Pro hlasování o návrzích %{verify_account}."
       process_title: Participativní legislativní proces
     summary:

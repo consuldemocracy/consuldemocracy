@@ -86,16 +86,6 @@ hu:
       hi: Szia
       new_comment_by: 'Új értékelő megjegyzés érkezett tőle: <strong>%{commenter}</strong> ehhez a költségvetési beruházáshoz: %{investment}'
       commenter_info: "%{commenter}, %{time}:"
-    machine_learning_error:
-      link: "Gépi tanulás panel megnyitása"
-      subject: "Gépi tanulás - Hiba történt a szkript futtatása közben"
-      text: "Hiba történt a gépi tanulási szkript futtatása közben."
-      title: "Gépi tanulási szkript"
-    machine_learning_success:
-      link: "Gépi tanulás panel megnyitása"
-      subject: "Gépi tanulás - A tartalom sikeresen elkészült"
-      text: "A tartalom sikeresen elkészült."
-      title: "Gépi tanulási szkript"
     new_actions_notification_on_create:
       subject: "Az állampolgári javaslatod piszkozatként létrejött"
       hi: "Szia %{name}!"

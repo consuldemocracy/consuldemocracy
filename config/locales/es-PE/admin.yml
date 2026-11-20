@@ -1037,7 +1037,3 @@ es-PE:
         document_type: Tipo de documento
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
-    machine_learning:
-      related_content: "Contenido relacionado"
-      tab_help: "Ayuda"
-      tags: "Etiquetas"

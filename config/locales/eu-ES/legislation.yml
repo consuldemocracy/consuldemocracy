@@ -102,8 +102,6 @@ eu:
       share: Partekatu
       share_comment: '%{process_name} prosesu eta %{version_name} bertsioari buruzko iruzkin zirriborroa'
     proposals:
-      form:
-        tags_label: "Mailak"
       not_verified: "%{verify_account} proposamenak bozkatzeko."
       process_title: Elkarlan legedi prosezua
     summary:

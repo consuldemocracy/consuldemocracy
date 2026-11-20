@@ -18,6 +18,7 @@ gl:
           reseted: Contrasinal restabelecido correctamente
           random: Crear contrasinal aleatorio
           save: Gardar contrasinal
+          show: Amosar o contrasinal
           print: Imprimir contrasinal
           print_help: Poderás imprimir o contrasinal cando se garde.
     account_info:
@@ -95,6 +96,8 @@ gl:
         unfeasible: Proxectos non factibles
       print:
         print_button: Imprimir
+      search:
+        label: "Buscar proxectos"
       search_results:
         one: " conteñen os termos '%{search_term}'"
         other: " conteñen os termos '%{search_term}'"

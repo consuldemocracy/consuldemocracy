@@ -103,8 +103,6 @@ gl:
       share: Compartir
       share_comment: Comentarios sobre a versión %{version_name} do borrador do proceso %{process_name}
     proposals:
-      form:
-        tags_label: "Categorías"
       not_verified: "Para votares propostas, %{verify_account}."
       process_title: Proceso de lexislación colaborativa
     summary:

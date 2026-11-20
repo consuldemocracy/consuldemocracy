@@ -103,8 +103,6 @@ ne:
       share: साझेदारी गर्नुहोस्
       share_comment: प्रक्रिया मस्यौदा %{process_name} बाट %{version_name} मा टिप्पणी
     proposals:
-      form:
-        tags_label: "वर्गहरू"
       not_verified: "मत प्रस्तावहरूको लागि %{verify_account}।"
       process_title: सहयोगात्मक कानून प्रक्रिया
     summary:

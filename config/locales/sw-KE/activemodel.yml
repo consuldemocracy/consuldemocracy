@@ -1,1 +1,41 @@
 sw:
+  activemodel:
+    models:
+      verification:
+        residence: "Makazi"
+        sms: "SMS"
+      local_census_records/import:
+        one: Uingizaji wa rekodi za sensa za eneo
+        other: Uingizaji wa rekodi za sensa za eneo husika
+    attributes:
+      verification:
+        residence:
+          document_type: "Aina ya nyaraka"
+          document_number: "Nambari ya nyaraka(ikiwa ni pamoja na barua)"
+          date_of_birth: "Tarehe ya kuzaliwa"
+          postal_code: "Nambari ya posta"
+        sms:
+          phone: "Simu"
+          confirmation_code: "Nambari ya uthibitisho"
+        email:
+          recipient: "Barua pepe"
+      verification/letter:
+        email: "Barua pepe"
+        password: "Neno siri"
+        verification_code: "Nambari uliyopokea kwenye barua"
+      verification/management/document:
+        document_type: "Aina ya nyaraka:"
+        document_number: "Nambari ya nyaraka"
+      verification/residence:
+        date_of_birth: "Siku ya kuzaliwa"
+        document_type: "Aina ya nyaraka"
+      verification/sms:
+        confirmation_code: "Weka msimbo uliopokea kwenye rununu yako"
+      officing/residence:
+        document_type: "Aina ya nyaraka"
+        year_of_birth: "Mwaka wa kuzaliwa"
+      local_census_records/import:
+        file: Faili
+      setting/locales_settings:
+        default: Lugha chaguo msingi
+        enabled: Lugha iliyowezeshwa

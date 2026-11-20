@@ -104,8 +104,6 @@ he:
       share: שתף
       share_comment: תגובה על %{version_name} מתהליך הטיוטות %{process_name}
     proposals:
-      form:
-        tags_label: "קטגוריות"
       not_verified: "עבור הצבעה להצעות %{verify_account}."
       process_title: תהליך חקיקה שיתופית
     summary:

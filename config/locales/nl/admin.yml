@@ -781,7 +781,6 @@ nl:
           legislation: "Plannen"
           budgets: "Burgerbegrotingen"
           layouts: "Lay-outs"
-          machine_learning: "AI / Machine Learning"
           mailers: "E-mails"
           management: "Beheer"
           welcome: "Welkom"
@@ -802,7 +801,6 @@ nl:
       debates: "Discussie"
       comments: "Reacties"
       local_census_records: Lokale census
-      machine_learning: "AI / Machine Learning"
       multitenancy: Multitenancy
     administrators:
       index:
@@ -1746,34 +1744,6 @@ nl:
           created: Dossiers aangemaakt
         local_census_records:
           no_records_found: Geen dossiers gevonden.
-    machine_learning:
-      cancel: "Operatie stoppen"
-      cancel_alert: "Deze actie zal het huidige script beëindigen en een nieuw script zal noodzakelijk zijn."
-      comments_summary: "Samenvatting reacties"
-      comments_summary_description: "Toont een automatisch gegenereerde samenvatting van de reacties op alle onderwerpen waarop reactie mogelijk is."
-      data_folder_content: "Content gegevensmap"
-      error: "Fout:"
-      execute_script: "Script uitvoeren"
-      executed_by: "Uitgevoerd door:"
-      executed_script: "Uitgevoerd script:"
-      feature_disabled: "Deze functionaliteit is gedeactiveerd. Om Machine Leerling te gebruiken, activeer die via %{link}."
-      feature_disabled_link: "instellingen"
-      help:
-        title_1: "Wat is AI / Machine Learning?"
-        description_1: "Traditioneel worden computerprogramma's ontworpen door precieze regels vast te stellen over wat het programma in elke situatie moet doen en hoe de beschikbare informatie op elk moment moet worden verwerkt. Wat algemeen bekend staat als AI/machine learning is een type programma waarbij precies wordt vastgesteld wat de uit te voeren taak is en hoe wordt beoordeeld of de taak beter of slechter wordt uitgevoerd. Maar in tegenstelling tot het eerste systeem ontdekt of leert het systeem wat de meest geschikte methode is om de taak uit te voeren."
-        title_2: "Wat doet de AI / Machine Learning module in Consul Democracy?"
-        description_2: "Met deze module kunnen alle soorten AI/machine learning-programma's worden geïmplementeerd in CONSUL DEMOCRACY. De programma's kunnen de informatie verwerken die beschikbaar is in CONSUL DEMOCRACY en resultaten produceren die zowel gebruikers als beheerders helpen om effectievere en intelligentere burgerparticipatie te realiseren. De module is ontwikkeld om het eenvoudig te maken om nieuwe programma's te implementeren en uit te voeren, waarbij de algemene code van CONSUL DEMOCRACY en de code van deze nieuwe programma's onafhankelijk van elkaar blijven."
-        title_3: "Hoe gebruik ik deze module"
-        description_3: "Om het voor het eerst te gebruiken, moet u de instructies in de documentatie van CONSUL DEMOCRACY volgen om deze module correct te activeren. Zodra de module correct is geactiveerd, worden de programma's uitgevoerd vanuit het tabblad “Scripts uitvoeren”. Voordat we het uitvoeren, kunnen we in hetzelfde tabblad een schatting van de uitvoeringstijd en andere relevante informatie zien. Aan het einde van de uitvoering kunnen we de inhoud die in CONSUL DEMOCRACY wordt weergegeven, activeren vanuit het tabblad “Instellingen”, en andere gegenereerde bestanden downloaden die voor ons nuttig kunnen zijn."
-        title_4: "Hoe implementeer ik nieuwe AI / Machine Learning scripts"
-        description_4: "Gebruik a. u. b. eerdere scripts als voorbeeld."
-        description_4b: "De nieuwe scripts dienen zich te bevinden in de map <code>public/machine_learning/scripts</code>"
-      related_content: "Gerelateerde inhoud"
-      started_at: "Gestart op:"
-      tab_help: "Help"
-      tags: "Tags"
-      tags_description: "Genereert automatische labels voor alle te labelen content."
-      title: "AI / Machine learning"
     cookies:
       vendors:
         empty: Geen leveranciers gevonden

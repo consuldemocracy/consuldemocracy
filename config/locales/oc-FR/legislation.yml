@@ -103,8 +103,6 @@ oc:
       share: partejar
       share_comment: Comentari sus detla %{version_name} del borrolhon del procès %{process_name}
     proposals:
-      form:
-        tags_label: "de Categorias"
       not_verified: "Per proposicions de vòt %{verify_account}."
       process_title: Procès de legislacion col·laborativa
     summary:

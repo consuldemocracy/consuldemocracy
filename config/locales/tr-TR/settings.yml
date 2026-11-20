@@ -110,8 +110,6 @@ tr:
         recommendations_on_proposals_description: "Kullanıcılara önergeler sayfasında, takip ettikleri ögelerin etiketlerine göre öneriler gösterir"
       community: "Önergeler ve yatırımlar topluluğu"
       community_description: "Önergelerde ve katılımcı bütçelerin yatırım projelerinde topluluk bölümünü açar"
-      machine_learning: "Yapay Zeka / Makine Öğrenmesi"
-      machine_learning_description: "İçeriği otomatik olarak zenginleştirecek Python betiklerinin yürütülmesi için Yapay Zeka / Makine Öğrenmesi bölümünü açın."
       map: "Önergelerin ve bütçe yatırımlarının coğrafi konumu"
       map_description: "Önergelerin ve yatırım projelerinin coğrafi konumunu açar"
       allow_images: "Yüklemeye izin ver ve görselleri görüntüle"

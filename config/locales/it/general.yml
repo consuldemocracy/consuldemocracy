@@ -944,9 +944,6 @@ it:
         more:
           one: "Un altro tag"
           other: "%{count} altri tag"
-  machine_learning:
-    comments_summary: "Riepilogo dei commenti"
-    info_text: "Contenuto generato dall'IA / Apprendimento Automatico"
   cookies_consent:
     accept_all_cookies: "Accetta tutti"
     accept_essential_cookies: "Accetta cookie essenziali"
