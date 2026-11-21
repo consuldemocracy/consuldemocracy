@@ -35,7 +35,7 @@
                            value: @investment.tag_list.sort.join(","),
                            label: false,
                            data: { remove_tag_text: t("sdg.related_list_selector.remove_tag"),
-                                   suggestions_url: suggest_tags_path } %>
+                                   suggestions_list: Tag.suggestion_names } %>
         </div>
       </div>
 

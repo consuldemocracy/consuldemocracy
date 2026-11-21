@@ -1,6 +1,15 @@
 require "rails_helper"
 
 describe Tag do
+  describe ".suggestion_names" do
+    it "returns names in name order" do
+      create(:tag, :category, name: "zeta")
+      create(:tag, :category, name: "alpha")
+
+      expect(Tag.suggestion_names).to eq %w[alpha zeta]
+    end
+  end
+
   it "decreases tag_count when a debate is hidden" do
     debate = create(:debate)
     tag = create(:tag, taggables: [debate])

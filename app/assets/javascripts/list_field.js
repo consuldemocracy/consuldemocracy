@@ -46,7 +46,6 @@
     },
     tom_select_settings: function($input, settings) {
       var suggestions = $input.data("suggestions-list");
-      var suggestions_url = $input.data("suggestions-url");
       var tom_select_settings = {
         addPrecedence: true,
         create: function(text) {
@@ -91,19 +90,17 @@
         };
       }
 
-      if (suggestions) {
-        tom_select_settings.options = suggestions;
-      }
-
-      if (suggestions_url) {
-        tom_select_settings.load = function(query, callback) {
-          $.getJSON(suggestions_url, { term: query }).done(function(data) {
-            callback(data.suggestions.map(function(name) {
-              return { tag: name, value: name };
-            }));
-          }).fail(function() {
-            callback();
+      if (Array.isArray(suggestions)) {
+        if (typeof suggestions[0] === "string") {
+          suggestions = suggestions.map(function(name) {
+            return { tag: name, value: name };
           });
+        }
+
+        // Add suggestions after setup. Assigning options would replace the
+        // ones Tom Select builds from the current value and drop unsaved tags.
+        tom_select_settings.onInitialize = function() {
+          this.addOptions(suggestions);
         };
       }
 

@@ -107,6 +107,11 @@ describe "Tags" do
     expect(page).to have_checked_field "Education"
     expect(page).to have_unchecked_field "Health"
     expect(page).to have_css ".taggable-fields .item[data-value='Education']"
+
+    tag_list = find("#debate_tag_list", visible: :all)
+
+    expect(tag_list["data-suggestions-url"]).to be(nil)
+    expect(JSON.parse(tag_list["data-suggestions-list"])).to include("Education", "Health")
   end
 
   scenario "Create with too many tags" do
