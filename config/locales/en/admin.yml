@@ -737,7 +737,7 @@ en:
       admin: Admin menu
       banner: Banners
       proposals: Proposals
-      proposals_topics: Proposals topics
+      proposals_topics: Categories
       budgets: Participatory budgets
       geozones: Geozones
       locales: Languages
@@ -1556,12 +1556,12 @@ en:
         proposals: "Proposals"
         title: "Sustainable Development Goals - Stats"
     tags:
-      create: Create topic
+      create: Create category
       index:
-        add_tag: Add a new proposal topic
-        title: Proposal topics
-        topic: Topic
-        help: "When a user creates a proposal, the following topics are suggested as default tags."
+        add_tag: Add a new category
+        title: Categories
+        topic: Category
+        help: "Users can select these categories when creating proposals, debates or budget investments."
     users:
       columns:
         id: ID
