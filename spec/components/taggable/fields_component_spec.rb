@@ -56,7 +56,7 @@ describe Taggable::FieldsComponent do
       expect(page).not_to have_css "#category_tags"
       expect(page).not_to have_css "legend", text: "Categories and tags"
       expect(page).to have_css "label:not(.show-for-sr)", text: "Tags"
-      expect(page).to have_content "Tag this debate."
+      expect(page).to have_content "Tag this debate. You can choose from proposed categories or add your own"
     end
 
     it "defaults categories to Tag.category when omitted" do
@@ -67,6 +67,21 @@ describe Taggable::FieldsComponent do
       expect(page).to have_css "input[type='checkbox']", count: 2
       expect(page).to have_css "input[type='checkbox'][data-list-value='Education']"
       expect(page).to have_css "input[type='checkbox'][data-list-value='Health']"
+    end
+
+    it "uses debate translations when rendering categories for debates" do
+      debate = create(:debate, tag_list: "Education")
+      debate_form = ConsulFormBuilder.new(:debate, debate, ApplicationController.new.view_context, {})
+      component = Taggable::FieldsComponent.new(debate_form, i18n_namespace: "debates.form")
+
+      render_inline component
+
+      expect(page).to have_css "#category_tags"
+      expect(page).to have_checked_field "Education"
+      expect(page).to have_css "legend", text: "Categories and tags"
+      expect(page).to have_content "Tag this debate. You can choose from proposed categories or add your own"
+      expect(page).to have_css "#tag-list-help-text ~ #category_tags"
+      expect(page).not_to have_css "label", exact_text: "Categories"
     end
 
     it "pre-checks categories already in the tag list" do

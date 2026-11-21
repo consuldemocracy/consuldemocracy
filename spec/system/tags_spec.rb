@@ -183,7 +183,8 @@ describe "Tags" do
     visit new_debate_path
 
     expect(find_field("Tags")["aria-describedby"]).to eq "debate_tag_list_help_text"
-    expect(page).to have_css "#tag-list-help-text", text: "Tag this debate."
+    expect(page).to have_css "#tag-list-help-text",
+                             text: "Tag this debate. You can choose from proposed categories or add your own"
     expect(page).to have_css "#debate_tag_list_help_text",
                              text: "Enter the tags you would like to use, separated by commas (',')"
   end
