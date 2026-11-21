@@ -769,6 +769,7 @@ es:
         zero: "0 idiomas en uso"
         one: "1 idioma en uso"
         other: "%{count} idiomas en uso"
+    categories_and_tags_label: "Categorías y etiquetas"
     optional: "Campos opcionales"
     required: "Campos obligatorios"
     comments:

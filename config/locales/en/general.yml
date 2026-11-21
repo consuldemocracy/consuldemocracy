@@ -769,6 +769,7 @@ en:
         zero: "0 languages in use"
         one: "1 language in use"
         other: "%{count} languages in use"
+    categories_and_tags_label: "Categories and tags"
     optional: "Optional fields"
     required: "Required fields"
     comments:

@@ -22,7 +22,26 @@ describe Taggable::FieldsComponent do
       expect(page).to have_css "#category_tags"
       expect(page).to have_css "input[type='checkbox'][data-list-value='Education']", count: 1
       expect(page).to have_css "label", text: "Education"
-      expect(page).to have_content "Categories"
+      expect(page).to have_css "legend", text: "Categories and tags"
+      expect(page).not_to have_css "label", exact_text: "Categories"
+    end
+
+    it "renders categories before the custom tags field" do
+      component = Taggable::FieldsComponent.new(
+        form,
+        categories: Tag.where(name: "Education"),
+        i18n_namespace: "proposals.form"
+      )
+
+      render_inline component
+
+      expect(page).to have_css ".taggable-fields > legend:first-child", text: "Categories and tags"
+      expect(page).to have_css "legend:first-child ~ #tag-list-help-text"
+      expect(page).to have_css "#tag-list-help-text ~ #category_tags"
+      expect(page).to have_css "#category_tags > legend.show-for-sr", exact_text: "Categories"
+      expect(page).to have_css "#category_tags ~ label.show-for-sr", exact_text: "Tags"
+      expect(page).to have_css "#category_tags ~ input[type='text']"
+      expect(page).not_to have_css "label", exact_text: "Categories"
     end
 
     it "does not render category checkboxes when categories are empty" do
@@ -35,7 +54,8 @@ describe Taggable::FieldsComponent do
       render_inline component
 
       expect(page).not_to have_css "#category_tags"
-      expect(page).to have_css "label", text: "Tags"
+      expect(page).not_to have_css "legend", text: "Categories and tags"
+      expect(page).to have_css "label:not(.show-for-sr)", text: "Tags"
       expect(page).to have_content "Tag this debate."
     end
 
@@ -106,20 +126,6 @@ describe Taggable::FieldsComponent do
 
     expect(page).to have_css "input[type='checkbox'][data-list-value='Custom category']"
     expect(page).to have_css "label", text: "Custom category"
-  end
-
-  it "uses labels from the given i18n namespace" do
-    component = Taggable::FieldsComponent.new(
-      form,
-      categories: ["Health"],
-      i18n_namespace: "proposals.form",
-      autocomplete: false
-    )
-
-    render_inline component
-
-    expect(page).to have_css "label", text: "Tags"
-    expect(page).to have_content "Categories"
   end
 
   it "shows how to enter tags in a hint instead of a placeholder" do
