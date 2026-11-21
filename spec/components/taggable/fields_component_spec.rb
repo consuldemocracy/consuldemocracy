@@ -77,6 +77,21 @@ describe Taggable::FieldsComponent do
       expect(page).to have_css "input[type='checkbox'][data-list-value='Health']"
     end
 
+    it "uses debate translations when rendering categories for debates" do
+      debate = create(:debate, tag_list: "Education")
+      debate_form = ConsulFormBuilder.new(:debate, debate, ApplicationController.new.view_context, {})
+      component = Taggable::FieldsComponent.new(debate_form, i18n_namespace: "debates.form")
+
+      render_inline component
+
+      expect(page).to have_css "#category_tags"
+      expect(page).to have_checked_field "Education"
+      expect(page).to have_css "legend", text: "Categories and tags"
+      expect(page).to have_content "Tag this debate. You can choose from proposed categories or add your own"
+      expect(page).to have_css "#tag-list-help-text ~ #category_tags"
+      expect(page).not_to have_css "label", exact_text: "Categories"
+    end
+
     it "pre-checks categories already in the tag list" do
       proposal = create(:proposal, tag_list: "Education")
       form = ConsulFormBuilder.new(:proposal, proposal, ApplicationController.new.view_context, {})

@@ -80,7 +80,8 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      tags_instructions: Etiqueta este debate.
+      tag_category_label: "Categorías"
+      tags_instructions: "Etiqueta este debate. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Etiquetas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:

@@ -69,6 +69,46 @@ describe "Tags" do
     expect(page).to have_content "Impuestos"
   end
 
+  scenario "Create with category tags" do
+    create(:tag, :category, name: "Education")
+    create(:tag, :category, name: "Health")
+
+    login_as(create(:user))
+    visit new_debate_path
+    fill_in_new_debate_title with: "Schools open late"
+    fill_in_ckeditor "Initial debate text", with: "A description with enough characters"
+    check "debate_terms_of_service"
+
+    find("label", exact_text: "Education").click
+    click_button "Start a debate"
+
+    expect(page).to have_content "Debate created successfully."
+
+    within ".tags" do
+      expect(page).to have_content "Education"
+      expect(page).not_to have_content "Health"
+    end
+  end
+
+  scenario "Keep categories after a validation error" do
+    create(:tag, :category, name: "Education")
+    create(:tag, :category, name: "Health")
+
+    login_as(create(:user))
+    visit new_debate_path
+
+    fill_in "Debate title", with: "Hi"
+    fill_in_ckeditor "Initial debate text", with: "A description with enough characters"
+    find("label", exact_text: "Education").click
+    check "debate_terms_of_service"
+    click_button "Start a debate"
+
+    expect(page).to have_content error_message
+    expect(page).to have_checked_field "Education"
+    expect(page).to have_unchecked_field "Health"
+    expect(page).to have_css ".taggable-fields .item[data-value='Education']"
+  end
+
   scenario "Create with too many tags" do
     user = create(:user)
     login_as(user)
@@ -122,6 +162,30 @@ describe "Tags" do
     within(".tags") do
       expect(page).to have_link "Economía"
       expect(page).to have_link "Hacienda"
+    end
+  end
+
+  scenario "Update categories" do
+    create(:tag, :category, name: "Education")
+    create(:tag, :category, name: "Health")
+    debate = create(:debate, tag_list: "Education")
+
+    login_as(debate.author)
+    visit edit_debate_path(debate)
+
+    expect(page).to have_checked_field "Education"
+    expect(page).to have_unchecked_field "Health"
+
+    find("label", exact_text: "Education").click
+    find("label", exact_text: "Health").click
+    fill_in_tag_list "Custom"
+    click_button "Save changes"
+
+    expect(page).to have_content "Debate updated successfully."
+    within ".tags" do
+      expect(page).not_to have_content "Education"
+      expect(page).to have_content "Health"
+      expect(page).to have_content "Custom"
     end
   end
 
