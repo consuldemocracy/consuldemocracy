@@ -16,6 +16,7 @@ describe Proposals::FormComponent do
 
     it "gives map instructions an id distinct from tag instructions" do
       Setting["feature.map"] = true
+      create(:tag, :category, name: "Health")
 
       render_inline Proposals::FormComponent.new(Proposal.new, url: proposals_path)
 

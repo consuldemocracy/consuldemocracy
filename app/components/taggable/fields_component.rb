@@ -14,6 +14,14 @@ class Taggable::FieldsComponent < ApplicationComponent
 
   private
 
+    def wrapper_tag
+      if categories.any?
+        :fieldset
+      else
+        :div
+      end
+    end
+
     def category_name(category)
       category.respond_to?(:name) ? category.name : category.to_s
     end

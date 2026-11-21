@@ -48,6 +48,8 @@ describe Budgets::Investments::FormComponent do
   end
 
   it "asks people to tag the investment" do
+    create(:tag, :category, name: "Parks")
+
     render_inline Budgets::Investments::FormComponent.new(
       budget.investments.new,
       url: budget_investments_path(budget)

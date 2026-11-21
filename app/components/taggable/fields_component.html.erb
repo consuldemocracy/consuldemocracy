@@ -1,10 +1,10 @@
-<div class="taggable-fields">
-  <%= form.label :tag_list, tags_label %>
-  <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
-
+<%= content_tag wrapper_tag, class: "taggable-fields" do %>
   <% if categories.any? %>
-    <div id="category_tags" class="tags">
-      <%= form.label :category_tag_list, tag_category_label %>
+    <legend><%= t("shared.categories_and_tags_label") %></legend>
+    <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
+
+    <fieldset id="category_tags" class="tags">
+      <legend class="show-for-sr"><%= tag_category_label %></legend>
       <% categories.each do |category| %>
         <% name = category_name(category) %>
         <% checkbox_id = "tag_category_#{name.parameterize}" %>
@@ -13,13 +13,12 @@
                           data: { list_value: name } %>
         <%= label_tag checkbox_id, name %>
       <% end %>
-    </div>
-
-    <br>
+    </fieldset>
   <% end %>
 
   <%= form.text_field :tag_list, value: tag_list_value,
-                                 label: false,
+                                 label: tags_label,
+                                 label_options: ({ class: "show-for-sr" } if categories.any?),
                                  hint: tags_placeholder,
                                  data: tag_list_data %>
-</div>
+<% end %>
