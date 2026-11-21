@@ -52,18 +52,6 @@ module ActsAsTaggableOn
       )
     end
 
-    include PgSearch::Model
-
-    pg_search_scope :pg_search, against: :name,
-                                using: {
-                                  tsearch: { prefix: true }
-                                },
-                                ignoring: :accents
-
-    def self.search(term)
-      pg_search(term)
-    end
-
     def increment_custom_counter_for(taggable_type)
       Tag.increment_counter(custom_counter_field_name_for(taggable_type), id)
     end

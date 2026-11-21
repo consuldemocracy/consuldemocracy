@@ -155,6 +155,28 @@ describe "Tags" do
     expect(page).to have_content "tags must be less than or equal to 6"
   end
 
+  scenario "Keeps new tags visible after a validation error" do
+    create(:tag, :category, name: "Health")
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in_ckeditor "Initial debate text", with: "A description with enough characters"
+    check "debate_terms_of_service"
+    fill_in_tag_list "Schools, Benches, Parks"
+
+    click_button "Start a debate"
+
+    expect(page).to have_content error_message
+
+    within(".taggable-fields") do
+      expect(page).to have_css ".item", count: 3
+      expect(page).to have_css ".item[data-value='Schools']", text: "Schools"
+      expect(page).to have_css ".item[data-value='Benches']", text: "Benches"
+      expect(page).to have_css ".item[data-value='Parks']", text: "Parks"
+    end
+    expect(find("#debate_tag_list", visible: :all).value).to eq "Schools,Benches,Parks"
+  end
+
   scenario "Create without JavaScript", :no_js do
     login_as(create(:user))
 
@@ -201,6 +223,30 @@ describe "Tags" do
 
     expect(page).to have_content "Debate created successfully."
     expect(page).to have_link "Impuestos"
+  end
+
+  scenario "Preloads suggestions and finds tags by substring, accent and words" do
+    create(:debate, tag_list: "Agua potable, Educación")
+    login_as(create(:user))
+
+    visit new_debate_path
+
+    tag_list = find("#debate_tag_list", visible: :all)
+
+    expect(tag_list["data-suggestions-url"]).to be(nil)
+    expect(JSON.parse(tag_list["data-suggestions-list"])).to include("Agua potable", "Educación")
+
+    fill_in "Tags", with: "table"
+
+    expect(page).to have_css ".ts-dropdown [data-value='Agua potable']"
+
+    fill_in "Tags", with: "educacion"
+
+    expect(page).to have_css ".ts-dropdown [data-value='Educación']"
+
+    fill_in "Tags", with: "agua pot"
+
+    expect(page).to have_css ".ts-dropdown [data-value='Agua potable']"
   end
 
   scenario "Create with a suggested tag" do
@@ -375,11 +421,12 @@ describe "Tags" do
     expect(find("#debate_tag_list", visible: :all)["aria-hidden"]).to eq "true"
   end
 
-  scenario "Tags field works after going back to the form" do
+  scenario "Keeps edited tags when moving back and forward" do
     debate = create(:debate, tag_list: "Economía")
 
     login_as(debate.author)
     visit edit_debate_path(debate)
+    remove_tag_list_tag "Economía"
     fill_in_tag_list "Hacienda"
     click_link "View debate"
 
@@ -388,8 +435,21 @@ describe "Tags" do
     go_back
 
     expect(page).to have_css ".taggable-fields .ts-wrapper", count: 1
-    expect(page).to have_css ".taggable-fields .item", count: 2
     expect(find_field("Tags")["aria-labelledby"]).to eq find("label", exact_text: "Tags")[:id]
+    expect(page).to have_css ".taggable-fields .item", count: 1
+    expect(page).to have_css ".item[data-value='Hacienda']"
+    expect(page).not_to have_css ".item[data-value='Economía']"
+
+    go_forward
+
+    expect(page).to have_css "h1", exact_text: debate.title
+
+    go_back
+
+    expect(page).to have_css ".taggable-fields .ts-wrapper", count: 1
+    expect(page).to have_css ".taggable-fields .item", count: 1
+    expect(page).to have_css ".item[data-value='Hacienda']"
+    expect(page).not_to have_css ".item[data-value='Economía']"
 
     fill_in_tag_list "Impuestos"
     click_button "Save changes"
@@ -397,9 +457,9 @@ describe "Tags" do
     expect(page).to have_content "Debate updated successfully."
 
     within(".tags") do
-      expect(page).to have_link "Economía"
       expect(page).to have_link "Hacienda"
       expect(page).to have_link "Impuestos"
+      expect(page).not_to have_link "Economía"
     end
   end
 

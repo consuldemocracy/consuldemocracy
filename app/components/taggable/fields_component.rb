@@ -36,7 +36,7 @@ class Taggable::FieldsComponent < ApplicationComponent
 
     def tag_list_data
       data = { remove_tag_text: t("sdg.related_list_selector.remove_tag") }
-      data[:suggestions_url] = suggest_tags_path if autocomplete
+      data[:suggestions_list] = Tag.suggestion_names if autocomplete
       data
     end
 

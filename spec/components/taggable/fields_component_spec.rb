@@ -107,7 +107,7 @@ describe Taggable::FieldsComponent do
     end
   end
 
-  it "adds suggestions url when autocomplete is enabled" do
+  it "preloads tag suggestions when autocomplete is enabled" do
     component = Taggable::FieldsComponent.new(
       form,
       categories: [],
@@ -117,12 +117,15 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css "input[type='text'][data-suggestions-url]"
+    suggestions = page.find("input[type='text']")["data-suggestions-list"]
+
+    expect(JSON.parse(suggestions)).to match_array ["Education", "Health", "existing"]
     expect(page).to have_css "input[type='text'][data-remove-tag-text]"
+    expect(page).not_to have_css "input[data-suggestions-url]"
     expect(page).not_to have_css "input.tag-autocomplete"
   end
 
-  it "omits suggestions url when autocomplete is disabled" do
+  it "omits suggestions when autocomplete is disabled" do
     component = Taggable::FieldsComponent.new(
       form,
       categories: ["Health"],
@@ -133,6 +136,7 @@ describe Taggable::FieldsComponent do
     render_inline component
 
     expect(page).to have_css "input[type='text']"
+    expect(page).not_to have_css "input[data-suggestions-list]"
     expect(page).not_to have_css "input[data-suggestions-url]"
     expect(page).to have_css "input[type='checkbox'][data-list-value='Health']"
   end
