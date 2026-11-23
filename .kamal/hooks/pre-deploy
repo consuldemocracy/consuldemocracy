@@ -1,19 +1,19 @@
-#!/usr/bin/env ruby
+#!/bin/sh
+set -eu
 
 # Skip migrations during rollbacks.
-exit 0 if ENV["KAMAL_COMMAND"] == "rollback"
+if [ "${KAMAL_COMMAND:-}" = "rollback" ]; then
+  exit 0
+fi
 
-destination = ENV.fetch("KAMAL_DESTINATION")
-version = ENV.fetch("KAMAL_VERSION")
+: "${KAMAL_VERSION:?KAMAL_VERSION is required}"
 
-puts "Running migrations for #{destination} (#{version})..."
+echo "Running migrations for ${KAMAL_VERSION}..."
 
-success = system(
-  "kamal", "app", "exec",
-  "-p",
-  "-d", destination,
-  "--version", version,
-  "bin/rails db:migrate"
-)
+set -- migrate --roles=web --primary --version="${KAMAL_VERSION}"
 
-abort "Database migrations failed!" unless success
+if [ -n "${KAMAL_DESTINATION:-}" ]; then
+  set -- "$@" -d "$KAMAL_DESTINATION"
+fi
+
+exec ruby bin/kamal_migrate "$@"
