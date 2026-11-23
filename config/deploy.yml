@@ -11,7 +11,7 @@ servers:
     - <%= ENV.fetch("DEPLOY_HOST") %>
   cron:
     hosts:
-      - <%= ENV.fetch("KAMAL_HOST") %>
+      - <%= ENV.fetch("DEPLOY_HOST") %>
     cmd: bash -c "bundle exec whenever --roles cron --update-crontab && (env && crontab -l) | crontab - && cron -f"
     options:
       user: root
@@ -33,6 +33,7 @@ proxy:
 
 env:
   clear:
+    KAMAL_DESTINATION: production
     RAILS_ENV: production
     RACK_ENV: production
     RAILS_SERVE_STATIC_FILES: "true"
@@ -73,7 +74,7 @@ accessories:
       restart: unless-stopped
   memcached:
     image: memcached:1.6-alpine
-    host: <%= ENV.fetch("KAMAL_HOST") %>
+    host: <%= ENV.fetch("APP_HOST") %>
     cmd: >-
       memcached
       -p <%= ENV.fetch("MEMCACHED_PORT", "11211") %>
