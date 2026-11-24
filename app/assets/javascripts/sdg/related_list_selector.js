@@ -15,6 +15,10 @@
         checkboxListValue: App.SDGRelatedListSelector.goal_code
       });
 
+      if (!input) {
+        return;
+      }
+
       input.on("change", function() {
         App.SDGRelatedListSelector.manage_help($root, input);
       });

@@ -2,6 +2,10 @@
   "use strict";
   App.ListField = {
     mount: function($input, settings) {
+      if (typeof TomSelect === "undefined") {
+        return;
+      }
+
       var input = $input[0];
       var control;
 
