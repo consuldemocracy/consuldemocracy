@@ -28,7 +28,6 @@
 //= require moderator
 //= require gettext
 //= require annotator
-//= require tom-select/dist/js/tom-select.popular
 //= require list_field
 //= require tags
 //= require participation_not_allowed

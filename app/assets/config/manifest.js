@@ -1,6 +1,7 @@
 //= link ckeditor/application.css
 //= link ckeditor/application.js
 //= link graphiql/rails/application.js
+//= link tom-select/dist/js/tom-select.popular.js
 //
 //= link_tree ../images
 //= link application.css
