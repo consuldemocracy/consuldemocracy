@@ -16,7 +16,7 @@
     }
 
     &:checked + label {
-      filter: brightness(1.05);
+      @extend %checked-badge;
     }
 
     + label {

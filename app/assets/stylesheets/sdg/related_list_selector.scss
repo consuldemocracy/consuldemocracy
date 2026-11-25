@@ -39,8 +39,8 @@
         @include focus-outline;
       }
 
-      &:checked + label img {
-        opacity: 0.15;
+      &:checked + label {
+        @extend %checked-badge;
       }
     }
   }
