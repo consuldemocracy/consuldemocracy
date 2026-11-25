@@ -233,6 +233,18 @@ describe Taggable::FieldsComponent do
       expect(page).to have_css ".classification-suggestions-tags .classification-suggestions-body"
       expect(page).to have_css ".classification-suggestions-tags[data-close]"
       expect(page).to have_css(
+        ".classification-suggestions-tags[data-empty='No category or tag suggestions for this draft.']"
+      )
+      expect(page).to have_css(
+        ".classification-suggestions-tags[data-error=" \
+        "'Something went wrong generating suggestions. Please try again.']"
+      )
+      expect(page).to have_css(
+        ".classification-suggestions-tags[data-tag-list-full=" \
+        "'You have already added the maximum of 6 tags. Remove some to make room for new suggestions.']"
+      )
+      expect(page).to have_css ".classification-suggestions-tags[data-tag-list-limit='6']"
+      expect(page).to have_css(
         ".classification-suggestions-tags template.classification-suggestion-template",
         visible: :all
       )

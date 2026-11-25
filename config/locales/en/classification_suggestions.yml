@@ -6,8 +6,8 @@ en:
     accept_all: Accept all
     close: Close
     loading: Loading…
-    empty: No suggestions found.
-    error: Something went wrong. Please try again.
+    empty_tags: No category or tag suggestions for this draft.
+    empty_sdgs: No SDG suggestions for this draft.
     tags_region: Suggested categories and tags
     sdgs_region: Suggested SDGs and targets
     errors:
@@ -16,3 +16,4 @@ en:
         rate_limit_exceeded: Please wait a few minutes before generating new suggestions.
         generic: Something went wrong generating suggestions. Please try again.
         blank_draft: Please add a title, summary or description before requesting suggestions.
+        tag_list_full: You have already added the maximum of %{count} tags. Remove some to make room for new suggestions.

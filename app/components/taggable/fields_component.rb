@@ -55,6 +55,10 @@ class Taggable::FieldsComponent < ApplicationComponent
         Setting["llm.use_ai_classification_suggestions"].present?
     end
 
+    def tag_list_limit
+      Taggable::MAX_NUMBER_OF_TAGS
+    end
+
     def suggest_button_data
       data = { resource_type: form.object.class.name }
       data[:resource_id] = form.object.id if form.object.persisted?

@@ -1,6 +1,6 @@
 module ClassificationSuggestions
   class ResponseNormalizer
-    TAG_LIST_LIMIT = 6
+    TAG_LIST_LIMIT = Taggable::MAX_NUMBER_OF_TAGS
     MAX_CATEGORIES = 2
     MAX_SDGS = 6
     REASON_MAX_LENGTH = 280

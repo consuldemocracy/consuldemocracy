@@ -40,8 +40,10 @@
          data-accept-all="<%= t("classification_suggestions.accept_all") %>"
          data-close="<%= t("classification_suggestions.close") %>"
          data-loading="<%= t("classification_suggestions.loading") %>"
-         data-empty="<%= t("classification_suggestions.empty") %>"
-         data-error="<%= t("classification_suggestions.error") %>">
+         data-empty="<%= t("classification_suggestions.empty_tags") %>"
+         data-error="<%= t("classification_suggestions.errors.messages.generic") %>"
+         data-tag-list-full="<%= t("classification_suggestions.errors.messages.tag_list_full", count: tag_list_limit) %>"
+         data-tag-list-limit="<%= tag_list_limit %>">
       <div class="classification-suggestions-body"></div>
       <%= render "shared/classification_suggestion_template" %>
     </div>

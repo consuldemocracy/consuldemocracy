@@ -2,7 +2,7 @@ module ClassificationSuggestions
   module Llm
     class Client
       REQUEST_TIMEOUT_SECONDS = 45
-      TAG_LIST_LIMIT = ResponseNormalizer::TAG_LIST_LIMIT
+      TAG_LIST_LIMIT = Taggable::MAX_NUMBER_OF_TAGS
       MAX_SDGS = ResponseNormalizer::MAX_SDGS
 
       def self.call(...)
@@ -24,7 +24,14 @@ module ClassificationSuggestions
       def call
         validate_llm_settings!
         return response if response.errors.any?
-        return response if remaining_tag_slots.zero? && !sdg_enabled?
+
+        if remaining_tag_slots.zero? && !sdg_enabled?
+          response.errors << I18n.t(
+            "classification_suggestions.errors.messages.tag_list_full",
+            count: TAG_LIST_LIMIT
+          )
+          return response
+        end
 
         suggestions = generate_suggestions
         return response if response.errors.any?

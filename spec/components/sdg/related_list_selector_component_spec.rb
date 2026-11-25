@@ -59,6 +59,13 @@ describe SDG::RelatedListSelectorComponent do
       expect(page).to have_css ".classification-suggestions-sdgs .classification-suggestions-body"
       expect(page).to have_css ".classification-suggestions-sdgs[data-close]"
       expect(page).to have_css(
+        ".classification-suggestions-sdgs[data-empty='No SDG suggestions for this draft.']"
+      )
+      expect(page).to have_css(
+        ".classification-suggestions-sdgs[data-error=" \
+        "'Something went wrong generating suggestions. Please try again.']"
+      )
+      expect(page).to have_css(
         ".classification-suggestions-sdgs template.classification-suggestion-template",
         visible: :all
       )

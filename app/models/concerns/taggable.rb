@@ -1,6 +1,8 @@
 module Taggable
   extend ActiveSupport::Concern
 
+  MAX_NUMBER_OF_TAGS = 6
+
   included do
     acts_as_taggable
     validate :max_number_of_tags, on: :create
@@ -14,7 +16,9 @@ module Taggable
   end
 
   def max_number_of_tags
-    errors.add(:tag_list, :less_than_or_equal_to, count: 6) if tag_list.count > 6
+    if tag_list.count > MAX_NUMBER_OF_TAGS
+      errors.add(:tag_list, :less_than_or_equal_to, count: MAX_NUMBER_OF_TAGS)
+    end
   end
 
   protected

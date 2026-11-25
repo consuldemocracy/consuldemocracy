@@ -20,7 +20,9 @@
         var $panel = $(this).closest(CS.panelSelector);
 
         CS.remainingSuggestions($panel).each(function() {
-          CS.applySuggestion($(this));
+          if (CS.applySuggestion($(this)) === false) {
+            return false;
+          }
         });
       });
 
@@ -46,8 +48,8 @@
 
       $button.prop("disabled", true);
       $button.addClass("is-loading");
-      CS.showPanelMessage(panels.tags, panels.tags.data("loading"));
-      CS.showPanelMessage(panels.sdgs, panels.sdgs.data("loading"));
+      CS.showPanelMessage(panels.tags, panels.tags.data("loading"), "loading");
+      CS.showPanelMessage(panels.sdgs, panels.sdgs.data("loading"), "loading");
 
       if (typeof CKEDITOR !== "undefined") {
         for (var name in CKEDITOR.instances) {
@@ -72,8 +74,8 @@
           CS.renderResponse($form, data);
         },
         error: function() {
-          CS.showPanelMessage(panels.tags, panels.tags.data("error"));
-          CS.showPanelMessage(panels.sdgs, panels.sdgs.data("error"));
+          CS.showPanelMessage(panels.tags, panels.tags.data("error"), "error");
+          CS.showPanelMessage(panels.sdgs, panels.sdgs.data("error"), "error");
         },
         complete: function() {
           $button.prop("disabled", false);
@@ -81,21 +83,43 @@
         }
       });
     },
-    showPanelMessage: function($panel, message) {
+    showPanelMessage: function($panel, message, kind) {
       if (!$panel.length) {
         return;
       }
 
       $panel.removeClass("hide");
-      CS.resetPanelBody($panel, message);
+      CS.resetPanelBody($panel, message, kind);
     },
-    resetPanelBody: function($panel, message) {
+    resetPanelBody: function($panel, message, kind) {
       var $body = $panel.find(".classification-suggestions-body");
+      var $message;
 
       $panel.removeAttr("aria-labelledby");
       $body.empty();
+
+      if (kind === "error") {
+        $message = $("<div>")
+          .addClass("classification-suggestions-message callout alert")
+          .attr("role", "alert");
+        $message.append(CS.closeButton($panel));
+        $message.append($("<p>").text(message));
+        $body.append($message);
+        return;
+      }
+
+      if (kind === "info") {
+        $message = $("<div>")
+          .addClass("classification-suggestions-message callout primary")
+          .attr("role", "status");
+        $message.append(CS.closeButton($panel));
+        $message.append($("<p>").text(message));
+        $body.append($message);
+        return;
+      }
+
       $body.append(CS.closeButton($panel));
-      $body.append($("<p>").text(message));
+      $body.append($("<p>").attr("role", "status").text(message));
     },
     titleId: function($panel) {
       if ($panel.hasClass("classification-suggestions-tags")) {
@@ -114,8 +138,8 @@
 
       if (errors.length) {
         errorMessage = errors.join(" ");
-        CS.showPanelMessage(panels.tags, errorMessage);
-        CS.showPanelMessage(panels.sdgs, errorMessage);
+        CS.showPanelMessage(panels.tags, errorMessage, "error");
+        CS.showPanelMessage(panels.sdgs, errorMessage, "error");
         return;
       }
 
@@ -170,7 +194,7 @@
       var $title;
 
       if (!items.length) {
-        CS.showPanelMessage($panel, $panel.data("empty"));
+        CS.showPanelMessage($panel, $panel.data("empty"), "info");
         return;
       }
 
@@ -246,6 +270,43 @@
     panelHasSuggestions: function($panel) {
       return $panel.length > 0 && CS.remainingSuggestions($panel).length > 0;
     },
+    tagListLimit: function($panel) {
+      return parseInt($panel.data("tag-list-limit"), 10) || 6;
+    },
+    canAddTag: function($form, $panel) {
+      var input = $form.find(".taggable-fields input.tomselected")[0];
+      var control = input && input.tomselect;
+
+      return !!(control && control.items.length < CS.tagListLimit($panel));
+    },
+    showPanelNotice: function($panel, message) {
+      var $body = $panel.find(".classification-suggestions-body");
+      var $list = $body.find(".classification-suggestion-list");
+      var $notice = $body.find(".classification-suggestions-notice");
+
+      if (!$panel.length) {
+        return;
+      }
+
+      if ($notice.length) {
+        $notice.find("p").text(message);
+        return;
+      }
+
+      $notice = $("<div>")
+        .addClass("classification-suggestions-notice callout alert")
+        .attr("role", "alert")
+        .append($("<p>").text(message));
+
+      if ($list.length) {
+        $notice.insertBefore($list);
+      } else {
+        $body.append($notice);
+      }
+    },
+    clearPanelNotice: function($panel) {
+      $panel.find(".classification-suggestions-notice").remove();
+    },
     bindListSync: function($form) {
       var pairs = [
         { selector: ".taggable-fields input.tomselected", panel: ".classification-suggestions-tags" },
@@ -278,6 +339,10 @@
         return;
       }
 
+      if ($panel.find(".classification-suggestion").length === 0) {
+        return;
+      }
+
       selected = control.items.map(String);
 
       $panel.find(".classification-suggestion").each(function() {
@@ -287,6 +352,10 @@
 
         $button.toggleClass(CS.appliedClasses, selectedNow);
       });
+
+      if (control.items.length < CS.tagListLimit($panel)) {
+        CS.clearPanelNotice($panel);
+      }
 
       if (CS.remainingSuggestions($panel).length > 0) {
         $panel.removeClass("hide");
@@ -355,9 +424,15 @@
       var type = $button.data("suggestion-type");
       var value = String($button.data("value"));
       var $form = $button.closest("form");
+      var $panel = $button.closest(CS.panelSelector);
 
       if ($button.hasClass("is-applied")) {
-        return;
+        return true;
+      }
+
+      if ((type === "category" || type === "tag") && !CS.canAddTag($form, $panel)) {
+        CS.showPanelNotice($panel, $panel.data("tag-list-full"));
+        return false;
       }
 
       if (type === "category") {
@@ -367,6 +442,8 @@
       } else if (type === "sdg") {
         CS.applySdg($form, value);
       }
+
+      return true;
     },
     applyCategory: function($form, value) {
       var $checkbox = $form.find(".taggable-fields .tags input[type='checkbox']").filter(function() {

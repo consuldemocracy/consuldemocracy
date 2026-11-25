@@ -69,6 +69,20 @@
       top: 0;
     }
 
+    .classification-suggestions-message.callout {
+      margin-bottom: 0;
+      padding-right: 2.5rem;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .classification-dismiss {
+        right: 0.75rem;
+        top: 0.5rem;
+      }
+    }
+
     .classification-suggestions-body h4 {
       font-size: 1.0625rem;
       font-weight: bold;

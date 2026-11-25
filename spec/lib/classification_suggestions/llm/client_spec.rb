@@ -119,12 +119,19 @@ describe ClassificationSuggestions::Llm::Client do
       expect(RubyLLM::Context).not_to have_received(:new)
     end
 
-    it "returns empty lists when the tag list is full and SDGs are disabled" do
+    it "returns a tag list full error when the tag list is full and SDGs are disabled" do
       Setting["feature.sdg"] = false
 
       result = suggest(selected_tags: %w[a b c d e f])
 
-      expect(result.as_json).to eq(categories: [], tags: [], sdgs: [], errors: [])
+      expect(result.as_json).to eq(
+        categories: [],
+        tags: [],
+        sdgs: [],
+        errors: [
+          "You have already added the maximum of 6 tags. Remove some to make room for new suggestions."
+        ]
+      )
       expect(RubyLLM::Context).not_to have_received(:new)
     end
 

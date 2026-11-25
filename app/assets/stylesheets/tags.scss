@@ -37,6 +37,28 @@
       top: 0;
     }
 
+    .classification-suggestions-message.callout {
+      margin-bottom: 0;
+      padding-right: 2.5rem;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .classification-dismiss {
+        right: 0.75rem;
+        top: 0.5rem;
+      }
+    }
+
+    .classification-suggestions-notice {
+      margin-bottom: calc($line-height / 2);
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     h4 {
       font-size: 1.0625rem;
       font-weight: bold;
