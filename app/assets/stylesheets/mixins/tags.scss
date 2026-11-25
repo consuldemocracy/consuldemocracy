@@ -28,3 +28,28 @@
     text-decoration: none;
   }
 }
+
+%checked-badge {
+  @include has-fa-icon(circle-check, regular, after);
+  position: relative;
+
+  &::before,
+  &::after {
+    border-radius: 50%;
+    height: 1em;
+    position: absolute;
+    #{$global-right}: -0.25em;
+    top: -0.25em;
+    width: 1em;
+  }
+
+  &::before {
+    background-color: $white;
+    content: "";
+  }
+
+  &::after {
+    border: 1px solid $black;
+    color: $black;
+  }
+}
