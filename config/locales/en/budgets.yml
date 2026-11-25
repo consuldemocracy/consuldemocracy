@@ -77,7 +77,7 @@ en:
         subtitle: "%{heading} (%{price})"
         subtitle_without_price: "%{heading}"
         tag_category_label: "Categories"
-        tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
+        tags_instructions: "Tag this investment. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
       index:
