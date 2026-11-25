@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+
+# Skip migrations during rollbacks.
+if [ "${KAMAL_COMMAND:-}" = "rollback" ]; then
+  exit 0
+fi
+
+: "${KAMAL_VERSION:?KAMAL_VERSION is required}"
+
+echo "Running migrations for ${KAMAL_VERSION}..."
+
+set -- migrate --roles=web --primary --version="${KAMAL_VERSION}"
+
+if [ -n "${KAMAL_DESTINATION:-}" ]; then
+  set -- "$@" -d "$KAMAL_DESTINATION"
+fi
+
+exec ruby bin/kamal_migrate "$@"

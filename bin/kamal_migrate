@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "kamal"
+
+class KamalMigrate < Kamal::Cli::App
+  desc "migrate", "Refresh remote environment and run database migrations"
+
+  def migrate
+    pre_connect_if_required
+
+    on_roles(KAMAL.roles, hosts: KAMAL.app_hosts) do |host, role|
+      app = KAMAL.app(role: role, host: host)
+
+      execute(*app.ensure_env_directory)
+
+      upload!(
+        role.secrets_io(host),
+        role.secrets_path,
+        mode: "0600"
+      )
+    end
+
+    exec("bin/rails db:migrate")
+  end
+end
+
+KamalMigrate.start(ARGV) if $PROGRAM_NAME == __FILE__

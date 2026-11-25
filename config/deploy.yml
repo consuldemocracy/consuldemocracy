@@ -1,0 +1,86 @@
+service: consul-democracy
+image: <%= ENV.fetch("KAMAL_IMAGE") %>
+
+ssh:
+  user: <%= ENV.fetch("DEPLOY_USER") %>
+  keys:
+    - <%= ENV.fetch("DEPLOY_SSH_KEY") %>
+
+servers:
+  web:
+    - <%= ENV.fetch("DEPLOY_HOST") %>
+  cron:
+    hosts:
+      - <%= ENV.fetch("DEPLOY_HOST") %>
+    cmd: bash -c "bundle exec whenever --roles cron --update-crontab && (env && crontab -l) | crontab - && cron -f"
+    options:
+      user: root
+registry:
+  username: <%= ENV.fetch("KAMAL_REGISTRY_USERNAME") %>
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: <%= ENV.fetch("DOCKER_ARCH", "arm64") %>
+  dockerfile: Dockerfile.production
+  context: .
+
+proxy:
+  host: <%= ENV.fetch("APP_HOST") %>
+  ssl: true
+  app_port: 3000
+  forward_headers: true
+
+env:
+  clear:
+    KAMAL_DESTINATION: production
+    RAILS_ENV: production
+    RACK_ENV: production
+    RAILS_SERVE_STATIC_FILES: "true"
+    RAILS_LOG_TO_STDOUT: "true"
+    DB_HOST: <%= ENV.fetch("DB_HOST") %>
+    PGUSER: <%= ENV.fetch("PGUSER") %>
+    PGDATABASE: <%= ENV.fetch("PGDATABASE") %>
+    MAILER_DELIVERY_METHOD: smtp
+    SMTP_ADDRESS: <%= ENV.fetch("SMTP_ADDRESS") %>
+    SMTP_PORT: <%= ENV.fetch("SMTP_PORT", "587") %>
+    SMTP_DOMAIN: <%= ENV.fetch("SMTP_DOMAIN") %>
+    SMTP_AUTHENTICATION: plain
+    SMTP_ENABLE_STARTTLS_AUTO: "true"
+  secret:
+    - SECRET_KEY_BASE
+    - PGPASSWORD
+    - SMTP_USERNAME
+    - SMTP_PASSWORD
+
+volumes:
+  - "<%= ENV.fetch("STORAGE_VOLUME") %>:/var/www/consul/storage"
+
+accessories:
+  db:
+    image: postgres:<%= ENV.fetch("POSTGRES_VERSION", "16") %>
+    host: <%= ENV.fetch("DEPLOY_HOST") %>
+    env:
+      clear:
+        POSTGRES_USER: <%= ENV.fetch("POSTGRES_USER") %>
+        POSTGRES_DB: <%= ENV.fetch("POSTGRES_DB") %>
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - <%= ENV.fetch("POSTGRES_VOLUME") %>:/var/lib/postgresql/data
+    files:
+      - db/bootstrap.sql:/docker-entrypoint-initdb.d/01-bootstrap.sql
+    options:
+      restart: unless-stopped
+  memcached:
+    image: memcached:1.6-alpine
+    host: <%= ENV.fetch("APP_HOST") %>
+    cmd: >-
+      memcached
+      -p <%= ENV.fetch("MEMCACHED_PORT", "11211") %>
+      -m <%= ENV.fetch("MEMCACHED_MEMORY_LIMIT", "64") %>
+      -c <%= ENV.fetch("MEMCACHED_CONNECTIONS", "1024") %>
+      -l 0.0.0.0
+      -U 0
+    options:
+      restart: unless-stopped
