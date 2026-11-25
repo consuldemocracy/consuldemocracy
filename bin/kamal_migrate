@@ -26,4 +26,3 @@ class KamalMigrate < Kamal::Cli::App
 end
 
 KamalMigrate.start(ARGV) if $PROGRAM_NAME == __FILE__
-
