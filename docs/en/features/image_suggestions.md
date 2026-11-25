@@ -98,7 +98,7 @@ Once you have configured both the LLM provider and the Pexels API key:
 
 ### User Experience
 
-When creating or editing budget investments:
+When creating or editing budget investments or proposals:
 
 1. **User fills in title and/or description**: The feature uses whichever of these fields is present to generate image suggestions.
 
@@ -156,7 +156,7 @@ The image suggestions feature works with any resource that:
 - Supports image attachments through the standard image attachment system
 - Uses the `Images::NestedComponent`
 
-Currently, this is only implemented on with Budget Investments feature!
+Currently, this is implemented for budget investments and proposals.
 
 ## Pricing Considerations
 

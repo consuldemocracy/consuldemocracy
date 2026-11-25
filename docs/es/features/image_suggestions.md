@@ -97,7 +97,7 @@ Una vez que hayas configurado tanto el proveedor LLM como la clave API de Pexels
 
 ### Experiencia del Usuario
 
-Al crear o editar proyectos de gasto:
+Al crear o editar proyectos de gasto o propuestas:
 
 1. **El usuario completa título y/o descripción**: La funcionalidad usa el contenido de estos campos cuando están disponibles para generar sugerencias.
 
@@ -155,7 +155,7 @@ La funcionalidad de sugerencias de imágenes funciona con cualquier recurso que:
 - Soporte adjuntos de imágenes a través del sistema estándar de adjuntos de imágenes
 - Use `Images::NestedComponent`
 
-¡Actualmente, esto solo está implementado con la funcionalidad de proyectos de gasto!
+Actualmente, esto está implementado para proyectos de gasto y propuestas.
 
 ## Consideraciones de Precios
 

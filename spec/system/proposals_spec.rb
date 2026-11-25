@@ -313,8 +313,8 @@ describe "Proposals" do
     fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
-    fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in_tag_list "Refugees, Solidarity"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -337,6 +337,86 @@ describe "Proposals" do
     expect(page).to have_content "Refugees"
     expect(page).to have_content "Solidarity"
     expect(page).to have_content I18n.l(Date.current)
+  end
+
+  context "Image suggestions" do
+    let(:llm_response) do
+      double(
+        "ImageSuggestions::Llm::Client::Response",
+        results: double(
+          "Pexels::PhotoSet",
+          photos: [
+            double(
+              "Pexels::Photo",
+              id: "suggested-photo-1",
+              src: { "small" => "https://example.com/suggested.jpg" },
+              user: double(name: "Test Photographer")
+            )
+          ]
+        ),
+        errors: []
+      )
+    end
+
+    before do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o"
+      Setting["llm.use_ai_image_suggestions"] = true
+
+      stub_secrets(pexels_access_key: "test_key")
+
+      allow(ImageSuggestions::Llm::Client).to receive(:call).and_return(llm_response)
+      allow(ImageSuggestions::Pexels).to receive(:download)
+        .with("suggested-photo-1")
+        .and_return(fixture_file_upload("clippy.jpg"))
+    end
+
+    scenario "User can suggest images, attach one and create the proposal" do
+      login_as(create(:user))
+      visit new_proposal_path
+
+      fill_in_new_proposal_title with: "Help refugees"
+      fill_in "Proposal summary", with: "In summary, what we want is..."
+      fill_in_ckeditor "Proposal text", with: "This is very important because..."
+      fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+
+      click_link "Add image"
+
+      expect(page).to have_button "Suggest an image with AI"
+
+      click_button "Suggest an image with AI"
+
+      expect(page).to have_content "Select an image from the suggestions below:"
+
+      within(".suggested-images-container") do
+        click_button "Attach suggested image 1 of 1"
+      end
+
+      expect(page).to have_link "Remove image"
+      within(".image-fields.direct-upload") do
+        title_field = find("input[name$='[title]']", match: :first)
+        fill_in title_field[:id], with: "Image by Test Photographer.jpg"
+      end
+
+      check "I agree to the Privacy Policy and the Terms and conditions of use"
+      click_button "Create proposal"
+
+      expect(page).to have_content "Proposal created successfully."
+      expect(page).to have_content "Help refugees"
+      expect(page).to have_css "img[alt*='Test Photographer']"
+    end
+
+    scenario "Suggestion button is not shown when the feature is disabled" do
+      Setting["llm.use_ai_image_suggestions"] = false
+
+      login_as(create(:user))
+      visit new_proposal_path
+
+      click_link "Add image"
+
+      expect(page).to have_css ".image-fields"
+      expect(page).not_to have_button "Suggest an image with AI"
+    end
   end
 
   scenario "Create with invisible_captcha honeypot field", :no_js do

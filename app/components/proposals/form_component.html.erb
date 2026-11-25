@@ -38,7 +38,9 @@
     </div>
 
     <% if feature?(:allow_images) %>
-      <%= render Images::NestedComponent.new(f) %>
+      <%= render Images::NestedComponent.new(f) do %>
+        <%= render ImageSuggestions::SuggestButtonComponent.new(f) %>
+      <% end %>
     <% end %>
 
     <% if feature?(:allow_attached_documents) %>
