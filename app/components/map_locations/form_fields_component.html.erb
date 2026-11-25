@@ -1,6 +1,6 @@
 <fieldset>
   <legend><%= label %></legend>
-  <p class="help-text" id="tag-list-help-text"><%= help %></p>
+  <p class="help-text" id="map-location-help-text"><%= help %></p>
 
   <%= form.fields_for :map_location, map_location do |fields| %>
     <%= render_map(map_location, form: fields) %>
