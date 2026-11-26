@@ -20,7 +20,7 @@ describe Taggable::FieldsComponent do
       render_inline component
 
       expect(page).to have_css "#category_tags"
-      expect(page).to have_css "input.js-tag-category[data-list-value='Education']", count: 1
+      expect(page).to have_css "input[type='checkbox'][data-list-value='Education']", count: 1
       expect(page).to have_css "label", text: "Education"
       expect(page).to have_content "Categories"
     end
@@ -44,9 +44,9 @@ describe Taggable::FieldsComponent do
 
       render_inline component
 
-      expect(page).to have_css "input.js-tag-category", count: 2
-      expect(page).to have_css "input.js-tag-category[data-list-value='Education']"
-      expect(page).to have_css "input.js-tag-category[data-list-value='Health']"
+      expect(page).to have_css "input[type='checkbox']", count: 2
+      expect(page).to have_css "input[type='checkbox'][data-list-value='Education']"
+      expect(page).to have_css "input[type='checkbox'][data-list-value='Health']"
     end
 
     it "pre-checks categories already in the tag list" do
@@ -74,8 +74,8 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css "input.js-tag-list[data-suggestions-url]"
-    expect(page).to have_css "input.js-tag-list[data-remove-tag-text]"
+    expect(page).to have_css "input[type='text'][data-suggestions-url]"
+    expect(page).to have_css "input[type='text'][data-remove-tag-text]"
     expect(page).not_to have_css "input.tag-autocomplete"
   end
 
@@ -89,9 +89,9 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css "input.js-tag-list"
+    expect(page).to have_css "input[type='text']"
     expect(page).not_to have_css "input[data-suggestions-url]"
-    expect(page).to have_css "input.js-tag-category[data-list-value='Health']"
+    expect(page).to have_css "input[type='checkbox'][data-list-value='Health']"
   end
 
   it "renders string category names" do
@@ -104,7 +104,7 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css "input.js-tag-category[data-list-value='Custom category']"
+    expect(page).to have_css "input[type='checkbox'][data-list-value='Custom category']"
     expect(page).to have_css "label", text: "Custom category"
   end
 
@@ -143,6 +143,6 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css ".taggable-fields input.js-tag-list"
+    expect(page).to have_css ".taggable-fields input[type='text']"
   end
 end
