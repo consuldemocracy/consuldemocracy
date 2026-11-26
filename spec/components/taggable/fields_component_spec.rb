@@ -55,7 +55,8 @@ describe Taggable::FieldsComponent do
 
       expect(page).not_to have_css "#category_tags"
       expect(page).not_to have_css "legend", text: "Categories and tags"
-      expect(page).to have_css "label:not(.show-for-sr)", text: "Tags"
+      expect(page).to have_css "fieldset.taggable-fields > legend", text: "Tags"
+      expect(page).to have_css "label.show-for-sr", exact_text: "Tags"
       expect(page).to have_content "Tag this debate. You can choose from proposed categories or add your own"
     end
 
@@ -182,6 +183,97 @@ describe Taggable::FieldsComponent do
 
     render_inline component
 
-    expect(page).to have_css ".taggable-fields input[type='text']"
+    expect(page).to have_css "fieldset.taggable-fields input[type='text']"
+  end
+
+  describe "classification suggestions" do
+    before do
+      Setting["llm.provider"] = nil
+      Setting["llm.model"] = nil
+      Setting["llm.use_ai_classification_suggestions"] = nil
+    end
+
+    it "does not render suggestions UI when ai_suggestions is disabled" do
+      component = Taggable::FieldsComponent.new(
+        form,
+        categories: [],
+        i18n_namespace: "proposals.form",
+        ai_suggestions: false
+      )
+
+      render_inline component
+
+      expect(page).not_to have_css ".suggest-classification"
+      expect(page).not_to have_css ".classification-suggestions-tags"
+    end
+
+    it "renders suggest button, suggestions panel, and suggestion template when enabled" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o"
+      Setting["llm.use_ai_classification_suggestions"] = true
+
+      component = Taggable::FieldsComponent.new(
+        form,
+        categories: [],
+        i18n_namespace: "proposals.form",
+        ai_suggestions: true
+      )
+
+      render_inline component
+
+      expect(page).to have_css "button.suggest-classification"
+      expect(page).to have_css(
+        "legend.taggable-fields-heading-with-suggest",
+        text: "Tags"
+      )
+      expect(page).to have_css(
+        "legend.taggable-fields-heading-with-suggest button.suggest-classification"
+      )
+      expect(page).to have_css ".classification-suggestions-tags.classification-suggestions.hide"
+      expect(page).to have_css ".classification-suggestions-tags .classification-suggestions-body"
+      expect(page).to have_css ".classification-suggestions-tags[data-close]"
+      expect(page).to have_css(
+        ".classification-suggestions-tags[data-empty='No category or tag suggestions for this draft.']"
+      )
+      expect(page).to have_css(
+        ".classification-suggestions-tags[data-error=" \
+        "'Something went wrong generating suggestions. Please try again.']"
+      )
+      expect(page).to have_css(
+        ".classification-suggestions-tags[data-tag-list-full=" \
+        "'You have already added the maximum of 6 tags. Remove some to make room for new suggestions.']"
+      )
+      expect(page).to have_css ".classification-suggestions-tags[data-tag-list-limit='6']"
+      expect(page).to have_css(
+        ".classification-suggestions-tags template.classification-suggestion-template",
+        visible: :all
+      )
+    end
+
+    it "renders suggest button beside the categories legend when categories are present" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o"
+      Setting["llm.use_ai_classification_suggestions"] = true
+
+      component = Taggable::FieldsComponent.new(
+        form,
+        categories: Tag.where(name: "Education"),
+        i18n_namespace: "proposals.form",
+        ai_suggestions: true
+      )
+
+      render_inline component
+
+      expect(page).to have_css(
+        "legend.taggable-fields-heading-with-suggest",
+        text: "Categories and tags"
+      )
+      expect(page).to have_css(
+        "legend.taggable-fields-heading-with-suggest button.suggest-classification"
+      )
+      expect(page).to have_css "button.suggest-classification", count: 1
+      expect(page).to have_css ".taggable-fields > legend:first-child"
+      expect(page).to have_css "legend:first-child ~ #tag-list-help-text"
+    end
   end
 end

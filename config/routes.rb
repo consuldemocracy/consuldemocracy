@@ -45,6 +45,7 @@ Rails.application.routes.draw do
         post :attach
       end
     end
+    resources :classification_suggestions, only: [:create]
     resources :documents, only: [:destroy]
     resources :follows, only: [:create, :destroy]
     resources :remote_translations, only: [:create]

@@ -58,4 +58,90 @@
   h3 {
     @include header-font-size(h4);
   }
+
+  .classification-suggestions-sdgs {
+    margin-bottom: calc($line-height / 2);
+    position: relative;
+
+    .classification-dismiss {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .classification-suggestions-message.callout {
+      margin-bottom: 0;
+      padding-right: 2.5rem;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .classification-dismiss {
+        right: 0.75rem;
+        top: 0.5rem;
+      }
+    }
+
+    .classification-suggestions-body h4 {
+      font-size: 1.0625rem;
+      font-weight: bold;
+      line-height: 1.5rem;
+      padding-right: $line-height;
+    }
+
+    .classification-suggestion-list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: calc($line-height / 4);
+      margin-bottom: calc($line-height / 2);
+    }
+
+    .classification-suggestion-button {
+      @include hollow-button;
+      align-items: baseline;
+      display: inline-flex;
+      font-size: $small-font-size;
+      margin: 0;
+      max-width: clamp(24rem, 48rem, 90vw);
+      overflow: hidden;
+      text-align: left;
+      width: 100%;
+
+      &::before {
+        content: "+";
+        flex-shrink: 0;
+        font-weight: bold;
+        margin-right: 0.35em;
+      }
+    }
+
+    .classification-suggestion-label {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .classification-suggestion-code {
+      font-weight: bold;
+    }
+
+    .classification-suggestion-text {
+      font-weight: normal;
+    }
+
+    .classification-suggestion-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc($line-height / 3);
+
+      .button {
+        font-size: $small-font-size;
+        margin: 0;
+      }
+    }
+  }
 }

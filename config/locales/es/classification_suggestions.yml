@@ -1,0 +1,19 @@
+es:
+  classification_suggestions:
+    suggest_tags: Sugerir etiquetas
+    tags_title: Categorías y etiquetas sugeridas que se alinean con la propuesta
+    sdgs_title: ODS y metas sugeridos que se alinean con la propuesta
+    accept_all: Aceptar todas
+    close: Cerrar
+    loading: Cargando…
+    empty_tags: No hay sugerencias de categorías ni etiquetas para este borrador.
+    empty_sdgs: No hay sugerencias de ODS para este borrador.
+    tags_region: Categorías y etiquetas sugeridas
+    sdgs_region: ODS y metas sugeridos
+    errors:
+      messages:
+        llm_not_configured: El LLM no está configurado correctamente. Por favor, contacta con un administrador.
+        rate_limit_exceeded: Espera unos minutos antes de generar nuevas sugerencias.
+        generic: Algo salió mal al generar sugerencias. Por favor, inténtalo de nuevo.
+        blank_draft: Añade un título, resumen o descripción antes de solicitar sugerencias.
+        tag_list_full: Ya has añadido el máximo de %{count} etiquetas. Elimina algunas para dejar espacio a nuevas sugerencias.

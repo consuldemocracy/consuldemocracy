@@ -1,8 +1,13 @@
-<%= content_tag(categories.any? ? :fieldset : :div, class: "taggable-fields") do %>
-  <% if categories.any? %>
-    <legend><%= t("shared.categories_and_tags_label") %></legend>
-  <% else %>
-    <%= form.label :tag_list, tags_label %>
+<fieldset class="taggable-fields">
+  <%= content_tag(:legend,
+                  class: ("taggable-fields-heading taggable-fields-heading-with-suggest" if show_ai_suggestions?)) do %>
+    <%= categories.any? ? t("shared.categories_and_tags_label") : tags_label %>
+    <% if show_ai_suggestions? %>
+      <%= button_tag t("classification_suggestions.suggest_tags"),
+                     type: "button",
+                     class: "button small suggest-classification",
+                     data: suggest_button_data %>
+    <% end %>
   <% end %>
 
   <p class="help-text" id="tag-list-help-text"><%= tags_instructions %></p>
@@ -22,8 +27,25 @@
   <% end %>
 
   <%= form.text_field :tag_list, value: tag_list_value,
-                                 label: categories.any? ? tags_label : false,
-                                 label_options: categories.any? ? { class: "show-for-sr" } : {},
+                                 label: tags_label,
+                                 label_options: { class: "show-for-sr" },
                                  hint: tags_placeholder,
                                  data: tag_list_data %>
-<% end %>
+
+  <% if show_ai_suggestions? %>
+    <div class="classification-suggestions-tags classification-suggestions hide"
+         role="region"
+         aria-label="<%= t("classification_suggestions.tags_region") %>"
+         data-title="<%= t("classification_suggestions.tags_title") %>"
+         data-accept-all="<%= t("classification_suggestions.accept_all") %>"
+         data-close="<%= t("classification_suggestions.close") %>"
+         data-loading="<%= t("classification_suggestions.loading") %>"
+         data-empty="<%= t("classification_suggestions.empty_tags") %>"
+         data-error="<%= t("classification_suggestions.errors.messages.generic") %>"
+         data-tag-list-full="<%= t("classification_suggestions.errors.messages.tag_list_full", count: tag_list_limit) %>"
+         data-tag-list-limit="<%= tag_list_limit %>">
+      <div class="classification-suggestions-body"></div>
+      <%= render "shared/classification_suggestion_template" %>
+    </div>
+  <% end %>
+</fieldset>
