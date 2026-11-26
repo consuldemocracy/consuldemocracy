@@ -10,7 +10,6 @@
         <% checkbox_id = "tag_category_#{name.parameterize}" %>
         <%= check_box_tag nil, name, category_selected?(name),
                           id: checkbox_id,
-                          class: "js-tag-category",
                           data: { list_value: name } %>
         <%= label_tag checkbox_id, name %>
       <% end %>
@@ -22,7 +21,6 @@
   <%= form.text_field :tag_list, value: tag_list_value,
                                  label: false,
                                  placeholder: tags_placeholder,
-                                 class: "js-tag-list",
                                  aria: { describedby: "tag-list-help-text" },
                                  data: tag_list_data %>
 </div>

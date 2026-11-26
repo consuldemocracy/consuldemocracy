@@ -4,7 +4,7 @@
 
 .taggable-fields {
 
-  input.js-tag-category {
+  .tags input[type="checkbox"] {
     @include element-invisible;
 
     &:focus + label {
