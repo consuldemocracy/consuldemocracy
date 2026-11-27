@@ -34,6 +34,17 @@ describe Budgets::Investments::FormComponent do
     end
   end
 
+  describe "voice input hint" do
+    it "is shown for the description field" do
+      render_inline Budgets::Investments::FormComponent.new(
+        budget.investments.new,
+        url: budget_investments_path(budget)
+      )
+
+      expect(page).to have_css ".help-text", text: "You can dictate using your device's voice typing."
+    end
+  end
+
   describe "map" do
     it "renders a button to remove the map marker" do
       Setting["feature.map"] = true

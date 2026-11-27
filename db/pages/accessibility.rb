@@ -143,6 +143,19 @@ module DefaultAccessibilityPage
       I18n.t("pages.accessibility.textsize.browser_shortcuts_table.rows").compact_blank
     end
 
+    def voice_input
+      "<h2>#{I18n.t("pages.accessibility.voice_input.title")}</h2>
+       <p>#{I18n.t("pages.accessibility.voice_input.description")}</p>
+       <ul>#{voice_input_items}</ul>
+       <p>#{I18n.t("pages.accessibility.voice_input.note")}</p>"
+    end
+
+    def voice_input_items
+      I18n.t("pages.accessibility.voice_input.options").map do |option|
+        "<li>#{option}</li>"
+      end.join
+    end
+
     def compatibility
       "<h2>#{I18n.t("pages.accessibility.compatibility.title")}</h2>
        <p>#{I18n.t("pages.accessibility.compatibility.description")}</p>"
@@ -150,7 +163,7 @@ module DefaultAccessibilityPage
 
     def content
       descriptions + examples_list + shortcuts_table + browsers_table + textsize_table +
-        browser_shortcuts + compatibility
+        browser_shortcuts + voice_input + compatibility
     end
   end
 end

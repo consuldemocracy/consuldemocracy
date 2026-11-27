@@ -771,6 +771,7 @@ en:
         other: "%{count} languages in use"
     optional: "Optional fields"
     required: "Required fields"
+    voice_input_hint: "You can dictate using your device's voice typing."
     comments:
       one: "1 comment"
       other: "%{count} comments"
