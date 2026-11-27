@@ -41,7 +41,7 @@ class Admin::BannersController < Admin::BaseController
 
     def allowed_params
       [:target_url, :post_started_at, :post_ended_at, :background_color, :font_color,
-       translation_params(Banner),
+       *translation_params(Banner),
        web_section_ids: []]
     end
 end
