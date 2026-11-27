@@ -737,7 +737,7 @@ es:
       admin: Menú de administración
       banner: Banners
       proposals: Propuestas
-      proposals_topics: Temas de propuestas
+      proposals_topics: Categorías
       budgets: Presupuestos participativos
       geozones: Zonas
       locales: Idiomas
@@ -1556,12 +1556,12 @@ es:
         proposals: "Propuestas"
         title: "Objetivos de Desarrollo Sostenible - Estadísticas"
     tags:
-      create: Crear tema
+      create: Crear categoría
       index:
-        add_tag: Añade un nuevo tema de propuesta
-        title: Temas de propuesta
-        topic: Tema
-        help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
+        add_tag: Añade una nueva categoría
+        title: Categorías
+        topic: Categoría
+        help: "Los usuarios pueden seleccionar estas categorías al crear propuestas, debates o proyectos de gasto."
     users:
       columns:
         id: ID

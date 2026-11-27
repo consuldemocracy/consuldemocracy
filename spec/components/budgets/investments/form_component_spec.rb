@@ -46,4 +46,18 @@ describe Budgets::Investments::FormComponent do
       expect(page).to have_button "Remove map marker"
     end
   end
+
+  it "asks people to tag the investment" do
+    create(:tag, :category, name: "Parks")
+
+    render_inline Budgets::Investments::FormComponent.new(
+      budget.investments.new,
+      url: budget_investments_path(budget)
+    )
+
+    expect(page).to have_css(
+      "#tag-list-help-text",
+      exact_text: "Tag this investment. You can choose from proposed categories or add your own"
+    )
+  end
 end

@@ -1149,6 +1149,22 @@ describe "Admin budget investments", :admin do
       end
     end
 
+    scenario "Valuation tag instructions stay visible after adding a tag" do
+      budget_investment = create(:budget_investment)
+
+      visit edit_admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within "#admin_valuation_tags" do
+        expect(page).to have_css ".help-text", text: "Write the tags you want separated by commas (,)"
+        expect(page).not_to have_css "input[placeholder]"
+
+        fill_in_tag_list "Refugees"
+
+        expect(page).to have_css ".item[data-value='Refugees']"
+        expect(page).to have_css ".help-text", text: "Write the tags you want separated by commas (,)"
+      end
+    end
+
     scenario "Adds existing valuation tags" do
       budget_investment1 = create(:budget_investment)
       budget_investment1.set_tag_list_on(:valuation_tags, "Education, Health")
@@ -1187,6 +1203,39 @@ describe "Admin budget investments", :admin do
         expect(page).to have_content "Refugees"
         expect(page).to have_content "Solidarity"
       end
+    end
+
+    scenario "Suggests user tags from the preloaded list" do
+      create(:budget_investment, tag_list: "Park")
+      budget_investment = create(:budget_investment)
+
+      visit edit_admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within "#admin_user_tags" do
+        tag_list = find("#budget_investment_tag_list", visible: :all)
+
+        expect(tag_list["data-suggestions-url"]).to be(nil)
+        expect(JSON.parse(tag_list["data-suggestions-list"])).to include("Park")
+
+        fill_in "User assigned tags", with: "Par"
+        find(".ts-dropdown [data-value='Park']").click
+
+        expect(page).to have_css ".item[data-value='Park']"
+      end
+
+      within "#admin_valuation_tags" do
+        valuation_tags = find("#budget_investment_valuation_tag_list", visible: :all)
+
+        expect(valuation_tags["data-suggestions-list"]).to be(nil)
+      end
+
+      click_button "Update"
+
+      expect(page).to have_content "Investment project updated successfully."
+
+      visit budget_investment_path(budget_investment.budget, budget_investment)
+
+      expect(page).to have_content "Park"
     end
 
     scenario "Changes valuation and user generated tags" do

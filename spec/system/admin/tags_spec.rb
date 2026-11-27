@@ -10,6 +10,10 @@ describe "Admin tags", :admin do
     debate.tag_list.add(create(:tag, :category, name: "supertag"))
     visit admin_tags_path
 
+    expect(page).to have_css "h2", exact_text: "Add a new category"
+    expect(page).to have_content "Users can select these categories when creating " \
+                                 "proposals, debates or budget investments."
+    expect(page).to have_css "h3", text: "Categories"
     expect(page).to have_content "Existence"
     expect(page).to have_content "supertag"
   end
@@ -21,7 +25,7 @@ describe "Admin tags", :admin do
 
     within("form.new_tag") do
       fill_in "tag_name", with: "important issues"
-      click_button "Create topic"
+      click_button "Create category"
     end
 
     within("table") { expect(page).to have_content "important issues" }
@@ -85,7 +89,7 @@ describe "Admin tags", :admin do
 
       within("form.new_tag") do
         fill_in "tag_name", with: "wow_category"
-        click_button "Create topic"
+        click_button "Create category"
       end
 
       within "tbody" do
@@ -102,7 +106,7 @@ describe "Admin tags", :admin do
 
     within("form.new_tag") do
       fill_in "tag_name", with: "Soon a category"
-      click_button "Create topic"
+      click_button "Create category"
     end
 
     expect(page).to have_content "Soon a category"
@@ -113,7 +117,7 @@ describe "Admin tags", :admin do
 
     within("form.new_tag") do
       fill_in "tag_name", with: ""
-      click_button "Create topic"
+      click_button "Create category"
     end
 
     expect(page).to have_content "can't be blank"

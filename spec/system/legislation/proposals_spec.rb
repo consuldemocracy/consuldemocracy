@@ -296,6 +296,30 @@ describe "Legislation Proposals" do
     expect(page).to have_field("Scope of operation")
   end
 
+  scenario "Offers process categories without preloading tag suggestions" do
+    process.set_tag_list_on(:customs, "Culture")
+    process.save!
+    create(:debate, tag_list: "Hacienda")
+    login_as user
+
+    visit new_legislation_process_proposal_path(process)
+
+    tag_list = find("#legislation_proposal_tag_list", visible: :all)
+
+    expect(tag_list["data-suggestions-list"]).to be(nil)
+    expect(tag_list["data-suggestions-url"]).to be(nil)
+    expect(page).to have_unchecked_field "Culture"
+
+    fill_in "Tags", with: "Hac"
+
+    expect(page).to have_css ".ts-dropdown .create", text: "Hac"
+    expect(page).not_to have_css ".ts-dropdown [data-value='Hacienda']"
+
+    find("label", exact_text: "Culture").click
+
+    expect(page).to have_css ".item[data-value='Culture']"
+  end
+
   scenario "form do not show geozone selector when there are no geozones defined" do
     login_as user
 

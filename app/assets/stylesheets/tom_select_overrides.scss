@@ -1,0 +1,21 @@
+.ts-control input,
+.ts-dropdown {
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+}
+
+.ts-control {
+  @include form-element;
+  display: flex;
+  height: auto;
+  min-height: $input-height;
+
+  &:focus-within {
+    border: $input-border-focus;
+    box-shadow: $input-shadow-focus;
+  }
+
+  > input {
+    height: auto !important;
+  }
+}

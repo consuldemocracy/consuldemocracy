@@ -4,9 +4,11 @@
 
 .taggable-fields {
 
-  @include amsify-suggestags-input-area;
+  .tags {
+    margin-bottom: $line-height;
+  }
 
-  input.js-tag-category {
+  .tags input[type="checkbox"] {
     @include element-invisible;
 
     &:focus + label {
@@ -14,7 +16,7 @@
     }
 
     &:checked + label {
-      filter: brightness(1.05);
+      @extend %checked-badge;
     }
 
     + label {
@@ -24,5 +26,29 @@
       margin-left: 0;
       margin-right: rem-calc(3);
     }
+  }
+}
+
+fieldset.taggable-fields {
+  > legend {
+    margin-bottom: 0;
+  }
+
+  > p.help-text {
+    font-size: inherit;
+    font-style: italic;
+    font-weight: normal;
+    line-height: inherit;
+    margin-bottom: $form-spacing * 0.5;
+  }
+
+  .tags {
+    margin-bottom: 0;
+  }
+
+  span.help-text {
+    font-size: $base-font-size;
+    font-style: italic;
+    font-weight: normal;
   }
 }

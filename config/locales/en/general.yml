@@ -80,7 +80,8 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
-      tags_instructions: Tag this debate.
+      tag_category_label: "Categories"
+      tags_instructions: "Tag this debate. You can choose from proposed categories or add your own"
       tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
@@ -769,6 +770,7 @@ en:
         zero: "0 languages in use"
         one: "1 language in use"
         other: "%{count} languages in use"
+    categories_and_tags_label: "Categories and tags"
     optional: "Optional fields"
     required: "Required fields"
     comments:
