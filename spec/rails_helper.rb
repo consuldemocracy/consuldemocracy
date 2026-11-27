@@ -68,6 +68,7 @@ Capybara.register_driver :headless_chrome do |app|
     opts.add_argument "--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}"
     opts.add_argument "--proxy-bypass-list=127.0.0.1;localhost;lvh.me;*.lvh.me"
     opts.add_argument "--disable-features=DeferRendererTasksAfterInput"
+    opts.binary = ENV["CHROME_BIN"] if ENV["CHROME_BIN"].present?
   end
 
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
