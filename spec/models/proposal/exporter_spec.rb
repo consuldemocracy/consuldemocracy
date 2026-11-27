@@ -33,7 +33,7 @@ describe Proposal::Exporter do
           #{reply.id},#{reply.author.email},#{reply.body},#{root_comment.id},2026-06-01 14:59:10
         CSV
 
-        expect(Proposal::Exporter.new([proposal]).to_csv).to eq csv_contents
+        expect(Proposal::Exporter.new([proposal]).to_csv).to eq "\xEF\xBB\xBF" + csv_contents
       end
     end
   end
