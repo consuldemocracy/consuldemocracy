@@ -48,6 +48,15 @@ jobs:
         run: npm clean-install
       - name: Install ImageMagick
         run: sudo apt-get update && sudo apt-get install imagemagick
+      - name: Remove image-bundled Chrome
+        run: sudo apt-get purge google-chrome-stable
+      - name: Setup Chrome 157
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: 157
+          install-chromedriver: true
+          install-dependencies: true
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Setup database
@@ -56,6 +65,7 @@ jobs:
         run: bundle exec rake assets:precompile > /dev/null 2>&1
       - name: Run test suite
         env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
           KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
           KNAPSACK_PRO_CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
           KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
