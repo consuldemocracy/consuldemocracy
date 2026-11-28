@@ -16,22 +16,7 @@ namespace :administrators do
         valid_administrator = administrators.first
 
         administrators.excluding(valid_administrator).each do |administrator|
-          ActiveRecord::Base.transaction do
-            budget_ids = BudgetAdministrator.where(administrator_id: valid_administrator.id)
-                                            .pluck(:budget_id)
-            BudgetAdministrator.where(administrator: administrator, budget_id: budget_ids)
-                               .delete_all
-            BudgetAdministrator.where(administrator: administrator)
-                               .where.not(budget_id: budget_ids)
-                               .update_all(administrator_id: valid_administrator.id)
-
-            Budget::Investment.where(administrator: administrator)
-                              .update_all(administrator_id: valid_administrator.id)
-            Comment.where(administrator_id: administrator.id)
-                   .update_all(administrator_id: valid_administrator.id)
-
-            administrator.delete
-          end
+          RoleDeduplicator.new(valid_administrator, administrator).deduplicate
 
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
           log_message = "Deleted duplicate record with ID #{administrator.id} " \

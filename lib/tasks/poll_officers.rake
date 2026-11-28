@@ -16,27 +16,7 @@ namespace :poll_officers do
         valid_officer = officers.first
 
         officers.excluding(valid_officer).each do |officer|
-          ActiveRecord::Base.transaction do
-            Poll::OfficerAssignment.where(officer: officer).update_all(officer_id: valid_officer.id)
-            Poll::Voter.where(officer: officer).update_all(officer_id: valid_officer.id)
-
-            FailedCensusCall.where(poll_officer: officer)
-                            .update_all(poll_officer_id: valid_officer.id)
-            Poll::Officer.reset_counters(valid_officer.id, :failed_census_calls)
-
-            shifts_data = Poll::Shift.where(officer_id: valid_officer.id)
-                                     .pluck(:booth_id, :date, :task)
-                                     .to_set
-            Poll::Shift.where(officer_id: officer.id).find_each do |shift|
-              if shifts_data.include?([shift.booth_id, shift.date, shift.task])
-                shift.delete
-              else
-                shift.update_column(:officer_id, valid_officer.id)
-              end
-            end
-
-            officer.delete
-          end
+          RoleDeduplicator.new(valid_officer, officer).deduplicate
 
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
           log_message = "Deleted duplicate record with ID #{officer.id} " \
