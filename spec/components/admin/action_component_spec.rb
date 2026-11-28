@@ -210,4 +210,13 @@ describe Admin::ActionComponent do
       expect(page).to have_css "button[data-disable-with='Hide']"
     end
   end
+
+  context "type: button given" do
+    it "renders a button with type button" do
+      render_inline Admin::ActionComponent.new(:edit, double, type: "button")
+
+      expect(page).to have_css "button[type=button]", exact_text: "Edit"
+      expect(page).not_to have_css "form"
+    end
+  end
 end
